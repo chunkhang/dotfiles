@@ -1,5 +1,5 @@
 # Path
-export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:~/.dotfiles/bin:$PATH
+export PATH=/Applications/Postgres.app/Contents/Versions/latest/bin:~/.zsh/git-open:~/.dotfiles/bin:$PATH
 
 # Oh My Zsh
 export ZSH=~/.zsh/oh-my-zsh

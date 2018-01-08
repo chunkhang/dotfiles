@@ -1,5 +1,5 @@
 # Oh My Zsh
-plugins=(osx sudo git-open)
+plugins=(osx sudo)
 source $ZSH/oh-my-zsh.sh
 
 # Z
