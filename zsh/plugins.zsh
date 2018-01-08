@@ -19,4 +19,4 @@ autoload zmv
 eval $(thefuck --alias)
 
 # Syntax highlighting
-source $ZSH/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
