@@ -7,3 +7,48 @@
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "vim/bundle/auto-pairs"]
+	path = vim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule "vim/vundle/base16-vim"]
+	path = vim/vundle/base16-vim
+	url = https://github.com/chriskempson/base16-vim.git
+[submodule "vim/bundle/ctrlp.vim"]
+	path = vim/bundle/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "vim/bundle/lightline"]
+	path = vim/bundle/lightline
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule "vim/bundle/simple-javascript-indenter"]
+	path = vim/bundle/simple-javascript-indenter
+	url = https://github.com/jiangmiao/simple-javascript-indenter.git
+[submodule "vim/bundle/supertab"]
+	path = vim/bundle/supertab
+	url = https://github.com/ervandew/supertab.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git
+[submodule "vim/bundle/vim-commentary"]
+	path = vim/bundle/vim-commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim/bundle/vim-fugitive"]
+	path = vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "vim/bundle/vim-gitgutter"]
+	path = vim/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/bundle/vim-javascript"]
+	path = vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule "vim/bundle/vim-multiple-cursors"]
+	path = vim/bundle/vim-multiple-cursors
+	url = https://github.com/terryma/vim-multiple-cursors.git
+[submodule "vim/bundle/vim-vinegar"]
+	path = vim/bundle/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar.git
+[submodule "vim/bundle/vitality"]
+	path = vim/bundle/vitality
+	url = https://github.com/sjl/vitality.vim.git
