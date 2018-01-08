@@ -1,0 +1,7 @@
+[user]
+    name = Marcus Mu
+    email = chunkhang@gmail.com
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore_global
