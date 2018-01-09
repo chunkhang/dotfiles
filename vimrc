@@ -66,6 +66,9 @@ set mouse=a
 set splitbelow
 set splitright
 
+" Disable introduction
+set shortmess=I
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

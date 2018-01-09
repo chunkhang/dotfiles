@@ -8,6 +8,7 @@
     ~/.dotfiles: ''
     ~/.gitconfig:
     ~/.gitignore_global:
+    ~/.iterm2:
     ~/.pip:
     ~/.tmux.conf:
     ~/.vim:
@@ -18,4 +19,3 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - [mkdir ~/workspace, Creating workspace directory]
