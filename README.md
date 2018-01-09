@@ -4,8 +4,8 @@
 
 ## Installing
 ```
-$ git clone https://github.com/chunkhang/dotfiles ~/.dotfiles
-$ cd .dotfiles
+$ git clone --recursive https://github.com/chunkhang/dotfiles ~/.dotfiles
+$ cd ~/.dotfiles
 $ ./install
 ```
 
