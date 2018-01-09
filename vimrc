@@ -134,7 +134,7 @@ let g:lightline={
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head'
@@ -148,7 +148,7 @@ set signcolumn=yes
 " Vinegar
 noremap <leader>e :Explore<cr>
 let g:netrw_liststyle=3
-set wildignore=.DS_Store,.cache,.git,__pycache__
+set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb
 
 " Syntastic
 nnoremap <silent> <leader>l :SyntasticCheck<cr>
