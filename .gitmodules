@@ -55,3 +55,6 @@
 [submodule "zsh/git-open"]
 	path = zsh/git-open
 	url = https://github.com/paulirish/git-open.git
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
