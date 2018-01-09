@@ -107,17 +107,29 @@ set backspace=indent,eol,start
 " Leader key
 let mapleader=" "
 
+" Edit configuration
+nnoremap <leader>v :edit ~/.vimrc<cr>
+
 " Source configuration
-map <silent> <leader>s :source ~/.vimrc<cr><leader>/
+nnoremap <silent> <leader>r :source ~/.vimrc<cr><esc>
 
 " Clear search pattern
 nmap <silent> <leader>/ :let @/=""<cr>
 
+" Close buffer
+nnoremap <leader>q :bd<cr>
+
+" Open shell
+nnoremap <leader>s :shell<cr>
+
+" Write buffer
+nnoremap <leader>w :write<cr>
+
 " Switch windows
-noremap <C-h> <C-W>h
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-l> <C-W>l
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
 
 " Override
 nnoremap ! :<up>!
