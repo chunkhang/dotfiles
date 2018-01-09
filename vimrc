@@ -127,6 +127,11 @@ nnoremap <cr> <nop>
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_no_default_key_mappings=1
 
+" Markdown preview
+let vim_markdown_preview_browser='firefox'
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
+
 " Lightline
 set laststatus=2
 set noshowmode
