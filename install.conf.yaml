@@ -18,3 +18,5 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  - [ln -s zsh/marcus-honukai.zsh-theme zsh/oh-my-zsh/themes/marcus-honukai.zsh-theme, Linking zsh theme]
+  - [mkdir ~/workspace, Creating workspace directory]
