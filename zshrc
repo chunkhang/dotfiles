@@ -1,5 +1,5 @@
 # Local configuration
-if [ -f ~/.zshrc_local_before ]; then
+if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
