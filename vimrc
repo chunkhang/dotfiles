@@ -13,7 +13,7 @@ set hidden
 " Filetypes
 filetype plugin on
 filetype indent on
-au FileType javascript setlocal softtabstop=2 shiftwidth=2
+autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
 
 " Disable backup
 set nobackup
@@ -27,7 +27,7 @@ set timeoutlen=1000
 set ttimeoutlen=0
 
 " Autosave
-:au FocusLost * :wa
+autocmd FocusLost * :wa
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " User Interface
@@ -139,6 +139,12 @@ nnoremap <backspace> <nop>
 nnoremap <space> <nop>
 nnoremap <cr> <nop>
 
+" Explorer
+nnoremap <leader>e :Explore<cr>
+
+" Linter
+nnoremap <silent> <leader>l :SyntasticCheck<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -170,10 +176,16 @@ set updatetime=250
 set signcolumn=yes
 
 " Vinegar
-noremap <leader>e :Explore<cr>
 let g:netrw_liststyle=3
-set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb
+set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc
 
 " Syntastic
-nnoremap <silent> <leader>l :SyntasticCheck<cr>
 let g:syntastic_python_checkers=['flake8']
+
+" Python
+let g:python_highlight_operators=0
+let g:python_highlight_indent_errors=0
+let g:python_highlight_space_errors=0
+let g:python_highlight_all=1
+let g:python_highlight_file_headers_as_comments=1
+autocmd Filetype python :Python3Syntax
