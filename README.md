@@ -1,6 +1,5 @@
 # Dotfiles
-> All my precious dotfiles
-- Managed using [Dotbot](https://github.com/anishathalye/dotbot)
+All my precious dotfiles managed using [Dotbot](https://github.com/anishathalye/dotbot)
 
 ## Installing
 ```
@@ -9,7 +8,10 @@ $ cd ~/.dotfiles
 $ ./install
 ```
 
-## UNLICENSE
+## Local Configuration
+`~/.zshrc_local` can be used to apply local configuration as needed
+
+## Unlicense
 
 ```
 This is free and unencumbered software released into the public domain.
@@ -38,7 +40,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 For more information, please refer to <http://unlicense.org>
 ```
 
-## CONTACT
+## Contact
 
 Feel free to report bugs or suggest features <br/>
 **[Marcus Mu](http://marcusmu.me)** | chunkhang@gmail.com
