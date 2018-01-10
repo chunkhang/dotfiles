@@ -13,7 +13,6 @@ set hidden
 " Filetypes
 filetype plugin on
 filetype indent on
-autocmd FileType javascript setlocal softtabstop=2 shiftwidth=2
 
 " Disable backup
 set nobackup
@@ -68,6 +67,14 @@ set splitright
 
 " Disable introduction
 set shortmess=I
+
+" Explorer
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc
+let s:escape = 'substitute(escape(v:val, ".$~"), "*", ".*", "g")'
+let g:netrw_list_hide=
+    \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "/\\=$"'), ',')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts
@@ -175,10 +182,6 @@ let g:lightline={
 set updatetime=250
 set signcolumn=yes
 
-" Vinegar
-let g:netrw_liststyle=3
-set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc
-
 " Syntastic
 let g:syntastic_python_checkers=['flake8']
 
@@ -188,3 +191,6 @@ let g:python_highlight_indent_errors=0
 let g:python_highlight_space_errors=0
 let g:python_highlight_all=1
 let g:python_highlight_file_headers_as_comments=1
+
+" JavaScript
+autocmd Filetype javascript set softtabstop=2 shiftwidth=2
