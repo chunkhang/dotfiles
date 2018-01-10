@@ -67,3 +67,6 @@
 [submodule "vim/bundle/python-syntax"]
 	path = vim/bundle/python-syntax
 	url = https://github.com/vim-python/python-syntax.git
+[submodule "vim/bundle/vim-bufkill"]
+	path = vim/bundle/vim-bufkill
+	url = https://github.com/qpkorr/vim-bufkill

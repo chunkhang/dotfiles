@@ -45,7 +45,7 @@ set showcmd
 " Position
 set ruler
 set cursorline
-set colorcolumn=81
+set colorcolumn=80
 
 " Searching
 set ignorecase
@@ -117,7 +117,7 @@ nnoremap <silent> <leader>r :source ~/.vimrc<cr><esc>
 nmap <silent> <leader>/ :let @/=""<cr>
 
 " Close buffer
-nnoremap <leader>q :bd<cr>
+nnoremap <leader>q :BD<cr>
 
 " Open shell
 nnoremap <leader>s :shell<cr>
@@ -188,4 +188,3 @@ let g:python_highlight_indent_errors=0
 let g:python_highlight_space_errors=0
 let g:python_highlight_all=1
 let g:python_highlight_file_headers_as_comments=1
-autocmd Filetype python :Python3Syntax
