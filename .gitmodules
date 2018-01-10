@@ -16,9 +16,6 @@
 [submodule "vim/bundle/lightline"]
 	path = vim/bundle/lightline
 	url = https://github.com/itchyny/lightline.vim.git
-[submodule "vim/bundle/simple-javascript-indenter"]
-	path = vim/bundle/simple-javascript-indenter
-	url = https://github.com/jiangmiao/simple-javascript-indenter.git
 [submodule "vim/bundle/supertab"]
 	path = vim/bundle/supertab
 	url = https://github.com/ervandew/supertab.git
@@ -43,9 +40,6 @@
 [submodule "vim/bundle/vim-multiple-cursors"]
 	path = vim/bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
-[submodule "vim/bundle/vim-vinegar"]
-	path = vim/bundle/vim-vinegar
-	url = https://github.com/tpope/vim-vinegar.git
 [submodule "vim/bundle/vitality"]
 	path = vim/bundle/vitality
 	url = https://github.com/sjl/vitality.vim.git
