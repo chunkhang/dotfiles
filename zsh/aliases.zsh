@@ -20,3 +20,6 @@ alias gl='git log --oneline --decorate --color --graph --all'
 alias gm='f() { git merge $1 };f'
 alias gp='git push'
 alias gs='git status'
+
+# Glances
+alias glances='glances --disable-bold'
