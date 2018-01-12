@@ -123,6 +123,10 @@ nnoremap <silent> <leader>r :source ~/.vimrc<cr><esc>
 " Clear search pattern
 nmap <silent> <leader>n :let @/=""<cr>
 
+" Scrolling
+nnoremap <leader>j 20j
+nnoremap <leader>k 20k
+
 " Close buffer
 nnoremap <silent> <leader>q :BD<cr>
 " Quit
@@ -160,6 +164,9 @@ nnoremap <leader>s :Gstatus<cr>
 nnoremap <leader>c :Gcommit<cr>
 nnoremap <leader>d :Gdiff<cr>
 
+" Markdown preview
+nnoremap <leader>m :call Vim_Markdown_Preview()<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -170,7 +177,7 @@ let g:vim_markdown_no_default_key_mappings=1
 " Markdown preview
 let vim_markdown_preview_browser='firefox'
 let vim_markdown_preview_github=1
-let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_hotkey=''
 
 " Lightline
 set laststatus=2
