@@ -125,6 +125,8 @@ nmap <silent> <leader>n :let @/=""<cr>
 
 " Close buffer
 nnoremap <silent> <leader>q :BD<cr>
+" Quit
+nnoremap <silent> <leader>Q :q<cr>
 
 " Write buffer
 nnoremap <leader>w :write<cr>
