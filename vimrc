@@ -121,13 +121,10 @@ nnoremap <leader>v :edit ~/.vimrc<cr>
 nnoremap <silent> <leader>r :source ~/.vimrc<cr><esc>
 
 " Clear search pattern
-nmap <silent> <leader>/ :let @/=""<cr>
+nmap <silent> <leader>n :let @/=""<cr>
 
 " Close buffer
-nnoremap <leader>q :BD<cr>
-
-" Open shell
-nnoremap <leader>s :shell<cr>
+nnoremap <silent> <leader>q :BD<cr>
 
 " Write buffer
 nnoremap <leader>w :write<cr>
@@ -151,6 +148,15 @@ nnoremap <leader>e :Explore<cr>
 
 " Linter
 nnoremap <silent> <leader>l :SyntasticCheck<cr>
+
+" Indent
+nnoremap < v<<esc>
+nnoremap > v><esc>
+
+" Git
+nnoremap <leader>s :Gstatus<cr>
+nnoremap <leader>c :Gcommit<cr>
+nnoremap <leader>d :Gdiff<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
