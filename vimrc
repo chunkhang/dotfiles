@@ -28,6 +28,9 @@ set ttimeoutlen=0
 " Autosave
 autocmd FocusLost * :wa
 
+" Current working directory
+set autochdir
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " User Interface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
