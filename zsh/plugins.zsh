@@ -12,9 +12,6 @@ eval "$(rbenv init -)"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-# Nvm
-source $(brew --prefix nvm)/nvm.sh
-
 # Zmv
 autoload zmv
 

@@ -15,9 +15,6 @@ export CFLAGS="-I/usr/local/opt/openssl/include"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
-# Nvm
-export NVM_DIR=~/.nvm
-
 # Homebrew
 export HOMEBREW_BUILD_FROM_SOURCE=1
 
