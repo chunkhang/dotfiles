@@ -219,3 +219,6 @@ let g:python_highlight_file_headers_as_comments=1
 
 " JavaScript
 autocmd Filetype javascript set softtabstop=2 shiftwidth=2
+
+" Ctrlp
+let g:ctrlp_show_hidden=1
