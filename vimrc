@@ -177,6 +177,10 @@ nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
                   \     syntax enable <Bar>
                   \ endif <cr>
 
+" System clipboard
+vnoremap <leader>y "*y
+vnoremap <leader>p "*p
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
