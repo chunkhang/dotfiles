@@ -179,7 +179,7 @@ nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
 
 " System clipboard
 vnoremap <leader>y "*y
-vnoremap <leader>p "*p
+nnoremap <leader>p "*p
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
