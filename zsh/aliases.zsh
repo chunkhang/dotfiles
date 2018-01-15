@@ -18,6 +18,7 @@ alias gd='f() { git diff $1 | cdiff -s };f'
 alias gk='f() { git checkout $1 };f'
 alias gl='git log --oneline --decorate --color --graph --all'
 alias gm='f() { git merge $1 };f'
+alias go='git open'
 alias gp='git push'
 alias gs='git status'
 
