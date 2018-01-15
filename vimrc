@@ -171,7 +171,7 @@ nnoremap <leader>d :Gdiff<cr>
 nnoremap <leader>m :call Vim_Markdown_Preview()<cr>
 
 " Toggle syntax
-nnoremap <leader>x :if exists('g:syntax_on') <Bar>
+nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
                   \     syntax off <Bar>
                   \ else <Bar>
                   \     syntax enable <Bar>
