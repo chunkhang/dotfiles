@@ -108,7 +108,7 @@ set autoindent
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
-" Backspace 
+" Backspace
 set backspace=indent,eol,start
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -127,6 +127,8 @@ nnoremap <silent> <leader>r :source ~/.vimrc<cr><esc>
 nmap <silent> <leader>n :let @/=""<cr>
 
 " Scrolling
+nmap j gj
+nmap k gk
 nnoremap <leader>j 20j
 nnoremap <leader>k 20k
 
@@ -180,6 +182,10 @@ nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
 " System clipboard
 vnoremap <leader>y "*y
 nnoremap <leader>p "*p
+
+" Trailing whitespace
+nnoremap <leader>t /\s\+$<cr>
+nnoremap <leader>T :%s/\s\+$//e<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
