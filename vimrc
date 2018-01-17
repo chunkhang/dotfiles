@@ -238,4 +238,7 @@ let g:ctrlp_show_hidden=1
 
 " Emmet
 let g:user_emmet_install_global=0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,jinja,css EmmetInstall
+
+" Commentary
+autocmd FileType jinja setlocal commentstring={#\ %s\ #}
