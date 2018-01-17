@@ -187,6 +187,9 @@ nnoremap <leader>p "*p
 nnoremap <leader>t /\s\+$<cr>
 nnoremap <leader>T :%s/\s\+$//e<cr>
 
+" Emmet
+let g:user_emmet_leader_key='<C-e>'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -232,3 +235,7 @@ autocmd Filetype javascript set softtabstop=2 shiftwidth=2
 
 " Ctrlp
 let g:ctrlp_show_hidden=1
+
+" Emmet
+let g:user_emmet_install_global=0
+autocmd FileType html,css EmmetInstall

@@ -64,3 +64,6 @@
 [submodule "vim/bundle/vim-bufkill"]
 	path = vim/bundle/vim-bufkill
 	url = https://github.com/qpkorr/vim-bufkill
+[submodule "vim/bundle/emmet-vim"]
+	path = vim/bundle/emmet-vim
+	url = https://github.com/mattn/emmet-vim.git
