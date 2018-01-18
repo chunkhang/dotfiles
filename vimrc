@@ -131,6 +131,8 @@ nmap j gj
 nmap k gk
 nnoremap <leader>j 20j
 nnoremap <leader>k 20k
+vnoremap <leader>j 20j
+vnoremap <leader>k 20k
 
 " Close buffer
 nnoremap <silent> <leader>q :BD<cr>
