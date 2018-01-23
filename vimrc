@@ -195,6 +195,9 @@ nnoremap <leader>T :%s/\s\+$//e<cr>
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
 
+" Prettify json
+nnoremap <leader>J :%!python -m json.tool<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
