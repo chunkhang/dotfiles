@@ -5,10 +5,6 @@ alias lsvenv='pyenv virtualenvs'
 alias mkvenv='pyenv virtualenv'
 alias rmvenv='pyenv uninstall'
 
-# Heroku
-alias deploy='git push heroku master'
-alias papertrail='heroku addons:open papertrail'
-
 # Git
 alias ga='f() { git add $@ };f'
 alias gc='git commit'
