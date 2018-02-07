@@ -21,3 +21,6 @@ alias gs='git status'
 
 # Glances
 alias glances='glances --disable-bold'
+
+# Miscellaneous
+alias search='f() { grep -rnw . -e $1 };f'
