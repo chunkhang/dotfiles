@@ -18,6 +18,7 @@ alias gm='f() { git merge $@ };f'
 alias go='git open'
 alias gp='git push'
 alias gs='git status'
+alias gu='git pull'
 
 # Glances
 alias glances='glances --disable-bold'
