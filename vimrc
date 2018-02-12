@@ -39,6 +39,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Line numbers
 set number
+set relativenumber
 
 " Scrolling
 set scrolloff=10
