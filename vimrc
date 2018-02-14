@@ -163,9 +163,6 @@ nnoremap <cr> <nop>
 " Explorer
 nnoremap <leader>e :Explore<cr>
 
-" Linter
-nnoremap <silent> <leader>l :SyntasticCheck<cr>
-
 " Indent
 nnoremap < v<<esc>
 nnoremap > v><esc>
@@ -198,6 +195,20 @@ let g:user_emmet_leader_key='<C-e>'
 
 " Prettify json
 nnoremap <leader>J :%!python -m json.tool<cr>
+
+" Jump cursor
+function! LoadPosition()
+    cal cursor(b:row, b:col)
+    echo 'Load position: (' . b:row . ', ' . b:col . ')'
+endfunction
+function! SavePosition()
+    let b:row = line('.')
+    let b:col = col('.')
+    echo 'Save position: (' . b:row . ', ' . b:col . ')'
+endfunction
+autocmd FileType * silent call SavePosition()
+nnoremap <silent> <leader>l :call LoadPosition()<cr>
+nnoremap <silent> <leader>L :call SavePosition()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
