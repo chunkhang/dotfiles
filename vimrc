@@ -125,7 +125,7 @@ let mapleader=" "
 nnoremap <leader>v :edit ~/.vimrc<cr>
 
 " Source configuration
-nnoremap <silent> <leader>r :source ~/.vimrc<cr><esc>
+nnoremap <silent> <leader>r :source ~/.vimrc<cr>:echo 'Refresh'<cr>
 
 " Clear search pattern
 nmap <silent> <leader>n :let @/=""<cr>
@@ -151,6 +151,12 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
+
+" Split
+nnoremap <leader><right> :vs<cr>
+nnoremap <leader><down> :sp<cr>
+nnoremap <leader><left> :set splitright&<cr>:vs<cr>:set splitright<cr>
+nnoremap <leader><up> :set splitbelow&<cr>:sp<cr>:set splitbelow<cr>
 
 " Override
 nnoremap ! :<up>!
@@ -207,8 +213,8 @@ function! SavePosition()
     echo 'Save position: (' . b:row . ', ' . b:col . ')'
 endfunction
 autocmd FileType * silent call SavePosition()
-nnoremap <silent> <leader>l :call LoadPosition()<cr>
-nnoremap <silent> <leader>L :call SavePosition()<cr>
+nnoremap <silent> <leader>L :call LoadPosition()<cr>
+nnoremap <silent> <leader>l :call SavePosition()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
