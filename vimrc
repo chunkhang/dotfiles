@@ -78,7 +78,7 @@ set shortmess=I
 " Explorer
 let g:netrw_banner=0
 let g:netrw_liststyle=3
-set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc
+set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc,.pytest_cache
 let s:escape = 'substitute(escape(v:val, ".$~"), "*", ".*", "g")'
 let g:netrw_list_hide=
     \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "/\\=$"'), ',')
@@ -190,6 +190,7 @@ nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
 
 " System clipboard
 vnoremap <leader>y "*y
+nnoremap <leader>Y "*Y
 nnoremap <leader>p "*p
 
 " Trailing whitespace
