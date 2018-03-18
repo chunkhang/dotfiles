@@ -249,6 +249,7 @@ set signcolumn=yes
 
 " Syntastic
 let g:syntastic_python_checkers=['flake8']
+let g:syntastic_javascript_checkers=['jshint']
 
 " Python
 let g:python_highlight_operators=0
