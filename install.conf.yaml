@@ -9,6 +9,7 @@
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.iterm2:
+    ~/.jshintrc:
     ~/.pip:
     ~/.tmux.conf:
     ~/.vim:

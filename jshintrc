@@ -1,0 +1,22 @@
+{
+
+  // Enforcements
+  "curly": true,
+  "undef": true,
+  "newcap": true,
+  "forin": false,
+  "quotmark": true,
+  "trailing": true,
+  "unused": true,
+
+  // Environments
+  "browser": true,
+  "devel": true,
+  "predef": [
+    "browser"
+  ],
+
+  // Miscellaneous
+  "indent": 2
+
+}
