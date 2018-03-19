@@ -6,7 +6,6 @@
   "newcap": true,
   "forin": false,
   "quotmark": true,
-  "trailing": true,
   "unused": true,
 
   // Environments
@@ -17,6 +16,6 @@
   ],
 
   // Miscellaneous
-  "indent": 2
+  "esversion": 6
 
 }
