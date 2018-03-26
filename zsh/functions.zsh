@@ -182,6 +182,13 @@ function eject() {
     echo "Done ejecting."
 }
 
+# Quit all applications
+function expelliarmus() {
+    echo "Quitting all applications..."
+    open ~/workspace/automator/quit-all.app
+    echo "Done quitting."
+}
+
 # List items in Downloads
 function load() {
     echo "Items in Downloads:"
