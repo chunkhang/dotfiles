@@ -250,6 +250,7 @@ set signcolumn=yes
 " Syntastic
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_javascript_checkers=['jshint']
+let g:syntastic_html_checkers=['']
 
 " Python
 let g:python_highlight_operators=0
