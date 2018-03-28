@@ -12,7 +12,9 @@
   "browser": true,
   "devel": true,
   "predef": [
-    "browser"
+    "browser",
+    "Vue",
+    "Buefy"
   ],
 
   // Miscellaneous
