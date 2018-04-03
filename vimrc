@@ -274,3 +274,10 @@ autocmd FileType html,jinja,css,scss EmmetInstall
 
 " Commentary
 autocmd FileType jinja setlocal commentstring={#\ %s\ #}
+
+" CSS
+augroup VimCSS3Syntax
+  autocmd!
+
+  autocmd FileType css silent! setlocal iskeyword+=- space-between
+augroup END

@@ -79,3 +79,6 @@
 [submodule "vim/bundle/vim-indexed-search"]
 	path = vim/bundle/vim-indexed-search
 	url = https://github.com/henrik/vim-indexed-search.git
+[submodule "vim/bundle/vim-css3-syntax"]
+	path = vim/bundle/vim-css3-syntax
+	url = https://github.com/hail2u/vim-css3-syntax.git
