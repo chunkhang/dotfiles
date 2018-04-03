@@ -217,6 +217,9 @@ autocmd FileType * silent call SavePosition()
 nnoremap <silent> <leader>L :call LoadPosition()<cr>
 nnoremap <silent> <leader>l :call SavePosition()<cr>
 
+" Cursor column
+nnoremap <silent> <leader>C :setlocal cursorcolumn!<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
