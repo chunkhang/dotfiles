@@ -203,22 +203,13 @@ let g:user_emmet_leader_key='<C-e>'
 " Prettify json
 nnoremap <leader>J :%!python -m json.tool<cr>
 
-" Jump cursor
-function! LoadPosition()
-    cal cursor(b:row, b:col)
-    echo 'Load position: (' . b:row . ', ' . b:col . ')'
-endfunction
-function! SavePosition()
-    let b:row = line('.')
-    let b:col = col('.')
-    echo 'Save position: (' . b:row . ', ' . b:col . ')'
-endfunction
-autocmd FileType * silent call SavePosition()
-nnoremap <silent> <leader>L :call LoadPosition()<cr>
-nnoremap <silent> <leader>l :call SavePosition()<cr>
-
 " Cursor column
 nnoremap <silent> <leader>C :setlocal cursorcolumn!<cr>
+
+" Folding
+vnoremap <leader>z zf<cr>
+nnoremap <leader>o zo<cr>
+nnoremap <leader>O zc<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
