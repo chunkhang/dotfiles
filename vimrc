@@ -105,6 +105,7 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
+autocmd FileType html,jinja,vue,javascript,json set softtabstop=2 shiftwidth=2
 
 " Indent
 set autoindent
@@ -253,12 +254,6 @@ let g:python_highlight_indent_errors=0
 let g:python_highlight_space_errors=0
 let g:python_highlight_all=1
 let g:python_highlight_file_headers_as_comments=1
-
-" JavaScript
-autocmd Filetype javascript,json set softtabstop=2 shiftwidth=2
-
-" HTML
-autocmd Filetype html,jinja set softtabstop=2 shiftwidth=2
 
 " Ctrlp
 let g:ctrlp_show_hidden=1
