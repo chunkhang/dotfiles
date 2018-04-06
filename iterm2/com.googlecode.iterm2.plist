@@ -379,6 +379,20 @@
 			<key>Text</key>
 			<string></string>
 		</dict>
+		<key>0x6b-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>13</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0x72-0x100000</key>
+		<dict>
+			<key>Action</key>
+			<integer>13</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
 		<key>0x9-0x40000</key>
 		<dict>
 			<key>Action</key>
@@ -546,11 +560,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>226 163 796 473 0 0 1280 800 </string>
+	<string>226 273 796 473 0 0 1280 777 </string>
 	<key>NSWindow Frame com.apple.typography_panel_ProFontForPowerline</key>
 	<string>212 474 260 46 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>324 231 570 377 0 0 1280 777 </string>
+	<string>356 241 570 377 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>152 50 570 377 0 0 1280 800 </string>
 	<key>NeverWarnAboutShortLivedSessions_EC4BE0A6-1821-4D6F-A3A7-4E6A0A394978</key>
