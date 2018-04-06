@@ -79,6 +79,7 @@ set shortmess=I
 let g:netrw_banner=0
 let g:netrw_liststyle=3
 set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc,.pytest_cache
+set wildignore+=*.class
 let s:escape = 'substitute(escape(v:val, ".$~"), "*", ".*", "g")'
 let g:netrw_list_hide=
     \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "/\\=$"'), ',')
