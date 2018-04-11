@@ -264,6 +264,7 @@ autocmd FileType html,jinja,css,scss EmmetInstall
 
 " Commentary
 autocmd FileType jinja setlocal commentstring={#\ %s\ #}
+autocmd FileType vue setlocal commentstring=\/\/\ %s
 
 " CSS
 augroup VimCSS3Syntax
