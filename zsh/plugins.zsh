@@ -1,5 +1,5 @@
 # Oh My Zsh
-plugins=(osx sudo)
+plugins=(osx sudo colored-man-pages)
 source $ZSH/oh-my-zsh.sh
 
 # Z
