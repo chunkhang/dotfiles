@@ -25,3 +25,4 @@ alias glances='glances --disable-bold'
 
 # Miscellaneous
 alias search='f() { grep -rnw . -e $1 };f'
+alias oracle='sqlplus SYSTEM@128.199.167.111'
