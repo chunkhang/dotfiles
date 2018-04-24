@@ -17,3 +17,6 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # Homebrew
 export HOMEBREW_BUILD_FROM_SOURCE=1
+
+# Editor
+export EDITOR='vim'
