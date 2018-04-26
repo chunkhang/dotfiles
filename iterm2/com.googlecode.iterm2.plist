@@ -560,7 +560,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>226 234 937 512 0 0 1280 800 </string>
+	<string>226 159 796 473 0 0 1280 800 </string>
 	<key>NSWindow Frame com.apple.typography_panel_ProFontForPowerline</key>
 	<string>212 474 260 46 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
@@ -1375,11 +1375,11 @@
 			<key>Normal Font</key>
 			<string>Menlo-Regular 12</string>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<integer>1</integer>
 			<key>Right Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
