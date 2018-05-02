@@ -79,7 +79,8 @@ set shortmess=I
 let g:netrw_banner=0
 let g:netrw_liststyle=3
 set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc,.pytest_cache
-set wildignore+=*.class,*/node_modules/*,*/dist/*,*/releases/*
+set wildignore+=*.class,*/node_modules/*,*/dist/*,*/releases/*,*/target/*
+set wildignore+=.g8,*/logs/*
 let s:escape = 'substitute(escape(v:val, ".$~"), "*", ".*", "g")'
 let g:netrw_list_hide=
     \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "/\\=$"'), ',')
@@ -197,7 +198,7 @@ nnoremap <leader>p "*p
 
 " Trailing whitespace
 nnoremap <leader>t /\s\+$<cr>
-nnoremap <leader>T :%s/\s\+$//e<cr>
+nnoremap <leader>T :%s/\s\+$//e<cr>:let @/=""<cr>
 
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
