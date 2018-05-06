@@ -214,6 +214,10 @@ vnoremap <leader>z zf<cr>
 nnoremap <leader>o zo<cr>
 nnoremap <leader>O zc<cr>
 
+" Select all
+nnoremap <leader>a ggVG
+vnoremap <leader>a <esc>ggVG
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
