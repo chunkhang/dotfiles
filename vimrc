@@ -128,10 +128,12 @@ let mapleader=" "
 nnoremap <leader>v :edit ~/.vimrc<cr>
 
 " Source configuration
-nnoremap <silent> <leader>r :source ~/.vimrc<cr>:echo 'Refresh'<cr>
+nnoremap <silent> <leader>r :source ~/.vimrc<cr>
+    \ :echo 'Refresh configuration'<cr>
 
 " Clear search pattern
 nmap <silent> <leader>n :let @/=""<cr>
+    \ :echo 'Clear search'<cr>
 
 " Scrolling
 nmap j gj
@@ -174,7 +176,9 @@ nnoremap <leader>e :Explore<cr>
 
 " Indent
 nnoremap < v<<esc>
+    \ :echo 'Dedent'<cr>
 nnoremap > v><esc>
+    \ :echo 'Indent'<cr>
 
 " Git
 nnoremap <leader>s :Gstatus<cr>
@@ -182,7 +186,8 @@ nnoremap <leader>c :Gcommit<cr>
 nnoremap <leader>d :Gdiff<cr>
 
 " Markdown preview
-nnoremap <leader>m :call Vim_Markdown_Preview()<cr>
+nnoremap <silent> <leader>m :call Vim_Markdown_Preview()<cr>
+    \ :echo 'Preview markdown'<cr>
 
 " Toggle syntax
 nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
@@ -190,33 +195,50 @@ nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
                   \ else <Bar>
                   \     syntax enable <Bar>
                   \ endif <cr>
+    \ :echo 'Toggle syntax'<cr>
 
 " System clipboard
-vnoremap <leader>y "*y
 nnoremap <leader>Y "*Y
+    \ :echo 'Copy to system clipboard'<cr>
+vnoremap <leader>y "*y
+    \ :echo 'Copy to system clipboard'<cr>
 nnoremap <leader>p "*p
+    \ :echo 'Paste from system clipboard'<cr>
+vnoremap <leader>p "*p
+    \ :echo 'Paste from system clipboard'<cr>
 
 " Trailing whitespace
 nnoremap <leader>t /\s\+$<cr>
+    \ :echo 'Search trailing whitespace'<cr>
 nnoremap <leader>T :%s/\s\+$//e<cr>:let @/=""<cr>
+    \ :echo 'Trim trailing whitespace'<cr>
 
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
 
 " Prettify json
 nnoremap <leader>J :%!python -m json.tool<cr>
+    \ :echo 'Prettify json'<cr>
 
 " Cursor column
 nnoremap <silent> <leader>C :setlocal cursorcolumn!<cr>
+    \ :echo 'Toggle cursor column'<cr>
 
 " Folding
 vnoremap <leader>z zf<cr>
+    \ :echo 'Create folding'<cr>
 nnoremap <leader>o zo<cr>
+    \ :echo 'Open folding'<cr>
 nnoremap <leader>O zc<cr>
+    \ :echo 'Close folding'<cr>
 
 " Select all
 nnoremap <leader>a ggVG
 vnoremap <leader>a <esc>ggVG
+
+" Toggle spell check
+nnoremap <silent> <leader>S :setlocal spell!<cr>
+    \ :echo 'Toggle spell check'<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
