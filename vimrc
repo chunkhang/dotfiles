@@ -124,12 +124,10 @@ set backspace=indent,eol,start
 " Leader key
 let mapleader=" "
 
-" Edit configuration
-nnoremap <leader>v :edit ~/.vimrc<cr>
-
-" Source configuration
-nnoremap <silent> <leader>r :source ~/.vimrc<cr>
-    \ :echo 'Refresh configuration'<cr>
+" Configuration
+nnoremap <leader>V :edit ~/.vimrc<cr>
+nnoremap <silent> <leader>v :source ~/.vimrc<cr>
+    \ :echo 'Source configuration'<cr>
 
 " Clear search pattern
 nmap <silent> <leader>n :let @/=""<cr>
@@ -239,6 +237,10 @@ vnoremap <leader>a <esc>ggVG
 " Toggle spell check
 nnoremap <silent> <leader>S :setlocal spell!<cr>
     \ :echo 'Toggle spell check'<cr>
+
+" Re-edit
+nnoremap <silent> <leader>r :e<cr>
+nnoremap <silent> <leader>R :e!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
