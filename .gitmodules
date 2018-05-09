@@ -88,3 +88,6 @@
 [submodule "vim/bundle/scss-syntax.vim"]
 	path = vim/bundle/scss-syntax.vim
 	url = https://github.com/cakebaker/scss-syntax.vim.git
+[submodule "vim/bundle/vim-scala"]
+	path = vim/bundle/vim-scala
+	url = https://github.com/derekwyatt/vim-scala.git
