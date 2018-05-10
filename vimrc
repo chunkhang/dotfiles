@@ -106,7 +106,9 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-autocmd FileType html,jinja,vue,javascript,json set softtabstop=2 shiftwidth=2
+autocmd FileType html,jinja,vue set softtabstop=2 shiftwidth=2
+autocmd FileType javascript,json set softtabstop=2 shiftwidth=2
+autocmd FileType sbt,conf set softtabstop=2 shiftwidth=2
 
 " Indent
 set autoindent
@@ -276,6 +278,7 @@ set signcolumn=yes
 let g:syntastic_python_checkers=['flake8']
 let g:syntastic_javascript_checkers=['jshint']
 let g:syntastic_html_checkers=['']
+let g:syntastic_scala_checkers=['']
 
 " Python
 let g:python_highlight_operators=0
@@ -294,6 +297,7 @@ autocmd FileType html,jinja,css,scss EmmetInstall
 " Commentary
 autocmd FileType jinja setlocal commentstring={#\ %s\ #}
 autocmd FileType vue setlocal commentstring=\/\/\ %s
+autocmd FileType sbt setlocal commentstring=\/\/\ %s
 
 " CSS
 augroup VimCSS3Syntax
