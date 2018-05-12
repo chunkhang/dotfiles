@@ -108,7 +108,7 @@ set softtabstop=4
 set shiftwidth=4
 autocmd FileType html,jinja,vue set softtabstop=2 shiftwidth=2
 autocmd FileType javascript,json set softtabstop=2 shiftwidth=2
-autocmd FileType sbt,conf set softtabstop=2 shiftwidth=2
+autocmd FileType sbt,hocon set softtabstop=2 shiftwidth=2
 
 " Indent
 set autoindent
@@ -298,6 +298,7 @@ autocmd FileType html,jinja,css,scss EmmetInstall
 autocmd FileType jinja setlocal commentstring={#\ %s\ #}
 autocmd FileType vue setlocal commentstring=\/\/\ %s
 autocmd FileType sbt setlocal commentstring=\/\/\ %s
+autocmd FileType hocon setlocal commentstring=#\ %s
 
 " CSS
 augroup VimCSS3Syntax
