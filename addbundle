@@ -1,0 +1,7 @@
+#!/usr/bin/env zsh
+
+if [ -z "$1" ]; then
+    echo "usage: addbundle <vim bundle github url>"
+else
+    git submodule add $1 vim/bundle/${${1%\.*}##*/}
+fi
