@@ -560,11 +560,11 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>222 194 796 473 0 0 1280 800 </string>
+	<string>222 216 796 473 0 0 1280 777 </string>
 	<key>NSWindow Frame com.apple.typography_panel_ProFontForPowerline</key>
 	<string>212 474 260 46 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>331 188 570 377 0 0 1280 800 </string>
+	<string>338 223 570 377 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>663 0 612 777 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_EC4BE0A6-1821-4D6F-A3A7-4E6A0A394978</key>
@@ -1481,7 +1481,7 @@
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
-	<false/>
+	<true/>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
