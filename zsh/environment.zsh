@@ -11,12 +11,12 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export SCALA_HOME=/usr/local/opt/scala/idea
 
 # Pyenv
-export CFLAGS="-I/usr/local/opt/openssl/include"
-export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CFLAGS='-I/usr/local/opt/openssl/include'
+export LDFLAGS='-L/usr/local/opt/openssl/lib'
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
-# Homebrew
-# export HOMEBREW_BUILD_FROM_SOURCE=1
+# Flask
+export FLASK_ENV='development'
 
 # Editor
 export EDITOR='vim'
