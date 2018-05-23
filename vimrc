@@ -131,9 +131,9 @@ nnoremap <leader>V :edit ~/.vimrc<cr>
 nnoremap <silent> <leader>v :source ~/.vimrc<cr>
     \ :echo 'Source configuration'<cr>
 
-" Clear search pattern
-nmap <silent> <leader>n :let @/=""<cr>
-    \ :echo 'Clear search'<cr>
+" Remove search highlighting
+nnoremap <silent> <leader>/ :noh<cr>
+    \ :echo 'Remove search highlighting'<cr>
 
 " Scrolling
 nmap j gj
@@ -243,6 +243,10 @@ nnoremap <silent> <leader>S :setlocal spell!<cr>
 " Re-edit
 nnoremap <silent> <leader>r :e<cr>
 nnoremap <silent> <leader>R :e!<cr>
+
+" New file
+nnoremap <leader>n :vnew<cr>
+    \ :echo 'New file'<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
