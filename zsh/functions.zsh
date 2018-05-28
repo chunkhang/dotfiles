@@ -198,7 +198,7 @@ function load() {
 # Change directory to home and clear terminal
 function lumby() {
     cd ~
-    clear
+    cls
 }
 
 # List aliases and functions
