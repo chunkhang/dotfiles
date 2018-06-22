@@ -1,5 +1,5 @@
-quote='Premature optimization is the root of all evil in programming.'
-author='Donald Knuth'
+quote='There are no facts, only interpretation.'
+author='Friedrich Nietzsche'
 
 echo '" '$quote' "'
 echo '- '$author
