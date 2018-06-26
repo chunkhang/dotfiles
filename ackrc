@@ -1,0 +1,12 @@
+# Always sort files
+--sort-files
+# Always color
+--color
+# Use less as pager
+--pager
+
+# Ingore directory
+--ignore-dir=target/
+
+# Define filetypes
+--type-add=css=scss

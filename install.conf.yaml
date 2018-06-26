@@ -5,6 +5,7 @@
 - clean: ['~']
 
 - link:
+    ~/.ackrc:
     ~/.dotfiles: ''
     ~/.gitconfig:
     ~/.gitignore_global:
