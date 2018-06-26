@@ -248,6 +248,13 @@ nnoremap <silent> <leader>R :e!<cr>
 nnoremap <leader>n :vnew<cr>
     \ :echo 'New file'<cr>
 
+" CtrlSF
+nmap     <C-F>f <Plug>CtrlSFPrompt
+nmap     <C-F>w <Plug>CtrlSFCwordPath
+nmap     <C-F>n <Plug>CtrlSFPwordPath
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -310,3 +317,8 @@ augroup VimCSS3Syntax
 
   autocmd FileType css silent! setlocal iskeyword+=- space-between
 augroup END
+
+" CtrlSF
+let g:ctrlsf_case_sensitive = 'yes'
+let g:ctrlsf_default_root = 'project'
+let g:ctrlsf_position = 'right'
