@@ -1,4 +1,4 @@
-quote='There are no facts, only interpretation.'
+quote='And if you gaze long into an abyss, the abyss also gazes into you.'
 author='Friedrich Nietzsche'
 
 echo '" '$quote' "'
