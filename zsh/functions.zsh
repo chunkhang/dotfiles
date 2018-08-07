@@ -189,6 +189,11 @@ function expelliarmus() {
     echo "Done quitting."
 }
 
+# Open flip calculator
+function flip() {
+    python ~/workspace/python/flipper/flipper.py
+}
+
 # List items in Downloads
 function load() {
     echo "Items in Downloads:"
