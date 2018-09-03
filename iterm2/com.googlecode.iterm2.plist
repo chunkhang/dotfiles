@@ -564,9 +564,9 @@
 	<key>NSWindow Frame com.apple.typography_panel_ProFontForPowerline</key>
 	<string>212 474 260 46 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>338 223 570 377 0 0 1280 777 </string>
+	<string>377 213 570 377 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>663 0 612 777 0 0 1280 777 </string>
+	<string>663 392 570 377 0 0 1280 777 </string>
 	<key>NeverWarnAboutShortLivedSessions_EC4BE0A6-1821-4D6F-A3A7-4E6A0A394978</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_EC4BE0A6-1821-4D6F-A3A7-4E6A0A394978_selection</key>
@@ -1482,6 +1482,8 @@
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<true/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
