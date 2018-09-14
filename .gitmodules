@@ -103,3 +103,6 @@
 [submodule "vim/bundle/vim-markdown-jekyll"]
 	path = vim/bundle/vim-markdown-jekyll
 	url = https://github.com/PProvost/vim-markdown-jekyll.git
+[submodule "vim/bundle/rename.vim"]
+	path = vim/bundle/rename.vim
+	url = https://github.com/danro/rename.vim.git
