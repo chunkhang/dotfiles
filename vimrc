@@ -256,10 +256,6 @@ nmap     <C-F>n <Plug>CtrlSFPwordPath
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
-" Print timestamp
-nnoremap <silent> <leader>D :r! date "+\%Y-\%m-\%d \%H:\%M:\%S +0800"<cr>
-    \ :echo 'Print timestamp'<cr>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
