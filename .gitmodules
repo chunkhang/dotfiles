@@ -100,3 +100,6 @@
 [submodule "vim/bundle/ctrlsf.vim"]
 	path = vim/bundle/ctrlsf.vim
 	url = https://github.com/dyng/ctrlsf.vim.git
+[submodule "vim/bundle/vim-markdown-jekyll"]
+	path = vim/bundle/vim-markdown-jekyll
+	url = https://github.com/PProvost/vim-markdown-jekyll.git
