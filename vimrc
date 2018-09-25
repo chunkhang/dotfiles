@@ -34,6 +34,9 @@ set autochdir
 " Remove auto comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Spelling language
+set spelllang=en_gb
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " User Interface
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -81,6 +84,7 @@ let g:netrw_liststyle=3
 set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc,.pytest_cache
 set wildignore+=*.class,*/node_modules/*,*/dist/*,*/releases/*,*/target/*
 set wildignore+=.g8,*/logs/*,*/phaser/*,*/_site/*,*/.sass-cache/*
+set wildignore+=*/.jekyll-cache/*
 let s:escape = 'substitute(escape(v:val, ".$~"), "*", ".*", "g")'
 let g:netrw_list_hide=
     \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "/\\=$"'), ',')
@@ -120,6 +124,9 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " Backspace
 set backspace=indent,eol,start
+
+" Wrap text
+au BufRead,BufNewFile *.md setlocal textwidth=79
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
