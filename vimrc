@@ -125,9 +125,6 @@ set listchars=tab:>.,trail:.,extends:#,nbsp:.
 " Backspace
 set backspace=indent,eol,start
 
-" Wrap text
-au BufRead,BufNewFile *.md setlocal textwidth=79
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
