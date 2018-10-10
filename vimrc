@@ -84,8 +84,8 @@ let g:netrw_liststyle=3
 set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc,.pytest_cache
 set wildignore+=*.class,*/node_modules/*,*/dist/*,*/releases/*,*/target/*
 set wildignore+=.g8,*/logs/*,*/phaser/*,*/_site/*,*/.sass-cache/*
-set wildignore+=*/.jekyll-cache/*
-let s:escape = 'substitute(escape(v:val, ".$~"), "*", ".*", "g")'
+set wildignore+=*/.jekyll-cache/*,.ctrlp
+let s:escape='substitute(escape(v:val, ".$~"), "*", ".*", "g")'
 let g:netrw_list_hide=
     \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "/\\=$"'), ',')
 
@@ -260,9 +260,6 @@ nmap     <C-F>n <Plug>CtrlSFPwordPath
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
-" CtrlP on current directory
-noremap <C-o> :CtrlP pwd<cr>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -308,6 +305,7 @@ let g:python_highlight_file_headers_as_comments=1
 
 " Ctrlp
 let g:ctrlp_show_hidden=1
+let g:ctrlp_root_markers=['.ctrlp']
 
 " Emmet
 let g:user_emmet_install_global=0
@@ -327,6 +325,6 @@ augroup VimCSS3Syntax
 augroup END
 
 " CtrlSF
-let g:ctrlsf_case_sensitive = 'yes'
-let g:ctrlsf_default_root = 'project'
-let g:ctrlsf_position = 'right'
+let g:ctrlsf_case_sensitive='yes'
+let g:ctrlsf_default_root='project'
+let g:ctrlsf_position='right'

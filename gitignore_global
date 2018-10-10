@@ -98,3 +98,6 @@ ENV/
 
 # Redis
 *.rdb
+
+# CtrlP
+.ctrlp
