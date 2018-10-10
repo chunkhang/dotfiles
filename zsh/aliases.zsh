@@ -24,5 +24,5 @@ alias gu='git pull'
 alias glances='glances --disable-bold'
 
 # Miscellaneous
-alias cls='clear && source ~/.zsh/quote.zsh'
+alias cls='clear'
 alias oracle='sqlplus SYSTEM@128.199.167.111'

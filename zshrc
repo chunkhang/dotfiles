@@ -17,6 +17,3 @@ source ~/.zsh/settings.zsh
 
 # Plugins
 source ~/.zsh/plugins.zsh
-
-# Quote
-source ~/.zsh/quote.zsh
