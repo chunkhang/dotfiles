@@ -260,6 +260,9 @@ nmap     <C-F>n <Plug>CtrlSFPwordPath
 nnoremap <C-F>t :CtrlSFToggle<CR>
 inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 
+" CtrlP on current directory
+noremap <C-o> :CtrlP pwd<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -308,7 +311,7 @@ let g:ctrlp_show_hidden=1
 
 " Emmet
 let g:user_emmet_install_global=0
-autocmd FileType html,jinja,css,scss EmmetInstall
+autocmd FileType html,jinja,css,scss,coffee EmmetInstall
 
 " Commentary
 autocmd FileType jinja setlocal commentstring={#\ %s\ #}
