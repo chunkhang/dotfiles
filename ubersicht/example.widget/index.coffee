@@ -34,7 +34,7 @@ render: (output) -> """
 # the CSS style for this widget, written using Stylus
 # (http://learnboost.github.io/stylus/)
 style: """
-  background: rgba(#fff, 0.95) url('übersicht-logo.png') no-repeat 50% 20px
+  background: rgba(#fff, 0.95) url('assets/ubersicht-logo.png') no-repeat 50% 20px
   background-size: 176px 84px
   -webkit-backdrop-filter: blur(20px)
   border-radius: 1px
