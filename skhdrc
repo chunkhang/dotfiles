@@ -1,5 +1,5 @@
 # Open applications
-cmd - return : ~/Scripts/open-iterm.zsh
+cmd - return : open /Applications/iTerm.app
 cmd + shift - return : open /Applications/Firefox.app
 cmd + ctrl - c : open /Applications/Calendar.app
 cmd + ctrl - m : open /Applications/Mail.app
