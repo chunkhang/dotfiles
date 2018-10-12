@@ -1,11 +1,11 @@
 # Open applications
 cmd - return : ~/Scripts/open-iterm.zsh
 cmd + shift - return : open /Applications/Firefox.app
-cmd + shift - c : open /Applications/Calendar.app
-cmd + shift - m : open /Applications/Mail.app
-cmd + shift - s : open /Applications/Spotify.app
-cmd + shift - t : open /Applications/Telegram.app
-cmd + shift - w : open /Applications/Whatsapp.app
+cmd + ctrl - c : open /Applications/Calendar.app
+cmd + ctrl - m : open /Applications/Mail.app
+cmd + ctrl - s : open /Applications/Spotify.app
+cmd + ctrl - t : open /Applications/Telegram.app
+cmd + ctrl - w : open /Applications/Whatsapp.app
 
 # Close focused window
 alt - w : chunkc tiling::window --close
