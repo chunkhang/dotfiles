@@ -562,13 +562,13 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>222 220 796 486 0 0 1280 800 </string>
+	<string>222 332 1018 447 0 0 1280 800 </string>
 	<key>NSWindow Frame com.apple.typography_panel_ProFontForPowerline</key>
 	<string>212 474 260 46 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>5 8 1270 783 0 0 1280 800 </string>
+	<string>5 5 1270 790 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>5 403 1270 391 0 0 1280 800 </string>
+	<string>5 6 1270 788 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>5 403 1270 391 0 0 1280 800 </string>
 	<key>NeverWarnAboutShortLivedSessions_EC4BE0A6-1821-4D6F-A3A7-4E6A0A394978</key>
@@ -1457,7 +1457,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>0</integer>
+			<integer>12</integer>
 			<key>Working Directory</key>
 			<string>/Users/marcus</string>
 		</dict>
@@ -1553,6 +1553,10 @@
 	<integer>0</integer>
 	<key>TabViewType</key>
 	<integer>0</integer>
+	<key>TerminalMargin</key>
+	<integer>15</integer>
+	<key>TerminalVMargin</key>
+	<integer>15</integer>
 	<key>UseBorder</key>
 	<false/>
 	<key>Window Arrangements</key>
