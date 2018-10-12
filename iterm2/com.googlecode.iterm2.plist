@@ -357,7 +357,7 @@
 		</dict>
 	</dict>
 	<key>Default Arrangement Name</key>
-	<string>Hidden</string>
+	<string>Arrangement 1</string>
 	<key>Default Bookmark Guid</key>
 	<string>EC4BE0A6-1821-4D6F-A3A7-4E6A0A394978</string>
 	<key>DimBackgroundWindows</key>
@@ -496,7 +496,7 @@
 	<key>HideTabNumber</key>
 	<true/>
 	<key>Hotkey</key>
-	<true/>
+	<false/>
 	<key>HotkeyChar</key>
 	<integer>32</integer>
 	<key>HotkeyCode</key>
@@ -562,13 +562,15 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>269 126 606 469 0 0 1280 777 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>222 314 1018 447 0 0 1280 800 </string>
+	<string>222 220 796 486 0 0 1280 800 </string>
 	<key>NSWindow Frame com.apple.typography_panel_ProFontForPowerline</key>
 	<string>212 474 260 46 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>378 189 570 377 0 0 1280 800 </string>
+	<string>5 8 1270 783 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>663 392 570 377 0 0 1280 777 </string>
+	<string>5 403 1270 391 0 0 1280 800 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>5 403 1270 391 0 0 1280 800 </string>
 	<key>NeverWarnAboutShortLivedSessions_EC4BE0A6-1821-4D6F-A3A7-4E6A0A394978</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_EC4BE0A6-1821-4D6F-A3A7-4E6A0A394978_selection</key>
@@ -910,6 +912,8 @@
 			<string>No</string>
 			<key>Description</key>
 			<string>Default</string>
+			<key>Disable Smcup Rmcup</key>
+			<false/>
 			<key>Disable Window Resizing</key>
 			<true/>
 			<key>Flashing Bell</key>
@@ -1479,7 +1483,7 @@
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
-	<true/>
+	<false/>
 	<key>OpenNoWindowsAtStartup</key>
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -1540,7 +1544,7 @@
 	<key>ShowBookmarkName</key>
 	<false/>
 	<key>ShowFullScreenTabBar</key>
-	<false/>
+	<true/>
 	<key>ShowPaneTitles</key>
 	<false/>
 	<key>SplitPaneDimmingAmount</key>
@@ -1552,16 +1556,13 @@
 	<key>UseBorder</key>
 	<false/>
 	<key>Window Arrangements</key>
-	<dict>
-		<key>Hidden</key>
-		<array/>
-	</dict>
+	<dict/>
 	<key>WindowNumber</key>
 	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.1.5</string>
+	<string>3.2.1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

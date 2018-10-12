@@ -4,12 +4,16 @@ refreshFrequency: false
 
 style: """
   color: #fff
+  // text-shadow: 1px 1px 2px #000
   font-family: Helvetica Neue
   font-weight: 300
   font-size: 14px
+
   top: 25px
-  left: 25px
-  background: rgba(45, 45, 45, 0.85)
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  background-color: rgba(0, 0, 0, 0.6)
   border-radius: 5px
   padding: 15px 20px
 """
@@ -27,3 +31,4 @@ update: (output, domEl) ->
 
   dom.find(".quote").html quote
   dom.find(".author").html author
+

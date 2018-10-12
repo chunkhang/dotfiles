@@ -6,12 +6,14 @@
 
 - link:
     ~/.ackrc:
+    ~/.chunkwmrc:
     ~/.dotfiles: ''
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.iterm2:
     ~/.jshintrc:
     ~/.pip:
+    ~/.skhdrc:
     ~/.tmux.conf:
     ~/.ubersicht:
     ~/.vim:

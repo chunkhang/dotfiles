@@ -99,12 +99,12 @@ function dinner() {
         case $op in
             [0]*) 
                 echo "\nSending text..."
-                osascript ~/workspace/applescript/dinner.scpt
+                ~/Scripts/dinner.zsh
                 echo "Done sending."
                 break;;
             [1]*)
                 echo "\nSending text..."
-                osascript ~/workspace/applescript/no-dinner.scpt
+                ~/Scripts/no-dinner.zsh
                 echo "Done sending."
                 break;;
             [2]*)
@@ -185,13 +185,8 @@ function eject() {
 # Quit all applications
 function expelliarmus() {
     echo "Quitting all applications..."
-    open ~/workspace/automator/quit-all.app
+    ~/Scripts/quit-all.zsh
     echo "Done quitting."
-}
-
-# Open flip calculator
-function flip() {
-    python ~/workspace/python/flipper/flipper.py
 }
 
 # List items in Downloads
