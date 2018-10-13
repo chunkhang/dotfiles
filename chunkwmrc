@@ -49,13 +49,13 @@ chunkc core::load tiling.so
 chunkc core::load ffm.so
 
 # Rules
-chunkc tiling::rule --owner \"Activity Monitor\" --state float
-chunkc tiling::rule --owner \"App Store\" --state float
+chunkc tiling::rule --owner Activity\ Monitor --state float
+chunkc tiling::rule --owner App\ Store --state float
 chunkc tiling::rule --owner Calendar --state float
 chunkc tiling::rule --owner FaceTime --state float
 chunkc tiling::rule --owner Finder --name Copy --state float
 chunkc tiling::rule --owner Finder --name Info --state float
 chunkc tiling::rule --owner Finder --name Move --state float
-chunkc tiling::rule --owner \"System Preferences\" --state float
-chunkc tiling::rule --owner \"The Unarchiver\" --state float
+chunkc tiling::rule --owner System\ Preferences --state float
+chunkc tiling::rule --owner The\ Unarchiver --state float
 chunkc tiling::rule --owner Transmission --state float

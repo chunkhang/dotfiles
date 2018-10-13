@@ -3,6 +3,7 @@
 cmd - return : open /Applications/iTerm.app
 cmd + shift - return : open /Applications/Firefox.app
 
+fn - a : open /Applications/Utilities/Activity\ Monitor.app
 fn - c : open /Applications/Calendar.app
 fn - m : open /Applications/Mail.app
 fn - s : open /Applications/Spotify.app
@@ -10,12 +11,13 @@ fn - t : open /Applications/Telegram.app
 fn - w : open /Applications/Whatsapp.app
 fn - l : \
     APPS=$(echo \
-        "l\tList all available applications" \
-        "\nc\tCalendar" \
-        "\nm\tMail" \
-        "\ns\tSpotify" \
-        "\nt\tTelegram" \
-        "\nw\tWhatsapp" \
+        "L\tList all available applications\n" \
+        "\nA\tActivity Monitor" \
+        "\nC\tCalendar" \
+        "\nM\tMail" \
+        "\nS\tSpotify" \
+        "\nT\tTelegram" \
+        "\nW\tWhatsapp" \
     ); \
     osascript -e "display dialog \"$APPS\" with title \"List of Applications\" buttons {\"Close\"} default button \"Close\""
 
@@ -28,7 +30,7 @@ fn - 3 : if ! pgrep afplay &>/dev/null; \
 fn - 9 : osascript -e 'display notification "Restarting chunkwm..." with title "Homebrew"'; brew services restart chunkwm
 fn - 0 : \
     SCRIPTS=$(echo \
-        "0\tList all available scripts" \
+        "0\tList all available scripts\n" \
         "\n1\tGet information for current desktop" \
         "\n2\tGet information for current window" \
         "\n3\tToggle rain in background" \
