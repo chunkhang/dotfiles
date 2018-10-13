@@ -25,12 +25,14 @@ fn - 2 : osascript -e "display notification \"$(chunkc tiling::query --window ta
 fn - 3 : if ! pgrep afplay &>/dev/null; \
     then osascript -e 'display notification "Rain starts falling..." with title "Rain Machine"'; afplay -q 1 ~/Music/rain.m4a &!; \
     else osascript -e 'display notification "The rain stopped." with title "Rain Machine"'; killall afplay &>/dev/null; fi
+fn - 9 : osascript -e 'display notification "Restarting chunkwm..." with title "Homebrew"'; brew services restart chunkwm
 fn - 0 : \
     SCRIPTS=$(echo \
         "0\tList all available scripts" \
         "\n1\tGet information for current desktop" \
         "\n2\tGet information for current window" \
         "\n3\tToggle rain in background" \
+        "\n9\tRestart chunkwm" \
     ); \
     osascript -e "display dialog \"$SCRIPTS\" with title \"List of Scripts\" buttons {\"Close\"} default button \"Close\""
 
@@ -83,11 +85,12 @@ ctrl + alt - k : chunkc tiling::window --use-insertion-point north
 ctrl + alt - l : chunkc tiling::window --use-insertion-point east
 ctrl + alt - x : chunkc tiling::window --use-insertion-point cancel
 
-# Change desktop layout
-
+# Manage desktop
 ctrl + alt - b : chunkc tiling::desktop --layout bsp
 ctrl + alt - m : chunkc tiling::desktop --layout monocle
 ctrl + alt - f : chunkc tiling::desktop --layout float
+ctrl + alt - 0x18 : ~/Scripts/create-desktop.zsh # 0x18 : =
+ctrl + alt - 0x1B : ~/Scripts/destroy-desktop.zsh # 0x1B : -
 
 # Send window to desktop (uses native desktop navigation)
 ctrl + alt - left : chunkc tiling::window --send-to-desktop prev; skhd --key "ctrl - left"
@@ -97,9 +100,5 @@ ctrl + alt - 2 : chunkc tiling::window --send-to-desktop 2; skhd --key "ctrl - 2
 ctrl + alt - 3 : chunkc tiling::window --send-to-desktop 3; skhd --key "ctrl - 3"
 ctrl + alt - 4 : chunkc tiling::window --send-to-desktop 4; skhd --key "ctrl - 4"
 ctrl + alt - 5 : chunkc tiling::window --send-to-desktop 5; skhd --key "ctrl - 5"
-
-# TODO: Script to create desktop
-
-# TODO: Script to destroy desktop
 
 # TODO: Fix native screenshot
