@@ -9,6 +9,10 @@ fn - s : open /Applications/Spotify.app
 fn - t : open /Applications/Telegram.app
 fn - w : open /Applications/Whatsapp.app
 
+# Run scripts
+fn - 1: osascript -e "display notification \"Desktop $(chunkc tiling::query --desktop id) - $(chunkc tiling::query --desktop mode)\" with title \"Desktop\""
+fn - 2: osascript -e "display notification \"$(chunkc tiling::query --window tag)\" with title \"Window\""
+
 # Focus window
 
 alt - h : chunkc tiling::window --focus west
@@ -64,8 +68,7 @@ ctrl + alt - b : chunkc tiling::desktop --layout bsp
 ctrl + alt - m : chunkc tiling::desktop --layout monocle
 ctrl + alt - f : chunkc tiling::desktop --layout float
 
-# Send window to desktop
-# Note: Native desktop navigation is used
+# Send window to desktop (uses native desktop navigation)
 ctrl + alt - left : chunkc tiling::window --send-to-desktop prev; skhd --key "ctrl - left"
 ctrl + alt - right : chunkc tiling::window --send-to-desktop next; skhd --key "ctrl - right"
 ctrl + alt - 1 : chunkc tiling::window --send-to-desktop 1; skhd --key "ctrl - 1"
