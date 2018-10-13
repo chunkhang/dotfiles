@@ -161,6 +161,7 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
+" Fix <C-j>: https://stackoverflow.com/a/31502538
 augroup vimrc
     au!
     au VimEnter * unmap <C-j>
