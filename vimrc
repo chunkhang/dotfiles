@@ -161,6 +161,11 @@ nnoremap <C-h> <C-W>h
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
+augroup vimrc
+    au!
+    au VimEnter * unmap <C-j>
+    au VimEnter * noremap <C-j> <C-w>j
+augroup END
 
 " Split
 nnoremap <leader><right> :vs<cr>
