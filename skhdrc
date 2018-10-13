@@ -8,10 +8,27 @@ fn - m : open /Applications/Mail.app
 fn - s : open /Applications/Spotify.app
 fn - t : open /Applications/Telegram.app
 fn - w : open /Applications/Whatsapp.app
+fn - l : \
+    APPS=$(echo \
+        "l\tList all available applications" \
+        "\nc\tCalendar" \
+        "\nm\tMail" \
+        "\ns\tSpotify" \
+        "\nt\tTelegram" \
+        "\nw\tWhatsapp" \
+    ); \
+    osascript -e "display dialog \"$APPS\" with title \"List of Applications\" buttons {\"Close\"} default button \"Close\""
 
 # Run scripts
-fn - 1: osascript -e "display notification \"Desktop $(chunkc tiling::query --desktop id) - $(chunkc tiling::query --desktop mode)\" with title \"Desktop\""
-fn - 2: osascript -e "display notification \"$(chunkc tiling::query --window tag)\" with title \"Window\""
+fn - 1 : osascript -e "display notification \"Desktop $(chunkc tiling::query --desktop id) - $(chunkc tiling::query --desktop mode)\" with title \"Desktop\""
+fn - 2 : osascript -e "display notification \"$(chunkc tiling::query --window tag)\" with title \"Window\""
+fn - 0 : \
+    SCRIPTS=$(echo \
+        "0\tList all available scripts" \
+        "\n1\tGet information for current desktop" \
+        "\n2\tGet information for current window" \
+    ); \
+    osascript -e "display dialog \"$SCRIPTS\" with title \"List of Scripts\" buttons {\"Close\"} default button \"Close\""
 
 # Focus window
 
