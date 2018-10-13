@@ -22,11 +22,15 @@ fn - l : \
 # Run scripts
 fn - 1 : osascript -e "display notification \"Desktop $(chunkc tiling::query --desktop id) - $(chunkc tiling::query --desktop mode)\" with title \"Desktop\""
 fn - 2 : osascript -e "display notification \"$(chunkc tiling::query --window tag)\" with title \"Window\""
+fn - 3 : if ! pgrep afplay &>/dev/null; \
+    then osascript -e 'display notification "Rain starts falling..." with title "Rain Machine"'; afplay -q 1 ~/Music/rain.m4a &!; \
+    else osascript -e 'display notification "The rain stopped." with title "Rain Machine"'; killall afplay &>/dev/null; fi
 fn - 0 : \
     SCRIPTS=$(echo \
         "0\tList all available scripts" \
         "\n1\tGet information for current desktop" \
         "\n2\tGet information for current window" \
+        "\n3\tToggle rain in background" \
     ); \
     osascript -e "display dialog \"$SCRIPTS\" with title \"List of Scripts\" buttons {\"Close\"} default button \"Close\""
 

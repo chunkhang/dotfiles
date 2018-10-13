@@ -1,9 +1,3 @@
-# Show battery percentage
-function battery() {
-    echo "Battery:"
-    pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';'
-}
-
 # Perform operations on Bluetooth
 function blue() {
     echo "Bluetooth"
@@ -16,7 +10,7 @@ function blue() {
         echo "[2] Exit"
         read "op?Operation: "
         case $op in
-            [0]*) 
+            [0]*)
                 echo "\nTurning on Bluetooth"
                 blueutil on
                 echo "Bluetooth enabled."
@@ -28,23 +22,10 @@ function blue() {
                 break;;
             [2]*)
                 break;;
-            *) 
+            *)
                 echo "Invalid operation code.";;
         esac
-    done  
-}
-
-# List all Homebrew formulae with respective dependencies
-function brewery() {
-    echo "Homebrew Formulae with Dependecies:"
-    brew list | while read cask; do echo -n $fg[blue] $cask $fg[white]; \
-        brew deps $cask | awk '{printf(" %s ", $0)}'; echo ""; done
-}
-
-# List items in Trash
-function can() {
-    echo "Items in Trash:"
-    trash -l -v | sed "s|$HOME/.Trash/|* |"
+    done
 }
 
 # Open captive network portal
@@ -52,38 +33,6 @@ function captive() {
     echo "Opening Captive Network Portal..."
     open http://captive.apple.com/
     echo "Done opening."
-}
-
-# Toggle chime sound for charging
-function chime() {
-    if [ "$(defaults read com.apple.PowerChime ChimeOnAllHardware -b)" -eq 0 ]
-    then
-        echo "Enabling chime sound for charging..."
-        defaults write com.apple.PowerChime ChimeOnAllHardware -b true
-        open /System/Library/CoreServices/PowerChime.app
-        echo "Chime enabled."
-    else
-        echo "Disabling chime sound for charging..."
-        defaults write com.apple.PowerChime ChimeOnAllHardware -b false
-        killall PowerChime
-        echo "Chime disabled."
-    fi
-}
-
-# Open configuration files
-function config() {
-    echo "Opening configuration files..."
-    vim ~/.dotfiles
-    echo "Done opening."
-}
-
-# Show item count in current directory
-function count() {
-    if [ "$(ls -l | xargs)" ]; then
-        echo $(ls -1 | wc -l | xargs) items
-    else
-        echo "No item."
-    fi
 }
 
 # Send text message to Mother regarding dinner
@@ -97,7 +46,7 @@ function dinner() {
         echo "[2] Exit"
         read "op?Operation: "
         case $op in
-            [0]*) 
+            [0]*)
                 echo "\nSending text..."
                 ~/Scripts/dinner.zsh
                 echo "Done sending."
@@ -109,7 +58,7 @@ function dinner() {
                 break;;
             [2]*)
                 break;;
-            *) 
+            *)
                 echo "Invalid operation code.";;
         esac
     done
@@ -163,17 +112,6 @@ function douse() {
     echo "Display turned on."
 }
 
-# Empty Trash
-function dump() {
-    if [ "$(ls -A ~/.Trash)" ]; then
-        echo "Emptying trash..."
-        osascript -e 'tell app "Finder" to empty'
-        echo "Done emptying."
-    else
-        echo "Trash is already empty."
-    fi 
-}
-
 # Eject all mountable volumes
 function eject() {
     echo "Ejecting all mountable volumes..."
@@ -219,19 +157,13 @@ function magic() {
         printf "* "
         printf "${array_1[i+1]}"
         printf "\t"
-        if [ "$(echo -n \"${array_1[i+1]}\" | wc -m)" -lt 8 ]; then 
+        if [ "$(echo -n \"${array_1[i+1]}\" | wc -m)" -lt 8 ]; then
             printf "\t"
         fi
         printf ": "
         printf "${array_2[i+1]}"
         printf "\n"
     done
-}
-
-# Start playing rain audio file
-function rain() {
-    echo "Start raining..."
-    afplay -q 1 ~/Music/rain.m4a &!
 }
 
 # Execute shell configuration
@@ -262,26 +194,6 @@ function seal() {
     fi
 }
 
-# Stop playing rain audio file
-function sun() {
-    echo "Stop raining..."
-    killall afplay &>/dev/null
-}
-
-# Toggle desktop icons
-function table() {
-    if [ "$(defaults read com.apple.finder CreateDesktop -b)" -eq 0 ]; then
-        echo "Showing desktop icons..."
-        defaults write com.apple.finder CreateDesktop -b true
-        echo "Done showing."
-    else
-        echo "Hiding desktop icons..."
-        defaults write com.apple.finder CreateDesktop -b false
-        echo "Done hiding."
-    fi
-    killall Finder
-}
-
 # Move all items from Downloads to Desktop
 function transfer() {
     if [ "$(ls -l ~/Downloads)" ]; then
@@ -290,7 +202,7 @@ function transfer() {
         echo "Done moving."
     else
         echo "Nothing to move."
-    fi 
+    fi
 }
 
 # Trash all items in Downloads
@@ -304,7 +216,7 @@ function unload() {
     fi
 }
 
-# Perform operations on Wi-Fi 
+# Perform operations on Wi-Fi
 function wifi() {
     echo "Wi-Fi"
     echo "-----"
@@ -316,7 +228,7 @@ function wifi() {
         echo "[2] Exit"
         read "op?Operation: "
         case $op in
-            [0]*) 
+            [0]*)
                 echo "\nTurning on Wi-Fi..."
                 networksetup -setairportpower en0 on
                 echo "Wi-Fi enabled."
@@ -328,19 +240,8 @@ function wifi() {
                 break;;
             [2]*)
                 break;;
-            *) 
+            *)
                 echo "Invalid operation code.";;
         esac
-    done  
-}
-
-# Trash all items in Desktop
-function wipe() {
-    if [ "$(ls -l ~/Desktop)" ]; then
-        echo "Trashing all items in Desktop..."
-        trash -v ~/Desktop/* | sed "s|$HOME/Desktop/|* |"
-        echo "Done trashing."
-    else
-        echo "Desktop is already empty."
-    fi
+    done
 }
