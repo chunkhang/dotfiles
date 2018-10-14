@@ -22,8 +22,9 @@ fn - l : \
     osascript -e "display dialog \"$APPS\" with title \"List of Applications\" buttons {\"Close\"} default button \"Close\""
 
 # Run scripts
+
 fn - 1 : osascript -e "display notification \"Desktop $(chunkc tiling::query --desktop id) - $(chunkc tiling::query --desktop mode)\" with title \"Desktop\""
-fn - 2 : osascript -e "display notification \"$(chunkc tiling::query --window tag)\" with title \"Window\""
+fn - 2 : osascript -e "display notification \"$(chunkc tiling::query --window tag) : $(chunkc tiling::query --window float)\" with title \"Window\""
 fn - 3 : if ! pgrep afplay &>/dev/null; \
     then osascript -e 'display notification "Rain starts falling..." with title "Rain Machine"'; afplay -q 1 ~/Music/rain.m4a &!; \
     else osascript -e 'display notification "The rain stopped." with title "Rain Machine"'; killall afplay &>/dev/null; fi
