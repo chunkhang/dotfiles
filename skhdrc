@@ -1,7 +1,7 @@
 # Open applications
 
-cmd - return : open /Applications/iTerm.app
-cmd + shift - return : open /Applications/Firefox.app
+alt - return : open /Applications/iTerm.app
+shift + alt - return : open /Applications/Firefox.app
 
 fn - a : open /Applications/Utilities/Activity\ Monitor.app
 fn - c : open /Applications/Calendar.app
