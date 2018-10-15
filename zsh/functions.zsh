@@ -48,12 +48,12 @@ function dinner() {
         case $op in
             [0]*)
                 echo "\nSending text..."
-                ~/Scripts/dinner.zsh
+                ~/Scripts/misc/dinner.zsh
                 echo "Done sending."
                 break;;
             [1]*)
                 echo "\nSending text..."
-                ~/Scripts/no-dinner.zsh
+                ~/Scripts/misc/no-dinner.zsh
                 echo "Done sending."
                 break;;
             [2]*)
@@ -123,7 +123,7 @@ function eject() {
 # Quit all applications
 function expelliarmus() {
     echo "Quitting all applications..."
-    ~/Scripts/quit-all.zsh
+    ~/Scripts/misc/quit-all.zsh
     echo "Done quitting."
 }
 
