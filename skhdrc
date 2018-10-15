@@ -9,35 +9,27 @@ fn - m : open /Applications/Mail.app
 fn - s : open /Applications/Spotify.app
 fn - t : open /Applications/Telegram.app
 fn - w : open /Applications/Whatsapp.app
-fn - l : \
-    APPS=$(echo \
-        "L\tList all available applications\n" \
-        "\nA\tActivity Monitor" \
-        "\nC\tCalendar" \
-        "\nM\tMail" \
-        "\nS\tSpotify" \
-        "\nT\tTelegram" \
-        "\nW\tWhatsapp" \
-    ); \
-    osascript -e "display dialog \"$APPS\" with title \"List of Applications\" buttons {\"Close\"} default button \"Close\""
+fn - l : ~/Scripts/skhd/list.zsh \
+    "L - List all available applications\n" \
+    "A - Activity Monitor" \
+    "C - Calendar" \
+    "M - Mail" \
+    "S - Spotify" \
+    "T - Telegram" \
+    "W - Whatsapp"
 
 # Run scripts
 
-fn - 1 : osascript -e "display notification \"Desktop $(chunkc tiling::query --desktop id) - $(chunkc tiling::query --desktop mode)\" with title \"Desktop\""
-fn - 2 : osascript -e "display notification \"$(chunkc tiling::query --window tag) : $(chunkc tiling::query --window float)\" with title \"Window\""
-fn - 3 : if ! pgrep afplay &>/dev/null; \
-    then osascript -e 'display notification "Rain starts falling..." with title "Rain Machine"'; afplay -q 1 ~/Music/rain.m4a &!; \
-    else osascript -e 'display notification "The rain stopped." with title "Rain Machine"'; killall afplay &>/dev/null; fi
-fn - 9 : osascript -e 'display notification "Restarting chunkwm..." with title "Homebrew"'; brew services restart chunkwm
-fn - 0 : \
-    SCRIPTS=$(echo \
-        "0\tList all available scripts\n" \
-        "\n1\tGet information for current desktop" \
-        "\n2\tGet information for current window" \
-        "\n3\tToggle rain in background" \
-        "\n9\tRestart chunkwm" \
-    ); \
-    osascript -e "display dialog \"$SCRIPTS\" with title \"List of Scripts\" buttons {\"Close\"} default button \"Close\""
+fn - 1 : ~/Scripts/chunkwm/desktop/info.zsh
+fn - 2 : ~/Scripts/chunkwm/window/info.zsh
+fn - 3 : ~/Scripts/music/rain.zsh
+fn - 9 : ~/Scripts/chunkwm/restart.zsh
+fn - 0 : ~/Scripts/skhd/list.zsh \
+    "0 - List all available scripts\n" \
+    "1 - Get information for current desktop" \
+    "2 - Get information for current window" \
+    "3 - Toggle rain in background" \
+    "9 - Restart chunkwm"
 
 # Focus window
 
@@ -67,17 +59,17 @@ alt - x : chunkc tiling::desktop --mirror horizontal
 
 # Resize window
 
-shift + alt - y : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
-shift + alt - u : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
-shift + alt - i : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
-shift + alt - o : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
+shift + alt - a : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge west
+shift + alt - s : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge south
+shift + alt - w : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge north
+shift + alt - d : chunkc tiling::window --use-temporary-ratio 0.1 --adjust-window-edge east
 
 shift + alt - f : chunkc tiling::window --toggle fullscreen
 
-shift + cmd - o : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
-shift + cmd - i : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
-shift + cmd - u : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
-shift + cmd - y : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
+shift + cmd - d : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge west
+shift + cmd - w : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge south
+shift + cmd - s : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge north
+shift + cmd - a : chunkc tiling::window --use-temporary-ratio -0.1 --adjust-window-edge east
 
 shift + cmd - 0 : chunkc tiling::desktop --equalize
 
@@ -92,8 +84,8 @@ ctrl + alt - x : chunkc tiling::window --use-insertion-point cancel
 ctrl + alt - b : chunkc tiling::desktop --layout bsp
 ctrl + alt - m : chunkc tiling::desktop --layout monocle
 ctrl + alt - f : chunkc tiling::desktop --layout float
-ctrl + alt - 0x18 : ~/Scripts/create-desktop.zsh # 0x18 : =
-ctrl + alt - 0x1B : ~/Scripts/destroy-desktop.zsh # 0x1B : -
+ctrl + alt - 0x18 : ~/Scripts/chunkwm/desktop/create.zsh # =
+ctrl + alt - 0x1B : ~/Scripts/chunkwm/desktop/destroy.zsh # -
 
 # Send window to desktop (uses native desktop navigation)
 ctrl + alt - left : chunkc tiling::window --send-to-desktop prev; skhd --key "ctrl - left"
@@ -103,5 +95,3 @@ ctrl + alt - 2 : chunkc tiling::window --send-to-desktop 2; skhd --key "ctrl - 2
 ctrl + alt - 3 : chunkc tiling::window --send-to-desktop 3; skhd --key "ctrl - 3"
 ctrl + alt - 4 : chunkc tiling::window --send-to-desktop 4; skhd --key "ctrl - 4"
 ctrl + alt - 5 : chunkc tiling::window --send-to-desktop 5; skhd --key "ctrl - 5"
-
-# TODO: Fix native screenshot
