@@ -85,18 +85,25 @@ ctrl + alt - x : chunkc tiling::window --use-insertion-point cancel
 
 # Manage desktop
 
-shift + cmd - b : chunkc tiling::desktop --layout bsp
-shift + cmd - m : chunkc tiling::desktop --layout monocle
+shift + ctrl - m: ~/Scripts/chunkwm/desktop/mode.zsh
 
-shift + cmd - 0x18 : ~/Scripts/chunkwm/desktop/create.zsh # =
-shift + cmd - 0x1B : ~/Scripts/chunkwm/desktop/destroy.zsh # -
+shift + ctrl - 0x18 : ~/Scripts/chunkwm/desktop/create.zsh # =
+shift + ctrl - 0x1B : ~/Scripts/chunkwm/desktop/destroy.zsh # -
 
-# Send window to desktop (uses native desktop navigation)
+# Send window to desktop
 
-shift + cmd - left : chunkc tiling::window --send-to-desktop prev; skhd --key "ctrl - left"
-shift + cmd - right : chunkc tiling::window --send-to-desktop next; skhd --key "ctrl - right"
-shift + cmd - 1 : chunkc tiling::window --send-to-desktop 1; skhd --key "ctrl - 1"
-shift + cmd - 2 : chunkc tiling::window --send-to-desktop 2; skhd --key "ctrl - 2"
-shift + cmd - 3 : chunkc tiling::window --send-to-desktop 3; skhd --key "ctrl - 3"
-shift + cmd - 4 : chunkc tiling::window --send-to-desktop 4; skhd --key "ctrl - 4"
-shift + cmd - 5 : chunkc tiling::window --send-to-desktop 5; skhd --key "ctrl - 5"
+shift + ctrl - left : ~/Scripts/chunkwm/desktop/send.zsh left
+shift + ctrl - right : ~/Scripts/chunkwm/desktop/send.zsh right
+shift + ctrl - 1 : ~/Scripts/chunkwm/desktop/send.zsh 1
+shift + ctrl - 2 : ~/Scripts/chunkwm/desktop/send.zsh 2
+shift + ctrl - 3 : ~/Scripts/chunkwm/desktop/send.zsh 3
+shift + ctrl - 4 : ~/Scripts/chunkwm/desktop/send.zsh 4
+shift + ctrl - 5 : ~/Scripts/chunkwm/desktop/send.zsh 5
+
+###############################################################################
+# Miscellaneous
+##############################################################################
+
+# Fix window screenshot
+
+cmd + shift - 4 -> : chunkc border::clear
