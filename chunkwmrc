@@ -51,6 +51,7 @@ chunkc core::load tiling.so
 chunkc core::load ffm.so
 
 # Rules
+chunkc tiling::rule --owner Accessibility\ Inspector --state float
 chunkc tiling::rule --owner Activity\ Monitor --state float
 chunkc tiling::rule --owner App\ Store --state float
 chunkc tiling::rule --owner Calendar --state float
