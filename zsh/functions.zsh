@@ -127,11 +127,6 @@ function expelliarmus() {
     echo "Done quitting."
 }
 
-# List items in Downloads
-function load() {
-    echo "Items in Downloads:"
-    ls ~/Downloads | sed 's/^/* /'
-}
 
 # Change directory to home and clear terminal
 function lumby() {
@@ -191,28 +186,6 @@ function seal() {
         echo "Done enabling."
     else
         echo "Gatekeeper already enabled."
-    fi
-}
-
-# Move all items from Downloads to Desktop
-function transfer() {
-    if [ "$(ls -l ~/Downloads)" ]; then
-        echo "Moving items from Downloads to Desktop..."
-        mv ~/Downloads/* ~/Desktop/
-        echo "Done moving."
-    else
-        echo "Nothing to move."
-    fi
-}
-
-# Trash all items in Downloads
-function unload() {
-    if [ "$(ls -l ~/Downloads)" ]; then
-        echo "Trashing all items in Downloads..."
-        trash -v ~/Downloads/* | sed "s|$HOME/Downloads/|* |"
-        echo "Done trashing."
-    else
-        echo "Downloads is already empty."
     fi
 }
 
