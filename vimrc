@@ -76,7 +76,10 @@ set splitbelow
 set splitright
 
 " Disable introduction
-set shortmess=I
+set shortmess+=I
+
+" Truncate message to avoid hit enter
+set shortmess+=T
 
 " Explorer
 let g:netrw_banner=0
