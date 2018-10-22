@@ -17,5 +17,9 @@
         "no-unused-vars": 0,
         "camelcase": 0,
         "no-underscore-dangle": 0
-    }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ]
 }
