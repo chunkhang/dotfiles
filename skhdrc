@@ -5,11 +5,11 @@
 # Open applications / directories
 
 alt - return : open /Applications/iTerm.app
-shift + alt - return : open /Applications/Firefox.app
 
 fn - a : open /Applications/Utilities/Activity\ Monitor.app
 fn - c : open /Applications/Calendar.app
 fn - d : open ~/Downloads
+fn - f : open /Applications/Firefox.app
 fn - h : open ~
 fn - m : open /Applications/Mail.app
 fn - s : open /Applications/Spotify.app
@@ -20,6 +20,7 @@ fn - l : ~/Scripts/skhd/list.zsh \
     "A - Activity Monitor" \
     "C - Calendar" \
     "D - Downloads" \
+    "F - Firefox" \
     "H - Home" \
     "M - Mail" \
     "S - Spotify" \
@@ -31,12 +32,14 @@ fn - l : ~/Scripts/skhd/list.zsh \
 fn - 1 : ~/Scripts/chunkwm/desktop/info.zsh
 fn - 2 : ~/Scripts/chunkwm/window/info.zsh
 fn - 3 : ~/Scripts/music/rain.zsh
+fn - 8 : ~/Scripts/ubersicht/refresh.zsh
 fn - 9 : ~/Scripts/chunkwm/restart.zsh
 fn - 0 : ~/Scripts/skhd/list.zsh \
     "0 - List all available scripts\n" \
     "1 - Get information for current desktop" \
     "2 - Get information for current window" \
     "3 - Toggle rain in background" \
+    "8 - Refresh Ubersicht" \
     "9 - Restart chunkwm"
 
 ###############################################################################
@@ -107,3 +110,7 @@ shift + ctrl - 5 : ~/Scripts/chunkwm/desktop/send.zsh 5
 # Fix window screenshot
 
 cmd + shift - 4 -> : chunkc border::clear
+
+# Toggle window floating
+
+shift + alt - f : chunkc tiling::window --toggle float

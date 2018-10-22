@@ -25,9 +25,6 @@ set autoread
 set timeoutlen=1000
 set ttimeoutlen=0
 
-" Autosave
-autocmd FocusLost * :wa
-
 " Current working directory
 set autochdir
 
@@ -299,12 +296,6 @@ let g:lightline={
 set updatetime=250
 set signcolumn=yes
 
-" Syntastic
-let g:syntastic_python_checkers=['flake8']
-let g:syntastic_javascript_checkers=['jshint']
-let g:syntastic_html_checkers=['']
-let g:syntastic_scala_checkers=['']
-
 " Python
 let g:python_highlight_operators=0
 let g:python_highlight_indent_errors=0
@@ -318,7 +309,7 @@ let g:ctrlp_root_markers=['.ctrlp']
 
 " Emmet
 let g:user_emmet_install_global=0
-autocmd FileType html,jinja,css,scss,coffee EmmetInstall
+autocmd FileType html,jinja,css,scss,coffee,javascript EmmetInstall
 
 " Commentary
 autocmd FileType jinja setlocal commentstring={#\ %s\ #}

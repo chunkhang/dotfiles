@@ -8,9 +8,9 @@
     ~/.ackrc:
     ~/.chunkwmrc:
     ~/.dotfiles: ''
+    ~/.eslintrc:
     ~/.gitconfig:
     ~/.gitignore_global:
-    ~/.iterm2:
     ~/.jshintrc:
     ~/.pip:
     ~/.skhdrc:
