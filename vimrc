@@ -154,7 +154,8 @@ nnoremap <silent> <leader>q :BD<cr>
 nnoremap <silent> <leader>Q :q<cr>
 
 " Write buffer
-nnoremap <leader>w :write<cr>
+nnoremap <leader>w :w<cr>
+nnoremap <leader>W :wa<cr>
 
 " Switch windows
 nnoremap <C-h> <C-W>h
