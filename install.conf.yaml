@@ -8,7 +8,7 @@
     ~/.ackrc:
     ~/.chunkwmrc:
     ~/.dotfiles: ''
-    ~/.eslintrc:
+    ~/.eslintrc.json:
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.jshintrc:
