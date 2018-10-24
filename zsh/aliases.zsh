@@ -17,8 +17,13 @@ alias gl='git log --oneline --decorate --color --graph --all'
 alias gm='f() { git merge $@ };f'
 alias go='git open'
 alias gp='git push'
+alias gr='git remote'
 alias gs='git status'
 alias gu='git pull'
+
+# pnpm
+alias pnl='pnpm list --depth=0'
+alias pnlg='pnpm list --depth=0 -g'
 
 # Glances
 alias glances='glances --disable-bold'
