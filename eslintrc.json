@@ -16,6 +16,7 @@
     "max-len": ["warn", {"code": 80}],
     "quotes": ["error", "single", { "allowTemplateLiterals": true }],
     "no-var": "warn",
-    "prefer-const": "warn"
+    "prefer-const": "warn",
+    "semi": ["error", "always"]
   }
 }
