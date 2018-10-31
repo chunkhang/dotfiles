@@ -3,6 +3,9 @@ if [ -f ~/.zshrc_local ]; then
     source ~/.zshrc_local
 fi
 
+# Completion
+fpath=(~/.zsh/completion $fpath)
+
 # Environment
 source ~/.zsh/environment.zsh
 
