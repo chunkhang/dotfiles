@@ -11,7 +11,7 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export SCALA_HOME=/usr/local/opt/scala/idea
 
 # Go
-export GOPATH=~/.go
+export GOPATH=~/Workspace/go
 export GOROOT="/usr/local/opt/go/libexec"
 export PATH="${GOPATH}/bin:${GOROOT}/bin:${PATH}"
 
