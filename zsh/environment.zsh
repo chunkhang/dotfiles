@@ -10,6 +10,11 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Scala
 export SCALA_HOME=/usr/local/opt/scala/idea
 
+# Go
+export GOPATH=~/.go
+export GOROOT="/usr/local/opt/go/libexec"
+export PATH="${GOPATH}/bin:${GOROOT}/bin:${PATH}"
+
 # Pyenv
 export CFLAGS='-I/usr/local/opt/openssl/include'
 export LDFLAGS='-L/usr/local/opt/openssl/lib'
