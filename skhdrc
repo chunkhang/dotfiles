@@ -11,6 +11,7 @@ fn - c : open /Applications/Calendar.app
 fn - d : open ~/Downloads
 fn - f : open /Applications/Firefox.app
 fn - h : open ~
+fn - k : open /Applications/Slack.app
 fn - m : open /Applications/Mail.app
 fn - s : open /Applications/Spotify.app
 fn - t : open /Applications/Telegram.app
@@ -22,6 +23,7 @@ fn - l : ~/Scripts/skhd/list.zsh \
     "D - Downloads" \
     "F - Firefox" \
     "H - Home" \
+    "K - Slack" \
     "M - Mail" \
     "S - Spotify" \
     "T - Telegram" \
