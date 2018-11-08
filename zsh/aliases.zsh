@@ -28,9 +28,6 @@ alias pnlg='pnpm list --depth=0 -g'
 # Glances
 alias glances='glances --disable-bold'
 
-# tmux
-alias tmuxcc='f() { tmux -CC $@ };f'
-
 # Miscellaneous
 alias cls='clear'
 alias lgrep='f() { l | grep $@ };f'
