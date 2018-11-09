@@ -7,7 +7,7 @@
 - link:
     ~/.ackrc:
     ~/.chunkwmrc:
-    ~/.ctags:
+    ~/.ctags.d:
     ~/.dotfiles: ''
     ~/.eslintrc.json:
     ~/.gitconfig:
