@@ -104,3 +104,6 @@ ENV/
 
 # Node.js
 node_modules/
+
+# ctags
+tags
