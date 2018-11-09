@@ -84,7 +84,7 @@ let g:netrw_liststyle=3
 set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc,.pytest_cache
 set wildignore+=*.class,*/node_modules/*,*/dist/*,*/releases/*,*/target/*
 set wildignore+=.g8,*/logs/*,*/phaser/*,*/_site/*,*/.sass-cache/*
-set wildignore+=*/.jekyll-cache/*,.ctrlp,tags
+set wildignore+=*/.jekyll-cache/*,.ctrlp,.tags
 let s:escape='substitute(escape(v:val, ".$~"), "*", ".*", "g")'
 let g:netrw_list_hide=
     \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "/\\=$"'), ',')
@@ -286,10 +286,14 @@ let g:lightline={
       \ 'colorscheme': 'wombat',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ]
+      \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'gutentags', 'filetype' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
+      \   'gitbranch': 'fugitive#head',
+      \   'gutentags': 'gutentags#statusline'
       \ },
       \ }
 
@@ -342,3 +346,6 @@ let g:ale_javascript_eslint_executable='npx eslint'
 
 " Local vimrc
 let g:localvimrc_persistent=1
+
+" Gutentags
+let g:gutentags_ctags_tagfile = '.tags'

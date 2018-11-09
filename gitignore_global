@@ -106,4 +106,4 @@ ENV/
 node_modules/
 
 # ctags
-tags
+.tags
