@@ -339,3 +339,6 @@ let g:ale_linters = {
     \ 'javascript': ['eslint']
     \ }
 let g:ale_javascript_eslint_executable='npx eslint'
+
+" Local vimrc
+let g:localvimrc_persistent=1
