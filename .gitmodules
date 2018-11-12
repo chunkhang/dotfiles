@@ -118,3 +118,6 @@
 [submodule "vim/bundle/vim-gutentags"]
 	path = vim/bundle/vim-gutentags
 	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "vim/bundle/vim-signature"]
+	path = vim/bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature.git

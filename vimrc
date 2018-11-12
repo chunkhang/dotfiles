@@ -339,7 +339,7 @@ let g:ale_sign_error='●'
 let g:ale_sign_warning='.'
 let g:ale_lint_on_enter=0
 let g:ale_lint_on_text_changed='never'
-let g:ale_linters = {
+let g:ale_linters={
     \ 'javascript': ['eslint']
     \ }
 let g:ale_javascript_eslint_executable='npx eslint'
@@ -348,4 +348,7 @@ let g:ale_javascript_eslint_executable='npx eslint'
 let g:localvimrc_persistent=1
 
 " Gutentags
-let g:gutentags_ctags_tagfile = '.tags'
+let g:gutentags_ctags_tagfile='.tags'
+
+" Signature
+highlight SignatureMarkText guifg=#f2777a
