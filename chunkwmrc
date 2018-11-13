@@ -63,6 +63,7 @@ chunkc tiling::rule --owner Font\ Book --state float
 chunkc tiling::rule --owner jagexappletview --state float
 chunkc tiling::rule --owner Mail --state float
 chunkc tiling::rule --owner Postgres --state float
+chunkc tiling::rule --owner Swipes --state float
 chunkc tiling::rule --owner System\ Preferences --state float
 chunkc tiling::rule --owner The\ Unarchiver --state float
 chunkc tiling::rule --owner Transmission --state float
