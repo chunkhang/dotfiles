@@ -301,9 +301,9 @@ let g:lightline.component_type={
       \ 'linter_warnings': 'warning',
       \ 'linter_errors': 'error'
       \ }
-let g:lightline#ale#indicator_checking=''
-let g:lightline#ale#indicator_warnings=' '
-let g:lightline#ale#indicator_errors=' '
+let g:lightline#ale#indicator_checking = "\uf110 "
+let g:lightline#ale#indicator_warnings = "\uf071 "
+let g:lightline#ale#indicator_errors = "\uf05e "
 let g:lightline.active={
       \ 'left': [ [ 'mode', 'paste' ],
       \           [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
