@@ -121,3 +121,6 @@
 [submodule "vim/bundle/vim-signature"]
 	path = vim/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
+[submodule "vim/bundle/lightline-ale"]
+	path = vim/bundle/lightline-ale
+	url = https://github.com/maximbaz/lightline-ale.git

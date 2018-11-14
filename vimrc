@@ -286,19 +286,28 @@ let vim_markdown_preview_hotkey=''
 " Lightline
 set laststatus=2
 set noshowmode
-let g:lightline={
-      \ 'colorscheme': 'wombat',
-      \ 'active': {
-      \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'gutentags', 'filetype' ] ]
-      \ },
-      \ 'component_function': {
+let g:lightline={}
+let g:lightline.colorscheme='wombat'
+let g:lightline.component_function={
       \   'gitbranch': 'fugitive#head',
       \   'gutentags': 'gutentags#statusline'
-      \ },
+      \ }
+let g:lightline.component_expand={
+      \ 'linter_checking': 'lightline#ale#checking',
+      \ 'linter_warnings': 'lightline#ale#warnings',
+      \ 'linter_errors': 'lightline#ale#errors'
+      \ }
+let g:lightline.component_type={
+      \ 'linter_checking': 'left',
+      \ 'linter_warnings': 'warning',
+      \ 'linter_errors': 'error'
+      \ }
+let g:lightline.active={
+      \ 'left': [ [ 'mode', 'paste' ],
+      \           [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
+      \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings'],
+      \            [ 'lineinfo' ],
+      \            [ 'gutentags', 'filetype', 'percent' ] ]
       \ }
 
 " Git gutter
