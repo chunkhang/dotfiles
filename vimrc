@@ -289,8 +289,7 @@ set noshowmode
 let g:lightline={}
 let g:lightline.colorscheme='wombat'
 let g:lightline.component_function={
-      \   'gitbranch': 'fugitive#head',
-      \   'gutentags': 'gutentags#statusline'
+      \   'gitbranch': 'fugitive#head'
       \ }
 let g:lightline.component_expand={
       \ 'linter_checking': 'lightline#ale#checking',
@@ -302,6 +301,9 @@ let g:lightline.component_type={
       \ 'linter_warnings': 'warning',
       \ 'linter_errors': 'error'
       \ }
+let g:lightline#ale#indicator_checking=''
+let g:lightline#ale#indicator_warnings=' '
+let g:lightline#ale#indicator_errors=' '
 let g:lightline.active={
       \ 'left': [ [ 'mode', 'paste' ],
       \           [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
