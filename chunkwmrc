@@ -58,6 +58,7 @@ chunkc tiling::rule --owner Calendar --state float
 chunkc tiling::rule --owner Disk\ Utility --state float
 chunkc tiling::rule --owner Electron --name React\ Developer\ Tools --state float
 chunkc tiling::rule --owner FaceTime --state float
+chunkc tiling::rule --owner Firefox --name Launch\ Application --state float
 chunkc tiling::rule --owner Finder --state float
 chunkc tiling::rule --owner Font\ Book --state float
 chunkc tiling::rule --owner jagexappletview --state float

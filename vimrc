@@ -264,7 +264,7 @@ nmap <silent> ]a <Plug>(ale_next_wrap)
 nnoremap <C-b> :CtrlPBuffer<CR>
 
 " Nerdtree
-map <C-l> :NERDTreeToggle<CR>
+map <C-o> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
