@@ -183,9 +183,6 @@ nnoremap <backspace> <nop>
 nnoremap <space> <nop>
 nnoremap <cr> <nop>
 
-" Explorer
-nnoremap <leader>e :Explore<cr>
-
 " Indent
 nnoremap < v<<esc>
     \ :echo 'Dedent'<cr>
@@ -228,10 +225,6 @@ nnoremap <leader>T :%s/\s\+$//e<cr>:let @/=""<cr>
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
 
-" Prettify json
-nnoremap <leader>J :%!python -m json.tool<cr>
-    \ :echo 'Prettify json'<cr>
-
 " Cursor column
 nnoremap <silent> <leader>C :setlocal cursorcolumn!<cr>
     \ :echo 'Toggle cursor column'<cr>
@@ -256,10 +249,6 @@ nnoremap <silent> <leader>S :setlocal spell!<cr>
 nnoremap <silent> <leader>r :e<cr>
 nnoremap <silent> <leader>R :e!<cr>
 
-" New file
-nnoremap <leader>n :vnew<cr>
-    \ :echo 'New file'<cr>
-
 " CtrlSF
 nmap     <C-F>f <Plug>CtrlSFPrompt
 nmap     <C-F>w <Plug>CtrlSFCwordPath
@@ -273,6 +262,9 @@ nmap <silent> ]a <Plug>(ale_next_wrap)
 
 " Ctrlp
 nnoremap <C-b> :CtrlPBuffer<CR>
+
+" Nerdtree
+map <C-l> :NERDTreeToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins

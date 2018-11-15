@@ -127,3 +127,6 @@
 [submodule "vim/bundle/vim-devicons"]
 	path = vim/bundle/vim-devicons
 	url = https://github.com/ryanoasis/vim-devicons.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
