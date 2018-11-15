@@ -305,14 +305,16 @@ let g:lightline.active={
       \            [ 'lineinfo' ],
       \            [ 'gutentags', 'filetype', 'percent' ] ]
       \ }
-let g:lightline#ale#indicator_checking = "\uf110 "
-let g:lightline#ale#indicator_warnings = "\uf071 "
-let g:lightline#ale#indicator_errors = "\uf05e "
+let g:lightline#ale#indicator_checking="\uf110 "
+let g:lightline#ale#indicator_warnings="\uf071 "
+let g:lightline#ale#indicator_errors="\uf05e "
 function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+    return winwidth(0) > 70 ? (strlen(&filetype) ?
+      \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 function! MyFileformat()
-  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+    return winwidth(0) > 70 ?
+      \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
 " Git gutter
@@ -370,3 +372,10 @@ let g:gutentags_ctags_tagfile='.tags'
 
 " Signature
 highlight SignatureMarkText guifg=#f2777a
+
+" Nerdtree
+let g:NERDTreeShowHidden=1
+let g:NERDTreeLimitedSyntax=1
+let g:NERDTreeRespectWildIgnore=1
+let g:NERDTreeIgnore=['node_modules/*','\.vscode','\.tags\.*']
+let g:NERDTreeMinimalUI=1
