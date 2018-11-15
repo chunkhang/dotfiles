@@ -271,6 +271,9 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 nmap <silent> [a <Plug>(ale_previous_wrap)
 nmap <silent> ]a <Plug>(ale_next_wrap)
 
+" Ctrlp
+nnoremap <C-b> :CtrlPBuffer<CR>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
