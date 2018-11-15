@@ -292,7 +292,9 @@ set noshowmode
 let g:lightline={}
 let g:lightline.colorscheme='wombat'
 let g:lightline.component_function={
-      \   'gitbranch': 'fugitive#head'
+      \ 'gitbranch': 'fugitive#head',
+      \ 'filetype': 'MyFiletype',
+      \ 'fileformat': 'MyFileformat'
       \ }
 let g:lightline.component_expand={
       \ 'linter_checking': 'lightline#ale#checking',
@@ -314,6 +316,12 @@ let g:lightline.active={
 let g:lightline#ale#indicator_checking = "\uf110 "
 let g:lightline#ale#indicator_warnings = "\uf071 "
 let g:lightline#ale#indicator_errors = "\uf05e "
+function! MyFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+endfunction
+function! MyFileformat()
+  return winwidth(0) > 70 ? (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+endfunction
 
 " Git gutter
 set updatetime=250
