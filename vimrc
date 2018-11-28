@@ -114,6 +114,7 @@ autocmd FileType html,jinja,vue,scss set softtabstop=2 shiftwidth=2
 autocmd FileType javascript,coffee,json set softtabstop=2 shiftwidth=2
 autocmd FileType sbt,play2-conf set softtabstop=2 shiftwidth=2
 autocmd FileType yaml,markdown set softtabstop=2 shiftwidth=2
+autocmd FileType proto set softtabstop=2 shiftwidth=2
 
 " Indent
 set autoindent
