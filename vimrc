@@ -382,3 +382,6 @@ let g:NERDTreeLimitedSyntax=1
 let g:NERDTreeRespectWildIgnore=1
 let g:NERDTreeIgnore=['node_modules/*','\.vscode','\.tags\.*']
 let g:NERDTreeMinimalUI=1
+
+" Go
+let g:go_fmt_fail_silently=1
