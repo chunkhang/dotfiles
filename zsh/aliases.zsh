@@ -21,6 +21,9 @@ alias gr='git remote'
 alias gs='git status'
 alias gu='git pull'
 
+# Docker
+alias dk='f() { docker-compose $@ };f'
+
 # pnpm
 alias pnl='pnpm list --depth=0'
 alias pnlg='pnpm list --depth=0 -g'
@@ -31,4 +34,3 @@ alias glances='glances --disable-bold'
 # Miscellaneous
 alias cls='clear'
 alias lgrep='f() { l | grep $@ };f'
-alias oracle='sqlplus SYSTEM@128.199.167.111'
