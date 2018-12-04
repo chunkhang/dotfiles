@@ -6,5 +6,6 @@
 --pager
 # Define filetypes
 --type-add=css=scss
+--type-add=proto=proto
 # Ignore files
 --ignore-file=is:.tags
