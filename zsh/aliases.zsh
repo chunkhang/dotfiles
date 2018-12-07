@@ -35,3 +35,4 @@ alias glances='glances --disable-bold'
 # Miscellaneous
 alias cls='clear'
 alias lgrep='f() { l | grep $@ };f'
+alias tree='tree -C'
