@@ -114,6 +114,44 @@ function expelliarmus() {
     echo "Done quitting."
 }
 
+# Perform operations on Gatekeeper
+function gate() {
+    showHelp() {
+        echo "usage: gate <command>"
+        echo
+        echo "commands:"
+        echo "  status     show Gatekeeper status"
+        echo "  enable     turn on Gatekeeper"
+        echo "  disable    turn off Gatekeeper"
+    }
+    showStatus() {
+        s="Gatekeeper is: $(spctl --status | cut -c 13-)"
+        echo "$s"
+    }
+    if [ "$#" = 0 ]; then
+        showHelp
+    else
+        case "$1" in
+            "status")
+                showStatus
+                ;;
+            "enable")
+                echo "Enabling Gatekeeper..."
+                sudo spctl --master-enable
+                showStatus
+                ;;
+            "disable")
+                echo "Disabling Gatekeeper..."
+                sudo spctl --master-disable
+                showStatus
+                ;;
+            *)
+                showHelp
+                ;;
+        esac
+    fi
+}
+
 # List aliases and functions
 function magic() {
     echo "Aliases"
@@ -145,28 +183,6 @@ function magic() {
 function refresh() {
     echo "Refreshing shell..."
     exec zsh
-}
-
-# Disable macOS Gatekeeper's default security
-function release() {
-    if [ "$(spctl --status)" = "assessments enabled" ]; then
-        echo "Disabling Gatekeeper..."
-        sudo spctl --master-disable
-        echo "Done disabling."
-    else
-        echo "Gatekeeper already disabled."
-    fi
-}
-
-# Enable macOS Gatekeeper's default security
-function seal() {
-    if [ "$(spctl --status)" = "assessments disabled" ]; then
-        echo "Enabling Gatekeeper..."
-        sudo spctl --master-enable
-        echo "Done enabling."
-    else
-        echo "Gatekeeper already enabled."
-    fi
 }
 
 # Perform operations on Wi-Fi
