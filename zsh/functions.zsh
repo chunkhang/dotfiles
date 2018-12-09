@@ -114,12 +114,6 @@ function expelliarmus() {
     echo "Done quitting."
 }
 
-# Change directory to home and clear terminal
-function lumby() {
-    cd ~
-    cls
-}
-
 # List aliases and functions
 function magic() {
     echo "Aliases"
