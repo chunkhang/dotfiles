@@ -45,38 +45,46 @@ function captive() {
 
 # Perform operations on DNS
 function dns() {
-    echo "DNS Server(s)"
-    echo "-------------"
-    networksetup -getdnsservers Wi-Fi
-    while true; do
+    showHelp() {
+        echo "usage: dns <command>"
         echo
-        echo "[0] Google"
-        echo "[1] Clear"
-        echo "[2] Flush"
-        echo "[3] Exit"
-        read "op?Operation: "
-        case $op in
-            [0]*)
-                echo "\nSetting DNS servers to Google DNS..."
+        echo "commands:"
+        echo "  status    show current DNS"
+        echo "  google    use Google DNS"
+        echo "  reset     reset DNS"
+        echo "  flush     flush DNS cache"
+    }
+    showStatus() {
+        s="Current DNS:\n$(networksetup -getdnsservers Wi-Fi | sed 's/^/  /')"
+        echo "$s"
+    }
+    if [ "$#" = 0 ]; then
+        showHelp
+    else
+        case "$1" in
+            "status")
+                showStatus
+                ;;
+            "google")
+                echo "Using Google DNS..."
                 sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
-                echo "Done setting."
-                break;;
-            [1]*)
-                echo "\nClearing DNS servers..."
+                showStatus
+                ;;
+            "reset")
+                echo "Resetting DNS..."
                 sudo networksetup -setdnsservers Wi-Fi empty
-                echo "Done clearing."
-                break;;
-            [2]*)
-                echo "\nFlushing DNS cache..."
+                showStatus
+                ;;
+            "flush")
+                echo "Flushing DNS cache..."
                 sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
                 echo "Done flushing."
-                break;;
-            [3]*)
-                break;;
+                ;;
             *)
-                echo "Invalid operation code.";;
+                showHelp
+                ;;
         esac
-    done
+    fi
 }
 
 # Turn off display
