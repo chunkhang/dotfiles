@@ -10,12 +10,12 @@ function blue() {
     }
     showStatus() {
         s="Bluetooth is: $(blueutil status | cut -c 9-)"
-        echo $s
+        echo "$s"
     }
-    if [ $# = 0 ]; then
+    if [ "$#" = 0 ]; then
         showHelp
     else
-        case $1 in
+        case "$1" in
             "status")
                 showStatus
                 ;;
@@ -41,35 +41,6 @@ function captive() {
     echo "Opening Captive Network Portal..."
     open http://captive.apple.com/
     echo "Done opening."
-}
-
-# Send text message to Mother regarding dinner
-function dinner() {
-    echo "Text Mother"
-    echo "-----------"
-    while true; do
-        echo
-        echo "[0] Dinner"
-        echo "[1] No dinner"
-        echo "[2] Exit"
-        read "op?Operation: "
-        case $op in
-            [0]*)
-                echo "\nSending text..."
-                ~/Scripts/misc/dinner.zsh
-                echo "Done sending."
-                break;;
-            [1]*)
-                echo "\nSending text..."
-                ~/Scripts/misc/no-dinner.zsh
-                echo "Done sending."
-                break;;
-            [2]*)
-                break;;
-            *)
-                echo "Invalid operation code.";;
-        esac
-    done
 }
 
 # Perform operations on DNS
