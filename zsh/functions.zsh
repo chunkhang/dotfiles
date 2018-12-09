@@ -20,12 +20,12 @@ function blue() {
                 showStatus
                 ;;
             "enable")
-                echo "Turning on Bluetooth..."
+                echo "Enabling Bluetooth..."
                 blueutil on
                 showStatus
                 ;;
             "disable")
-                echo "Turning off Bluetooth..."
+                echo "Disabling Bluetooth..."
                 blueutil off
                 showStatus
                 ;;
@@ -187,30 +187,38 @@ function refresh() {
 
 # Perform operations on Wi-Fi
 function wifi() {
-    echo "Wi-Fi"
-    echo "-----"
-    networksetup -getairportnetwork en0
-    while true; do
+    showHelp() {
+        echo "usage: wifi <command>"
         echo
-        echo "[0] Enable"
-        echo "[1] Disable"
-        echo "[2] Exit"
-        read "op?Operation: "
-        case $op in
-            [0]*)
-                echo "\nTurning on Wi-Fi..."
+        echo "commands:"
+        echo "  status     show Wi-Fi status"
+        echo "  enable     turn on Wi-Fi"
+        echo "  disable    turn off Wi-Fi"
+    }
+    showStatus() {
+        s="Wi-Fi is: $(networksetup -getairportpower en0 | cut -c 20- | tr O o)"
+        echo "$s"
+    }
+    if [ "$#" = 0 ]; then
+        showHelp
+    else
+        case "$1" in
+            "status")
+                showStatus
+                ;;
+            "enable")
+                echo "Enabling Wi-Fi..."
                 networksetup -setairportpower en0 on
-                echo "Wi-Fi enabled."
-                break;;
-            [1]*)
-                echo "\nTurning off Wi-Fi..."
+                showStatus
+                ;;
+            "disable")
+                echo "Disabling Wi-Fi..."
                 networksetup -setairportpower en0 off
-                echo "Wi-Fi disabled."
-                break;;
-            [2]*)
-                break;;
+                showStatus
+                ;;
             *)
-                echo "Invalid operation code.";;
+                showHelp
+                ;;
         esac
-    done
+    fi
 }
