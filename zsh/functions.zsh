@@ -1,31 +1,39 @@
 # Perform operations on Bluetooth
 function blue() {
-    echo "Bluetooth"
-    echo "---------"
-    blueutil status
-    while true; do
+    showHelp() {
+        echo "usage: blue <command>"
         echo
-        echo "[0] Enable"
-        echo "[1] Disable"
-        echo "[2] Exit"
-        read "op?Operation: "
-        case $op in
-            [0]*)
-                echo "\nTurning on Bluetooth"
+        echo "commands:"
+        echo "  status     show Bluetooth status"
+        echo "  enable     turn on Bluetooth"
+        echo "  disable    turn off Bluetooth"
+    }
+    showStatus() {
+        s="Bluetooth is: $(blueutil status | cut -c 9-)"
+        echo $s
+    }
+    if [ $# = 0 ]; then
+        showHelp
+    else
+        case $1 in
+            "status")
+                showStatus
+                ;;
+            "enable")
+                echo "Turning on Bluetooth..."
                 blueutil on
-                echo "Bluetooth enabled."
-                break;;
-            [1]*)
-                echo "\nTurning off Bluetooth"
+                showStatus
+                ;;
+            "disable")
+                echo "Turning off Bluetooth..."
                 blueutil off
-                echo "Bluetooth disabled."
-                break;;
-            [2]*)
-                break;;
+                showStatus
+                ;;
             *)
-                echo "Invalid operation code.";;
+                showHelp
+                ;;
         esac
-    done
+    fi
 }
 
 # Open captive network portal
