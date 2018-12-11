@@ -195,6 +195,7 @@ nnoremap > v><esc>
 nnoremap <leader>s :Gstatus<cr>
 nnoremap <leader>c :Gcommit<cr>
 nnoremap <leader>d :Gdiff<cr>
+nnoremap <leader>b :Gblame<cr>
 
 " Markdown preview
 nnoremap <silent> <leader>m :call Vim_Markdown_Preview()<cr>
@@ -323,6 +324,7 @@ endfunction
 set updatetime=250
 set signcolumn=yes
 let g:gitgutter_max_signs=1000
+let g:gitgutter_map_keys=0
 
 " Python
 let g:python_highlight_operators=0
@@ -385,3 +387,6 @@ let g:NERDTreeMinimalUI=1
 
 " Go
 let g:go_fmt_fail_silently=1
+
+" Bufkill
+let g:BufKillCreateMappings=0
