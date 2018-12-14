@@ -324,7 +324,6 @@ endfunction
 set updatetime=250
 set signcolumn=yes
 let g:gitgutter_max_signs=1000
-let g:gitgutter_map_keys=0
 
 " Python
 let g:python_highlight_operators=0
