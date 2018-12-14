@@ -10,6 +10,13 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 # Scala
 export SCALA_HOME=/usr/local/opt/scala/idea
 
+# Android
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
 # Go
 export GOPATH=~/Workspace/go
 export GOROOT="/usr/local/opt/go/libexec"
