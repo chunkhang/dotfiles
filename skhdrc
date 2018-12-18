@@ -13,9 +13,11 @@ fn - f : open /Applications/Firefox.app
 fn - h : open ~
 fn - k : open /Applications/Slack.app
 fn - m : open /Applications/Mail.app
+fn - r : open /Applications/React\ Native\ Debugger.app
 fn - s : open /Applications/Spotify.app
 fn - t : open /Applications/Telegram.app
 fn - w : open /Applications/Whatsapp.app
+fn - x : open /Applications/Xcode.app
 fn - l : ~/Scripts/skhd/list.zsh \
     "L - List all available applications / directories\n" \
     "A - Activity Monitor" \
@@ -25,9 +27,11 @@ fn - l : ~/Scripts/skhd/list.zsh \
     "H - Home" \
     "K - Slack" \
     "M - Mail" \
+    "R - React Native Debugger" \
     "S - Spotify" \
     "T - Telegram" \
-    "W - Whatsapp"
+    "W - Whatsapp" \
+    "X - Xcode"
 
 # Run scripts
 
