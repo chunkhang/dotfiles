@@ -84,7 +84,7 @@ let g:netrw_liststyle=3
 set wildignore=.DS_Store,.cache,.git,__pycache__,*.rdb,*.pyc,.pytest_cache
 set wildignore+=*.class,*/node_modules/*,*/dist/*,*/releases/*,*/target/*
 set wildignore+=.g8,*/logs/*,*/phaser/*,*/_site/*,*/.sass-cache/*
-set wildignore+=*/.jekyll-cache/*,.ctrlp,.tags
+set wildignore+=*/.jekyll-cache/*,.ctrlp,.tags,*/build/*,*/Pods/*
 let s:escape='substitute(escape(v:val, ".$~"), "*", ".*", "g")'
 let g:netrw_list_hide=
     \ join(map(split(&wildignore, ','), '"^".' . s:escape . '. "/\\=$"'), ',')
@@ -381,7 +381,7 @@ highlight SignatureMarkText guifg=#f2777a
 let g:NERDTreeShowHidden=1
 let g:NERDTreeLimitedSyntax=1
 let g:NERDTreeRespectWildIgnore=1
-let g:NERDTreeIgnore=['node_modules/*','\.vscode','\.tags\.*']
+let g:NERDTreeIgnore=['node_modules/*','\.vscode','\.tags\.*','\build/*','\Pods/*']
 let g:NERDTreeMinimalUI=1
 
 " Go
