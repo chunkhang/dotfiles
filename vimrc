@@ -152,8 +152,6 @@ vnoremap <leader>k 20k
 
 " Close buffer
 nnoremap <silent> <leader>q :BD<cr>
-" Quit
-nnoremap <silent> <leader>Q :q<cr>
 
 " Write buffer
 nnoremap <leader>w :w<cr>
@@ -191,12 +189,6 @@ nnoremap < v<<esc>
 nnoremap > v><esc>
     \ :echo 'Indent'<cr>
 
-" Git
-nnoremap <leader>s :Gstatus<cr>
-nnoremap <leader>c :Gcommit<cr>
-nnoremap <leader>d :Gdiff<cr>
-nnoremap <leader>b :Gblame<cr>
-
 " Markdown preview
 nnoremap <silent> <leader>m :call Vim_Markdown_Preview()<cr>
     \ :echo 'Preview markdown'<cr>
@@ -232,25 +224,16 @@ let g:user_emmet_leader_key='<C-e>'
 nnoremap <silent> <leader>C :setlocal cursorcolumn!<cr>
     \ :echo 'Toggle cursor column'<cr>
 
-" Folding
-vnoremap <leader>z zf<cr>
-    \ :echo 'Create folding'<cr>
-nnoremap <leader>o zo<cr>
-    \ :echo 'Open folding'<cr>
-nnoremap <leader>O zc<cr>
-    \ :echo 'Close folding'<cr>
-
 " Select all
 nnoremap <leader>a ggVG
 vnoremap <leader>a <esc>ggVG
 
 " Toggle spell check
-nnoremap <silent> <leader>S :setlocal spell!<cr>
+nnoremap <silent> <leader>s :setlocal spell!<cr>
     \ :echo 'Toggle spell check'<cr>
 
 " Re-edit
 nnoremap <silent> <leader>r :e<cr>
-nnoremap <silent> <leader>R :e!<cr>
 
 " CtrlSF
 nmap     <C-F>f <Plug>CtrlSFPrompt
