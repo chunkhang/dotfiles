@@ -16,6 +16,7 @@
 # Ignore directories
 --ignore-directory=build
 --ignore-directory=Pods
+--ignore-directory=coverage
 
 # Ignore files
 --ignore-file=is:.tags
