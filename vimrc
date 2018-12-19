@@ -318,6 +318,10 @@ let g:python_highlight_file_headers_as_comments=1
 " Ctrlp
 let g:ctrlp_show_hidden=1
 let g:ctrlp_root_markers=['.ctrlp']
+let g:ctrlp_cache_dir = $HOME . '/.cache/ctrlp'
+if executable('ag')
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+endif
 
 " Emmet
 let g:user_emmet_install_global=0
