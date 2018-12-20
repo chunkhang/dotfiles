@@ -29,7 +29,10 @@ set ttimeoutlen=0
 set autochdir
 
 " Remove auto comment
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+aug vimrc_remove_auto_comment
+    au!
+    au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+aug END
 
 " Spelling language
 set spelllang=en_gb
@@ -85,7 +88,8 @@ set shortmess+=T
 syntax on
 
 " Encoding
-set encoding=utf8
+set encoding=utf-8
+scriptencoding utf-8
 
 " Color scheme
 colorscheme base16-eighties
@@ -99,12 +103,14 @@ set expandtab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
-autocmd FileType html,jinja,vue,scss set softtabstop=2 shiftwidth=2
-autocmd FileType javascript,coffee,json set softtabstop=2 shiftwidth=2
-autocmd FileType sbt,play2-conf set softtabstop=2 shiftwidth=2
-autocmd FileType yaml,markdown set softtabstop=2 shiftwidth=2
-autocmd FileType proto set softtabstop=2 shiftwidth=2
-autocmd FileType go set softtabstop=4 shiftwidth=4
+aug vimrc_tabs
+    au!
+    au FileType html,javascript,json,yaml set softtabstop=2 shiftwidth=2
+    au FileType jinja,vue,scss,coffee set softtabstop=2 shiftwidth=2
+    au FileType sbt,play2-conf set softtabstop=2 shiftwidth=2
+    au FileType markdown,proto set softtabstop=2 shiftwidth=2
+    au FileType go set softtabstop=4 shiftwidth=4
+aug END
 
 " Indent
 set autoindent
@@ -120,7 +126,7 @@ set backspace=indent,eol,start
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader key
-let mapleader=" "
+let mapleader=' '
 
 " Configuration
 nnoremap <leader>V :edit ~/.vimrc<cr>
@@ -152,11 +158,11 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 " Fix <C-j>: https://stackoverflow.com/a/31502538
-augroup vimrc
+aug vimrc_switch_windows
     au!
     au VimEnter * unmap <C-j>
     au VimEnter * noremap <C-j> <C-w>j
-augroup END
+aug END
 
 " Split
 nnoremap <leader><right> :vs<cr>
@@ -307,27 +313,25 @@ let g:python_highlight_file_headers_as_comments=1
 " Ctrlp
 let g:ctrlp_show_hidden=1
 let g:ctrlp_root_markers=['.ctrlp']
-let g:ctrlp_use_caching = 0
+let g:ctrlp_use_caching=0
 if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command='ag %s -l --nocolor -g ""'
 endif
 
 " Emmet
 let g:user_emmet_install_global=0
-autocmd FileType html,jinja,css,scss,coffee,javascript EmmetInstall
+aug vimrc_emmet
+  au!
+  au FileType html,jinja,css,scss,coffee,javascript EmmetInstall
+aug END
 
 " Commentary
-autocmd FileType jinja setlocal commentstring={#\ %s\ #}
-autocmd FileType vue setlocal commentstring=\/\/\ %s
-autocmd FileType sbt setlocal commentstring=\/\/\ %s
-autocmd FileType hocon setlocal commentstring=#\ %s
-
-" CSS
-augroup VimCSS3Syntax
-  autocmd!
-
-  autocmd FileType css silent! setlocal iskeyword+=- space-between
-augroup END
+aug vimrc_commentary
+  au!
+  au FileType jinja setlocal commentstring={#\ %s\ #}
+  au FileType vue,sbt setlocal commentstring=\/\/\ %s
+  au FileType hocon setlocal commentstring=#\ %s
+aug END
 
 " CtrlSF
 let g:ctrlsf_case_sensitive='yes'
