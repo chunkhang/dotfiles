@@ -117,7 +117,7 @@ set autoindent
 
 " Highlight whitespaces
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.
 
 " Backspace
 set backspace=indent,eol,start
