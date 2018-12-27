@@ -20,7 +20,7 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Go
 export GOPATH=~/Workspace/go
 export GOROOT="/usr/local/opt/go/libexec"
-export PATH="${GOPATH}/bin:${GOROOT}/bin:${PATH}"
+export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
 
 # Pyenv
 export CFLAGS='-I/usr/local/opt/openssl/include'

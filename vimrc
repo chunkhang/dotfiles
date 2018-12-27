@@ -25,9 +25,6 @@ set autoread
 set timeoutlen=1000
 set ttimeoutlen=0
 
-" Current working directory
-set autochdir
-
 " Remove auto comment
 aug vimrc_remove_auto_comment
     au!
