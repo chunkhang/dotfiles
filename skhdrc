@@ -80,14 +80,6 @@ ctrl + alt - 0 : chunkc tiling::desktop --equalize
 
 alt - f : chunkc tiling::window --toggle fullscreen
 
-# Set window insertion point
-
-ctrl + alt - a : chunkc tiling::window --use-insertion-point west
-ctrl + alt - s : chunkc tiling::window --use-insertion-point south
-ctrl + alt - w : chunkc tiling::window --use-insertion-point north
-ctrl + alt - d : chunkc tiling::window --use-insertion-point east
-ctrl + alt - x : chunkc tiling::window --use-insertion-point cancel
-
 ###############################################################################
 # Desktop
 ###############################################################################
@@ -108,6 +100,14 @@ shift + ctrl - 2 : ~/Scripts/chunkwm/desktop/send.zsh 2
 shift + ctrl - 3 : ~/Scripts/chunkwm/desktop/send.zsh 3
 shift + ctrl - 4 : ~/Scripts/chunkwm/desktop/send.zsh 4
 shift + ctrl - 5 : ~/Scripts/chunkwm/desktop/send.zsh 5
+
+###############################################################################
+# Monitor
+###############################################################################
+
+# Send window to monitor
+cmd + shift - left:  chunkc tiling::window --send-to-monitor prev
+cmd + shift - right: chunkc tiling::window --send-to-monitor next
 
 ###############################################################################
 # Miscellaneous
