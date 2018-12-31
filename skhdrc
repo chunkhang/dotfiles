@@ -105,9 +105,13 @@ shift + ctrl - 5 : ~/Scripts/chunkwm/desktop/send.zsh 5
 # Monitor
 ###############################################################################
 
+# Focus monitor
+cmd - left -> : chunkc tiling::monitor -f prev
+cmd - right -> : chunkc tiling::monitor -f next
+
 # Send window to monitor
-cmd + shift - left:  chunkc tiling::window --send-to-monitor prev
-cmd + shift - right: chunkc tiling::window --send-to-monitor next
+cmd + shift - left :  chunkc tiling::window --send-to-monitor prev
+cmd + shift - right : chunkc tiling::window --send-to-monitor next
 
 ###############################################################################
 # Miscellaneous
