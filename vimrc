@@ -51,7 +51,6 @@ set showcmd
 " Position
 set ruler
 set cursorline
-set colorcolumn=80
 
 " Searching
 set ignorecase
@@ -128,8 +127,8 @@ set backspace=indent,eol,start
 let mapleader=' '
 
 " Configuration
-nnoremap <leader>V :edit ~/.vimrc<cr>
-nnoremap <silent> <leader>v :source ~/.vimrc<cr>
+nnoremap <leader>v :edit ~/.vimrc<cr>
+nnoremap <silent> <leader>V :source ~/.vimrc<cr>
     \ :echo 'Source configuration'<cr>
 
 " Remove search highlighting
@@ -214,9 +213,10 @@ nnoremap <leader>T :%s/\s\+$//e<cr>:let @/=""<cr>
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
 
-" Cursor column
-nnoremap <silent> <leader>C :setlocal cursorcolumn!<cr>
-    \ :echo 'Toggle cursor column'<cr>
+" Column 80
+nnoremap <silent> <leader>c :execute 'setlocal colorcolumn='
+    \ . (&colorcolumn == '' ? '80' : '')<cr>
+    \ :echo 'Toggle column 80'<cr>
 
 " Select all
 nnoremap <leader>a ggVG
