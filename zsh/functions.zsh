@@ -90,12 +90,12 @@ function dns() {
 # Turn off display
 function douse() {
     echo "Turning off display..."
-    b=$(brightness -l | grep "brightness" | sed 's/display 0: brightness //')
+    b=$(brightness -l 2>/dev/null | grep "brightness" | sed 's/display 0: brightness //')
     printf "Hit enter to revert brightness."
     sleep 1
-    brightness 0
+    brightness -d 0 0
     read "x?"
-    brightness "$b"
+    brightness -d 0 "$b"
     echo "Display turned on."
 }
 
