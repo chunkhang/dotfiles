@@ -139,3 +139,6 @@
 [submodule "vim/bundle/conflict-marker.vim"]
 	path = vim/bundle/conflict-marker.vim
 	url = https://github.com/rhysd/conflict-marker.vim.git
+[submodule "vim/bundle/vim-peekaboo"]
+	path = vim/bundle/vim-peekaboo
+	url = https://github.com/junegunn/vim-peekaboo.git
