@@ -369,6 +369,3 @@ let g:go_fmt_fail_silently=1
 
 " Bufkill
 let g:BufKillCreateMappings=0
-
-" Peekaboo
-let g:peekaboo_window='vert bo ' . winwidth('.')/2 . 'new'
