@@ -127,8 +127,8 @@ set backspace=indent,eol,start
 let mapleader=' '
 
 " Configuration
-nnoremap <leader>v :edit ~/.vimrc<cr>
-nnoremap <silent> <leader>V :source ~/.vimrc<cr>
+nnoremap <leader>v :execute 'edit' $HOME . '/.vimrc'<cr>
+nnoremap <silent> <leader>V :execute 'source' $HOME . '/.vimrc'<cr>
     \ :echo 'Source configuration'<cr>
 
 " Remove search highlighting
@@ -144,7 +144,7 @@ vnoremap <leader>j 20j
 vnoremap <leader>k 20k
 
 " Close buffer
-nnoremap <silent> <leader>q :BD<cr>
+nnoremap <silent> <leader>q :BW<cr>
 
 " Write buffer
 nnoremap <leader>w :w<cr>
@@ -240,11 +240,26 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 nmap <silent> [a <Plug>(ale_previous_wrap)
 nmap <silent> ]a <Plug>(ale_next_wrap)
 
-" Ctrlp
-nnoremap <C-b> :CtrlPBuffer<CR>
-
 " Nerdtree
 map <C-o> :NERDTreeToggle<CR>
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+nnoremap <leader>u :execute 'edit' $HOME . '/.vim/ultisnips'<cr>
+
+" Buftabline
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(10)
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -354,7 +369,7 @@ let g:localvimrc_persistent=1
 let g:gutentags_ctags_tagfile='.tags'
 
 " Signature
-highlight SignatureMarkText guifg=#f2777a
+highlight link SignatureMarkText DiffDelete
 
 " Nerdtree
 let g:NERDTreeShowHidden=1
@@ -369,3 +384,14 @@ let g:go_fmt_fail_silently=1
 
 " Bufkill
 let g:BufKillCreateMappings=0
+
+" Ultisnips
+let g:UltiSnipsEditSplit='context'
+
+" Buftabline
+let g:buftabline_show=1
+let g:buftabline_numbers=2
+let g:buftabline_indicators=1
+highlight link BufTabLineCurrent LightlineLeft_normal_1
+highlight link BufTabLineActive LightlineRight_normal_2
+highlight link BufTabLineHidden LightlineRight_normal_2
