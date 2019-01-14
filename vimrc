@@ -233,15 +233,12 @@ nnoremap <silent> <leader>r :e<cr>
 nmap     <C-F>f <Plug>CtrlSFPrompt
 nmap     <C-F>w <Plug>CtrlSFCwordPath
 nmap     <C-F>n <Plug>CtrlSFPwordPath
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+nnoremap <C-F>t :CtrlSFToggle<cr>
+inoremap <C-F>t <Esc>:CtrlSFToggle<cr>
 
 " ALE
 nmap <silent> [a <Plug>(ale_previous_wrap)
 nmap <silent> ]a <Plug>(ale_next_wrap)
-
-" Nerdtree
-map <C-o> :NERDTreeToggle<CR>
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger='<tab>'
@@ -370,14 +367,6 @@ let g:gutentags_ctags_tagfile='.tags'
 
 " Signature
 highlight link SignatureMarkText DiffDelete
-
-" Nerdtree
-let g:NERDTreeShowHidden=1
-let g:NERDTreeLimitedSyntax=1
-let g:NERDTreeIgnore=[
-    \ '.git', 'node_modules','.vscode','.tags\.*', 'build', 'Pods'
-    \ ]
-let g:NERDTreeMinimalUI=1
 
 " Go
 let g:go_fmt_fail_silently=1
