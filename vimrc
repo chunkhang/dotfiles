@@ -129,11 +129,11 @@ let mapleader=' '
 " Configuration
 nnoremap <leader>v :execute 'edit' $HOME . '/.vimrc'<cr>
 nnoremap <silent> <leader>V :execute 'source' $HOME . '/.vimrc'<cr>
-    \ :echo 'Source configuration'<cr>
+            \ :echo 'Source configuration'<cr>
 
 " Remove search highlighting
 nnoremap <silent> <leader>/ :noh<cr>
-    \ :echo 'Remove search highlighting'<cr>
+            \ :echo 'Remove search highlighting'<cr>
 
 " Scrolling
 nmap j gj
@@ -178,45 +178,45 @@ nnoremap <cr> <nop>
 
 " Indent
 nnoremap < v<<esc>
-    \ :echo 'Dedent'<cr>
+            \ :echo 'Dedent'<cr>
 nnoremap > v><esc>
-    \ :echo 'Indent'<cr>
+            \ :echo 'Indent'<cr>
 
 " Markdown preview
 nnoremap <silent> <leader>m :call Vim_Markdown_Preview()<cr>
-    \ :echo 'Preview markdown'<cr>
+            \ :echo 'Preview markdown'<cr>
 
 " Toggle syntax
 nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
-                  \     syntax off <Bar>
-                  \ else <Bar>
-                  \     syntax enable <Bar>
-                  \ endif <cr>
-    \ :echo 'Toggle syntax'<cr>
+            \     syntax off <Bar>
+            \ else <Bar>
+            \     syntax enable <Bar>
+            \ endif <cr>
+            \ :echo 'Toggle syntax'<cr>
 
 " System clipboard
 nnoremap <leader>Y "*Y
-    \ :echo 'Copy to system clipboard'<cr>
+            \ :echo 'Copy to system clipboard'<cr>
 vnoremap <leader>y "*y
-    \ :echo 'Copy to system clipboard'<cr>
+            \ :echo 'Copy to system clipboard'<cr>
 nnoremap <leader>p "*p
-    \ :echo 'Paste from system clipboard'<cr>
+            \ :echo 'Paste from system clipboard'<cr>
 vnoremap <leader>p "*p
-    \ :echo 'Paste from system clipboard'<cr>
+            \ :echo 'Paste from system clipboard'<cr>
 
 " Trailing whitespace
 nnoremap <leader>t /\s\+$<cr>
-    \ :echo 'Search trailing whitespace'<cr>
+            \ :echo 'Search trailing whitespace'<cr>
 nnoremap <leader>T :%s/\s\+$//e<cr>:let @/=""<cr>
-    \ :echo 'Trim trailing whitespace'<cr>
+            \ :echo 'Trim trailing whitespace'<cr>
 
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
 
 " Column 80
 nnoremap <silent> <leader>c :execute 'setlocal colorcolumn='
-    \ . (&colorcolumn == '' ? '80' : '')<cr>
-    \ :echo 'Toggle column 80'<cr>
+            \ . (&colorcolumn == '' ? '80' : '')<cr>
+            \ :echo 'Toggle column 80'<cr>
 
 " Select all
 nnoremap <leader>a ggVG
@@ -224,7 +224,7 @@ vnoremap <leader>a <esc>ggVG
 
 " Toggle spell check
 nnoremap <silent> <leader>s :setlocal spell!<cr>
-    \ :echo 'Toggle spell check'<cr>
+            \ :echo 'Toggle spell check'<cr>
 
 " Re-edit
 nnoremap <silent> <leader>r :e<cr>
@@ -276,37 +276,37 @@ set noshowmode
 let g:lightline={}
 let g:lightline.colorscheme='wombat'
 let g:lightline.component_function={
-      \ 'gitbranch': 'fugitive#head',
-      \ 'filetype': 'MyFiletype',
-      \ 'fileformat': 'MyFileformat'
-      \ }
+            \ 'gitbranch': 'fugitive#head',
+            \ 'filetype': 'MyFiletype',
+            \ 'fileformat': 'MyFileformat'
+            \ }
 let g:lightline.component_expand={
-      \ 'linter_checking': 'lightline#ale#checking',
-      \ 'linter_warnings': 'lightline#ale#warnings',
-      \ 'linter_errors': 'lightline#ale#errors'
-      \ }
+            \ 'linter_checking': 'lightline#ale#checking',
+            \ 'linter_warnings': 'lightline#ale#warnings',
+            \ 'linter_errors': 'lightline#ale#errors'
+            \ }
 let g:lightline.component_type={
-      \ 'linter_checking': 'left',
-      \ 'linter_warnings': 'warning',
-      \ 'linter_errors': 'error'
-      \ }
+            \ 'linter_checking': 'left',
+            \ 'linter_warnings': 'warning',
+            \ 'linter_errors': 'error'
+            \ }
 let g:lightline.active={
-      \ 'left' : [ [ 'mode', 'paste' ],
-      \            [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
-      \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings' ],
-      \            [ 'lineinfo' ],
-      \            [ 'gutentags', 'filetype', 'percent' ] ]
-      \ }
+            \ 'left' : [ [ 'mode', 'paste' ],
+            \            [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
+            \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings' ],
+            \            [ 'lineinfo' ],
+            \            [ 'gutentags', 'filetype', 'percent' ] ]
+            \ }
 let g:lightline#ale#indicator_checking="\uf110 "
 let g:lightline#ale#indicator_warnings="\uf071 "
 let g:lightline#ale#indicator_errors="\uf05e "
 function! MyFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ?
-      \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+                \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
 endfunction
 function! MyFileformat()
     return winwidth(0) > 70 ?
-      \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+                \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
 endfunction
 
 " Git gutter
@@ -326,22 +326,22 @@ let g:ctrlp_show_hidden=1
 let g:ctrlp_root_markers=['.ctrlp']
 let g:ctrlp_use_caching=0
 if executable('ag')
-  let g:ctrlp_user_command='ag %s -l --nocolor -g "" --hidden --ignore-dir .git'
+    let g:ctrlp_user_command='ag %s -l --nocolor -g "" --hidden --ignore-dir .git'
 endif
 
 " Emmet
 let g:user_emmet_install_global=0
 aug vimrc_emmet
-  au!
-  au FileType html,jinja,css,scss,coffee,javascript EmmetInstall
+    au!
+    au FileType html,jinja,css,scss,coffee,javascript EmmetInstall
 aug END
 
 " Commentary
 aug vimrc_commentary
-  au!
-  au FileType jinja setlocal commentstring={#\ %s\ #}
-  au FileType vue,sbt setlocal commentstring=\/\/\ %s
-  au FileType hocon setlocal commentstring=#\ %s
+    au!
+    au FileType jinja setlocal commentstring={#\ %s\ #}
+    au FileType vue,sbt setlocal commentstring=\/\/\ %s
+    au FileType hocon setlocal commentstring=#\ %s
 aug END
 
 " CtrlSF
@@ -355,8 +355,8 @@ let g:ale_sign_warning='.'
 let g:ale_lint_on_enter=0
 let g:ale_lint_on_text_changed='never'
 let g:ale_linters={
-    \ 'javascript': ['eslint']
-    \ }
+            \ 'javascript': ['eslint']
+            \ }
 let g:ale_javascript_eslint_executable='npx eslint'
 
 " Local vimrc
