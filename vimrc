@@ -77,6 +77,12 @@ set shortmess+=I
 " Truncate message to avoid hit enter
 set shortmess+=T
 
+" Netrw
+let g:netrw_banner=0
+let g:netrw_liststyle=3
+let g:netrw_winsize=20
+let g:netrw_browse_split=4
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -257,6 +263,9 @@ nmap <leader>7 <Plug>BufTabLine.Go(7)
 nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
+
+" Netrw
+nnoremap <silent> <C-x> :Lexplore<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
