@@ -385,6 +385,11 @@ let g:BufKillCreateMappings=0
 
 " Ultisnips
 let g:UltiSnipsEditSplit='context'
+" https://github.com/SirVer/ultisnips/issues/593#issuecomment-361338769
+aug vimrc_ultisnips
+    au!
+    au VimEnter * au! UltiSnips_AutoTrigger
+aug END
 
 " Buftabline
 let g:buftabline_show=1
