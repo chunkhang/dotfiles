@@ -114,6 +114,7 @@ aug vimrc_tabs
     au FileType sbt,play2-conf set softtabstop=2 shiftwidth=2
     au FileType markdown,proto set softtabstop=2 shiftwidth=2
     au FileType go set softtabstop=4 shiftwidth=4
+    au FileType snippets set expandtab
 aug END
 
 " Indent
@@ -133,8 +134,8 @@ set backspace=indent,eol,start
 let mapleader=' '
 
 " Configuration
-nnoremap <leader>v :execute 'edit' $HOME . '/.vimrc'<cr>
-nnoremap <silent> <leader>V :execute 'source' $HOME . '/.vimrc'<cr>
+nnoremap <leader>v :edit ~/.vimrc<cr>
+nnoremap <silent> <leader>V :source ~/.vimrc<cr>
             \ :echo 'Source configuration'<cr>
 
 " Remove search highlighting
@@ -150,7 +151,7 @@ vnoremap <leader>j 20j
 vnoremap <leader>k 20k
 
 " Close buffer
-nnoremap <silent> <leader>q :BW<cr>
+nnoremap <silent> <leader>q :BD<cr>
 
 " Write buffer
 nnoremap <leader>w :w<cr>
@@ -250,7 +251,7 @@ nmap <silent> ]a <Plug>(ale_next_wrap)
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-nnoremap <leader>u :execute 'edit' $HOME . '/.vim/ultisnips'<cr>
+nnoremap <leader>u :edit ~/.vim/ultisnips/
 
 " Buftabline
 nmap <leader>1 <Plug>BufTabLine.Go(1)
