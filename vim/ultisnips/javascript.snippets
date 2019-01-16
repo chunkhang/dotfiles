@@ -1,0 +1,58 @@
+snippet cl
+console.log($1)
+endsnippet
+
+snippet component
+import React from 'react'
+import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
+
+class $1 extends React.Component {
+  static propTypes = {
+    $2
+  }
+
+  state = {
+    $3
+  }
+
+  render() {
+    return (
+      $4
+    )
+  }
+}
+
+const mapStateToProps = state => ({
+  $5
+})
+
+const mapDispatchToProps = dispatch => ({
+  $6
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)($1)
+endsnippet
+
+snippet text
+<Textfield
+  label="$1"
+  floatingLabel
+  value={this.state.$2}
+  onChange={evt => this.setState({ $2: evt.target.value })}
+/>
+endsnippet
+
+snippet button
+<Button
+  raised
+  colored
+  ripple
+  onClick={(evt) => {
+    evt.preventDefault()
+    $2
+  }}
+>
+  $1
+</Button>
+endsnippet
