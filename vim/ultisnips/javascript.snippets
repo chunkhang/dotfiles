@@ -56,3 +56,18 @@ snippet button
   $1
 </Button>
 endsnippet
+
+snippet select
+<SelectField
+  label="$1"
+  value={this.state.$2}
+  onChange={value => this.setState({ $2: value })}
+>
+  <Option
+    key={}
+    value={}
+  >
+    Option
+  </Option>
+</SelectField>
+endsnippet
