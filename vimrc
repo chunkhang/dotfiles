@@ -393,3 +393,11 @@ let g:buftabline_indicators=1
 highlight link BufTabLineCurrent LightlineLeft_normal_1
 highlight link BufTabLineActive LightlineRight_normal_2
 highlight link BufTabLineHidden LightlineRight_normal_2
+
+" Python
+let g:python_highlight_operators=0
+let g:python_highlight_indent_errors=0
+let g:python_highlight_space_errors=0
+let g:python_highlight_doctests=0
+let g:python_highlight_all=1
+let g:python_highlight_file_headers_as_comments=1
