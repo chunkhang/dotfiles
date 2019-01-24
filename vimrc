@@ -324,13 +324,6 @@ set updatetime=250
 set signcolumn=yes
 let g:gitgutter_max_signs=1000
 
-" Python
-let g:python_highlight_operators=0
-let g:python_highlight_indent_errors=0
-let g:python_highlight_space_errors=0
-let g:python_highlight_all=1
-let g:python_highlight_file_headers_as_comments=1
-
 " Ctrlp
 let g:ctrlp_show_hidden=1
 let g:ctrlp_root_markers=['.ctrlp']
@@ -365,7 +358,8 @@ let g:ale_sign_warning='.'
 let g:ale_lint_on_enter=0
 let g:ale_lint_on_text_changed='never'
 let g:ale_linters={
-            \ 'javascript': ['eslint']
+            \ 'javascript': ['eslint'],
+            \ 'python': ['flake8']
             \ }
 let g:ale_javascript_eslint_executable='npx eslint'
 
