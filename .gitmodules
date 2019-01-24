@@ -139,3 +139,6 @@
 [submodule "vim/bundle/vim-buftabline"]
 	path = vim/bundle/vim-buftabline
 	url = https://github.com/ap/vim-buftabline.git
+[submodule "vim/bundle/python-syntax"]
+	path = vim/bundle/python-syntax
+	url = https://github.com/vim-python/python-syntax.git
