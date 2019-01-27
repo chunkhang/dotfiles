@@ -64,6 +64,7 @@ chunkc tiling::rule --owner Finder --state float
 chunkc tiling::rule --owner Font\ Book --state float
 chunkc tiling::rule --owner jagexappletview --state float
 chunkc tiling::rule --owner Keychain\ Access --state float
+chunkc tiling::rule --owner licecap --state float
 chunkc tiling::rule --owner Mail --state float
 chunkc tiling::rule --owner Photos --state float
 chunkc tiling::rule --owner Postgres --state float
