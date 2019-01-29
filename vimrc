@@ -169,11 +169,15 @@ aug vimrc_switch_windows
     au VimEnter * noremap <C-j> <C-w>j
 aug END
 
-" Split
+" Split window
 nnoremap <leader><right> :vs<cr>
 nnoremap <leader><down> :sp<cr>
 nnoremap <leader><left> :set splitright&<cr>:vs<cr>:set splitright<cr>
 nnoremap <leader><up> :set splitbelow&<cr>:sp<cr>:set splitbelow<cr>
+
+" Resize window
+nnoremap <c-w>> :vertical resize +15<cr>
+nnoremap <c-w>< :vertical resize -15<cr>
 
 " Override
 nnoremap ! :<up>!
