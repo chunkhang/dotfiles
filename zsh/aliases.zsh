@@ -21,7 +21,7 @@ alias gp='git push'
 alias gr='git remote'
 alias gs='git status'
 alias gu='git pull'
-alias gw='git show'
+alias gw='f() { git show $@ | cdiff -s -w 0 };f'
 
 # Docker
 alias dk='f() { docker-compose $@ };f'
