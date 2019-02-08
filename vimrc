@@ -190,8 +190,8 @@ nnoremap > v><esc>
             \ :echo 'Indent'<cr>
 
 " Markdown preview
-nnoremap <silent> <leader>m :call Vim_Markdown_Preview()<cr>
-            \ :echo 'Preview markdown'<cr>
+nnoremap <silent> <leader>m :LivedownToggle<cr>
+            \ :echo 'Toggle livedown'<cr>
 
 " Toggle syntax
 nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
@@ -274,11 +274,6 @@ nnoremap <silent> <C-x> :Lexplore<cr>
 " Markdown
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_no_default_key_mappings=1
-
-" Markdown preview
-let vim_markdown_preview_browser='firefox'
-let vim_markdown_preview_github=1
-let vim_markdown_preview_hotkey=''
 
 " Lightline
 set laststatus=2
@@ -401,3 +396,7 @@ let g:python_highlight_space_errors=0
 let g:python_highlight_doctests=0
 let g:python_highlight_all=1
 let g:python_highlight_file_headers_as_comments=1
+
+" Livedown
+let g:livedown_open=1
+let g:livedown_browser='firefox'
