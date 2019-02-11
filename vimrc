@@ -28,7 +28,9 @@ set ttimeoutlen=0
 " Remove auto comment
 aug vimrc_remove_auto_comment
     au!
-    au FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+    au FileType * setlocal formatoptions-=cro
+    " Exceptions
+    au FileType markdown setlocal formatoptions+=cro
 aug END
 
 " Spelling language
