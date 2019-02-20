@@ -296,7 +296,7 @@ let g:lightline.component_expand={
             \ 'linter_errors': 'lightline#ale#errors'
             \ }
 let g:lightline.component_type={
-            \ 'linter_checking': 'left',
+            \ 'linter_checking': '',
             \ 'linter_warnings': 'warning',
             \ 'linter_errors': 'error'
             \ }
@@ -353,10 +353,9 @@ let g:ctrlsf_default_root='project'
 let g:ctrlsf_position='right'
 
 " ALE
-let g:ale_sign_error='●'
-let g:ale_sign_warning='.'
-let g:ale_lint_on_enter=0
-let g:ale_lint_on_text_changed='never'
+let g:ale_sign_error='•'
+let g:ale_sign_warning='•'
+let g:ale_lint_delay=5000
 let g:ale_linters={
             \ 'javascript': ['eslint'],
             \ 'python': ['flake8']
