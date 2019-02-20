@@ -305,7 +305,7 @@ let g:lightline.active={
             \            [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
             \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings' ],
             \            [ 'lineinfo' ],
-            \            [ 'gutentags', 'filetype', 'percent' ] ]
+            \            ['filetype', 'percent' ] ]
             \ }
 let g:lightline#ale#indicator_checking="\uf110 "
 let g:lightline#ale#indicator_warnings="\uf071 "
