@@ -26,8 +26,10 @@ alias gw='f() { git show $@ | cdiff -s -w 0 };f'
 
 # Docker
 alias dk='docker-compose'
-alias dkl='docker-compose logs -f'
+alias dkl='docker-compose logs'
 alias dkr='docker-compose restart'
+alias dku='docker-compose up'
+alias dkd='docker-compose down'
 
 # pnpm
 alias pnl='pnpm list --depth=0'
