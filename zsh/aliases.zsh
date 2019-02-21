@@ -25,7 +25,9 @@ alias gu='git pull'
 alias gw='f() { git show $@ | cdiff -s -w 0 };f'
 
 # Docker
-alias dk='f() { docker-compose $@ };f'
+alias dk='docker-compose'
+alias dkl='docker-compose logs -f'
+alias dkr='docker-compose restart'
 
 # pnpm
 alias pnl='pnpm list --depth=0'
