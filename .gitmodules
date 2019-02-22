@@ -139,3 +139,6 @@
 [submodule "vim/bundle/vim-livedown"]
 	path = vim/bundle/vim-livedown
 	url = https://github.com/shime/vim-livedown.git
+[submodule "vim/bundle/vim-abolish"]
+	path = vim/bundle/vim-abolish
+	url = https://github.com/tpope/vim-abolish.git
