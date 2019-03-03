@@ -115,10 +115,11 @@ set shiftwidth=4
 aug vimrc_tabs
     au!
     au FileType html,javascript,json,yaml set softtabstop=2 shiftwidth=2
-    au FileType jinja,vue,scss,coffee set softtabstop=2 shiftwidth=2
+    au FileType jinja,vue,css,scss,coffee set softtabstop=2 shiftwidth=2
     au FileType sbt,play2-conf set softtabstop=2 shiftwidth=2
     au FileType markdown,proto set softtabstop=2 shiftwidth=2
     au FileType go set softtabstop=4 shiftwidth=4
+    au FileType gohtmltmpl set softtabstop=2 shiftwidth=2
     au FileType snippets set expandtab
 aug END
 
@@ -336,7 +337,7 @@ endif
 let g:user_emmet_install_global=0
 aug vimrc_emmet
     au!
-    au FileType html,jinja,css,scss,coffee,javascript EmmetInstall
+    au FileType html,jinja,gohtmltmpl,css,scss,coffee,javascript EmmetInstall
 aug END
 
 " Commentary
