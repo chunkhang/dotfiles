@@ -82,12 +82,6 @@ set shortmess+=I
 " Truncate message to avoid hit enter
 set shortmess+=T
 
-" Netrw
-let g:netrw_banner=0
-let g:netrw_liststyle=3
-let g:netrw_winsize=20
-let g:netrw_browse_split=4
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors and Fonts
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -99,7 +93,7 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " Color scheme
-colorscheme base16-eighties
+colorscheme base16-classic-dark
 set termguicolors
 
 let g:is_bash=1
@@ -271,9 +265,6 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 
-" Netrw
-nnoremap <silent> <C-x> :Lexplore<cr>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -405,3 +396,6 @@ let g:python_highlight_file_headers_as_comments=1
 " Livedown
 let g:livedown_open=1
 let g:livedown_browser='firefox'
+
+" Dirvish
+let g:dirvish_mode = ':sort ,^.*[\/],'

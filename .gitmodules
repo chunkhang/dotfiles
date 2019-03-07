@@ -145,3 +145,6 @@
 [submodule "vim/bundle/traces.vim"]
 	path = vim/bundle/traces.vim
 	url = https://github.com/markonm/traces.vim.git
+[submodule "vim/bundle/vim-dirvish"]
+	path = vim/bundle/vim-dirvish
+	url = https://github.com/justinmk/vim-dirvish.git
