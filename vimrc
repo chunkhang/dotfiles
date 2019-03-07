@@ -94,7 +94,6 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " Color scheme
-colorscheme onedark
 if (empty($TMUX))
   if (has('nvim'))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -103,7 +102,9 @@ if (empty($TMUX))
     set termguicolors
   endif
 endif
+let g:onedark_hide_endofbuffer=1
 let g:onedark_termcolors=16
+colorscheme onedark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text
@@ -360,6 +361,7 @@ let g:ale_linters={
             \ 'python': ['flake8']
             \ }
 let g:ale_javascript_eslint_executable='npx eslint'
+highlight link ALEWarningSign WarningMsg
 
 " Local vimrc
 let g:localvimrc_persistent=1
@@ -368,7 +370,7 @@ let g:localvimrc_persistent=1
 let g:gutentags_ctags_tagfile='.tags'
 
 " Signature
-highlight link SignatureMarkText DiffDelete
+highlight link SignatureMarkText Todo
 
 " Go
 let g:go_fmt_fail_silently=1
