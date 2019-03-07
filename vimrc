@@ -437,4 +437,4 @@ highlight link BufTabLineActive LightlineRight_normal_2
 highlight link BufTabLineHidden LightlineRight_normal_2
 
 " Matching tags
-highlight! link MatchParen Cursor
+highlight! link MatchParen ToolbarLine
