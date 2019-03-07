@@ -37,9 +37,6 @@
 [submodule "vim/bundle/vitality"]
 	path = vim/bundle/vitality
 	url = https://github.com/sjl/vitality.vim.git
-[submodule "vim/bundle/base16-vim"]
-	path = vim/bundle/base16-vim
-	url = https://github.com/chriskempson/base16-vim.git
 [submodule "zsh/git-open"]
 	path = zsh/git-open
 	url = https://github.com/paulirish/git-open.git
