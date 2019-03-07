@@ -371,16 +371,12 @@ let g:ale_linters={
             \ 'python': ['flake8']
             \ }
 let g:ale_javascript_eslint_executable='npx eslint'
-highlight link ALEWarningSign WarningMsg
 
 " Local vimrc
 let g:localvimrc_persistent=1
 
 " Gutentags
 let g:gutentags_ctags_tagfile='.tags'
-
-" Signature
-highlight link SignatureMarkText Todo
 
 " Go
 let g:go_fmt_fail_silently=1
@@ -400,9 +396,6 @@ aug END
 let g:buftabline_show=1
 let g:buftabline_numbers=2
 let g:buftabline_indicators=1
-highlight link BufTabLineCurrent LightlineLeft_normal_1
-highlight link BufTabLineActive LightlineRight_normal_2
-highlight link BufTabLineHidden LightlineRight_normal_2
 
 " Python
 let g:python_highlight_operators=0
@@ -427,3 +420,21 @@ let g:mta_filetypes = {
     \ 'jinja' : 1,
     \ 'gohtmltmpl': 1,
     \ }
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Highlights
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" ALE
+highlight link ALEWarningSign WarningMsg
+
+" Signature
+highlight link SignatureMarkText Todo
+
+" Buftabline
+highlight link BufTabLineCurrent LightlineLeft_normal_1
+highlight link BufTabLineActive LightlineRight_normal_2
+highlight link BufTabLineHidden LightlineRight_normal_2
+
+" Matching tags
+highlight! link MatchParen Cursor
