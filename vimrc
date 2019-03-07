@@ -296,27 +296,29 @@ let g:lightline.component_expand={
             \ 'linter_errors': 'lightline#ale#errors'
             \ }
 let g:lightline.component_type={
-            \ 'linter_checking': '',
+            \ 'linter_checking': 'left',
             \ 'linter_warnings': 'warning',
             \ 'linter_errors': 'error'
             \ }
 let g:lightline.active={
             \ 'left' : [ [ 'mode', 'paste' ],
-            \            [ 'gitbranch', 'readonly', 'relativepath', 'modified' ] ],
-            \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings' ],
-            \            [ 'lineinfo' ],
-            \            ['filetype', 'percent' ] ]
+            \            [ 'relativepath', 'readonly', 'modified' ],
+            \            [ 'gitbranch' ] ],
+            \ 'right': [
+            \            [ 'linter_checking', 'lineinfo' ],
+            \            [ 'linter_warnings', 'linter_errors', 'percent' ],
+            \            [ 'filetype' ] ]
             \ }
 let g:lightline#ale#indicator_checking="\uf110 "
 let g:lightline#ale#indicator_warnings="\uf071 "
 let g:lightline#ale#indicator_errors="\uf05e "
 function! MyFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ?
-                \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
+                \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
 endfunction
 function! MyFileformat()
     return winwidth(0) > 70 ?
-                \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol()) : ''
+                \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol() . ' ') : ''
 endfunction
 
 " Git gutter
