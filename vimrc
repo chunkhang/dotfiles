@@ -273,6 +273,9 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 
+" MatchTagAlways
+nnoremap <leader>% :MtaJumpToOtherTag<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -415,3 +418,12 @@ let g:livedown_browser='firefox'
 
 " Dirvish
 let g:dirvish_mode = ':sort ,^.*[\/],'
+
+" MatchTagAlways
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'gohtmltmpl': 1,
+    \ }
