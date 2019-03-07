@@ -286,7 +286,7 @@ set noshowmode
 let g:lightline={}
 let g:lightline.colorscheme='onedark'
 let g:lightline.component_function={
-            \ 'gitbranch': 'fugitive#head',
+            \ 'gitbranch': 'MyGitbranch',
             \ 'filetype': 'MyFiletype',
             \ 'fileformat': 'MyFileformat'
             \ }
@@ -312,6 +312,11 @@ let g:lightline.active={
 let g:lightline#ale#indicator_checking="\uf110 "
 let g:lightline#ale#indicator_warnings="\uf071 "
 let g:lightline#ale#indicator_errors="\uf05e "
+function! MyGitbranch()
+    let branch = fugitive#head()
+    return strlen(branch) != 0 ?
+        \ "\uf418 " . fugitive#head() : ''
+endfunction
 function! MyFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ?
                 \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
