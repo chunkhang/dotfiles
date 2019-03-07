@@ -87,16 +87,23 @@ set shortmess+=T
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 syntax on
+let g:is_bash=1
 
 " Encoding
 set encoding=utf-8
 scriptencoding utf-8
 
 " Color scheme
-colorscheme base16-classic-dark
-set termguicolors
-
-let g:is_bash=1
+colorscheme onedark
+if (empty($TMUX))
+  if (has('nvim'))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has('termguicolors'))
+    set termguicolors
+  endif
+endif
+let g:onedark_termcolors=16
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text
@@ -276,7 +283,7 @@ let g:vim_markdown_no_default_key_mappings=1
 set laststatus=2
 set noshowmode
 let g:lightline={}
-let g:lightline.colorscheme='wombat'
+let g:lightline.colorscheme='onedark'
 let g:lightline.component_function={
             \ 'gitbranch': 'fugitive#head',
             \ 'filetype': 'MyFiletype',
