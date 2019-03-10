@@ -126,18 +126,12 @@ colorscheme onedark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tabs
 set expandtab
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 aug vimrc_tabs
   au!
-  au FileType html,javascript,json,yaml set softtabstop=2 shiftwidth=2
-  au FileType jinja,vue,css,scss,coffee set softtabstop=2 shiftwidth=2
-  au FileType sbt,play2-conf set softtabstop=2 shiftwidth=2
-  au FileType markdown,proto set softtabstop=2 shiftwidth=2
-  au FileType go set softtabstop=4 shiftwidth=4
-  au FileType gohtmltmpl set softtabstop=2 shiftwidth=2
-  au FileType vim set softtabstop=2 shiftwidth=2
+  au FileType go set tabstop=4 softtabstop=4 shiftwidth=4
   au FileType snippets set expandtab
 aug END
 
@@ -445,7 +439,6 @@ let g:mta_filetypes = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlights
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " ALE
 highlight link ALEWarningSign WarningMsg
 
