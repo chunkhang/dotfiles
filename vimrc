@@ -124,7 +124,8 @@ colorscheme onedark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Text
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Tabs
+" Indentation
+set autoindent
 set expandtab
 set tabstop=2
 set softtabstop=2
@@ -134,9 +135,6 @@ aug vimrc_tabs
   au FileType go set tabstop=4 softtabstop=4 shiftwidth=4
   au FileType snippets set expandtab
 aug END
-
-" Indent
-set autoindent
 
 " Highlight whitespaces
 set list
@@ -151,127 +149,33 @@ set backspace=indent,eol,start
 " Leader key
 let mapleader=' '
 
-" Configuration
-nnoremap <leader>v :edit ~/.vimrc<cr>
-nnoremap <silent> <leader>V :source ~/.vimrc<cr>
-      \ :echo 'Source configuration'<cr>
-
-" Remove search highlighting
-nnoremap <silent> <leader>/ :noh<cr>
-      \ :echo 'Remove search highlighting'<cr>
-
-" Scrolling
+" Motions
 nmap j gj
 nmap k gk
 
-" Close buffer
-nnoremap <silent> <leader>q :BD<cr>
-
-" Write buffer
-nnoremap <leader>w :w<cr>
-nnoremap <leader>W :wa<cr>
-
-" Switch windows
-nnoremap <C-h> <C-W>h
-nnoremap <C-j> <C-W>j
-nnoremap <C-k> <C-W>k
-nnoremap <C-l> <C-W>l
-" Fix <C-j>: https://stackoverflow.com/a/31502538
-aug vimrc_switch_windows
-  au!
-  au VimEnter * unmap <C-j>
-  au VimEnter * noremap <C-j> <C-w>j
-aug END
-
-" Split window
-nnoremap <leader><right> :vs<cr>
-nnoremap <leader><down> :sp<cr>
-nnoremap <leader><left> :set splitright&<cr>:vs<cr>:set splitright<cr>
-nnoremap <leader><up> :set splitbelow&<cr>:sp<cr>:set splitbelow<cr>
-
-" Resize window
-nnoremap <c-w>> :vertical resize +15<cr>
-nnoremap <c-w>< :vertical resize -15<cr>
-
-" Override
-nnoremap ! :<up>!
-
-" Disable keys in normal mode
-nnoremap <backspace> <nop>
-nnoremap <space> <nop>
-nnoremap <cr> <nop>
-
-" Indent
+" Shifts
 nnoremap < v<<esc>
       \ :echo 'Dedent'<cr>
 nnoremap > v><esc>
       \ :echo 'Indent'<cr>
 
-" Markdown preview
-nnoremap <silent> <leader>m :LivedownToggle<cr>
-      \ :echo 'Toggle livedown'<cr>
-
-" Toggle syntax
-nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
-      \     syntax off <Bar>
-      \ else <Bar>
-      \     syntax enable <Bar>
-      \ endif <cr>
-      \ :echo 'Toggle syntax'<cr>
-
-" System clipboard
-nnoremap <leader>Y "*Y
-      \ :echo 'Copy to system clipboard'<cr>
-vnoremap <leader>y "*y
-      \ :echo 'Copy to system clipboard'<cr>
-nnoremap <leader>p "*p
-      \ :echo 'Paste from system clipboard'<cr>
-vnoremap <leader>p "*p
-      \ :echo 'Paste from system clipboard'<cr>
-
-" Trailing whitespace
-nnoremap <leader>t /\s\+$<cr>
-      \ :echo 'Search trailing whitespace'<cr>
-nnoremap <leader>T :%s/\s\+$//e<cr>:let @/=""<cr>
-      \ :echo 'Trim trailing whitespace'<cr>
-
-" Emmet
-let g:user_emmet_leader_key='<C-e>'
-
-" Column 80
-nnoremap <silent> <leader>c :execute 'setlocal colorcolumn='
-      \ . (&colorcolumn == '' ? '80' : '')<cr>
-      \ :echo 'Toggle column 80'<cr>
-
-" Select all
+" Selections
 nnoremap <leader>a ggVG
 vnoremap <leader>a <esc>ggVG
 
-" Toggle spell check
-nnoremap <silent> <leader>s :setlocal spell!<cr>
-      \ :echo 'Toggle spell check'<cr>
+nnoremap <backspace> <nop>
+nnoremap <space> <nop>
+nnoremap <cr> <nop>
 
-" Re-edit
-nnoremap <silent> <leader>r :e<cr>
-
-" CtrlSF
-nmap     <C-F>f <Plug>CtrlSFPrompt
-nmap     <C-F>w <Plug>CtrlSFCwordPath
-nmap     <C-F>n <Plug>CtrlSFPwordPath
-nnoremap <C-F>t :CtrlSFToggle<cr>
-inoremap <C-F>t <Esc>:CtrlSFToggle<cr>
-
-" ALE
+" Jumps
 nmap <silent> [a <Plug>(ale_previous_wrap)
 nmap <silent> ]a <Plug>(ale_next_wrap)
+nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
-" Ultisnips
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
-nnoremap <leader>u :edit ~/.vim/ultisnips/
-
-" Buftabline
+" Buffers
+nnoremap <leader>w :w<cr>
+nnoremap <leader>W :wa<cr>
+nnoremap <silent> <leader>q :BD<cr>
 nmap <leader>1 <Plug>BufTabLine.Go(1)
 nmap <leader>2 <Plug>BufTabLine.Go(2)
 nmap <leader>3 <Plug>BufTabLine.Go(3)
@@ -282,13 +186,87 @@ nmap <leader>7 <Plug>BufTabLine.Go(7)
 nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
-
-" Buffers and tabs
 nnoremap gB :bprev<cr>
 nnoremap gb :bnext<cr>
 
-" MatchTagAlways
-nnoremap <leader>% :MtaJumpToOtherTag<cr>
+" Windows
+nnoremap <leader><right> :vs<cr>
+nnoremap <leader><down> :sp<cr>
+nnoremap <leader><left> :set splitright&<cr>:vs<cr>:set splitright<cr>
+nnoremap <leader><up> :set splitbelow&<cr>:sp<cr>:set splitbelow<cr>
+nnoremap <c-w>> :vertical resize +15<cr>
+nnoremap <c-w>< :vertical resize -15<cr>
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
+" https://stackoverflow.com/a/31502538
+aug vimrc_switch_windows
+  au!
+  au VimEnter * unmap <C-j>
+  au VimEnter * noremap <C-j> <C-w>j
+aug END
+
+" Clipboard
+nnoremap <leader>Y "*Y
+      \ :echo 'Copy to system clipboard'<cr>
+vnoremap <leader>y "*y
+      \ :echo 'Copy to system clipboard'<cr>
+nnoremap <leader>p "*p
+      \ :echo 'Paste from system clipboard'<cr>
+vnoremap <leader>p "*p
+      \ :echo 'Paste from system clipboard'<cr>
+
+" Snippets
+let g:UltiSnipsExpandTrigger='<tab>'
+let g:UltiSnipsJumpForwardTrigger='<tab>'
+let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+nnoremap <leader>u :edit ~/.vim/ultisnips/
+
+" Files
+nnoremap <silent> <leader>r :e<cr>
+nnoremap <leader>v :edit ~/.vimrc<cr>
+nnoremap <silent> <leader>V :source ~/.vimrc<cr>
+      \ :echo 'Source configuration'<cr>
+
+" Searching
+nnoremap <silent> <leader>/ :noh<cr>
+      \ :echo 'Remove search highlighting'<cr>
+nmap     <C-F>f <Plug>CtrlSFPrompt
+nmap     <C-F>w <Plug>CtrlSFCwordPath
+nmap     <C-F>n <Plug>CtrlSFPwordPath
+nnoremap <C-F>t :CtrlSFToggle<cr>
+inoremap <C-F>t <Esc>:CtrlSFToggle<cr>
+
+" Whitespace
+nnoremap <leader>t /\s\+$<cr>
+      \ :echo 'Search trailing whitespace'<cr>
+nnoremap <leader>T :%s/\s\+$//e<cr>:let @/=""<cr>
+      \ :echo 'Trim trailing whitespace'<cr>
+
+" Syntax
+nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
+      \     syntax off <Bar>
+      \ else <Bar>
+      \     syntax enable <Bar>
+      \ endif <cr>
+      \ :echo 'Toggle syntax'<cr>
+
+" HTML
+let g:user_emmet_leader_key='<C-e>'
+
+" Markdown
+nnoremap <silent> <leader>m :LivedownToggle<cr>
+      \ :echo 'Toggle livedown'<cr>
+
+" Column
+nnoremap <silent> <leader>c :execute 'setlocal colorcolumn='
+      \ . (&colorcolumn == '' ? '80' : '')<cr>
+      \ :echo 'Toggle column 80'<cr>
+
+" Spelling
+nnoremap <silent> <leader>s :setlocal spell!<cr>
+      \ :echo 'Toggle spell check'<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
