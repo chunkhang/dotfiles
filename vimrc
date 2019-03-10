@@ -186,8 +186,8 @@ nmap <leader>7 <Plug>BufTabLine.Go(7)
 nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
-nnoremap gB :bprev<cr>
-nnoremap gb :bnext<cr>
+nnoremap <leader>] :bn<cr>
+nnoremap <leader>[ :bp<cr>
 
 " Windows
 nnoremap <leader><right> :vs<cr>
@@ -206,6 +206,10 @@ aug vimrc_switch_windows
   au VimEnter * unmap <C-j>
   au VimEnter * noremap <C-j> <C-w>j
 aug END
+
+" Tabs
+nnoremap <leader>> :tabn<cr>
+nnoremap <leader>< :tabp<cr>
 
 " Clipboard
 nnoremap <leader>Y "*Y
@@ -385,7 +389,6 @@ aug vimrc_ultisnips
 aug END
 
 " Buftabline
-set showtabline=2
 let g:buftabline_show=1
 let g:buftabline_numbers=2
 let g:buftabline_indicators=1
