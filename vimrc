@@ -7,8 +7,23 @@ execute pathogen#infect()
 " Lines of history
 set history=1000
 
-" Buffer
+" Buffers
 set hidden
+aug vimrc_remove_empty_buffer
+  au!
+  au BufWinEnter * call MyCleanEmptyBuffers()
+aug END
+" https://redd.it/1a4yf1
+function! MyCleanEmptyBuffers()
+  let buffers = filter(
+        \ range(1, bufnr('$')),
+        \ 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val) < 0 &&
+        \ (getbufline(v:val, 1, "$") == [""])'
+        \ )
+  if !empty(buffers)
+    exe 'bd '.join(buffers, ' ')
+  endif
+endfunction
 
 " Filetypes
 filetype plugin on
@@ -27,10 +42,10 @@ set ttimeoutlen=0
 
 " Remove auto comment
 aug vimrc_remove_auto_comment
-    au!
-    au FileType * setlocal formatoptions-=cro
-    " Exceptions
-    au FileType markdown setlocal formatoptions+=cro
+  au!
+  au FileType * setlocal formatoptions-=cro
+  " Exceptions
+  au FileType markdown setlocal formatoptions+=cro
 aug END
 
 " Spelling language
@@ -115,14 +130,15 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 aug vimrc_tabs
-    au!
-    au FileType html,javascript,json,yaml set softtabstop=2 shiftwidth=2
-    au FileType jinja,vue,css,scss,coffee set softtabstop=2 shiftwidth=2
-    au FileType sbt,play2-conf set softtabstop=2 shiftwidth=2
-    au FileType markdown,proto set softtabstop=2 shiftwidth=2
-    au FileType go set softtabstop=4 shiftwidth=4
-    au FileType gohtmltmpl set softtabstop=2 shiftwidth=2
-    au FileType snippets set expandtab
+  au!
+  au FileType html,javascript,json,yaml set softtabstop=2 shiftwidth=2
+  au FileType jinja,vue,css,scss,coffee set softtabstop=2 shiftwidth=2
+  au FileType sbt,play2-conf set softtabstop=2 shiftwidth=2
+  au FileType markdown,proto set softtabstop=2 shiftwidth=2
+  au FileType go set softtabstop=4 shiftwidth=4
+  au FileType gohtmltmpl set softtabstop=2 shiftwidth=2
+  au FileType vim set softtabstop=2 shiftwidth=2
+  au FileType snippets set expandtab
 aug END
 
 " Indent
@@ -144,11 +160,11 @@ let mapleader=' '
 " Configuration
 nnoremap <leader>v :edit ~/.vimrc<cr>
 nnoremap <silent> <leader>V :source ~/.vimrc<cr>
-            \ :echo 'Source configuration'<cr>
+      \ :echo 'Source configuration'<cr>
 
 " Remove search highlighting
 nnoremap <silent> <leader>/ :noh<cr>
-            \ :echo 'Remove search highlighting'<cr>
+      \ :echo 'Remove search highlighting'<cr>
 
 " Scrolling
 nmap j gj
@@ -168,9 +184,9 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 " Fix <C-j>: https://stackoverflow.com/a/31502538
 aug vimrc_switch_windows
-    au!
-    au VimEnter * unmap <C-j>
-    au VimEnter * noremap <C-j> <C-w>j
+  au!
+  au VimEnter * unmap <C-j>
+  au VimEnter * noremap <C-j> <C-w>j
 aug END
 
 " Split window
@@ -193,45 +209,45 @@ nnoremap <cr> <nop>
 
 " Indent
 nnoremap < v<<esc>
-            \ :echo 'Dedent'<cr>
+      \ :echo 'Dedent'<cr>
 nnoremap > v><esc>
-            \ :echo 'Indent'<cr>
+      \ :echo 'Indent'<cr>
 
 " Markdown preview
 nnoremap <silent> <leader>m :LivedownToggle<cr>
-            \ :echo 'Toggle livedown'<cr>
+      \ :echo 'Toggle livedown'<cr>
 
 " Toggle syntax
 nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
-            \     syntax off <Bar>
-            \ else <Bar>
-            \     syntax enable <Bar>
-            \ endif <cr>
-            \ :echo 'Toggle syntax'<cr>
+      \     syntax off <Bar>
+      \ else <Bar>
+      \     syntax enable <Bar>
+      \ endif <cr>
+      \ :echo 'Toggle syntax'<cr>
 
 " System clipboard
 nnoremap <leader>Y "*Y
-            \ :echo 'Copy to system clipboard'<cr>
+      \ :echo 'Copy to system clipboard'<cr>
 vnoremap <leader>y "*y
-            \ :echo 'Copy to system clipboard'<cr>
+      \ :echo 'Copy to system clipboard'<cr>
 nnoremap <leader>p "*p
-            \ :echo 'Paste from system clipboard'<cr>
+      \ :echo 'Paste from system clipboard'<cr>
 vnoremap <leader>p "*p
-            \ :echo 'Paste from system clipboard'<cr>
+      \ :echo 'Paste from system clipboard'<cr>
 
 " Trailing whitespace
 nnoremap <leader>t /\s\+$<cr>
-            \ :echo 'Search trailing whitespace'<cr>
+      \ :echo 'Search trailing whitespace'<cr>
 nnoremap <leader>T :%s/\s\+$//e<cr>:let @/=""<cr>
-            \ :echo 'Trim trailing whitespace'<cr>
+      \ :echo 'Trim trailing whitespace'<cr>
 
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
 
 " Column 80
 nnoremap <silent> <leader>c :execute 'setlocal colorcolumn='
-            \ . (&colorcolumn == '' ? '80' : '')<cr>
-            \ :echo 'Toggle column 80'<cr>
+      \ . (&colorcolumn == '' ? '80' : '')<cr>
+      \ :echo 'Toggle column 80'<cr>
 
 " Select all
 nnoremap <leader>a ggVG
@@ -239,7 +255,7 @@ vnoremap <leader>a <esc>ggVG
 
 " Toggle spell check
 nnoremap <silent> <leader>s :setlocal spell!<cr>
-            \ :echo 'Toggle spell check'<cr>
+      \ :echo 'Toggle spell check'<cr>
 
 " Re-edit
 nnoremap <silent> <leader>r :e<cr>
@@ -273,6 +289,10 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 
+" Buffers and tabs
+nnoremap gB :bprev<cr>
+nnoremap gb :bnext<cr>
+
 " MatchTagAlways
 nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
@@ -289,44 +309,44 @@ set noshowmode
 let g:lightline={}
 let g:lightline.colorscheme='onedark'
 let g:lightline.component_function={
-            \ 'gitbranch': 'MyGitbranch',
-            \ 'filetype': 'MyFiletype',
-            \ 'fileformat': 'MyFileformat'
-            \ }
+      \ 'gitbranch': 'MyGitbranch',
+      \ 'filetype': 'MyFiletype',
+      \ 'fileformat': 'MyFileformat'
+      \ }
 let g:lightline.component_expand={
-            \ 'linter_checking': 'lightline#ale#checking',
-            \ 'linter_warnings': 'lightline#ale#warnings',
-            \ 'linter_errors': 'lightline#ale#errors'
-            \ }
+      \ 'linter_checking': 'lightline#ale#checking',
+      \ 'linter_warnings': 'lightline#ale#warnings',
+      \ 'linter_errors': 'lightline#ale#errors'
+      \ }
 let g:lightline.component_type={
-            \ 'linter_checking': 'left',
-            \ 'linter_warnings': 'warning',
-            \ 'linter_errors': 'error'
-            \ }
+      \ 'linter_checking': 'left',
+      \ 'linter_warnings': 'warning',
+      \ 'linter_errors': 'error'
+      \ }
 let g:lightline.active={
-            \ 'left' : [ [ 'mode', 'paste' ],
-            \            [ 'relativepath', 'readonly', 'modified' ],
-            \            [ 'gitbranch' ] ],
-            \ 'right': [
-            \            [ 'linter_checking', 'lineinfo' ],
-            \            [ 'linter_warnings', 'linter_errors', 'percent' ],
-            \            [ 'filetype' ] ]
-            \ }
+      \ 'left' : [ [ 'mode', 'paste' ],
+      \            [ 'relativepath', 'readonly', 'modified' ],
+      \            [ 'gitbranch' ] ],
+      \ 'right': [
+      \            [ 'linter_checking', 'lineinfo' ],
+      \            [ 'linter_warnings', 'linter_errors', 'percent' ],
+      \            [ 'filetype' ] ]
+      \ }
 let g:lightline#ale#indicator_checking="\uf110 "
 let g:lightline#ale#indicator_warnings="\uf071 "
 let g:lightline#ale#indicator_errors="\uf05e "
 function! MyGitbranch()
-    let branch = fugitive#head()
-    return strlen(branch) != 0 ?
+  let branch = fugitive#head()
+  return strlen(branch) != 0 ?
         \ "\uf418 " . fugitive#head() : ''
 endfunction
 function! MyFiletype()
-    return winwidth(0) > 70 ? (strlen(&filetype) ?
-                \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
+  return winwidth(0) > 70 ? (strlen(&filetype) ?
+        \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
 endfunction
 function! MyFileformat()
-    return winwidth(0) > 70 ?
-                \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol() . ' ') : ''
+  return winwidth(0) > 70 ?
+        \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol() . ' ') : ''
 endfunction
 
 " Git gutter
@@ -339,22 +359,22 @@ let g:ctrlp_show_hidden=1
 let g:ctrlp_root_markers=['.ctrlp']
 let g:ctrlp_use_caching=0
 if executable('ag')
-    let g:ctrlp_user_command='ag %s -l --nocolor -g "" --hidden --ignore-dir .git'
+  let g:ctrlp_user_command='ag %s -l --nocolor -g "" --hidden --ignore-dir .git'
 endif
 
 " Emmet
 let g:user_emmet_install_global=0
 aug vimrc_emmet
-    au!
-    au FileType html,jinja,gohtmltmpl,css,scss,coffee,javascript EmmetInstall
+  au!
+  au FileType html,jinja,gohtmltmpl,css,scss,coffee,javascript EmmetInstall
 aug END
 
 " Commentary
 aug vimrc_commentary
-    au!
-    au FileType jinja setlocal commentstring={#\ %s\ #}
-    au FileType vue,sbt setlocal commentstring=\/\/\ %s
-    au FileType hocon setlocal commentstring=#\ %s
+  au!
+  au FileType jinja setlocal commentstring={#\ %s\ #}
+  au FileType vue,sbt setlocal commentstring=\/\/\ %s
+  au FileType hocon setlocal commentstring=#\ %s
 aug END
 
 " CtrlSF
@@ -367,9 +387,9 @@ let g:ale_sign_error='•'
 let g:ale_sign_warning='•'
 let g:ale_lint_delay=5000
 let g:ale_linters={
-            \ 'javascript': ['eslint'],
-            \ 'python': ['flake8']
-            \ }
+      \ 'javascript': ['eslint'],
+      \ 'python': ['flake8']
+      \ }
 let g:ale_javascript_eslint_executable='npx eslint'
 
 " Local vimrc
@@ -388,11 +408,12 @@ let g:BufKillCreateMappings=0
 let g:UltiSnipsEditSplit='context'
 " https://github.com/SirVer/ultisnips/issues/593#issuecomment-361338769
 aug vimrc_ultisnips
-    au!
-    au VimEnter * au! UltiSnips_AutoTrigger
+  au!
+  au VimEnter * au! UltiSnips_AutoTrigger
 aug END
 
 " Buftabline
+set showtabline=2
 let g:buftabline_show=1
 let g:buftabline_numbers=2
 let g:buftabline_indicators=1
@@ -414,12 +435,12 @@ let g:dirvish_mode = ':sort ,^.*[\/],'
 
 " MatchTagAlways
 let g:mta_filetypes = {
-    \ 'html' : 1,
-    \ 'xhtml' : 1,
-    \ 'xml' : 1,
-    \ 'jinja' : 1,
-    \ 'gohtmltmpl': 1,
-    \ }
+      \ 'html' : 1,
+      \ 'xhtml' : 1,
+      \ 'xml' : 1,
+      \ 'jinja' : 1,
+      \ 'gohtmltmpl': 1,
+      \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlights
