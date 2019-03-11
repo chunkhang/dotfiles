@@ -233,6 +233,10 @@ nnoremap <leader>v :edit ~/.vimrc<cr>
 nnoremap <silent> <leader>V :source ~/.vimrc<cr>
       \ :echo 'Source configuration'<cr>
 
+" Sessions
+nnoremap <leader>o :Obsess<cr>
+nnoremap <leader>O :Obsess!<cr>
+
 " Searching
 nnoremap <silent> <leader>/ :noh<cr>
       \ :echo 'Remove search highlighting'<cr>
@@ -272,6 +276,9 @@ nnoremap <silent> <leader>c :execute 'setlocal colorcolumn='
 nnoremap <silent> <leader>s :setlocal spell!<cr>
       \ :echo 'Toggle spell check'<cr>
 
+" Commands
+nnoremap ! :<up>!
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,7 +294,8 @@ let g:lightline.colorscheme='onedark'
 let g:lightline.component_function={
       \ 'gitbranch': 'MyGitbranch',
       \ 'filetype': 'MyFiletype',
-      \ 'fileformat': 'MyFileformat'
+      \ 'fileformat': 'MyFileformat',
+      \ 'session': 'MySession'
       \ }
 let g:lightline.component_expand={
       \ 'linter_checking': 'lightline#ale#checking',
@@ -302,7 +310,7 @@ let g:lightline.component_type={
 let g:lightline.active={
       \ 'left' : [ [ 'mode', 'paste' ],
       \            [ 'relativepath', 'readonly', 'modified' ],
-      \            [ 'gitbranch' ] ],
+      \            [ 'gitbranch', 'session' ] ],
       \ 'right': [
       \            [ 'linter_checking', 'lineinfo' ],
       \            [ 'linter_warnings', 'linter_errors', 'percent' ],
@@ -313,7 +321,7 @@ let g:lightline#ale#indicator_warnings="\uf071 "
 let g:lightline#ale#indicator_errors="\uf05e "
 function! MyGitbranch()
   let branch = fugitive#head()
-  return strlen(branch) != 0 ?
+  return !empty(branch) ?
         \ "\uf418 " . fugitive#head() : ''
 endfunction
 function! MyFiletype()
@@ -323,6 +331,14 @@ endfunction
 function! MyFileformat()
   return winwidth(0) > 70 ?
         \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol() . ' ') : ''
+endfunction
+function! MySession()
+  let session = ObsessionStatus('active', 'paused')
+  if !empty(session)
+    return session ==# 'active' ?
+      \ "\uf662" : "\uf663"
+  endif
+  return ''
 endfunction
 
 " Git gutter
