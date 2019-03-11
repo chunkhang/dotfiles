@@ -187,10 +187,12 @@ function refresh() {
 
 # Restore vim session if possible
 function vim() {
-    if [[ -f Session.vim ]]; then
+    if [ "$#" != 0 ]; then
+        env vim "$@"
+    elif [[ -f Session.vim ]]; then
         env vim -S
     else
-        env vim "$@"
+        env vim
     fi
 }
 
