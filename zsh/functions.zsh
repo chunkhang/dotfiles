@@ -185,6 +185,15 @@ function refresh() {
     exec zsh
 }
 
+# Restore vim session if possible
+function vim() {
+    if [[ -f Session.vim ]]; then
+        env vim -S
+    else
+        env vim "$@"
+    fi
+}
+
 # Perform operations on Wi-Fi
 function wifi() {
     showHelp() {
