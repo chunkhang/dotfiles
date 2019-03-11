@@ -279,6 +279,9 @@ nnoremap <silent> <leader>s :setlocal spell!<cr>
 " Commands
 nnoremap ! :<up>!
 
+" Shell
+nnoremap <silent> <leader>z :sh<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
