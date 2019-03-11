@@ -132,7 +132,7 @@ set softtabstop=2
 set shiftwidth=2
 aug vimrc_tabs
   au!
-  au FileType go set tabstop=4 softtabstop=4 shiftwidth=4
+  au FileType zsh,go set tabstop=4 softtabstop=4 shiftwidth=4
   au FileType snippets set expandtab
 aug END
 
