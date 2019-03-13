@@ -37,4 +37,6 @@ fi
 autoload zmv
 
 # Syntax highlighting
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets)
+ZSH_HIGHLIGHT_MAXLENGTH=60
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
