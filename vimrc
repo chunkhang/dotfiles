@@ -280,7 +280,7 @@ nnoremap <silent> <leader>s :setlocal spell!<cr>
 nnoremap ! :<up>!
 
 " Shell
-nnoremap <silent> <leader>z :sh<cr>
+nnoremap <silent> <leader><leader> :sh<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
