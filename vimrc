@@ -155,9 +155,7 @@ nmap k gk
 
 " Shifts
 nnoremap < v<<esc>
-      \ :echo 'Dedent'<cr>
 nnoremap > v><esc>
-      \ :echo 'Indent'<cr>
 
 " Selections
 nnoremap <leader>a ggVG
@@ -239,7 +237,6 @@ nnoremap <leader>O :Obsess!<cr>
 
 " Searching
 nnoremap <silent> <leader>/ :noh<cr>
-      \ :echo 'Remove search highlighting'<cr>
 nmap     <C-F>f <Plug>CtrlSFPrompt
 nmap     <C-F>w <Plug>CtrlSFCwordPath
 nmap     <C-F>n <Plug>CtrlSFPwordPath
