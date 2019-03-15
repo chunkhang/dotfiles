@@ -102,7 +102,7 @@ set shortmess+=T
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 syntax on
-let g:is_bash=1
+let g:is_bash = 1
 
 " Encoding
 set encoding=utf-8
@@ -111,14 +111,14 @@ scriptencoding utf-8
 " Color scheme
 if (empty($TMUX))
   if (has('nvim'))
-    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+    let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
   endif
   if (has('termguicolors'))
     set termguicolors
   endif
 endif
-let g:onedark_hide_endofbuffer=1
-let g:onedark_termcolors=16
+let g:onedark_hide_endofbuffer = 1
+let g:onedark_termcolors = 16
 colorscheme onedark
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -147,7 +147,7 @@ set backspace=indent,eol,start
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader key
-let mapleader=' '
+let mapleader = ' '
 
 " Motions
 nmap j gj
@@ -220,9 +220,9 @@ vnoremap <leader>p "*p
       \ :echo 'Paste from system clipboard'<cr>
 
 " Snippets
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 nnoremap <leader>u :edit ~/.vim/ultisnips/
 
 " Files
@@ -246,7 +246,7 @@ inoremap <C-F>t <Esc>:CtrlSFToggle<cr>
 " Whitespace
 nnoremap <leader>t /\s\+$<cr>
       \ :echo 'Search trailing whitespace'<cr>
-nnoremap <leader>T :%s/\s\+$//e<cr>:let @/=""<cr>
+nnoremap <leader>T :%s/\s\+$//e<cr>:let @/ = ""<cr>
       \ :echo 'Trim trailing whitespace'<cr>
 
 " Syntax
@@ -258,7 +258,7 @@ nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
       \ :echo 'Toggle syntax'<cr>
 
 " HTML
-let g:user_emmet_leader_key='<C-e>'
+let g:user_emmet_leader_key = '<C-e>'
 
 " Markdown
 nnoremap <silent> <leader>m :LivedownToggle<cr>
@@ -283,31 +283,31 @@ nnoremap <silent> <leader><leader> :sh<cr>
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown
-let g:vim_markdown_folding_disabled=1
-let g:vim_markdown_no_default_key_mappings=1
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_no_default_key_mappings = 1
 
 " Lightline
 set laststatus=2
 set noshowmode
-let g:lightline={}
-let g:lightline.colorscheme='onedark'
-let g:lightline.component_function={
+let g:lightline = {}
+let g:lightline.colorscheme = 'onedark'
+let g:lightline.component_function = {
       \ 'gitbranch': 'MyGitbranch',
       \ 'filetype': 'MyFiletype',
       \ 'fileformat': 'MyFileformat',
       \ 'session': 'MySession'
       \ }
-let g:lightline.component_expand={
+let g:lightline.component_expand = {
       \ 'linter_checking': 'lightline#ale#checking',
       \ 'linter_warnings': 'lightline#ale#warnings',
       \ 'linter_errors': 'lightline#ale#errors'
       \ }
-let g:lightline.component_type={
+let g:lightline.component_type = {
       \ 'linter_checking': 'left',
       \ 'linter_warnings': 'warning',
       \ 'linter_errors': 'error'
       \ }
-let g:lightline.active={
+let g:lightline.active = {
       \ 'left' : [ [ 'mode', 'paste' ],
       \            [ 'relativepath', 'readonly', 'modified' ],
       \            [ 'gitbranch', 'session' ] ],
@@ -316,9 +316,9 @@ let g:lightline.active={
       \            [ 'linter_warnings', 'linter_errors', 'percent' ],
       \            [ 'filetype' ] ]
       \ }
-let g:lightline#ale#indicator_checking="\uf110 "
-let g:lightline#ale#indicator_warnings="\uf071 "
-let g:lightline#ale#indicator_errors="\uf05e "
+let g:lightline#ale#indicator_checking = "\uf110 "
+let g:lightline#ale#indicator_warnings = "\uf071 "
+let g:lightline#ale#indicator_errors = "\uf05e "
 function! MyGitbranch()
   let branch = fugitive#head()
   return !empty(branch) ?
@@ -344,18 +344,18 @@ endfunction
 " Git gutter
 set updatetime=250
 set signcolumn=yes
-let g:gitgutter_max_signs=1000
+let g:gitgutter_max_signs = 1000
 
 " Ctrlp
-let g:ctrlp_show_hidden=1
-let g:ctrlp_root_markers=['.ctrlp']
-let g:ctrlp_use_caching=0
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_root_markers = ['.ctrlp']
+let g:ctrlp_use_caching = 0
 if executable('ag')
-  let g:ctrlp_user_command='ag %s -l --nocolor -g "" --hidden --ignore-dir .git'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --hidden --ignore-dir .git'
 endif
 
 " Emmet
-let g:user_emmet_install_global=0
+let g:user_emmet_install_global = 0
 aug vimrc_emmet
   au!
   au FileType html,jinja,gohtmltmpl,css,scss,coffee,javascript EmmetInstall
@@ -370,40 +370,40 @@ aug vimrc_commentary
 aug END
 
 " CtrlSF
-let g:ctrlsf_case_sensitive='yes'
-let g:ctrlsf_default_root='project'
-let g:ctrlsf_position='right'
-let g:ctrlsf_auto_close={
+let g:ctrlsf_case_sensitive = 'yes'
+let g:ctrlsf_default_root = 'project'
+let g:ctrlsf_position = 'right'
+let g:ctrlsf_auto_close = {
       \ 'normal': 0,
       \ 'compact': 0
       \ }
-let g:ctrlsf_indent=2
-let g:ctrlsf_regex_pattern=1
+let g:ctrlsf_indent = 2
+let g:ctrlsf_regex_pattern = 1
 
 " ALE
-let g:ale_sign_error='•'
-let g:ale_sign_warning='•'
-let g:ale_lint_delay=5000
-let g:ale_linters={
+let g:ale_sign_error = '•'
+let g:ale_sign_warning = '•'
+let g:ale_lint_delay = 5000
+let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'python': ['flake8']
       \ }
-let g:ale_javascript_eslint_executable='npx eslint'
+let g:ale_javascript_eslint_executable = 'npx eslint'
 
 " Local vimrc
-let g:localvimrc_persistent=1
+let g:localvimrc_persistent = 1
 
 " Gutentags
-let g:gutentags_ctags_tagfile='.tags'
+let g:gutentags_ctags_tagfile = '.tags'
 
 " Go
-let g:go_fmt_fail_silently=1
+let g:go_fmt_fail_silently = 1
 
 " Bufkill
-let g:BufKillCreateMappings=0
+let g:BufKillCreateMappings = 0
 
 " Ultisnips
-let g:UltiSnipsEditSplit='context'
+let g:UltiSnipsEditSplit = 'context'
 " https://github.com/SirVer/ultisnips/issues/593#issuecomment-361338769
 aug vimrc_ultisnips
   au!
@@ -411,21 +411,21 @@ aug vimrc_ultisnips
 aug END
 
 " Buftabline
-let g:buftabline_show=1
-let g:buftabline_numbers=2
-let g:buftabline_indicators=1
+let g:buftabline_show = 1
+let g:buftabline_numbers = 2
+let g:buftabline_indicators = 1
 
 " Python
-let g:python_highlight_operators=0
-let g:python_highlight_indent_errors=0
-let g:python_highlight_space_errors=0
-let g:python_highlight_doctests=0
-let g:python_highlight_all=1
-let g:python_highlight_file_headers_as_comments=1
+let g:python_highlight_operators = 0
+let g:python_highlight_indent_errors = 0
+let g:python_highlight_space_errors = 0
+let g:python_highlight_doctests = 0
+let g:python_highlight_all = 1
+let g:python_highlight_file_headers_as_comments = 1
 
 " Livedown
-let g:livedown_open=1
-let g:livedown_browser='firefox'
+let g:livedown_open = 1
+let g:livedown_browser = 'firefox'
 
 " Dirvish
 let g:dirvish_mode = ':sort ,^.*[\/],'
