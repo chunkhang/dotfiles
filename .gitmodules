@@ -28,9 +28,6 @@
 [submodule "vim/bundle/vim-gitgutter"]
 	path = vim/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "vim/bundle/vim-javascript"]
-	path = vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
 [submodule "vim/bundle/vim-markdown"]
 	path = vim/bundle/vim-markdown
 	url = https://github.com/plasticboy/vim-markdown.git
@@ -97,9 +94,6 @@
 [submodule "vim/bundle/vim-latex"]
 	path = vim/bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
-[submodule "vim/bundle/vim-jsx"]
-	path = vim/bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx.git
 [submodule "vim/bundle/ale"]
 	path = vim/bundle/ale
 	url = https://github.com/w0rp/ale.git
@@ -151,3 +145,6 @@
 [submodule "vim/bundle/vim-matchit"]
 	path = vim/bundle/vim-matchit
 	url = https://github.com/adelarsq/vim-matchit.git
+[submodule "vim/bundle/vim-jsx-improve"]
+	path = vim/bundle/vim-jsx-improve
+	url = https://github.com/neoclide/vim-jsx-improve.git
