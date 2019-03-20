@@ -264,6 +264,11 @@ let g:user_emmet_leader_key = '<C-e>'
 nnoremap <silent> <leader>m :LivedownToggle<cr>
       \ :echo 'Toggle livedown'<cr>
 
+" Folding
+nnoremap <silent> <leader>f : execute 'setlocal foldcolumn='
+      \ . (&foldcolumn == '' ? '1' : '0')<cr>
+      \ :echo 'Toggle fold column'<cr>
+
 " Column
 nnoremap <silent> <leader>c :execute 'setlocal colorcolumn='
       \ . (&colorcolumn == '' ? '80' : '')<cr>
