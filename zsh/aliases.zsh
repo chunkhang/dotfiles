@@ -35,9 +35,6 @@ alias dkd='docker-compose down'
 alias pnl='pnpm list --depth=0'
 alias pnlg='pnpm list --depth=0 -g'
 
-# Glances
-alias glances='glances --disable-bold'
-
 # Miscellaneous
 alias cls='clear'
 alias lgrep='f() { l | grep $@ };f'
