@@ -8,5 +8,6 @@
 
 [alias]
   aliases = !git config -l | grep ^alias. | cut -c 7- | awk '{print \"* \" $0}'
-  clean = checkout -- *
+  clear = checkout -- *
   drop = reset --hard @{u}
+  unstage = reset HEAD *
