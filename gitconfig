@@ -1,7 +1,12 @@
 [user]
-    name = Marcus Mu
-    email = chunkhang@gmail.com
+  name = Marcus Mu
+  email = chunkhang@gmail.com
 
 [core]
-    editor = vim
-    excludesfile = ~/.gitignore_global
+  editor = vim
+  excludesfile = ~/.gitignore_global
+
+[alias]
+  aliases = !git config -l | grep ^alias. | cut -c 7- | awk '{print \"* \" $0}'
+  clean = checkout -- *
+  drop = reset --hard @{u}
