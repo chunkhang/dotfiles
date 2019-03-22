@@ -3,7 +3,7 @@ plugins=(osx sudo colored-man-pages zsh-nvm)
 source $ZSH/oh-my-zsh.sh
 
 # Z
-source `brew --prefix`/etc/profile.d/z.sh
+source /usr/local/etc/profile.d/z.sh
 
 # Rbenv
 # https://github.com/kadaan/zsh-rbenv-lazy/blob/master/rbenv-lazy.plugin.zsh
