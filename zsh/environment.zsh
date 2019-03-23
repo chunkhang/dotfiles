@@ -1,5 +1,5 @@
 # Path
-export PATH=~/.texlive/2018/bin/x86_64-darwin:/Applications/Postgres.app/Contents/Versions/latest/bin:~/.zsh/git-open:~/.dotfiles/bin:$PATH
+export PATH=~/.texlive/2018/bin/x86_64-darwin:/Applications/Postgres.app/Contents/Versions/latest/bin:~/.zsh/git-open:~/.dotfiles/bin:/usr/local/sbin:$PATH
 
 # Oh My Zsh
 export ZSH=~/.zsh/oh-my-zsh
