@@ -4,7 +4,7 @@
 
 # Open applications / directories
 
-alt - return : open /Applications/iTerm.app
+fn - space : open /Applications/iTerm.app
 
 fn - a : open /Applications/Utilities/Activity\ Monitor.app
 fn - c : open /Applications/Calendar.app
