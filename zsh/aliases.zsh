@@ -23,6 +23,7 @@ alias gr='git remote'
 alias gs='git status'
 alias gu='git pull'
 alias gw='f() { git show $@ | cdiff -s -w 0 };f'
+alias gx='vim $(git diff --name-only --diff-filter=U)'
 
 # Docker
 alias dk='docker-compose'
