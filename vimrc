@@ -284,6 +284,10 @@ nnoremap ! :<up>!
 " Shell
 nnoremap <silent> <leader><leader> :sh<cr>
 
+" Gist
+noremap <silent> <leader>i :w !ix <Bar> pbcopy<cr>
+      \ :echo 'Copy gist link to system clipboard'<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -434,6 +438,7 @@ let g:livedown_browser = 'firefox'
 
 " Dirvish
 let g:dirvish_mode = ':sort ,^.*[\/],'
+let g:dirvish_relative_paths = 1
 
 " MatchTagAlways
 let g:mta_filetypes = {
