@@ -126,6 +126,7 @@ colorscheme onedark
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indentation
 set autoindent
+set breakindent
 set expandtab
 set tabstop=2
 set softtabstop=2
