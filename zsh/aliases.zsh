@@ -31,6 +31,8 @@ alias dkl='docker-compose logs'
 alias dkr='docker-compose restart'
 alias dku='docker-compose up'
 alias dkd='docker-compose down'
+alias dkk='docker-compose kill'
+alias dkb='docker-compose build'
 
 # pnpm
 alias pnl='pnpm list --depth=0'
