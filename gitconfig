@@ -11,3 +11,8 @@
   discard = checkout -- *
   drop = reset --hard @{u}
   unstage = reset HEAD *
+  housekeeping = \
+    !git branch --merged | grep -vE 'develop|master|staging' | xargs git branch -d && \
+    git fetch --prune && \
+    git reflog expire --all --expire=now && \
+    git gc --prune=now --aggressive
