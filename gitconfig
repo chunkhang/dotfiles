@@ -10,9 +10,12 @@
   aliases = !git config -l | grep ^alias. | cut -c 7- | awk '{print \"* \" $0}'
   discard = checkout -- *
   drop = reset --hard @{u}
-  unstage = reset HEAD *
+  fixgita = \
+    !git commit --amend --no-edit --quiet && \
+    git reset --hard @{u}
   housekeeping = \
     !git branch --merged | grep -vE 'develop|master|staging' | xargs git branch -d && \
     git fetch --prune && \
     git reflog expire --all --expire=now && \
     git gc --prune=now --aggressive
+  unstage = reset HEAD *
