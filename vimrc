@@ -368,7 +368,7 @@ endif
 let g:user_emmet_install_global = 0
 aug vimrc_emmet
   au!
-  au FileType html,jinja,gohtmltmpl,css,scss,coffee,javascript EmmetInstall
+  au FileType html,jinja,gohtmltmpl,css,scss,coffee,javascript,xml EmmetInstall
 aug END
 
 " Commentary
