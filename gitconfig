@@ -7,7 +7,6 @@
   excludesfile = ~/.gitignore_global
 
 [alias]
-  aliases = !git config -l | grep ^alias. | cut -c 7- | awk '{print \"* \" $0}'
   discard = checkout -- *
   drop = reset --hard @{u}
   fix-gita = \
@@ -18,4 +17,9 @@
     git fetch --prune && \
     git reflog expire --all --expire=now && \
     git gc --prune=now --aggressive
+  pr = \
+    !host="bitbucket.org" && \
+    repo=$(git ls-remote --get-url | cut -f 2 -d "@" | cut -f 2 -d ":" | cut -f 1 -d ".") && \
+    branch=$(git symbolic-ref --short HEAD) && \
+    open "https://${host}/${repo}/pull-requests/new?source=${branch}"
   unstage = reset HEAD *
