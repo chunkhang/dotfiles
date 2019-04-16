@@ -38,11 +38,14 @@ alias dkb='docker-compose build'
 alias pnl='pnpm list --depth=0'
 alias pnlg='pnpm list --depth=0 -g'
 
+# Ripgrep
+alias rgl='f() { rg --pretty $@ | less };f'
+alias rgv='f() { vim $(rg --files-with-matches $@) };f'
+
 # Miscellaneous
 alias cls='clear'
 alias lgrep='f() { l | grep $@ };f'
 alias tree='tree -C'
 alias agl='ag --pager less'
-alias rgl='f() { rg --pretty $@ | less};f'
 alias vi='vim'
 alias stack='git-stack'
