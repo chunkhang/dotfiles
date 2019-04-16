@@ -389,6 +389,9 @@ let g:ctrlsf_auto_close = {
       \ }
 let g:ctrlsf_indent = 2
 let g:ctrlsf_regex_pattern = 1
+if executable('rg')
+  let g:ctrlsf_ackprg = 'rg'
+endif
 
 " ALE
 let g:ale_sign_error = '•'
