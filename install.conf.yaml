@@ -5,15 +5,14 @@
 - clean: ['~']
 
 - link:
-    ~/.ackrc:
     ~/.chunkwmrc:
     ~/.ctags.d:
-    ~/.dotfiles: ''
     ~/.eslintrc.json:
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.jshintrc:
     ~/.pip:
+    ~/.ripgreprc:
     ~/.skhdrc:
     ~/.tmux.conf:
     ~/.vim:

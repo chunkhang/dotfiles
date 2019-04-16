@@ -360,8 +360,8 @@ let g:gitgutter_max_signs = 1000
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_root_markers = ['.ctrlp']
 let g:ctrlp_use_caching = 0
-if executable('ag')
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g "" --hidden --ignore-dir .git'
+if executable('rg')
+  let g:ctrlp_user_command = 'rg %s --files --color=never'
 endif
 
 " Emmet

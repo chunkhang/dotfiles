@@ -33,6 +33,9 @@ export NVM_LAZY_LOAD=true
 # Flask
 export FLASK_ENV='development'
 
+# Ripgrep
+export RIPGREP_CONFIG_PATH='/Users/marcus/.ripgreprc'
+
 # Editor
 export EDITOR='vim'
 

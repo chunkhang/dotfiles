@@ -1,0 +1,9 @@
+# Smart case
+--smart-case
+
+# Include hidden files
+--hidden
+
+# Exclude files or folders
+--glob
+!.git/*
