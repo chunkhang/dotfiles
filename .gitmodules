@@ -148,3 +148,6 @@
 [submodule "vim/bundle/vim-jsx-improve"]
 	path = vim/bundle/vim-jsx-improve
 	url = https://github.com/neoclide/vim-jsx-improve.git
+[submodule "vim/bundle/thesaurus_query"]
+	path = vim/bundle/thesaurus_query
+	url = https://github.com/Ron89/thesaurus_query.vim
