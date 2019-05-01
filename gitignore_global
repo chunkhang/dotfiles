@@ -114,4 +114,4 @@ tags
 .ignore
 
 # vim
-*.vim
+Session.vim
