@@ -213,10 +213,14 @@ nnoremap <leader>> :tabn<cr>
 nnoremap <leader>< :tabp<cr>
 
 " Clipboard
-nnoremap <leader>Y "*Y
+nnoremap <leader>y "*yy
       \ :echo 'Copy to system clipboard'<cr>
 vnoremap <leader>y "*y
       \ :echo 'Copy to system clipboard'<cr>
+nnoremap <leader>d "*dd
+      \ :echo 'Cut to system clipboard'<cr>
+vnoremap <leader>d "*d
+      \ :echo 'Cut to system clipboard'<cr>
 nnoremap <leader>p "*p
       \ :echo 'Paste from system clipboard'<cr>
 vnoremap <leader>p "*p
@@ -376,8 +380,7 @@ let g:gitgutter_max_signs = 1000
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_root_markers = ['.ctrlp']
 let g:ctrlp_use_caching = 0
-" https://github.com/BurntSushi/ripgrep/issues/373#issuecomment-385168887
-let g:ctrlp_user_command = 'rg %s --files --color=never --no-ignore-messages'
+let g:ctrlp_user_command = 'rg %s --files --color=never'
 
 " Emmet
 let g:user_emmet_install_global = 0
@@ -475,7 +478,7 @@ let g:tq_enabled_backends = ['thesaurus_com', 'datamuse_com', 'mthesaur_txt']
 let g:javascript_plugin_flow = 1
 
 " VimWiki
-let g:vimwiki_list = [{'path': '~/.vimwiki'}]
+let g:vimwiki_list = [{'path': '~/Dropbox/Wiki'}]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlights
