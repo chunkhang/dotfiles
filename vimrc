@@ -4,6 +4,9 @@ execute pathogen#infect()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Compatibility
+set nocompatible
+
 " Lines of history
 set history=1000
 
@@ -169,7 +172,6 @@ nnoremap <cr> <nop>
 " Jumps
 nmap <silent> [a <Plug>(ale_previous_wrap)
 nmap <silent> ]a <Plug>(ale_next_wrap)
-nnoremap <leader>% :MtaJumpToOtherTag<cr>
 
 " Buffers
 nnoremap <leader>w :w<cr>
@@ -283,11 +285,25 @@ nnoremap <silent> <leader>s :setlocal spell!<cr>
 nnoremap ! :<up>!
 
 " Shell
-nnoremap <silent> <leader><leader> :sh<cr>
+nnoremap <silent> <leader>z :sh<cr>
 
 " Gist
 noremap <silent> <leader>i :w !ix <Bar> pbcopy<cr>
       \ :echo 'Copy gist link to system clipboard'<cr>
+
+" Writing
+function! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal noexpandtab
+  setlocal spell
+  set formatprg=par
+  setlocal wrap
+  setlocal linebreak
+endfunction
+command! WP call WordProcessorMode()
+
+" Vimwiki
+let g:vimwiki_map_prefix = '<leader><leader>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -360,9 +376,8 @@ let g:gitgutter_max_signs = 1000
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_root_markers = ['.ctrlp']
 let g:ctrlp_use_caching = 0
-if executable('rg')
-  let g:ctrlp_user_command = 'rg %s --files --color=never'
-endif
+" https://github.com/BurntSushi/ripgrep/issues/373#issuecomment-385168887
+let g:ctrlp_user_command = 'rg %s --files --color=never --no-ignore-messages'
 
 " Emmet
 let g:user_emmet_install_global = 0
@@ -389,9 +404,7 @@ let g:ctrlsf_auto_close = {
       \ }
 let g:ctrlsf_indent = 2
 let g:ctrlsf_regex_pattern = 1
-if executable('rg')
-  let g:ctrlsf_ackprg = 'rg'
-endif
+let g:ctrlsf_ackprg = 'rg'
 
 " ALE
 let g:ale_sign_error = '•'
@@ -401,7 +414,7 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'python': ['flake8']
       \ }
-let g:ale_javascript_eslint_executable = 'npx eslint'
+let g:ale_javascript_eslint_executable = 'pnpx eslint'
 
 " Local vimrc
 let g:localvimrc_persistent = 1
@@ -437,8 +450,10 @@ let g:python_highlight_all = 1
 let g:python_highlight_file_headers_as_comments = 1
 
 " Livedown
+let g:livedown_autorun = 0
 let g:livedown_open = 1
 let g:livedown_browser = 'firefox'
+let g:livedown_port = 1337
 
 " Dirvish
 let g:dirvish_mode = ':sort ,^.*[\/],'
@@ -452,6 +467,15 @@ let g:mta_filetypes = {
       \ 'jinja' : 1,
       \ 'gohtmltmpl': 1,
       \ }
+
+" Thesaurus
+let g:tq_enabled_backends = ['thesaurus_com', 'datamuse_com', 'mthesaur_txt']
+
+" JavaScript
+let g:javascript_plugin_flow = 1
+
+" VimWiki
+let g:vimwiki_list = [{'path': '~/.vimwiki'}]
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlights
