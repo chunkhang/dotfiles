@@ -151,3 +151,6 @@
 [submodule "vim/bundle/thesaurus_query"]
 	path = vim/bundle/thesaurus_query
 	url = https://github.com/Ron89/thesaurus_query.vim
+[submodule "vim/bundle/vimwiki"]
+	path = vim/bundle/vimwiki
+	url = https://github.com/vimwiki/vimwiki.git
