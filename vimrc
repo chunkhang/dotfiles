@@ -309,6 +309,10 @@ command! WP call WordProcessorMode()
 " Vimwiki
 let g:vimwiki_map_prefix = '<leader><leader>'
 
+" Dirvish
+" Add another key for invoking dirvish because vimwiki uses - as well
+nnoremap <silent> _ :Dirvish<cr>
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -377,7 +381,6 @@ set signcolumn=yes
 let g:gitgutter_max_signs = 1000
 
 " Ctrlp
-let g:ctrlp_show_hidden = 1
 let g:ctrlp_root_markers = ['.ctrlp']
 let g:ctrlp_use_caching = 0
 let g:ctrlp_user_command = 'rg %s --files --color=never'
@@ -478,7 +481,14 @@ let g:tq_enabled_backends = ['thesaurus_com', 'datamuse_com', 'mthesaur_txt']
 let g:javascript_plugin_flow = 1
 
 " VimWiki
-let g:vimwiki_list = [{'path': '~/Dropbox/Wiki'}]
+let g:vimwiki_list = [{
+      \ 'path': '~/Dropbox/Wiki',
+      \ 'auto_toc': 1,
+      \ 'diary_index': 'index',
+      \ 'auto_diary_index': 1,
+      \ }]
+let g:vimwiki_auto_chdir = 1
+let g:vimwiki_dir_link = 'index'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Highlights
