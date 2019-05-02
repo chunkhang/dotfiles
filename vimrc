@@ -462,7 +462,7 @@ let g:livedown_browser = 'firefox'
 let g:livedown_port = 1337
 
 " Dirvish
-let g:dirvish_mode = ':sort ,^.*[\/],'
+let g:dirvish_mode = ':sort | sort ,^.*[^/]$, r'
 let g:dirvish_relative_paths = 1
 
 " MatchTagAlways
