@@ -1,8 +1,8 @@
 " Pathogen
-execute pathogen#infect()
+exe pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" General
+" General {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Compatibility
 set nocompatible
@@ -17,7 +17,7 @@ aug vimrc_remove_empty_buffer
   au BufWinEnter * call MyCleanEmptyBuffers()
 aug END
 " https://redd.it/1a4yf1
-function! MyCleanEmptyBuffers()
+func! MyCleanEmptyBuffers()
   let buffers = filter(
         \ range(1, bufnr('$')),
         \ 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val) < 0 &&
@@ -26,7 +26,7 @@ function! MyCleanEmptyBuffers()
   if !empty(buffers)
     exe 'bd '.join(buffers, ' ')
   endif
-endfunction
+endfunc
 
 " Filetypes
 filetype plugin on
@@ -57,8 +57,9 @@ set spelllang=en_gb
 " Shell
 set shell=/usr/local/bin/zsh
 
+" }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" User Interface
+" User Interface {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Line numbers
 set number
@@ -100,8 +101,9 @@ set shortmess+=I
 " Truncate message to avoid hit enter
 set shortmess+=T
 
+" }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colors and Fonts
+" Colors and Fonts {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax highlighting
 syntax on
@@ -124,8 +126,9 @@ let g:onedark_hide_endofbuffer = 1
 let g:onedark_termcolors = 16
 colorscheme onedark
 
+" }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Text
+" Text {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indentation
 set autoindent
@@ -147,8 +150,27 @@ set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.
 " Backspace
 set backspace=indent,eol,start
 
+" Folding
+set foldmethod=marker
+
+" Writing mode
+func! WritingMode()
+  setlocal formatoptions+=1
+  setlocal noexpandtab
+  setlocal spell
+  setlocal formatprg=par
+  setlocal textwidth=79
+  setlocal wrap
+  setlocal linebreak
+endfunc
+aug vimrc_writing
+  au BufEnter */diary/????-??-??.wiki call WritingMode()
+aug END
+command! Write call WritingMode()
+
+" }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Mappings
+" Mappings {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Leader key
 let mapleader = ' '
@@ -272,12 +294,12 @@ nnoremap <silent> <leader>m :LivedownToggle<cr>
       \ :echo 'Toggle livedown'<cr>
 
 " Folding
-nnoremap <silent> <leader>f : execute 'setlocal foldcolumn='
+nnoremap <silent> <leader>f :exe 'setlocal foldcolumn='
       \ . (&foldcolumn == '' ? '1' : '0')<cr>
       \ :echo 'Toggle fold column'<cr>
 
 " Column
-nnoremap <silent> <leader>c :execute 'setlocal colorcolumn='
+nnoremap <silent> <leader>c :exe 'setlocal colorcolumn='
       \ . (&colorcolumn == '' ? '80' : '')<cr>
       \ :echo 'Toggle column 80'<cr>
 
@@ -295,17 +317,6 @@ nnoremap <silent> <leader>z :sh<cr>
 noremap <silent> <leader>i :w !ix <Bar> pbcopy<cr>
       \ :echo 'Copy gist link to system clipboard'<cr>
 
-" Writing
-function! WordProcessorMode()
-  setlocal formatoptions=1
-  setlocal noexpandtab
-  setlocal spell
-  set formatprg=par
-  setlocal wrap
-  setlocal linebreak
-endfunction
-command! WP call WordProcessorMode()
-
 " Vimwiki
 let g:vimwiki_map_prefix = '<leader><leader>'
 
@@ -313,8 +324,9 @@ let g:vimwiki_map_prefix = '<leader><leader>'
 " Add another key for invoking dirvish because vimwiki uses - as well
 nnoremap <silent> _ :Dirvish<cr>
 
+" }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
+" Plugins {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown
 let g:vim_markdown_folding_disabled = 1
@@ -353,27 +365,27 @@ let g:lightline.active = {
 let g:lightline#ale#indicator_checking = "\uf110 "
 let g:lightline#ale#indicator_warnings = "\uf071 "
 let g:lightline#ale#indicator_errors = "\uf05e "
-function! MyGitbranch()
+func! MyGitbranch()
   let branch = fugitive#head()
   return !empty(branch) ?
         \ "\uf418 " . fugitive#head() : ''
-endfunction
-function! MyFiletype()
+endfunc
+func! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ?
         \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
-endfunction
-function! MyFileformat()
+endfunc
+func! MyFileformat()
   return winwidth(0) > 70 ?
         \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol() . ' ') : ''
-endfunction
-function! MySession()
+endfunc
+func! MySession()
   let session = ObsessionStatus('active', 'paused')
   if !empty(session)
     return session ==# 'active' ?
       \ "\uf662" : "\uf663"
   endif
   return ''
-endfunction
+endfunc
 
 " Git gutter
 set updatetime=250
@@ -489,20 +501,36 @@ let g:vimwiki_list = [{
       \ }]
 let g:vimwiki_auto_chdir = 1
 let g:vimwiki_dir_link = 'index'
+let g:vimwiki_hl_headers = 1
 
+" }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Highlights
+" Highlights {{{
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Helper function for highlighting based on onedark colors
+let s:colors = onedark#GetColors()
+func! s:hi(group, color)
+  exe 'hi ' . a:group . ' guifg=' . s:colors[a:color].gui
+endfunc
+
 " ALE
-highlight link ALEWarningSign WarningMsg
+call s:hi('ALEWarningSign', 'red')
 
 " Signature
-highlight link SignatureMarkText Todo
+call s:hi('SignatureMarkText', 'purple')
 
 " Buftabline
-highlight link BufTabLineCurrent LightlineLeft_normal_1
-highlight link BufTabLineActive LightlineRight_normal_2
-highlight link BufTabLineHidden LightlineRight_normal_2
+hi link BufTabLineCurrent LightlineLeft_normal_1
+hi link BufTabLineActive LightlineRight_normal_2
+hi link BufTabLineHidden LightlineRight_normal_2
 
 " Matching tags
-highlight! link MatchParen ToolbarLine
+hi! link MatchParen ToolbarLine
+
+" Vimwiki
+call s:hi('VimWikiHeader1', 'red')
+call s:hi('VimWikiHeader2', 'green')
+call s:hi('VimWikiHeader3', 'blue')
+
+" }}}
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
