@@ -8,3 +8,7 @@
 # Supress ignore messages
 # https://github.com/BurntSushi/ripgrep/issues/373#issuecomment-385168887
 --no-ignore-messages
+
+# Extra file types
+--type-add
+proto:*.proto
