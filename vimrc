@@ -158,13 +158,19 @@ func! WritingMode()
   setlocal formatoptions+=1
   setlocal noexpandtab
   setlocal spell
+  setlocal complete+=k
   setlocal formatprg=par
   setlocal textwidth=79
   setlocal wrap
   setlocal linebreak
+  call SuperTabSetDefaultCompletionType("<c-n>")
+endfunc
+func! FormatWriting()
+  norm gggqG}
 endfunc
 aug vimrc_writing
   au BufEnter */diary/????-??-??.wiki call WritingMode()
+  au BufWritePre */diary/????-??-??.wiki call FormatWriting()
 aug END
 command! Write call WritingMode()
 
@@ -266,11 +272,9 @@ nnoremap <leader>O :Obsess!<cr>
 
 " Searching
 nnoremap <silent> <leader>/ :noh<cr>
-nmap     <C-F>f <Plug>CtrlSFPrompt
-nmap     <C-F>w <Plug>CtrlSFCwordPath
-nmap     <C-F>n <Plug>CtrlSFPwordPath
-nnoremap <C-F>t :CtrlSFToggle<cr>
-inoremap <C-F>t <Esc>:CtrlSFToggle<cr>
+nmap <C-f>f <Plug>CtrlSFPrompt
+nmap <C-f>w <Plug>CtrlSFCwordPath
+nnoremap <C-f>t :CtrlSFToggle<cr>
 
 " Whitespace
 nnoremap <leader>t /\s\+$<cr>
@@ -285,6 +289,13 @@ nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
       \     syntax enable <Bar>
       \ endif <cr>
       \ :echo 'Toggle syntax'<cr>
+func! SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
+nnoremap <leader>X :call SynStack()<cr>
 
 " HTML
 let g:user_emmet_leader_key = '<C-e>'
@@ -307,6 +318,14 @@ nnoremap <silent> <leader>c :exe 'setlocal colorcolumn='
 nnoremap <silent> <leader>s :setlocal spell!<cr>
       \ :echo 'Toggle spell check'<cr>
 
+" Thesaurus
+nmap <C-e>e :Thesaurus<space>
+nmap <C-e>w :ThesaurusQueryLookupCurrentWord<cr>
+
+" Dictionary
+nmap <C-d>d :Dictionary<space>
+nmap <C-d>w :Dictionary -cursor-word
+
 " Commands
 nnoremap ! :<up>!
 
@@ -322,7 +341,7 @@ let g:vimwiki_map_prefix = '<leader><leader>'
 
 " Dirvish
 " Add another key for invoking dirvish because vimwiki uses - as well
-nnoremap <silent> _ :Dirvish<cr>
+nnoremap <silent> \ :Dirvish<cr>
 
 " }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -488,6 +507,8 @@ let g:mta_filetypes = {
 
 " Thesaurus
 let g:tq_enabled_backends = ['thesaurus_com', 'datamuse_com', 'mthesaur_txt']
+let g:tq_map_keys = 0
+let g:tq_use_vim_autocompletefunc = 0
 
 " JavaScript
 let g:javascript_plugin_flow = 1
@@ -498,10 +519,13 @@ let g:vimwiki_list = [{
       \ 'auto_toc': 1,
       \ 'diary_index': 'index',
       \ 'auto_diary_index': 1,
+      \ 'auto_tags': 1,
       \ }]
 let g:vimwiki_auto_chdir = 1
 let g:vimwiki_dir_link = 'index'
 let g:vimwiki_hl_headers = 1
+let g:vimwiki_folding = 'custom'
+let g:vimwiki_table_mappings = 0
 
 " }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -509,15 +533,15 @@ let g:vimwiki_hl_headers = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helper function for highlighting based on onedark colors
 let s:colors = onedark#GetColors()
-func! s:hi(group, color)
+func! Highlight(group, color)
   exe 'hi ' . a:group . ' guifg=' . s:colors[a:color].gui
 endfunc
 
 " ALE
-call s:hi('ALEWarningSign', 'red')
+call Highlight('ALEWarningSign', 'yellow')
 
 " Signature
-call s:hi('SignatureMarkText', 'purple')
+call Highlight('SignatureMarkText', 'purple')
 
 " Buftabline
 hi link BufTabLineCurrent LightlineLeft_normal_1
@@ -528,9 +552,10 @@ hi link BufTabLineHidden LightlineRight_normal_2
 hi! link MatchParen ToolbarLine
 
 " Vimwiki
-call s:hi('VimWikiHeader1', 'red')
-call s:hi('VimWikiHeader2', 'green')
-call s:hi('VimWikiHeader3', 'blue')
+call Highlight('VimWikiHeader1', 'red')
+call Highlight('VimWikiHeader2', 'green')
+call Highlight('VimWikiHeader3', 'blue')
+call Highlight('VimwikiTag', 'purple')
 
 " }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
