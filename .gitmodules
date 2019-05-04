@@ -154,3 +154,6 @@
 [submodule "vim/bundle/vimwiki"]
 	path = vim/bundle/vimwiki
 	url = https://github.com/vimwiki/vimwiki.git
+[submodule "vim/bundle/dictionary.vim"]
+	path = vim/bundle/dictionary.vim
+	url = https://github.com/itchyny/dictionary.vim.git
