@@ -152,6 +152,13 @@ set backspace=indent,eol,start
 
 " Folding
 set foldmethod=marker
+aug vimrc_folding
+  au!
+  au FileType vimwiki setlocal foldmethod=manual
+aug END
+
+" Formatting
+set formatprg=par
 
 " Writing mode
 func! WritingMode()
@@ -159,7 +166,6 @@ func! WritingMode()
   setlocal noexpandtab
   setlocal spell
   setlocal complete+=k
-  setlocal formatprg=par
   setlocal textwidth=79
   setlocal wrap
   setlocal linebreak
@@ -169,6 +175,7 @@ func! FormatWriting()
   norm gggqG}
 endfunc
 aug vimrc_writing
+  au!
   au BufEnter */diary/????-??-??.wiki call WritingMode()
   au BufWritePre */diary/????-??-??.wiki call FormatWriting()
 aug END
@@ -434,6 +441,7 @@ aug END
 " CtrlSF
 let g:ctrlsf_case_sensitive = 'yes'
 let g:ctrlsf_default_root = 'project'
+let g:ctrlsf_extra_root_markers = ['.ctrlsf']
 let g:ctrlsf_position = 'right'
 let g:ctrlsf_auto_close = {
       \ 'normal': 0,
@@ -515,7 +523,8 @@ let g:javascript_plugin_flow = 1
 
 " VimWiki
 let g:vimwiki_list = [{
-      \ 'path': '~/Dropbox/Wiki',
+      \ 'path': '~/Dropbox/wiki/',
+      \ 'path_html': '~/Dropbox/wiki-html',
       \ 'auto_toc': 1,
       \ 'diary_index': 'index',
       \ 'auto_diary_index': 1,
