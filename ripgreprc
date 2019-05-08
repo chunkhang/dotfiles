@@ -4,6 +4,10 @@
 # Exclude files or folders
 --glob
 !.git/*
+--glob
+!package-lock.json
+--glob
+!pnpm-lock.yaml
 
 # Supress ignore messages
 # https://github.com/BurntSushi/ripgrep/issues/373#issuecomment-385168887
