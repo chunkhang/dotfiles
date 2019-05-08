@@ -4,9 +4,6 @@
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule "vim/vundle/base16-vim"]
-	path = vim/vundle/base16-vim
-	url = https://github.com/chriskempson/base16-vim.git
 [submodule "zsh/git-open"]
 	path = zsh/git-open
 	url = https://github.com/paulirish/git-open.git
