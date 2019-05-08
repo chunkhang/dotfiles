@@ -6,60 +6,86 @@
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/MatchTagAlways'
-Plug 'w0rp/ale'
-Plug 'jiangmiao/auto-pairs'
-Plug 'rhysd/conflict-marker.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'dyng/ctrlsf.vim'
-Plug 'itchyny/dictionary.vim'
-Plug 'mattn/emmet-vim'
+" Appearance
+Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
-Plug 'joshdick/onedark.vim'
-Plug 'gre/play2vim'
-Plug 'danro/rename.vim'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'AndrewRadev/splitjoin.vim'
-Plug 'ervandew/supertab'
-Plug 'Ron89/thesaurus_query.vim'
-Plug 'markonm/traces.vim'
-Plug 'SirVer/ultisnips'
-Plug 'tpope/vim-abolish'
-Plug 'qpkorr/vim-bufkill'
+Plug 'kshenoy/vim-signature'
 Plug 'ap/vim-buftabline'
-Plug 'kchmck/vim-coffee-script'
-Plug 'tpope/vim-commentary'
-Plug 'hail2u/vim-css3-syntax'
 Plug 'ryanoasis/vim-devicons'
-Plug 'justinmk/vim-dirvish'
-Plug 'tpope/vim-endwise'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-Plug 'fatih/vim-go'
-Plug 'ludovicchabant/vim-gutentags'
+if has('mac')
+  Plug 'sjl/vitality.vim'
+endif
+if has('python') || has('python3')
+  Plug 'Valloric/MatchTagAlways'
+endif
+if v:version >= 801
+  Plug 'markonm/traces.vim'
+endif
 Plug 'machakann/vim-highlightedyank'
+if !exists('##TextYankPost')
+  map y <Plug>(highlightedyank)
+endif
+
+" Utility
+Plug 'jiangmiao/auto-pairs'
+Plug 'ervandew/supertab'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dyng/ctrlsf.vim'
 Plug 'henrik/vim-indexed-search'
-Plug 'lepture/vim-jinja'
-Plug 'neoclide/vim-jsx-improve'
-Plug 'vim-latex/vim-latex'
+Plug 'qpkorr/vim-bufkill'
+Plug 'danro/rename.vim'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'adelarsq/vim-matchit'
+Plug 'mattn/emmet-vim'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'justinmk/vim-dirvish'
 Plug 'shime/vim-livedown'
 Plug 'embear/vim-localvimrc'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+if has('python') || has('python3')
+  Plug 'SirVer/ultisnips'
+endif
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'rhysd/conflict-marker.vim'
+
+" Language
+Plug 'neoclide/vim-jsx-improve'
+Plug 'kchmck/vim-coffee-script'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'derekwyatt/vim-scala'
+Plug 'gre/play2vim'
+Plug 'posva/vim-vue'
+Plug 'lepture/vim-jinja'
 Plug 'plasticboy/vim-markdown'
 Plug 'PProvost/vim-markdown-jekyll'
-Plug 'adelarsq/vim-matchit'
-Plug 'tpope/vim-obsession'
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'tpope/vim-repeat'
-Plug 'derekwyatt/vim-scala'
-Plug 'kshenoy/vim-signature'
-Plug 'tpope/vim-surround'
-Plug 'posva/vim-vue'
+Plug 'vim-latex/vim-latex'
+
+" Linting
+Plug 'w0rp/ale'
+
+" Writing
 Plug 'vimwiki/vimwiki'
-Plug 'sjl/vitality.vim'
+if has('mac')
+  Plug 'itchyny/dictionary.vim'
+endif
+if has('python') || has('python3')
+  Plug 'Ron89/thesaurus_query.vim'
+endif
 
 call plug#end()
- 
+
 " }}}
 " =============================================================================
 " GENERAL {{{
@@ -88,9 +114,6 @@ function! MyCleanEmptyBuffers()
     execute 'bd '.join(buffers, ' ')
   endif
 endfunction
-
-" Enable filetype support
-filetype plugin indent on
 
 " Disable backup and swap
 set nobackup
@@ -127,6 +150,7 @@ set foldlevelstart=99
 " =============================================================================
 " USER INTERFACE {{{
 " =============================================================================
+
 " Line numbers
 set number
 set relativenumber
@@ -171,8 +195,8 @@ set shortmess+=T
 " =============================================================================
 " COLORS AND FONTS {{{
 " =============================================================================
+
 " Syntax highlighting
-syntax on
 let g:is_bash = 1
 
 " Encoding
@@ -196,6 +220,7 @@ colorscheme onedark
 " =============================================================================
 " TEXT {{{
 " =============================================================================
+
 " Indentation
 set autoindent
 set breakindent
@@ -244,6 +269,7 @@ command! Write call MyWritingMode()
 " =============================================================================
 " MAPPINGS {{{
 " =============================================================================
+
 " Leader key
 let mapleader = ' '
 
@@ -413,6 +439,7 @@ nnoremap <silent> \ :Dirvish<cr>
 " =============================================================================
 " PLUGINS {{{
 " =============================================================================
+
 " Markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_no_default_key_mappings = 1
@@ -573,7 +600,9 @@ let g:mta_filetypes = {
       \ }
 
 " Thesaurus
-let g:tq_enabled_backends = ['thesaurus_com', 'datamuse_com', 'mthesaur_txt']
+let g:tq_enabled_backends = ['openoffice_en', 'mthesaur_txt']
+let g:tq_openoffice_en_file = '~/.vim/thesaurus/th_en_US_new'
+let g:tq_mthesaur_file = '~/.vim/thesaurus/mthesaur.txt'
 let g:tq_map_keys = 0
 let g:tq_use_vim_autocompletefunc = 0
 
@@ -599,6 +628,7 @@ let g:vimwiki_table_mappings = 0
 " =============================================================================
 " HIGHLIGHTS {{{
 " =============================================================================
+
 " Helper function for highlighting based on onedark colors
 let s:colors = onedark#GetColors()
 function! MyHighlight(group, color)
