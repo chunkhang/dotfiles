@@ -157,3 +157,9 @@
 [submodule "vim/bundle/dictionary.vim"]
 	path = vim/bundle/dictionary.vim
 	url = https://github.com/itchyny/dictionary.vim.git
+[submodule "vim/bundle/vim-endwise"]
+	path = vim/bundle/vim-endwise
+	url = https://github.com/tpope/vim-endwise.git
+[submodule "vim/bundle/splitjoin.vim"]
+	path = vim/bundle/splitjoin.vim
+	url = https://github.com/AndrewRadev/splitjoin.vim.git
