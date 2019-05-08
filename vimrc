@@ -1,9 +1,12 @@
+" vim: set foldmethod=marker foldlevel=0 nomodeline :
+
 " Pathogen
 execute pathogen#infect()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " General {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
+
 " Compatibility
 set nocompatible
 
@@ -56,10 +59,16 @@ set spelllang=en_gb
 " Shell
 set shell=/usr/local/bin/zsh
 
+" Mode line
+set modelines=2
+
+" Fold
+set foldlevelstart=99
+
 " }}}
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " User Interface {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Line numbers
 set number
 set relativenumber
@@ -101,9 +110,9 @@ set shortmess+=I
 set shortmess+=T
 
 " }}}
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Colors and Fonts {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Syntax highlighting
 syntax on
 let g:is_bash = 1
@@ -126,9 +135,9 @@ let g:onedark_termcolors = 16
 colorscheme onedark
 
 " }}}
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Text {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Indentation
 set autoindent
 set breakindent
@@ -148,13 +157,6 @@ set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.
 
 " Backspace
 set backspace=indent,eol,start
-
-" Folding
-set foldmethod=marker
-augroup vimrc_folding
-  autocmd!
-  autocmd FileType vimwiki setlocal foldmethod=manual
-augroup END
 
 " Formatting
 set formatprg=par
@@ -181,9 +183,9 @@ augroup END
 command! Write call MyWritingMode()
 
 " }}}
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Mappings {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Leader key
 let mapleader = ' '
 
@@ -350,9 +352,9 @@ let g:vimwiki_map_prefix = '<leader><leader>'
 nnoremap <silent> \ :Dirvish<cr>
 
 " }}}
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Plugins {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_no_default_key_mappings = 1
@@ -536,9 +538,9 @@ let g:vimwiki_folding = 'custom'
 let g:vimwiki_table_mappings = 0
 
 " }}}
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Highlights {{{
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
 " Helper function for highlighting based on onedark colors
 let s:colors = onedark#GetColors()
 function! MyHighlight(group, color)
@@ -557,7 +559,7 @@ highlight link BufTabLineActive LightlineRight_normal_2
 highlight link BufTabLineHidden LightlineRight_normal_2
 
 " Matching tags
-hi! link MatchParen ToolbarLine
+highlight! link MatchParen ToolbarLine
 
 " Vimwiki
 call MyHighlight('VimWikiHeader1', 'red')
@@ -566,4 +568,4 @@ call MyHighlight('VimWikiHeader3', 'blue')
 call MyHighlight('VimwikiTag', 'purple')
 
 " }}}
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" =============================================================================
