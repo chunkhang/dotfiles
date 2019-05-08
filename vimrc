@@ -1,5 +1,5 @@
 " Pathogen
-exe pathogen#infect()
+execute pathogen#infect()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General {{{
@@ -12,27 +12,26 @@ set history=1000
 
 " Buffers
 set hidden
-aug vimrc_remove_empty_buffer
-  au!
-  au BufWinEnter * call MyCleanEmptyBuffers()
-aug END
+augroup vimrc_remove_empty_buffer
+  autocmd!
+  autocmd BufWinEnter * call MyCleanEmptyBuffers()
+augroup END
 " https://redd.it/1a4yf1
-func! MyCleanEmptyBuffers()
+function! MyCleanEmptyBuffers()
   let buffers = filter(
         \ range(1, bufnr('$')),
         \ 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val) < 0 &&
         \ (getbufline(v:val, 1, "$") == [""])'
         \ )
   if !empty(buffers)
-    exe 'bd '.join(buffers, ' ')
+    execute 'bd '.join(buffers, ' ')
   endif
-endfunc
+endfunction
 
-" Filetypes
-filetype plugin on
-filetype indent on
+" Enable filetype support
+filetype plugin indent on
 
-" Disable backup
+" Disable backup and swap
 set nobackup
 set noswapfile
 
@@ -44,12 +43,12 @@ set timeoutlen=1000
 set ttimeoutlen=0
 
 " Remove auto comment
-aug vimrc_remove_auto_comment
-  au!
-  au FileType * setlocal formatoptions-=cro
+augroup vimrc_remove_auto_comment
+  autocmd!
+  autocmd FileType * setlocal formatoptions-=cro
   " Exceptions
-  au FileType markdown setlocal formatoptions+=cro
-aug END
+  autocmd FileType markdown setlocal formatoptions+=cro
+augroup END
 
 " Spelling language
 set spelllang=en_gb
@@ -114,11 +113,11 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " Color scheme
-if (empty($TMUX))
-  if (has('nvim'))
+if empty($TMUX)
+  if has('nvim')
     let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
   endif
-  if (has('termguicolors'))
+  if has('termguicolors')
     set termguicolors
   endif
 endif
@@ -137,11 +136,11 @@ set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-aug vimrc_tabs
-  au!
-  au FileType zsh,go set tabstop=4 softtabstop=4 shiftwidth=4
-  au FileType snippets set expandtab
-aug END
+augroup vimrc_tabs
+  autocmd!
+  autocmd FileType zsh,go set tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType snippets set expandtab
+augroup END
 
 " Highlight whitespaces
 set list
@@ -152,16 +151,16 @@ set backspace=indent,eol,start
 
 " Folding
 set foldmethod=marker
-aug vimrc_folding
-  au!
-  au FileType vimwiki setlocal foldmethod=manual
-aug END
+augroup vimrc_folding
+  autocmd!
+  autocmd FileType vimwiki setlocal foldmethod=manual
+augroup END
 
 " Formatting
 set formatprg=par
 
 " Writing mode
-func! WritingMode()
+function! MyWritingMode()
   setlocal formatoptions+=1
   setlocal noexpandtab
   setlocal spell
@@ -170,16 +169,16 @@ func! WritingMode()
   setlocal wrap
   setlocal linebreak
   call SuperTabSetDefaultCompletionType("<c-n>")
-endfunc
-func! FormatWriting()
+endfunction
+function! MyFormatWriting()
   norm gggqG}
-endfunc
-aug vimrc_writing
-  au!
-  au BufEnter */diary/????-??-??.wiki call WritingMode()
-  au BufWritePre */diary/????-??-??.wiki call FormatWriting()
-aug END
-command! Write call WritingMode()
+endfunction
+augroup vimrc_writing
+  autocmd!
+  autocmd BufEnter */diary/????-??-??.wiki call MyWritingMode()
+  autocmd BufWritePre */diary/????-??-??.wiki call MyFormatWriting()
+augroup END
+command! Write call MyWritingMode()
 
 " }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -237,11 +236,11 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 " https://stackoverflow.com/a/31502538
-aug vimrc_switch_windows
-  au!
-  au VimEnter * unmap <C-j>
-  au VimEnter * noremap <C-j> <C-w>j
-aug END
+augroup vimrc_switch_windows
+  autocmd!
+  autocmd VimEnter * unmap <C-j>
+  autocmd VimEnter * noremap <C-j> <C-w>j
+augroup END
 
 " Tabs
 nnoremap <leader>> :tabn<cr>
@@ -296,13 +295,13 @@ nnoremap <silent> <leader>x :if exists('g:syntax_on') <Bar>
       \     syntax enable <Bar>
       \ endif <cr>
       \ :echo 'Toggle syntax'<cr>
-func! SynStack()
+function! MySynStack()
   if !exists("*synstack")
     return
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-nnoremap <leader>X :call SynStack()<cr>
+endfunction
+nnoremap <leader>X :call MySynStack()<cr>
 
 " HTML
 let g:user_emmet_leader_key = '<C-e>'
@@ -312,12 +311,12 @@ nnoremap <silent> <leader>m :LivedownToggle<cr>
       \ :echo 'Toggle livedown'<cr>
 
 " Folding
-nnoremap <silent> <leader>f :exe 'setlocal foldcolumn='
+nnoremap <silent> <leader>f :execute 'setlocal foldcolumn='
       \ . (&foldcolumn == '' ? '1' : '0')<cr>
       \ :echo 'Toggle fold column'<cr>
 
 " Column
-nnoremap <silent> <leader>c :exe 'setlocal colorcolumn='
+nnoremap <silent> <leader>c :execute 'setlocal colorcolumn='
       \ . (&colorcolumn == '' ? '80' : '')<cr>
       \ :echo 'Toggle column 80'<cr>
 
@@ -391,27 +390,27 @@ let g:lightline.active = {
 let g:lightline#ale#indicator_checking = "\uf110 "
 let g:lightline#ale#indicator_warnings = "\uf071 "
 let g:lightline#ale#indicator_errors = "\uf05e "
-func! MyGitbranch()
+function! MyGitbranch()
   let branch = fugitive#head()
   return !empty(branch) ?
         \ "\uf418 " . fugitive#head() : ''
-endfunc
-func! MyFiletype()
+endfunction
+function! MyFiletype()
   return winwidth(0) > 70 ? (strlen(&filetype) ?
         \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
-endfunc
-func! MyFileformat()
+endfunction
+function! MyFileformat()
   return winwidth(0) > 70 ?
         \ (&fileformat . ' ' . WebDevIconsGetFileFormatSymbol() . ' ') : ''
-endfunc
-func! MySession()
+endfunction
+function! MySession()
   let session = ObsessionStatus('active', 'paused')
   if !empty(session)
     return session ==# 'active' ?
       \ "\uf662" : "\uf663"
   endif
   return ''
-endfunc
+endfunction
 
 " Git gutter
 set updatetime=250
@@ -425,18 +424,18 @@ let g:ctrlp_user_command = 'rg %s --files --color=never'
 
 " Emmet
 let g:user_emmet_install_global = 0
-aug vimrc_emmet
-  au!
-  au FileType html,jinja,gohtmltmpl,css,scss,coffee,javascript,xml EmmetInstall
-aug END
+augroup vimrc_emmet
+  autocmd!
+  autocmd FileType html,jinja,gohtmltmpl,css,scss,coffee,javascript,xml EmmetInstall
+augroup END
 
 " Commentary
-aug vimrc_commentary
-  au!
-  au FileType jinja setlocal commentstring={#\ %s\ #}
-  au FileType vue,sbt setlocal commentstring=\/\/\ %s
-  au FileType hocon setlocal commentstring=#\ %s
-aug END
+augroup vimrc_commentary
+  autocmd!
+  autocmd FileType jinja setlocal commentstring={#\ %s\ #}
+  autocmd FileType vue,sbt setlocal commentstring=\/\/\ %s
+  autocmd FileType hocon setlocal commentstring=#\ %s
+augroup END
 
 " CtrlSF
 let g:ctrlsf_case_sensitive = 'yes'
@@ -476,10 +475,10 @@ let g:BufKillCreateMappings = 0
 " Ultisnips
 let g:UltiSnipsEditSplit = 'context'
 " https://github.com/SirVer/ultisnips/issues/593#issuecomment-361338769
-aug vimrc_ultisnips
-  au!
-  au VimEnter * au! UltiSnips_AutoTrigger
-aug END
+augroup vimrc_ultisnips
+  autocmd!
+  autocmd VimEnter * autocmd! UltiSnips_AutoTrigger
+augroup END
 
 " Buftabline
 let g:buftabline_show = 1
@@ -542,29 +541,29 @@ let g:vimwiki_table_mappings = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Helper function for highlighting based on onedark colors
 let s:colors = onedark#GetColors()
-func! Highlight(group, color)
-  exe 'hi ' . a:group . ' guifg=' . s:colors[a:color].gui
-endfunc
+function! MyHighlight(group, color)
+  execute 'highlight ' . a:group . ' guifg=' . s:colors[a:color].gui
+endfunction
 
 " ALE
-call Highlight('ALEWarningSign', 'yellow')
+call MyHighlight('ALEWarningSign', 'yellow')
 
 " Signature
-call Highlight('SignatureMarkText', 'purple')
+call MyHighlight('SignatureMarkText', 'purple')
 
 " Buftabline
-hi link BufTabLineCurrent LightlineLeft_normal_1
-hi link BufTabLineActive LightlineRight_normal_2
-hi link BufTabLineHidden LightlineRight_normal_2
+highlight link BufTabLineCurrent LightlineLeft_normal_1
+highlight link BufTabLineActive LightlineRight_normal_2
+highlight link BufTabLineHidden LightlineRight_normal_2
 
 " Matching tags
 hi! link MatchParen ToolbarLine
 
 " Vimwiki
-call Highlight('VimWikiHeader1', 'red')
-call Highlight('VimWikiHeader2', 'green')
-call Highlight('VimWikiHeader3', 'blue')
-call Highlight('VimwikiTag', 'purple')
+call MyHighlight('VimWikiHeader1', 'red')
+call MyHighlight('VimWikiHeader2', 'green')
+call MyHighlight('VimWikiHeader3', 'blue')
+call MyHighlight('VimwikiTag', 'purple')
 
 " }}}
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
