@@ -1,10 +1,68 @@
 " vim: set foldmethod=marker foldlevel=0 nomodeline :
 
-" Pathogen
-execute pathogen#infect()
-
 " =============================================================================
-" General {{{
+" VIM-PLUG {{{
+" =============================================================================
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'Valloric/MatchTagAlways'
+Plug 'w0rp/ale'
+Plug 'jiangmiao/auto-pairs'
+Plug 'rhysd/conflict-marker.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'dyng/ctrlsf.vim'
+Plug 'itchyny/dictionary.vim'
+Plug 'mattn/emmet-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale'
+Plug 'joshdick/onedark.vim'
+Plug 'gre/play2vim'
+Plug 'danro/rename.vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'ervandew/supertab'
+Plug 'Ron89/thesaurus_query.vim'
+Plug 'markonm/traces.vim'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-abolish'
+Plug 'qpkorr/vim-bufkill'
+Plug 'ap/vim-buftabline'
+Plug 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-commentary'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'ryanoasis/vim-devicons'
+Plug 'justinmk/vim-dirvish'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'fatih/vim-go'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'machakann/vim-highlightedyank'
+Plug 'henrik/vim-indexed-search'
+Plug 'lepture/vim-jinja'
+Plug 'neoclide/vim-jsx-improve'
+Plug 'vim-latex/vim-latex'
+Plug 'shime/vim-livedown'
+Plug 'embear/vim-localvimrc'
+Plug 'plasticboy/vim-markdown'
+Plug 'PProvost/vim-markdown-jekyll'
+Plug 'adelarsq/vim-matchit'
+Plug 'tpope/vim-obsession'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'tpope/vim-repeat'
+Plug 'derekwyatt/vim-scala'
+Plug 'kshenoy/vim-signature'
+Plug 'tpope/vim-surround'
+Plug 'posva/vim-vue'
+Plug 'vimwiki/vimwiki'
+Plug 'sjl/vitality.vim'
+
+call plug#end()
+ 
+" }}}
+" =============================================================================
+" GENERAL {{{
 " =============================================================================
 
 " Compatibility
@@ -67,7 +125,7 @@ set foldlevelstart=99
 
 " }}}
 " =============================================================================
-" User Interface {{{
+" USER INTERFACE {{{
 " =============================================================================
 " Line numbers
 set number
@@ -111,7 +169,7 @@ set shortmess+=T
 
 " }}}
 " =============================================================================
-" Colors and Fonts {{{
+" COLORS AND FONTS {{{
 " =============================================================================
 " Syntax highlighting
 syntax on
@@ -136,7 +194,7 @@ colorscheme onedark
 
 " }}}
 " =============================================================================
-" Text {{{
+" TEXT {{{
 " =============================================================================
 " Indentation
 set autoindent
@@ -184,7 +242,7 @@ command! Write call MyWritingMode()
 
 " }}}
 " =============================================================================
-" Mappings {{{
+" MAPPINGS {{{
 " =============================================================================
 " Leader key
 let mapleader = ' '
@@ -353,7 +411,7 @@ nnoremap <silent> \ :Dirvish<cr>
 
 " }}}
 " =============================================================================
-" Plugins {{{
+" PLUGINS {{{
 " =============================================================================
 " Markdown
 let g:vim_markdown_folding_disabled = 1
@@ -539,7 +597,7 @@ let g:vimwiki_table_mappings = 0
 
 " }}}
 " =============================================================================
-" Highlights {{{
+" HIGHLIGHTS {{{
 " =============================================================================
 " Helper function for highlighting based on onedark colors
 let s:colors = onedark#GetColors()
