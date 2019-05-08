@@ -163,3 +163,6 @@
 [submodule "vim/bundle/splitjoin.vim"]
 	path = vim/bundle/splitjoin.vim
 	url = https://github.com/AndrewRadev/splitjoin.vim.git
+[submodule "vim/bundle/vim-highlightedyank"]
+	path = vim/bundle/vim-highlightedyank
+	url = https://github.com/machakann/vim-highlightedyank.git
