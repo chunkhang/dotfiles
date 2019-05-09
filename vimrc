@@ -1,4 +1,4 @@
-" vim: set foldmethod=marker foldlevel=0 nomodeline :
+" vim: set foldmethod=marker nomodeline :
 
 " =============================================================================
 " VIM-PLUG {{{
