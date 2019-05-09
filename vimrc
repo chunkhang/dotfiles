@@ -636,7 +636,7 @@ function! MyHighlight(group, color)
 endfunction
 
 " ALE
-call MyHighlight('ALEWarningSign', 'yellow')
+call MyHighlight('ALEWarningSign', 'dark_yellow')
 
 " Signature
 call MyHighlight('SignatureMarkText', 'purple')
