@@ -59,6 +59,8 @@ Plug 'rhysd/conflict-marker.vim'
 
 " Language
 Plug 'neoclide/vim-jsx-improve'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
@@ -230,8 +232,8 @@ set softtabstop=2
 set shiftwidth=2
 augroup vimrc_tabs
   autocmd!
-  autocmd FileType zsh,go set tabstop=4 softtabstop=4 shiftwidth=4
-  autocmd FileType snippets set expandtab
+  autocmd FileType zsh,go setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType snippets setlocal expandtab
 augroup END
 
 " Highlight whitespaces
@@ -256,7 +258,7 @@ function! MyWritingMode()
   call SuperTabSetDefaultCompletionType("<c-n>")
 endfunction
 function! MyFormatWriting()
-  norm gggqG}
+  normal gggqG}
 endfunction
 augroup vimrc_writing
   autocmd!
@@ -276,10 +278,6 @@ let mapleader = ' '
 " Motions
 nmap j gj
 nmap k gk
-
-" Shifts
-nnoremap < v<<esc>
-nnoremap > v><esc>
 
 " Selections
 nnoremap <leader>a ggVG
@@ -313,8 +311,8 @@ nnoremap <leader>[ :bp<cr>
 " Windows
 nnoremap <leader><right> :vs<cr>
 nnoremap <leader><down> :sp<cr>
-nnoremap <leader><left> :set splitright&<cr>:vs<cr>:set splitright<cr>
-nnoremap <leader><up> :set splitbelow&<cr>:sp<cr>:set splitbelow<cr>
+nnoremap <leader><left> :setlocal splitright&<cr>:vs<cr>:setlocal splitright<cr>
+nnoremap <leader><up> :setlocal splitbelow&<cr>:sp<cr>:setlocal splitbelow<cr>
 nnoremap <c-w>> :vertical resize +15<cr>
 nnoremap <c-w>< :vertical resize -15<cr>
 nnoremap <C-h> <C-W>h
