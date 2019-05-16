@@ -9,7 +9,7 @@
 --glob
 !pnpm-lock.yaml
 --glob
-!*/I18n/*.json
+!**/[iI]18n/*.json
 
 # Supress ignore messages
 # https://github.com/BurntSushi/ripgrep/issues/373#issuecomment-385168887
