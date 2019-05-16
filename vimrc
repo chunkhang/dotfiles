@@ -149,7 +149,8 @@ set laststatus=2
 set noshowmode
 set updatetime=250
 set signcolumn=yes
-set synmaxcol=1000
+set synmaxcol=200
+set regexpengine=1
 if executable('par')
   set formatprg=par
 endif
