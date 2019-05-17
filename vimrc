@@ -317,9 +317,6 @@ nnoremap <cr> <nop>
 " Visual line down and up
 nnoremap j gj
 nnoremap k gk
-" Page down and up
-nnoremap <leader>j <C-d>
-nnoremap <leader>k <C-u>
 " Move between words in line
 inoremap <C-j> <C-o>b
 inoremap <C-k> <C-o>w
