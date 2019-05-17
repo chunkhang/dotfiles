@@ -194,11 +194,6 @@ function! s:enter_writing_mode()
   call SuperTabSetDefaultCompletionType('<c-n>')
 endfunction
 
-" Format all lines in buffer
-function! s:format_buffer()
-  normal! gggqG}
-endfunction
-
 " Highlight group using onedark.vim colors
 function! s:highlight_onedark(group, color)
   let l:colors = onedark#GetColors()
@@ -684,6 +679,17 @@ call <sid>highlight_onedark('VimWikiHeader1', 'red')
 call <sid>highlight_onedark('VimWikiHeader2', 'green')
 call <sid>highlight_onedark('VimWikiHeader3', 'blue')
 call <sid>highlight_onedark('VimwikiTag', 'purple')
+function! s:reindex_diary()
+  VimwikiDiaryGenerateLinks
+  update
+endfunction
+augroup vimrc
+  autocmd BufEnter */diary/index.wiki call <sid>reindex_diary()
+  autocmd BufEnter */diary/????-??-??.wiki call <sid>enter_writing_mode()
+  autocmd BufWritePre */diary/????-??-??.wiki normal! gggqG}
+  " Non-conflicting key to invoke vim-dirvish
+  autocmd FileType vimwiki nnoremap \ :Dirvish<cr>
+augroup END
 
 " -----------------------------------------------------------------------------
 " thesaurus_query.vim
@@ -708,15 +714,6 @@ augroup vimrc
 
   " Clear empty buffers when jumping to global marks
   autocmd BufWinEnter * call <sid>clear_empty_buffers()
-
-  " Use writing mode for vimwiki diary
-  autocmd BufEnter */diary/????-??-??.wiki call <sid>enter_writing_mode()
-
-  " Auto format file
-  autocmd BufWritePre */diary/????-??-??.wiki call <sid>format_buffer()
-
-  " Add a non-conflicting key in vimwiki for invoking vim-dirvish
-  autocmd FileType vimwiki nnoremap \ :Dirvish<cr>
 
   " Disable auto comment
   let s:autocomment_exceptions = ['markdown', 'yaml']
