@@ -472,21 +472,31 @@ colorscheme onedark
 " -----------------------------------------------------------------------------
 " lightline.vim
 " https://github.com/ryanoasis/vim-devicons/wiki/usage#lightline-setup
+" https://nerdfonts.com/
 " -----------------------------------------------------------------------------
 function! MyLightlineGitBranch()
   let branch = fugitive#head()
-  return !empty(branch) ?
-        \ "\uf418 " . fugitive#head() : ''
+  if empty(branch)
+    return ''
+  endif
+  return "\uf418 " . fugitive#head()
 endfunction
 function! MyLightlineFileType()
   return winwidth(0) > 70 ? (strlen(&filetype) ?
         \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
+endfunction
+function! MyLightlineSpell()
+  if empty(&spell)
+    return ''
+  endif
+  return 'spell ' . "\uf9c5"
 endfunction
 let g:lightline = {}
 let g:lightline.colorscheme = 'onedark'
 let g:lightline.component_function = {
       \ 'gitbranch': 'MyLightlineGitBranch',
       \ 'filetype': 'MyLightlineFileType',
+      \ 'spell': 'MyLightlineSpell',
       \ }
 let g:lightline.component_expand = {
       \ 'linter_checking': 'lightline#ale#checking',
@@ -504,7 +514,7 @@ let g:lightline.active = {
       \            [ 'gitbranch' ] ],
       \ 'right': [ [ 'linter_checking', 'lineinfo' ],
       \            [ 'linter_warnings', 'linter_errors', 'percent' ],
-      \            [ 'filetype' ] ]
+      \            [ 'spell', 'filetype' ] ]
       \ }
 let g:lightline#ale#indicator_checking = "\uf110 "
 let g:lightline#ale#indicator_warnings = "\uf071 "
