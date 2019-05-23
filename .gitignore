@@ -4,3 +4,4 @@ logs
 message.txt
 vim/plugged
 tmux/plugins
+tmux/resurrect

@@ -462,9 +462,6 @@ nmap <C-e>w :ThesaurusQueryLookupCurrentWord<cr>
 " onedark.vim
 " https://github.com/joshdick/onedark.vim#installation
 " -----------------------------------------------------------------------------
-if has('nvim')
-  let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
-endif
 if has('termguicolors')
   set termguicolors
 endif

@@ -43,13 +43,6 @@ alias dkb='docker-compose build'
 alias rgl='f() { rg --pretty $@ | less };f'
 alias rgv='f() { vim $(rg --files-with-matches $@) };f'
 
-# Tmux
-alias tm='tmux'
-alias tma='f() { tmux attach -t $@ };f'
-alias tmk='f() { tmux kill-session -t $@ };f'
-alias tml='tmux list-sessions'
-alias tmn='f() { tmux new -s $@};f'
-
 # Miscellaneous
 alias cls='clear'
 alias lgrep='f() { l | grep $@ };f'
