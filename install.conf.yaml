@@ -15,6 +15,7 @@
     ~/.pip:
     ~/.ripgreprc:
     ~/.skhdrc:
+    ~/.tmux:
     ~/.tmux.conf:
     ~/.vim:
     ~/.vimrc:

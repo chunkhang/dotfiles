@@ -3,3 +3,4 @@ sec.conf
 logs
 message.txt
 vim/plugged
+tmux/plugins
