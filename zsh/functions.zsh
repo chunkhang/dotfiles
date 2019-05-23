@@ -185,14 +185,12 @@ function refresh() {
     exec zsh
 }
 
-# Restore vim session if possible
-function vim() {
-    if [ "$#" != 0 ]; then
-        env vim "$@"
-    elif [[ -f Session.vim ]]; then
-        env vim -S
+# Fix WeeChat in tmux
+function weechat() {
+    if [ ! -z "$TMUX" ]; then
+        env TERM=tmux-256color weechat "$@"
     else
-        env vim
+        env weechat "$@"
     fi
 }
 
