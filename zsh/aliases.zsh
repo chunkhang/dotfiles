@@ -7,7 +7,7 @@ alias rmvenv='pyenv uninstall'
 
 # Git
 alias ga='f() { git add $@ };f'
-alias gap='f() { git add -p $@ }; f'
+alias gap='f() { git add -p $@ };f'
 alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit --amend'
@@ -17,7 +17,9 @@ alias gd='f() { git diff $@ | cdiff -s -w 0 };f'
 alias gi='git init'
 alias gk='f() { git checkout $@ };f'
 alias gka='git checkout -- "*"'
+alias gld='git log develop..@'
 alias gl='git log --oneline --decorate --color --graph --all'
+alias glm='git log master..@'
 alias gm='f() { git merge $@ };f'
 alias gn='git open'
 alias gp='git push'
@@ -37,13 +39,16 @@ alias dkd='docker-compose down'
 alias dkk='docker-compose kill'
 alias dkb='docker-compose build'
 
-# pnpm
-alias pnl='pnpm list --depth=0'
-alias pnlg='pnpm list --depth=0 -g'
-
 # Ripgrep
 alias rgl='f() { rg --pretty $@ | less };f'
 alias rgv='f() { vim $(rg --files-with-matches $@) };f'
+
+# Tmux
+alias tm='tmux'
+alias tma='f() { tmux attach -t $@ };f'
+alias tmk='f() { tmux kill-session -t $@ };f'
+alias tml='tmux list-sessions'
+alias tmn='f() { tmux new -s $@};f'
 
 # Miscellaneous
 alias cls='clear'
