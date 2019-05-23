@@ -56,7 +56,7 @@ endif
 " Git
 " -----------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 Plug 'rhysd/conflict-marker.vim'
 
 " -----------------------------------------------------------------------------
@@ -635,9 +635,12 @@ augroup vimrc
 augroup END
 
 " -----------------------------------------------------------------------------
-" vim-gitgutter
+" vim-signify
 " -----------------------------------------------------------------------------
-let g:gitgutter_max_signs = 1000
+let g:signify_vcs_list = ['git']
+let g:signify_sign_change = '~'
+let g:signify_sign_delete = '-'
+let g:signify_sign_show_count = 0
 
 " -----------------------------------------------------------------------------
 " vim-go
