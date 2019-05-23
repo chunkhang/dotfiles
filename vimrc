@@ -93,6 +93,11 @@ if has('python') || has('python3')
   Plug 'Ron89/thesaurus_query.vim'
 endif
 
+" -----------------------------------------------------------------------------
+" Debugging
+" -----------------------------------------------------------------------------
+Plug 'dahu/bisectly'
+
 call plug#end()
 
 " }}}
@@ -660,7 +665,6 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'vim': ['vint'],
       \ }
-" pnpx
 " https://pnpm.js.org/docs/en/pnpx-cli.html
 let g:ale_javascript_eslint_executable = 'pnpx eslint'
 call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
