@@ -7,6 +7,7 @@ alias rmvenv='pyenv uninstall'
 
 # Git
 alias ga='f() { git add $@ };f'
+alias gap='f() { git add -p $@ }; f'
 alias gb='git branch'
 alias gc='git commit'
 alias gca='git commit --amend'
