@@ -5,6 +5,7 @@
 - clean: ['~']
 
 - link:
+    ~/.bash_profile:
     ~/.chunkwmrc:
     ~/.ctags.d:
     ~/.eslintrc.json:
