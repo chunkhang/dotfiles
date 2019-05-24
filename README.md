@@ -1,5 +1,12 @@
 # Dotfiles
-All my precious dotfiles managed using [Dotbot](https://github.com/anishathalye/dotbot)
+> All my precious dotfiles managed using [Dotbot](https://github.com/anishathalye/dotbot)
+
+## Screenshots
+
+![desktop](./screenshots/desktop.jpg)
+![chunkwm](./screenshots/chunkwm.jpg)
+![vim](./screenshots/vim.jpg)
+![weechat](./screenshots/weechat.jpg)
 
 ## Installing
 ```
