@@ -35,7 +35,7 @@ weechat.hook_print('', 'irc_privmsg', '', 1, 'notify', '')
 def notify(data, buffer, date, tags, displayed, highlight, prefix, message):
 	# ignore if it's yourself
 	own_nick = weechat.buffer_get_string(buffer, 'localvar_nick')
-	if prefix == own_nick or prefix == ('@%s' % own_nick):
+	if prefix == ('@%s' % own_nick) or prefix in tags or buffer == weechat.current_buffer():
 		return weechat.WEECHAT_RC_OK
 
 	# ignore messages older than the configured theshold (such as ZNC logs) if enabled
