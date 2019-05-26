@@ -1,7 +1,3 @@
-# Terminal
-# https://gist.github.com/sos4nt/3187620
-export TERM=xterm-256color-italic
-
 # Path
 export PATH=~/.texlive/2018/bin/x86_64-darwin:/Applications/Postgres.app/Contents/Versions/latest/bin:~/.zsh/git-open:~/.dotfiles/bin:/usr/local/sbin:$PATH
 
