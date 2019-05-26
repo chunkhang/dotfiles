@@ -319,6 +319,9 @@ nnoremap <cr> <nop>
 " -----------------------------------------------------------------------------
 " Moving
 " -----------------------------------------------------------------------------
+" Page down and up
+nnoremap <C-m> <C-d>
+nnoremap <C-n> <C-u>
 " Visual line down and up
 nnoremap j gj
 nnoremap k gk
