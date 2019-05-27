@@ -352,12 +352,12 @@ vnoremap <leader>p "*p
 " -----------------------------------------------------------------------------
 " Jumping
 " -----------------------------------------------------------------------------
+" Buffers
+nnoremap <silent> <leader>] :bnext<cr>
+nnoremap <silent> <leader>[ :bprev<cr>
 " Linting errors
 nmap [a <Plug>(ale_previous_wrap)
 nmap ]a <Plug>(ale_next_wrap)
-" Buffers
-nnoremap <silent> ]b :bnext<cr>
-nnoremap <silent> [b :bprev<cr>
 " Tabs
 nnoremap <silent> ]t :tabnext<cr>
 nnoremap <silent> [t :tabprev<cr>
