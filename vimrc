@@ -154,7 +154,7 @@ set laststatus=2
 set noshowmode
 set updatetime=250
 set signcolumn=yes
-set synmaxcol=200
+set synmaxcol=1000
 set regexpengine=1
 if executable('par')
   set formatprg=par
@@ -429,6 +429,8 @@ nnoremap <silent> <leader>/ :nohlsearch<cr>
 nnoremap <silent> <leader>m :call <sid>clear_marks()<cr>
 " Open shell
 nnoremap <silent> <leader>z :shell<cr>
+" Yank
+nnoremap Y y$
 " Force last command
 nnoremap ! :<up>!
 
