@@ -429,8 +429,6 @@ nnoremap <silent> <leader>/ :nohlsearch<cr>
 nnoremap <silent> <leader>m :call <sid>clear_marks()<cr>
 " Open shell
 nnoremap <silent> <leader>z :shell<cr>
-" Yank
-nnoremap Y y$
 " Force last command
 nnoremap ! :<up>!
 
