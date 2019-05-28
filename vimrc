@@ -727,6 +727,9 @@ highlight! link MatchParen ToolbarLine
 
 augroup vimrc
 
+  " Mapping
+  autocmd FileType help noremap <buffer> q :q<cr>
+
   " Clear empty buffers when jumping to global marks
   autocmd BufWinEnter * call <sid>clear_empty_buffers()
 
