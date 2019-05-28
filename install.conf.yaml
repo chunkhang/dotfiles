@@ -12,6 +12,7 @@
     ~/.gitconfig:
     ~/.gitignore_global:
     ~/.jshintrc:
+    ~/.peco:
     ~/.pip:
     ~/.ripgreprc:
     ~/.skhdrc:

@@ -1,0 +1,9 @@
+{
+  "Prompt": "[peco]",
+  "InitialFilter": "SmartCase",
+  "Style": {
+    "SavedSelection": ["black", "on_blue"],
+    "Selected": ["black", "on_yellow"],
+    "Matched": ["red", "on_black"]
+  }
+}
