@@ -80,7 +80,8 @@ def hook_editor_process(terminal, editor, path, buf):
 
 def run_blocking(editor, path, buf):
     cmd = shlex.split(editor) + [path]
-    code = subprocess.Popen(cmd).wait()
+    term = 'xterm-256color'
+    code = subprocess.Popen(cmd, env=dict(os.environ, TERM=term)).wait()
 
     if code != 0:
         cleanup(path,  buf)
