@@ -464,8 +464,11 @@ nmap <C-e>w :ThesaurusQueryLookupCurrentWord<cr>
 " -----------------------------------------------------------------------------
 " onedark.vim
 " https://github.com/joshdick/onedark.vim#installation
+" :help xterm-true-color
 " -----------------------------------------------------------------------------
 if has('termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
 endif
 let g:onedark_hide_endofbuffer = 1
