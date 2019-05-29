@@ -34,7 +34,7 @@ export NVM_LAZY_LOAD=true
 export FLASK_ENV='development'
 
 # Ripgrep
-export RIPGREP_CONFIG_PATH='/Users/marcus/.ripgreprc'
+export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
 
 # Editor
 export EDITOR='vim'
