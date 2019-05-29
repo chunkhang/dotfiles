@@ -658,8 +658,6 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'vim': ['vint'],
       \ }
-" https://pnpm.js.org/docs/en/pnpx-cli.html
-let g:ale_javascript_eslint_executable = 'pnpx eslint'
 call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
 
 " -----------------------------------------------------------------------------
