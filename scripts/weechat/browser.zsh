@@ -1,0 +1,15 @@
+#!/usr/bin/env zsh
+
+for url in "$@"; do
+    firefox="Firefox"
+    chrome="Google Chrome"
+
+    # Determine browser to use
+    browser="$firefox"
+    if [[ "$url" =~ "https://.*\.slack\.com/call/.*" ]]; then
+        browser="$chrome"
+    fi
+
+    # Open url
+    open -a "$browser" "$url"
+done

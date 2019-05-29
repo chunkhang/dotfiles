@@ -18,7 +18,7 @@ fn - s : open /Applications/Spotify.app
 fn - t : open /Applications/Telegram.app
 fn - w : open /Applications/Whatsapp.app
 fn - x : open /Applications/Xcode.app
-fn - l : ~/Scripts/skhd/list.zsh \
+fn - l : ~/.scripts/skhd/list.zsh \
     "L - List all available applications / directories\n" \
     "A - Activity Monitor" \
     "C - Calendar" \
@@ -35,12 +35,12 @@ fn - l : ~/Scripts/skhd/list.zsh \
 
 # Run scripts
 
-fn - 1 : ~/Scripts/chunkwm/desktop/info.zsh
-fn - 2 : ~/Scripts/chunkwm/window/info.zsh
-fn - 3 : ~/Scripts/music/rain.zsh
-fn - 8 : ~/Scripts/ubersicht/refresh.zsh
-fn - 9 : ~/Scripts/chunkwm/restart.zsh
-fn - 0 : ~/Scripts/skhd/list.zsh \
+fn - 1 : ~/.scripts/chunkwm/desktop/info.zsh
+fn - 2 : ~/.scripts/chunkwm/window/info.zsh
+fn - 3 : ~/.scripts/music/rain.zsh
+fn - 8 : ~/.scripts/ubersicht/refresh.zsh
+fn - 9 : ~/.scripts/chunkwm/restart.zsh
+fn - 0 : ~/.scripts/skhd/list.zsh \
     "0 - List all available scripts\n" \
     "1 - Get information for current desktop" \
     "2 - Get information for current window" \
@@ -72,10 +72,10 @@ alt - x : chunkc tiling::desktop --mirror horizontal
 
 # Resize window
 
-ctrl + alt - h : ~/Scripts/chunkwm/window/resize.zsh left
-ctrl + alt - j : ~/Scripts/chunkwm/window/resize.zsh down
-ctrl + alt - k : ~/Scripts/chunkwm/window/resize.zsh up
-ctrl + alt - l : ~/Scripts/chunkwm/window/resize.zsh right
+ctrl + alt - h : ~/.scripts/chunkwm/window/resize.zsh left
+ctrl + alt - j : ~/.scripts/chunkwm/window/resize.zsh down
+ctrl + alt - k : ~/.scripts/chunkwm/window/resize.zsh up
+ctrl + alt - l : ~/.scripts/chunkwm/window/resize.zsh right
 ctrl + alt - 0 : chunkc tiling::desktop --equalize
 
 alt - f : chunkc tiling::window --toggle fullscreen
@@ -86,20 +86,20 @@ alt - f : chunkc tiling::window --toggle fullscreen
 
 # Manage desktop
 
-shift + ctrl - m: ~/Scripts/chunkwm/desktop/mode.zsh
+shift + ctrl - m: ~/.scripts/chunkwm/desktop/mode.zsh
 
-shift + ctrl - 0x18 : ~/Scripts/chunkwm/desktop/create.zsh # =
-shift + ctrl - 0x1B : ~/Scripts/chunkwm/desktop/destroy.zsh # -
+shift + ctrl - 0x18 : ~/.scripts/chunkwm/desktop/create.zsh # =
+shift + ctrl - 0x1B : ~/.scripts/chunkwm/desktop/destroy.zsh # -
 
 # Send window to desktop
 
-shift + ctrl - left : ~/Scripts/chunkwm/desktop/send.zsh left
-shift + ctrl - right : ~/Scripts/chunkwm/desktop/send.zsh right
-shift + ctrl - 1 : ~/Scripts/chunkwm/desktop/send.zsh 1
-shift + ctrl - 2 : ~/Scripts/chunkwm/desktop/send.zsh 2
-shift + ctrl - 3 : ~/Scripts/chunkwm/desktop/send.zsh 3
-shift + ctrl - 4 : ~/Scripts/chunkwm/desktop/send.zsh 4
-shift + ctrl - 5 : ~/Scripts/chunkwm/desktop/send.zsh 5
+shift + ctrl - left : ~/.scripts/chunkwm/desktop/send.zsh left
+shift + ctrl - right : ~/.scripts/chunkwm/desktop/send.zsh right
+shift + ctrl - 1 : ~/.scripts/chunkwm/desktop/send.zsh 1
+shift + ctrl - 2 : ~/.scripts/chunkwm/desktop/send.zsh 2
+shift + ctrl - 3 : ~/.scripts/chunkwm/desktop/send.zsh 3
+shift + ctrl - 4 : ~/.scripts/chunkwm/desktop/send.zsh 4
+shift + ctrl - 5 : ~/.scripts/chunkwm/desktop/send.zsh 5
 
 ###############################################################################
 # Monitor
