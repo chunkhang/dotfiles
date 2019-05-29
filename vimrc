@@ -320,8 +320,8 @@ nnoremap <cr> <nop>
 " Moving
 " -----------------------------------------------------------------------------
 " Page down and up
-nnoremap <C-m> <C-d>
-nnoremap <C-n> <C-u>
+nnoremap <C-m> <C-e>
+nnoremap <C-n> <C-y>
 " Visual line down and up
 nnoremap j gj
 nnoremap k gk
