@@ -185,15 +185,6 @@ function refresh() {
     exec zsh
 }
 
-# Fix WeeChat in tmux
-function weechat() {
-    if [ ! -z "$TMUX" ]; then
-        env TERM=tmux-256color weechat "$@"
-    else
-        env weechat "$@"
-    fi
-}
-
 # Perform operations on Wi-Fi
 function wifi() {
     showHelp() {
