@@ -38,7 +38,7 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'danro/rename.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'adelarsq/vim-matchit'
-Plug 'mattn/emmet-vim'
+Plug 'jceb/emmet.snippets'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'justinmk/vim-dirvish'
 Plug 'shime/vim-livedown'
@@ -577,17 +577,6 @@ endif
 " vim-bufkill
 " -----------------------------------------------------------------------------
 let g:BufKillCreateMappings = 0
-
-" -----------------------------------------------------------------------------
-" emmet-vim
-" -----------------------------------------------------------------------------
-let g:user_emmet_leader_key = '<C-e>'
-let g:user_emmet_install_global = 0
-augroup vimrc
-  autocmd FileType html,jinja,gohtmltmpl,xml EmmetInstall
-  autocmd FileType css,scss EmmetInstall
-  autocmd FileType javascript,coffee EmmetInstall
-augroup END
 
 " -----------------------------------------------------------------------------
 " vim-gutentags
