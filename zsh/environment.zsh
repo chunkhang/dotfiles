@@ -43,4 +43,4 @@ export EDITOR='vim'
 export LANG=en_US.UTF-8
 
 # Less
-export LESS='--tabs=4 --ignore-case --clear-screen --chop-long-lines --HILITE-UNREAD --RAW-CONTROL-CHARS --LONG-PROMPT'
+export LESS='--tabs=4 --ignore-case --clear-screen --HILITE-UNREAD --RAW-CONTROL-CHARS --LONG-PROMPT'
