@@ -107,13 +107,6 @@ function eject() {
     echo "Done ejecting."
 }
 
-# Quit all applications
-function expelliarmus() {
-    echo "Quitting all applications..."
-    ~/Scripts/misc/quit-all.zsh
-    echo "Done quitting."
-}
-
 # Perform operations on Gatekeeper
 function gate() {
     showHelp() {
