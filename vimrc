@@ -720,8 +720,8 @@ highlight! link MatchParen ToolbarLine
 
 augroup vimrc
 
-  " Mapping
-  autocmd FileType help noremap <buffer> q :q<cr>
+  " Easier to quit help, quickfix and location window
+  autocmd FileType help,qf noremap <silent> <buffer> q :q<cr>
 
   " Clear empty buffers when jumping to global marks
   autocmd BufWinEnter * call <sid>clear_empty_buffers()
