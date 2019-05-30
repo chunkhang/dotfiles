@@ -56,6 +56,7 @@ endif
 " Git
 " -----------------------------------------------------------------------------
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-signify'
 Plug 'rhysd/conflict-marker.vim'
 
