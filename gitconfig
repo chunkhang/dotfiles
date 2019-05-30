@@ -6,6 +6,9 @@
   editor = vim
   excludesfile = ~/.gitignore_global
 
+[commit]
+  verbose = true
+
 [alias]
   discard = checkout -- *
   drop = reset --hard @{u}
