@@ -568,7 +568,6 @@ let g:ctrlsf_case_sensitive = 'yes'
 let g:ctrlsf_default_root = 'project'
 let g:ctrlsf_extra_root_markers = ['.ctrlsf']
 let g:ctrlsf_position = 'right'
-let g:ctrlsf_default_view_mode = 'compact'
 let g:ctrlsf_auto_close = {
       \ 'normal': 0,
       \ 'compact': 0
