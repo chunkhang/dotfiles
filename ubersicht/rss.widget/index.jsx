@@ -2,7 +2,6 @@ import { run, css } from 'uebersicht';
 import { Container, Title } from '../lib/components';
 
 const SHELL = 'zsh';
-const SHELL_CONFIG = '~/.zshrc';
 const FEEDS = {
   'BBC News': 'http://feeds.bbci.co.uk/news/world/rss.xml',
   'The Star': 'http://www.thestar.com.my/rss/news/nation/',
@@ -25,7 +24,7 @@ export const command = (dispatch) =>
     script = `${script} ${args.join(' ')}`;
     // Parse feed
     // https://github.com/felixhageloh/uebersicht/issues/170#issue-135272949
-    const command = `${SHELL} -l -c 'source ${SHELL_CONFIG} && ${script}'`;
+    const command = `${SHELL} -l -i -c '${script}'`;
     run(command)
       .then((output) => {
         const feeds = JSON.parse(output);
