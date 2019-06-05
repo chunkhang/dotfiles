@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -l
+#!/usr/bin/env zsh -l -i
 
 color() {
     local green="\e[32m"
