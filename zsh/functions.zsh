@@ -43,6 +43,13 @@ function captive() {
     echo "Done opening."
 }
 
+# Execute various cleaning commands
+function clean() {
+    echo "Cleaning system..."
+    ~/.scripts/system/clean.zsh
+    echo "Done cleaning."
+}
+
 # Perform operations on DNS
 function dns() {
     showHelp() {
