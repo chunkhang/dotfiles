@@ -732,7 +732,7 @@ augroup vimrc
         \| setlocal formatoptions-=cro
 
   " Indentation
-  autocmd FileType zsh,go setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4
   autocmd FileType snippets setlocal expandtab
 
 augroup END
