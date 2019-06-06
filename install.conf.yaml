@@ -23,7 +23,9 @@
     ~/.vim:
     ~/.vimrc:
     ~/.weechat:
+    ~/.zlogin:
     ~/.zsh:
+    ~/.zshenv:
     ~/.zshrc:
 
 - shell:
