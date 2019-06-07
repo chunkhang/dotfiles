@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh -l -i
+#!/usr/bin/env zsh
 
 color() {
     local green="\e[32m"
@@ -29,6 +29,7 @@ main() {
         "docker container prune"
         "brew cleanup"
         "rm ~/.weechat/weechat_crash_*.log"
+        "pod cache clean --all"
     )
 
     local length=${#commands[@]}
