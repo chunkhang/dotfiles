@@ -16,7 +16,7 @@ $ ./install
 ```
 
 ## Local Configuration
-`~/.zshrc_local` can be used to apply local configuration as needed
+`~/.zlocal` can be used to apply local configuration as needed
 
 ## Unlicense
 
