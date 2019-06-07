@@ -9,3 +9,7 @@ weechat/message.txt
 
 # Tmux
 tmux
+
+# Ubersicht
+ubersicht/network.widget/lib/network.out
+ubersicht/playing.widget/lib/songMeta.plist
