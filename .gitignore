@@ -1,7 +1,11 @@
-.netrwhist
-sec.conf
-logs
-message.txt
+# Vim
 vim/plugged
-tmux/plugins
-tmux/resurrect
+vim/.netrwhist
+
+# Weechat
+weechat/logs
+weechat/sec.conf
+weechat/message.txt
+
+# Tmux
+tmux

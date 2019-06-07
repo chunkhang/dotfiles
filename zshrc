@@ -5,6 +5,7 @@
 # =============================================================================
 
 export ZSH=$HOME/.zsh/oh-my-zsh
+export ZSH_CUSTOM=$HOME/.zsh/oh-my-zsh-custom
 export ZSH_THEME=marcus
 export DISABLE_AUTO_TITLE=true
 export DISABLE_AUTO_UPDATE=true
