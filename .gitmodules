@@ -16,3 +16,6 @@
 [submodule "zsh/zsh-rbenv-lazy"]
 	path = zsh/zsh-rbenv-lazy
 	url = https://github.com/kadaan/zsh-rbenv-lazy.git
+[submodule "zsh/oh-my-zsh"]
+	path = zsh/oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh.git
