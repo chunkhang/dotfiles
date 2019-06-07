@@ -10,3 +10,12 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/chunkhang/oh-my-zsh.git
+[submodule "zsh/zsh-pyenv-lazy"]
+	path = zsh/zsh-pyenv-lazy
+	url = https://github.com/davidparsson/zsh-pyenv-lazy.git
+[submodule "zsh/zsh-nvm"]
+	path = zsh/zsh-nvm
+	url = https://github.com/lukechilds/zsh-nvm.git
+[submodule "zsh/zsh-rbenv-lazy"]
+	path = zsh/zsh-rbenv-lazy
+	url = https://github.com/kadaan/zsh-rbenv-lazy.git
