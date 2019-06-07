@@ -6,14 +6,14 @@ const FEEDS = {
   'BBC News': 'http://feeds.bbci.co.uk/news/world/rss.xml',
   'The Star': 'http://www.thestar.com.my/rss/news/nation',
   'Hacker News': 'https://hnrss.org/frontpage',
-  'Wired': 'https://www.wired.com/feed'
+  // 'Wired': 'https://www.wired.com/feed'
 };
 const LIMIT = 5;
 
 export const command = (dispatch) =>
   run('lib/scripts/wait-for-network.zsh').then(() => {
     // Prepare script with arguments
-    let script = 'python lib/scripts/parse_feed.py';
+    let script = 'lib/scripts/parse_feed.py';
     const args = [LIMIT];
     const titles = Object.keys(FEEDS);
     const links = Object.values(FEEDS);
@@ -23,8 +23,7 @@ export const command = (dispatch) =>
     }
     script = `${script} ${args.join(' ')}`;
     // Parse feed
-    // https://github.com/felixhageloh/uebersicht/issues/170#issue-135272949
-    const command = `${SHELL} -c '${script}'`;
+    const command = `${SHELL} -l -c '${script}'`;
     run(command)
       .then((output) => {
         const feeds = JSON.parse(output);
