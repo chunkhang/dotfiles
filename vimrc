@@ -721,6 +721,9 @@ highlight! link MatchParen ToolbarLine
 
 augroup vimrc
 
+  " Use JavaScript filetype for jsx files
+  autocmd BufNewFile,BufRead *.jsx set filetype=javascript
+
   " Easier to quit help, quickfix and location window
   autocmd FileType help,qf noremap <silent> <buffer> q :q<cr>
 
