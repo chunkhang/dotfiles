@@ -5,32 +5,20 @@ import json
 import html
 import feedparser
 
-# Get arguments
-# parse_feed.py [limit] [title1] [link1] [title2] [link2] ...
-LIMIT = int(sys.argv[1])
-TITLES = sys.argv[2::2]
-URLS = sys.argv[3::2]
-
 
 def main():
-    feeds = []
+    entries = []
     try:
-        for i, title in enumerate(TITLES):
-            feed = feedparser.parse(URLS[i])
-            feed_entries = feed['entries'][:LIMIT]
-            entries = []
-            for entry in feed_entries:
-                entries.append({
-                    'title': sanitize(entry['title']),
-                    'link': entry['link'],
-                })
-            feeds.append({
-                'title': title,
-                'link': feed['feed']['link'],
-                'entries': entries
+        [title, url, limit] = sys.argv[1:4]
+        feed = feedparser.parse(url)
+        feed_entries = feed['entries'][:int(limit)]
+        for entry in feed_entries:
+            entries.append({
+                'title': sanitize(entry['title']),
+                'link': entry['link'],
             })
     finally:
-        print(json.dumps(feeds))
+        print(json.dumps(entries))
 
 
 def sanitize(string):

@@ -37,6 +37,8 @@ module.exports = {
     camelcase: 0,
     'max-len': 0,
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
+    'object-curly-newline': 0,
+    'arrow-body-style': 0,
     'import/no-unresolved': [2, { commonjs: true }],
     'react/jsx-one-expression-per-line': 0,
     'react/no-array-index-key': 1,
