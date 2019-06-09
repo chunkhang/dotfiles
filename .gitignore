@@ -11,6 +11,5 @@ weechat/message.txt
 tmux
 
 # Ubersicht
-ubersicht/.eslintrc.js
 ubersicht/network.widget/lib/network.out
 ubersicht/playing.widget/lib/songMeta.plist

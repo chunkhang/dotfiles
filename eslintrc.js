@@ -38,21 +38,7 @@ module.exports = {
     'max-len': 0,
     'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'import/no-unresolved': [2, { commonjs: true }],
-    'no-plusplus': ['error', { allowForLoopAfterthoughts: true }],
     'react/jsx-one-expression-per-line': 0,
     'react/no-array-index-key': 1,
   },
-  overrides: [
-    // Ubersicht widgets
-    {
-      files: ['*.widget/*.jsx'],
-      rules: {
-        'react/react-in-jsx-scope': 0,
-        'react/prop-types': 0,
-      },
-      settings: {
-        'import/core-modules': ['uebersicht'],
-      },
-    },
-  ],
 }
