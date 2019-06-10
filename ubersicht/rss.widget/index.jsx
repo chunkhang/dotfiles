@@ -1,6 +1,7 @@
 import { run, css } from 'uebersicht'
+import cx from 'classnames'
 
-import { Container, Title } from '../lib/components'
+import { duration } from '../lib/utils'
 import styles from './src/styles'
 
 const FEEDS = [
@@ -54,7 +55,7 @@ const command = (dispatch) => {
   })
 }
 
-const refreshFrequency = 15 * 60 * 1000 // 15 minutes
+const refreshFrequency = duration('15m')
 
 const initialState = {
   feeds: FEEDS.map(feed => ({
@@ -97,14 +98,8 @@ const updateState = (event, prevState) => {
 const { className, ...s } = styles(css)
 
 const renderIcon = link => (
-  <a
-    href={link}
-    style={{ color: 'white', textDecoration: 'none' }}
-  >
-    <i
-      className="icon-link-ext"
-      style={{ fontStyle: 'normal', fontSize: '10px' }}
-    />
+  <a href={link}>
+    <i className={cx(s.linkIcon, 'icon-link-ext')} />
   </a>
 )
 
@@ -128,19 +123,20 @@ const renderFeeds = feeds => (
   </ul>
 )
 
-const render = ({ feeds }) => (
-  <div>
-    <link rel="stylesheet" href="lib/css/fontello.css" />
-    <Container>
-      <Title>Feed</Title>
-      {feeds.length > 0 ? renderFeeds(feeds) : (
-        <div>Not available</div>
-      )}
-    </Container>
-  </div>
-)
+const render = (state) => {
+  const { feeds } = state
+  return (
+    <div>
+      <link rel="stylesheet" href="lib/css/fontello.css" />
+      <div>
+        <div className="widget-name">Feed</div>
+        {renderFeeds(feeds)}
+      </div>
+    </div>
+  )
+}
 
-module.exports = {
+export {
   command,
   refreshFrequency,
   initialState,

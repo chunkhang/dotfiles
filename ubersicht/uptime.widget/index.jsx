@@ -1,104 +1,76 @@
-import { Container, Title } from '../lib/components';
+import { duration, pluralize } from '../lib/utils'
+import styles from './src/styles'
 
-const config = {
-  units: ['day', 'hour', 'minute'],
-  pluralize: true
-};
+const command = 'uptime'
 
-export const command = 'uptime';
+const refreshFrequency = duration('1m')
 
-export const refreshFrequency = 1 * 60 * 1000; // 1 minute
+const initialState = {
+  uptime: '',
+}
 
-export const className = `
-  top: 20px;
-  right: 20px;
-  text-align: right;
-`;
+const getMatch = (string, patterns) => {
+  let matched = null
+  patterns.find((pattern) => {
+    const match = string.match(pattern)
+    if (match) {
+      [, matched] = match
+      return true
+    }
+    return false
+  })
+  return matched
+}
 
-export const initialState = {
-  ip: ''
-};
+const updateState = (event) => {
+  const { output } = event
+  const uptimeString = output.match(/up (.+), \d+ users?/)[1]
+  const regex = {
+    day: [
+      /(\d+) days?/,
+    ],
+    hour: [
+      /(\d+):/,
+      /(\d+) hrs?/,
+    ],
+    minute: [
+      /:(\d+)/,
+      /(\d+) mins?/,
+    ],
+  }
+  const durations = Object.entries(regex)
+    .reduce((acc, [key, patterns]) => ({
+      ...acc,
+      [key]: getMatch(uptimeString, patterns),
+    }), {})
+  const maybeUptime = Object.entries(durations)
+    .reduce((acc, [key, value]) => {
+      if (value) {
+        return `${acc} ${pluralize(parseInt(value, 10), key)}`
+      }
+      return acc
+    }, '')
+  const uptime = maybeUptime || 'Not available'
+  return { uptime }
+}
 
-export const render = ({ uptime }) => {
+const { className } = styles
+
+const render = (state) => {
+  const { uptime } = state
   return (
-    <Container>
-      <Title>Uptime</Title>
+    <div>
+      <div className="widget-name">Uptime</div>
       <div>{uptime}</div>
-    </Container>
-  );
-};
+    </div>
+  )
+}
 
-export const updateState = (event) => {
-  // Get raw uptime
-  const rawRegex = /up (.+), \d+ users?/;
-  const rawUptime = event.output.match(rawRegex)[1];
-
-  // Possible raw uptimes:
-  // '1 min', '2 mins'
-  // '1 hr', '2 hrs'
-  // '1 day', '2 days'
-  // ' 3:01', '13:10'
-  // '1 day, 1 min', '2 days, 1 hour', '1 day,  3:01', ...
-  const dayRegex = /(\d+) days?/;
-  const hourRegex = /(\d+):|(\d+) hrs?/;
-  const minuteRegex = /:(\d+)|(\d+) mins?/;
-
-  const durations = {
-    day: 0,
-    hour: 0,
-    minute: 0
-  };
-
-  // Get day if any
-  if (dayRegex.test(rawUptime)) {
-    durations.day = parseInt(rawUptime.match(dayRegex)[1]);
-  }
-
-  // Get hour if any
-  if (hourRegex.test(rawUptime)) {
-    if (hourRegex.test(rawUptime)) {
-      for (let group = 1; group <= 2; group++) {
-        const match = rawUptime.match(hourRegex)[group];
-        if (typeof(match) !== 'undefined') {
-          durations.hour = parseInt(match);
-        }
-      }
-    }
-  }
-
-  // Get minute if any
-  if (minuteRegex.test(rawUptime)) {
-    for (let group = 1; group <= 2; group++) {
-      const match = rawUptime.match(minuteRegex)[group];
-      if (typeof(match) !== 'undefined') {
-        durations.minute = parseInt(match);
-      }
-    }
-  }
-
-  // Format uptime
-  let uptime = '';
-  Object.values(durations).forEach((duration, index) => {
-    if (duration > 0) {
-      const timeString = durationString(
-        duration, config.units[index], config.pluralize);
-      uptime += ` ${timeString}`;
-    }
-  });
-  uptime = uptime.trim();
-  if (!uptime) {
-    uptime = 'Not available';
-  }
-
-  return {
-    uptime
-  };
-};
-
-function durationString(quantity, word, pluralize) {
-  let string = `${quantity} ${word}`;
-  if (pluralize && quantity > 1) {
-    string += 's';
-  }
-  return string;
+export {
+  command,
+  refreshFrequency,
+  initialState,
+  updateState,
+  className,
+  render,
 }

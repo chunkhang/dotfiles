@@ -34,6 +34,11 @@ const styles = css => ({
     marginBottom: '1px',
     fontSize: '11px',
   }),
+
+  linkIcon: css({
+    fontStyle: 'normal',
+    fontSize: '10px',
+  }),
 })
 
 export default styles

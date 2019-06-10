@@ -1,31 +1,37 @@
-import { Container, Title } from '../lib/components';
+import { duration } from '../lib/utils'
+import styles from './src/styles'
 
-export const command = 'lib/scripts/get-ip.zsh';
+const command = 'lib/scripts/get-ip.zsh'
 
-export const refreshFrequency = 5 * 1000; // 5 seconds
+const refreshFrequency = duration('5s')
 
-export const className = `
-  top: 110px;
-  right: 20px;
-  text-align: right;
-`;
+const initialState = {
+  ip: '',
+}
 
-export const initialState = {
-  ip: ''
-};
+const { className } = styles
 
-export const render = ({ ip }) => {
+const render = (state) => {
+  const { ip } = state
   return (
-    <Container>
-      <Title>Local IP</Title>
+    <div>
+      <div className="widget-name">Local IP</div>
       <div>{ip}</div>
-    </Container>
-  );
-};
+    </div>
+  )
+}
 
-export const updateState = (event) => {
-  const ip = event.output ? event.output : 'Not available';
-  return {
-    ip
-  };
-};
+const updateState = (event) => {
+  const { output } = event
+  const ip = output || 'Not available'
+  return { ip }
+}
+
+export {
+  command,
+  refreshFrequency,
+  initialState,
+  updateState,
+  className,
+  render,
+}

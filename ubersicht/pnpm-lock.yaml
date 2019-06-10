@@ -1,3 +1,6 @@
+dependencies:
+  classnames: 2.2.6
+  duration-js: 4.0.0
 devDependencies:
   babel-eslint: 10.0.1
   eslint: 5.16.0
@@ -223,6 +226,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-mT8iDcrh03qDGRRmoA2hmBJnxpllMR+0/0qlzjqZES6NdiWDcZkCNAk4rPFZ9Q85r27unkiNNg8ZOiwZXBHwcA==
+  /classnames/2.2.6:
+    dev: false
+    resolution:
+      integrity: sha512-JR/iSQOSt+LQIWwrwEzJ9uk0xfN3mTVYMwt1Ir5mUcSN6pU+V4zQFFaJsclJbPuAUQH+yfWef6tm7l1quW3C8Q==
   /cli-cursor/2.1.0:
     dependencies:
       restore-cursor: 2.0.0
@@ -324,6 +331,10 @@ packages:
       node: '>=6.0.0'
     resolution:
       integrity: sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w==
+  /duration-js/4.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-q5FXWk8aawlgNGhc/G6prKmc1j8=
   /emoji-regex/7.0.3:
     dev: true
     resolution:
@@ -1419,6 +1430,8 @@ packages:
       integrity: sha512-/lg70HAjtkUgWPVZhZcm+T4hkL8Zbtp1nFNOn3lRrxnlv50SRBv7cR7RqR+GMsd3hUXy9hWBo4CHTbFTcOYwig==
 specifiers:
   babel-eslint: ^10.0.1
+  classnames: ^2.2.6
+  duration-js: ^4.0.0
   eslint: ^5.9.0
   eslint-config-airbnb: ^17.1.0
   eslint-import-resolver-node: ^0.3.2

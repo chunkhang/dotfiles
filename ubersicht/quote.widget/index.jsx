@@ -1,74 +1,79 @@
-import { run, css } from 'uebersicht';
-import { Container, Title } from '../lib/components';
+import { run, css } from 'uebersicht'
 
-const PROXY_URL = 'http://127.0.0.1:41417/';
-const API_URL = 'https://www.brainyquote.com/link/quotebr.rss';
+import { duration, url } from '../lib/utils'
+import styles from './src/styles'
 
-export const command = (dispatch) =>
+const MAX_QUOTE_LENGTH = 65
+
+const parseResponse = (response) => {
+  return response.text().then((xml) => {
+    const item = $(xml).find('item').eq(0)
+    const quote = item.find('description').text().slice(1, -1)
+    const author = item.find('title').text()
+    return { quote, author }
+  })
+}
+
+const command = (dispatch) => {
+  const api = 'https://www.brainyquote.com/link/quotebr.rss'
   run('lib/scripts/wait-for-network.zsh').then(() => {
-    fetch(PROXY_URL + API_URL)
+    fetch(url(api))
       .then((response) => {
-        response.text().then((xml) => {
-          dispatch({ type: 'FETCH_SUCCEEDED', data: xml });
-        });
+        parseResponse(response).then(({ quote, author }) => {
+          if (quote.length <= MAX_QUOTE_LENGTH) {
+            dispatch({ type: 'SUCCESS', quote, author, error: null })
+          } else {
+            dispatch({ type: 'FAIL', error: null })
+          }
+        })
       })
       .catch((error) => {
-        dispatch({ type: 'FETCH_FAILED', error: error });
-      });
-  });
+        dispatch({ type: 'ERROR', error: String(error) })
+      })
+  })
+}
 
-export const refreshFrequency = 1 * 60 * 60 * 1000; // 1 hour
+const refreshFrequency = duration('1h')
 
-export const className = `
-  top: 20px;
-  left: 20px;
-`;
-const quoteStyle = css`
-  line-height: 1;
-`;
-const authorStyle = css`
-  font-size: 11px;
-  margin-top: 1px;
-`;
-
-export const initialState = {
+const initialState = {
   quote: 'The unexamined life is not worth living.',
-  author: 'Socrates'
-};
+  author: 'Socrates',
+  error: null,
+}
 
-export const render = ({ quote, author }) => {
-  return (
-    <Container>
-      <Title>Quote</Title>
-      <div className={quoteStyle}>{quote}</div>
-      <div className={authorStyle}>{author}</div>
-    </Container>
-  );
-};
-
-export const updateState = (event, previousState) => {
-  switch (event.type) {
-    case 'FETCH_SUCCEEDED': {
-      const quote = getQuote(event.data);
-      if (quote.quote.length <= 65) {
-        return quote;
-      } else {
-        return previousState;
-      }
+const updateState = (event, prevState) => {
+  const { type, quote, author } = event
+  if (type === 'SUCCESS') {
+    return {
+      quote,
+      author,
     }
-    case 'FETCH_FAILED':
-      return previousState;
-    default:
-      return initialState;
   }
-};
+  if (type === 'FAIL') {
+    return prevState
+  }
+  return initialState
+}
 
-const getQuote = (xml) => {
-  const item = $(xml).find('item').eq(0);
-  const quote = item.find('description').text().slice(1, -1);
-  const author = item.find('title').text();
-  return {
-    quote,
-    author
-  };
-};
+const { className, ...s } = styles(css)
+
+const render = (state) => {
+  const { quote, author, error } = state
+  return (
+    <div>
+      <div className="widget-name">Quote</div>
+      <div className={s.quote}>{quote}</div>
+      <div className={s.author}>{author}</div>
+      {error}
+    </div>
+  )
+}
+
+export {
+  command,
+  refreshFrequency,
+  initialState,
+  updateState,
+  className,
+  render,
+}

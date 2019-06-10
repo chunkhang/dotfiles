@@ -1,39 +1,41 @@
-import { Container, Title } from '../lib/components';
+import { duration } from '../lib/utils'
+import styles from './src/styles'
 
-export const command = 'lib/scripts/get-ssid.zsh';
+const command = 'lib/scripts/get-ssid.zsh'
 
-export const refreshFrequency = 5 * 1000; // 5 seconds
+const refreshFrequency = duration('5s')
 
-export const className = `
-  top: 65px;
-  right: 20px;
-  text-align: right;
-`;
+const initialState = {
+  ssid: '',
+}
 
-export const initialState = {
-  ssid: ''
-};
-
-export const render = ({ ssid }) => {
-  return (
-    <Container>
-      <Title>Wifi</Title>
-      <div>{ssid}</div>
-    </Container>
-  );
-};
-
-export const updateState = (event) => {
-  let ssid = 'Disabled';
-  if (event.output) {
-    const string = event.output.trim();
-    if (string) {
-      ssid = string;
-    } else {
-      ssid = 'No connection';
-    }
+const updateState = (event) => {
+  const { output } = event
+  let ssid = 'Disabled'
+  if (output) {
+    const trimmed = output.trim()
+    ssid = trimmed ? trimmed : 'No connection'
   }
-  return {
-    ssid
-  };
-};
+  return { ssid }
+}
+
+const { className } = styles
+
+const render = (state) => {
+  const { ssid } = state
+  return (
+    <div>
+      <div className="widget-name">Wifi</div>
+      <div>{ssid}</div>
+    </div>
+  )
+}
+
+export {
+  command,
+  refreshFrequency,
+  initialState,
+  updateState,
+  className,
+  render,
+}
