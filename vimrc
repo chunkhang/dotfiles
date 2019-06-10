@@ -178,7 +178,7 @@ augroup END
 " Delete all empty buffers
 " https://redd.it/1a4yf1
 function! s:clear_empty_buffers()
-  let buffers = filter(
+  let l:buffers = filter(
         \ range(1, bufnr('$')),
         \ 'buflisted(v:val) && empty(bufname(v:val)) && bufwinnr(v:val) < 0 &&
         \ (getbufline(v:val, 1, "$") == [""])'
@@ -202,9 +202,9 @@ function! s:enter_writing_mode()
 endfunction
 
 " Highlight group using onedark.vim colors
+let s:colors = onedark#GetColors()
 function! s:highlight_onedark(group, color)
-  let l:colors = onedark#GetColors()
-  execute 'highlight ' . a:group . ' guifg=' . l:colors[a:color].gui
+  execute 'highlight ' . a:group . ' guifg=' . s:colors[a:color].gui
 endfunction
 
 " Print highlight groups under cursor
@@ -488,11 +488,11 @@ colorscheme onedark
 " https://nerdfonts.com/
 " -----------------------------------------------------------------------------
 function! MyLightlineGitBranch()
-  let branch = fugitive#head()
+  let l:branch = fugitive#head()
   if empty(branch)
     return ''
   endif
-  return "\uf418 " . fugitive#head()
+  return "\uf418 " . l:branch
 endfunction
 function! MyLightlineFileType()
   return winwidth(0) > 70 ? (strlen(&filetype) ?
