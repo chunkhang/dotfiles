@@ -25,6 +25,7 @@ path+=(
 export GOPATH=$HOME/Workspace/go
 export GOROOT=/usr/local/opt/go/libexec
 path+=(
+  $GOPATH/bin
   $GOROOT/bin
 )
 
