@@ -7,7 +7,11 @@ console.log('$1:', $1)
 endsnippet
 
 snippet ctl
-console.tron.log($1)
+console.tron.logImportant($1)
+endsnippet
+
+snippet ctll
+console.tron.display({ important: true, preview: \`$1: \${JSON.stringify($1)}\`, value: $1 })
 endsnippet
 
 snippet component
