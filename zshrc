@@ -81,6 +81,7 @@ alias wiki='vim $HOME/Dropbox/Wiki/index.wiki'
 alias rn='react-native'
 alias hp='http-prompt'
 alias fd='fd --hidden'
+alias pt='papertrail'
 
 # }}}
 # =============================================================================
