@@ -309,10 +309,11 @@ source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # }}}
 # =============================================================================
 # COMPLETIONS {{{
-# https://github.com/zsh-users/zsh-completions/blob/master/zsh-completions-howto.org
 # =============================================================================
 
 fpath=($HOME/.zsh/completions $fpath)
+autoload -Uz compinit
+compinit
 
 # }}}
 # =============================================================================
