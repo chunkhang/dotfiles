@@ -233,10 +233,10 @@ function gate() {
   fi
 }
 
-# Execute shell configuration
+# Execute new shell
 function refresh() {
   echo "Refreshing shell..."
-  exec zsh
+  exec "$SHELL" -l
 }
 
 # Perform operations on Wi-Fi

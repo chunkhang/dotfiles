@@ -158,6 +158,7 @@ set updatetime=250
 set signcolumn=yes
 set synmaxcol=1000
 set regexpengine=1
+set shellcmdflag=-l\ -c
 if executable('par')
   set formatprg=par
 endif
@@ -721,8 +722,9 @@ highlight! link MatchParen ToolbarLine
 
 augroup vimrc
 
-  " Use JavaScript filetype for jsx files
+  " Set or overrule filetypes
   autocmd BufNewFile,BufRead *.jsx set filetype=javascript
+  autocmd BufNewFile,BufRead .zprofile,zprofile set filetype=zsh
 
   " Easier to quit help, quickfix and location window
   autocmd FileType help,qf noremap <silent> <buffer> q :q<cr>
