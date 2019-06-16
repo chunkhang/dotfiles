@@ -109,9 +109,6 @@ call plug#end()
 
 let mapleader = ' '
 
-" Required by vimwiki
-set nocompatible
-
 set encoding=utf-8
 scriptencoding utf-8
 
@@ -146,7 +143,6 @@ set shortmess+=IT
 set autoindent
 set breakindent
 set expandtab
-set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set list
@@ -738,7 +734,7 @@ augroup vimrc
         \| setlocal formatoptions-=cro
 
   " Indentation
-  autocmd FileType go setlocal tabstop=4 softtabstop=4 shiftwidth=4
+  autocmd FileType go setlocal softtabstop=0 tabstop=4 shiftwidth=4
   autocmd FileType snippets setlocal expandtab
 
 augroup END
