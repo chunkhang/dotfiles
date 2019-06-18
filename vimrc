@@ -37,6 +37,7 @@ Plug 'henrik/vim-indexed-search'
 Plug 'qpkorr/vim-bufkill'
 Plug 'danro/rename.vim'
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'AndrewRadev/switch.vim'
 Plug 'adelarsq/vim-matchit'
 Plug 'jceb/emmet.snippets'
 Plug 'ludovicchabant/vim-gutentags'
@@ -585,6 +586,25 @@ endif
 " vim-bufkill
 " -----------------------------------------------------------------------------
 let g:BufKillCreateMappings = 0
+
+" -----------------------------------------------------------------------------
+" splitjoin.vim
+" -----------------------------------------------------------------------------
+let g:splitjoin_trailing_comma = 1
+
+" -----------------------------------------------------------------------------
+" switch.vim
+" -----------------------------------------------------------------------------
+let g:switch_mapping = '\'
+let g:switch_reverse_mapping = '\|'
+let g:switch_find_smallest_match = 0
+let g:switch_custom_definitions = [
+      \ [ '===', '!==' ],
+      \ [ '==', '!=' ],
+      \ [ '<=', '>=' ],
+      \ [ '+', '-' ],
+      \ [ '0', '1' ],
+      \ ]
 
 " -----------------------------------------------------------------------------
 " vim-gutentags
