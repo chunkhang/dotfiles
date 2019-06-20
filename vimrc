@@ -381,6 +381,7 @@ nnoremap <silent> <leader>W :wall<cr>
 nnoremap <silent> <leader>r :e<cr>
 " Close buffer
 nnoremap <silent> <leader>q :BD<cr>
+nnoremap <silent> <leader>Q :%bd<cr>
 " Go to buffer
 nmap <leader>1 <Plug>BufTabLine.Go(1)
 nmap <leader>2 <Plug>BufTabLine.Go(2)
