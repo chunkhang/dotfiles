@@ -121,7 +121,7 @@ set autoread
 set lazyredraw
 set timeoutlen=1000
 set ttimeoutlen=0
-set spelllang=en_gb
+set spelllang=en_gb,ms
 set modelines=2
 set foldlevelstart=99
 set number
