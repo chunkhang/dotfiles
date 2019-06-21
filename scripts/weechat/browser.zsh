@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
 for url in "$@"; do
-    firefox="Firefox"
-    chrome="Google Chrome"
+    firefox="firefox"
+    chrome="google-chrome"
 
     # Determine browser to use
     browser="$firefox"
@@ -11,5 +11,5 @@ for url in "$@"; do
     fi
 
     # Open url
-    open -a "$browser" "$url"
+    "$browser" "$url"
 done
