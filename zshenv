@@ -7,7 +7,7 @@ export EDITOR=vim
 export LANG=en_US.UTF-8
 
 # Java
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 
 # Scala
 export SCALA_HOME=/usr/local/opt/scala/idea
