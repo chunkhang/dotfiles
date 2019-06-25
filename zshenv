@@ -7,7 +7,7 @@ export EDITOR=vim
 export LANG=en_US.UTF-8
 
 # Java
-# export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre/bin
 
 # Scala
 export SCALA_HOME=/usr/local/opt/scala/idea
@@ -23,7 +23,7 @@ path+=(
 
 # Go
 export GOPATH=$HOME/Workspace/go
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=/usr/local/go
 path+=(
   $GOPATH/bin
   $GOROOT/bin
