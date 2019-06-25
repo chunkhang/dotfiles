@@ -9,6 +9,9 @@
 [commit]
   verbose = true
 
+[pager]
+  branch = false
+
 [alias]
   discard = checkout -- *
   drop = reset --hard @{u}
