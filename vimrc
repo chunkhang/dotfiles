@@ -648,6 +648,7 @@ let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsEditSplit = 'context'
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'ultisnips']
 " Fix ultisnips lag issue
 " https://github.com/SirVer/ultisnips/issues/593#issuecomment-361338769
 augroup vimrc
