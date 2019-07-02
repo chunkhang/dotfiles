@@ -761,6 +761,7 @@ augroup vimrc
   " Indentation
   autocmd FileType go setlocal softtabstop=0 tabstop=4 shiftwidth=4
   autocmd FileType snippets setlocal expandtab
+  autocmd FileType json setlocal equalprg=python\ -m\ json.tool
 
 augroup END
 
