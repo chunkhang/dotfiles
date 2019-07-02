@@ -27,5 +27,5 @@
     !host="bitbucket.org" && \
     repo=$(git ls-remote --get-url | cut -f 2 -d "@" | cut -f 2 -d ":" | cut -f 1 -d ".") && \
     branch=$(git symbolic-ref --short HEAD) && \
-    open "https://${host}/${repo}/pull-requests/new?source=${branch}"
+    xdg-open "https://${host}/${repo}/pull-requests/new?source=${branch}"
   unstage = reset HEAD *
