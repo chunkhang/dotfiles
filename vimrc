@@ -13,7 +13,7 @@ Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'kshenoy/vim-signature'
-Plug 'ap/vim-buftabline'
+Plug 'bagrat/vim-buffet'
 Plug 'ryanoasis/vim-devicons'
 if has('mac')
   Plug 'sjl/vitality.vim'
@@ -34,7 +34,6 @@ Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dyng/ctrlsf.vim'
 Plug 'henrik/vim-indexed-search'
-Plug 'qpkorr/vim-bufkill'
 Plug 'danro/rename.vim'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
@@ -354,14 +353,14 @@ vnoremap <leader>p "*p
 " Jumping
 " -----------------------------------------------------------------------------
 " Buffers
-nnoremap <silent> <leader>] :bnext<cr>
-nnoremap <silent> <leader>[ :bprev<cr>
+nnoremap <silent> <tab> :bnext<cr>
+nnoremap <silent> <S-tab> :bprev<cr>
 " Linting errors
 nmap [a <Plug>(ale_previous_wrap)
 nmap ]a <Plug>(ale_next_wrap)
 " Tabs
-nnoremap <silent> ]t :tabnext<cr>
-nnoremap <silent> [t :tabprev<cr>
+nnoremap <silent> ]] :tabnext<cr>
+nnoremap <silent> [[ :tabprev<cr>
 " Folds
 nnoremap ]z zj
 nnoremap [z zk
@@ -381,18 +380,8 @@ nnoremap <silent> <leader>W :wall<cr>
 " Refresh buffer
 nnoremap <silent> <leader>r :e<cr>
 " Close buffer
-nnoremap <silent> <leader>q :BD<cr>
+nnoremap <silent> <leader>q :Bw<cr>
 nnoremap <silent> <leader>Q :%bd<cr>
-" Go to buffer
-nmap <leader>1 <Plug>BufTabLine.Go(1)
-nmap <leader>2 <Plug>BufTabLine.Go(2)
-nmap <leader>3 <Plug>BufTabLine.Go(3)
-nmap <leader>4 <Plug>BufTabLine.Go(4)
-nmap <leader>5 <Plug>BufTabLine.Go(5)
-nmap <leader>6 <Plug>BufTabLine.Go(6)
-nmap <leader>7 <Plug>BufTabLine.Go(7)
-nmap <leader>8 <Plug>BufTabLine.Go(8)
-nmap <leader>9 <Plug>BufTabLine.Go(9)
 
 " -----------------------------------------------------------------------------
 " Windows
@@ -486,6 +475,7 @@ colorscheme onedark
 " lightline.vim
 " https://github.com/ryanoasis/vim-devicons/wiki/usage#lightline-setup
 " https://nerdfonts.com/
+" https://github.com/bagrat/vim-buffet/issues/20
 " -----------------------------------------------------------------------------
 function! MyLightlineGitBranch()
   let l:branch = fugitive#head()
@@ -529,6 +519,7 @@ let g:lightline.active = {
       \            [ 'linter_warnings', 'linter_errors', 'percent' ],
       \            [ 'spell', 'filetype' ] ]
       \ }
+let g:lightline.enable = { 'tabline': 0 }
 let g:lightline#ale#indicator_checking = "\uf110 "
 let g:lightline#ale#indicator_warnings = "\uf071 "
 let g:lightline#ale#indicator_errors = "\uf05e "
@@ -539,14 +530,19 @@ let g:lightline#ale#indicator_errors = "\uf05e "
 call <sid>highlight_onedark('SignatureMarkText', 'purple')
 
 " -----------------------------------------------------------------------------
-" vim-buftabline
+" vim-buffet
 " -----------------------------------------------------------------------------
-let g:buftabline_show = 1
-let g:buftabline_numbers = 2
-let g:buftabline_indicators = 1
-highlight! link BufTabLineCurrent LightlineLeft_normal_1
-highlight! link BufTabLineActive LightlineRight_normal_2
-highlight! link BufTabLineHidden LightlineRight_normal_2
+let g:buffet_separator = ""
+let g:buffet_tab_icon = "\uf0ca "
+let g:buffet_left_trunc_icon = "\uf0d9"
+let g:buffet_right_trunc_icon = "\uf0da "
+function! g:BuffetSetCustomColors()
+  highlight! link BuffetCurrentBuffer LightlineLeft_normal_1
+  highlight! link BuffetActiveBuffer LightlineRight_normal_2
+  highlight! link BuffetBuffer LightlineRight_normal_2
+  highlight! link BuffetTrunc LightlineRight_normal_2
+  highlight! link BuffetTab LightlineLeft_normal_0
+endfunction
 
 " -----------------------------------------------------------------------------
 " auto-pairs
@@ -583,11 +579,6 @@ let g:ctrlsf_populate_qflist = 1
 if executable('rg')
   let g:ctrlsf_ackprg = 'rg'
 endif
-
-" -----------------------------------------------------------------------------
-" vim-bufkill
-" -----------------------------------------------------------------------------
-let g:BufKillCreateMappings = 0
 
 " -----------------------------------------------------------------------------
 " splitjoin.vim
@@ -735,7 +726,7 @@ let g:tq_use_vim_autocompletefunc = 0
 " -----------------------------------------------------------------------------
 " matchparen
 " -----------------------------------------------------------------------------
-highlight! link MatchParen ToolbarLine
+highlight! link MatchParen Visual
 
 " }}}
 " =============================================================================
