@@ -355,18 +355,22 @@ vnoremap <leader>p "*p
 " Buffers
 nnoremap <silent> <tab> :bnext<cr>
 nnoremap <silent> <S-tab> :bprev<cr>
+nnoremap <silent> <leader>] :bnext<cr>
+nnoremap <silent> <leader>[ :bprev<cr>
 " Linting errors
 nmap [a <Plug>(ale_previous_wrap)
 nmap ]a <Plug>(ale_next_wrap)
 " Tabs
-nnoremap <silent> ]] :tabnext<cr>
-nnoremap <silent> [[ :tabprev<cr>
+nnoremap <silent> ]t :tabnext<cr>
+nnoremap <silent> [t :tabprev<cr>
 " Folds
 nnoremap ]z zj
 nnoremap [z zk
 " Quickfix list
 nnoremap <silent> ]q :cnext<cr>
 nnoremap <silent> [q :cprev<cr>
+nnoremap <silent> ]f :cnfile<cr>
+nnoremap <silent> [f :cpfile<cr>
 " Location list
 nnoremap <silent> ]l :lnext<cr>
 nnoremap <silent> [l :lprev<cr>
@@ -381,7 +385,7 @@ nnoremap <silent> <leader>W :wall<cr>
 nnoremap <silent> <leader>r :e<cr>
 " Close buffer
 nnoremap <silent> <leader>q :Bw<cr>
-nnoremap <silent> <leader>Q :%bd<cr>
+nnoremap <silent> <leader>Q :Bonly<cr>
 
 " -----------------------------------------------------------------------------
 " Windows
