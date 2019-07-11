@@ -357,6 +357,16 @@ nnoremap <silent> <tab> :bnext<cr>
 nnoremap <silent> <S-tab> :bprev<cr>
 nnoremap <silent> <leader>] :bnext<cr>
 nnoremap <silent> <leader>[ :bprev<cr>
+nmap <leader>1 <Plug>BuffetSwitch(1)
+nmap <leader>2 <Plug>BuffetSwitch(2)
+nmap <leader>3 <Plug>BuffetSwitch(3)
+nmap <leader>4 <Plug>BuffetSwitch(4)
+nmap <leader>5 <Plug>BuffetSwitch(5)
+nmap <leader>6 <Plug>BuffetSwitch(6)
+nmap <leader>7 <Plug>BuffetSwitch(7)
+nmap <leader>8 <Plug>BuffetSwitch(8)
+nmap <leader>9 <Plug>BuffetSwitch(9)
+nmap <leader>0 <Plug>BuffetSwitch(10)
 " Linting errors
 nmap [a <Plug>(ale_previous_wrap)
 nmap ]a <Plug>(ale_next_wrap)
@@ -536,8 +546,9 @@ call <sid>highlight_onedark('SignatureMarkText', 'purple')
 " -----------------------------------------------------------------------------
 " vim-buffet
 " -----------------------------------------------------------------------------
-let g:buffet_separator = ""
+let g:buffet_separator = ''
 let g:buffet_tab_icon = "\uf0ca "
+let g:buffet_show_index = 1
 let g:buffet_left_trunc_icon = "\uf0d9"
 let g:buffet_right_trunc_icon = "\uf0da "
 function! g:BuffetSetCustomColors()
