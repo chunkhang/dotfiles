@@ -50,6 +50,7 @@ path+=(
   $HOME/.zsh/git-open
   $HOME/.dotfiles/bin
   /usr/local/sbin
+  $HOME/.local/bin
   $path
 )
 export PATH
