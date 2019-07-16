@@ -546,6 +546,7 @@ call <sid>highlight_onedark('SignatureMarkText', 'purple')
 " -----------------------------------------------------------------------------
 " vim-buffet
 " -----------------------------------------------------------------------------
+let g:buffet_always_show_tabline = 0
 let g:buffet_separator = ''
 let g:buffet_tab_icon = "\uf0ca "
 let g:buffet_show_index = 1
