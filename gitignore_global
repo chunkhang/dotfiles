@@ -116,6 +116,7 @@ tags
 
 # vim
 Session.vim
+.lvimrc
 
 # ctrlsf
 .ctrlsf
