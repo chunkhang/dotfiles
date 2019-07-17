@@ -164,7 +164,7 @@ class Hint
   end
 
   def any?
-    @urls.any? || @open_target_urls.any?
+    @urls.any?
   end
 
   def add(url, line)
