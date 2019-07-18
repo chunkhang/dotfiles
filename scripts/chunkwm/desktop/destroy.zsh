@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Open mission control
-skhd --key "ctrl - up"
+skhd --key "shift + ctrl - up"
 
 # Destroy current desktop
 sleep 0.5

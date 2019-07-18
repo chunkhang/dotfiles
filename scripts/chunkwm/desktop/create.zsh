@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 # Open mission control
-skhd --key "ctrl - up"
+skhd --key "shift + ctrl - up"
 
 # Create new desktop
 osascript &>/dev/null << EOF
