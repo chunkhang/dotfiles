@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/zsh
 
 if ! pgrep afplay &>/dev/null; then
   afplay -q 1 ~/Dropbox/wiki/assets/audio/rain.m4a &>/dev/null &!
