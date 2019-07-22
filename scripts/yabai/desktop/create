@@ -1,0 +1,5 @@
+#!/bin/sh
+
+yabai -m space --create;\
+index="$(yabai -m query --displays --display | jq '.spaces[-1]')" && \
+yabai -m space --focus "${index}"

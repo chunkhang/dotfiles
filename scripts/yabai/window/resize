@@ -1,0 +1,23 @@
+#!/bin/sh
+
+size="40"
+
+function resize {
+  local xy="$1"
+  shift
+  while [[ "$1" ]]; do
+    yabai -m window --resize "$1:$xy"
+    shift
+  done
+}
+
+function main {
+  case "${1:0:1}" in
+    "l") resize "-$size:0" "left" "right";;
+    "r") resize "$size:0" "right" "left";;
+    "t") resize "0:-$size" "top" "bottom";;
+    "b") resize "0:$size" "bottom" "top";;
+  esac
+}
+
+main "$@"

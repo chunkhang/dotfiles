@@ -135,7 +135,7 @@ function blue() {
 # Execute various cleaning commands
 function clean() {
   echo "Cleaning system..."
-  $HOME/.scripts/system/clean.zsh
+  $HOME/.scripts/system/clean
   echo "Done cleaning."
 }
 
