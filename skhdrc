@@ -37,8 +37,8 @@ shift + alt - 0 : yabai -m space --balance
 # Rotate windows
 shift + alt - r : yabai -m space --rotate 270
 
-# Float window
-shift + alt - f : yabai -m window --toggle float
+# Toggle window float (center on screen)
+shift + alt - f : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1:2:2
 
 # Toggle window border
 shift + alt - b : yabai -m window --toggle border
