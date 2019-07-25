@@ -156,6 +156,7 @@ set signcolumn=yes
 set synmaxcol=1000
 set regexpengine=1
 set shellcmdflag=-l\ -c
+set maxmempattern=5000
 if executable('par')
   set formatprg=par
 endif
