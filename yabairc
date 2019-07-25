@@ -41,6 +41,7 @@ yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off
 yabai -m rule --add app="^Keychain Access$" manage=off
 yabai -m rule --add app="^licecap$" manage=off
+yabai -m rule --add app="^Mail$" manage=off
 yabai -m rule --add app="^Photos$" manage=off
 yabai -m rule --add app="^Postgres$" manage=off
 yabai -m rule --add app="^Slack$" manage=off
