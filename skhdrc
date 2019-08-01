@@ -2,7 +2,7 @@
 # Shortcuts
 ###############################################################################
 
-cmd - return : open /Applications/iTerm.app
+fn - space : open /Applications/iTerm.app
 
 fn - r : ~/.scripts/music/rain
 fn - u : ~/.scripts/ubersicht/restart
