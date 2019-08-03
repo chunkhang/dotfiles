@@ -70,7 +70,7 @@ Plug 'peitalin/vim-jsx-typescript'
 Plug 'kchmck/vim-coffee-script'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'derekwyatt/vim-scala'
 Plug 'gre/play2vim'
 Plug 'posva/vim-vue'
@@ -675,6 +675,7 @@ let g:signify_sign_show_count = 0
 " vim-go
 " -----------------------------------------------------------------------------
 let g:go_fmt_fail_silently = 1
+let g:go_def_mode = 'godef'
 
 " -----------------------------------------------------------------------------
 " vim-jsx-improve
