@@ -768,7 +768,7 @@ highlight! link MatchParen Visual
 augroup vimrc
 
   " Set or overrule filetypes
-  autocmd BufNewFile,BufRead *.jsx set filetype=javascript
+  autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
   autocmd BufNewFile,BufRead .zprofile,zprofile set filetype=zsh
 
   " Easier to quit help, quickfix and location window
