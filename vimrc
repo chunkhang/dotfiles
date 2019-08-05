@@ -676,6 +676,12 @@ let g:signify_sign_show_count = 0
 " -----------------------------------------------------------------------------
 let g:go_fmt_fail_silently = 1
 let g:go_def_mode = 'godef'
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_extra_types = 1
 
 " -----------------------------------------------------------------------------
 " vim-jsx-improve
