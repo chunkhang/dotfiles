@@ -689,6 +689,19 @@ let g:go_highlight_extra_types = 1
 let g:javascript_plugin_flow = 1
 
 " -----------------------------------------------------------------------------
+" vim-jsx-typescript
+" -----------------------------------------------------------------------------
+call <sid>highlight_onedark('typescriptParens', 'white')
+call <sid>highlight_onedark('typescriptStorageClass', 'purple')
+call <sid>highlight_onedark('typescriptInterpolationDelimiter', 'red')
+call <sid>highlight_onedark('typescriptNull', 'dark_yellow')
+call <sid>highlight_onedark('typescriptType', 'dark_yellow')
+call <sid>highlight_onedark('typescriptGlobalObjects', 'yellow')
+call <sid>highlight_onedark('ReactLifeCycleMethods', 'blue')
+call <sid>highlight_onedark('ReduxKeywords', 'blue')
+call <sid>highlight_onedark('tsxCloseTag', 'white')
+
+" -----------------------------------------------------------------------------
 " ale
 " -----------------------------------------------------------------------------
 let g:ale_sign_error = '•'
