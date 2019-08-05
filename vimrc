@@ -369,8 +369,8 @@ nmap <leader>8 <Plug>BuffetSwitch(8)
 nmap <leader>9 <Plug>BuffetSwitch(9)
 nmap <leader>0 <Plug>BuffetSwitch(10)
 " Linting errors
-nmap [a <Plug>(ale_previous_wrap)
-nmap ]a <Plug>(ale_next_wrap)
+nmap [a <Plug>(ale_previous_wrap_error)
+nmap ]a <Plug>(ale_next_wrap_error)
 " Tabs
 nnoremap <silent> ]t :tabnext<cr>
 nnoremap <silent> [t :tabprev<cr>
