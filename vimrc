@@ -327,8 +327,6 @@ nnoremap <C-b> <C-y>
 nnoremap j gj
 nnoremap k gk
 " Move between words in line
-inoremap <C-j> <C-o>b
-inoremap <C-k> <C-o>w
 inoremap <C-h> <C-o>_
 inoremap <C-l> <C-o>A
 
