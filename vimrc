@@ -695,8 +695,10 @@ call <sid>highlight_onedark('typescriptInterpolationDelimiter', 'red')
 call <sid>highlight_onedark('typescriptNull', 'dark_yellow')
 call <sid>highlight_onedark('typescriptType', 'dark_yellow')
 call <sid>highlight_onedark('typescriptGlobalObjects', 'yellow')
+call <sid>highlight_onedark('typescriptDeprecated', 'blue')
+call <sid>highlight_onedark('typescriptBranch', 'red')
 call <sid>highlight_onedark('ReactLifeCycleMethods', 'blue')
-call <sid>highlight_onedark('ReduxKeywords', 'blue')
+call <sid>highlight_onedark('ReduxKeywords', 'white')
 call <sid>highlight_onedark('tsxCloseTag', 'white')
 
 " -----------------------------------------------------------------------------
