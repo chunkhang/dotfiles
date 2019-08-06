@@ -353,9 +353,9 @@ vnoremap <leader>p "*p
 " -----------------------------------------------------------------------------
 " Jumping
 " -----------------------------------------------------------------------------
+" Cursor
+nnoremap <silent> <S-tab> <C-o>
 " Buffers
-nnoremap <silent> <tab> :bnext<cr>
-nnoremap <silent> <S-tab> :bprev<cr>
 nnoremap <silent> <leader>] :bnext<cr>
 nnoremap <silent> <leader>[ :bprev<cr>
 nmap <leader>1 <Plug>BuffetSwitch(1)
