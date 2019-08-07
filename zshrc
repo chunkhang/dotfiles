@@ -88,6 +88,7 @@ alias rn='react-native'
 alias hp='http-prompt'
 alias fd='fd --hidden'
 alias pt='papertrail'
+alias ncdu='ncdu --color=dark --confirm-quit'
 
 # }}}
 # =============================================================================
