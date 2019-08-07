@@ -291,14 +291,25 @@ plugins+=(colored-man-pages)
 source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------------------------------
-# Z
+# z
 # -----------------------------------------------------------------------------
 source /usr/local/etc/profile.d/z.sh
 
 # -----------------------------------------------------------------------------
-# Zmv
+# zmv
 # -----------------------------------------------------------------------------
 autoload zmv
+
+# -----------------------------------------------------------------------------
+# fzf
+# -----------------------------------------------------------------------------
+FZF_DEFAULT_COMMAND='rg --files --color=never'
+FZF_CTRL_R_OPTS='--exact'
+FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+FZF_CTRL_T_OPTS="--select-1 --exit-0"
+FZF_ALT_C_COMMAND='fd --type directory'
+FZF_ALT_C_OPTS="$FZF_CTRL_T_OPTS"
+source /usr/local/opt/fzf/shell/key-bindings.zsh
 
 # -----------------------------------------------------------------------------
 # Syntax highlighting
