@@ -308,7 +308,7 @@ FZF_CTRL_R_OPTS='--exact'
 FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 FZF_CTRL_T_OPTS="--select-1 --exit-0"
 FZF_ALT_C_COMMAND='fd --type directory'
-FZF_ALT_C_OPTS="$FZF_CTRL_T_OPTS"
+FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C -L 1 {} | head -200'"
 source /usr/local/opt/fzf/shell/key-bindings.zsh
 
 # -----------------------------------------------------------------------------
