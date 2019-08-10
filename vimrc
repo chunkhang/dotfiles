@@ -778,14 +778,18 @@ augroup vimrc
   " Clear empty buffers when jumping to global marks
   autocmd BufWinEnter * call <sid>clear_empty_buffers()
 
-  " Disable auto comment
-  let s:autocomment_exceptions = ['markdown', 'yaml']
-  autocmd FileType * if index(s:autocomment_exceptions, &filetype) < 0
-        \| setlocal formatoptions-=cro
+  " Auto comment
+  autocmd FileType * set formatoptions-=cro
+  autocmd FileType markdown,yaml setlocal formatoptions+=cro
 
   " Indentation
   autocmd FileType go setlocal softtabstop=0 tabstop=4 shiftwidth=4
   autocmd FileType snippets setlocal expandtab
+
+  " Folding
+  autocmd Filetype yaml setlocal foldmethod=indent
+
+  " Format JSON
   autocmd FileType json setlocal equalprg=python\ -m\ json.tool
 
 augroup END
