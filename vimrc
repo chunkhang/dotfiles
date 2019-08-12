@@ -220,20 +220,25 @@ endfunction
 function! s:create_gist(line1, line2)
   let l:range = ':' . a:line1 . ',' . a:line2
   silent! execute 'normal! ' . l:range . "write !ix | pbcopy\<cr>"
+  silent! execute '!pbpaste | xargs open'
 endfunction
 
 " Toggle column to show where folds are
-function! s:toggle_fold_column()
-  if empty(&foldcolumn)
-    setlocal foldcolumn=1
-  else
+function! s:toggle_fold_column(bang)
+  if a:bang
     setlocal foldcolumn=0
+  else
+    setlocal foldcolumn=1
   endif
 endfunction
 
 " Toggle spell checking
-function! s:toggle_spell_check()
-  setlocal spell!
+function! s:toggle_spell_check(bang)
+  if a:bang
+    setlocal nospell
+  else
+    setlocal spell
+  endif
 endfunction
 
 " Toggle syntax highlighting
@@ -246,25 +251,24 @@ function! s:toggle_syntax()
 endfunction
 
 " Toggle column to show where col 80 ruler is
-function! s:toggle_ruler()
-  if empty(&colorcolumn)
-    setlocal colorcolumn=80
-  else
+function! s:toggle_ruler(bang)
+  if a:bang
     setlocal colorcolumn=
+  else
+    setlocal colorcolumn=80
   endif
 endfunction
 
-" Reveal trailing whitespace
+" Reveal or trim trailing whitespace
 " https://stackoverflow.com/a/47746577
-function! s:reveal_trails()
-  let @/ = '\s\+$'
-  call feedkeys("/\<cr>")
-endfunction
-
-" Trim trailing whitespace
-function! s:trim_trails()
-  let @/ = '\s\+$'
-  silent! execute "normal! :%s///e\<cr>"
+function! s:handle_trailing_whitespace(bang)
+  if a:bang
+    let @/ = '\s\+$'
+    silent! execute "normal! :%s///e\<cr>"
+  else
+    let @/ = '\s\+$'
+    call feedkeys("/\<cr>")
+  endif
 endfunction
 
 " Split window into given direction
@@ -299,10 +303,11 @@ endfunction
 " COMMANDS {{{
 " =============================================================================
 
-command! Fold call <sid>toggle_fold_column()
+command! -bang Fold call <sid>toggle_fold_column(<bang>0)
 command! -range=% Gist call <sid>create_gist(<line1>, <line2>)
-command! Ruler call <sid>toggle_ruler()
-command! Spelling call <sid>toggle_spell_check()
+command! -bang Ruler call <sid>toggle_ruler(<bang>0)
+command! -bang Spell call <sid>toggle_spell_check(<bang>0)
+command! -bang Trail call <sid>handle_trailing_whitespace(<bang>0)
 command! Write call <sid>enter_writing_mode()
 
 " }}}
@@ -422,11 +427,8 @@ augroup END
 nnoremap <silent> <leader>v :edit ~/.vimrc<cr>
 nnoremap <leader>V :source ~/.vimrc<cr>
 " Manage syntax
-nnoremap <silent> <leader>s :call <sid>toggle_syntax()<cr>
-nnoremap <silent> <leader>S :call <sid>print_highlight_groups()<cr>
-" Manage trailing whitespace
-nnoremap <silent> <leader>t :call<sid>reveal_trails()<cr>
-nnoremap <silent> <leader>T :call <sid>trim_trails()<cr>
+nnoremap <silent> <leader>s :call <sid>print_highlight_groups()<cr>
+nnoremap <silent> <leader>S :call <sid>toggle_syntax()<cr>
 " Clear search pattern highlight
 nnoremap <silent> <leader>/ :nohlsearch<cr>
 " Clear all marks
