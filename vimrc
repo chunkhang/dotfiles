@@ -79,6 +79,9 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'vim-latex/vim-latex'
+Plug 'chunkhang/vim-mbsync'
+Plug 'chunkhang/msmtp.vim'
+Plug 'neomutt/neomutt.vim'
 
 " -----------------------------------------------------------------------------
 " Linting
@@ -773,6 +776,7 @@ augroup vimrc
   " Set or overrule filetypes
   autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
   autocmd BufNewFile,BufRead .zprofile,zprofile set filetype=zsh
+  autocmd BufNewFile,BufRead .muttrc,muttrc set filetype=neomuttrc
 
   " Easier to quit help, quickfix and location window
   autocmd FileType help,qf noremap <silent> <buffer> q :q<cr>
