@@ -459,6 +459,15 @@ imap <C-e>, <esc>daWae<tab><esc>pa<tab>
 nnoremap <silent> <leader>u :edit ~/.vim/ultisnips<cr>
 
 " -----------------------------------------------------------------------------
+" tabular
+" -----------------------------------------------------------------------------
+nnoremap <leader>t :Tabularize
+nnoremap <leader>t<space> :Tabularize spaces<cr>
+vnoremap <leader>t<space> :Tabularize spaces<cr>
+nnoremap <leader>t= :Tabularize assignment<cr>
+vnoremap <leader>t= :Tabularize assignment<cr>
+
+" -----------------------------------------------------------------------------
 " dictionary.vim
 " -----------------------------------------------------------------------------
 nmap <C-d>d :Dictionary<space>
