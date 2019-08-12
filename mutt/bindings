@@ -59,18 +59,18 @@ bind pager N search-opposite
 # ATTACH {{{
 # =============================================================================
 
-bind attach <Enter> view-mailcap
-bind attach <Return> view-mailcap
+bind attach <enter> view-mailcap
+bind attach <return> view-mailcap
 
 # }}}
 # =============================================================================
 # MACROS {{{
 # =============================================================================
 
-macro index,pager \Ca "|$HOME/.scripts/mutt/ripmime\n" "download attachments"
-macro index \Ck ":exec what-key\n" "test keystroke"
-macro index,pager,attach,compose,browser \Cr ":source $HOME/.mutt/muttrc\n" "reload muttrc"
-macro index \Cw "!$HOME/.scripts/mutt/mbsync\n" "sync mailboxes"
+macro index,pager \Ca "<pipe-message>$HOME/.scripts/mutt/ripmime<enter>" "download attachments"
+macro index \Ck "<enter-command>exec what-key<enter>" "test keystroke"
+macro index,pager,attach,compose,browser \Cr "<enter-command>source $HOME/.mutt/muttrc<enter>" "reload muttrc"
+macro index \Cw "<shell-escape>$HOME/.scripts/mutt/mbsync<enter>" "sync mailboxes"
 
 # }}}
 # =============================================================================
