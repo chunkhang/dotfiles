@@ -1,0 +1,10 @@
+# vim: set filetype=neomuttrc:
+
+set realname = "Marcus Mu"
+set from = "chunkhang@gmail.com"
+set signature = $HOME/.mutt/signatures/personal
+set sendmail = "/usr/local/bin/msmtp -a personal"
+
+set spoolfile = "=personal/inbox"
+set postponed = "=personal/drafts"
+set record = "=personal/sent"

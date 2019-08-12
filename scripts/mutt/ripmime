@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ripmime -i - --no-nameless -d $HOME/Downloads
+open $HOME/Downloads

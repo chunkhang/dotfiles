@@ -1,0 +1,7 @@
+multipart/alternative; vim %s; nametemplate=%s.txt
+
+text/plain; vim %s; nametemplate=%s.txt
+text/html; open %s; nametemplate=%s.html; needsterminal
+text/html; w3m -I %{charset} -T text/html; copiousoutput
+
+image/png; open %s; nametemplate=%s.png; needsterminal

@@ -13,12 +13,14 @@
     ~/.gitignore_global:
     ~/.hushlogin:
     ~/.jshintrc:
+    ~/.mbsyncrc:
+    ~/.msmtprc:
+    ~/.mutt:
     ~/.peco:
     ~/.pip:
     ~/.ripgreprc:
     ~/.scripts:
     ~/.skhdrc:
-    ~/.tmux:
     ~/.tmux.conf:
     ~/.ubersicht:
     ~/.vim:

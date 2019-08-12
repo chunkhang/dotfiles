@@ -1,0 +1,183 @@
+# vim: set foldmethod=marker:
+
+# =============================================================================
+# MISCELLANEOUS {{{
+# =============================================================================
+
+# Directories
+set folder = $HOME/Mail
+set header_cache = $HOME/.mutt/cache
+set message_cachedir = $HOME/.mutt/cache
+set mailcap_path = $HOME/.mutt/mailcap
+set tmpdir = $HOME/.mutt/tmp
+
+# Scrolling
+set menu_scroll
+set menu_context = 10
+unset menu_move_off
+
+# Disable beep
+unset beep
+
+# Hide help bar
+unset help
+
+# Confirm to quit
+set quit = ask-yes
+
+# Do not confirm to delete
+set delete
+
+# No delay
+set sleep_time = 0
+
+# Headers
+ignore *
+unignore from: to: cc: bcc: date: subject:
+unhdr_order *
+hdr_order from: to: cc: bcc: date: subject:
+
+# Mailcap
+alternative_order text/plain text/html
+auto_view text/html
+
+# Editor
+set editor = "vim"
+
+# }}}
+# =============================================================================
+# INDEX {{{
+# =============================================================================
+
+# Sorting
+set strict_threads
+set sort = threads
+set sort_browser="reverse-date"
+set sort_aux = reverse-last-date-received
+
+# Status flags
+set to_chars = "  TCFLR"
+
+# Date
+set date_format = "%b %d"
+
+# Index item
+set index_format = "%4C  %Z  %D  %-25.25F  %s"
+
+# Do not collapse unread thread
+unset collapse_unread
+
+# Do not distinguish old from new
+unset mark_old
+
+# }}}
+# =============================================================================
+# SIDEBAR {{{
+# =============================================================================
+
+# Show sidebar
+set sidebar_visible
+set sidebar_width = 20
+
+# Hide mailbox prefix
+set sidebar_short_path
+
+# Show unread count
+set mail_check_stats
+
+# Indent
+set sidebar_folder_indent
+set sidebar_indent_string = " "
+
+# Sidebar item
+set sidebar_format = "%B%* %?S?%S?%?N?(%N)?"
+
+# }}}
+# =============================================================================
+# STATUS {{{
+# =============================================================================
+
+# Show status bar on top
+set status_on_top
+
+# Status bar
+set status_format = "[%f](%?M?%M/?%m){%?L?%L/?%l}%?p? P(%p)?%?n? N(%n)?%?d? D(%d)?%?F? F(%F)?%?t? T(%t)? %*- [%r](%P)%?V?{%V}?"
+
+# }}}
+# =============================================================================
+# PAGER {{{
+# =============================================================================
+
+# Some context between messages
+set pager_index_lines = 8
+
+# Some context between pages
+set pager_context = 3
+
+# Do not go to next message automatically
+set pager_stop
+
+# Message title bar
+set pager_format = "-- %n -- %s %*- [%C/%m](%P)"
+
+# Show wrapped lines without markers
+unset markers
+
+# }}}
+# =============================================================================
+# COMPOSE {{{
+# =============================================================================
+
+# Skip prompt for message to and subject
+set autoedit
+set edit_headers
+
+# Include original message in reply
+set include
+
+# Quote forwarded message
+set forward_quote
+
+# Place signature above quoted text
+set sig_on_top
+
+# Use flowed format for text
+set text_flowed
+
+# Compose title bar
+set compose_format = "-- Compose -- Attachments: %a, Size: %l"
+
+# Title of forwarded message
+set forward_format = "Fwd: %s"
+
+# }}}
+# =============================================================================
+# ATTACH {{{
+# =============================================================================
+
+# Attachment item
+set attach_format = "%4n %t%D%u%I  %T%-40d%*   %m/%M (%s)"
+
+# }}}
+# =============================================================================
+# MAILBOXES {{{
+# =============================================================================
+
+# Mailbox type
+set mbox_type = Maildir
+
+# List of mailboxes
+mailboxes Inboxes
+mailboxes =personal/inbox
+mailboxes Personal
+mailboxes =personal/drafts
+mailboxes =personal/sent
+mailboxes =personal/archive
+
+# }}}
+# =============================================================================
+
+source colors
+source bindings
+
+source accounts/personal

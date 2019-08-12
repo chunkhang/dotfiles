@@ -8,9 +8,10 @@ weechat/sec.conf
 weechat/message.txt
 weechat/script/plugins.xml.gz
 
-# Tmux
-tmux
-
 # Ubersicht
 ubersicht/network.widget/lib/network.out
 ubersicht/playing.widget/lib/songMeta.plist
+
+# Mutt
+mutt/tmp
+mutt/cache

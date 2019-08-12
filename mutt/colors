@@ -1,0 +1,100 @@
+# vim: set filetype=neomuttrc foldmethod=marker:
+
+# =============================================================================
+# MISCELLANEOUS {{{
+# =============================================================================
+
+color status blue black
+color message yellow black
+color error red black
+color search black yellow
+color indicator white color8
+color signature color15 black
+
+# }}}
+# =============================================================================
+# INDEX {{{
+# =============================================================================
+
+color tree blue black
+color index_number green black
+
+# Status flags
+color index yellow black ~N # New
+color index green black ~Q # Replied
+color index red black ~D # Deleted
+color index magenta black ~F # Flagged
+color index cyan black ~T # Tagged
+color index blue black ~v # Collapsed
+
+# }}}
+# =============================================================================
+# SIDEBAR {{{
+# =============================================================================
+
+color sidebar_divider color15 black
+color sidebar_highlight white color8
+color sidebar_indicator black green
+color sidebar_new yellow black
+
+# }}}
+# =============================================================================
+# PAGER {{{
+# =============================================================================
+
+color tilde color15 black
+color markers color15 black
+
+# }}}
+# =============================================================================
+# HEADER {{{
+# =============================================================================
+
+color hdrdefault yellow black
+
+# Fields
+color header magenta black "^From:"
+color header green black "^Subject:"
+
+# }}}
+# =============================================================================
+# BODY {{{
+# =============================================================================
+
+color normal white black
+
+# URL
+color body cyan black "<?https?://[\-\.,/%~_:?&=\#@a-zA-Z0-9]+>?"
+
+# Email
+color body yellow black "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
+
+# Git
+color body cyan black "[> ]*@@.*"
+color body green black "^[\+][^\+]+.*"
+color body red black "^\-[^\-]+.*"
+
+# }}}
+# =============================================================================
+# QUOTE {{{
+# =============================================================================
+
+color quoted color15 black
+color quoted1 magenta black
+color quoted2 yellow black
+color quoted3 green black
+color quoted4 cyan black
+
+# }}}
+# =============================================================================
+# ATTACHMENTS {{{
+# =============================================================================
+
+color attachment color15 black
+
+color attach_headers blue black "Attachment #[0-9]+"
+color attach_headers blue black "Type: [a-z]+/[a-z0-9\-]+"
+color attach_headers blue black "Autoview"
+
+# }}}
+# =============================================================================

@@ -1,0 +1,44 @@
+Create Slave
+Expunge Both
+Sync All
+SyncState *
+
+# =============================================================================
+# PERSONAL ACCOUNT
+# =============================================================================
+
+IMAPAccount personal
+Host imap.gmail.com
+User chunkhang@gmail.com
+SSLType IMAPS
+AuthMechs LOGIN
+PassCmd "security find-internet-password -s imap.gmail.com -a chunkhang@gmail.com -w"
+
+IMAPStore personal-remote
+Account personal
+
+MaildirStore personal-local
+Path ~/Mail/personal/
+Inbox ~/Mail/personal/inbox
+
+Channel personal-inbox
+Master :personal-remote:
+Slave :personal-local:
+Patterns "INBOX"
+
+Channel personal-draft
+Master :personal-remote:"[Gmail]/Drafts"
+Slave :personal-local:drafts
+
+Channel personal-sent
+Master :personal-remote:"[Gmail]/Sent Mail"
+Slave :personal-local:sent
+
+Channel personal-archive
+Master :personal-remote:"[Gmail]/All Mail"
+Slave :personal-local:archive
+
+Group personal
+Channel personal-inbox
+Channel personal-sent
+Channel personal-archive

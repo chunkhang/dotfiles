@@ -1,0 +1,76 @@
+# vim: set filetype=neomuttrc foldmethod=marker:
+
+bind index,pager gg noop
+bind index,pager g noop
+bind pager \Cr noop
+
+# =============================================================================
+# SIDEBAR {{{
+# =============================================================================
+
+bind index <down> sidebar-next
+bind index <up> sidebar-prev
+bind index <right> sidebar-open
+
+# }}}
+# =============================================================================
+# INDEX {{{
+# =============================================================================
+
+bind index j next-entry
+bind index k previous-entry
+
+bind index gg first-entry
+bind index G last-entry
+
+bind index <space> next-page
+bind index b previous-page
+
+bind index M sidebar-toggle-visible
+
+bind index @ compose-to-sender
+bind index R group-reply
+
+bind index - collapse-thread
+bind index _ collapse-all
+
+# }}}
+# =============================================================================
+# PAGER {{{
+# =============================================================================
+
+bind pager j next-line
+bind pager k previous-line
+bind pager <down> next-line
+bind pager <up> previous-line
+
+bind pager gg top
+bind pager G bottom
+
+bind pager b previous-page
+
+bind pager \] half-down
+bind pager \[ half-up
+
+bind pager N search-opposite
+
+# }}}
+# =============================================================================
+# ATTACH {{{
+# =============================================================================
+
+bind attach <Enter> view-mailcap
+bind attach <Return> view-mailcap
+
+# }}}
+# =============================================================================
+# MACROS {{{
+# =============================================================================
+
+macro index,pager \Ca "|$HOME/.scripts/mutt/ripmime\n" "download attachments"
+macro index \Ck ":exec what-key\n" "test keystroke"
+macro index,pager,attach,compose,browser \Cr ":source $HOME/.mutt/muttrc\n" "reload muttrc"
+macro index \Cw "!$HOME/.scripts/mutt/mbsync\n" "sync mailboxes"
+
+# }}}
+# =============================================================================
