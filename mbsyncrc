@@ -34,6 +34,10 @@ Channel personal-sent
 Master :personal-remote:"[Gmail]/Sent Mail"
 Slave :personal-local:sent
 
+Channel personal-trash
+Master :personal-remote:"[Gmail]/Trash"
+Slave :personal-local:trash
+
 Channel personal-archive
 Master :personal-remote:"[Gmail]/All Mail"
 Slave :personal-local:archive
@@ -41,4 +45,5 @@ Slave :personal-local:archive
 Group personal
 Channel personal-inbox
 Channel personal-sent
+Channel personal-trash
 Channel personal-archive
