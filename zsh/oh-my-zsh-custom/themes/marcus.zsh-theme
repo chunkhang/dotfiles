@@ -31,7 +31,7 @@ local prompt_sign="$"
 
 PROMPT="\
 %{$fg[yellow]%}${current_dir} \
-${git_info} \
+${git_info}\
 %{$fg[white]%}${pyenv_virtualenv_info}\
 %{$fg[white]%}${vim_info}
 %{$fg[white]%}${prompt_sign} %{$reset_color%}"
