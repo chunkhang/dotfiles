@@ -25,11 +25,11 @@ unset help
 # Confirm to quit
 set quit = ask-yes
 
-# Do not confirm to delete
-set delete
-
 # No delay
 set sleep_time = 0
+
+# No reading mailbox progress
+set read_inc = 0
 
 # Headers
 ignore *
@@ -172,6 +172,7 @@ mailboxes =personal/inbox
 mailboxes Personal
 mailboxes =personal/drafts
 mailboxes =personal/sent
+mailboxes =personal/trash
 mailboxes =personal/archive
 
 # }}}
