@@ -55,11 +55,14 @@ set sort = threads
 set sort_browser="reverse-date"
 set sort_aux = reverse-last-date-received
 
+# Make thread tree smaller
+set narrow_tree
+
 # Status flags
 set to_chars = "  TCFLR"
 
 # Date
-set date_format = "%b %d"
+set date_format = "%d %b %Y"
 
 # Index item
 set index_format = "%4C  %Z  %D  %-25.25F  %s"
@@ -138,9 +141,6 @@ set include
 # Quote forwarded message
 set forward_quote
 
-# Place signature above quoted text
-set sig_on_top
-
 # Use flowed format for text
 set text_flowed
 
@@ -169,16 +169,36 @@ set mbox_type = Maildir
 # List of mailboxes
 mailboxes Inboxes
 mailboxes =personal/inbox
+mailboxes =work/inbox
 mailboxes Personal
 mailboxes =personal/drafts
 mailboxes =personal/sent
 mailboxes =personal/trash
 mailboxes =personal/archive
+mailboxes Work
+mailboxes =work/drafts
+mailboxes =work/sent
+mailboxes =work/trash
+mailboxes =work/archive
 
 # }}}
 # =============================================================================
+# SOURCES
+# =============================================================================
 
+# Colors and bindings
 source colors
 source bindings
 
+# Default account
 source accounts/personal
+
+# =============================================================================
+# HOOKS {{{
+# =============================================================================
+
+folder-hook personal source $HOME/.mutt/accounts/personal
+folder-hook work source $HOME/.mutt/accounts/work
+
+# }}}
+# =============================================================================

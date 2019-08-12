@@ -8,3 +8,9 @@ set sendmail = "/usr/local/bin/msmtp -a personal"
 set spoolfile = "=personal/inbox"
 set postponed = "=personal/drafts"
 set record = "=personal/sent"
+set trash = "=personal/trash"
+
+unset sig_on_top
+
+color sidebar_indicator black green
+color index_number green black

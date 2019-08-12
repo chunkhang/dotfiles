@@ -50,10 +50,10 @@ color markers color15 black
 # HEADER {{{
 # =============================================================================
 
-color hdrdefault yellow black
+color hdrdefault magenta black
 
 # Fields
-color header magenta black "^From:"
+color header yellow black "^From:"
 color header green black "^Subject:"
 
 # }}}
@@ -64,10 +64,10 @@ color header green black "^Subject:"
 color normal white black
 
 # URL
-color body cyan black "<?https?://[\-\.,/%~_:?&=\#@a-zA-Z0-9]+>?"
+color body cyan black "https?://[\-\.,/%~_:?&=\#@a-zA-Z0-9]+"
 
 # Email
-color body yellow black "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
+color body cyan black "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+"
 
 # Git
 color body cyan black "[> ]*@@.*"
@@ -79,10 +79,10 @@ color body red black "^\-[^\-]+.*"
 # QUOTE {{{
 # =============================================================================
 
-color quoted color15 black
-color quoted1 magenta black
-color quoted2 yellow black
-color quoted3 green black
+color quoted green black
+color quoted1 yellow black
+color quoted2 magenta black
+color quoted3 red black
 color quoted4 cyan black
 
 # }}}

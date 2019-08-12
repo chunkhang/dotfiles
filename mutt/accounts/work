@@ -1,0 +1,16 @@
+# vim: set filetype=neomuttrc:
+
+set realname = "Marcus Mu"
+set from = "marcus.mu@pickupp.io"
+set signature = $HOME/.mutt/signatures/work
+set sendmail = "/usr/local/bin/msmtp -a work"
+
+set spoolfile = "=work/inbox"
+set postponed = "=work/drafts"
+set record = "=work/sent"
+set trash = "=work/trash"
+
+set sig_on_top
+
+color sidebar_indicator black blue
+color index_number blue black

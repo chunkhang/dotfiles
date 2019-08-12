@@ -44,6 +44,54 @@ Slave :personal-local:archive
 
 Group personal
 Channel personal-inbox
+Channel personal-drafts
 Channel personal-sent
 Channel personal-trash
 Channel personal-archive
+
+
+# =============================================================================
+# WORK ACCOUNT
+# =============================================================================
+
+IMAPAccount work
+Host imap.gmail.com
+User marcus.mu@pickupp.io
+SSLType IMAPS
+AuthMechs LOGIN
+PassCmd "security find-internet-password -s imap.gmail.com -a marcus.mu@pickupp.io -w"
+
+IMAPStore work-remote
+Account work
+
+MaildirStore work-local
+Path ~/Mail/work/
+Inbox ~/Mail/work/inbox
+
+Channel work-inbox
+Master :work-remote:
+Slave :work-local:
+Patterns "INBOX"
+
+Channel work-draft
+Master :work-remote:"[Gmail]/Drafts"
+Slave :work-local:drafts
+
+Channel work-sent
+Master :work-remote:"[Gmail]/Sent Mail"
+Slave :work-local:sent
+
+Channel work-trash
+Master :work-remote:"[Gmail]/Trash"
+Slave :work-local:trash
+
+Channel work-archive
+Master :work-remote:"[Gmail]/All Mail"
+Slave :work-local:archive
+
+Group work
+Channel work-inbox
+Channel work-drafts
+Channel work-sent
+Channel work-trash
+Channel work-archive
