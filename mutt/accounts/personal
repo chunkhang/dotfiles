@@ -13,4 +13,3 @@ set trash = "=personal/trash"
 unset sig_on_top
 
 color sidebar_indicator black green
-color index_number green black

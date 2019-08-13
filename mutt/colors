@@ -35,7 +35,6 @@ color index blue black ~v # Collapsed
 color sidebar_divider color15 black
 color sidebar_highlight white color8
 color sidebar_indicator black green
-color sidebar_new yellow black
 
 # }}}
 # =============================================================================

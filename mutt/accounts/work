@@ -13,4 +13,3 @@ set trash = "=work/trash"
 set sig_on_top
 
 color sidebar_indicator black blue
-color index_number blue black
