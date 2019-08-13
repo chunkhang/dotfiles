@@ -1,18 +1,10 @@
 # vim: set filetype=neomuttrc foldmethod=marker:
 
-bind index,pager gg noop
 bind index,pager g noop
 bind pager \Cr noop
+bind index p noop
+bind index w noop
 
-# =============================================================================
-# SIDEBAR {{{
-# =============================================================================
-
-bind index <down> sidebar-next
-bind index <up> sidebar-prev
-bind index <right> sidebar-open
-
-# }}}
 # =============================================================================
 # INDEX {{{
 # =============================================================================
@@ -26,6 +18,8 @@ bind index G last-entry
 bind index <space> next-page
 bind index b previous-page
 
+bind index <backtab> previous-new-then-unread
+
 bind index M sidebar-toggle-visible
 
 bind index @ compose-to-sender
@@ -33,6 +27,16 @@ bind index R group-reply
 
 bind index - collapse-thread
 bind index _ collapse-all
+
+# }}}
+# =============================================================================
+# SIDEBAR {{{
+# =============================================================================
+
+bind index <down> sidebar-next
+bind index <up> sidebar-prev
+
+bind index <right> sidebar-open
 
 # }}}
 # =============================================================================
@@ -67,10 +71,59 @@ bind attach <return> view-mailcap
 # MACROS {{{
 # =============================================================================
 
-macro index,pager \Ca "<pipe-message>$HOME/.scripts/mutt/ripmime<enter>" "download attachments"
-macro index \Ck "<enter-command>exec what-key<enter>" "test keystroke"
-macro index,pager,attach,compose,browser \Cr "<enter-command>source $HOME/.mutt/muttrc<enter>" "reload muttrc"
-macro index \Cw "<shell-escape>$HOME/.scripts/mutt/mbsync<enter>" "sync mailboxes"
+macro index,pager,attach,compose,browser \Cr \
+"<enter-command>source $HOME/.mutt/muttrc<enter>" \
+"reload muttrc"
+
+macro index S \
+"<shell-escape>$HOME/.scripts/mutt/mbsync<enter>" \
+"sync mailboxes"
+
+macro index \Ck \
+"<enter-command>exec what-key<enter>" \
+"test keystroke"
+
+macro index,pager \Ca \
+"<pipe-message>$HOME/.scripts/mutt/ripmime<enter>" \
+"download attachments"
+
+# -----------------------------------------------------------------------------
+# Personal mailboxes
+# -----------------------------------------------------------------------------
+macro index pi \
+"<change-folder>=personal/inbox<enter>" \
+"switch to personal inbox"
+macro index pd \
+"<change-folder>=personal/drafts<enter>" \
+"switch to personal drafts"
+macro index ps \
+"<change-folder>=personal/sent<enter>" \
+"switch to personal sent"
+macro index pt \
+"<change-folder>=personal/trash<enter>" \
+"switch to personal trash"
+macro index pa \
+"<change-folder>=personal/archive<enter>" \
+"switch to personal archive"
+
+# -----------------------------------------------------------------------------
+# Work mailboxes
+# -----------------------------------------------------------------------------
+macro index wi \
+"<change-folder>=work/inbox<enter>" \
+"switch to work inbox"
+macro index wd \
+"<change-folder>=work/drafts<enter>" \
+"switch to work drafts"
+macro index ws \
+"<change-folder>=work/sent<enter>" \
+"switch to work sent"
+macro index wt \
+"<change-folder>=work/trash<enter>" \
+"switch to work trash"
+macro index wa \
+"<change-folder>=work/archive<enter>" \
+"switch to work archive"
 
 # }}}
 # =============================================================================
