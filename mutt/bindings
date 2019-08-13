@@ -90,7 +90,7 @@ macro index,pager \Ca \
 # -----------------------------------------------------------------------------
 # Personal mailboxes
 # -----------------------------------------------------------------------------
-macro index pi \
+macro index pp \
 "<change-folder>=personal/inbox<enter>" \
 "switch to personal inbox"
 macro index pd \
@@ -109,7 +109,7 @@ macro index pa \
 # -----------------------------------------------------------------------------
 # Work mailboxes
 # -----------------------------------------------------------------------------
-macro index wi \
+macro index ww \
 "<change-folder>=work/inbox<enter>" \
 "switch to work inbox"
 macro index wd \
