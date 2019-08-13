@@ -6,6 +6,7 @@
 
 # Directories
 set folder = $HOME/Mail
+set alias_file = $HOME/.mutt/alias
 set header_cache = $HOME/.mutt/cache
 set message_cachedir = $HOME/.mutt/cache
 set mailcap_path = $HOME/.mutt/mailcap
@@ -25,7 +26,16 @@ unset help
 # Confirm to quit
 set quit = ask-yes
 
-# No delay
+# No need to confirm to delete
+set delete
+
+# No need to confirm to move
+unset confirmappend
+
+# Do not record sent messages
+unset copy
+
+# No delay when switching mailbox
 set sleep_time = 0
 
 # No reading mailbox progress
@@ -67,12 +77,6 @@ set date_format = "%d %b %Y"
 # Index item
 set index_format = "%4C  %Z  %D  %-25.25F  %s"
 
-# Do not collapse unread thread
-unset collapse_unread
-
-# Do not distinguish old from new
-unset mark_old
-
 # }}}
 # =============================================================================
 # SIDEBAR {{{
@@ -85,7 +89,7 @@ set sidebar_width = 20
 # Hide mailbox prefix
 set sidebar_short_path
 
-# Show unread count
+# Show mailbox size
 set mail_check_stats
 
 # Indent
@@ -93,7 +97,7 @@ set sidebar_folder_indent
 set sidebar_indent_string = " "
 
 # Sidebar item
-set sidebar_format = "%B%* %?S?%S?%?N?(%N)?"
+set sidebar_format = "%B%* %?S?%S?"
 
 # }}}
 # =============================================================================
@@ -104,7 +108,9 @@ set sidebar_format = "%B%* %?S?%S?%?N?(%N)?"
 set status_on_top
 
 # Status bar
-set status_format = "[%f](%?M?%M/?%m){%?L?%L/?%l}%?p? P(%p)?%?n? N(%n)?%?d? D(%d)?%?F? F(%F)?%?t? T(%t)? %*- [%r](%P)%?V?{%V}?"
+set status_format = "[%f](%M)\
+%?p? P(%p)?%?n? N(%n)?%?d? D(%d)?%?F? F(%F)?%?t? T(%t)? %*- \
+[%r](%P)%?V?{%V}?{%L}"
 
 # }}}
 # =============================================================================
@@ -121,7 +127,7 @@ set pager_context = 3
 set pager_stop
 
 # Message title bar
-set pager_format = "-- %n -- %s %*- [%C/%m](%P)"
+set pager_format = "-- %n -- %s %*- [%C/%m](%P){%c}"
 
 # Show wrapped lines without markers
 unset markers
@@ -131,9 +137,11 @@ unset markers
 # COMPOSE {{{
 # =============================================================================
 
-# Skip prompt for message to and subject
-set autoedit
+# Show headers in editor
 set edit_headers
+
+# Do not prompt anything for reply
+set fast_reply
 
 # Include original message in reply
 set include
@@ -166,39 +174,61 @@ set attach_format = "%4n %t%D%u%I  %T%-40d%*   %m/%M (%s)"
 # Mailbox type
 set mbox_type = Maildir
 
-# List of mailboxes
-mailboxes Inboxes
-mailboxes =personal/inbox
-mailboxes =work/inbox
+# Personal mailboxes
 mailboxes Personal
+mailboxes =personal/inbox
 mailboxes =personal/drafts
 mailboxes =personal/sent
 mailboxes =personal/trash
 mailboxes =personal/archive
+
+# Work mailboxes
 mailboxes Work
+mailboxes =work/inbox
 mailboxes =work/drafts
 mailboxes =work/sent
 mailboxes =work/trash
 mailboxes =work/archive
 
+# Notification
+set new_mail_command="terminal-notifier \
+-title 'New Mail' \
+-subtitle '%f' \
+-message '%n new messages' \
+-sound 'Ping' \
+-appIcon \"$HOME/.mutt/mutt.png\" \
+-activate 'com.googlecode.iterm2'"
+
 # }}}
 # =============================================================================
-# SOURCES
+# SOURCES {{{
 # =============================================================================
 
 # Colors and bindings
 source colors
 source bindings
 
+# Aliases
+source $alias_file
+
 # Default account
 source accounts/personal
 
+# }}}
 # =============================================================================
 # HOOKS {{{
 # =============================================================================
 
-folder-hook personal source $HOME/.mutt/accounts/personal
-folder-hook work source $HOME/.mutt/accounts/work
+# Accounts
+folder-hook personal "source $HOME/.mutt/accounts/personal"
+folder-hook work "source $HOME/.mutt/accounts/work"
+
+# Sync with servers automatically
+set timeout = 300
+timeout-hook "push \
+<enter-command>unset<space>wait_key<enter>\
+S\
+<enter-command>set<space>wait_key<enter>"
 
 # }}}
 # =============================================================================

@@ -22,11 +22,15 @@ bind index <backtab> previous-new-then-unread
 
 bind index M sidebar-toggle-visible
 
-bind index @ compose-to-sender
-bind index R group-reply
-
 bind index - collapse-thread
 bind index _ collapse-all
+
+bind index W sync-mailbox
+
+bind index N search-opposite
+
+bind index @ compose-to-sender
+bind index R group-reply
 
 # }}}
 # =============================================================================
@@ -58,6 +62,9 @@ bind pager \[ half-up
 
 bind pager N search-opposite
 
+bind pager @ compose-to-sender
+bind pager R group-reply
+
 # }}}
 # =============================================================================
 # ATTACH {{{
@@ -76,8 +83,8 @@ macro index,pager,attach,compose,browser \Cr \
 "reload muttrc"
 
 macro index S \
-"<shell-escape>$HOME/.scripts/mutt/mbsync<enter>" \
-"sync mailboxes"
+"<sync-mailbox><shell-escape>$HOME/.scripts/mutt/mbsync<enter>" \
+"sync with servers"
 
 macro index \Ck \
 "<enter-command>exec what-key<enter>" \
@@ -86,6 +93,14 @@ macro index \Ck \
 macro index,pager \Ca \
 "<pipe-message>$HOME/.scripts/mutt/ripmime<enter>" \
 "download attachments"
+
+macro pager \Cu \
+"<pipe-message>urlview<enter>" \
+"view urls"
+
+macro index L \
+"<limit>all<enter>" \
+"clear limit pattern"
 
 # -----------------------------------------------------------------------------
 # Personal mailboxes

@@ -1,15 +1,38 @@
 # vim: set filetype=neomuttrc:
 
+# =============================================================================
+# COLORS
+# =============================================================================
+
+color sidebar_indicator black green
+
+# =============================================================================
+# ACCOUNT
+# =============================================================================
+
 set realname = "Marcus Mu"
 set from = "chunkhang@gmail.com"
-set signature = $HOME/.mutt/signatures/personal
+
 set sendmail = "/usr/local/bin/msmtp -a personal"
+
+set signature = $HOME/.mutt/signatures/personal
+unset sig_on_top
+
+set content_type = "text/plain"
+
+# =============================================================================
+# MAILBOXES
+# =============================================================================
 
 set spoolfile = "=personal/inbox"
 set postponed = "=personal/drafts"
 set record = "=personal/sent"
 set trash = "=personal/trash"
 
-unset sig_on_top
+# =============================================================================
+# MACROS
+# =============================================================================
 
-color sidebar_indicator black green
+macro index,pager A \
+"<save-message>=personal/archive<enter>" \
+"archive message"
