@@ -24,9 +24,8 @@ Inbox ~/Mail/personal/inbox
 Channel personal-inbox
 Master :personal-remote:
 Slave :personal-local:
-Patterns "INBOX"
 
-Channel personal-draft
+Channel personal-drafts
 Master :personal-remote:"[Gmail]/Drafts"
 Slave :personal-local:drafts
 
@@ -71,9 +70,8 @@ Inbox ~/Mail/work/inbox
 Channel work-inbox
 Master :work-remote:
 Slave :work-local:
-Patterns "INBOX"
 
-Channel work-draft
+Channel work-drafts
 Master :work-remote:"[Gmail]/Drafts"
 Slave :work-local:drafts
 
