@@ -4,7 +4,7 @@ Sync All
 SyncState *
 
 # =============================================================================
-# PERSONAL ACCOUNT
+# ACCOUNTS
 # =============================================================================
 
 IMAPAccount personal
@@ -20,6 +20,24 @@ Account personal
 MaildirStore personal-local
 Path ~/Mail/personal/
 Inbox ~/Mail/personal/inbox
+
+IMAPAccount work
+Host imap.gmail.com
+User marcus.mu@pickupp.io
+SSLType IMAPS
+AuthMechs LOGIN
+PassCmd "security find-internet-password -s imap.gmail.com -a marcus.mu@pickupp.io -w"
+
+IMAPStore work-remote
+Account work
+
+MaildirStore work-local
+Path ~/Mail/work/
+Inbox ~/Mail/work/inbox
+
+# =============================================================================
+# PERSONAL
+# =============================================================================
 
 Channel personal-inbox
 Master :personal-remote:
@@ -48,24 +66,9 @@ Channel personal-sent
 Channel personal-trash
 Channel personal-archive
 
-
 # =============================================================================
 # WORK ACCOUNT
 # =============================================================================
-
-IMAPAccount work
-Host imap.gmail.com
-User marcus.mu@pickupp.io
-SSLType IMAPS
-AuthMechs LOGIN
-PassCmd "security find-internet-password -s imap.gmail.com -a marcus.mu@pickupp.io -w"
-
-IMAPStore work-remote
-Account work
-
-MaildirStore work-local
-Path ~/Mail/work/
-Inbox ~/Mail/work/inbox
 
 Channel work-inbox
 Master :work-remote:
@@ -93,3 +96,19 @@ Channel work-drafts
 Channel work-sent
 Channel work-trash
 Channel work-archive
+
+# =============================================================================
+# LABELS
+# =============================================================================
+
+Channel labels-bitbucket
+Master :personal-remote:bitbucket
+Slave :personal-local:bitbucket
+
+Channel labels-circleci
+Master :personal-remote:circleci
+Slave :personal-local:circleci
+
+Group labels
+Channel labels-bitbucket
+Channel labels-circleci
