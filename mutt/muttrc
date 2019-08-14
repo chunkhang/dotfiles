@@ -59,6 +59,9 @@ set editor = "vim"
 # INDEX {{{
 # =============================================================================
 
+# No need to distinguish old messages
+unset mark_old
+
 # Sorting
 set strict_threads
 set sort = threads
@@ -174,30 +177,26 @@ set attach_format = "%4n %t%D%u%I  %T%-40d%*   %m/%M (%s)"
 # Mailbox type
 set mbox_type = Maildir
 
-# Personal mailboxes
-mailboxes Personal
+# Personal
+mailboxes "Personal [p]"
 mailboxes =personal/inbox
 mailboxes =personal/drafts
 mailboxes =personal/sent
 mailboxes =personal/trash
 mailboxes =personal/archive
 
-# Work mailboxes
-mailboxes Work
+# Work
+mailboxes "Work [w]"
 mailboxes =work/inbox
 mailboxes =work/drafts
 mailboxes =work/sent
 mailboxes =work/trash
 mailboxes =work/archive
 
-# Notification
-set new_mail_command="terminal-notifier \
--title 'New Mail' \
--subtitle '%f' \
--message '%n new messages' \
--sound 'Ping' \
--appIcon \"$HOME/.mutt/mutt.png\" \
--activate 'com.googlecode.iterm2'"
+# Labels
+mailboxes "Labels [y]"
+mailboxes =personal/bitbucket
+mailboxes =personal/circleci
 
 # }}}
 # =============================================================================

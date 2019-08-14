@@ -20,8 +20,7 @@ color tree blue black
 color index_number green black
 
 # Status flags
-color index red black ~N # New
-color index yellow black ~O #Old
+color index yellow black ~N # New
 color index green black ~Q # Replied
 color index red black ~D # Deleted
 color index magenta black ~F # Flagged

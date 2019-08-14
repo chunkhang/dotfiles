@@ -4,6 +4,7 @@ bind index,pager g noop
 bind pager \Cr noop
 bind index p noop
 bind index w noop
+bind index y noop
 
 # =============================================================================
 # INDEX {{{
@@ -31,11 +32,6 @@ bind index N search-opposite
 
 bind index @ compose-to-sender
 bind index R group-reply
-
-# }}}
-# =============================================================================
-# SIDEBAR {{{
-# =============================================================================
 
 bind index <down> sidebar-next
 bind index <up> sidebar-prev
@@ -83,8 +79,8 @@ macro index,pager,attach,compose,browser \Cr \
 "reload muttrc"
 
 macro index S \
-"<sync-mailbox><shell-escape>$HOME/.scripts/mutt/mbsync<enter>" \
-"sync with servers"
+"<sync-mailbox><shell-escape>mbsync --all<enter>" \
+"run mbsync for all groups"
 
 macro index \Ck \
 "<enter-command>exec what-key<enter>" \
@@ -103,8 +99,11 @@ macro index L \
 "clear limit pattern"
 
 # -----------------------------------------------------------------------------
-# Personal mailboxes
+# Personal
 # -----------------------------------------------------------------------------
+macro index pS \
+"<sync-mailbox><shell-escape>mbsync personal<enter>" \
+"run mbsync for personal group"
 macro index pp \
 "<change-folder>=personal/inbox<enter>" \
 "switch to personal inbox"
@@ -122,8 +121,11 @@ macro index pa \
 "switch to personal archive"
 
 # -----------------------------------------------------------------------------
-# Work mailboxes
+# Work
 # -----------------------------------------------------------------------------
+macro index wS \
+"<sync-mailbox><shell-escape>mbsync work<enter>" \
+"run mbsync for work group"
 macro index ww \
 "<change-folder>=work/inbox<enter>" \
 "switch to work inbox"
@@ -139,6 +141,19 @@ macro index wt \
 macro index wa \
 "<change-folder>=work/archive<enter>" \
 "switch to work archive"
+
+# -----------------------------------------------------------------------------
+# Labels
+# -----------------------------------------------------------------------------
+macro index yS \
+"<sync-mailbox><shell-escape>mbsync labels<enter>" \
+"run mbsync for labels group"
+macro index yb \
+"<change-folder>=personal/bitbucket<enter>" \
+"switch to bitbucket label"
+macro index yc \
+"<change-folder>=personal/circleci<enter>" \
+"switch to bitbucket label"
 
 # }}}
 # =============================================================================
