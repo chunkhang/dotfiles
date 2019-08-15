@@ -193,12 +193,11 @@ endfunction
 " Set buffer into writing mode
 " https://www.drbunsen.org/writing-in-vim/
 function! s:enter_writing_mode()
-  setlocal formatoptions+=1
+  setlocal formatoptions+=1awt
   setlocal noexpandtab
   setlocal spell
   setlocal complete+=k
-  setlocal textwidth=79
-  setlocal wrap
+  setlocal textwidth=72
   setlocal linebreak
   call SuperTabSetDefaultCompletionType('<c-n>')
 endfunction
