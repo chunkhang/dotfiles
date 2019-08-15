@@ -1,6 +1,6 @@
 # vim: set filetype=neomuttrc foldmethod=marker:
 
-bind index,pager g noop
+bind index,pager,attach g noop
 bind pager \Cr noop
 bind index p noop
 bind index w noop
@@ -69,6 +69,9 @@ bind pager R group-reply
 bind attach <enter> view-mailcap
 bind attach <return> view-mailcap
 
+bind attach gg first-entry
+bind attach G last-entry
+
 # }}}
 # =============================================================================
 # MACROS {{{
@@ -107,6 +110,9 @@ macro index pS \
 macro index pp \
 "<change-folder>=personal/inbox<enter>" \
 "switch to personal inbox"
+macro index pi \
+"<change-folder>=personal/inbox<enter>" \
+"switch to personal inbox"
 macro index pd \
 "<change-folder>=personal/drafts<enter>" \
 "switch to personal drafts"
@@ -129,6 +135,9 @@ macro index wS \
 macro index ww \
 "<change-folder>=work/inbox<enter>" \
 "switch to work inbox"
+macro index wi \
+"<change-folder>=work/inbox<enter>" \
+"switch to work inbox"
 macro index wd \
 "<change-folder>=work/drafts<enter>" \
 "switch to work drafts"
@@ -148,6 +157,9 @@ macro index wa \
 macro index yS \
 "<sync-mailbox><shell-escape>mbsync labels<enter>" \
 "run mbsync for labels group"
+macro index yy \
+"<change-folder>=personal/bitbucket<enter>" \
+"switch to bitbucket label"
 macro index yb \
 "<change-folder>=personal/bitbucket<enter>" \
 "switch to bitbucket label"
