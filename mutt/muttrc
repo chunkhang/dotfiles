@@ -6,7 +6,7 @@
 
 # Directories
 set folder = $HOME/Mail
-set alias_file = $HOME/.mutt/alias
+set alias_file = $HOME/.mutt/aliases
 set header_cache = $HOME/.mutt/cache
 set message_cachedir = $HOME/.mutt/cache
 set mailcap_path = $HOME/.mutt/mailcap
@@ -41,6 +41,9 @@ set sleep_time = 0
 # No reading mailbox progress
 set read_inc = 0
 
+# Display name if email is found in aliases
+set reverse_alias
+
 # Headers
 ignore *
 unignore from: to: cc: bcc: date: subject:
@@ -50,6 +53,11 @@ hdr_order from: to: cc: bcc: date: subject:
 # Mailcap
 alternative_order text/plain text/html
 auto_view text/html
+
+# Determine mime type of binary files
+mime_lookup application/octet-stream
+set mime_type_query_first
+set mime_type_query_command = "file --mime-type --brief"
 
 # Editor
 set editor = "vim"
@@ -130,7 +138,7 @@ set pager_context = 3
 set pager_stop
 
 # Message title bar
-set pager_format = "-- %n -- %s %*- [%C/%m](%P){%c}"
+set pager_format = "-- %n -- %s %*- [%[!%a %d/%m %H:%M]](%P){%c}"
 
 # Show wrapped lines without markers
 unset markers
@@ -152,14 +160,19 @@ set include
 # Quote forwarded message
 set forward_quote
 
-# Use flowed format for text
-set text_flowed
-
 # Compose title bar
 set compose_format = "-- Compose -- Attachments: %a, Size: %l"
 
 # Title of forwarded message
 set forward_format = "Fwd: %s"
+
+# }}}
+# =============================================================================
+# ALIAS {{{
+# =============================================================================
+
+# Format of alias record
+set alias_format = "%4n %t %f %-15a %r"
 
 # }}}
 # =============================================================================
@@ -222,8 +235,8 @@ source accounts/personal
 folder-hook personal "source $HOME/.mutt/accounts/personal"
 folder-hook work "source $HOME/.mutt/accounts/work"
 
-# Sync with servers automatically
-set timeout = 300
+# Sync with servers automatically after 10 minutes of idling
+set timeout = 600
 timeout-hook "push \
 <enter-command>unset<space>wait_key<enter>\
 S\
