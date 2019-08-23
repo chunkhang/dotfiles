@@ -96,10 +96,6 @@ macro index,pager \Ca \
 "<pipe-message>$HOME/.scripts/mutt/ripmime<enter>" \
 "download attachments"
 
-macro pager \Cu \
-"<pipe-message>urlview<enter>" \
-"view urls"
-
 macro index L \
 "<limit>all<enter>" \
 "clear limit pattern"
