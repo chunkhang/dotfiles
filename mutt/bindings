@@ -82,7 +82,10 @@ macro index,pager,attach,compose,browser \Cr \
 "reload muttrc"
 
 macro index S \
-"<sync-mailbox><shell-escape>mbsync --all<enter>" \
+"<sync-mailbox>\
+<enter-command>unset<space>wait_key<enter>\
+<shell-escape>mbsync --all<enter>\
+<enter-command>set<space>wait_key<enter>" \
 "run mbsync for all groups"
 
 macro index \Ck \
