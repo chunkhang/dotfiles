@@ -100,6 +100,10 @@ macro index L \
 "<limit>all<enter>" \
 "clear limit pattern"
 
+macro attach s \
+"<save-entry><bol>$HOME/Downloads/" \
+"save attachment to downloads"
+
 # -----------------------------------------------------------------------------
 # Personal
 # -----------------------------------------------------------------------------
