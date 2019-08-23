@@ -15,3 +15,4 @@ ubersicht/playing.widget/lib/songMeta.plist
 # Mutt
 mutt/tmp
 mutt/cache
+mutt/aliases
