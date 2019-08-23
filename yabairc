@@ -35,6 +35,7 @@ yabai -m config insert_window_border_color   0xff34b044
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Accessibility Inspector$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
