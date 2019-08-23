@@ -104,9 +104,6 @@ macro index L \
 # -----------------------------------------------------------------------------
 # Personal
 # -----------------------------------------------------------------------------
-macro index pS \
-"<sync-mailbox><shell-escape>mbsync personal<enter>" \
-"run mbsync for personal group"
 macro index pp \
 "<change-folder>=personal/inbox<enter>" \
 "switch to personal inbox"
@@ -129,9 +126,6 @@ macro index pa \
 # -----------------------------------------------------------------------------
 # Work
 # -----------------------------------------------------------------------------
-macro index wS \
-"<sync-mailbox><shell-escape>mbsync work<enter>" \
-"run mbsync for work group"
 macro index ww \
 "<change-folder>=work/inbox<enter>" \
 "switch to work inbox"
@@ -154,9 +148,6 @@ macro index wa \
 # -----------------------------------------------------------------------------
 # Labels
 # -----------------------------------------------------------------------------
-macro index yS \
-"<sync-mailbox><shell-escape>mbsync labels<enter>" \
-"run mbsync for labels group"
 macro index yy \
 "<change-folder>=personal/bitbucket<enter>" \
 "switch to bitbucket label"
