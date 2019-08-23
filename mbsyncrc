@@ -109,6 +109,16 @@ Channel labels-circleci
 Master :personal-remote:circleci
 Slave :personal-local:circleci
 
+Channel labels-github
+Master :personal-remote:github
+Slave :personal-local:github
+
+Channel labels-notion
+Master :work-remote:notion
+Slave :work-local:notion
+
 Group labels
 Channel labels-bitbucket
 Channel labels-circleci
+Channel labels-github
+Channel labels-notion

@@ -210,6 +210,8 @@ mailboxes =work/archive
 mailboxes "Labels [y]"
 mailboxes =personal/bitbucket
 mailboxes =personal/circleci
+mailboxes =personal/github
+mailboxes =work/notion
 
 # }}}
 # =============================================================================

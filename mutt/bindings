@@ -166,6 +166,12 @@ macro index yb \
 macro index yc \
 "<change-folder>=personal/circleci<enter>" \
 "switch to bitbucket label"
+macro index yg \
+"<change-folder>=personal/github<enter>" \
+"switch to github label"
+macro index yn \
+"<change-folder>=work/notion<enter>" \
+"switch to notion label"
 
 # }}}
 # =============================================================================
