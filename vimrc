@@ -588,6 +588,7 @@ let g:ctrlp_prompt_mappings = {
       \ 'PrtHistory(1)': [],
       \ 'PrtClearCache()': ['<c-p>'],
       \ }
+let g:ctrlp_open_multiple_files = 'i'
 if executable('rg')
   let g:ctrlp_user_command = 'rg %s --files --color=never'
 endif
