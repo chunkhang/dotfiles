@@ -758,7 +758,7 @@ endfunction
 augroup vimrc
   autocmd BufEnter */diary/index.wiki call <sid>reindex_diary()
   autocmd BufEnter */diary/????-??-??.wiki call <sid>enter_writing_mode()
-  autocmd BufWritePre */diary/????-??-??.wiki normal! gggqG}
+  autocmd BufWritePre */diary/????-??-??.wiki normal! gggqG}zz
   " Non-conflicting key to invoke vim-dirvish
   autocmd FileType vimwiki nnoremap \ :Dirvish<cr>
 augroup END
