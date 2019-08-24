@@ -465,6 +465,8 @@ nnoremap <leader>t<space> :Tabularize spaces<cr>
 vnoremap <leader>t<space> :Tabularize spaces<cr>
 nnoremap <leader>t= :Tabularize assignment<cr>
 vnoremap <leader>t= :Tabularize assignment<cr>
+nnoremap <leader>t: :Tabularize /:<cr>
+vnoremap <leader>t: :Tabularize /:<cr>
 
 " -----------------------------------------------------------------------------
 " dictionary.vim
