@@ -1,0 +1,14 @@
+#!/bin/sh
+
+tmpdir="$HOME/.mutt/tmp"
+html="$tmpdir/message.html"
+plain="$tmpdir/message.txt"
+
+# Get message from stdin
+# read message
+
+# Convert markdown to html
+cat "$@" | pandoc --from gfm --to html --output "$html"
+
+# Convert html to plain
+cat "$html" | pandoc --from html --to plain --output "$plain"

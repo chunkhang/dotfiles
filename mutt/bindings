@@ -99,9 +99,9 @@ macro index,pager,attach,compose,browser \Cr \
 
 macro index S \
 "<sync-mailbox>\
-<enter-command>unset<space>wait_key<enter>\
+<enter-command>unset wait_key<enter>\
 <shell-escape>mbsync --all<enter>\
-<enter-command>set<space>wait_key<enter>" \
+<enter-command>set wait_key<enter>" \
 "run mbsync for all groups"
 
 macro index \Ck \
@@ -119,6 +119,16 @@ macro index L \
 macro attach s \
 "<save-entry><bol>$HOME/Downloads/" \
 "save attachment to downloads"
+
+macro compose H \
+"<pipe-message>$HOME/.scripts/mutt/multipart<enter>\
+<attach-file>$tmpdir/message.txt<enter>\
+<attach-file>$tmpdir/message.html<enter>\
+<first-entry><detach-file>\
+<tag-entry><next-entry><tag-entry>\
+<group-alternatives>\
+<edit-description><kill-line><enter>" \
+"convert message to multipart/alternative"
 
 # -----------------------------------------------------------------------------
 # Personal

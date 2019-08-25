@@ -167,7 +167,7 @@ set compose_format = "-- Compose -- Attachments: %a, Size: %l"
 set forward_format = "Fwd: %s"
 
 # Message character encoding
-set send_charset="us-ascii:utf-8"
+set send_charset="utf-8"
 
 # }}}
 # =============================================================================
