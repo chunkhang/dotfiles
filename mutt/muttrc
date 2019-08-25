@@ -59,9 +59,6 @@ mime_lookup application/octet-stream
 set mime_type_query_first
 set mime_type_query_command = "file --mime-type --brief"
 
-# Editor
-set editor = "vim"
-
 # }}}
 # =============================================================================
 # INDEX {{{
@@ -148,6 +145,9 @@ unset markers
 # COMPOSE {{{
 # =============================================================================
 
+# Editor
+set editor = "vim"
+
 # Show headers in editor
 set edit_headers
 
@@ -166,13 +166,25 @@ set compose_format = "-- Compose -- Attachments: %a, Size: %l"
 # Title of forwarded message
 set forward_format = "Fwd: %s"
 
+# Message character encoding
+set send_charset="us-ascii:utf-8"
+
 # }}}
 # =============================================================================
 # ALIAS {{{
 # =============================================================================
 
 # Format of alias record
-set alias_format = "%4n %t %f %-15a %r"
+set alias_format = "%4n %t %f %-15.15a %r"
+
+# Query contacts
+# https://github.com/pbrisbin/mail-query
+set query_command = "\
+mail-query '%s' $HOME/Mail |\
+perl -CS -MEncode -ne 'print decode(\"MIME-Header\", $_)'"
+
+# Format of query results
+set query_format = "%4c %t %n <%a>"
 
 # }}}
 # =============================================================================
