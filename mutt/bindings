@@ -166,6 +166,9 @@ macro index yg \
 macro index yn \
 "<change-folder>=work/notion<enter>" \
 "switch to notion label"
+macro index yp \
+"<change-folder>=work/pickupp<enter>" \
+"switch to pickupp label"
 
 # }}}
 # =============================================================================

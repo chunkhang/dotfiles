@@ -117,8 +117,13 @@ Channel labels-notion
 Master :work-remote:notion
 Slave :work-local:notion
 
+Channel labels-pickupp
+Master :work-remote:pickupp
+Slave :work-local:pickupp
+
 Group labels
 Channel labels-bitbucket
 Channel labels-circleci
 Channel labels-github
 Channel labels-notion
+Channel labels-pickupp
