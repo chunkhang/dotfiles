@@ -91,6 +91,7 @@ Plug 'w0rp/ale'
 " -----------------------------------------------------------------------------
 " Writing
 " -----------------------------------------------------------------------------
+Plug 'Konfekt/vim-mailquery'
 Plug 'vimwiki/vimwiki'
 if has('mac')
   Plug 'itchyny/dictionary.vim'
@@ -719,6 +720,11 @@ call <sid>highlight_onedark('ReduxKeywords', 'white')
 call <sid>highlight_onedark('tsxCloseTag', 'white')
 
 " -----------------------------------------------------------------------------
+" vim-mailquery
+" -----------------------------------------------------------------------------
+let g:mailquery_folder = $HOME . '/Mail'
+
+" -----------------------------------------------------------------------------
 " ale
 " -----------------------------------------------------------------------------
 let g:ale_sign_error = '•'
@@ -808,6 +814,15 @@ augroup vimrc
 
   " Format JSON
   autocmd FileType json setlocal equalprg=python\ -m\ json.tool
+
+  " Compose email
+  autocmd Filetype mail
+        \ setlocal textwidth=72 |
+        \ let g:SuperTabDefaultCompletionType = 'context' |
+        \ let g:SuperTabContextDefaultCompletionType = '<C-x><C-u>' |
+        \ if &omnifunc != '' |
+        \   call SuperTabChain(&omnifunc, "<C-p>") |
+        \ endif
 
 augroup END
 
