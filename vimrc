@@ -808,6 +808,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
   autocmd BufNewFile,BufRead .zprofile,zprofile set filetype=zsh
   autocmd BufNewFile,BufRead .muttrc,muttrc set filetype=neomuttrc
+  autocmd BufNewFile,BufRead .tags set filetype=tags
 
   " Easier to quit help, quickfix and location window
   autocmd FileType help,qf noremap <silent> <buffer> q :q<cr>
