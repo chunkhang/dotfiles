@@ -1,7 +1,2 @@
 --exclude=.tags
---exclude=package.json
---exclude=package-lock.json
---exclude=node_modules
---exclude=vendor
---exclude=test
---exclude=tests
+--exclude=*.json
