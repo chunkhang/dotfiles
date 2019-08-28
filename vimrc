@@ -818,21 +818,21 @@ augroup vimrc
 
   " Auto comment
   autocmd FileType * set formatoptions-=cro
-  autocmd FileType markdown,yaml setlocal formatoptions+=cro
+  autocmd FileType markdown,yaml set formatoptions+=cro
 
   " Indentation
-  autocmd FileType go setlocal softtabstop=0 tabstop=4 shiftwidth=4
-  autocmd FileType snippets setlocal expandtab
+  autocmd FileType go set softtabstop=0 tabstop=4 shiftwidth=4
+  autocmd FileType snippets set expandtab
 
   " Folding
-  autocmd Filetype yaml setlocal foldmethod=indent
+  autocmd Filetype yaml set foldmethod=indent
 
   " Format JSON
-  autocmd FileType json setlocal equalprg=python\ -m\ json.tool
+  autocmd FileType json set equalprg=python\ -m\ json.tool
 
   " Compose email
   autocmd Filetype mail
-        \ setlocal textwidth=72 |
+        \ set textwidth=72 |
         \ let g:SuperTabDefaultCompletionType = 'context' |
         \ let g:SuperTabContextDefaultCompletionType = '<C-x><C-u>' |
         \ if &omnifunc != '' |
