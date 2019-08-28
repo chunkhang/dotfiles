@@ -40,6 +40,7 @@ Plug 'AndrewRadev/switch.vim'
 Plug 'adelarsq/vim-matchit'
 Plug 'wellle/targets.vim'
 Plug 'jceb/emmet.snippets'
+Plug 'chrisbra/Colorizer'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'justinmk/vim-dirvish'
 Plug 'shime/vim-livedown'
@@ -454,6 +455,12 @@ nnoremap <C-f>t :CtrlSFToggle<cr>
 imap <C-e>, <esc>daWae<tab><esc>pa<tab>
 
 " -----------------------------------------------------------------------------
+" Colorizer
+" -----------------------------------------------------------------------------
+nnoremap <leader>c :ColorToggle<cr>
+nnoremap <leader>C :ColorContrast<cr>
+
+" -----------------------------------------------------------------------------
 " ultisnips
 " -----------------------------------------------------------------------------
 nnoremap <silent> <leader>u :edit ~/.vim/ultisnips<cr>
@@ -633,6 +640,12 @@ let g:switch_custom_definitions = [
       \ ]
 
 " -----------------------------------------------------------------------------
+" Colorizer
+" -----------------------------------------------------------------------------
+let g:colorizer_fgcontrast = 0
+:let g:colorizer_colornames = 0
+
+" -----------------------------------------------------------------------------
 " vim-gutentags
 " -----------------------------------------------------------------------------
 let g:gutentags_ctags_tagfile = '.tags'
@@ -776,7 +789,7 @@ let g:tq_enabled_backends = ['openoffice_en', 'mthesaur_txt']
 let g:tq_openoffice_en_file = '~/.vim/thesaurus/th_en_US_new'
 let g:tq_mthesaur_file = '~/.vim/thesaurus/mthesaur.txt'
 let g:tq_map_keys = 0
-let g:tq_use_vim_autocompletefunc = 0
+let g:tq_use_vim_autocomplete = 0
 
 " -----------------------------------------------------------------------------
 " matchparen
