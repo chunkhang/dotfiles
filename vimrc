@@ -649,6 +649,7 @@ let g:colorizer_fgcontrast = 0
 " vim-gutentags
 " -----------------------------------------------------------------------------
 let g:gutentags_ctags_tagfile = '.tags'
+let g:gutentags_file_list_command = 'rg --files --color=never'
 
 " -----------------------------------------------------------------------------
 " vim-dirvish
