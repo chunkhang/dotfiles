@@ -166,6 +166,9 @@ set compose_format = "-- Compose -- Attachments: %a, Size: %l"
 # Title of forwarded message
 set forward_format = "Fwd: %s"
 
+# Attribution format in reply
+set attribution = "On %d, %n <%a> wrote:"
+
 # Message character encoding
 set send_charset="utf-8"
 
