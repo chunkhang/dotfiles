@@ -831,13 +831,7 @@ augroup vimrc
   autocmd FileType json set equalprg=python\ -m\ json.tool
 
   " Compose email
-  autocmd Filetype mail
-        \ set textwidth=72 |
-        \ let g:SuperTabDefaultCompletionType = 'context' |
-        \ let g:SuperTabContextDefaultCompletionType = '<C-x><C-u>' |
-        \ if &omnifunc != '' |
-        \   call SuperTabChain(&omnifunc, "<C-p>") |
-        \ endif
+  autocmd Filetype mail set textwidth=72
 
 augroup END
 
