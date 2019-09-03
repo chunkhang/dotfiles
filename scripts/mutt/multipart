@@ -3,12 +3,12 @@
 tmpdir="$HOME/.mutt/tmp"
 html="$tmpdir/message.html"
 plain="$tmpdir/message.txt"
-
-# Get message from stdin
-# read message
+blockquote_class="gmail_quote"
+blockquote_style="margin: 0 0 0 1rem; border-left: 2px #ccc solid; padding-left: .5rem;"
 
 # Convert markdown to html
 cat "$@" | pandoc --from gfm --to html --output "$html"
+sed -i '' "s/<blockquote>/<blockquote class=\"$blockquote_class\" style=\"$blockquote_style\">/g" "$html"
 
 # Convert html to plain
 cat "$html" | pandoc --from html --to plain --output "$plain"
