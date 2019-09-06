@@ -324,14 +324,13 @@ command! Write call <sid>enter_writing_mode()
 " -----------------------------------------------------------------------------
 nnoremap <backspace> <nop>
 nnoremap <space> <nop>
-nnoremap <cr> <nop>
 
 " -----------------------------------------------------------------------------
 " Moving
 " -----------------------------------------------------------------------------
 " Page down and up
-nnoremap <C-n> <C-e>
-nnoremap <C-b> <C-y>
+nnoremap <C-m> 3<C-y>
+nnoremap <C-n> 3<C-e>
 " Visual line down and up
 nnoremap j gj
 nnoremap k gk
