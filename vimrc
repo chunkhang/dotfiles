@@ -827,7 +827,7 @@ augroup vimrc
   autocmd Filetype yaml set foldmethod=indent
 
   " Format JSON
-  autocmd FileType json set equalprg=python\ -m\ json.tool
+  autocmd FileType json set equalprg=jq
 
   " Compose email
   autocmd Filetype mail set textwidth=72
