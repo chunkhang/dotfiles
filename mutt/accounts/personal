@@ -16,7 +16,6 @@ set from = "chunkhang@gmail.com"
 set sendmail = "/usr/local/bin/msmtp -a personal"
 
 set signature = $HOME/.mutt/signatures/personal
-unset sig_on_top
 
 # =============================================================================
 # MAILBOXES

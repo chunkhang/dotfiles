@@ -16,7 +16,6 @@ set from = "marcus.mu@pickupp.io"
 set sendmail = "/usr/local/bin/msmtp -a work"
 
 set signature = $HOME/.mutt/signatures/work
-set sig_on_top
 
 # =============================================================================
 # MAILBOXES

@@ -154,8 +154,8 @@ set edit_headers
 # Do not prompt anything for reply
 set fast_reply
 
-# Include original message in reply
-set include
+# Confirm to include original message in reply
+set include = ask-no
 
 # Quote forwarded message
 set forward_quote
