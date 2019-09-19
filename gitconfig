@@ -9,6 +9,9 @@
 [commit]
   verbose = true
 
+[pull]
+  rebase = true
+
 [alias]
   discard = checkout -- *
   drop = reset --hard @{u}
