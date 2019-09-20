@@ -43,7 +43,6 @@ Plug 'jceb/emmet.snippets'
 Plug 'chrisbra/Colorizer'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'justinmk/vim-dirvish'
-Plug 'shime/vim-livedown'
 Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -655,14 +654,6 @@ let g:gutentags_file_list_command = 'rg --files --color=never'
 " -----------------------------------------------------------------------------
 let g:dirvish_mode = ':sort | sort ,^.*[^/]$, r'
 let g:dirvish_relative_paths = 1
-
-" -----------------------------------------------------------------------------
-" vim-livedown
-" -----------------------------------------------------------------------------
-let g:livedown_autorun = 0
-let g:livedown_open = 1
-let g:livedown_browser = 'firefox'
-let g:livedown_port = 1337
 
 " -----------------------------------------------------------------------------
 " vim-localvimrc
