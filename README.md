@@ -7,6 +7,7 @@
 ![chunkwm](./screenshots/chunkwm.jpg)
 ![vim](./screenshots/vim.jpg)
 ![weechat](./screenshots/weechat.jpg)
+![mutt](./screenshots/mutt.jpg)
 
 ## Installing
 ```
