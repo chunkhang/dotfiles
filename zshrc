@@ -67,7 +67,7 @@ alias dkb='docker-compose build'
 # Ripgrep
 # ------------------------------------------------------------------------------
 alias rgl='f() { rg --pretty $@ | less };f'
-alias rgv='f() { vim -q <(rg --vimgrep $@) +cwindow };f'
+alias rgv='f() { vim -q <(rg --vimgrep $@) };f'
 
 # ------------------------------------------------------------------------------
 # Miscellaneous
