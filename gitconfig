@@ -12,6 +12,13 @@
 [pull]
   rebase = true
 
+[diff]
+  tool = vimdiff
+
+[merge]
+  tool = vimdiff
+  conflictstyle = diff3
+
 [alias]
   discard = checkout -- *
   drop = reset --hard @{u}
