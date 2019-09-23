@@ -15,9 +15,25 @@
 [diff]
   tool = vimdiff
 
+[difftool]
+  prompt = true
+  trustExitCode = true
+
 [merge]
-  tool = vimdiff
-  conflictstyle = diff3
+  tool = vim
+
+[mergetool]
+  prompt = false
+  keepBackup = false
+
+[mergetool "vim"]
+  cmd = \
+    vim -R "$MERGED" "$BASE" "$LOCAL" "$REMOTE" \
+    -c 'setlocal noreadonly splitbelow' \
+    -c 'tab sbuffer 2 | sbuffer 3 | windo diffthis' \
+    -c 'tab sbuffer 2 | sbuffer 4 | windo diffthis' \
+    -c 'tabfirst'
+  trustExitCode = true
 
 [alias]
   discard = checkout -- *

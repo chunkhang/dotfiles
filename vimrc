@@ -131,6 +131,7 @@ set foldlevelstart=99
 set number
 set relativenumber
 set scrolloff=10
+set sidescroll=1
 set wildmenu
 set showcmd
 set ruler
@@ -822,6 +823,9 @@ augroup vimrc
 
   " Compose email
   autocmd Filetype mail set textwidth=72
+
+  " Disable cursor line for diff mode
+  autocmd BufEnter * if &diff | set nocursorline | endif
 
 augroup END
 
