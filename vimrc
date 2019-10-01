@@ -355,6 +355,9 @@ vnoremap <leader>d "*d
 " Paste from system clipboard
 nnoremap <leader>p "*p
 vnoremap <leader>p "*p
+" Append comma
+nnoremap <leader>, A,<esc>
+vnoremap <silent> <leader>, :normal A,<cr>
 
 " -----------------------------------------------------------------------------
 " Jumping
