@@ -54,10 +54,8 @@ hdr_order from: to: cc: bcc: date: subject:
 alternative_order text/plain text/html
 auto_view text/html
 
-# Determine mime type of binary files
-mime_lookup application/octet-stream
-set mime_type_query_first
-set mime_type_query_command = "file --mime-type --brief"
+# Decode filenames that still use deprecated RFC 2047
+set rfc2047_parameters
 
 # }}}
 # =============================================================================
