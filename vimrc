@@ -44,6 +44,7 @@ Plug 'chrisbra/Colorizer'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'justinmk/vim-dirvish'
 Plug 'embear/vim-localvimrc'
+Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -404,8 +405,8 @@ nnoremap <silent> <leader>W :wall<cr>
 " Refresh buffer
 nnoremap <silent> <leader>r :e<cr>
 " Close buffer
-nnoremap <silent> <leader>q :Bw<cr>
-nnoremap <silent> <leader>Q :Bonly<cr>
+nnoremap <silent> <leader>q :BD<cr>
+nnoremap <silent> <leader>Q :bufdo bd<cr>
 
 " -----------------------------------------------------------------------------
 " Windows
