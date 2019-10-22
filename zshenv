@@ -45,6 +45,7 @@ export LESS=-x4icWRM
 
 typeset -U path
 path+=(
+  /usr/local/lib/ruby/gems/2.6.0/bin
   $HOME/.texlive/2018/bin/x86_64-darwin
   /Applications/Postgres.app/Contents/Versions/latest/bin
   $HOME/.zsh/git-open
