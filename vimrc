@@ -68,6 +68,7 @@ Plug 'rhysd/conflict-marker.vim'
 Plug 'neoclide/vim-jsx-improve'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'jparise/vim-graphql'
 Plug 'kchmck/vim-coffee-script'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
@@ -824,7 +825,7 @@ augroup vimrc
   autocmd Filetype yaml set foldmethod=indent
 
   " Format JSON
-  autocmd FileType json set equalprg=jq
+  autocmd FileType json setlocal equalprg=jq
 
   " Compose email
   autocmd Filetype mail set textwidth=72
