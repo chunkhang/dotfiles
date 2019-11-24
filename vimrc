@@ -518,6 +518,9 @@ colorscheme onedark
 " https://nerdfonts.com/
 " https://github.com/bagrat/vim-buffet/issues/20
 " -----------------------------------------------------------------------------
+function! MyLightlineDirectory()
+  return "\ufc6e " . fnamemodify(getcwd(), ':t')
+endfunction
 function! MyLightlineGitBranch()
   let l:branch = fugitive#head()
   if empty(branch)
@@ -538,6 +541,7 @@ endfunction
 let g:lightline = {}
 let g:lightline.colorscheme = 'onedark'
 let g:lightline.component_function = {
+      \ 'cwd': 'MyLightlineDirectory',
       \ 'gitbranch': 'MyLightlineGitBranch',
       \ 'filetype': 'MyLightlineFileType',
       \ 'spell': 'MyLightlineSpell',
@@ -555,7 +559,7 @@ let g:lightline.component_type = {
 let g:lightline.active = {
       \ 'left' : [ [ 'mode', 'paste' ],
       \            [ 'relativepath', 'readonly', 'modified' ],
-      \            [ 'gitbranch' ] ],
+      \            [ 'cwd', 'gitbranch' ] ],
       \ 'right': [ [ 'linter_checking', 'lineinfo' ],
       \            [ 'linter_warnings', 'linter_errors', 'percent' ],
       \            [ 'spell', 'filetype' ] ]
