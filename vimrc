@@ -731,6 +731,16 @@ call <sid>highlight_onedark('ReduxKeywords', 'white')
 call <sid>highlight_onedark('tsxCloseTag', 'white')
 
 " -----------------------------------------------------------------------------
+" vim-markdown
+" -----------------------------------------------------------------------------
+call <sid>highlight_onedark('htmlH1', 'red')
+call <sid>highlight_onedark('htmlH2', 'green')
+call <sid>highlight_onedark('htmlH3', 'blue')
+call <sid>highlight_onedark('htmlH4', 'purple')
+call <sid>highlight_onedark('htmlH5', 'purple')
+call <sid>highlight_onedark('htmlH6', 'purple')
+
+" -----------------------------------------------------------------------------
 " vim-mailquery
 " -----------------------------------------------------------------------------
 let g:mailquery_folder = $HOME . '/Mail'
