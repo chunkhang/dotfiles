@@ -76,6 +76,7 @@ alias rgv='f() { vim -q <(rg --vimgrep $@) };f'
 alias cls='clear'
 alias lgrep='f() { l | grep $@ };f'
 alias tree='tree -C'
+alias v='vim'
 alias vi='vim'
 alias stack='git-stack'
 alias tweet='t update'
@@ -86,6 +87,7 @@ alias fd='fd --hidden'
 alias pt='papertrail'
 alias ncdu='ncdu --color=dark --confirm-quit'
 alias mutt='neomutt'
+alias tf='terraform'
 
 # }}}
 # =============================================================================
