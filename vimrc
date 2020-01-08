@@ -84,6 +84,7 @@ Plug 'vim-latex/vim-latex'
 Plug 'chunkhang/vim-mbsync'
 Plug 'chunkhang/msmtp.vim'
 Plug 'neomutt/neomutt.vim'
+Plug 'hashivim/vim-terraform'
 
 " -----------------------------------------------------------------------------
 " Linting
@@ -745,6 +746,11 @@ call <sid>highlight_onedark('htmlH3', 'blue')
 call <sid>highlight_onedark('htmlH4', 'purple')
 call <sid>highlight_onedark('htmlH5', 'purple')
 call <sid>highlight_onedark('htmlH6', 'purple')
+
+" -----------------------------------------------------------------------------
+" vim-terraform
+" -----------------------------------------------------------------------------
+let g:terraform_fmt_on_save = 1
 
 " -----------------------------------------------------------------------------
 " vim-mailquery
