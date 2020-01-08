@@ -94,6 +94,8 @@ Plug 'w0rp/ale'
 " -----------------------------------------------------------------------------
 " Writing
 " -----------------------------------------------------------------------------
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 Plug 'Konfekt/vim-mailquery'
 Plug 'vimwiki/vimwiki'
 if has('mac')
@@ -195,18 +197,6 @@ function! s:clear_empty_buffers()
   if !empty(buffers)
     execute 'bd '.join(buffers, ' ')
   endif
-endfunction
-
-" Set buffer into writing mode
-" https://www.drbunsen.org/writing-in-vim/
-function! s:enter_writing_mode()
-  setlocal formatoptions+=1awt
-  setlocal noexpandtab
-  setlocal spell
-  setlocal complete+=k
-  setlocal textwidth=72
-  setlocal linebreak
-  call SuperTabSetDefaultCompletionType('<c-n>')
 endfunction
 
 " Highlight group using onedark.vim colors
@@ -317,7 +307,6 @@ command! -range=% Gist call <sid>create_gist(<line1>, <line2>)
 command! -bang Ruler call <sid>toggle_ruler(<bang>0)
 command! -bang Spell call <sid>toggle_spell_check(<bang>0)
 command! -bang Trail call <sid>handle_trailing_whitespace(<bang>0)
-command! Write call <sid>enter_writing_mode()
 
 " }}}
 " =============================================================================
@@ -484,6 +473,12 @@ nnoremap <leader>t= :Tabularize assignment<cr>
 vnoremap <leader>t= :Tabularize assignment<cr>
 nnoremap <leader>t: :Tabularize /:<cr>
 vnoremap <leader>t: :Tabularize /:<cr>
+
+" -----------------------------------------------------------------------------
+" goyo.vim
+" -----------------------------------------------------------------------------
+nnoremap <leader>g :Goyo<cr>
+nnoremap <leader>G :Goyo!<cr>
 
 " -----------------------------------------------------------------------------
 " dictionary.vim
@@ -771,6 +766,51 @@ let g:ale_linters = {
 call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
 
 " -----------------------------------------------------------------------------
+" goyo.vim
+" https://github.com/junegunn/goyo.vim/wiki/Customization
+" https://www.drbunsen.org/writing-in-vim/
+" -----------------------------------------------------------------------------
+let g:goyo_linenr = 1
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  augroup vimrc
+    autocmd QuitPre <buffer> let b:quitting = 1
+  augroup END
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+  set scrolloff=999
+  set nocursorline
+  set showtabline=0
+  set formatoptions+=1awt
+  set noexpandtab
+  set spell
+  set complete+=k
+  set textwidth=72
+  set linebreak
+  call SuperTabSetDefaultCompletionType('<c-n>')
+  Limelight
+endfunction
+function! s:goyo_leave()
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+  Limelight!
+endfunction
+augroup vimrc
+  autocmd! User GoyoEnter call <SID>goyo_enter()
+  autocmd! User GoyoLeave call <SID>goyo_leave()
+augroup END
+
+" -----------------------------------------------------------------------------
+" limelight.vim
+" -----------------------------------------------------------------------------
+let g:limelight_priority = -1
+
+" -----------------------------------------------------------------------------
 " vimwiki
 " -----------------------------------------------------------------------------
 let g:vimwiki_map_prefix = '<leader><leader>'
@@ -797,7 +837,6 @@ function! s:reindex_diary()
 endfunction
 augroup vimrc
   autocmd BufEnter */diary/index.wiki call <sid>reindex_diary()
-  autocmd BufEnter */diary/????-??-??.wiki call <sid>enter_writing_mode()
   autocmd BufWritePre */diary/????-??-??.wiki normal! gggqG}zz
   " Non-conflicting key to invoke vim-dirvish
   autocmd FileType vimwiki nnoremap \ :Dirvish<cr>
