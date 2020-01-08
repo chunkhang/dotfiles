@@ -166,6 +166,7 @@ set regexpengine=1
 set shellcmdflag=-l\ -c
 set maxmempattern=5000
 set complete-=t
+set iskeyword+=-
 if executable('par')
   set formatprg=par
 endif
