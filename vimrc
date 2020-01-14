@@ -771,15 +771,9 @@ call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
 " -----------------------------------------------------------------------------
 let g:goyo_linenr = 1
 function! s:goyo_enter()
-  let b:quitting = 0
-  let b:quitting_bang = 0
-  augroup vimrc
-    autocmd QuitPre <buffer> let b:quitting = 1
-  augroup END
-  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+  set showtabline=0
   set scrolloff=999
   set nocursorline
-  set showtabline=0
   set formatoptions+=1awt
   set noexpandtab
   set spell
@@ -787,6 +781,13 @@ function! s:goyo_enter()
   set textwidth=72
   set linebreak
   call SuperTabSetDefaultCompletionType('<c-n>')
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  augroup vimrc
+    autocmd QuitPre <buffer> let b:quitting = 1
+    autocmd BufAdd,TabEnter * set showtabline=0
+  augroup END
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
   Limelight
 endfunction
 function! s:goyo_leave()
