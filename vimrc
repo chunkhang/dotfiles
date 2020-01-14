@@ -478,7 +478,6 @@ vnoremap <leader>t: :Tabularize /:<cr>
 " goyo.vim
 " -----------------------------------------------------------------------------
 nnoremap <leader>g :Goyo<cr>
-nnoremap <leader>G :Goyo!<cr>
 
 " -----------------------------------------------------------------------------
 " dictionary.vim
