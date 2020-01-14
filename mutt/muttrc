@@ -206,16 +206,16 @@ set mbox_type = Maildir
 # Personal
 mailboxes "Personal [p]"
 mailboxes =personal/inbox
-mailboxes =personal/drafts
 mailboxes =personal/sent
+mailboxes =personal/drafts
 mailboxes =personal/trash
 mailboxes =personal/archive
 
 # Work
 mailboxes "Work [w]"
 mailboxes =work/inbox
-mailboxes =work/drafts
 mailboxes =work/sent
+mailboxes =work/drafts
 mailboxes =work/trash
 mailboxes =work/archive
 
