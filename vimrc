@@ -874,10 +874,6 @@ augroup vimrc
   " Clear empty buffers when jumping to global marks
   autocmd BufWinEnter * call <sid>clear_empty_buffers()
 
-  " Auto comment
-  autocmd FileType * set formatoptions-=cro
-  autocmd FileType markdown,yaml set formatoptions+=cro
-
   " Indentation
   autocmd FileType go set softtabstop=0 tabstop=4 shiftwidth=4
   autocmd FileType snippets set expandtab
