@@ -395,7 +395,7 @@ nnoremap <silent> [l :lprev<cr>
 " Buffers
 " -----------------------------------------------------------------------------
 " Write buffer
-nnoremap <silent> <leader>w :update<cr>
+nnoremap <silent> <leader>w :write<cr>
 nnoremap <silent> <leader>W :wall<cr>
 " Refresh buffer
 nnoremap <silent> <leader>r :e<cr>
