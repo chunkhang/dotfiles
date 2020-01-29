@@ -222,6 +222,12 @@ function! s:create_gist(line1, line2)
   silent! execute '!pbpaste | xargs open'
 endfunction
 
+" Preview markdown on browser
+function! s:preview_markdown(line1, line2)
+  let l:range = ':' . a:line1 . ',' . a:line2
+  silent! execute 'normal! ' . l:range . "write !~/.scripts/pandoc/browser\<cr>"
+endfunction
+
 " Toggle column to show where folds are
 function! s:toggle_fold_column(bang)
   if a:bang
@@ -304,6 +310,7 @@ endfunction
 
 command! -bang Fold call <sid>toggle_fold_column(<bang>0)
 command! -range=% Gist call <sid>create_gist(<line1>, <line2>)
+command! -range=% Preview call <sid>preview_markdown(<line1>, <line2>)
 command! -bang Ruler call <sid>toggle_ruler(<bang>0)
 command! -bang Spell call <sid>toggle_spell_check(<bang>0)
 command! -bang Trail call <sid>handle_trailing_whitespace(<bang>0)

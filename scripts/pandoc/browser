@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+if [ -t 0  ]; then
+  if [ -n "$1" ]; then
+    open "$1"
+    exit 0
+  fi
+  cat <<EOF
+Preview markdown in browser
+$ browser example.md
+$ cat example.md | browser
+EOF
+exit 0
+fi
+
+filepath="${TMPDIR}${RANDOM}.html"
+
+cat "$@" | pandoc --from gfm --to html > "$filepath"
+open "$filepath"
