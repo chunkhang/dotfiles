@@ -7,6 +7,7 @@ text/html; w3m -I %{charset} -T text/html; copiousoutput
 image/png; open %s; nametemplate=%s.png; needsterminal
 image/jpeg; open %s; nametemplate=%s.jpg; needsterminal
 
-application/*; open %s; needsterminal
+application/json; vim %s; nametemplate=%s.json
 application/pdf; open %s; nametemplate=%s.pdf; needsterminal
 application/ics; open %s; nametemplate=%s.ics; needsterminal
+application/*; open %s; needsterminal
