@@ -12,6 +12,8 @@
 !yarn.lock
 --glob
 !Podfile.lock
+--glob
+!*.svg
 
 # Supress ignore messages
 # https://github.com/BurntSushi/ripgrep/issues/373#issuecomment-385168887
