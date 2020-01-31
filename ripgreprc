@@ -3,7 +3,7 @@
 
 # Exclude files or folders
 --glob
-!.git/*
+!.git/
 --glob
 !package-lock.json
 --glob
