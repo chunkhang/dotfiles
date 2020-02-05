@@ -17,21 +17,11 @@ local pyenv_virtualenv_info='$((){
     fi
 })'
 
-# Vim
-local vim_info='$((){
-    if [[ $VIMRUNTIME != "" ]]; then
-        echo "[vim]"
-    else
-        echo ""
-    fi
-})'
-
 # Prompt
 local prompt_sign="$"
 
 PROMPT="\
 %{$fg[yellow]%}${current_dir} \
 ${git_info} \
-%{$fg[white]%}${pyenv_virtualenv_info}\
-%{$fg[white]%}${vim_info}
+%{$fg[white]%}${pyenv_virtualenv_info}
 %{$fg[white]%}${prompt_sign} %{$reset_color%}"
