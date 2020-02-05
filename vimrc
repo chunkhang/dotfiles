@@ -15,7 +15,7 @@ Plug 'maximbaz/lightline-ale'
 Plug 'kshenoy/vim-signature'
 Plug 'bagrat/vim-buffet'
 Plug 'ryanoasis/vim-devicons'
-if has('mac')
+if has('mac') && !has('nvim')
   Plug 'sjl/vitality.vim'
 endif
 if v:version >= 801
