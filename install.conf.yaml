@@ -6,6 +6,7 @@
 
 - link:
     ~/.bash_profile:
+    ~/.config/nvim:
     ~/.ctags.d:
     ~/.eslintrc.js:
     ~/.fdignore:
