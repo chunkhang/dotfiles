@@ -3,7 +3,7 @@
   email = chunkhang@gmail.com
 
 [core]
-  editor = vim
+  editor = nvim
   excludesfile = ~/.gitignore_global
 
 [commit]
@@ -20,15 +20,15 @@
   trustExitCode = true
 
 [merge]
-  tool = vim
+  tool = nvim
 
 [mergetool]
   prompt = false
   keepBackup = false
 
-[mergetool "vim"]
+[mergetool "nvim"]
   cmd = \
-    vim -R "$MERGED" "$BASE" "$LOCAL" "$REMOTE" \
+    nvim -R "$MERGED" "$BASE" "$LOCAL" "$REMOTE" \
     -c 'setlocal noreadonly splitbelow' \
     -c 'tab sbuffer 2 | sbuffer 3 | windo diffthis' \
     -c 'tab sbuffer 2 | sbuffer 4 | windo diffthis' \

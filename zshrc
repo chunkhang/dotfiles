@@ -51,7 +51,7 @@ alias gr='git rebase'
 alias gs='git status'
 alias gu='git pull'
 alias gw='f() { git show $@ | cdiff -s -w 0 };f'
-alias gx='vim $(git diff --name-only --diff-filter=U)'
+alias gx='nvim $(git diff --name-only --diff-filter=U)'
 
 # ------------------------------------------------------------------------------
 # Docker
@@ -68,7 +68,7 @@ alias dkb='docker-compose build'
 # Ripgrep
 # ------------------------------------------------------------------------------
 alias rgl='f() { rg --pretty $@ | less };f'
-alias rgv='f() { vim -q <(rg --vimgrep $@) };f'
+alias rgv='f() { nvim -q <(rg --vimgrep $@) };f'
 
 # ------------------------------------------------------------------------------
 # Miscellaneous
@@ -76,8 +76,7 @@ alias rgv='f() { vim -q <(rg --vimgrep $@) };f'
 alias cls='clear'
 alias lgrep='f() { l | grep $@ };f'
 alias tree='tree -C'
-alias v='vim'
-alias vi='vim'
+alias v='nvim'
 alias stack='git-stack'
 alias tweet='t update'
 alias wiki='vim $HOME/Dropbox/wiki/index.wiki'
