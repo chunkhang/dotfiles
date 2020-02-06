@@ -144,7 +144,7 @@ unset markers
 # =============================================================================
 
 # Editor
-set editor = "vim"
+set editor = "nvim"
 
 # Show headers in editor
 set edit_headers

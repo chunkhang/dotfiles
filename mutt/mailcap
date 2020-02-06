@@ -1,13 +1,13 @@
-multipart/alternative; vim %s; nametemplate=%s.txt
+multipart/alternative; nvim %s; nametemplate=%s.txt
 
-text/plain; vim %s; nametemplate=%s.txt
+text/plain; nvim %s; nametemplate=%s.txt
 text/html; open %s; nametemplate=%s.html; needsterminal
 text/html; w3m -I %{charset} -T text/html; copiousoutput
 
 image/png; open %s; nametemplate=%s.png; needsterminal
 image/jpeg; open %s; nametemplate=%s.jpg; needsterminal
 
-application/json; vim %s; nametemplate=%s.json
+application/json; nvim %s; nametemplate=%s.json
 application/pdf; open %s; nametemplate=%s.pdf; needsterminal
 application/ics; open %s; nametemplate=%s.ics; needsterminal
 application/*; open %s; needsterminal
