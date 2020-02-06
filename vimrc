@@ -652,7 +652,7 @@ let g:switch_custom_definitions = [
 " Colorizer
 " -----------------------------------------------------------------------------
 let g:colorizer_fgcontrast = 0
-:let g:colorizer_colornames = 0
+let g:colorizer_colornames = 0
 
 " -----------------------------------------------------------------------------
 " vim-gutentags
