@@ -19,10 +19,10 @@ Plug 'maximbaz/lightline-ale'
 Plug 'kshenoy/vim-signature'
 Plug 'bagrat/vim-buffet'
 Plug 'ryanoasis/vim-devicons'
-if has('mac') && !has('nvim')
+if !has('nvim') && has('mac')
   Plug 'sjl/vitality.vim'
 endif
-if v:version >= 801
+if (has('nvim') && has('nvim-0.2.3')) || v:version >= 801
   Plug 'markonm/traces.vim'
 endif
 Plug 'machakann/vim-highlightedyank'
@@ -421,11 +421,19 @@ nnoremap <silent> <leader><up> :call <sid>split_window('up')<cr>
 nnoremap <C-k> <C-W>k
 nnoremap <C-h> <C-W>h
 nnoremap <C-l> <C-W>l
+if has('nvim')
+  tnoremap <C-k> <C-\><C-n><C-w>k
+  tnoremap <C-h> <C-\><C-n><C-w>h
+  tnoremap <C-l> <C-\><C-n><C-w>l
+endif
 augroup vimrc
   " Map this way because of vim-latex
   " https://stackoverflow.com/a/31502538
   autocmd VimEnter * unmap <C-j>
   autocmd VimEnter * nnoremap <C-j> <C-w>j
+  if has('nvim')
+    autocmd VimEnter * tnoremap <C-j> <C-\><C-n><C-w>j
+  endif
 augroup END
 
 " -----------------------------------------------------------------------------
@@ -442,7 +450,12 @@ nnoremap <silent> <leader>/ :nohlsearch<cr>
 " Clear all marks
 nnoremap <silent> <leader>m :call <sid>clear_marks()<cr>
 " Open shell
-nnoremap <silent> <leader>z :shell<cr>
+if has('nvim')
+  nnoremap <silent> <leader>z :terminal<cr>
+  tnoremap <esc> <C-\><C-n>
+else
+  nnoremap <silent> <leader>z :shell<cr>
+endif
 " Force last command
 nnoremap ! :<up>!
 
@@ -892,6 +905,11 @@ augroup vimrc
 
   " Disable cursor line for diff mode
   autocmd BufEnter * if &diff | set nocursorline | endif
+
+  " Start insert mode automatically in terminal
+  if has('nvim')
+    autocmd TermOpen * startinsert
+  endif
 
 augroup END
 
