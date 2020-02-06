@@ -1,5 +1,9 @@
 " vim: set foldmethod=marker nomodeline:
 
+" Executable dependencies:
+" - par: http://www.nicemice.net/par/
+" - rg: https://github.com/BurntSushi/ripgrep
+
 " =============================================================================
 " VIM-PLUG {{{
 " =============================================================================
@@ -164,9 +168,8 @@ set shellcmdflag=-l\ -c
 set maxmempattern=5000
 set complete-=t
 set iskeyword+=-
-if executable('par')
-  set formatprg=par
-endif
+set formatprg=par
+set grepprg=rg\ --vimgrep
 
 " Fallback to bash syntax
 " https://redd.it/4xb0fg
@@ -606,9 +609,7 @@ let g:ctrlp_prompt_mappings = {
       \ 'PrtClearCache()': ['<c-p>'],
       \ }
 let g:ctrlp_open_multiple_files = 'i'
-if executable('rg')
-  let g:ctrlp_user_command = 'rg %s --files --color=never'
-endif
+let g:ctrlp_user_command = 'rg %s --files --color=never'
 
 " -----------------------------------------------------------------------------
 " ctrlsf.vim
@@ -624,9 +625,7 @@ let g:ctrlsf_auto_close = {
 let g:ctrlsf_indent = 2
 let g:ctrlsf_regex_pattern = 1
 let g:ctrlsf_populate_qflist = 1
-if executable('rg')
-  let g:ctrlsf_ackprg = 'rg'
-endif
+let g:ctrlsf_ackprg = 'rg'
 
 " -----------------------------------------------------------------------------
 " splitjoin.vim
