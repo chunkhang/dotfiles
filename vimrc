@@ -884,8 +884,11 @@ augroup vimrc
   autocmd BufNewFile,BufRead .muttrc,muttrc set filetype=neomuttrc
   autocmd BufNewFile,BufRead .tags set filetype=tags
 
-  " Easier to quit help, quickfix and location window
+  " Easier to quit help, quickfix and terminal windows
   autocmd FileType help,qf noremap <silent> <buffer> q :q<cr>
+  if has('nvim')
+    autocmd TermOpen * noremap <silent> <buffer> q :q<cr>
+  endif
 
   " Clear empty buffers when jumping to global marks
   autocmd BufWinEnter * call <sid>clear_empty_buffers()
@@ -909,6 +912,7 @@ augroup vimrc
   " Start insert mode automatically in terminal
   if has('nvim')
     autocmd TermOpen * startinsert
+    autocmd BufEnter term://* startinsert
   endif
 
 augroup END
