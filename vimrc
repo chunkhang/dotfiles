@@ -10,6 +10,14 @@
 
 call plug#begin('~/.vim/plugged')
 
+" Conditional activation for plugins
+" https://github.com/junegunn/vim-plug/wiki/tips#conditional-activation
+" https://github.com/junegunn/vim-plug/issues/640#issuecomment-307007055
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
 " -----------------------------------------------------------------------------
 " Appearance
 " -----------------------------------------------------------------------------
@@ -19,12 +27,8 @@ Plug 'maximbaz/lightline-ale'
 Plug 'kshenoy/vim-signature'
 Plug 'bagrat/vim-buffet'
 Plug 'ryanoasis/vim-devicons'
-if !has('nvim') && has('mac')
-  Plug 'sjl/vitality.vim'
-endif
-if (has('nvim') && has('nvim-0.2.3')) || v:version >= 801
-  Plug 'markonm/traces.vim'
-endif
+Plug 'sjl/vitality.vim', Cond(has('mac') && !has('nvim'))
+Plug 'markonm/traces.vim', Cond(has('nvim-0.2.3') \|\| v:version >= 801)
 Plug 'machakann/vim-highlightedyank'
 if !exists('##TextYankPost')
   map y <Plug>(highlightedyank)
@@ -55,9 +59,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
-if has('python') || has('python3')
-  Plug 'SirVer/ultisnips'
-endif
+Plug 'SirVer/ultisnips', Cond(has('python') \|\| has('python3'))
 
 " -----------------------------------------------------------------------------
 " Git
@@ -103,12 +105,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'Konfekt/vim-mailquery'
 Plug 'vimwiki/vimwiki'
-if has('mac')
-  Plug 'itchyny/dictionary.vim'
-endif
-if has('python') || has('python3')
-  Plug 'Ron89/thesaurus_query.vim'
-endif
+Plug 'itchyny/dictionary.vim', Cond(has('mac'))
+Plug 'Ron89/thesaurus_query.vim', Cond(has('python') \|\| has('python3'))
 
 call plug#end()
 
