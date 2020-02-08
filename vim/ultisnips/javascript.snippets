@@ -94,14 +94,12 @@ endsnippet
 
 snippet desc
 describe('$1', () => {
-  it('$2', (done) => {
-    $3
-  })
+  $2
 })
 endsnippet
 
 snippet it
-it('$1', (done) => {
+it('$1', async () => {
   $2
 })
 endsnippet
