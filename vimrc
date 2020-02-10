@@ -68,6 +68,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'mhinz/vim-signify'
 Plug 'rhysd/conflict-marker.vim'
+Plug 'rhysd/git-messenger.vim'
 
 " -----------------------------------------------------------------------------
 " Language
@@ -481,6 +482,11 @@ nnoremap <leader>C :ColorContrast<cr>
 nnoremap <silent> <leader>u :edit ~/.vim/ultisnips<cr>
 
 " -----------------------------------------------------------------------------
+" git-messenger
+" -----------------------------------------------------------------------------
+nmap <leader>b <Plug>(git-messenger)
+
+" -----------------------------------------------------------------------------
 " tabular
 " -----------------------------------------------------------------------------
 nnoremap <leader>t :Tabularize
@@ -683,6 +689,11 @@ let g:dirvish_relative_paths = 1
 let g:localvimrc_persistent = 1
 
 " -----------------------------------------------------------------------------
+" vim-bufkill
+" -----------------------------------------------------------------------------
+let g:BufKillCreateMappings = 0
+
+" -----------------------------------------------------------------------------
 " vim-commentary
 " -----------------------------------------------------------------------------
 augroup vimrc
@@ -712,6 +723,12 @@ let g:signify_vcs_list = ['git']
 let g:signify_sign_change = '~'
 let g:signify_sign_delete = '-'
 let g:signify_sign_show_count = 0
+
+" -----------------------------------------------------------------------------
+" git-messenger.vim
+" -----------------------------------------------------------------------------
+let g:git_messenger_no_default_mappings = v:true
+let g:git_messenger_always_into_popup = v:true
 
 " -----------------------------------------------------------------------------
 " vim-go
