@@ -703,6 +703,7 @@ let g:UltiSnipsEditSplit = 'context'
 augroup vimrc
   autocmd VimEnter * autocmd! UltiSnips_AutoTrigger
 augroup END
+call <sid>highlight_onedark('snipLeadingSpaces', 'black')
 
 " -----------------------------------------------------------------------------
 " vim-signify
