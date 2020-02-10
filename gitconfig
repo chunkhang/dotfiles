@@ -42,7 +42,9 @@
     !git commit --amend --no-edit --quiet && \
     git reset --hard @{u}
   housekeeping = \
-    !git branch --merged | grep -vE 'develop|master|staging' | xargs git branch -d && \
+    !git checkout master && \
+    git pull && \
+    git branch --merged | grep -vE 'develop|master|staging|release' | xargs git branch -d && \
     git fetch --prune && \
     git reflog expire --expire-unreachable=now --all && \
     git gc --prune=now --aggressive
