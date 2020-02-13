@@ -11,11 +11,6 @@ for url in "$@"; do
     browser="$chrome"
   fi
 
-  if [[ "$url" =~ "https://zoom\.us/.*" ]]; then
-    browser="$chrome"
-    url=$(echo "$url" | sed 's/\/j\//\/wc\//' | sed 's/?/\/join?/')
-  fi
-
   # Open url
   open -a "$browser" "$url"
 done
