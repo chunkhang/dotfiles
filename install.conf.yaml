@@ -7,6 +7,7 @@
 - link:
     ~/.bash_profile:
     ~/.config/nvim:
+    ~/.config/ranger:
     ~/.ctags.d:
     ~/.eslintrc.js:
     ~/.fdignore:
