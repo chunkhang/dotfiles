@@ -76,6 +76,7 @@ Plug 'rhysd/git-messenger.vim'
 Plug 'neoclide/vim-jsx-improve'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+Plug 'jxnblk/vim-mdx-js'
 Plug 'jparise/vim-graphql'
 Plug 'kchmck/vim-coffee-script'
 Plug 'hail2u/vim-css3-syntax'
@@ -899,6 +900,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead .zprofile,zprofile set filetype=zsh
   autocmd BufNewFile,BufRead .muttrc,muttrc set filetype=neomuttrc
   autocmd BufNewFile,BufRead .tags set filetype=tags
+  autocmd BufNewFile,BufRead *.mdx set filetype=javascript.mdx
 
   " Easier to quit help, quickfix and terminal windows
   autocmd FileType help,qf noremap <silent> <buffer> q :q<cr>
@@ -912,6 +914,7 @@ augroup vimrc
   " Indentation
   autocmd FileType go set softtabstop=0 tabstop=4 shiftwidth=4
   autocmd FileType snippets set expandtab
+  autocmd FileType javascript.mdx set shiftwidth=2
 
   " Folding
   autocmd Filetype yaml set foldmethod=indent
