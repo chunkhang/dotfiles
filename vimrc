@@ -900,6 +900,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead .zprofile,zprofile set filetype=zsh
   autocmd BufNewFile,BufRead .muttrc,muttrc set filetype=neomuttrc
   autocmd BufNewFile,BufRead .tags set filetype=tags
+  autocmd BufNewFile,BufRead Podfile set filetype=conf
   autocmd BufNewFile,BufRead *.mdx set filetype=javascript.mdx
 
   " Easier to quit help, quickfix and terminal windows
