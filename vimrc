@@ -916,6 +916,7 @@ augroup vimrc
   autocmd FileType go set softtabstop=0 tabstop=4 shiftwidth=4
   autocmd FileType snippets set expandtab
   autocmd FileType javascript.mdx set shiftwidth=2
+  autocmd BufNewFile,BufRead Info.plist set noexpandtab shiftwidth=0
 
   " Folding
   autocmd Filetype yaml set foldmethod=indent
