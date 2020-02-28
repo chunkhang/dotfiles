@@ -19,3 +19,6 @@
 [submodule "zsh/oh-my-zsh"]
 	path = zsh/oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "zsh/zsh-abbr"]
+	path = zsh/zsh-abbr
+	url = https://github.com/olets/zsh-abbr.git
