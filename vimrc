@@ -29,6 +29,7 @@ Plug 'bagrat/vim-buffet'
 Plug 'ryanoasis/vim-devicons'
 Plug 'sjl/vitality.vim', Cond(has('mac') && !has('nvim'))
 Plug 'markonm/traces.vim', Cond(has('nvim-0.2.3') \|\| v:version >= 801)
+Plug 'camspiers/lens.vim'
 Plug 'machakann/vim-highlightedyank'
 if !exists('##TextYankPost')
   map y <Plug>(highlightedyank)
