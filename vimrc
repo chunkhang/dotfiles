@@ -731,6 +731,17 @@ let g:signify_sign_show_count = 0
 " -----------------------------------------------------------------------------
 let g:git_messenger_no_default_mappings = v:true
 let g:git_messenger_always_into_popup = v:true
+highlight! link gitmessengerPopupNormal CursorLine
+highlight! link gitmessengerHeader Statement
+highlight! link gitmessengerHash Special
+highlight! link gitmessengerHistory Title
+function! s:setup_git_messenger_popup()
+    nmap <buffer><tab> o
+    nmap <buffer><S-tab> O
+endfunction
+augroup vimrc
+  autocmd FileType gitmessengerpopup call <SID>setup_git_messenger_popup()
+augroup END
 
 " -----------------------------------------------------------------------------
 " vim-go
