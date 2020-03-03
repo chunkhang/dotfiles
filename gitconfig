@@ -47,8 +47,8 @@
   housekeeping = \
     !git checkout master && \
     git pull && \
-    git branch --merged | grep -vE 'develop|master|staging|release' | xargs git branch -d && \
     git fetch --prune && \
+    git branch --verbose | grep '\\[gone\\]' | awk '{print $1}' | xargs git branch --delete --force && \
     git reflog expire --expire-unreachable=now --all && \
     git gc --prune=now --aggressive
   pr = \
