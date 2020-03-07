@@ -383,6 +383,7 @@ alias rgv='f() { nvim -q <(rg --vimgrep "$@") }; f'
 # Miscellaneous
 # ------------------------------------------------------------------------------
 
+alias \?='echo "$?"'
 alias cls='clear'
 alias fd='fd --hidden'
 alias hp='http-prompt'
