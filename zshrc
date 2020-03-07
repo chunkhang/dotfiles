@@ -262,32 +262,43 @@ function wifi() {
 # ALIASES {{{
 # =============================================================================
 
-typeset -a abbreviations
-abbr_abbreviations=()
+typeset -a _abbr_abbreviations
+_abbr_abbreviations=()
 
-typeset -a abbr_history
-abbr_history=()
+typeset -a _abbr_history
+_abbr_history=()
 
 function abbr() {
   if [[ "$#" = 0 ]]; then
-    echo "${(j/\n/)abbr_history}"
+    echo "${(j/\n/)_abbr_history}"
   else
     alias "$1"
-    abbr_abbreviations+=("${1%%=*}")
-    abbr_history+=("$1")
+    _abbr_abbreviations+=("${1%%=*}")
+    _abbr_history+=("$1")
   fi
 }
 
-function expand-abbreviation() {
-  if [[ "$LBUFFER" =~ "^(${(j/|/)abbr_abbreviations})$" ]]; then
+function _abbr_expand() {
+  if [[ "$LBUFFER" =~ "^(${(j/|/)_abbr_abbreviations})$" ]]; then
     zle _expand_alias
   fi
+}
+zle -N _abbr_expand
+
+function _abbr_space() {
+  zle _abbr_expand
   zle self-insert
 }
+zle -N _abbr_space
 
-zle -N expand-abbreviation
+function _abbr_enter() {
+  zle _abbr_expand
+  zle accept-line
+}
+zle -N _abbr_enter
 
-bindkey ' ' expand-abbreviation
+bindkey ' ' _abbr_space
+bindkey '^M' _abbr_enter
 bindkey '^ ' magic-space
 bindkey -M isearch ' ' magic-space
 
