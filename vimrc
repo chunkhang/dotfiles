@@ -922,8 +922,8 @@ augroup vimrc
   autocmd BufNewFile,BufRead *.mdx set filetype=javascript.mdx
   autocmd BufNewFile,BufRead gitconfig set filetype=toml
 
-  " Easier to quit help, quickfix and terminal windows
-  autocmd FileType help,qf noremap <silent> <buffer> q :q<cr>
+  " Easier to quit certain windows
+  autocmd FileType help,qf,godoc noremap <silent> <buffer> q :q<cr>
   if has('nvim')
     autocmd TermOpen * noremap <silent> <buffer> q :q<cr>
   endif
