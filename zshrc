@@ -351,6 +351,9 @@ abbr gri='git rebase --interactive'
 
 abbr gcp='git cherry-pick'
 
+abbr gst='git stash'
+abbr gstp='git stash pop'
+
 abbr gw='git show'
 alias gww='() { git show "$@" | cdiff -s -w 0 }'
 
