@@ -16,11 +16,16 @@
   rebase = true
 
 [diff]
-  tool = vimdiff
+  tool = nvim
 
 [difftool]
   prompt = true
   trustExitCode = true
+
+[difftool "nvim"]
+  cmd = \
+    nvim -d "$LOCAL" "$REMOTE" \
+    -c 'wincmd l'
 
 [merge]
   tool = nvim
