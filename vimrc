@@ -331,8 +331,8 @@ nnoremap <space> <nop>
 " Moving
 " -----------------------------------------------------------------------------
 " Page down and up
-nnoremap <C-m> 3<C-y>
-nnoremap <C-n> 3<C-e>
+nnoremap <C-up> 5<C-y>
+nnoremap <C-down> 5<C-e>
 " Visual line down and up
 nnoremap j gj
 nnoremap k gk
