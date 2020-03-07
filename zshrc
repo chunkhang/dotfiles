@@ -1,5 +1,23 @@
 # vim: set foldmethod=marker:
 
+# =============================================================================
+# OPTIONS {{{
+# =============================================================================
+
+# https://github.com/rothgar/mastering-zsh/blob/master/docs/config/history.md
+setopt EXTENDED_HISTORY
+setopt INC_APPEND_HISTORY
+setopt SHARE_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_VERIFY
+setopt APPEND_HISTORY
+setopt HIST_NO_STORE
+
 # }}}
 # =============================================================================
 # PLUGINS {{{
@@ -325,8 +343,8 @@ abbr gcm='git commit --message'
 
 abbr gd='git diff'
 abbr gdc='git diff --cached'
-alias gdd='f() { git diff "$@" | cdiff -s -w 0 }; f'
-alias gdcc='f() { git diff --cached "$@" | cdiff -s -w 0 }; f'
+alias gdd='() { git diff "$@" | cdiff -s -w 0 }'
+alias gdcc='() { git diff --cached "$@" | cdiff -s -w 0 }'
 
 abbr gr='git rebase'
 abbr gri='git rebase --interactive'
@@ -334,7 +352,7 @@ abbr gri='git rebase --interactive'
 abbr gcp='git cherry-pick'
 
 abbr gw='git show'
-alias gww='f() { git show "$@" | cdiff -s -w 0 }; f'
+alias gww='() { git show "$@" | cdiff -s -w 0 }'
 
 alias gl='git log --oneline --decorate --color --graph --all --first-parent'
 alias gll='git log --oneline --decorate --color --graph --all'
@@ -376,8 +394,8 @@ abbr dkk='docker-compose kill'
 # Ripgrep
 # ------------------------------------------------------------------------------
 
-alias rgl='f() { rg --pretty "$@" | less }; f'
-alias rgv='f() { nvim -q <(rg --vimgrep "$@") }; f'
+alias rgl='() { rg --pretty "$@" | less }'
+alias rgv='() { nvim -q <(rg --vimgrep "$@") }'
 
 # ------------------------------------------------------------------------------
 # Miscellaneous
@@ -387,7 +405,7 @@ alias \?='echo "$?"'
 alias cls='clear'
 alias fd='fd --hidden'
 alias hp='http-prompt'
-alias lgrep='f() { l | grep "$@" }; f'
+alias lgrep='() { l | grep "$@" }'
 alias mutt='neomutt'
 alias ncdu='ncdu --color=dark --confirm-quit'
 alias pt='papertrail'
