@@ -357,8 +357,9 @@ abbr gstp='git stash pop'
 abbr gw='git show'
 alias gww='() { git show "$@" | cdiff -s -w 0 }'
 
-alias gl='git log --oneline --decorate --color --graph --all --first-parent'
-alias gll='git log --oneline --decorate --color --graph --all'
+abbr gl='git log'
+alias gll='git log --oneline --decorate --color --graph --all --first-parent'
+alias glll='git log --oneline --decorate --color --graph --all'
 
 abbr gm='git merge'
 
