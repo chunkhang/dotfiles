@@ -425,7 +425,7 @@ alias wiki='nvim $HOME/Dropbox/wiki/index.wiki'
 # =============================================================================
 
 function _nvm_use() {
-  if [[ -a .nvmrc ]]; then
+  if [[ -f .nvmrc ]]; then
     nvm use
   fi
 }

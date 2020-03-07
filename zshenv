@@ -60,6 +60,6 @@ export PATH
 # LOCAL
 # =============================================================================
 
-if [ -f $HOME/.zlocal ]; then
-  source $HOME/.zlocal
+if [[ -f "$HOME/.zlocal" ]]; then
+  source "$HOME/.zlocal"
 fi
