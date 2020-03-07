@@ -1,8 +1,13 @@
 # vim: set foldmethod=marker:
 
+# }}}
 # =============================================================================
-# OH MY ZSH {{{
+# PLUGINS {{{
 # =============================================================================
+
+# -----------------------------------------------------------------------------
+# Oh My Zsh
+# -----------------------------------------------------------------------------
 
 export ZSH=$HOME/.zsh/oh-my-zsh
 export ZSH_CUSTOM=$HOME/.zsh/oh-my-zsh-custom
@@ -10,82 +15,52 @@ export ZSH_THEME=marcus
 export DISABLE_AUTO_TITLE=true
 export DISABLE_AUTO_UPDATE=true
 
+plugins+=(colored-man-pages)
+
+source $ZSH/oh-my-zsh.sh
+
+# -----------------------------------------------------------------------------
+# z
+# -----------------------------------------------------------------------------
+
+source /usr/local/etc/profile.d/z.sh
+
+# -----------------------------------------------------------------------------
+# zmv
+# -----------------------------------------------------------------------------
+
+autoload zmv
+
+# -----------------------------------------------------------------------------
+# fzf
+# -----------------------------------------------------------------------------
+
+FZF_DEFAULT_COMMAND='rg --files --color=never'
+FZF_CTRL_R_OPTS='--exact'
+FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+FZF_CTRL_T_OPTS="--select-1 --exit-0"
+FZF_ALT_C_COMMAND='fd --type directory'
+FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C -L 1 {} | head -200'"
+
+source /usr/local/opt/fzf/shell/key-bindings.zsh
+
+# -----------------------------------------------------------------------------
+# Syntax highlighting
+# -----------------------------------------------------------------------------
+
+ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets)
+ZSH_HIGHLIGHT_MAXLENGTH=60
+
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 # }}}
 # =============================================================================
-# ALIASES {{{
+# COMPLETIONS {{{
 # =============================================================================
 
-# ------------------------------------------------------------------------------
-# Pyenv
-# ------------------------------------------------------------------------------
-alias activate='pyenv activate'
-alias deactivate='pyenv deactivate'
-alias lsvenv='pyenv virtualenvs'
-alias mkvenv='pyenv virtualenv'
-alias rmvenv='pyenv uninstall'
-
-# ------------------------------------------------------------------------------
-# Git
-# ------------------------------------------------------------------------------
-alias ga='f() { git add $@ };f'
-alias gap='f() { git add -p $@ };f'
-alias gb='git branch'
-alias gc='git commit'
-alias gca='git commit --amend'
-alias gcm='f() { git commit -m $@ };f'
-alias gcp='f() { git cherry-pick $@ };f'
-alias gd='f() { git diff $@ | cdiff -s -w 0 };f'
-alias gdc='f() { git diff --cached $@ | cdiff -s -w 0 };f'
-alias gds='f() { git --no-pager diff --stat $1..@ };f'
-alias gdt='git difftool'
-alias gi='git init'
-alias gk='f() { git checkout $@ };f'
-alias gka='git checkout -- "*"'
-alias gl='git log --oneline --decorate --color --graph --all --first-parent'
-alias gm='f() { git merge $@ };f'
-alias gmt='git mergetool'
-alias gn='git open'
-alias gp='git push'
-alias gpu='git push --set-upstream origin $(git symbolic-ref --short HEAD)'
-alias gr='git rebase'
-alias gs='git status'
-alias gu='git pull'
-alias gw='f() { git show $@ | cdiff -s -w 0 };f'
-alias gx='nvim $(git diff --name-only --diff-filter=U)'
-
-# ------------------------------------------------------------------------------
-# Docker
-# ------------------------------------------------------------------------------
-alias dk='docker-compose'
-alias dkl='docker-compose logs'
-alias dkr='docker-compose restart'
-alias dku='docker-compose up'
-alias dkd='docker-compose down'
-alias dkk='docker-compose kill'
-alias dkb='docker-compose build'
-
-# ------------------------------------------------------------------------------
-# Ripgrep
-# ------------------------------------------------------------------------------
-alias rgl='f() { rg --pretty $@ | less };f'
-alias rgv='f() { nvim -q <(rg --vimgrep $@) };f'
-
-# ------------------------------------------------------------------------------
-# Miscellaneous
-# ------------------------------------------------------------------------------
-alias cls='clear'
-alias lgrep='f() { l | grep $@ };f'
-alias tree='tree -C'
-alias v='nvim'
-alias stack='git-stack'
-alias tweet='t update'
-alias wiki='nvim $HOME/Dropbox/wiki/index.wiki'
-alias hp='http-prompt'
-alias fd='fd --hidden'
-alias pt='papertrail'
-alias ncdu='ncdu --color=dark --confirm-quit'
-alias mutt='neomutt'
-alias tf='terraform'
+fpath=($HOME/.zsh/completions $fpath)
+autoload -Uz compinit
+compinit
 
 # }}}
 # =============================================================================
@@ -94,7 +69,7 @@ alias tf='terraform'
 
 # Perform operations on Bluetooth
 function blue() {
-  function showHelp() {
+  function show-help() {
     echo "usage: blue <command>"
     echo
     echo "commands:"
@@ -102,29 +77,29 @@ function blue() {
     echo "  enable     turn on Bluetooth"
     echo "  disable    turn off Bluetooth"
   }
-  function showStatus() {
+  function show-status() {
     s="Bluetooth is: $(blueutil status | cut -c 9-)"
     echo "$s"
   }
   if [ "$#" = 0 ]; then
-    showHelp
+    show-help
   else
     case "$1" in
       "status")
-        showStatus
+        show-status
         ;;
       "enable")
         echo "Enabling Bluetooth..."
         blueutil on
-        showStatus
+        show-status
         ;;
       "disable")
         echo "Disabling Bluetooth..."
         blueutil off
-        showStatus
+        show-status
         ;;
       *)
-        showHelp
+        show-help
         ;;
     esac
   fi
@@ -139,7 +114,7 @@ function clean() {
 
 # Perform operations on DNS
 function dns() {
-  function showHelp() {
+  function show-help() {
     echo "usage: dns <command>"
     echo
     echo "commands:"
@@ -148,26 +123,26 @@ function dns() {
     echo "  reset     reset DNS"
     echo "  flush     flush DNS cache"
   }
-  function showStatus() {
+  function show-status() {
     s="Current DNS:\n$(networksetup -getdnsservers Wi-Fi | sed 's/^/  /')"
     echo "$s"
   }
   if [ "$#" = 0 ]; then
-    showHelp
+    show-help
   else
     case "$1" in
       "status")
-        showStatus
+        show-status
         ;;
       "google")
         echo "Using Google DNS..."
         sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
-        showStatus
+        show-status
         ;;
       "reset")
         echo "Resetting DNS..."
         sudo networksetup -setdnsservers Wi-Fi empty
-        showStatus
+        show-status
         ;;
       "flush")
         echo "Flushing DNS cache..."
@@ -175,7 +150,7 @@ function dns() {
         echo "Done flushing."
         ;;
       *)
-        showHelp
+        show-help
         ;;
     esac
   fi
@@ -202,7 +177,7 @@ function eject() {
 
 # Perform operations on Gatekeeper
 function gate() {
-  function showHelp() {
+  function show-help() {
     echo "usage: gate <command>"
     echo
     echo "commands:"
@@ -210,29 +185,29 @@ function gate() {
     echo "  enable     turn on Gatekeeper"
     echo "  disable    turn off Gatekeeper"
   }
-  function showStatus() {
+  function show-status() {
     s="Gatekeeper is: $(spctl --status | cut -c 13-)"
     echo "$s"
   }
   if [ "$#" = 0 ]; then
-    showHelp
+    show-help
   else
     case "$1" in
       "status")
-        showStatus
+        show-status
         ;;
       "enable")
         echo "Enabling Gatekeeper..."
         sudo spctl --master-enable
-        showStatus
+        show-status
         ;;
       "disable")
         echo "Disabling Gatekeeper..."
         sudo spctl --master-disable
-        showStatus
+        show-status
         ;;
       *)
-        showHelp
+        show-help
         ;;
     esac
   fi
@@ -246,7 +221,7 @@ function refresh() {
 
 # Perform operations on Wi-Fi
 function wifi() {
-  function showHelp() {
+  function show-help() {
     echo "usage: wifi <command>"
     echo
     echo "commands:"
@@ -254,29 +229,29 @@ function wifi() {
     echo "  enable     turn on Wi-Fi"
     echo "  disable    turn off Wi-Fi"
   }
-  function showStatus() {
+  function show-status() {
       s="Wi-Fi is: $(networksetup -getairportpower en0 | cut -c 20- | tr O o)"
       echo "$s"
   }
   if [ "$#" = 0 ]; then
-    showHelp
+    show-help
   else
     case "$1" in
       "status")
-        showStatus
+        show-status
         ;;
       "enable")
         echo "Enabling Wi-Fi..."
         networksetup -setairportpower en0 on
-        showStatus
+        show-status
         ;;
       "disable")
         echo "Disabling Wi-Fi..."
         networksetup -setairportpower en0 off
-        showStatus
+        show-status
         ;;
       *)
-        showHelp
+        show-help
         ;;
     esac
   fi
@@ -284,51 +259,126 @@ function wifi() {
 
 # }}}
 # =============================================================================
-# PLUGINS {{{
+# ALIASES {{{
 # =============================================================================
 
-# -----------------------------------------------------------------------------
-# Oh My Zsh
-# -----------------------------------------------------------------------------
-plugins+=(colored-man-pages)
-source $ZSH/oh-my-zsh.sh
+typeset -a abbreviations
+abbreviations=()
+
+function abbr() {
+  alias "$1"
+  abbreviations+=("${1%%\=*}")
+}
+
+# ------------------------------------------------------------------------------
+# Git
+# ------------------------------------------------------------------------------
+
+abbr gk='git checkout'
+abbr gkb='git checkout -b'
+
+abbr gb='git branch'
+abbr gbm='git branch -m'
+abbr gbd='git branch -d'
+abbr gbdd='git branch -D'
+
+abbr gs='git status'
+
+abbr ga='git add'
+abbr gap='git add --patch'
+
+abbr gc='git commit'
+abbr gca='git commit --amend'
+abbr gcm='git commit --message'
+
+abbr gd='git diff'
+abbr gdc='git diff --cached'
+alias gdd='f() { git diff "$@" | cdiff -s -w 0 }; f'
+alias gdcc='f() { git diff --cached "$@" | cdiff -s -w 0 }; f'
+
+abbr gr='git rebase'
+abbr gri='git rebase --interactive'
+
+abbr gcp='git cherry-pick'
+
+abbr gw='git show'
+alias gww='f() { git show "$@" | cdiff -s -w 0 }; f'
+
+alias gl='git log --oneline --decorate --color --graph --all --first-parent'
+alias gll='git log --oneline --decorate --color --graph --all'
+
+abbr gm='git merge'
+
+abbr gp='git push'
+abbr gpf='git push --force'
+alias gpu='git push --set-upstream origin $(git symbolic-ref --short HEAD)'
+
+abbr gu='git pull'
+
+abbr gdt='git difftool'
+abbr gmt='git mergetool'
+
+abbr gn='git open'
+
+# ------------------------------------------------------------------------------
+# Docker
+# ------------------------------------------------------------------------------
+
+abbr dk='docker-compose'
+
+abbr dkb='docker-compose build'
+
+abbr dku='docker-compose up'
+abbr dkud='docker-compose up --detach'
+
+abbr dkd='docker-compose down'
+
+abbr dkl='docker-compose logs'
+abbr dklf='docker-compose logs --follow'
+
+abbr dkr='docker-compose restart'
+
+abbr dkk='docker-compose kill'
+
+# ------------------------------------------------------------------------------
+# Ripgrep
+# ------------------------------------------------------------------------------
+
+alias rgl='f() { rg --pretty "$@" | less }; f'
+alias rgv='f() { nvim -q <(rg --vimgrep "$@") }; f'
+
+# ------------------------------------------------------------------------------
+# Miscellaneous
+# ------------------------------------------------------------------------------
+
+alias cls='clear'
+alias fd='fd --hidden'
+alias hp='http-prompt'
+alias lgrep='f() { l | grep "$@" }; f'
+alias mutt='neomutt'
+alias ncdu='ncdu --color=dark --confirm-quit'
+alias pt='papertrail'
+alias tf='terraform'
+alias tree='tree -C'
+alias tweet='t update'
+alias v='nvim'
+alias wiki='nvim $HOME/Dropbox/wiki/index.wiki'
 
 # -----------------------------------------------------------------------------
-# z
+# https://github.com/zigius/expand-ealias.plugin.zsh
+# https://github.com/rothgar/mastering-zsh/blob/master/docs/helpers/aliases.md
 # -----------------------------------------------------------------------------
-source /usr/local/etc/profile.d/z.sh
 
-# -----------------------------------------------------------------------------
-# zmv
-# -----------------------------------------------------------------------------
-autoload zmv
-
-# -----------------------------------------------------------------------------
-# fzf
-# -----------------------------------------------------------------------------
-FZF_DEFAULT_COMMAND='rg --files --color=never'
-FZF_CTRL_R_OPTS='--exact'
-FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-FZF_CTRL_T_OPTS="--select-1 --exit-0"
-FZF_ALT_C_COMMAND='fd --type directory'
-FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C -L 1 {} | head -200'"
-source /usr/local/opt/fzf/shell/key-bindings.zsh
-
-# -----------------------------------------------------------------------------
-# Syntax highlighting
-# -----------------------------------------------------------------------------
-ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets)
-ZSH_HIGHLIGHT_MAXLENGTH=60
-source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# }}}
-# =============================================================================
-# COMPLETIONS {{{
-# =============================================================================
-
-fpath=($HOME/.zsh/completions $fpath)
-autoload -Uz compinit
-compinit
+function expand-abbreviation() {
+  if [[ $LBUFFER =~ "(^|[;|&])\s*(${(j:|:)abbreviations})\$" ]]; then
+    zle _expand_alias
+  fi
+  zle self-insert
+}
+zle -N expand-abbreviation
+bindkey ' ' expand-abbreviation
+bindkey '^ ' magic-space
+bindkey -M isearch ' ' magic-space
 
 # }}}
 # =============================================================================
