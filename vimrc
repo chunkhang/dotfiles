@@ -95,6 +95,7 @@ Plug 'chunkhang/vim-mbsync'
 Plug 'chunkhang/msmtp.vim'
 Plug 'neomutt/neomutt.vim'
 Plug 'hashivim/vim-terraform'
+Plug 'cespare/vim-toml'
 
 " -----------------------------------------------------------------------------
 " Linting
@@ -797,6 +798,11 @@ let g:terraform_fmt_on_save = 1
 let g:mailquery_folder = $HOME . '/Mail'
 
 " -----------------------------------------------------------------------------
+" vim-toml
+" -----------------------------------------------------------------------------
+call <sid>highlight_onedark('tomlTable', 'blue')
+
+" -----------------------------------------------------------------------------
 " ale
 " -----------------------------------------------------------------------------
 let g:ale_sign_error = '•'
@@ -914,6 +920,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead .tags set filetype=tags
   autocmd BufNewFile,BufRead Podfile set filetype=conf
   autocmd BufNewFile,BufRead *.mdx set filetype=javascript.mdx
+  autocmd BufNewFile,BufRead gitconfig set filetype=toml
 
   " Easier to quit help, quickfix and terminal windows
   autocmd FileType help,qf noremap <silent> <buffer> q :q<cr>
