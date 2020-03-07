@@ -81,7 +81,7 @@ function blue() {
     s="Bluetooth is: $(blueutil status | cut -c 9-)"
     echo "$s"
   }
-  if [ "$#" = 0 ]; then
+  if [[ "$#" = 0 ]] then
     show-help
   else
     case "$1" in
@@ -127,7 +127,7 @@ function dns() {
     s="Current DNS:\n$(networksetup -getdnsservers Wi-Fi | sed 's/^/  /')"
     echo "$s"
   }
-  if [ "$#" = 0 ]; then
+  if [[ "$#" = 0 ]] then
     show-help
   else
     case "$1" in
@@ -189,7 +189,7 @@ function gate() {
     s="Gatekeeper is: $(spctl --status | cut -c 13-)"
     echo "$s"
   }
-  if [ "$#" = 0 ]; then
+  if [[ "$#" = 0 ]] then
     show-help
   else
     case "$1" in
@@ -233,7 +233,7 @@ function wifi() {
       s="Wi-Fi is: $(networksetup -getairportpower en0 | cut -c 20- | tr O o)"
       echo "$s"
   }
-  if [ "$#" = 0 ]; then
+  if [[ "$#" = 0 ]] then
     show-help
   else
     case "$1" in
@@ -263,12 +263,33 @@ function wifi() {
 # =============================================================================
 
 typeset -a abbreviations
-abbreviations=()
+abbr_abbreviations=()
+
+typeset -a abbr_history
+abbr_history=()
 
 function abbr() {
-  alias "$1"
-  abbreviations+=("${1%%\=*}")
+  if [[ "$#" = 0 ]]; then
+    echo "${(j/\n/)abbr_history}"
+  else
+    alias "$1"
+    abbr_abbreviations+=("${1%%=*}")
+    abbr_history+=("$1")
+  fi
 }
+
+function expand-abbreviation() {
+  if [[ "$LBUFFER" =~ "^(${(j/|/)abbr_abbreviations})$" ]]; then
+    zle _expand_alias
+  fi
+  zle self-insert
+}
+
+zle -N expand-abbreviation
+
+bindkey ' ' expand-abbreviation
+bindkey '^ ' magic-space
+bindkey -M isearch ' ' magic-space
 
 # ------------------------------------------------------------------------------
 # Git
@@ -363,22 +384,6 @@ alias tree='tree -C'
 alias tweet='t update'
 alias v='nvim'
 alias wiki='nvim $HOME/Dropbox/wiki/index.wiki'
-
-# -----------------------------------------------------------------------------
-# https://github.com/zigius/expand-ealias.plugin.zsh
-# https://github.com/rothgar/mastering-zsh/blob/master/docs/helpers/aliases.md
-# -----------------------------------------------------------------------------
-
-function expand-abbreviation() {
-  if [[ $LBUFFER =~ "(^|[;|&])\s*(${(j:|:)abbreviations})\$" ]]; then
-    zle _expand_alias
-  fi
-  zle self-insert
-}
-zle -N expand-abbreviation
-bindkey ' ' expand-abbreviation
-bindkey '^ ' magic-space
-bindkey -M isearch ' ' magic-space
 
 # }}}
 # =============================================================================
