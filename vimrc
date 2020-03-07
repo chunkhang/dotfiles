@@ -949,6 +949,9 @@ augroup vimrc
   " Disable cursor line for diff mode
   autocmd BufEnter * if &diff | set nocursorline | endif
 
+  " Documentation
+  autocmd FileType javascript set keywordprg=~/.scripts/docs/duckduckgo
+
   " Start insert mode automatically in terminal
   if has('nvim')
     autocmd TermOpen * startinsert
