@@ -341,6 +341,7 @@ abbr gb='git branch'
 abbr gbm='git branch -m'
 abbr gbd='git branch -d'
 abbr gbdd='git branch -D'
+abbr gbr='git branch --remote'
 
 abbr gs='git status'
 
@@ -358,11 +359,13 @@ alias gdcc='() { git diff --cached "$@" | cdiff -s -w 0 }'
 
 abbr gr='git rebase'
 abbr gri='git rebase --interactive'
+abbr grc='git rebase --continue'
+abbr gra='git rebase --abort'
 
 abbr gcp='git cherry-pick'
 
-abbr gst='git stash'
-abbr gstp='git stash pop'
+abbr gt='git stash'
+abbr gtp='git stash pop'
 
 abbr gw='git show'
 alias gww='() { git show "$@" | cdiff -s -w 0 }'
@@ -372,6 +375,8 @@ alias gll='git log --oneline --decorate --color --graph --all --first-parent'
 alias glll='git log --oneline --decorate --color --graph --all'
 
 abbr gm='git merge'
+abbr gmc='git merge --continue'
+abbr gma='git merge --abort'
 
 abbr gp='git push'
 abbr gpf='git push --force'
@@ -384,6 +389,8 @@ abbr gmt='git mergetool'
 
 abbr gn='git open'
 
+abbr gf='git flow'
+
 # ------------------------------------------------------------------------------
 # Docker
 # ------------------------------------------------------------------------------
@@ -393,16 +400,29 @@ abbr dk='docker-compose'
 abbr dkb='docker-compose build'
 
 abbr dku='docker-compose up'
-abbr dkud='docker-compose up --detach'
 
 abbr dkd='docker-compose down'
 
+abbr dkp='docker-compose pause'
+abbr dkpp='docker-compose unpause'
+
 abbr dkl='docker-compose logs'
-abbr dklf='docker-compose logs --follow'
 
 abbr dkr='docker-compose restart'
 
 abbr dkk='docker-compose kill'
+
+# -----------------------------------------------------------------------------
+# tmux
+# -----------------------------------------------------------------------------
+
+abbr tm='tmux'
+
+abbr tma='tmux attach -t'
+
+abbr tmd='tmux detach'
+
+abbr tmk='tmux kill-server'
 
 # ------------------------------------------------------------------------------
 # Ripgrep
