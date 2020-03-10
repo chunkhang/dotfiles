@@ -297,7 +297,17 @@ function abbr() {
 }
 
 function _abbr_expand() {
-  if [[ "$LBUFFER" =~ "^(${(j/|/)_abbr_abbreviations})$" ]]; then
+  # Pattern of all possible abbreviations to match
+  # e.g. (ab|cd|ef)
+  local match="(${(j/|/)_abbr_abbreviations})"
+  if [[
+    # $ ab => $ apple banana
+    "$LBUFFER" =~ "^ *${match}$" ||
+    # $ ls; ab => $ ls; apple banana
+    # $ ls || ab => $ ls || apple banana
+    # $ ls && ab => $ ls && apple banana
+    "$LBUFFER" =~ "[;|&] *${match}$"
+  ]]; then
     zle _expand_alias
   fi
 }
