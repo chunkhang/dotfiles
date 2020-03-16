@@ -365,7 +365,9 @@ abbr gra='git rebase --abort'
 abbr gcp='git cherry-pick'
 
 abbr gt='git stash'
+abbr gtl='git stash list'
 abbr gtp='git stash pop'
+abbr gtc='git stash clear'
 
 abbr gw='git show'
 alias gww='() { git show "$@" | cdiff -s -w 0 }'
@@ -390,6 +392,8 @@ abbr gmt='git mergetool'
 abbr gn='git open'
 
 abbr gf='git flow'
+abbr gff='git flow feature'
+abbr gfh='git flow hotfix'
 
 # ------------------------------------------------------------------------------
 # Docker
