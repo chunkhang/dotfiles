@@ -386,6 +386,8 @@ alias gpu='git push --set-upstream origin $(git symbolic-ref --short HEAD)'
 
 abbr gu='git pull'
 
+abbr gv='git revert'
+
 abbr gdt='git difftool'
 abbr gmt='git mergetool'
 
@@ -394,6 +396,7 @@ abbr gn='git open'
 abbr gf='git flow'
 abbr gff='git flow feature'
 abbr gfh='git flow hotfix'
+abbr gfr='git flow release'
 
 # ------------------------------------------------------------------------------
 # Docker
