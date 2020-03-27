@@ -99,7 +99,7 @@ function blue() {
     s="Bluetooth is: $(blueutil status | cut -c 9-)"
     echo "$s"
   }
-  if [[ "$#" = 0 ]] then
+  if [[ "$#" = 0 ]]; then
     show-help
   else
     case "$1" in
@@ -145,7 +145,7 @@ function dns() {
     s="Current DNS:\n$(networksetup -getdnsservers Wi-Fi | sed 's/^/  /')"
     echo "$s"
   }
-  if [[ "$#" = 0 ]] then
+  if [[ "$#" = 0 ]]; then
     show-help
   else
     case "$1" in
@@ -207,7 +207,7 @@ function gate() {
     s="Gatekeeper is: $(spctl --status | cut -c 13-)"
     echo "$s"
   }
-  if [[ "$#" = 0 ]] then
+  if [[ "$#" = 0 ]]; then
     show-help
   else
     case "$1" in
@@ -231,6 +231,24 @@ function gate() {
   fi
 }
 
+# Download placeholder image
+function picsum() {
+  function show-help() {
+    echo "usage: picsum <width> [height]"
+  }
+  function download-image() {
+    curl --location "https://picsum.photos/${1}/${2}" --output "$3" 2>/dev/null 
+    echo "$3"
+  }
+  if [[ "$#" = 0 ]]; then
+    show-help
+  elif [[ "$#" = 1 ]]; then
+    download-image "$1" "$1" "${RANDOM}-${1}-${1}.jpg"
+  else
+    download-image "$1" "$2" "${RANDOM}-${1}-${2}.jpg"
+  fi
+}
+
 # Execute new shell
 function refresh() {
   echo "Refreshing shell..."
@@ -251,7 +269,7 @@ function wifi() {
       s="Wi-Fi is: $(networksetup -getairportpower en0 | cut -c 20- | tr O o)"
       echo "$s"
   }
-  if [[ "$#" = 0 ]] then
+  if [[ "$#" = 0 ]]; then
     show-help
   else
     case "$1" in
