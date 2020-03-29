@@ -372,6 +372,7 @@ abbr gcm='git commit --message'
 
 abbr gd='git diff'
 abbr gdc='git diff --cached'
+abbr gds='git diff --stat'
 alias gdd='() { git diff "$@" | cdiff -s -w 0 }'
 alias gdcc='() { git diff --cached "$@" | cdiff -s -w 0 }'
 
