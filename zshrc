@@ -436,7 +436,8 @@ abbr dku='docker-compose up'
 abbr dkd='docker-compose down'
 
 abbr dkp='docker-compose pause'
-abbr dkpp='docker-compose unpause'
+
+abbr dkup='docker-compose unpause'
 
 abbr dkl='docker-compose logs'
 
