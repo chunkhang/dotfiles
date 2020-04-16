@@ -138,6 +138,7 @@ function dns() {
     echo "commands:"
     echo "  status    show current DNS"
     echo "  google    use Google DNS"
+    echo "  cloudflare use Cloudflare DNS"
     echo "  reset     reset DNS"
     echo "  flush     flush DNS cache"
   }
@@ -155,6 +156,11 @@ function dns() {
       "google")
         echo "Using Google DNS..."
         sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
+        show-status
+        ;;
+      "cloudflare")
+        echo "Using Cloudflare DNS..."
+        sudo networksetup -setdnsservers Wi-Fi 1.1.1.1
         show-status
         ;;
       "reset")
