@@ -459,8 +459,6 @@ if has('nvim')
 else
   nnoremap <silent> <leader>z :shell<cr>
 endif
-" Force last command
-nnoremap ! :<up>!
 
 " -----------------------------------------------------------------------------
 " ctrlsf.vim
