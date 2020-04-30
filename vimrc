@@ -939,6 +939,7 @@ augroup vimrc
   autocmd FileType snippets set expandtab
   autocmd FileType javascript.mdx set shiftwidth=2
   autocmd BufNewFile,BufRead Info.plist set noexpandtab shiftwidth=0
+  autocmd FileType groovy set shiftwidth=4
 
   " Folding
   autocmd Filetype yaml set foldmethod=indent
