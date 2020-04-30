@@ -446,6 +446,31 @@ abbr dkr='docker-compose restart'
 abbr dkk='docker-compose kill'
 
 # -----------------------------------------------------------------------------
+# PM2
+# -----------------------------------------------------------------------------
+
+abbr pp='pm2'
+
+abbr pps='pm2 start'
+
+abbr ppso='pm2 start --only'
+
+abbr ppr='pm2 restart'
+
+abbr ppt='pm2 stop'
+
+abbr ppd='pm2 delete'
+
+abbr ppl='pm2 logs'
+abbr pple='pm2 logs --err'
+
+abbr ppf='pm2 flush'
+
+abbr ppls='pm2 ls'
+
+abbr ppm='pm2 monit'
+
+# -----------------------------------------------------------------------------
 # tmux
 # -----------------------------------------------------------------------------
 
