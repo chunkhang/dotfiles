@@ -1,43 +1,43 @@
 const styles = css => ({
   className: {
-    top: '20px',
-    left: '20px',
-    width: '350px',
+    top: 20,
+    left: 20,
+    width: 350,
   },
 
   feedList: css({
     margin: 0,
     padding: 0,
-    fontSize: '12px',
+    fontSize: 12,
     listStyle: 'none',
-    marginTop: '3px',
+    marginTop: 3,
   }),
 
   feedItem: css({
-    marginBottom: '5px',
+    marginBottom: 5,
   }),
 
   feedTitle: css({
     fontWeight: '400',
-    marginBottom: '2px',
+    marginBottom: 2,
   }),
 
   entryList: css({
     margin: 0,
     padding: 0,
-    fontSize: '12px',
-    paddingLeft: '16px',
+    fontSize: 12,
+    paddingLeft: 16,
   }),
 
   entryItem: css({
     lineHeight: '1.1',
-    marginBottom: '1px',
-    fontSize: '11px',
+    marginBottom: 1,
+    fontSize: 11,
   }),
 
   linkIcon: css({
     fontStyle: 'normal',
-    fontSize: '10px',
+    fontSize: 10,
   }),
 })
 
