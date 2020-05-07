@@ -1,6 +1,6 @@
 const styles = css => ({
   className: {
-    top: '130px',
+    top: '20px',
     left: '20px',
     width: '350px',
   },
