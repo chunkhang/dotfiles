@@ -34,7 +34,6 @@ style: """
   transform: translate(-50%, 0)
 
   .calendar
-    padding: 0 20px
     width: 750px
 
   .title
