@@ -136,11 +136,11 @@ function dns() {
     echo "usage: dns <command>"
     echo
     echo "commands:"
-    echo "  status    show current DNS"
-    echo "  google    use Google DNS"
-    echo "  cloudflare use Cloudflare DNS"
-    echo "  reset     reset DNS"
-    echo "  flush     flush DNS cache"
+    echo "  status      show current DNS"
+    echo "  google      use Google DNS"
+    echo "  cloudflare  use Cloudflare DNS"
+    echo "  reset       reset DNS"
+    echo "  flush       flush DNS cache"
   }
   function show-status() {
     s="Current DNS:\n$(networksetup -getdnsservers Wi-Fi | sed 's/^/  /')"
