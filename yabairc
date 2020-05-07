@@ -8,11 +8,11 @@ yabai -m config split_ratio                  0.5
 yabai -m config status_bar                   off
 
 # Padding and gap
-yabai -m config top_padding                  0
+yabai -m config top_padding                  21
 yabai -m config bottom_padding               0
 yabai -m config left_padding                 0
 yabai -m config right_padding                0
-yabai -m config window_gap                   4
+yabai -m config window_gap                   2
 
 # Mouse support
 yabai -m config mouse_follows_focus          off
@@ -25,14 +25,6 @@ yabai -m config mouse_action2                resize
 yabai -m config window_topmost               on
 yabai -m config window_shadow                float
 yabai -m config window_opacity               off
-yabai -m config window_border                on
-yabai -m config window_border_width          1
-yabai -m config window_border_radius         0
-yabai -m config window_border_placement      interior
-yabai -m config active_window_border_topmost on
-yabai -m config active_window_border_color   0xffabb2bf
-yabai -m config normal_window_border_color   0xf
-yabai -m config insert_window_border_color   0xff34b044
 
 # Rules
 yabai -m rule --add app="^System Preferences$" manage=off
@@ -56,3 +48,7 @@ yabai -m rule --add app="^Swipes$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^The Unarchiver$" manage=off
 yabai -m rule --add app="^Transmission$" manage=off
+
+# Signals
+yabai -m signal --add event=space_changed \
+  action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"bar-widget-index-jsx\"'"
