@@ -1,15 +1,16 @@
 dependencies:
   classnames: 2.2.6
   duration-js: 4.0.0
+  moment: 2.25.3
 devDependencies:
-  babel-eslint: 10.0.1
+  babel-eslint: 10.0.1_eslint@5.16.0
   eslint: 5.16.0
-  eslint-config-airbnb: 17.1.0
+  eslint-config-airbnb: 17.1.0_742f034dfb1f980fbde60d22cf14fc36
   eslint-import-resolver-node: 0.3.2
-  eslint-plugin-import: 2.17.3
-  eslint-plugin-jsx-a11y: 6.2.1
-  eslint-plugin-react: 7.13.0
-lockfileVersion: 5
+  eslint-plugin-import: 2.17.3_eslint@5.16.0
+  eslint-plugin-jsx-a11y: 6.2.1_eslint@5.16.0
+  eslint-plugin-react: 7.13.0_eslint@5.16.0
+lockfileVersion: 5.1
 packages:
   /@babel/code-frame/7.0.0:
     dependencies:
@@ -180,12 +181,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-MCeek8ZH7hKyO1rWUbKNQBbl4l2eY0ntk7OGi+q0RlafrCnfPxC06WZA+uebCfmYp4mNU9jRBP1AhGyf8+W3ww==
-  /babel-eslint/10.0.1:
+  /babel-eslint/10.0.1_eslint@5.16.0:
     dependencies:
       '@babel/code-frame': 7.0.0
       '@babel/parser': 7.4.5
       '@babel/traverse': 7.4.5
       '@babel/types': 7.4.4
+      eslint: 5.16.0
       eslint-scope: 3.7.1
       eslint-visitor-keys: 1.0.0
     dev: true
@@ -374,8 +376,10 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
-  /eslint-config-airbnb-base/13.1.0:
+  /eslint-config-airbnb-base/13.1.0_b9c15d5ecc35a9cc5906bba99cc6b1ca:
     dependencies:
+      eslint: 5.16.0
+      eslint-plugin-import: 2.17.3_eslint@5.16.0
       eslint-restricted-globals: 0.1.1
       object.assign: 4.1.0
       object.entries: 1.1.0
@@ -387,9 +391,13 @@ packages:
       eslint-plugin-import: ^2.14.0
     resolution:
       integrity: sha512-XWwQtf3U3zIoKO1BbHh6aUhJZQweOwSt4c2JrPDg9FP3Ltv3+YfEv7jIDB8275tVnO/qOHbfuYg3kzw6Je7uWw==
-  /eslint-config-airbnb/17.1.0:
+  /eslint-config-airbnb/17.1.0_742f034dfb1f980fbde60d22cf14fc36:
     dependencies:
-      eslint-config-airbnb-base: 13.1.0
+      eslint: 5.16.0
+      eslint-config-airbnb-base: 13.1.0_b9c15d5ecc35a9cc5906bba99cc6b1ca
+      eslint-plugin-import: 2.17.3_eslint@5.16.0
+      eslint-plugin-jsx-a11y: 6.2.1_eslint@5.16.0
+      eslint-plugin-react: 7.13.0_eslint@5.16.0
       object.assign: 4.1.0
       object.entries: 1.1.0
     dev: true
@@ -418,12 +426,13 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-14tltLm38Eu3zS+mt0KvILC3q8jyIAH518MlG+HO0p+yK885Lb1UHTY/UgR91eOyGdmxAPb+OLoW4znqIT6Ndw==
-  /eslint-plugin-import/2.17.3:
+  /eslint-plugin-import/2.17.3_eslint@5.16.0:
     dependencies:
       array-includes: 3.0.3
       contains-path: 0.1.0
       debug: 2.6.9
       doctrine: 1.5.0
+      eslint: 5.16.0
       eslint-import-resolver-node: 0.3.2
       eslint-module-utils: 2.4.0
       has: 1.0.3
@@ -438,7 +447,7 @@ packages:
       eslint: 2.x - 5.x
     resolution:
       integrity: sha512-qeVf/UwXFJbeyLbxuY8RgqDyEKCkqV7YC+E5S5uOjAp4tOc8zj01JP3ucoBM8JcEqd1qRasJSg6LLlisirfy0Q==
-  /eslint-plugin-jsx-a11y/6.2.1:
+  /eslint-plugin-jsx-a11y/6.2.1_eslint@5.16.0:
     dependencies:
       aria-query: 3.0.0
       array-includes: 3.0.3
@@ -446,6 +455,7 @@ packages:
       axobject-query: 2.0.2
       damerau-levenshtein: 1.0.5
       emoji-regex: 7.0.3
+      eslint: 5.16.0
       has: 1.0.3
       jsx-ast-utils: 2.1.0
     dev: true
@@ -455,10 +465,11 @@ packages:
       eslint: ^3 || ^4 || ^5
     resolution:
       integrity: sha512-cjN2ObWrRz0TTw7vEcGQrx+YltMvZoOEx4hWU8eEERDnBIU00OTq7Vr+jA7DFKxiwLNv4tTh5Pq2GUNEa8b6+w==
-  /eslint-plugin-react/7.13.0:
+  /eslint-plugin-react/7.13.0_eslint@5.16.0:
     dependencies:
       array-includes: 3.0.3
       doctrine: 2.1.0
+      eslint: 5.16.0
       has: 1.0.3
       jsx-ast-utils: 2.1.0
       object.fromentries: 2.0.0
@@ -919,6 +930,10 @@ packages:
     hasBin: true
     resolution:
       integrity: sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
+  /moment/2.25.3:
+    dev: false
+    resolution:
+      integrity: sha512-PuYv0PHxZvzc15Sp8ybUCoQ+xpyPWvjOuK72a5ovzp2LI32rJXOiIfyoFoYvG3s6EwwrdkMyWuRiEHSZRLJNdg==
   /ms/2.0.0:
     dev: true
     resolution:
@@ -1438,3 +1453,4 @@ specifiers:
   eslint-plugin-import: ^2.17.3
   eslint-plugin-jsx-a11y: ^6.2.1
   eslint-plugin-react: ^7.11.1
+  moment: ^2.25.3

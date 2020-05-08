@@ -1,6 +1,6 @@
 #!/bin/sh
 
-widget_id="bar-widget-index-jsx"
+widget_id="bar-widget-spaces-jsx"
 
 osascript <<EOF
 tell application "Übersicht" to refresh widget \

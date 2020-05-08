@@ -127,7 +127,6 @@ const render = (state) => {
   const { feeds } = state
   return (
     <div>
-      <link rel="stylesheet" href="lib/css/fontello.css" />
       <div>
         <div className="widget-name">Feed</div>
         {renderFeeds(feeds)}

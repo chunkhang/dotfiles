@@ -1,0 +1,43 @@
+#!/bin/sh
+
+datetime=$(date -R)
+
+battery_percent=$(
+pmset -g batt | \
+grep --extended-regexp --only-matching "\d+%" | \
+cut -d % -f 1
+)
+
+battery_charging=$(
+pmset -g batt | \
+grep --only-matching "'.*'" | \
+grep --count 'AC'
+)
+
+wifi_ssid=$(
+networksetup -getairportnetwork en0 | \
+grep : | \
+cut -d : -f 2 | \
+cut -c 2-
+)
+
+wifi_active=$(
+networksetup -getairportpower en0 | \
+cut -d : -f 2 | \
+cut -c 2- | \
+grep --count 'On'
+)
+
+cat <<EOF
+{
+  "datetime": "${datetime}",
+  "battery": {
+    "percent": ${battery_percent},
+    "charging": ${battery_charging}
+  },
+  "wifi": {
+    "ssid": "${wifi_ssid}",
+    "active": ${wifi_active}
+  }
+}
+EOF

@@ -1,3 +1,9 @@
 #!/bin/sh
 
-/usr/local/bin/yabai -m query --spaces
+spaces=$(/usr/local/bin/yabai -m query --spaces)
+
+cat <<EOF
+{
+  "spaces": ${spaces}
+}
+EOF
