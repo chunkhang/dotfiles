@@ -11,7 +11,7 @@ const styles = css => ({
     alignItems: 'center',
     paddingLeft: 15,
     fontSize: 12,
-    fontFamily: 'MesloLGS Nerd Font',
+    fontFamily: 'Meslo LG S for Powerline',
     backgroundColor: '#282c34',
     color: '#abb2bf',
   }),
