@@ -1,3 +1,8 @@
 #!/bin/sh
 
-osascript -e 'tell application "Übersicht" to refresh widget id "bar-widget-index-jsx"'
+widget_id="bar-widget-index-jsx"
+
+osascript <<EOF
+tell application "Übersicht" to refresh widget \
+  id "${widget_id}"
+EOF
