@@ -16,6 +16,7 @@ const renderSpace = (space) => {
   const {
     id,
     index,
+    label,
     focused,
     windows,
   } = space
@@ -35,6 +36,9 @@ const renderSpace = (space) => {
     >
       <span>&nbsp;</span>
       <span>{index}</span>
+      {label ? (
+        <span>&nbsp;{label}</span>
+      ) : null}
       <span>{hasWindows ? '+' : null}</span>
       <span>&nbsp;</span>
     </div>

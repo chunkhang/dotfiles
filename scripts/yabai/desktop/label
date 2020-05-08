@@ -1,0 +1,21 @@
+#!/bin/sh
+
+current_space=$(yabai -m query --spaces | jq '.[] | select(.focused == 1)')
+current_index=$(echo "$current_space" | jq '.index')
+current_label=$(echo "$current_space" | jq --raw-output '.label')
+
+osascript_output=$(
+osascript <<EOF
+display dialog "Enter a new name for Space ${current_index}:" \
+  with title "yabai" default answer "${current_label}"
+EOF
+)
+
+if [ "$?" == 0 ]; then
+  new_label=$(
+  echo "$osascript_output" | \
+  grep --only-matching "text returned:.*" | \
+  cut -d : -f 2
+  )
+  yabai -m space --label "${new_label}"
+fi
