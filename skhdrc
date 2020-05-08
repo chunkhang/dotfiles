@@ -45,10 +45,10 @@ shift + alt - f : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1
 # Desktop
 ###############################################################################
 
-# Focus desktop
+# Focus desktop (/)
+ctrl - 0x2C : yabai -m space --focus recent
 ctrl - left : yabai -m space --focus prev
 ctrl - right : yabai -m space --focus next
-ctrl - 0x2C : yabai -m space --focus recent
 ctrl - 1 : yabai -m space --focus 1
 ctrl - 2 : yabai -m space --focus 2
 ctrl - 3 : yabai -m space --focus 3
@@ -59,6 +59,10 @@ ctrl - 7 : yabai -m space --focus 7
 ctrl - 8 : yabai -m space --focus 8
 ctrl - 9 : yabai -m space --focus 9
 ctrl - 0 : yabai -m space --focus 10
+
+# Move desktop (<) (>)
+shift + ctrl - 0x2B: yabai -m space --move prev; ~/.scripts/ubersicht/refresh-bar
+shift + ctrl - 0x2F: yabai -m space --move next; ~/.scripts/ubersicht/refresh-bar
 
 # Create desktop (+)
 shift + ctrl - 0x18 : ~/.scripts/yabai/desktop/create
