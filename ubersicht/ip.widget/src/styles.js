@@ -1,6 +1,6 @@
 const styles = {
   className: {
-    top: 125,
+    top: 80,
     right: 15,
     textAlign: 'right',
   },
