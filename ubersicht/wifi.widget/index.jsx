@@ -1,7 +1,7 @@
 import { duration } from '../lib/utils'
 import styles from './src/styles'
 
-const command = 'lib/scripts/get-ssid.zsh'
+const command = 'lib/scripts/get-ssid'
 
 const refreshFrequency = duration('5s')
 

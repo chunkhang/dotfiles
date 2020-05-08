@@ -2,7 +2,7 @@ import { css } from 'uebersicht'
 
 import styles from './src/styles'
 
-const command = 'lib/scripts/get-spaces.zsh'
+const command = 'lib/scripts/get-spaces'
 
 const refreshFrequency = false
 

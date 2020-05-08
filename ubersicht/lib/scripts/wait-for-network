@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/bin/sh
 
 # Check for internet connection every 10 seconds until successful
 # https://github.com/felixhageloh/uebersicht/issues/196#issuecomment-212549931

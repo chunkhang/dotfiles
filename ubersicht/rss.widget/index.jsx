@@ -30,14 +30,14 @@ const FEEDS = [
 const parseFeed = (feed) => {
   const { title, url, limit } = feed
   const shell = 'zsh'
-  const script = 'lib/scripts/parse_feed.py'
+  const script = 'lib/scripts/parse-feed'
   const args = [title, url, limit].map(arg => `"${arg}"`).join(' ')
   const command = `${shell} -l -c '${script} ${args}'`
   return run(command)
 }
 
 const command = (dispatch) => {
-  run('lib/scripts/wait-for-network.zsh').then(() => {
+  run('lib/scripts/wait-for-network').then(() => {
     FEEDS.forEach((feed, index) => {
       parseFeed(feed)
         .then((output) => {
