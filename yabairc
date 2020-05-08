@@ -31,7 +31,6 @@ yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^Accessibility Inspector$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off
-yabai -m rule --add app="^ColorSlurp$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
@@ -39,7 +38,6 @@ yabai -m rule --add app="^Firefox$" title="^Opening " manage=off
 yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off
 yabai -m rule --add app="^Keychain Access$" manage=off
-yabai -m rule --add app="^licecap$" manage=off
 yabai -m rule --add app="^Mail$" manage=off
 yabai -m rule --add app="^Photos$" manage=off
 yabai -m rule --add app="^Postgres$" manage=off
