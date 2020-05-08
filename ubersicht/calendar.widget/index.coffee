@@ -29,7 +29,7 @@ style: """
   font-family: Helvetica Neue
   font-size: 12px
   font-weight: 500
-  bottom: 20px
+  bottom: 25px
   left: 50%
   transform: translate(-50%, 0)
 

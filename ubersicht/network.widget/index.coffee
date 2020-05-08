@@ -15,8 +15,8 @@ style: """
     widget-align = right
 
     // Position this where you want
-    top: 165px
-    right: 20px
+    top: 170px
+    right: 15px
 
     // Statistics text settings
     color: white

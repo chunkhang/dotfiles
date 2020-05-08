@@ -6,9 +6,10 @@ const styles = css => ({
 
   mainContainer: css({
     boxSizing: 'border-box',
-    height: 19,
+    height: 23,
+    display: 'flex',
+    alignItems: 'center',
     paddingLeft: 15,
-    paddingTop: 2,
     fontSize: 12,
     fontFamily: 'MesloLGS Nerd Font',
     backgroundColor: '#282c34',
@@ -23,8 +24,10 @@ const styles = css => ({
   iconContainer: css({
     backgroundColor: '#61afef',
     color: '#282c34',
-    marginRight: '1ch',
+    display: 'flex',
+    justifyContent: 'center',
     width: '4ch',
+    marginRight: '1ch',
   }),
 
   spacesContainer: css({

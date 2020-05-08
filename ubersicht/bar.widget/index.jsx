@@ -49,9 +49,7 @@ const render = (state) => {
       <link rel="stylesheet" href="lib/css/fontello.css" />
       <div className={s.barContainer}>
         <div className={s.iconContainer}>
-          <span>&nbsp;</span>
           <i className="icon-apple" />
-          <span>&nbsp;</span>
         </div>
         {spaces ? (
           <div className={s.spacesContainer}>

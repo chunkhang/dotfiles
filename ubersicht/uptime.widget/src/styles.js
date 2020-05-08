@@ -1,7 +1,7 @@
 const styles = {
   className: {
-    top: 30,
-    right: 20,
+    top: 35,
+    right: 15,
     textAlign: 'right',
   },
 }
