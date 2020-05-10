@@ -85,44 +85,6 @@ compinit
 # FUNCTIONS {{{
 # =============================================================================
 
-# Perform operations on Bluetooth
-function blue() {
-  function show-help() {
-    echo "usage: blue <command>"
-    echo
-    echo "commands:"
-    echo "  status     show Bluetooth status"
-    echo "  enable     turn on Bluetooth"
-    echo "  disable    turn off Bluetooth"
-  }
-  function show-status() {
-    s="Bluetooth is: $(blueutil status | cut -c 9-)"
-    echo "$s"
-  }
-  if [[ "$#" = 0 ]]; then
-    show-help
-  else
-    case "$1" in
-      "status")
-        show-status
-        ;;
-      "enable")
-        echo "Enabling Bluetooth..."
-        blueutil on
-        show-status
-        ;;
-      "disable")
-        echo "Disabling Bluetooth..."
-        blueutil off
-        show-status
-        ;;
-      *)
-        show-help
-        ;;
-    esac
-  fi
-}
-
 # Execute various cleaning commands
 function clean() {
   echo "Cleaning system..."
@@ -259,44 +221,6 @@ function picsum() {
 function refresh() {
   echo "Refreshing shell..."
   exec "$SHELL" -l
-}
-
-# Perform operations on Wi-Fi
-function wifi() {
-  function show-help() {
-    echo "usage: wifi <command>"
-    echo
-    echo "commands:"
-    echo "  status     show Wi-Fi status"
-    echo "  enable     turn on Wi-Fi"
-    echo "  disable    turn off Wi-Fi"
-  }
-  function show-status() {
-      s="Wi-Fi is: $(networksetup -getairportpower en0 | cut -c 20- | tr O o)"
-      echo "$s"
-  }
-  if [[ "$#" = 0 ]]; then
-    show-help
-  else
-    case "$1" in
-      "status")
-        show-status
-        ;;
-      "enable")
-        echo "Enabling Wi-Fi..."
-        networksetup -setairportpower en0 on
-        show-status
-        ;;
-      "disable")
-        echo "Disabling Wi-Fi..."
-        networksetup -setairportpower en0 off
-        show-status
-        ;;
-      *)
-        show-help
-        ;;
-    esac
-  fi
 }
 
 # }}}
