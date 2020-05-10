@@ -85,13 +85,6 @@ compinit
 # FUNCTIONS {{{
 # =============================================================================
 
-# Execute various cleaning commands
-function clean() {
-  echo "Cleaning system..."
-  $HOME/.scripts/system/clean
-  echo "Done cleaning."
-}
-
 # Perform operations on DNS
 function dns() {
   function show-help() {
@@ -152,13 +145,6 @@ function douse() {
   read "x?"
   brightness -d 0 "$b"
   echo "Display turned on."
-}
-
-# Eject all mountable volumes
-function eject() {
-  echo "Ejecting all mountable volumes..."
-  osascript -e 'tell application "Finder" to eject (every disk whose ejectable is true)'
-  echo "Done ejecting."
 }
 
 # Perform operations on Gatekeeper
