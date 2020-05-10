@@ -19,3 +19,4 @@
 .icon-battery-2 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf242;&nbsp;'); }
 .icon-battery-1 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf243;&nbsp;'); }
 .icon-battery-0 { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf244;&nbsp;'); }
+.icon-bluetooth-b { *zoom: expression( this.runtimeStyle['zoom'] = '1', this.innerHTML = '&#xf294;&nbsp;'); }

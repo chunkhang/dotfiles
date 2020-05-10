@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 datetime=$(date -R)
 
@@ -28,6 +28,20 @@ cut -c 2- | \
 grep --count 'On'
 )
 
+bluetooth_active=$(/usr/local/bin/blueutil power)
+
+bluetooth_device=$(
+system_profiler -detailLevel basic -json SPBluetoothDataType 2>/dev/null | \
+/usr/local/bin/jq --raw-output --from-file <(cat <<EOF
+.SPBluetoothDataType[0].device_title
+| reduce .[] as \$item ({}; . + \$item)
+| to_entries[]
+| select(.value.device_isconnected == "attrib_Yes")
+| .key
+EOF
+)
+)
+
 cat <<EOF
 {
   "datetime": "${datetime}",
@@ -38,6 +52,10 @@ cat <<EOF
   "wifi": {
     "ssid": "${wifi_ssid}",
     "active": ${wifi_active}
+  },
+  "bluetooth": {
+    "device": "${bluetooth_device}",
+    "active": ${bluetooth_active}
   }
 }
 EOF

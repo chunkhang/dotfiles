@@ -29,8 +29,8 @@ const render = ({ data }) => {
   return (
     <div className={classes.mainContainer}>
       <Icon data={data} />
-      <Error data={data} />
       <Spaces data={data} />
+      <Error data={data} />
     </div>
   )
 }

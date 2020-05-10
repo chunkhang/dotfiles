@@ -1,9 +1,10 @@
 import { duration } from '../lib/utils'
 
+import Error from './src/Error.jsx'
+import Bluetooth from './src/Bluetooth.jsx'
 import Wifi from './src/Wifi.jsx'
 import Battery from './src/Battery.jsx'
 import DateTime from './src/DateTime.jsx'
-import Error from './src/Error.jsx'
 import { makeClasses, updateState } from './src/utils'
 import theme from './src/theme'
 
@@ -38,6 +39,8 @@ const render = ({ data }) => {
   return (
     <div className={classes.mainContainer}>
       <Error data={data} />
+      <Bluetooth data={data} />
+      <Divider />
       <Wifi data={data} />
       <Divider />
       <Battery data={data} />
@@ -56,6 +59,10 @@ const initialState = {
     },
     wifi: {
       ssid: '',
+      active: 0,
+    },
+    bluetooth: {
+      device: '',
       active: 0,
     },
     error: null,
