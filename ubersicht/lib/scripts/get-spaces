@@ -1,6 +1,10 @@
 #!/bin/sh
 
-spaces=$(/usr/local/bin/yabai -m query --spaces)
+spaces=$(/usr/local/bin/yabai -m query --spaces 2>/dev/null)
+
+if [ "$?" != 0 ]; then
+  spaces=[]
+fi
 
 cat <<EOF
 {
