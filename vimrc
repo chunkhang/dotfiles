@@ -371,6 +371,7 @@ inoremap <C-space> <C-x><C-l>
 " Cursor
 nnoremap <silent> <S-tab> <C-o>
 " Buffers
+nnoremap <silent> <leader>\ :edit#<cr>
 nnoremap <silent> <leader>] :bnext<cr>
 nnoremap <silent> <leader>[ :bprev<cr>
 nmap <leader>1 <Plug>BuffetSwitch(1)
