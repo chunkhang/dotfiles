@@ -322,6 +322,8 @@ alias gpu='git push --set-upstream origin $(git symbolic-ref --short HEAD)'
 abbr gu='git pull'
 
 abbr gv='git revert'
+abbr gvc='git revert --continue'
+abbr gva='git revert --abort'
 
 abbr gdt='git difftool'
 abbr gmt='git mergetool'
