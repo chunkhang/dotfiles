@@ -66,6 +66,7 @@ FZF_DEFAULT_OPTS='
 '
 
 source /usr/local/opt/fzf/shell/key-bindings.zsh
+bindkey -s '^P' '^T'
 
 # -----------------------------------------------------------------------------
 # Syntax highlighting
