@@ -51,11 +51,6 @@
 
   drop = reset --hard @{u}
 
-  fix-gita = "!f() { \
-    git commit --amend --no-edit --quiet ;\
-    git reset --hard @{u} ;\
-  }; f"
-
   housekeeping = "!f() { \
     git checkout master ;\
     git pull ;\
