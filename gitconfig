@@ -51,7 +51,7 @@
 
   drop = reset --hard @{u}
 
-  housekeeping = "!f() { \
+  tidy = "!f() { \
     git checkout master ;\
     git pull ;\
     git fetch --prune ;\
