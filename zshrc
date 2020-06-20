@@ -59,7 +59,7 @@ FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 FZF_CTRL_T_OPTS='--select-1 --exit-0'
 FZF_ALT_C_COMMAND='fd --type directory'
 FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C -L 1 {} | head -200'"
-FZF_DEFAULT_OPTS='
+export FZF_DEFAULT_OPTS='
   --color=dark
   --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#282c34,hl+:#d858fe
   --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
@@ -215,6 +215,17 @@ function refresh() {
   exec "$SHELL" -l
 }
 
+# Show git log with fzf
+function git-log-fzf() {
+  git log --color --decorate --oneline "$@" | \
+    fzf --ansi --reverse --tiebreak=index --no-sort \
+      --preview " \
+        echo {} | \
+        grep --only-matching '[a-f0-9]\{7\}' | \
+        xargs git show --color --first-parent \
+      "
+}
+
 # }}}
 # =============================================================================
 # ALIASES {{{
@@ -314,8 +325,8 @@ abbr gw='git show'
 alias gww='() { git show "$@" | cdiff -s -w 0 }'
 
 abbr gl='git log'
-alias gll='git log --oneline --decorate --color --graph --all --first-parent'
-alias glll='git log --oneline --decorate --color --graph --all'
+alias gll='git-log-fzf'
+alias gla='git log --oneline --decorate --color --graph --all --first-parent'
 
 abbr gm='git merge'
 abbr gmc='git merge --continue'
