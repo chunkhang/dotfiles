@@ -949,7 +949,7 @@ augroup vimrc
   autocmd Filetype yaml set foldmethod=indent
 
   " Format JSON
-  autocmd FileType json setlocal equalprg=jq
+  autocmd FileType json setlocal formatprg=jq
 
   " Compose email
   autocmd Filetype mail set textwidth=72
