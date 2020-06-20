@@ -153,6 +153,25 @@ function douse() {
   echo "Display turned on."
 }
 
+# Show git log with fzf
+function fzf-git-log() {
+  git log --color --decorate --oneline "$@" | \
+    fzf --ansi --reverse --tiebreak=index --no-sort \
+      --preview " \
+        echo {} | \
+        grep --only-matching '[a-f0-9]\{7\}' | \
+        xargs git show --color --first-parent \
+      "
+}
+
+# Show tmux windows with fzf
+function fzf-tmux-windows() {
+  tmux list-windows -F '#{window_name}' | \
+    fzf --tiebreak=index --no-sort | \
+  xargs -I {} tmux select-window -t '{}'
+  tput cuu 2
+}
+
 # Perform operations on Gatekeeper
 function gate() {
   function show-help() {
@@ -213,17 +232,6 @@ function picsum() {
 function refresh() {
   echo "Refreshing shell..."
   exec "$SHELL" -l
-}
-
-# Show git log with fzf
-function git-log-fzf() {
-  git log --color --decorate --oneline "$@" | \
-    fzf --ansi --reverse --tiebreak=index --no-sort \
-      --preview " \
-        echo {} | \
-        grep --only-matching '[a-f0-9]\{7\}' | \
-        xargs git show --color --first-parent \
-      "
 }
 
 # }}}
@@ -325,7 +333,7 @@ abbr gw='git show'
 alias gww='() { git show "$@" | cdiff -s -w 0 }'
 
 abbr gl='git log'
-alias gll='git-log-fzf'
+alias gll='fzf-git-log'
 alias gla='git log --oneline --decorate --color --graph --all --first-parent'
 
 abbr gm='git merge'
