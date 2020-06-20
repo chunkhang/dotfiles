@@ -38,6 +38,9 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 # Less
 export LESS=-x4icWRM
 
+# Man
+export MANPAGER='nvim +Man!'
+
 # =============================================================================
 # PATH
 # https://superuser.com/a/598924
