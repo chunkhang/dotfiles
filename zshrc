@@ -164,14 +164,6 @@ function fzf-git-log() {
       "
 }
 
-# Show tmux windows with fzf
-function fzf-tmux-windows() {
-  tmux list-windows -F '#{window_name}' | \
-    fzf --tiebreak=index --no-sort | \
-  xargs -I {} tmux select-window -t '{}'
-  tput cuu 2
-}
-
 # Perform operations on Gatekeeper
 function gate() {
   function show-help() {
