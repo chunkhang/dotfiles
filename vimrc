@@ -158,7 +158,7 @@ set shortmess+=IT
 set autoindent
 set breakindent
 set expandtab
-set softtabstop=2
+set tabstop=2
 set shiftwidth=2
 set list
 set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.
@@ -944,7 +944,6 @@ augroup vimrc
   autocmd BufWinEnter * call <sid>clear_empty_buffers()
 
   " Indentation
-  autocmd FileType go set softtabstop=0 tabstop=4 shiftwidth=4
   autocmd FileType snippets set expandtab
   autocmd FileType javascript.mdx set shiftwidth=2
   autocmd BufNewFile,BufRead Info.plist set noexpandtab shiftwidth=0
