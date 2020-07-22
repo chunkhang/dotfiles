@@ -817,7 +817,8 @@ call <sid>highlight_onedark('tomlTable', 'blue')
 " -----------------------------------------------------------------------------
 let g:ale_sign_error = '•'
 let g:ale_sign_warning = '•'
-let g:ale_lint_delay = 5000
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_insert_leave = 0
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'vim': ['vint'],
