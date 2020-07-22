@@ -932,6 +932,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead Podfile set filetype=conf
   autocmd BufNewFile,BufRead *.mdx set filetype=javascript.mdx
   autocmd BufNewFile,BufRead gitconfig set filetype=toml
+  autocmd BufNewFile,BufRead tsconfig.json set filetype=javascript
 
   " Disable automatic comment insertion
   autocmd FileType * set formatoptions-=cro
