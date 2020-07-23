@@ -226,6 +226,30 @@ function refresh() {
   exec "$SHELL" -l
 }
 
+# Open todo
+function todo() {
+  local todo_filename=".todo"
+  local directory="$PWD"
+  local todo_path
+  while [[ "$directory" != "/" ]] ; do
+    todo_path=$(find "$directory" -maxdepth 1 -name "$todo_filename")
+    if [[ -n "$todo_path" ]]; then
+      break
+    fi
+    directory=$(realpath "${directory}/..")
+  done
+  if [[ -z "$todo_path" ]]; then
+    echo "Create a ${todo_filename} file first."
+    return 1
+  fi
+  if [[ "$#" = 0 ]]; then
+    "$EDITOR" "$todo_path"
+  else
+    echo "$@" >> "$todo_path"
+  fi
+  echo "$todo_path"
+}
+
 # }}}
 # =============================================================================
 # ALIASES {{{
