@@ -1,27 +1,23 @@
-# Directory
 local current_dir='${PWD/#$HOME/~}'
 
-# Git
 local git_info='$(git_prompt_info)'
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="●"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}︎"
 ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}"
 
-# Pyenv-virtualenv
-local pyenv_virtualenv_info='$((){
-    if [[ $PYENV_VIRTUAL_ENV != "" ]]; then
-        echo "[`basename $PYENV_VIRTUAL_ENV`] "
-    else
-        echo ""
-    fi
-})'
+local git_stash_sign="·"
+function _git_stash_info() {
+  git symbolic-ref HEAD &>/dev/null || exit 0
+  local count=$(git stash list | wc -l | xargs)
+  repeat "$count" printf "$git_stash_sign"
+}
+local git_stash='$(_git_stash_info)'
 
-# Prompt
 local prompt_sign="$"
 
 PROMPT="\
 %{$fg[yellow]%}${current_dir} \
 ${git_info} \
-%{$fg[white]%}${pyenv_virtualenv_info}
-%{$fg[white]%}${prompt_sign} %{$reset_color%}"
+%{$fg[white]%}${git_stash}
+${prompt_sign} %{$reset_color%}"
