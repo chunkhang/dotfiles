@@ -713,6 +713,7 @@ augroup vimrc
   autocmd FileType jinja setlocal commentstring={#\ %s\ #}
   autocmd FileType vue,sbt setlocal commentstring=\/\/\ %s
   autocmd FileType hocon setlocal commentstring=#\ %s
+  autocmd FileType sql setlocal commentstring=--\ %s
 augroup END
 
 " -----------------------------------------------------------------------------
