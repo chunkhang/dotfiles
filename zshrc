@@ -156,7 +156,7 @@ function douse() {
 # Show git log with fzf
 function fzf-git-log() {
   git log --color --decorate --oneline "$@" | \
-    fzf --ansi --reverse --tiebreak=index --no-sort \
+    fzf --ansi --reverse --tiebreak=index --no-sort --exact \
       --preview " \
         echo {} | \
         grep --only-matching '[a-f0-9]\{7\}' | \
