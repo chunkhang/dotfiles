@@ -159,9 +159,14 @@ function fzf-git-log() {
     fzf --ansi --reverse --tiebreak=index --no-sort --exact \
       --preview " \
         echo {} | \
-        grep --only-matching '[a-f0-9]\{7\}' | \
+        cut -d ' ' -f 1 | \
         xargs git show --color --first-parent \
-      "
+      " \
+      --bind "enter:execute-silent( \
+        echo {} | \
+        cut -d ' ' -f 1 | \
+        pbcopy \
+      )+accept"
 }
 
 # Perform operations on Gatekeeper
