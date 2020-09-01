@@ -165,6 +165,7 @@ function fzf-git-log() {
       --bind "enter:execute-silent( \
         echo {} | \
         cut -d ' ' -f 1 | \
+        tr -d '\n' | \
         pbcopy \
       )+accept"
 }
