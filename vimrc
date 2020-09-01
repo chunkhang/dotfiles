@@ -75,7 +75,7 @@ Plug 'rhysd/git-messenger.vim'
 " -----------------------------------------------------------------------------
 " Language
 " -----------------------------------------------------------------------------
-Plug 'neoclide/vim-jsx-improve'
+Plug 'chemzqm/vim-jsx-improve'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'jxnblk/vim-mdx-js'
@@ -931,6 +931,7 @@ highlight! link MatchParen Visual
 augroup vimrc
 
   " Set or overrule filetypes
+  autocmd BufNewFile,BufRead *.js set filetype=javascript.jsx
   autocmd BufNewFile,BufRead *.tsx,*.jsx set filetype=typescript.tsx
   autocmd BufNewFile,BufRead .zprofile,zprofile set filetype=zsh
   autocmd BufNewFile,BufRead .muttrc,muttrc set filetype=neomuttrc
