@@ -170,6 +170,28 @@ function fzf-git-log() {
       )+accept"
 }
 
+# Connect to Wi-Fi network with fzf
+function fzf-wifi() {
+  ssid=$( \
+    airport --scan | \
+    tail -n +2 | cut -c 1-32 | sed 's/^ *//' | sort --ignore-case | \
+    fzf --reverse --tiebreak=index --no-sort \
+  )
+  if [[ "$?" = 0 ]]; then
+    echo "Connecting to \"${ssid}\"..."
+    password=$( \
+      security find-generic-password \
+        -D 'AirPort network password' -a "$ssid" -w \
+        2>/dev/null \
+    )
+    if [[ "$?" != 0 ]]; then
+      password="-"
+    fi
+    networksetup -setairportnetwork en0 "$ssid" "$password"
+    echo
+  fi
+}
+
 # Perform operations on Gatekeeper
 function gate() {
   function show-help() {
@@ -465,6 +487,7 @@ alias tree='tree -C'
 alias tweet='t update'
 alias v='nvim'
 alias wiki='nvim $HOME/Dropbox/wiki/index.wiki'
+alias wifi='fzf-wifi'
 
 # }}}
 # =============================================================================
