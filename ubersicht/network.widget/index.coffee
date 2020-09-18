@@ -22,6 +22,9 @@ style: """
     color: white
     font-family: Helvetica Neue
 
+    user-select: none
+    cursor: default
+
     .container
         width: 300px
         text-align: widget-align

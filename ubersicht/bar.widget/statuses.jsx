@@ -15,6 +15,8 @@ const refreshFrequency = duration('5s')
 const className = {
   top: 4,
   right: 15,
+  userSelect: 'none',
+  cursor: 'default',
 }
 
 const classes = makeClasses({

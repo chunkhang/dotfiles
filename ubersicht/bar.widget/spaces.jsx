@@ -11,6 +11,8 @@ const refreshFrequency = false
 const className = {
   top: 4,
   left: 15,
+  userSelect: 'none',
+  cursor: 'default',
 }
 
 const classes = makeClasses({

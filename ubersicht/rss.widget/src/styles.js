@@ -3,6 +3,8 @@ const styles = css => ({
     top: 35,
     left: 15,
     width: 350,
+    userSelect: 'none',
+    cursor: 'default',
   },
 
   feedList: css({

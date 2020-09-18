@@ -32,6 +32,8 @@ style: """
   bottom: 25px
   left: 50%
   transform: translate(-50%, 0)
+  user-select: none
+  cursor: default
 
   .calendar
     width: 750px
