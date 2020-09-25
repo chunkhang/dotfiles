@@ -230,24 +230,6 @@ function gate() {
   fi
 }
 
-# Download placeholder image
-function picsum() {
-  function show-help() {
-    echo "usage: picsum <width> [height]"
-  }
-  function download-image() {
-    curl --location "https://picsum.photos/${1}/${2}" --output "$3" 2>/dev/null 
-    echo "$3"
-  }
-  if [[ "$#" = 0 ]]; then
-    show-help
-  elif [[ "$#" = 1 ]]; then
-    download-image "$1" "$1" "${RANDOM}-${1}-${1}.jpg"
-  else
-    download-image "$1" "$2" "${RANDOM}-${1}-${2}.jpg"
-  fi
-}
-
 # Execute new shell
 function refresh() {
   echo "Refreshing shell..."
