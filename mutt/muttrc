@@ -93,6 +93,7 @@ set sidebar_visible
 set sidebar_width = 20
 
 # Hide mailbox prefix
+set sidebar_delim_chars="/"
 set sidebar_short_path
 
 # Show mailbox size
@@ -103,7 +104,7 @@ set sidebar_folder_indent
 set sidebar_indent_string = " "
 
 # Sidebar item
-set sidebar_format = "%B%* %?S?%S?"
+set sidebar_format = "%D%* %?S?%S?"
 
 # }}}
 # =============================================================================
@@ -204,7 +205,7 @@ set attach_format = "%4n %t%D%u%I  %T%-40d%*   %m/%M (%s)"
 set mbox_type = Maildir
 
 # Personal
-mailboxes "Personal [p]"
+named-mailboxes "Personal [p]" =placeholder_1
 mailboxes =personal/inbox
 mailboxes =personal/sent
 mailboxes =personal/drafts
@@ -212,7 +213,7 @@ mailboxes =personal/trash
 mailboxes =personal/archive
 
 # Work
-mailboxes "Work [w]"
+named-mailboxes "Work [w]"  =placeholder_2
 mailboxes =work/inbox
 mailboxes =work/sent
 mailboxes =work/drafts
@@ -220,7 +221,7 @@ mailboxes =work/trash
 mailboxes =work/archive
 
 # Labels
-mailboxes "Labels [y]"
+named-mailboxes "Labels [y]" =placeholder_3
 mailboxes =personal/bitbucket
 mailboxes =personal/circleci
 mailboxes =personal/github
