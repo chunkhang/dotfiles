@@ -457,6 +457,7 @@ alias rgv='() { nvim -q <(rg --vimgrep "$@") }'
 # ------------------------------------------------------------------------------
 
 abbr p='pickupp'
+abbr k='kubectl'
 
 alias \?='echo "$?"'
 alias cls='clear'
