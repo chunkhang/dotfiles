@@ -337,11 +337,9 @@ abbr gc='git commit'
 abbr gca='git commit --amend'
 abbr gcm='git commit --message'
 
-abbr gd='git diff'
-abbr gdc='git diff --cached'
+abbr gd='git ydiff'
+abbr gdc='git ydiff --cached'
 abbr gds='git diff --stat'
-alias gdd='() { git diff "$@" | cdiff -s -w 0 }'
-alias gdcc='() { git diff --cached "$@" | cdiff -s -w 0 }'
 
 abbr gr='git rebase'
 abbr gri='git rebase --interactive'
@@ -356,7 +354,6 @@ abbr gtp='git stash pop'
 abbr gtc='git stash clear'
 
 abbr gw='git show'
-alias gww='() { git show "$@" | cdiff -s -w 0 }'
 
 abbr gl='git log'
 alias gll='fzf-git-log'

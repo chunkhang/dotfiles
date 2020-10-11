@@ -44,6 +44,9 @@ export MANPAGER='nvim +Man!'
 # Homebrew
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=0
 
+# Ydiff
+export YDIFF_OPTIONS='--width=0 '
+
 # =============================================================================
 # PATH
 # https://superuser.com/a/598924
