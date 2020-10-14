@@ -113,6 +113,7 @@ Plug 'Konfekt/vim-mailquery'
 Plug 'vimwiki/vimwiki'
 Plug 'itchyny/dictionary.vim', Cond(has('mac'))
 Plug 'Ron89/thesaurus_query.vim', Cond(has('python') \|\| has('python3'))
+Plug 'lyokha/vim-xkbswitch'
 
 call plug#end()
 
@@ -926,6 +927,11 @@ let g:tq_use_vim_autocomplete = 0
 " matchparen
 " -----------------------------------------------------------------------------
 highlight! link MatchParen Visual
+
+" -----------------------------------------------------------------------------
+" vim-xkbswitch
+" -----------------------------------------------------------------------------
+let g:XkbSwitchEnabled = 1
 
 " }}}
 " =============================================================================
