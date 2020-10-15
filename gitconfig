@@ -45,8 +45,6 @@
 
 [alias]
 
-  ydiff = !ydiff
-
   unstage = reset HEAD *
 
   discard = checkout -- *
