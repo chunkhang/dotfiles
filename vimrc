@@ -110,7 +110,6 @@ Plug 'w0rp/ale'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'Konfekt/vim-mailquery'
-Plug 'vimwiki/vimwiki'
 Plug 'itchyny/dictionary.vim', Cond(has('mac'))
 Plug 'Ron89/thesaurus_query.vim', Cond(has('python') \|\| has('python3'))
 Plug 'lyokha/vim-xkbswitch'
@@ -896,38 +895,6 @@ augroup END
 " limelight.vim
 " -----------------------------------------------------------------------------
 let g:limelight_priority = -1
-
-" -----------------------------------------------------------------------------
-" vimwiki
-" -----------------------------------------------------------------------------
-let g:vimwiki_map_prefix = '<leader><leader>'
-let g:vimwiki_list = [{
-      \ 'path': '~/Dropbox/wiki/',
-      \ 'path_html': '~/Dropbox/wiki-html',
-      \ 'auto_toc': 1,
-      \ 'diary_index': 'index',
-      \ 'auto_diary_index': 1,
-      \ 'auto_tags': 1,
-      \ }]
-let g:vimwiki_auto_chdir = 1
-let g:vimwiki_dir_link = 'index'
-let g:vimwiki_hl_headers = 1
-let g:vimwiki_folding = 'custom'
-let g:vimwiki_table_mappings = 0
-call <sid>highlight_onedark('VimWikiHeader1', 'red')
-call <sid>highlight_onedark('VimWikiHeader2', 'green')
-call <sid>highlight_onedark('VimWikiHeader3', 'blue')
-call <sid>highlight_onedark('VimwikiTag', 'purple')
-function! s:reindex_diary()
-  VimwikiDiaryGenerateLinks
-  update
-endfunction
-augroup vimrc
-  autocmd BufEnter */diary/index.wiki call <sid>reindex_diary()
-  autocmd BufWritePre */diary/????-??-??.wiki normal! gggqG}zz
-  " Non-conflicting key to invoke vim-dirvish
-  autocmd FileType vimwiki nnoremap \ :Dirvish<cr>
-augroup END
 
 " -----------------------------------------------------------------------------
 " thesaurus_query.vim
