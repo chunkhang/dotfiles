@@ -38,7 +38,7 @@ endif
 " -----------------------------------------------------------------------------
 " Utility
 " -----------------------------------------------------------------------------
-Plug 'jiangmiao/auto-pairs'
+Plug 'tmsvg/pear-tree'
 Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dyng/ctrlsf.vim'
@@ -634,9 +634,24 @@ function! g:BuffetSetCustomColors()
 endfunction
 
 " -----------------------------------------------------------------------------
-" auto-pairs
+" pear-tree
 " -----------------------------------------------------------------------------
-let g:AutoPairsMapCh = 0
+let g:pear_tree_repeatable_expand = 0
+let g:pear_tree_smart_openers = 1
+let g:pear_tree_smart_closers = 1
+let g:pear_tree_smart_backspace = 1
+let g:pear_tree_pairs = {
+      \ '(': { 'closer': ')' },
+      \ '[': { 'closer': ']' },
+      \ '{': { 'closer': '}' },
+      \ "'": { 'closer': "'" },
+      \ '"': { 'closer': '"' },
+      \ '`': { 'closer': '`' },
+      \ '/\*': { 'closer': '\*/' },
+      \ '<!--': { 'closer': '-->' },
+      \ '<*>': { 'closer': '</*>', 'not_like': '/$' }
+      \ }
+imap <space> <Plug>(PearTreeSpace)
 
 " -----------------------------------------------------------------------------
 " ctrlp.vim
