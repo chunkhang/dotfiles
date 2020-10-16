@@ -38,30 +38,27 @@ endif
 " -----------------------------------------------------------------------------
 " Utility
 " -----------------------------------------------------------------------------
-Plug 'tmsvg/pear-tree'
+Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dyng/ctrlsf.vim'
-Plug 'henrik/vim-indexed-search'
+Plug 'henrik/vim-indexed-search', Cond(!has('nvim'))
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'machakann/vim-swap'
 Plug 'adelarsq/vim-matchit'
-Plug 'wellle/targets.vim'
-Plug 'jceb/emmet.snippets'
 Plug 'chrisbra/Colorizer'
-" Plug 'ludovicchabant/vim-gutentags'
-Plug '~/Workspace/vimscript/vim-gutentags'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'justinmk/vim-dirvish'
 Plug 'embear/vim-localvimrc'
 Plug 'qpkorr/vim-bufkill'
+Plug 'SirVer/ultisnips', Cond(has('python') \|\| has('python3'))
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
-Plug 'SirVer/ultisnips', Cond(has('python') \|\| has('python3'))
 
 " -----------------------------------------------------------------------------
 " Git
@@ -110,8 +107,6 @@ Plug 'w0rp/ale'
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
 Plug 'Konfekt/vim-mailquery'
-Plug 'itchyny/dictionary.vim', Cond(has('mac'))
-Plug 'Ron89/thesaurus_query.vim', Cond(has('python') \|\| has('python3'))
 Plug 'lyokha/vim-xkbswitch'
 
 call plug#end()
@@ -188,6 +183,17 @@ augroup END
 " =============================================================================
 " FUNCTIONS {{{
 " =============================================================================
+
+" Open plugin repository on GitHub
+function! s:open_reop()
+  let l:line = getline('.')
+  let l:repo = matchstr(line, "^Plug '\\zs.\\{-}\\ze'")
+  if empty(l:repo)
+    return
+  endif
+  let l:url = 'https://github.com/' . l:repo
+  call netrw#BrowseX(l:url, 0)
+endfunction
 
 " Delete all empty buffers
 " https://redd.it/1a4yf1
@@ -452,7 +458,6 @@ augroup END
 " -----------------------------------------------------------------------------
 " Manage vimrc
 nnoremap <silent> <leader>v :edit ~/.vimrc<cr>
-nnoremap <leader>V :source ~/.vimrc<cr>
 " Manage syntax
 nnoremap <silent> <leader>s :call <sid>print_highlight_groups()<cr>
 nnoremap <silent> <leader>S :call <sid>toggle_syntax()<cr>
@@ -460,13 +465,10 @@ nnoremap <silent> <leader>S :call <sid>toggle_syntax()<cr>
 nnoremap <silent> <leader>/ :nohlsearch<cr>
 " Clear all marks
 nnoremap <silent> <leader>m :call <sid>clear_marks()<cr>
-" Open shell
-if has('nvim')
-  nnoremap <silent> <leader>z :terminal<cr>
-  tnoremap <esc> <C-\><C-n>
-else
-  nnoremap <silent> <leader>z :shell<cr>
-endif
+" Open plugin repository
+augroup vimrc
+  autocmd FileType vim nnoremap <buffer> <silent> gx :call <sid>open_repo()<cr>
+augroup END
 
 " -----------------------------------------------------------------------------
 " ctrlp.vim
@@ -478,18 +480,11 @@ nnoremap <C-b> :CtrlPBuffer<cr>
 " -----------------------------------------------------------------------------
 nmap <C-f>f <Plug>CtrlSFPrompt
 nmap <C-f>w <Plug>CtrlSFCwordPath
-nnoremap <C-f>t :CtrlSFToggle<cr>
-
-" -----------------------------------------------------------------------------
-" emmet.snippets
-" -----------------------------------------------------------------------------
-imap <C-e> <esc>daWae<tab><esc>pa<tab>
 
 " -----------------------------------------------------------------------------
 " Colorizer
 " -----------------------------------------------------------------------------
 nnoremap <leader>c :ColorToggle<cr>
-nnoremap <leader>C :ColorContrast<cr>
 
 " -----------------------------------------------------------------------------
 " ultisnips
@@ -497,42 +492,14 @@ nnoremap <leader>C :ColorContrast<cr>
 nnoremap <silent> <leader>u :edit ~/.vim/ultisnips<cr>
 
 " -----------------------------------------------------------------------------
+" gv.vim
+" -----------------------------------------------------------------------------
+nmap <silent> <leader>B :GV!<cr>
+
+" -----------------------------------------------------------------------------
 " git-messenger
 " -----------------------------------------------------------------------------
 nmap <leader>b <Plug>(git-messenger)
-
-" -----------------------------------------------------------------------------
-" tabular
-" -----------------------------------------------------------------------------
-nnoremap <leader>t :Tabularize
-nnoremap <leader>t<space> :Tabularize spaces<cr>
-vnoremap <leader>t<space> :Tabularize spaces<cr>
-nnoremap <leader>t= :Tabularize assignment<cr>
-vnoremap <leader>t= :Tabularize assignment<cr>
-nnoremap <leader>t: :Tabularize /:<cr>
-vnoremap <leader>t: :Tabularize /:<cr>
-
-" -----------------------------------------------------------------------------
-" ale
-" -----------------------------------------------------------------------------
-nnoremap <silent> <leader>l :ALELint<cr>
-
-" -----------------------------------------------------------------------------
-" goyo.vim
-" -----------------------------------------------------------------------------
-nnoremap <leader>g :Goyo<cr>
-
-" -----------------------------------------------------------------------------
-" dictionary.vim
-" -----------------------------------------------------------------------------
-nmap <C-d>d :Dictionary<space>
-nmap <C-d>w :Dictionary -cursor-word<cr>
-
-" -----------------------------------------------------------------------------
-" thesaurus_query.vim
-" -----------------------------------------------------------------------------
-nmap <C-e>e :Thesaurus<space>
-nmap <C-e>w :ThesaurusQueryLookupCurrentWord<cr>
 
 " }}}
 " =============================================================================
@@ -633,24 +600,23 @@ function! g:BuffetSetCustomColors()
 endfunction
 
 " -----------------------------------------------------------------------------
-" pear-tree
+" auto-pairs
 " -----------------------------------------------------------------------------
-let g:pear_tree_repeatable_expand = 0
-let g:pear_tree_smart_openers = 1
-let g:pear_tree_smart_closers = 1
-let g:pear_tree_smart_backspace = 1
-let g:pear_tree_pairs = {
-      \ '(': { 'closer': ')' },
-      \ '[': { 'closer': ']' },
-      \ '{': { 'closer': '}' },
-      \ "'": { 'closer': "'" },
-      \ '"': { 'closer': '"' },
-      \ '`': { 'closer': '`' },
-      \ '/\*': { 'closer': '\*/' },
-      \ '<!--': { 'closer': '-->' },
-      \ '<*>': { 'closer': '</*>', 'not_like': '/$' }
+let g:AutoPairsMapCh = 0
+let g:AutoPairsShortcutToggle = ''
+let g:AutoPairsShortcutFastWrap = ''
+let g:AutoPairsShortcutJump = ''
+let g:AutoPairsShortcutBackInsert = ''
+let g:AutoPairs = {
+      \ '(': ')',
+      \ '[': ']',
+      \ '{': '}',
+      \ "'": "'",
+      \ '"': '"',
+      \ '`': '`',
+      \ '/*': '*/',
+      \ '<!--': '-->',
       \ }
-imap <space> <Plug>(PearTreeSpace)
 
 " -----------------------------------------------------------------------------
 " ctrlp.vim
@@ -776,7 +742,7 @@ function! s:setup_git_messenger_popup()
     nmap <buffer><S-tab> O
 endfunction
 augroup vimrc
-  autocmd FileType gitmessengerpopup call <SID>setup_git_messenger_popup()
+  autocmd FileType gitmessengerpopup call <sid>setup_git_messenger_popup()
 augroup END
 
 " -----------------------------------------------------------------------------
@@ -815,12 +781,16 @@ call <sid>highlight_onedark('tsxCloseTag', 'white')
 " -----------------------------------------------------------------------------
 " vim-markdown
 " -----------------------------------------------------------------------------
+let g:vim_markdown_new_list_item_indent = 0
 call <sid>highlight_onedark('htmlH1', 'red')
 call <sid>highlight_onedark('htmlH2', 'green')
 call <sid>highlight_onedark('htmlH3', 'blue')
 call <sid>highlight_onedark('htmlH4', 'purple')
 call <sid>highlight_onedark('htmlH5', 'purple')
 call <sid>highlight_onedark('htmlH6', 'purple')
+augroup vimrc
+  autocmd Syntax markdown syntax clear mkdLineBreak
+augroup END
 
 " -----------------------------------------------------------------------------
 " vim-terraform
@@ -887,23 +857,14 @@ function! s:goyo_leave()
   Limelight!
 endfunction
 augroup vimrc
-  autocmd! User GoyoEnter call <SID>goyo_enter()
-  autocmd! User GoyoLeave call <SID>goyo_leave()
+  autocmd! User GoyoEnter call <sid>goyo_enter()
+  autocmd! User GoyoLeave call <sid>goyo_leave()
 augroup END
 
 " -----------------------------------------------------------------------------
 " limelight.vim
 " -----------------------------------------------------------------------------
 let g:limelight_priority = -1
-
-" -----------------------------------------------------------------------------
-" thesaurus_query.vim
-" -----------------------------------------------------------------------------
-let g:tq_enabled_backends = ['openoffice_en', 'mthesaur_txt']
-let g:tq_openoffice_en_file = '~/.vim/thesaurus/th_en_US_new'
-let g:tq_mthesaur_file = '~/.vim/thesaurus/mthesaur.txt'
-let g:tq_map_keys = 0
-let g:tq_use_vim_autocomplete = 0
 
 " -----------------------------------------------------------------------------
 " matchparen
@@ -945,6 +906,7 @@ augroup vimrc
   autocmd FileType javascript.mdx set shiftwidth=2
   autocmd BufNewFile,BufRead Info.plist set noexpandtab shiftwidth=0
   autocmd FileType groovy set shiftwidth=4
+  autocmd FileType markdown set shiftwidth=2 tabstop=2
 
   " Folding
   autocmd Filetype yaml set foldmethod=indent
