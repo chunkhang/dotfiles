@@ -61,9 +61,18 @@
   }; f"
 
   pr = "!f() { \
-    repo=$(git ls-remote --get-url | cut -d : -f 2 | cut -d . -f 1) ;\
+    remote_url=$(git ls-remote --get-url) ;\
+    remote_uri=$(echo "$remote_url" | cut -d @ -f 2) ;\
+    host=$(echo "$remote_uri" | cut -d : -f 1) ;\
+    repo=$(echo "$remote_uri" | cut -d : -f 2 | cut -d . -f 1) ;\
     branch=$(git symbolic-ref --short HEAD) ;\
-    url="https://bitbucket.org/${repo}/pull-requests/new?source=${branch}" ;\
+    if [[ "$host" =~ "github" ]]; then \
+      url="https://${host}/${repo}/compare/develop...${branch}?expand=1" ;\
+    elif [[ "$host" =~ "bitbucket" ]]; then \
+      url="https://${host}/${repo}/pull-requests/new?source=${branch}" ;\
+    else \
+      exit 1 ;\
+    fi ;\
     echo "$url" ;\
     open "$url" ;\
   }; f"
