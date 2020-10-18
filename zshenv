@@ -47,6 +47,9 @@ export HOMEBREW_CLEANUP_MAX_AGE_DAYS=0
 # Ydiff
 export YDIFF_OPTIONS='--width=0 '
 
+# Fastlane
+export FASTLANE_SKIP_UPDATE_CHECK=1
+
 # =============================================================================
 # PATH
 # https://superuser.com/a/598924
