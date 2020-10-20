@@ -885,7 +885,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead .zprofile,zprofile set filetype=zsh
   autocmd BufNewFile,BufRead .muttrc,muttrc set filetype=neomuttrc
   autocmd BufNewFile,BufRead .tags set filetype=tags
-  autocmd BufNewFile,BufRead Podfile set filetype=conf
+  autocmd BufNewFile,BufRead Podfile,Appfile,Fastfile,Matchfile set filetype=ruby
   autocmd BufNewFile,BufRead *.mdx set filetype=javascript.mdx
   autocmd BufNewFile,BufRead gitconfig set filetype=toml
   autocmd BufNewFile,BufRead tsconfig.json set filetype=javascript
