@@ -50,6 +50,9 @@ export YDIFF_OPTIONS='--width=0 '
 # Fastlane
 export FASTLANE_SKIP_UPDATE_CHECK=1
 
+# Ruby
+export RUBYOPT='-W0'
+
 # =============================================================================
 # PATH
 # https://superuser.com/a/598924
