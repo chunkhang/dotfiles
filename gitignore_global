@@ -2,6 +2,7 @@
 .ctrlp
 .ctrlsf
 .tags
+.tags.lock
 .notags
 .ignore
 .lvimrc
