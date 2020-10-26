@@ -493,9 +493,9 @@ nnoremap <leader>c :ColorToggle<cr>
 nnoremap <silent> <leader>u :edit ~/.vim/ultisnips<cr>
 
 " -----------------------------------------------------------------------------
-" gv.vim
+" vim-fugitive
 " -----------------------------------------------------------------------------
-nmap <silent> <leader>B :GV!<cr>
+nmap <silent> <leader>B :Gblame<cr>
 
 " -----------------------------------------------------------------------------
 " git-messenger
