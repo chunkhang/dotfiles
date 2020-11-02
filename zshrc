@@ -260,6 +260,15 @@ function todo() {
   echo "$todo_path"
 }
 
+# Print repository version
+function version() {
+  if [[ -f 'package.json' ]]; then
+    jq --raw-output '.version' package.json
+  else
+    return 1
+  fi
+}
+
 # }}}
 # =============================================================================
 # ALIASES {{{
