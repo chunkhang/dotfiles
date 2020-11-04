@@ -42,7 +42,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'dyng/ctrlsf.vim'
-Plug 'henrik/vim-indexed-search', Cond(!has('nvim'))
+Plug 'google/vim-searchindex'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'AndrewRadev/switch.vim'
 Plug 'machakann/vim-swap'
