@@ -391,6 +391,7 @@ abbr gf='git flow'
 abbr gff='git flow feature'
 abbr gfh='git flow hotfix'
 abbr gfr='git flow release'
+abbr gfb='git flow bugfix'
 
 # ------------------------------------------------------------------------------
 # Docker
