@@ -818,9 +818,13 @@ let g:ale_sign_error = '•'
 let g:ale_sign_warning = '•'
 let g:ale_lint_on_text_changed = 0
 let g:ale_lint_on_insert_leave = 0
+let g:ale_linters_explicit = 1
 let g:ale_linters = {
-      \ 'javascript': ['eslint'],
+      \ 'sh': ['shell'],
+      \ 'zsh': ['shell'],
       \ 'vim': ['vint'],
+      \ 'javascript': ['eslint'],
+      \ 'go': ['gofmt', 'golint', 'go vet'],
       \ }
 call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
 
