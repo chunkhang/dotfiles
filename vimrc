@@ -186,7 +186,7 @@ augroup END
 " =============================================================================
 
 " Open plugin repository on GitHub
-function! s:open_reop()
+function! s:open_repo()
   let l:line = getline('.')
   let l:repo = matchstr(line, "^Plug '\\zs.\\{-}\\ze'")
   if empty(l:repo)
