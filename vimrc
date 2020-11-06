@@ -207,6 +207,28 @@ function! s:gx_go()
   call netrw#BrowseX(l:url, 0)
 endfunction
 
+" Go to path for Go import
+function! s:gf_go()
+  let l:module_path = findfile('go.mod', '.;')
+  if empty(l:module_path)
+    return
+  endif
+  for l:line in readfile(l:module_path)
+    let l:module = matchstr(l:line, '^module \zs.*\ze$')
+    if !empty(l:module)
+      let l:pat = '"' . l:module . '/\zs.*\ze"'
+      let l:submodule = matchstr(getline('.'), l:pat)
+      if empty(l:submodule)
+        return
+      endif
+      let l:module_dir = fnamemodify(l:module_path, ':h')
+      let l:path = l:module_dir . '/' . l:submodule
+      execute 'edit' l:path
+      return
+    endif
+  endfor
+endfunction
+
 " Delete all empty buffers
 " https://redd.it/1a4yf1
 function! s:clear_empty_buffers()
@@ -483,6 +505,7 @@ nnoremap <silent> <leader>m :call <sid>clear_marks()<cr>
 augroup vimrc
   autocmd FileType vim nnoremap <buffer> <silent> gx :call <sid>gx_vim()<cr>
   autocmd FileType go nnoremap <buffer> <silent> gx :call <sid>gx_go()<cr>
+  autocmd FileType go nnoremap <buffer> <silent> gf :call <sid>gf_go()<cr>
 augroup END
 
 " -----------------------------------------------------------------------------
