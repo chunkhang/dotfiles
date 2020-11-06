@@ -457,6 +457,8 @@ augroup END
 " -----------------------------------------------------------------------------
 " Miscellaneous
 " -----------------------------------------------------------------------------
+" Make
+nnoremap <silent> <leader><leader> :make<cr>
 " Manage vimrc
 nnoremap <silent> <leader>v :edit ~/.vimrc<cr>
 " Manage syntax
