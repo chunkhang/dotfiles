@@ -42,6 +42,7 @@ yabai -m rule --add app="^Mail$" manage=off
 yabai -m rule --add app="^Photos$" manage=off
 yabai -m rule --add app="^Postgres$" manage=off
 yabai -m rule --add app="^Slack$" manage=off
+yabai -m rule --add app="^Stickies$" manage=off
 yabai -m rule --add app="^Swipes$" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^The Unarchiver$" manage=off
