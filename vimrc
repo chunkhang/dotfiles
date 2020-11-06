@@ -185,14 +185,25 @@ augroup END
 " FUNCTIONS {{{
 " =============================================================================
 
-" Open plugin repository on GitHub
-function! s:open_repo()
+" Open repository for Vim plug
+function! s:gx_vim()
   let l:line = getline('.')
   let l:repo = matchstr(line, "^Plug '\\zs.\\{-}\\ze'")
   if empty(l:repo)
     return
   endif
   let l:url = 'https://github.com/' . l:repo
+  call netrw#BrowseX(l:url, 0)
+endfunction
+
+" Open repository for Go import
+function! s:gx_go()
+  let l:line = getline('.')
+  let l:url = matchstr(line, '"\zs.*\ze"')
+  if empty(l:url)
+    return
+  endif
+  let l:url = 'https://' . l:url
   call netrw#BrowseX(l:url, 0)
 endfunction
 
@@ -470,7 +481,8 @@ nnoremap <silent> <leader>/ :nohlsearch<cr>
 nnoremap <silent> <leader>m :call <sid>clear_marks()<cr>
 " Open plugin repository
 augroup vimrc
-  autocmd FileType vim nnoremap <buffer> <silent> gx :call <sid>open_repo()<cr>
+  autocmd FileType vim nnoremap <buffer> <silent> gx :call <sid>gx_vim()<cr>
+  autocmd FileType go nnoremap <buffer> <silent> gx :call <sid>gx_go()<cr>
 augroup END
 
 " -----------------------------------------------------------------------------
