@@ -1,0 +1,66 @@
+# https://github.com/jaspervdj/patat#configuration
+
+wrap: true
+
+margins:
+  left: 10
+  right: 10
+
+slideLevel: 2
+
+breadcrumbs: false
+
+theme:
+  blockQuote: [dullMagenta]
+  borders: [vividWhite]
+  bulletList: [dullRed]
+  codeBlock: [onVividBlack]
+  code: [dullYellow, onVividBlack]
+  definitionList: [dullRed]
+  definitionTerm: [dullWhite]
+  emph: [underline]
+  header: [dullBlue]
+  imageTarget: [dullCyan, underline]
+  imageText: [dullGreen]
+  linkTarget: [dullCyan, underline]
+  linkText: [dullGreen]
+  # math: [vividCyan]
+  orderedList: [dullRed]
+  # quoted: [vividCyan]
+  strikeout: [dullBlack, onDullRed]
+  strong: [dullMagenta]
+  # tableHeader: [vividCyan]
+  tableSeparator: [dullWhite]
+
+  syntaxHighlighting:
+    keyword: [dullMagenta]
+    dataType: [dullYellow]
+    decVal: [dullYellow]
+    # baseN: [vividCyan]
+    float: [dullYellow]
+    # constant: [vividCyan]
+    # char: [vividCyan]
+    specialChar: [dullRed]
+    string: [dullGreen]
+    verbatimString: [dullGreen]
+    # specialString: [vividCyan]
+    import: [dullMagenta]
+    comment: [vividWhite]
+    # documentation: [vividCyan]
+    # annotation: [vividCyan]
+    # commentVar: [vividCyan]
+    # other: [vividCyan]
+    function: [dullBlue]
+    # variable: [vividCyan]
+    controlFlow: [dullMagenta]
+    operator: [dullWhite]
+    builtIn: [dullYellow]
+    # extension: [vividCyan]
+    # preprocessor: [vividCyan]
+    attribute: [dullWhite]
+    # regionMarker: [vividCyan]
+    # information: [vividCyan]
+    # warning: [vividCyan]
+    # alert: [vividCyan]
+    # error: [vividCyan]
+    normal: [dullWhite]
