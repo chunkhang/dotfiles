@@ -161,7 +161,7 @@ set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.
 set backspace=indent,eol,start
 set laststatus=2
 set noshowmode
-set updatetime=250
+set updatetime=500
 set signcolumn=yes
 set synmaxcol=1000
 set regexpengine=1
