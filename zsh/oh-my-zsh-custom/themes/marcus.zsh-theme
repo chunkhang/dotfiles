@@ -8,7 +8,7 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" %{$fg[green]%}"
 
 local git_stash_sign="·"
 function _git_stash_info() {
-  git symbolic-ref HEAD &>/dev/null || exit 0
+  git status &>/dev/null || exit 0
   local count=$(git stash list | wc -l | xargs)
   repeat "$count" printf "$git_stash_sign"
 }
