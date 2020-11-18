@@ -8,8 +8,8 @@ color status blue black
 color message yellow black
 color error red black
 color search black yellow
-color indicator white color8
-color signature color15 black
+color indicator color15 color8
+color signature white black
 
 # }}}
 # =============================================================================
@@ -32,8 +32,8 @@ color index blue black ~v # Collapsed
 # SIDEBAR {{{
 # =============================================================================
 
-color sidebar_divider color15 black
-color sidebar_highlight white color8
+color sidebar_divider white black
+color sidebar_highlight color15 color8
 color sidebar_indicator black green
 
 # }}}
@@ -41,8 +41,8 @@ color sidebar_indicator black green
 # PAGER {{{
 # =============================================================================
 
-color tilde color15 black
-color markers color15 black
+color tilde white black
+color markers white black
 
 # }}}
 # =============================================================================
@@ -60,7 +60,7 @@ color header green black "^Subject:"
 # BODY {{{
 # =============================================================================
 
-color normal white black
+color normal color15 black
 
 # URL
 color body cyan black "https?://[\-\.,/%~_:?&=\#@a-zA-Z0-9]+"
@@ -89,7 +89,7 @@ color quoted4 cyan black
 # ATTACHMENTS {{{
 # =============================================================================
 
-color attachment color15 black
+color attachment white black
 
 color attach_headers blue black "Attachment #[0-9]+"
 color attach_headers blue black "Type: [a-z]+/[a-z0-9\-]+"

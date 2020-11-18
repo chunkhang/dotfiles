@@ -1,8 +1,12 @@
 # vim: set filetype=neomuttrc foldmethod=marker:
 
+bind index,pager,attach gg noop
 bind index,pager,attach g noop
+bind index pa noop
 bind index p noop
+bind index wa noop
 bind index w noop
+bind index yb noop
 bind index y noop
 bind pager \Cr noop
 

@@ -19,5 +19,5 @@ local prompt_sign="$"
 PROMPT="\
 %{$fg[yellow]%}${current_dir} \
 ${git_info} \
-%{$fg[white]%}${git_stash}
+%{$fg[default]%}${git_stash}
 ${prompt_sign} %{$reset_color%}"

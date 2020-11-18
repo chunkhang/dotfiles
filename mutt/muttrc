@@ -252,8 +252,5 @@ source accounts/personal
 folder-hook personal "source $HOME/.mutt/accounts/personal"
 folder-hook work "source $HOME/.mutt/accounts/work"
 
-# Sync with servers automatically after 10 minutes of idling
-set timeout = 600
-timeout-hook "push WS"
 # }}}
 # =============================================================================
