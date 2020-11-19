@@ -406,6 +406,12 @@ vnoremap <leader>p "*p
 " Append comma
 nnoremap <leader>, A,<esc>
 vnoremap <silent> <leader>, :normal A,<cr>
+" Append dot
+nnoremap <leader>. A.<esc>
+vnoremap <silent> <leader>. :normal A.<cr>
+" Append semicolon
+nnoremap <leader>; A;<esc>
+vnoremap <silent> <leader>; :normal A;<cr>
 " Complete line
 inoremap <C-space> <C-x><C-l>
 
