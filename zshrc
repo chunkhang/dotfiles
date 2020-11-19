@@ -393,6 +393,11 @@ abbr gfh='git flow hotfix'
 abbr gfr='git flow release'
 abbr gfb='git flow bugfix'
 
+abbr ge='git worktree'
+abbr gea='git worktree add'
+abbr gel='git worktree list'
+abbr gep='git worktree prune'
+
 # ------------------------------------------------------------------------------
 # Docker
 # ------------------------------------------------------------------------------
