@@ -1,6 +1,5 @@
 .DS_Store
-.ctrlp
-.ctrlsf
+.root
 .tags
 .tags.lock
 .notags

@@ -665,7 +665,7 @@ let g:AutoPairs = {
 " -----------------------------------------------------------------------------
 " ctrlp.vim
 " -----------------------------------------------------------------------------
-let g:ctrlp_root_markers = ['.ctrlp']
+let g:ctrlp_root_markers = ['.root']
 let g:ctrlp_use_caching = 1
 let g:ctrlp_prompt_mappings = {
       \ 'PrtHistory(1)': [],
@@ -679,7 +679,7 @@ let g:ctrlp_user_command = 'rg %s --files --color=never'
 " -----------------------------------------------------------------------------
 let g:ctrlsf_case_sensitive = 'yes'
 let g:ctrlsf_default_root = 'project'
-let g:ctrlsf_extra_root_markers = ['.ctrlsf']
+let g:ctrlsf_extra_root_markers = ['.root']
 let g:ctrlsf_position = 'right'
 let g:ctrlsf_auto_close = {
       \ 'normal': 0,
