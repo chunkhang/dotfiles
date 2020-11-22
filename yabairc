@@ -22,7 +22,7 @@ yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 
 # Window
-yabai -m config window_topmost               off
+yabai -m config window_topmost               on
 yabai -m config window_shadow                float
 yabai -m config window_opacity               off
 
