@@ -58,7 +58,7 @@ FZF_CTRL_R_OPTS='--exact'
 FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 FZF_CTRL_T_OPTS='--select-1 --exit-0'
 FZF_ALT_C_COMMAND='fd --type directory'
-FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C -L 1 {} | head -200'"
+FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C -a -L 1 {} | head -200'"
 export FZF_DEFAULT_OPTS='
   --color=dark
   --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#282c34,hl+:#d858fe
@@ -480,7 +480,7 @@ alias mutt='neomutt'
 alias ncdu='ncdu --color=dark --confirm-quit'
 alias pt='papertrail'
 alias tf='terraform'
-alias tree='tree -C'
+alias tree='tree -C -a'
 alias tweet='t update'
 alias v='nvim'
 alias wiki='nvim $HOME/Dropbox/wiki/index.wiki'
