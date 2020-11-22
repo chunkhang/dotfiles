@@ -1,10 +1,10 @@
 # You may exclude certain drives (separate with a pipe)
 # Example: exclude = 'MyBook' or exclude = 'MyBook|WD Passport'
-exclude   = 'VM|Recovery|Macintosh HD$'
+exclude = 'VM|Recovery|Macintosh HD$|Preboot|Update'
 
 # Use base 10 numbers, i.e. 1GB = 1000MB. Leave this true to show disk sizes as
 # OS X would (since Snow Leopard)
-base10       = true
+base10 = true
 
 # You may optionally limit the number of disk to show
 maxDisks: 10
