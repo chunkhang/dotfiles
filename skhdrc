@@ -16,10 +16,10 @@ fn - y : ~/.scripts/yabai/restart
 ###############################################################################
 
 # Focus window
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
+alt - h : yabai -m window --focus west || yabai -m window --focus stack.first
+alt - j : yabai -m window --focus south || yabai -m window --focus stack.next
+alt - k : yabai -m window --focus north || yabai -m window --focus stack.prev
+alt - l : yabai -m window --focus east || yabai -m window --focus stack.last
 
 # Zoom window
 alt - f : yabai -m window --toggle zoom-fullscreen
@@ -46,6 +46,12 @@ shift + alt - f : yabai -m window --toggle float; yabai -m window --grid 4:4:1:1
 ###############################################################################
 # Desktop
 ###############################################################################
+
+# Set desktop to bsp layout
+shift + alt - b : yabai -m space --layout bsp
+
+# Set desktop to stack layout
+shift + alt - s : yabai -m space --layout stack
 
 # Label desktop (,)
 ctrl - 0x2B : ~/.scripts/yabai/desktop/label; ~/.scripts/ubersicht/refresh-bar
