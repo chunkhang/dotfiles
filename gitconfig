@@ -82,3 +82,11 @@
     git fetch origin master:master develop:develop ;\
     git checkout --quiet develop ;\
   }; f"
+
+  purge = "!f() { \
+    local branch="$1" ;\
+    git checkout master ;\
+    git branch --delete --force "$branch" ;\
+    git push origin ":${branch}" ;\
+  }; f"
+
