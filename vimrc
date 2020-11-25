@@ -245,6 +245,7 @@ function! s:gf_javascript()
   let l:aliases = {
         \ '\~': ['.', 'src', 'App'],
         \ '@pickupp/ui': ['../coconut/packages/ui/src'],
+        \ '@pickupp/qr': ['../coconut/packages/qr/src'],
         \ }
   for alias in items(l:aliases)
     let l:alias_from = alias[0]
