@@ -57,14 +57,14 @@ FZF_DEFAULT_COMMAND='rg --files --color=never'
 FZF_CTRL_R_OPTS='--exact'
 FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 FZF_CTRL_T_OPTS='--select-1 --exit-0'
-FZF_ALT_C_COMMAND='fd --type directory'
-FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C -a -L 1 {} | head -200'"
 export FZF_DEFAULT_OPTS='
   --color=dark
   --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#282c34,hl+:#d858fe
   --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
 '
 source /usr/local/opt/fzf/shell/key-bindings.zsh
+# Remove binding for alt-c
+bindkey -r '\ec'
 
 # -----------------------------------------------------------------------------
 # Syntax highlighting
