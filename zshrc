@@ -33,8 +33,6 @@ export ZSH_THEME=marcus
 export DISABLE_AUTO_TITLE=true
 export DISABLE_AUTO_UPDATE=true
 
-plugins+=(colored-man-pages)
-
 source $ZSH/oh-my-zsh.sh
 
 # -----------------------------------------------------------------------------
