@@ -64,9 +64,7 @@ export FZF_DEFAULT_OPTS='
   --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#282c34,hl+:#d858fe
   --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
 '
-
 source /usr/local/opt/fzf/shell/key-bindings.zsh
-bindkey -s '^P' '^T'
 
 # -----------------------------------------------------------------------------
 # Syntax highlighting
@@ -90,6 +88,21 @@ compinit
 # =============================================================================
 # FUNCTIONS {{{
 # =============================================================================
+
+# Use ctrl-p for switching directory
+function _ctrl_p() {
+  local dir=$( \
+    z -l | tac | head -n 10 | awk '{print $2}'| sed "s,${HOME},~," | \
+    fzf --ansi --reverse --tiebreak=index --no-sort --height 40% | \
+    sed "s,~,${HOME}," \
+  )
+  if [[ -d "$dir" ]]; then
+    cd "$dir"
+  fi
+  zle fzf-redraw-prompt
+}
+zle -N _ctrl_p
+bindkey '^P' _ctrl_p
 
 # Perform operations on DNS
 function dns() {
