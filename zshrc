@@ -97,7 +97,7 @@ function _ctrl_p() {
     # Exclude current directory from list
     grep --invert-match --line-regexp --fixed-strings "$(pwd)" | \
     sed "s,${HOME},~," | \
-    fzf --reverse --tiebreak=index --no-sort --exact --height 40% | \
+    fzf --reverse --tiebreak=end,index --exact --height 40% | \
     sed "s,~,${HOME}," \
   )
   if [[ -d "$dir" ]]; then
