@@ -233,7 +233,7 @@ endfunction
 function! s:gf_javascript()
   " Line must contain `require` or `import`
   let l:line = getline('.')
-  if empty(matchstr(l:line, '\(import\|require\)'))
+  if empty(matchstr(l:line, '\(import\|from\|require\)'))
     return
   endif
 
@@ -243,7 +243,7 @@ function! s:gf_javascript()
   " Resolve import aliases
   let l:imports = [l:match]
   let l:aliases = {
-        \ '\~': ['.', 'src', 'App'],
+        \ '\~': ['.', 'src', 'app'],
         \ '@pickupp/ui': ['../coconut/packages/ui/src'],
         \ '@pickupp/qr': ['../coconut/packages/qr/src'],
         \ }
