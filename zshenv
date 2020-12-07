@@ -7,7 +7,7 @@ export EDITOR=nvim
 export LANG=en_US.UTF-8
 
 # Java
-export JAVA_HOME=$(/usr/libexec/java_home)
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home
 
 # Scala
 export SCALA_HOME=/usr/local/opt/scala/idea
