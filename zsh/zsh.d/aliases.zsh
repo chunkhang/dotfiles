@@ -1,3 +1,7 @@
+# =============================================================================
+# Setup abbreviation expansion
+# =============================================================================
+
 typeset -a _abbr_abbreviations
 typeset -a _abbr_history
 
@@ -45,10 +49,44 @@ bindkey '^M' _abbr_enter
 bindkey '^ ' magic-space
 bindkey -M isearch ' ' magic-space
 
+# =============================================================================
+# Aliases / Abbreviations
+# =============================================================================
+
+# -----------------------------------------------------------------------------
+# Overrides
+# -----------------------------------------------------------------------------
 
 alias ls='ls -G'
+alias fd='fd --hidden'
+alias tree='tree -C -a'
+alias ncdu='ncdu --color=dark --confirm-quit'
+
+# ------------------------------------------------------------------------------
+# Utilities
+# ------------------------------------------------------------------------------
+
 alias l='ls -lah'
-# alias ...='../..'
+alias lgrep='() { l | grep "$@" }'
+alias -- -='cd -'
+alias ...='../..'
+alias ....='../../..'
+alias .....='../../../..'
+alias \?='echo "$?"'
+alias cls='clear'
+
+# -----------------------------------------------------------------------------
+# Short Forms
+# -----------------------------------------------------------------------------
+
+alias v='nvim'
+alias pt='papertrail'
+alias tf='terraform'
+alias hp='http-prompt'
+alias mutt='neomutt'
+alias tweet='t update'
+abbr p='pickupp'
+abbr k='kubectl'
 
 # ------------------------------------------------------------------------------
 # Git
@@ -147,31 +185,6 @@ abbr dkr='docker-compose restart'
 abbr dkk='docker-compose kill'
 
 # -----------------------------------------------------------------------------
-# PM2
-# -----------------------------------------------------------------------------
-
-abbr pp='pm2'
-
-abbr pps='pm2 start'
-
-abbr ppso='pm2 start --only'
-
-abbr ppr='pm2 restart'
-
-abbr ppt='pm2 stop'
-
-abbr ppd='pm2 delete'
-
-abbr ppl='pm2 logs'
-abbr pple='pm2 logs --err'
-
-abbr ppf='pm2 flush'
-
-abbr ppls='pm2 ls'
-
-abbr ppm='pm2 monit'
-
-# -----------------------------------------------------------------------------
 # tmux
 # -----------------------------------------------------------------------------
 
@@ -189,24 +202,3 @@ abbr tmk='tmux kill-server'
 
 alias rgl='() { rg --pretty "$@" | less }'
 alias rgv='() { nvim -q <(rg --vimgrep "$@") }'
-
-# ------------------------------------------------------------------------------
-# Miscellaneous
-# ------------------------------------------------------------------------------
-
-abbr p='pickupp'
-abbr k='kubectl'
-
-alias \?='echo "$?"'
-alias cls='clear'
-alias fd='fd --hidden'
-alias hp='http-prompt'
-alias lgrep='() { l | grep "$@" }'
-alias mutt='neomutt'
-alias ncdu='ncdu --color=dark --confirm-quit'
-alias pt='papertrail'
-alias tf='terraform'
-alias tree='tree -C -a'
-alias tweet='t update'
-alias v='nvim'
-alias wiki='nvim $HOME/Dropbox/wiki/index.wiki'
