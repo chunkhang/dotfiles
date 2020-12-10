@@ -1,10 +1,12 @@
-# Pyenv
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-source $HOME/.zsh/zsh-pyenv-lazy/pyenv-lazy.plugin.zsh
+source "$HOME/.zsh/plug.zsh"
 
-# Rbenv
-source $HOME/.zsh/zsh-rbenv-lazy/rbenv-lazy.plugin.zsh
+# Load plugins
 
-# Nvm
+plug use "davidparsson/zsh-pyenv-lazy" "pyenv-lazy.plugin.zsh"
+
+plug use "chunkhang/zsh-rbenv-lazy" "rbenv-lazy.plugin.zsh"
+
+plug use "lukechilds/zsh-nvm" "zsh-nvm.plugin.zsh"
 export NVM_LAZY_LOAD=true
-source $HOME/.zsh/zsh-nvm/zsh-nvm.plugin.zsh
+
+plug load
