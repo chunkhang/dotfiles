@@ -24,6 +24,8 @@ plug use "rupa/z" "z.sh"
 
 plug use "paulirish/git-open" "git-open"
 
+plug use "hlissner/zsh-autopair" "autopair.zsh"
+
 plug use "zsh-users/zsh-syntax-highlighting" "zsh-syntax-highlighting.zsh"
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets)
 ZSH_HIGHLIGHT_MAXLENGTH=60
