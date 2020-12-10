@@ -1,7 +1,5 @@
 source "$HOME/.zsh/plug.zsh"
 
-# Load plugins
-
 plug use "davidparsson/zsh-pyenv-lazy" "pyenv-lazy.plugin.zsh"
 
 plug use "chunkhang/zsh-rbenv-lazy" "rbenv-lazy.plugin.zsh"

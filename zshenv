@@ -1,6 +1,4 @@
-# =============================================================================
-# VARIABLES
-# =============================================================================
+# Variables
 
 export EDITOR=nvim
 
@@ -31,30 +29,21 @@ export FASTLANE_SKIP_UPDATE_CHECK=1
 
 export RUBYOPT='-W0'
 
-# =============================================================================
-# PATH
-# https://superuser.com/a/598924
-# =============================================================================
-
-# TODO: Refactor
+# Path
 
 path+=(
-  $ANDROID_HOME/emulator
-  $ANDROID_HOME/tools
-  $ANDROID_HOME/tools/bin
-  $ANDROID_HOME/platform-tools
-  $GOPATH/bin
-  $GOROOT/bin
-  $HOME/.texlive/2018/bin/x86_64-darwin
+  "${ANDROID_HOME}/emulator"
+  "${ANDROID_HOME}/tools"
+  "${ANDROID_HOME}/tools/bin"
+  "${ANDROID_HOME}/platform-tools"
+  "${GOPATH}/bin"
+  "${GOROOT}/bin"
+  "${HOME}/.texlive/2018/bin/x86_64-darwin"
   /Applications/Postgres.app/Contents/Versions/latest/bin
 )
 
-# =============================================================================
-# LOCAL
-# =============================================================================
+# Local configuration
 
-export ZLOCAL="$HOME/.zlocal"
-
-if [[ -f "$ZLOCAL" ]]; then
-  source "$ZLOCAL"
+if [[ -f "${HOME}/.zlocal" ]]; then
+  source "${HOME}/.zlocal"
 fi

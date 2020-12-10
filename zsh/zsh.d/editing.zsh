@@ -7,6 +7,7 @@ bindkey '^[b' vi-backward-blank-word
 bindkey '^[f' vi-forward-blank-word
 
 # TODO: alt-delete
+# /etc/zshrc
 
 # autoload -U edit-command-line
 # zle -N edit-command-line
