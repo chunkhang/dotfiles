@@ -22,10 +22,12 @@ function _prompt() {
 
     # Git stash
     local count=$(git stash list | wc -l | xargs)
-    echo -n "%F{default}"
-    for i in {1.."$count"}; do
-      echo -n "·"
-    done
+    if [[ "$count" != 0 ]]; then
+      echo -n "%F{default}"
+      for i in {1.."$count"}; do
+        echo -n "·"
+      done
+    fi
   fi
 
   # Prompt sign
