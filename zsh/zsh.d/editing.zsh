@@ -1,3 +1,6 @@
+# Force emacs mode (do not assume vi mode)
+bindkey -e
+
 bindkey '^a' beginning-of-line
 bindkey '^e' end-of-line
 
