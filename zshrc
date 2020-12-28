@@ -1,3 +1,6 @@
+# Force emacs mode (do not assume vi mode)
+bindkey -e
+
 # Load all zsh.d files
 
 for zsh_file in "$HOME"/.zsh/zsh.d/*.zsh(N); do
