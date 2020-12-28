@@ -589,6 +589,13 @@ nmap <C-f>w <Plug>CtrlSFCwordPath
 nnoremap <leader>c :ColorToggle<cr>
 
 " -----------------------------------------------------------------------------
+" vim-dirvish
+" -----------------------------------------------------------------------------
+augroup vimrc
+  autocmd FileType dirvish silent! nmap <buffer> q <Plug>(dirvish_quit)
+augroup END
+
+" -----------------------------------------------------------------------------
 " ultisnips
 " -----------------------------------------------------------------------------
 nnoremap <silent> <leader>u :edit ~/.vim/ultisnips<cr>
