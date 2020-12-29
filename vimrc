@@ -873,6 +873,11 @@ let g:go_highlight_extra_types = 1
 " vim-jsx-improve
 " -----------------------------------------------------------------------------
 let g:javascript_plugin_flow = 1
+let g:javascript_plugin_jsdoc = 1
+call <sid>highlight_onedark('jsDocTags', 'cyan')
+call <sid>highlight_onedark('jsDocType', 'yellow')
+call <sid>highlight_onedark('jsDocTypeNoParam', 'yellow')
+call <sid>highlight_onedark('jsDocParam', 'white')
 
 " -----------------------------------------------------------------------------
 " vim-jsx-typescript
