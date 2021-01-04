@@ -610,6 +610,15 @@ nmap <silent> <leader>B :Gblame<cr>
 " -----------------------------------------------------------------------------
 nmap <leader>b <Plug>(git-messenger)
 
+" -----------------------------------------------------------------------------
+" ale
+" -----------------------------------------------------------------------------
+augroup vimrc
+  autocmd FileType javascript nmap <buffer> <silent> gd <Plug>(ale_go_to_definition)
+  autocmd FileType javascript nmap <buffer> <silent> <C-]> <Plug>(ale_go_to_definition)
+  autocmd FileType javascript nmap <buffer> <silent> gr :ALEFindReferences -relative<cr>
+augroup END
+
 " }}}
 " =============================================================================
 " PLUGINS {{{
