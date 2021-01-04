@@ -1011,9 +1011,6 @@ augroup vimrc
   autocmd BufNewFile,BufRead gitconfig set filetype=toml
   autocmd BufNewFile,BufRead tsconfig.json set filetype=javascript
 
-  " Disable automatic comment insertion
-  autocmd FileType * set formatoptions-=cro
-
   " Easier to quit certain windows
   autocmd FileType help,qf,godoc noremap <silent> <buffer> q :q<cr>
   if has('nvim')
