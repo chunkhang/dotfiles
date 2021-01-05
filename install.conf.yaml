@@ -5,6 +5,7 @@
 - clean: ['~']
 
 - link:
+    ~/.alacritty.yml:
     ~/.bash_profile:
     ~/.config/nvim:
     ~/.config/ranger:
