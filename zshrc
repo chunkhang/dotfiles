@@ -32,6 +32,7 @@ plug use "hlissner/zsh-autopair" "autopair.zsh"
 plug use "zsh-users/zsh-syntax-highlighting" "zsh-syntax-highlighting.zsh"
 ZSH_HIGHLIGHT_HIGHLIGHTERS+=(main brackets)
 ZSH_HIGHLIGHT_MAXLENGTH=60
+zle_highlight+=(paste:none)
 
 plug load
 
