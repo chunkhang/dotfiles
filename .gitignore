@@ -1,23 +1,27 @@
-# Zsh
 zsh/plugins
 
-# Vim
 vim/plugged
 vim/.netrwhist
 
-# Weechat
 weechat/*.log
 weechat/logs
 weechat/sec.conf
 weechat/message.txt
 weechat/script/plugins.xml.gz
 
-# Ubersicht
 ubersicht/node_modules
 ubersicht/network.widget/lib/network.out
 ubersicht/playing.widget/lib/songMeta.plist
 
-# Mutt
 mutt/tmp
 mutt/cache
 mutt/aliases
+
+lnav/crash
+lnav/staging
+lnav/stdin-captures
+lnav/configs/default
+lnav/formats/default
+lnav/*.history
+lnav/*.db
+lnav/view-info-*.json
