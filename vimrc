@@ -1020,6 +1020,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead *.mdx set filetype=javascript.mdx
   autocmd BufNewFile,BufRead gitconfig set filetype=toml
   autocmd BufNewFile,BufRead tsconfig.json set filetype=javascript
+  autocmd BufNewFile,BufRead justfile set filetype=make
 
   " Disable automatic comment insertion on new line
   autocmd FileType * set formatoptions-=o
