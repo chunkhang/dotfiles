@@ -7,7 +7,6 @@
 - link:
     ~/.alacritty.yml:
     ~/.bash_profile:
-    ~/.config/lnav:
     ~/.config/nvim:
     ~/.config/ranger:
     ~/.ctags.d:
