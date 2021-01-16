@@ -156,6 +156,7 @@ set breakindent
 set expandtab
 set tabstop=2
 set shiftwidth=2
+set shiftround
 set list
 set listchars=tab:\|\ ,trail:.,extends:#,nbsp:.
 set backspace=indent,eol,start
