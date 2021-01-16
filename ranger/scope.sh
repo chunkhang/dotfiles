@@ -86,8 +86,7 @@ handle_extension() {
 
         # JSON
         json)
-          cat "${FILE_PATH}" | jq && exit 5
-          exit 1;;
+          exit 2;;
     esac
 }
 
