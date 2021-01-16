@@ -8,3 +8,7 @@ bindkey '^[e' end-of-line
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey "^@" edit-command-line
+
+# Do not treat / and - as part of word
+autoload -U select-word-style
+select-word-style bash
