@@ -950,6 +950,9 @@ let g:ale_linters = {
       \ 'javascript': ['eslint', 'tsserver'],
       \ 'go': ['gofmt', 'golint', 'go vet'],
       \ }
+let g:ale_fixers = {
+      \ 'javascript': ['eslint'],
+      \ }
 call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
 
 " -----------------------------------------------------------------------------
