@@ -7,10 +7,10 @@ function _prompt() {
   echo -n "%F{yellow}%~ "
 
   # Show git info if this is a git repository
-  local branch=$(git symbolic-ref --short HEAD 2>/dev/null)
-  if [[ -n "$branch" ]]; then
-    # Git branch
-    echo -n "%F{cyan}${branch} "
+  local info=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
+  if [[ -n "$info" ]]; then
+    # Git branch / commit
+    echo -n "%F{cyan}${info} "
 
     # Git clean / dirty
     if [[ -n "$(git status --short)" ]]; then
