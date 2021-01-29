@@ -245,8 +245,9 @@ function! s:gf_javascript()
   let l:imports = [l:match]
   let l:aliases = {
         \ '\~': ['.', 'src', 'app'],
-        \ '@pickupp/ui': ['../coconut/packages/ui/src'],
-        \ '@pickupp/qr': ['../coconut/packages/qr/src'],
+        \ '@pickupp/ui': ['../../shared/ui/src', '../pickupp/shared/ui/src'],
+        \ '@pickupp/qr': ['../../shared/qr/src', '../pickupp/shared/qr/src'],
+        \ '@pickupp/lib': ['../../shared/lib'],
         \ }
   for alias in items(l:aliases)
     let l:alias_from = alias[0]
