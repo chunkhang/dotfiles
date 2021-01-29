@@ -949,6 +949,7 @@ let g:ale_linters = {
       \ 'zsh': ['shell'],
       \ 'vim': ['vint'],
       \ 'javascript': ['eslint', 'tsserver'],
+      \ 'typescript': ['eslint', 'tsserver'],
       \ 'go': ['gofmt', 'golint', 'go vet'],
       \ }
 let g:ale_fixers = {
