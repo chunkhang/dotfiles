@@ -946,6 +946,7 @@ let g:ale_linters = {
       \ 'vim': ['vint'],
       \ 'javascript': ['eslint', 'tsserver'],
       \ 'typescript': ['eslint', 'tsserver'],
+      \ 'lua': ['luacheck'],
       \ 'go': ['gofmt', 'golint', 'go vet'],
       \ }
 let g:ale_fixers = {
@@ -1022,6 +1023,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead gitconfig set filetype=toml
   autocmd BufNewFile,BufRead tsconfig.json set filetype=javascript
   autocmd BufNewFile,BufRead justfile set filetype=make
+  autocmd BufNewFile,BufRead .luacheckrc set filetype=lua
 
   " Disable automatic comment insertion on new line
   autocmd FileType * set formatoptions-=o
