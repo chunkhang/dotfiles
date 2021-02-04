@@ -437,13 +437,9 @@ nnoremap k gk
 " Move between words in line
 inoremap <C-h> <C-o>_
 inoremap <C-l> <C-o>A
-" Move lines up and down
-nnoremap <silent> <C-up> :move .-2<cr>==
-nnoremap <silent> <C-down> :move .+1<cr>==
-inoremap <silent> <C-up> <esc>:move .-2<cr>==gi
-inoremap <silent> <C-down> <esc>:move .+1<cr>==gi
-vnoremap <silent> <C-up> :move '<-2<cr>gv=gv
-vnoremap <silent> <C-down> :move '>+1<cr>gv=gv
+" Move page down and up
+nnoremap <silent> <C-down> <C-d>
+nnoremap <silent> <C-up> <C-u>
 
 " -----------------------------------------------------------------------------
 " Editing
