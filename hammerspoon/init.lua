@@ -45,7 +45,7 @@ local function airpodsBattery()
     info = info .. "\n" .. "Case: " .. case .. "%"
   end
   hs.notify.new({
-    title = "AirPods",
+    title = airpods.name,
     informativeText = info
   }):send()
 end
