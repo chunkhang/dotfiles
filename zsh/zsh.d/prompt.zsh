@@ -6,14 +6,20 @@ function _prompt() {
   # Current directory
   echo -n "%F{yellow}%~ "
 
+  # Do not lock git
+  function _git() {
+    GIT_OPTIONAL_LOCKS=0 git "$@"
+  }
+
   # Show git info if this is a git repository
-  local info=$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)
-  if [[ -n "$info" ]]; then
+  local git_dir=$(_git rev-parse --git-dir 2>/dev/null | xargs realpath)
+  if [[ -n "$git_dir" && ! "$PWD" =~ "^${git_dir}" ]]; then
     # Git branch / commit
+    local info=$(_git symbolic-ref --short HEAD || _git rev-parse --short HEAD)
     echo -n "%F{cyan}${info} "
 
     # Git clean / dirty
-    if [[ -n "$(git status --short)" ]]; then
+    if [[ -n "$(_git status --short 2>/dev/null)" ]]; then
       echo -n "%F{red}"
     else
       echo -n "%F{green}"
@@ -21,7 +27,7 @@ function _prompt() {
     echo -n "● "
 
     # Git stash
-    local count=$(git stash list | wc -l | xargs)
+    local count=$(_git stash list | wc -l | xargs)
     if [[ "$count" != 0 ]]; then
       echo -n "%F{default}"
       for i in {1.."$count"}; do
