@@ -443,8 +443,6 @@ nnoremap <silent> <C-up> <C-u>
 " -----------------------------------------------------------------------------
 " Editing
 " -----------------------------------------------------------------------------
-" Select all lines
-nnoremap <leader>a ggVG
 " Insert new line
 nnoremap <leader>o o<esc>
 nnoremap <leader>O O<esc>
@@ -468,6 +466,11 @@ nnoremap <leader>; A;<esc>
 vnoremap <silent> <leader>; :normal A;<cr>
 " Complete line
 inoremap <C-space> <C-x><C-l>
+" File text object
+vmap <silent> af :<C-u>normal! ggVG<cr>
+vmap <silent> if af
+omap <silent> af :normal Vaf<cr>
+omap <silent> if af
 
 " -----------------------------------------------------------------------------
 " Jumping
