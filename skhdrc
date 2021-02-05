@@ -7,6 +7,7 @@ fn - space : open /Applications/iTerm.app
 fn - a : ~/.scripts/bluetooth/airpods
 fn - b : ~/.scripts/bluetooth/toggle
 fn - r : ~/.scripts/music/rain
+fn - s : ~/.scripts/hammerspoon/restart
 fn - u : ~/.scripts/ubersicht/restart
 fn - w : ~/.scripts/wifi/toggle
 fn - y : ~/.scripts/yabai/restart
