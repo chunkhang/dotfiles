@@ -169,7 +169,6 @@ set regexpengine=1
 set shellcmdflag=-l\ -c
 set maxmempattern=5000
 set complete-=t
-set iskeyword+=-
 set formatprg=par
 set grepprg=rg\ --vimgrep
 
