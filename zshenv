@@ -22,6 +22,7 @@ export LESS=-x4icWRM
 export MANPAGER='nvim +Man!'
 
 export HOMEBREW_CLEANUP_MAX_AGE_DAYS=0
+export HOMEBREW_NO_ANALYTICS=1
 
 export YDIFF_OPTIONS='--width=0 '
 
