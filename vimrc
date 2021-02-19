@@ -243,12 +243,7 @@ function! s:gf_javascript()
 
   " Resolve import aliases
   let l:imports = [l:match]
-  let l:aliases = {
-        \ '\~': ['.', 'src', 'app'],
-        \ '@pickupp/ui': ['../../shared/ui/src', '../pickupp/shared/ui/src'],
-        \ '@pickupp/qr': ['../../shared/qr/src', '../pickupp/shared/qr/src'],
-        \ '@pickupp/lib': ['../../shared/lib'],
-        \ }
+  let l:aliases = {}
   for alias in items(l:aliases)
     let l:alias_from = alias[0]
     for alias_to in alias[1]
