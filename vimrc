@@ -1010,7 +1010,7 @@ augroup vimrc
   " Set or overrule filetypes
   autocmd BufNewFile,BufRead *.js,*.jsx set filetype=javascript.jsx
   autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-  autocmd BufNewFile,BufRead .zprofile,zprofile set filetype=zsh
+  autocmd BufNewFile,BufRead .zprofile,zprofile,.zlocal set filetype=zsh
   autocmd BufNewFile,BufRead .muttrc,muttrc set filetype=neomuttrc
   autocmd BufNewFile,BufRead .tags set filetype=tags
   autocmd BufNewFile,BufRead Podfile,Appfile,Fastfile,Matchfile set filetype=ruby
