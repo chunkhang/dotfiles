@@ -472,6 +472,7 @@ vmap <silent> af :<C-u>normal! ggVG<cr>
 vmap <silent> if af
 omap <silent> af :normal Vaf<cr>
 omap <silent> if af
+nmap <leader>a Vaf
 
 " -----------------------------------------------------------------------------
 " Jumping
