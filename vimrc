@@ -60,6 +60,7 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-projectionist'
 
 " -----------------------------------------------------------------------------
 " Git
@@ -601,6 +602,12 @@ augroup END
 nnoremap <silent> <leader>u :edit ~/.vim/ultisnips<cr>
 
 " -----------------------------------------------------------------------------
+" vim-projectionist
+" -----------------------------------------------------------------------------
+nnoremap <silent> \| :A<cr>
+nnoremap <silent> g\| :AV<cr>
+
+" -----------------------------------------------------------------------------
 " vim-fugitive
 " -----------------------------------------------------------------------------
 nmap <silent> <leader>B :Gblame<cr>
@@ -772,7 +779,6 @@ let g:splitjoin_trailing_comma = 1
 " switch.vim
 " -----------------------------------------------------------------------------
 let g:switch_mapping = '\'
-let g:switch_reverse_mapping = '\|'
 let g:switch_find_smallest_match = 0
 let g:switch_custom_definitions = [
       \ [ '===', '!==' ],
