@@ -30,6 +30,8 @@ export FASTLANE_SKIP_UPDATE_CHECK=1
 
 export RUBYOPT='-W0'
 
+export RANGER_LOAD_DEFAULT_RC=FALSE
+
 # Path
 
 path+=(
