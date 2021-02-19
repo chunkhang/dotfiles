@@ -6,6 +6,5 @@ plug use "chunkhang/zsh-rbenv-lazy" "rbenv-lazy.plugin.zsh"
 
 plug use "lukechilds/zsh-nvm" "zsh-nvm.plugin.zsh"
 export NVM_LAZY_LOAD=true
-export NVM_LAZY_LOAD_EXTRA_COMMANDS=('pickupp')
 
 plug load

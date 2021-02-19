@@ -85,7 +85,6 @@ alias tf='terraform'
 alias hp='http-prompt'
 alias mutt='neomutt'
 alias tweet='t update'
-abbr p='pickupp'
 abbr k='kubectl'
 
 # ------------------------------------------------------------------------------
