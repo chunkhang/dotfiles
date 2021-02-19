@@ -178,27 +178,5 @@ macro index wa \
 "<change-folder>=work/archive<enter>" \
 "switch to work archive"
 
-# -----------------------------------------------------------------------------
-# Labels
-# -----------------------------------------------------------------------------
-macro index yy \
-"<change-folder>=personal/bitbucket<enter>" \
-"switch to bitbucket label"
-macro index yb \
-"<change-folder>=personal/bitbucket<enter>" \
-"switch to bitbucket label"
-macro index yc \
-"<change-folder>=personal/circleci<enter>" \
-"switch to bitbucket label"
-macro index yg \
-"<change-folder>=personal/github<enter>" \
-"switch to github label"
-macro index yn \
-"<change-folder>=work/notion<enter>" \
-"switch to notion label"
-macro index yp \
-"<change-folder>=work/pickupp<enter>" \
-"switch to pickupp label"
-
 # }}}
 # =============================================================================

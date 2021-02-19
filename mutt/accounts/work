@@ -11,7 +11,7 @@ color sidebar_indicator black blue
 # =============================================================================
 
 set realname = "Marcus Mu"
-set from = "marcus.mu@pickupp.io"
+set from = "marcus.mu@omnilytics.co"
 
 set sendmail = "/usr/local/bin/msmtp -a work"
 

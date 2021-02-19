@@ -220,14 +220,6 @@ mailboxes =work/drafts
 mailboxes =work/trash
 mailboxes =work/archive
 
-# Labels
-named-mailboxes "Labels [y]" =placeholder_3
-mailboxes =personal/bitbucket
-mailboxes =personal/circleci
-mailboxes =personal/github
-mailboxes =work/notion
-mailboxes =work/pickupp
-
 # }}}
 # =============================================================================
 # SOURCES {{{

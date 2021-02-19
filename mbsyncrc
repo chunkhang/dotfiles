@@ -23,10 +23,10 @@ Inbox ~/Mail/personal/inbox
 
 IMAPAccount work
 Host imap.gmail.com
-User marcus.mu@pickupp.io
+User marcus.mu@omnilytics.co
 SSLType IMAPS
 AuthMechs LOGIN
-PassCmd "security find-internet-password -s imap.gmail.com -a marcus.mu@pickupp.io -w"
+PassCmd "security find-internet-password -s imap.gmail.com -a marcus.mu@omnilytics.co -w"
 
 IMAPStore work-remote
 Account work
@@ -96,34 +96,3 @@ Channel work-drafts
 Channel work-sent
 Channel work-trash
 Channel work-archive
-
-# =============================================================================
-# LABELS
-# =============================================================================
-
-Channel labels-bitbucket
-Master :personal-remote:bitbucket
-Slave :personal-local:bitbucket
-
-Channel labels-circleci
-Master :personal-remote:circleci
-Slave :personal-local:circleci
-
-Channel labels-github
-Master :personal-remote:github
-Slave :personal-local:github
-
-Channel labels-notion
-Master :work-remote:notion
-Slave :work-local:notion
-
-Channel labels-pickupp
-Master :work-remote:pickupp
-Slave :work-local:pickupp
-
-Group labels
-Channel labels-bitbucket
-Channel labels-circleci
-Channel labels-github
-Channel labels-notion
-Channel labels-pickupp
