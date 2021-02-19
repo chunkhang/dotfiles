@@ -613,15 +613,6 @@ nmap <silent> <leader>B :Gblame<cr>
 " -----------------------------------------------------------------------------
 nmap <leader>b <Plug>(git-messenger)
 
-" -----------------------------------------------------------------------------
-" ale
-" -----------------------------------------------------------------------------
-augroup vimrc
-  autocmd FileType javascript nmap <buffer> <silent> gd <Plug>(ale_go_to_definition)
-  autocmd FileType javascript nmap <buffer> <silent> <C-]> <Plug>(ale_go_to_definition)
-  autocmd FileType javascript nmap <buffer> <silent> gr :ALEFindReferences -relative<cr>
-augroup END
-
 " }}}
 " =============================================================================
 " PLUGINS {{{
@@ -948,9 +939,9 @@ let g:ale_linters = {
       \ 'sh': ['shell'],
       \ 'zsh': ['shell'],
       \ 'vim': ['vint'],
-      \ 'javascript': ['eslint', 'tsserver'],
-      \ 'typescript': ['eslint', 'tsserver'],
       \ 'lua': ['luacheck'],
+      \ 'javascript': ['eslint'],
+      \ 'typescript': ['eslint'],
       \ 'go': ['gofmt', 'golint', 'go vet'],
       \ }
 let g:ale_fixers = {
