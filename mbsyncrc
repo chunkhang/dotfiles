@@ -1,4 +1,4 @@
-Create Slave
+Create Near
 Expunge Both
 Sync All
 SyncState *
@@ -40,24 +40,24 @@ Inbox ~/Mail/work/inbox
 # =============================================================================
 
 Channel personal-inbox
-Master :personal-remote:
-Slave :personal-local:
+Far :personal-remote:
+Near :personal-local:
 
 Channel personal-drafts
-Master :personal-remote:"[Gmail]/Drafts"
-Slave :personal-local:drafts
+Far :personal-remote:"[Gmail]/Drafts"
+Near :personal-local:drafts
 
 Channel personal-sent
-Master :personal-remote:"[Gmail]/Sent Mail"
-Slave :personal-local:sent
+Far :personal-remote:"[Gmail]/Sent Mail"
+Near :personal-local:sent
 
 Channel personal-trash
-Master :personal-remote:"[Gmail]/Trash"
-Slave :personal-local:trash
+Far :personal-remote:"[Gmail]/Trash"
+Near :personal-local:trash
 
 Channel personal-archive
-Master :personal-remote:"[Gmail]/All Mail"
-Slave :personal-local:archive
+Far :personal-remote:"[Gmail]/All Mail"
+Near :personal-local:archive
 
 Group personal
 Channel personal-inbox
@@ -71,24 +71,24 @@ Channel personal-archive
 # =============================================================================
 
 Channel work-inbox
-Master :work-remote:
-Slave :work-local:
+Far :work-remote:
+Near :work-local:
 
 Channel work-drafts
-Master :work-remote:"[Gmail]/Drafts"
-Slave :work-local:drafts
+Far :work-remote:"[Gmail]/Drafts"
+Near :work-local:drafts
 
 Channel work-sent
-Master :work-remote:"[Gmail]/Sent Mail"
-Slave :work-local:sent
+Far :work-remote:"[Gmail]/Sent Mail"
+Near :work-local:sent
 
 Channel work-trash
-Master :work-remote:"[Gmail]/Trash"
-Slave :work-local:trash
+Far :work-remote:"[Gmail]/Trash"
+Near :work-local:trash
 
 Channel work-archive
-Master :work-remote:"[Gmail]/All Mail"
-Slave :work-local:archive
+Far :work-remote:"[Gmail]/All Mail"
+Near :work-local:archive
 
 Group work
 Channel work-inbox
