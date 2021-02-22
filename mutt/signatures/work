@@ -1,2 +1,34 @@
-Best regards,
-Marcus Mu
+<div>
+  <span>Best regards,</span><br />
+  <br />
+  <table style="border: none; border-collapse: collapse;">
+    <tbody>
+      <tr>
+        <td style="border-right: solid #dee5ec 1px; vertical-align: top; padding: 5px; width: 160px">
+          <img src="https://i.postimg.cc/5Nw1PQqQ/Group-21.png" width="146" height="89" />
+        </td>
+        <td style="padding: 14px; font-family: Arial; line-height: 1.4;">
+          <span style="color: #314052; font-size: 13pt; font-weight: bold;">
+            Marcus Mu
+          </span><br />
+          <span style="color: #666666; font-size: 10pt;">
+            Senior Software Engineer
+          </span><br />
+          <br />
+          <span style="color: #858e9a; font-size: 10pt;">
+            <a href="mailto:marcus.mu@omnilytics.co" target="_blank" rel="noopener">
+              marcus.mu@omnilytics.co
+            </a>
+            &bull;
+            +6012-7853778
+          </span><br />
+          <div style="font-size: 9pt; margin-top: 4px;">
+            <a href="http://www.omnilytics.co/" target="_blank" rel="noopener">
+              www.omnilytics.co
+            </a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
