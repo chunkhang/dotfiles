@@ -1020,6 +1020,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead tsconfig.json set filetype=javascript
   autocmd BufNewFile,BufRead justfile set filetype=make
   autocmd BufNewFile,BufRead .luacheckrc set filetype=lua
+  autocmd BufNewFile,BufRead *.conf set filetype=dosini
 
   " Disable automatic comment insertion on new line
   autocmd FileType * set formatoptions-=o
