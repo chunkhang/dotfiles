@@ -97,6 +97,7 @@ Plug 'neomutt/neomutt.vim'
 Plug 'hashivim/vim-terraform'
 Plug 'cespare/vim-toml'
 Plug 'vito-c/jq.vim'
+Plug 'Joorem/vim-haproxy'
 
 " -----------------------------------------------------------------------------
 " Linting
