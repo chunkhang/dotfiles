@@ -943,6 +943,7 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'typescript': ['eslint'],
       \ 'go': ['gofmt', 'golint', 'go vet'],
+      \ 'python': ['flake8'],
       \ }
 let g:ale_fixers = {
       \ 'javascript': ['eslint'],
