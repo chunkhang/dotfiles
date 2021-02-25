@@ -67,7 +67,7 @@
     repo=$(echo "$remote_uri" | cut -d : -f 2 | cut -d . -f 1) ;\
     branch=$(git symbolic-ref --short HEAD) ;\
     if [[ "$host" =~ "github" ]]; then \
-      url="https://${host}/${repo}/compare/develop...${branch}?expand=1" ;\
+      url="https://${host}/${repo}/compare/${branch}?expand=1" ;\
     elif [[ "$host" =~ "bitbucket" ]]; then \
       url="https://${host}/${repo}/pull-requests/new?source=${branch}" ;\
     else \
