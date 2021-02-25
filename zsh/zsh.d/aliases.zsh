@@ -86,6 +86,8 @@ alias hp='http-prompt'
 alias mutt='neomutt'
 alias tweet='t update'
 abbr k='kubectl'
+abbr p='pyenv'
+abbr j='just'
 
 # ------------------------------------------------------------------------------
 # Git
