@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Check internet connection
+if ! ping -c 1 -W 1 -q 8.8.8.8 &>/dev/null; then
+  exit 1
+fi
+
+function timestamp {
+  date '+%Y-%m-%d %H:%M:%S'
+}
+
+echo "# START: $(timestamp)"
+
+mbsync --all --verbose
+
+echo "# END: $(timestamp)"
