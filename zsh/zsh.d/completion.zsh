@@ -34,3 +34,8 @@ bindkey "${terminfo[kcbt]}" reverse-menu-complete
 fpath+=($HOME/.zsh/completions)
 autoload -Uz compinit
 compinit
+
+# Load bash-style completions
+autoload bashcompinit
+bashcompinit
+complete -C /usr/local/bin/aws_completer aws
