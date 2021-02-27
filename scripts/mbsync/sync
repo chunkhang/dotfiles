@@ -11,8 +11,8 @@ function timestamp {
   date '+%Y-%m-%d %H:%M:%S'
 }
 
-echo "# START: $(timestamp)"
+echo "$(timestamp) | Start syncing mailboxes..."
 
-mbsync --all --verbose
+mbsync --all --quiet
 
-echo "# END: $(timestamp)"
+echo "$(timestamp) | Done syncing mailboxes"
