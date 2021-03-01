@@ -947,9 +947,6 @@ let g:ale_linters = {
       \ 'go': ['gofmt', 'golint', 'go vet'],
       \ 'python': ['flake8'],
       \ }
-let g:ale_fixers = {
-      \ 'javascript': ['eslint'],
-      \ }
 call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
 
 " -----------------------------------------------------------------------------
