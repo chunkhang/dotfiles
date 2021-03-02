@@ -19,6 +19,7 @@
     ~/.jshintrc:
     ~/.mbsyncrc:
     ~/.mime.types:
+    ~/.mongorc.js:
     ~/.msmtprc:
     ~/.mutt:
     ~/.patat.yaml:
