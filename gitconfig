@@ -56,6 +56,10 @@
     git pull ;\
     git fetch --prune ;\
     git branch --verbose | grep '\\[gone\\]' | awk '{print $1}' | xargs git branch --delete --force ;\
+  }; f"
+
+  spring = "!f() { \
+    git tidy ;\
     git reflog expire --expire-unreachable=now --all ;\
     git gc --prune=now --aggressive ;\
   }; f"
