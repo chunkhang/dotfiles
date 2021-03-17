@@ -564,6 +564,8 @@ nnoremap <silent> <leader>S :call <sid>toggle_syntax()<cr>
 nnoremap <silent> <leader>/ :nohlsearch<cr>
 " Clear all marks
 nnoremap <silent> <leader>m :call <sid>clear_marks()<cr>
+" Print file path
+nnoremap <silent> <leader>f :echo expand('%p')<cr>
 " Open file paths / urls
 augroup vimrc
   autocmd FileType vim nnoremap <buffer> <silent> gx :call <sid>gx_vim()<cr>
