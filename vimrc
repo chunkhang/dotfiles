@@ -1065,6 +1065,9 @@ augroup vimrc
     autocmd BufEnter term://* startinsert
   endif
 
+  " Treat dash as part of keyword
+  autocmd FileType scss setlocal iskeyword+=-
+
 augroup END
 
 " }}}
