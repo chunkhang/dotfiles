@@ -244,7 +244,9 @@ function! s:gf_javascript()
 
   " Resolve import aliases
   let l:imports = [l:match]
-  let l:aliases = {}
+  let l:aliases = {
+        \ '\~': ['.'],
+        \ }
   for alias in items(l:aliases)
     let l:alias_from = alias[0]
     for alias_to in alias[1]
@@ -259,7 +261,7 @@ function! s:gf_javascript()
   " Check all possible extensions
   " Return whether path with extension was opened successfully
   function! s:open_import(path)
-    let l:exts = ['', '.js', '/index.js']
+    let l:exts = ['', '.js', '.jsx', '/index.js', '/index.jsx']
     for ext in exts
       let l:candidate = a:path . ext
       if filereadable(l:candidate)
@@ -562,12 +564,12 @@ nnoremap <silent> <leader>S :call <sid>toggle_syntax()<cr>
 nnoremap <silent> <leader>/ :nohlsearch<cr>
 " Clear all marks
 nnoremap <silent> <leader>m :call <sid>clear_marks()<cr>
-" Open plugin repository
+" Open file paths / urls
 augroup vimrc
   autocmd FileType vim nnoremap <buffer> <silent> gx :call <sid>gx_vim()<cr>
   autocmd FileType go nnoremap <buffer> <silent> gx :call <sid>gx_go()<cr>
   autocmd FileType go nnoremap <buffer> <silent> gf :call <sid>gf_go()<cr>
-  autocmd FileType javascript nnoremap <buffer> <silent> gf :call <sid>gf_javascript()<cr>
+  autocmd FileType javascript,javascript.jsx nnoremap <buffer> <silent> gf :call <sid>gf_javascript()<cr>
 augroup END
 
 " -----------------------------------------------------------------------------
