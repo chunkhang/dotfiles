@@ -950,6 +950,8 @@ let g:ale_linters = {
       \ 'typescript': ['eslint'],
       \ 'go': ['gofmt', 'golint', 'go vet'],
       \ 'python': ['flake8'],
+      \ 'css': ['stylelint'],
+      \ 'scss': ['stylelint'],
       \ }
 call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
 
