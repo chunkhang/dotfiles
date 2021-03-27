@@ -330,6 +330,12 @@ end
 # Wrapper of weechat hdata line and line_data.
 #
 class Line
+  # We want to match both kinds of url
+  # - https://example.com?q=(test)
+  # - (https://example.com)
+  # The extra () for the second case should be removed after matching
+  @@url_pattern = /\(https?:\/\/[^\)]*\)|https?:\/\/[^ 　\r\n]*/
+
   attr_reader :data_pointer
 
   def initialize(pointer)
@@ -370,10 +376,11 @@ class Line
   end
 
   def has_url?
-    !/https?:\/\/[^ 　\(\)\r\n]*/.match(remove_color_message).nil?
+    !@@url_pattern.match(remove_color_message).nil?
   end
 
   def urls
-    remove_color_message.encode("UTF-8", invalid: :replace, undef: :replace).scan(/https?:\/\/[^ 　\(\)\r\n]*/).uniq
+    remove_color_message.encode("UTF-8", invalid: :replace, undef: :replace).scan(@@url_pattern).uniq
+      .map { |s| s.sub(/^\((.*)\)$/, '\1') }
   end
 end
