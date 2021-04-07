@@ -789,6 +789,8 @@ let g:AutoPairs = {
       \ '"': '"',
       \ '`': '`',
       \ '<!--': '-->',
+      \ '{%': '%}',
+      \ '{#': '#}',
       \ }
 
 " -----------------------------------------------------------------------------
@@ -873,7 +875,7 @@ let g:BufKillCreateMappings = 0
 " vim-commentary
 " -----------------------------------------------------------------------------
 augroup vimrc
-  autocmd FileType jinja setlocal commentstring={#\ %s\ #}
+  autocmd FileType jinja,jinja.html setlocal commentstring={#\ %s\ #}
   autocmd FileType vue,sbt setlocal commentstring=\/\/\ %s
   autocmd FileType hocon setlocal commentstring=#\ %s
   autocmd FileType sql setlocal commentstring=--\ %s
