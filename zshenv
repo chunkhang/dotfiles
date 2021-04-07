@@ -13,8 +13,6 @@ export ANDROID_HOME=$HOME/Library/Android/sdk
 export GOPATH=$HOME/Workspace/go
 export GOROOT=/usr/local/opt/go/libexec
 
-export FLASK_ENV=development
-
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 export LESS=-x4icWRM
