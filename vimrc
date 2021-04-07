@@ -82,6 +82,7 @@ Plug 'jparise/vim-graphql'
 Plug 'kchmck/vim-coffee-script'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'vim-python/python-syntax'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'derekwyatt/vim-scala'
 Plug 'gre/play2vim'
@@ -916,6 +917,11 @@ endfunction
 augroup vimrc
   autocmd FileType gitmessengerpopup call <sid>setup_git_messenger_popup()
 augroup END
+
+" -----------------------------------------------------------------------------
+" python-syntax
+" -----------------------------------------------------------------------------
+let g:python_highlight_all = 1
 
 " -----------------------------------------------------------------------------
 " vim-go
