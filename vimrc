@@ -1017,6 +1017,14 @@ let g:ale_linters = {
       \ 'css': ['stylelint'],
       \ 'scss': ['stylelint'],
       \ }
+let g:ale_fixers = {
+      \ 'javascript': ['prettier'],
+      \ 'scss': ['prettier'],
+      \ 'python': ['black'],
+      \ }
+let g:ale_fix_on_save = 1
+let g:ale_python_auto_pipenv = 1
+let g:ale_python_black_change_directory = 0
 call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
 
 " -----------------------------------------------------------------------------
