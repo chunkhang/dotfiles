@@ -32,6 +32,8 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 
 export PIPENV_VENV_IN_PROJECT=1
 
+export NEXT_TELEMETRY_DISABLED=1
+
 # Path
 
 path+=(
