@@ -1,3 +1,38 @@
+# Bookmark CLI
+function bookmark() {
+  local bookmark_path=~/.bookmark
+  function show-help() {
+    echo "usage: bookmark [<url> [label]]"
+    echo
+    echo "flags:"
+    echo "  -h, --help  show help"
+    echo
+    echo "description:"
+    echo "  Pass in a url to add it to the bookmark file."
+    echo "  Additionally, pass in a label to annotate the url."
+    echo "  If nothing is passed, the bookmark file is opened."
+    echo "  The bookmark file is stored at: ${bookmark_path}"
+  }
+  if [[ "$#" > 0 && "$1" =~ "^(-h|--help)$" ]]; then
+    show-help
+    return 0
+  fi
+  if [[ ! -f "$bookmark_path" ]]; then
+    echo "Create a ${bookmark_path} file first."
+    return 1
+  fi
+  if [[ "$#" = 0 ]]; then
+    "$EDITOR" "$bookmark_path"
+    return 0
+  fi
+  if [[ "$#" = 1 ]]; then
+    echo "$1" >> "$bookmark_path"
+  else
+    echo "${1} | ${2}" >> "$bookmark_path"
+  fi
+  echo "Bookmark added."
+}
+
 # Perform operations on DNS
 function dns() {
   function show-help() {
@@ -121,7 +156,7 @@ function refresh() {
   exec "$SHELL" -l
 }
 
-# Open todo
+# Todo CLI
 function todo() {
   local todo_filename=".todo"
   local directory="$PWD"
