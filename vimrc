@@ -1019,6 +1019,7 @@ let g:ale_linters = {
       \ }
 let g:ale_fixers = {
       \ 'javascript': ['prettier'],
+      \ 'css': ['prettier'],
       \ 'scss': ['prettier'],
       \ 'python': ['black'],
       \ }
