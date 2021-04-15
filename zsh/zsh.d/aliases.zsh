@@ -61,6 +61,7 @@ alias ls='ls -G'
 alias fd='fd --hidden'
 alias tree='tree -C -a'
 alias ncdu='ncdu --color=dark --confirm-quit'
+alias newsboat='newsboat --quiet'
 
 # ------------------------------------------------------------------------------
 # Utilities
@@ -88,6 +89,7 @@ alias tweet='t update'
 abbr k='kubectl'
 abbr p='pyenv'
 abbr j='just'
+abbr n='newsboat'
 
 # ------------------------------------------------------------------------------
 # Git

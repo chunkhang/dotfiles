@@ -1,0 +1,91 @@
+# Application
+
+error-log ~/.newsboat/error.log
+
+history-limit 0
+
+# Display
+
+scrolloff 10
+
+show-keymap-hint no
+
+datetime-format "%d %b %Y, %R"
+
+color background          default  black
+color listnormal          default  black
+color listfocus           default  color8
+color listnormal_unread   yellow   black
+color listfocus_unread    yellow   color8
+color info                blue     black
+color article             default  black
+color end-of-text-marker  black    black
+
+highlight article "https?://[^ ]+" cyan black
+highlight article "^Feed:.*" yellow black
+highlight article "^(Title|Author|Date):.*" magenta black
+highlight article "^Link:.*" green black
+
+# Feed list
+
+max-items 50
+
+auto-reload yes
+suppress-first-reload yes
+reload-time 60
+reload-threads 4
+
+# Feed
+
+goto-first-unread no
+goto-next-feed no
+
+toggleitemread-jumps-to-next-unread no
+openbrowser-and-mark-jumps-to-next-unread no
+
+bookmark-cmd ~/.scripts/newsboat/bookmark
+bookmark-autopilot yes
+
+# Article
+
+text-width 80
+
+browser open
+
+save-path ~/Downloads
+
+# Bindings
+
+unbind-key J
+unbind-key K
+unbind-key C
+unbind-key O
+
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key h quit
+unbind-key h feedlist
+
+bind-key RIGHT open
+bind-key LEFT quit
+
+bind-key g home
+bind-key G end
+
+bind-key TAB next-unread feedlist articlelist
+bind-key N prev-unread
+
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key J next article
+bind-key K prev article
+
+bind-key S sort
+
+bind-key a toggle-article-read
+bind-key SPACE toggle-show-read-feeds
+
+bind-key b bookmark
+
+bind-key o open-in-browser-and-mark-read

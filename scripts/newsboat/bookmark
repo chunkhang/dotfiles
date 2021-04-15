@@ -1,0 +1,7 @@
+#!/bin/sh
+
+url="$1"
+# https://unix.stackexchange.com/a/159309
+title="$(echo "$2" | perl -pe 's/\%(\w\w)/chr hex $1/ge')"
+
+echo "${url} | ${title}" >> ~/.bookmark
