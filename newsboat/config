@@ -91,13 +91,15 @@ bind-key TAB next-unread feedlist
 bind-key TAB next-unread articlelist
 bind-key N prev-unread
 
-bind-key A mark-all-feeds-read
+bind-key A mark-all-feeds-read feedlist
+bind-key A mark-feed-read articlelist
+bind-key SPACE toggle-article-read
 
 bind-key J next-feed articlelist
 bind-key K prev-feed articlelist
 bind-key J next article
 bind-key K prev article
 
-bind-key SPACE toggle-article-read
-
 bind-key b bookmark
+
+bind-key o open-in-browser-and-mark-read
