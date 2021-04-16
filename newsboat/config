@@ -13,13 +13,27 @@ show-keymap-hint no
 datetime-format "%d %b %Y, %R"
 
 color background          default  black
-color listnormal          white    black
+color listnormal          default  black
 color listfocus           default  color8
-color listnormal_unread   default  black
-color listfocus_unread    default  color8
+color listnormal_unread   yellow   black
+color listfocus_unread    yellow   color8
 color info                blue     black
 color article             default  black
 color end-of-text-marker  black    black
+
+feedlist-title-format      "[Feeds]%?T? <%T>? %>- (%u/%t)"
+articlelist-title-format   "[Feed] %T %>- (%u/%t)"
+itemview-title-format      "[Article] %T %>- (%F)"
+searchresult-title-format  "[Search] %>- (%u/%t)"
+help-title-format          "[Help] %>-"
+selecttag-title-format     "[Tags] %>-"
+selectfilter-title-format  "[Filters] %>-"
+urlview-title-format       "[URLs] %>-"
+dialogs-title-format       "[Dialogs] %>-"
+filebrowser-title-format   "[Browser] %?O?Open File&Save File? %f %>-"
+dirbrowser-title-format    "[Browser] %?O?Open Directory&Save File? %f %>-"
+feedlist-format            "%3i  %7u  %t"
+articlelist-format         "%3i  %D%?T?  %-15T  ?  %t"
 
 highlight article "https?://[^ ]+" cyan black
 highlight article "^Feed:.*" yellow black
@@ -36,8 +50,6 @@ reload-time 60
 reload-threads 4
 
 # Feed
-
-mark-as-read-on-hover yes
 
 goto-first-unread no
 goto-next-feed no
@@ -75,7 +87,9 @@ unbind-key LEFT feedlist
 bind-key g home
 bind-key G end
 
-bind-key TAB next-unread
+bind-key TAB next-unread feedlist
+bind-key TAB next-unread articlelist
+bind-key N prev-unread
 
 bind-key A mark-all-feeds-read
 
@@ -84,9 +98,6 @@ bind-key K prev-feed articlelist
 bind-key J next article
 bind-key K prev article
 
-bind-key S sort
-
-bind-key a toggle-article-read
-bind-key SPACE toggle-show-read-feeds
+bind-key SPACE toggle-article-read
 
 bind-key b bookmark
