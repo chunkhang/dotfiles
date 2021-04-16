@@ -10,7 +10,7 @@ scrolloff 10
 
 show-keymap-hint no
 
-datetime-format "%d %b %Y, %R"
+datetime-format "%a %d/%m %R"
 
 color background          default  black
 color listnormal          default  black
@@ -32,8 +32,8 @@ urlview-title-format       "[URLs] %>-"
 dialogs-title-format       "[Dialogs] %>-"
 filebrowser-title-format   "[Browser] %?O?Open File&Save File? %f %>-"
 dirbrowser-title-format    "[Browser] %?O?Open Directory&Save File? %f %>-"
-feedlist-format            "%3i  %9u  %t"
-articlelist-format         "%3i  %D%?T?  %-20T  ?  %t"
+feedlist-format            "%4i  %7u  %t"
+articlelist-format         "%4i  %D%?T?  %-20T  ?  %t"
 
 highlight article "https?://[^ ]+" cyan black
 highlight article "^Feed:.*" yellow black
@@ -42,7 +42,8 @@ highlight article "^Link:.*" green black
 
 # Feed list
 
-max-items 100
+max-items 50
+keep-articles-days 30
 
 auto-reload yes
 suppress-first-reload yes
