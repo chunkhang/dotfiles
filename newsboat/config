@@ -49,6 +49,8 @@ suppress-first-reload yes
 reload-time 60
 reload-threads 4
 
+confirm-mark-all-feeds-read no
+
 # Feed
 
 goto-first-unread no
