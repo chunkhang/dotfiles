@@ -81,15 +81,10 @@ alias cls='clear'
 # -----------------------------------------------------------------------------
 
 alias v='nvim'
-alias pt='papertrail'
-alias tf='terraform'
-alias hp='http-prompt'
 alias mutt='neomutt'
 alias tweet='t update'
 abbr k='kubectl'
-abbr p='pyenv'
 abbr j='just'
-abbr n='newsboat'
 
 # ------------------------------------------------------------------------------
 # Git
