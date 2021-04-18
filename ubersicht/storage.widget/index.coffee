@@ -20,12 +20,9 @@ style: """
   // Change bar height
   bar-height = 2px
 
-  // Align contents left or right
-  widget-align = right
-
   // Position this where you want
   top: 260px
-  right: 15px
+  left: 15px
 
   // Statistics text settings
   color: white
@@ -36,7 +33,6 @@ style: """
 
   .container
     width: 300px
-    text-align: widget-align
     position: relative
     clear: both
 
@@ -44,7 +40,6 @@ style: """
     margin-top: 20px
 
   .widget-title
-    text-align: widget-align
     margin-bottom: 2px
 
   .stats-container
@@ -53,15 +48,10 @@ style: """
 
   table
     width: 50%
-    margin-left: auto
 
   td
     font-size: 13px
     font-weight: 300
-    text-align: widget-align
-
-  td.pctg
-    float: right
 
   .widget-title, p
     font-size: 10px
@@ -76,7 +66,6 @@ style: """
   .bar-container
     width: 100%
     height: bar-height
-    float: widget-align
     clear: both
     background: gray
     position: absolute
