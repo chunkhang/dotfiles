@@ -1,9 +1,19 @@
 #!/bin/sh
 
-calendar="$(cal -h | tail +3 | tr '\n' '@' |  sed 's/@/\\n/g')"
+format_calendar() {
+  echo "$1" | tail +3 | tr '\n' '@' |  sed 's/@/\\n/g'
+}
+
+current_calendar="$(cal -h)"
+
+next_date="$(date -v +1m '+%Y-%m')"
+next_calendar="$(cal -d "${next_date}")"
 
 cat <<EOF
 {
-  "calendar": "${calendar}"
+  "calendar": {
+    "current": "$(format_calendar "$current_calendar")",
+    "next": "$(format_calendar "$next_calendar")"
+  }
 }
 EOF

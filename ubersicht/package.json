@@ -11,6 +11,6 @@
   "dependencies": {
     "classnames": "^2.2.6",
     "duration-js": "^4.0.0",
-    "moment": "^2.25.3"
+    "moment": "^2.29.1"
   }
 }

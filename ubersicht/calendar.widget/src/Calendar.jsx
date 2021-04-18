@@ -1,4 +1,5 @@
 import cx from 'classnames'
+import moment from 'moment'
 
 import { makeClasses } from '../../lib/utils'
 import theme from '../../lib/theme'
@@ -20,6 +21,17 @@ const classes = makeClasses({
     marginTop: 8,
   },
 
+  monthContainer: {
+    marginBottom: 8,
+  },
+
+  title: {
+    marginBottom: 4,
+    fontWeight: 500,
+    fontSize: 10,
+    textTransform: 'uppercase',
+  },
+
   table: {
     borderCollapse: 'separate',
     borderSpacing: CELL_SPACING,
@@ -39,19 +51,17 @@ const classes = makeClasses({
   },
 })
 
-const Calendar = ({ data }) => {
-  const { calendar, error } = data
+const Month = ({ date, data }) => {
+  const title = date.format('MMMM YYYY')
 
-  if (!calendar || error) return null
-
-  // Parse calendar rows into array of weeks
+  // Parse month data into array of weeks
   // [
   //   ['1', '2', '3'],
   //   ['4', '5', '6', '7', '8', '9', '10'],
   //   ...
   //   ['25', '26', '27', '28', '29', '30']
   // ]
-  const rows = calendar.trim().split('\n')
+  const rows = data.trim().split('\n')
   const weeks = rows.map((row) => {
     return row.split(/\s+/).filter(day => !!day)
   })
@@ -73,10 +83,13 @@ const Calendar = ({ data }) => {
     ]
   }
 
-  const today = new Date().getDate()
+  // Highlight today in calendar
+  const hasToday = moment().isSame(date, 'month')
+  const today = date.format('DD')
 
   return (
-    <div className={classes.mainContainer}>
+    <div className={classes.monthContainer}>
+      <div className={classes.title}>{title}</div>
       <table className={classes.table}>
         <thead>
           <tr>
@@ -100,7 +113,7 @@ const Calendar = ({ data }) => {
             return (
               <tr key={i}>
                 {week.map((day, j) => {
-                  const isToday = day && parseInt(day, 10) === today
+                  const isToday = hasToday && day === today
                   return (
                     <td
                       key={j}
@@ -119,6 +132,21 @@ const Calendar = ({ data }) => {
           })}
         </tbody>
       </table>
+    </div>
+  )
+}
+
+const Calendar = ({ data }) => {
+  const { calendar, error } = data
+
+  if (error) return null
+
+  if (!calendar.current || !calendar.next) return null
+
+  return (
+    <div className={classes.mainContainer}>
+      <Month date={moment()} data={calendar.current} />
+      <Month date={moment().add(1, 'month')} data={calendar.next} />
     </div>
   )
 }
