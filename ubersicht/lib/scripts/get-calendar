@@ -1,0 +1,9 @@
+#!/bin/sh
+
+calendar="$(cal -h | tail +3 | tr '\n' '@' |  sed 's/@/\\n/g')"
+
+cat <<EOF
+{
+  "calendar": "${calendar}"
+}
+EOF
