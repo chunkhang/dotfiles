@@ -4,13 +4,13 @@ import { makeClasses } from '../../lib/utils'
 import theme from '../../lib/theme'
 
 const WEEKDAYS = [
-  'S',
-  'M',
-  'T',
-  'W',
-  'T',
-  'F',
-  'S',
+  'Su',
+  'Mo',
+  'Tu',
+  'We',
+  'Th',
+  'Fr',
+  'Sa',
 ]
 
 const CELL_SPACING = 6
@@ -28,10 +28,6 @@ const classes = makeClasses({
 
   cell: {
     fontSize: 12,
-  },
-
-  weekday: {
-    textAlign: 'center',
   },
 
   sunday: {
@@ -90,7 +86,6 @@ const Calendar = ({ data }) => {
                   key={i}
                   className={cx({
                     [classes.cell]: true,
-                    [classes.weekday]: true,
                     [classes.sunday]: i === 0,
                   })}
                 >
