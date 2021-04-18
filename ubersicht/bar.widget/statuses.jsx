@@ -5,8 +5,8 @@ import Bluetooth from './src/Bluetooth.jsx'
 import Wifi from './src/Wifi.jsx'
 import Battery from './src/Battery.jsx'
 import DateTime from './src/DateTime.jsx'
-import { makeClasses, updateState } from './src/utils'
-import theme from './src/theme'
+import { makeClasses, updateState } from '../lib/utils'
+import theme from '../lib/theme'
 
 const command = 'lib/scripts/get-statuses'
 

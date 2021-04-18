@@ -1,8 +1,8 @@
 import Icon from './src/Icon.jsx'
 import Spaces from './src/Spaces.jsx'
 import Error from './src/Error.jsx'
-import { makeClasses, updateState } from './src/utils'
-import theme from './src/theme'
+import { makeClasses, updateState } from '../lib/utils'
+import theme from '../lib/theme'
 
 const command = 'lib/scripts/get-spaces'
 

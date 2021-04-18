@@ -1,5 +1,5 @@
-import { makeClasses } from './src/utils'
-import theme from './src/theme'
+import { makeClasses } from '../lib/utils'
+import theme from '../lib/theme'
 
 const refreshFrequency = false
 

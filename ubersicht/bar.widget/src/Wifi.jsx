@@ -1,5 +1,5 @@
-import { makeClasses } from './utils'
-import theme from './theme'
+import { makeClasses } from '../../lib/utils'
+import theme from '../../lib/theme'
 
 const classes = makeClasses({
   mainContainer: {
