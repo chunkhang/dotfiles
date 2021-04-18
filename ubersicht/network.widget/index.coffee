@@ -3,10 +3,10 @@ command: "network.widget/lib/network.sh"
 refreshFrequency: "5s"
 
 style: """
-    white = #e6e6e6
-    red = #a64348
-    blue = #4c9ec0
-    gray = #7f7f7f
+    white = #abb2bf
+    red = #e06c75
+    blue = #61afef
+    gray = #3e4452
 
     // Change bar height
     bar-height = 2px

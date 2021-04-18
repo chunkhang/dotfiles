@@ -14,8 +14,9 @@ command: "df -#{if base10 then 'H' else 'h'} | grep '/dev/' | while read -r line
 refreshFrequency: "30s"
 
 style: """
-  white = #e6e6e6
-  red = #a64348
+  white = #abb2bf
+  red = #e06c75
+  gray = #3e4452
 
   // Change bar height
   bar-height = 2px
