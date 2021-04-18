@@ -53,8 +53,8 @@ const Spaces = ({ data }) => {
 
   return (
     <div className={classes.mainContainer}>
-      {spaces.map(space => (
-        <Space space={space} />
+      {spaces.map((space, i) => (
+        <Space key={i} space={space} />
       ))}
     </div>
   )
