@@ -38,10 +38,6 @@ const classes = makeClasses({
     margin: -CELL_SPACING,
   },
 
-  cell: {
-    fontSize: 12,
-  },
-
   sunday: {
     color: theme.colors.red,
   },
@@ -98,7 +94,6 @@ const Month = ({ date, data }) => {
                 <td
                   key={i}
                   className={cx({
-                    [classes.cell]: true,
                     [classes.sunday]: i === 0,
                   })}
                 >
@@ -118,8 +113,6 @@ const Month = ({ date, data }) => {
                     <td
                       key={j}
                       className={cx({
-                        [classes.cell]: true,
-                        [classes.day]: true,
                         [classes.today]: isToday,
                       })}
                     >
