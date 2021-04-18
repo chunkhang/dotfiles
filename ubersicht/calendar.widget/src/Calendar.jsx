@@ -19,7 +19,6 @@ const CELL_SPACING = 6
 const classes = makeClasses({
   mainContainer: {
     marginTop: 8,
-    fontSize: 12,
   },
 
   monthContainer: {
