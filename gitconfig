@@ -43,6 +43,10 @@
     -c 'tabfirst'
   trustExitCode = true
 
+[advice]
+  addEmptyPathspec = false
+  waitingForEditor = false
+
 [alias]
 
   unstage = reset HEAD *
