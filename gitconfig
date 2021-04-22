@@ -55,8 +55,20 @@
 
   drop = reset --hard @{u}
 
+  default = "!f() { \
+    branches=(master main) ;\
+    for branch in "${branches[@]}"; do \
+      git branch | grep --silent "$branch" ;\
+      if [[ "$?" == 0 ]]; then \
+        echo "$branch" ;\
+        break ;\
+      fi ;\
+    done ;\
+  }; f"
+
   tidy = "!f() { \
-    git checkout master ;\
+    default_branch=$(git default) ;\
+    git checkout "$default_branch" ;\
     git pull ;\
     git fetch --prune ;\
     git branch --verbose | grep '\\[gone\\]' | awk '{print $1}' | xargs git branch --delete --force ;\
@@ -86,14 +98,16 @@
   }; f"
 
   monday = "!f() { \
+    default_branch=$(git default) ;\
     git checkout --quiet @ ;\
-    git fetch origin master:master develop:develop ;\
+    git fetch origin "${default_branch}:${default_branch}" develop:develop ;\
     git checkout --quiet develop ;\
   }; f"
 
   purge = "!f() { \
-    local branch="$1" ;\
-    git checkout master ;\
+    default_branch=$(git default) ;\
+    branch="$1" ;\
+    git checkout "$default_branch" ;\
     git branch --delete --force "$branch" ;\
     git push origin ":${branch}" ;\
   }; f"
