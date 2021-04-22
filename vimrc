@@ -1013,7 +1013,7 @@ let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'typescript': ['eslint'],
       \ 'go': ['gofmt', 'golint', 'go vet'],
-      \ 'python': ['flake8'],
+      \ 'python': ['flake8', 'pyright'],
       \ 'css': ['stylelint'],
       \ 'scss': ['stylelint'],
       \ }
@@ -1024,6 +1024,12 @@ let g:ale_fixers = {
       \ 'python': ['black'],
       \ }
 let g:ale_fix_on_save = 1
+let g:ale_python_pyright_config = {
+      \ 'pyright': {
+      \   'disableLanguageServices': v:true,
+      \    'useLibraryCodeForTypes': v:true,
+      \ },
+      \}
 let g:ale_python_black_change_directory = 0
 call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
 
