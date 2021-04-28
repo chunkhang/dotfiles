@@ -62,6 +62,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-projectionist'
 Plug 'dhruvasagar/vim-zoom'
+Plug 'tommcdo/vim-lion'
 
 " -----------------------------------------------------------------------------
 " Git
