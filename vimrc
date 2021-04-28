@@ -61,6 +61,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-projectionist'
+Plug 'dhruvasagar/vim-zoom'
 
 " -----------------------------------------------------------------------------
 " Git
@@ -664,6 +665,11 @@ nnoremap <silent> <leader>u :edit ~/.vim/ultisnips<cr>
 " -----------------------------------------------------------------------------
 nnoremap <silent> \| :A<cr>
 nnoremap <silent> g\| :AV<cr>
+
+" -----------------------------------------------------------------------------
+" vim-zoom
+" -----------------------------------------------------------------------------
+nmap <leader>z <Plug>(zoom-toggle)
 
 " -----------------------------------------------------------------------------
 " vim-fugitive
