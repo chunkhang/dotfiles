@@ -108,7 +108,7 @@ const Month = ({ date, data }) => {
             return (
               <tr key={i}>
                 {week.map((day, j) => {
-                  const isToday = hasToday && day === today
+                  const isToday = hasToday && day && day.padStart(2, '0') === today
                   return (
                     <td
                       key={j}
