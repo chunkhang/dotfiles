@@ -1,0 +1,9 @@
+#!/usr/bin/env python3
+
+import sys
+import html
+from urllib.parse import unquote
+
+text_input = sys.stdin.read()
+text_output = html.unescape(unquote(text_input))
+sys.stdout.buffer.write(text_output.encode('utf-8'))
