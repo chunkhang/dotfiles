@@ -5,7 +5,6 @@ export EDITOR=nvim
 export LANG=en_US.UTF-8
 
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_112.jdk/Contents/Home
-export ES_JAVA_HOME=/usr/local/Cellar/elasticsearch-full/7.12.1/libexec/jdk.app/Contents/Home
 
 export SCALA_HOME=/usr/local/opt/scala/idea
 
@@ -47,6 +46,8 @@ path+=(
   "${GOROOT}/bin"
   "${HOME}/.texlive/2018/bin/x86_64-darwin"
   /Applications/Postgres.app/Contents/Versions/latest/bin
+  /usr/local/elasticsearch/elasticsearch-7.10.2/bin
+  /usr/local/kibana/kibana-7.10.2/bin
 )
 
 # Local configuration
