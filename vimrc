@@ -1032,7 +1032,6 @@ let g:ale_fix_on_save = 1
 let g:ale_python_pyright_config = {
       \ 'pyright': {
       \   'disableLanguageServices': v:true,
-      \    'useLibraryCodeForTypes': v:true,
       \ },
       \}
 let g:ale_python_black_change_directory = 0
