@@ -1,6 +1,7 @@
 " vim: set foldmethod=marker nomodeline:
 
 " Executable dependencies:
+" - par: http://www.nicemice.net/par/
 " - rg: https://github.com/BurntSushi/ripgrep
 
 " =============================================================================
@@ -173,6 +174,7 @@ set regexpengine=1
 set shellcmdflag=-l\ -c
 set maxmempattern=5000
 set complete-=t
+set formatprg=par
 set grepprg=rg\ --vimgrep
 
 " Fallback to bash syntax
