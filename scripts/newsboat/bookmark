@@ -1,6 +1,6 @@
 #!/bin/sh
 
 url="$1"
-title=$(echo "$2" | ./decode)
+title=$(echo "$2" | ~/.scripts/newsboat/decode)
 
 echo "${url} | ${title}" >> ~/.bookmark
