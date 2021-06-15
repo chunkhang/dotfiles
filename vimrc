@@ -1113,6 +1113,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead supervisord.conf set filetype=dosini
   autocmd BufNewFile,BufRead .flake8 set filetype=toml
   autocmd BufNewFile,BufRead Pipfile set filetype=toml
+  autocmd BufNewFile,BufRead .coveragerc set filetype=dosini
 
   " Disable automatic comment insertion on new line
   autocmd FileType * set formatoptions-=o
