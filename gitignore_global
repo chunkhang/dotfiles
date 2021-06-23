@@ -2,6 +2,7 @@
 .root
 .tags
 .tags.lock
+.tags.temp
 .notags
 .ignore
 .lvimrc
