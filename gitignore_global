@@ -3,6 +3,7 @@
 .tags
 .tags.lock
 .tags.temp
+.tags.files
 .notags
 .ignore
 .lvimrc
