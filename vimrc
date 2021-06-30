@@ -1114,6 +1114,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead .flake8 set filetype=toml
   autocmd BufNewFile,BufRead Pipfile set filetype=toml
   autocmd BufNewFile,BufRead .coveragerc set filetype=dosini
+  autocmd BufNewFile,BufRead pytest.ini set filetype=toml
 
   " Disable automatic comment insertion on new line
   autocmd FileType * set formatoptions-=o
