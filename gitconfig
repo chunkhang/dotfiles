@@ -49,6 +49,7 @@
 [advice]
   addEmptyPathspec = false
   waitingForEditor = false
+  pushUpdateRejected = false
 
 [alias]
 
