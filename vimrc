@@ -1025,6 +1025,7 @@ let g:ale_linters = {
       \ 'scss': ['stylelint'],
       \ }
 let g:ale_fixers = {
+      \ 'yaml': ['prettier'],
       \ 'javascript': ['prettier'],
       \ 'css': ['prettier'],
       \ 'scss': ['prettier'],
