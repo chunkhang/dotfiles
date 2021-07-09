@@ -86,6 +86,8 @@ alias tweet='t update'
 abbr k='kubectl'
 abbr j='just'
 abbr f='fluxctl'
+abbr d='docker'
+abbr g='git'
 
 # ------------------------------------------------------------------------------
 # Git
