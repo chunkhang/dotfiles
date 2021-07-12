@@ -42,9 +42,9 @@ print_new = event
 
 [locale]
 timeformat = %H:%M
-dateformat = %Y-%m-%d
+dateformat = %d/%m
 longdateformat = %Y-%m-%d
-datetimeformat = %Y-%m-%d %H:%M
+datetimeformat = %d/%m %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
 firstweekday = 6
 
