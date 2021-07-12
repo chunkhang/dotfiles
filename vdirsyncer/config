@@ -1,0 +1,50 @@
+[general]
+status_path = "~/.vdirsyncer/status/"
+
+[pair icloud]
+a = "icloud_local"
+b = "icloud_remote"
+collections = [["hobby", "hobby", "D92060F9-80E5-47F1-895D-42851FEB2FA4"], ["misc", "misc", "233644A6-088A-4450-A590-244FBEA704E7"]]
+
+[storage icloud_local]
+type = "filesystem"
+path = "~/Calendars/icloud/"
+fileext = ".ics"
+
+[storage icloud_remote]
+type = "caldav"
+url = "https://caldav.icloud.com"
+username = "chunkhang@gmail.com"
+password.fetch = ["command", "security", "find-internet-password", "-a", "chunkhang@gmail.com", "-s", "caldav.icloud.com", "-w"]
+
+[pair gmail]
+a = "gmail_local"
+b = "gmail_remote"
+collections = [["personal", "personal", "chunkhang@gmail.com"], ["holidays", "holidays", "cln2srb1dhgnisr9c4hmgrrcd5i62ua0ctp6utbg5pr2sor1dhimsp31e8n6errfctm6abj3dtmg@virtual"]]
+
+[storage gmail_local]
+type = "filesystem"
+path = "~/Calendars/gmail/"
+fileext = ".ics"
+
+[storage gmail_remote]
+type = "google_calendar"
+token_file = "~/.vdirsyncer/tokens/gmail"
+client_id.fetch = ["command", "security", "find-internet-password", "-a", "chunkhang@gmail.com", "-s", "oauth.client_id", "-w"]
+client_secret.fetch = ["command", "security", "find-internet-password", "-a", "chunkhang@gmail.com", "-s", "oauth.client_secret", "-w"]
+
+[pair omnilytics]
+a = "omnilytics_local"
+b = "omnilytics_remote"
+collections = [["work", "work", "marcus.mu@omnilytics.co"], ["company", "company", "omnilytics.co_epdghl1q4q3jeruaqeetifgbj0@group.calendar.google.com"]]
+
+[storage omnilytics_local]
+type = "filesystem"
+path = "~/Calendars/omnilytics/"
+fileext = ".ics"
+
+[storage omnilytics_remote]
+type = "google_calendar"
+token_file = "~/.vdirsyncer/tokens/omnilytics"
+client_id.fetch = ["command", "security", "find-internet-password", "-a", "chunkhang@gmail.com", "-s", "oauth.client_id", "-w"]
+client_secret.fetch = ["command", "security", "find-internet-password", "-a", "chunkhang@gmail.com", "-s", "oauth.client_secret", "-w"]

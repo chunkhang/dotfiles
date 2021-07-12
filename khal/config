@@ -1,0 +1,55 @@
+[calendars]
+
+[[icloud/hobby]]
+path = ~/Calendars/icloud/hobby
+type = calendar
+color = dark green
+
+[[icloud/misc]]
+path = ~/Calendars/icloud/misc
+type = calendar
+color = light cyan
+
+[[gmail/personal]]
+path = ~/Calendars/gmail/personal
+type = calendar
+color = light red
+
+[[gmail/holidays]]
+path = ~/Calendars/gmail/holidays
+type = calendar
+color = yellow
+readonly = true
+
+[[omnilytics/work]]
+path = ~/Calendars/omnilytics/work
+type = calendar
+color = light blue
+
+[[omnilytics/company]]
+path = ~/Calendars/omnilytics/company
+type = calendar
+color = light magenta
+readonly = true
+
+[sqlite]
+path = ~/.config/khal/khal.db
+
+[default]
+default_calendar = icloud/misc
+timedelta = 1d
+print_new = event
+
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+firstweekday = 6
+
+[view]
+bold_for_light_color = false
+agenda_day_format = "{name}, {date-long}"
+agenda_event_format = "{calendar-color}{start-style} {to-style} {end-necessary} | {title}{repeat-symbol} {cancelled}{reset}"
+event_format = "{calendar-color}{start} {to-style} {end} | {title}{reset}{repeat-symbol} {cancelled}{reset}"

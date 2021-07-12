@@ -7,6 +7,7 @@
 - link:
     ~/.alacritty.yml:
     ~/.bash_profile:
+    ~/.config/khal:
     ~/.config/kitty:
     ~/.config/nvim:
     ~/.config/ranger:
@@ -33,6 +34,7 @@
     ~/.terminalizer:
     ~/.tmux.conf:
     ~/.ubersicht:
+    ~/.vdirsyncer:
     ~/.vim:
     ~/.vimrc:
     ~/.weechat:
