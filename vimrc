@@ -101,6 +101,7 @@ Plug 'hashivim/vim-terraform'
 Plug 'cespare/vim-toml'
 Plug 'vito-c/jq.vim'
 Plug 'Joorem/vim-haproxy'
+Plug 'vim-scripts/icalendar.vim'
 
 " -----------------------------------------------------------------------------
 " Linting
@@ -1116,6 +1117,7 @@ augroup vimrc
   autocmd BufNewFile,BufRead Pipfile set filetype=toml
   autocmd BufNewFile,BufRead .coveragerc set filetype=dosini
   autocmd BufNewFile,BufRead pytest.ini set filetype=toml
+  autocmd BufNewFile,BufRead *.ics set filetype=icalendar
 
   " Disable automatic comment insertion on new line
   autocmd FileType * set formatoptions-=o
