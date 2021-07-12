@@ -1,0 +1,21 @@
+#!/bin/sh
+
+PATH=/usr/local/bin:$PATH
+
+# Check internet connection
+if ! ping -c 1 -W 1 -q 8.8.8.8 &>/dev/null; then
+  exit 1
+fi
+
+function timestamp {
+  date '+%Y-%m-%d %H:%M:%S'
+}
+
+echo "$(timestamp) | Start syncing calendars..."
+
+vdirsyncer sync
+
+# Trigger khal to reindex
+khal at
+
+echo "$(timestamp) | Done syncing calendars"
