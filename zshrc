@@ -9,6 +9,7 @@ done
 
 # Load fzf
 
+FZF_TMUX_OPTS='-p'
 FZF_DEFAULT_COMMAND='rg --files --color=never'
 FZF_CTRL_R_OPTS='--exact'
 FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
