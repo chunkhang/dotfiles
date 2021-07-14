@@ -1,4 +1,6 @@
-source "$HOME/.zsh/plug.zsh"
+if ! command -v plug &>/dev/null; then
+  source "$HOME/.zsh/plug.zsh"
+fi
 
 plug use "davidparsson/zsh-pyenv-lazy" "pyenv-lazy.plugin.zsh"
 

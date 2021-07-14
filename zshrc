@@ -24,6 +24,10 @@ bindkey -r '\ec'
 
 # Load plugins
 
+if ! command -v plug &>/dev/null; then
+  source "$HOME/.zsh/plug.zsh"
+fi
+
 plug use "rupa/z" "z.sh"
 
 plug use "paulirish/git-open" "git-open"
