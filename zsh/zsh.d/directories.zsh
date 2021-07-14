@@ -11,13 +11,13 @@ function _ctrl_p() {
     # Exclude current directory from list
     grep --invert-match --line-regexp --fixed-strings "$(pwd)" | \
     sed "s,${HOME},~," | \
-    fzf --reverse --tiebreak=end,index --exact --height 40% | \
+    fzf-tmux -p --reverse --tiebreak=end,index --exact --height 40% | \
     sed "s,~,${HOME}," \
   )
   if [[ -d "$dir" ]]; then
     cd "$dir"
   fi
-  zle fzf-redraw-prompt
+  zle reset-prompt
 }
 zle -N _ctrl_p
 bindkey '^P' _ctrl_p
