@@ -1,0 +1,5 @@
+logs/
+*.log
+sec.conf
+message.txt
+script/plugins.xml.gz
