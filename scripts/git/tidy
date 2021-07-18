@@ -1,4 +1,5 @@
 #!/bin/sh
+# Prune local branches that no longer exist in remote
 
 script_dir=$(dirname "$0")
 

@@ -1,9 +1,15 @@
 #!/bin/sh
+# Remove specified branch from local and remote
 
 script_dir=$(dirname "$0")
 
 default_branch=$("${script_dir}/default")
+
 branch="$1"
+if [[ -z "$branch" ]]; then
+  echo "usage: purge <branch>"
+  exit 1
+fi
 
 git checkout "$default_branch"
 git branch --delete --force "$branch"

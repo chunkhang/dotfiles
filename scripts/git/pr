@@ -1,4 +1,5 @@
 #!/bin/sh
+# Open url to create a new pull request for current branch
 
 remote_url=$(git ls-remote --get-url)
 remote_uri=$(echo "$remote_url" | cut -d @ -f 2)

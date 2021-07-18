@@ -1,5 +1,8 @@
 #!/bin/sh
+# Run tidy script before cleaning reflog and running garbage collection
 
-git tidy
+script_dir=$(dirname "$0")
+
+"${script_dir}/tidy"
 git reflog expire --expire-unreachable=now --all
 git gc --prune=now --aggressive
