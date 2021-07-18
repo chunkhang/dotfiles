@@ -1,0 +1,10 @@
+#!/bin/sh
+
+script_dir=$(dirname "$0")
+
+default_branch=$("${script_dir}/default")
+branch="$1"
+
+git checkout "$default_branch"
+git branch --delete --force "$branch"
+git push origin ":${branch}"

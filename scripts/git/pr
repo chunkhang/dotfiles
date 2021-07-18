@@ -1,0 +1,19 @@
+#!/bin/sh
+
+remote_url=$(git ls-remote --get-url)
+remote_uri=$(echo "$remote_url" | cut -d @ -f 2)
+
+host=$(echo "$remote_uri" | cut -d : -f 1)
+repo=$(echo "$remote_uri" | cut -d : -f 2 | cut -d . -f 1)
+branch=$(git symbolic-ref --short HEAD)
+
+if [[ "$host" =~ "github" ]]; then
+  url="https://${host}/${repo}/compare/${branch}?expand=1"
+elif [[ "$host" =~ "bitbucket" ]]; then
+  url="https://${host}/${repo}/pull-requests/new?source=${branch}"
+else
+  exit 1
+fi
+
+echo "$url"
+open "$url"

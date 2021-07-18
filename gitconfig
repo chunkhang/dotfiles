@@ -52,67 +52,10 @@
   pushUpdateRejected = false
 
 [alias]
-
-  unstage = reset HEAD *
-
   discard = checkout -- *
-
   drop = reset --hard @{u}
-
-  default = "!f() { \
-    branches=(master main) ;\
-    for branch in "${branches[@]}"; do \
-      git branch | grep --silent "$branch" ;\
-      if [[ "$?" == 0 ]]; then \
-        echo "$branch" ;\
-        break ;\
-      fi ;\
-    done ;\
-  }; f"
-
-  tidy = "!f() { \
-    default_branch=$(git default) ;\
-    git checkout "$default_branch" ;\
-    git pull ;\
-    git fetch --prune ;\
-    git branch --verbose | grep '\\[gone\\]' | awk '{print $1}' | xargs git branch --delete --force ;\
-  }; f"
-
-  spring = "!f() { \
-    git tidy ;\
-    git reflog expire --expire-unreachable=now --all ;\
-    git gc --prune=now --aggressive ;\
-  }; f"
-
-  pr = "!f() { \
-    remote_url=$(git ls-remote --get-url) ;\
-    remote_uri=$(echo "$remote_url" | cut -d @ -f 2) ;\
-    host=$(echo "$remote_uri" | cut -d : -f 1) ;\
-    repo=$(echo "$remote_uri" | cut -d : -f 2 | cut -d . -f 1) ;\
-    branch=$(git symbolic-ref --short HEAD) ;\
-    if [[ "$host" =~ "github" ]]; then \
-      url="https://${host}/${repo}/compare/${branch}?expand=1" ;\
-    elif [[ "$host" =~ "bitbucket" ]]; then \
-      url="https://${host}/${repo}/pull-requests/new?source=${branch}" ;\
-    else \
-      exit 1 ;\
-    fi ;\
-    echo "$url" ;\
-    open "$url" ;\
-  }; f"
-
-  monday = "!f() { \
-    default_branch=$(git default) ;\
-    git checkout --quiet @ ;\
-    git fetch origin "${default_branch}:${default_branch}" develop:develop ;\
-    git checkout --quiet develop ;\
-  }; f"
-
-  purge = "!f() { \
-    default_branch=$(git default) ;\
-    branch="$1" ;\
-    git checkout "$default_branch" ;\
-    git branch --delete --force "$branch" ;\
-    git push origin ":${branch}" ;\
-  }; f"
-
+  pr = ! ~/.scripts/git/pr
+  purge = ! ~/.scripts/git/purge
+  spring = ! ~/.scripts/git/spring
+  tidy = ! ~/.scripts/git/tidy
+  unstage = reset HEAD *
