@@ -6,12 +6,22 @@ remote_uri=$(echo "$remote_url" | cut -d @ -f 2)
 
 host=$(echo "$remote_uri" | cut -d : -f 1)
 repo=$(echo "$remote_uri" | cut -d : -f 2 | cut -d . -f 1)
-branch=$(git symbolic-ref --short HEAD)
+source_branch=$(git symbolic-ref --short HEAD)
+
+dest_branch="$1"
 
 if [[ "$host" =~ "github" ]]; then
-  url="https://${host}/${repo}/compare/${branch}?expand=1"
+  if [[ -z "$dest_branch" ]]; then
+    url="https://${host}/${repo}/compare/${source_branch}?expand=1"
+  else
+    url="https://${host}/${repo}/compare/${dest_branch}...${source_branch}?expand=1"
+  fi
 elif [[ "$host" =~ "bitbucket" ]]; then
-  url="https://${host}/${repo}/pull-requests/new?source=${branch}"
+  if [[ -z "$dest_branch" ]]; then
+    url="https://${host}/${repo}/pull-requests/new?source=${source_branch}"
+  else
+    url="https://${host}/${repo}/pull-requests/new?source=${source_branch}&destination=${dest_branch}"
+  fi
 else
   exit 1
 fi
