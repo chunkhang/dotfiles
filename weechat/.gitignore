@@ -1,5 +1,6 @@
 logs/
+script/
 *.log
 sec.conf
 message.txt
-script/plugins.xml.gz
+buffer.txt

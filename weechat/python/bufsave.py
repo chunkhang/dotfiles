@@ -39,8 +39,11 @@
 """Buffer saver."""
 
 import weechat as w
-from os.path import exists
+from os.path import exists, expanduser, join
 import time
+import os
+import shlex
+import subprocess
 
 SCRIPT_NAME = "bufsave"
 SCRIPT_AUTHOR = "xt <xt@bash.no>"
@@ -49,19 +52,22 @@ SCRIPT_LICENSE = "GPL3"
 SCRIPT_DESC = "Save buffer to a file"
 SCRIPT_COMMAND = SCRIPT_NAME
 
+WEECHAT_HOME = expanduser("~/.weechat")
+FILE_PATH = join(WEECHAT_HOME, "buffer.txt")
+EDITOR = os.environ.get("EDITOR", "vim -f")
+TERM = 'xterm-256color'
 
 if w.register(SCRIPT_NAME, SCRIPT_AUTHOR, SCRIPT_VERSION, SCRIPT_LICENSE,
               SCRIPT_DESC, "", ""):
     w.hook_command(
         SCRIPT_COMMAND,
         "save current buffer to a file",
-        "[filename]",
-        "  filename: target file (must not exist)\n",
-        "%f",
+        "",
+        "",
+        "",
         "bufsave_cmd",
         '',
     )
-
 
 def cstrip(text):
     """Use weechat color strip on text."""
@@ -71,23 +77,8 @@ def cstrip(text):
 def bufsave_cmd(data, buffer, args):
     """Callback for /bufsave command."""
 
-    filename_raw = args
-
-    if not filename_raw:
-        w.command('', '/help %s' % SCRIPT_COMMAND)
-        return w.WEECHAT_RC_OK
-
-    options = {
-        'directory': 'data',
-    }
-    filename = w.string_eval_path_home(filename_raw, {}, {}, options)
-
-    if exists(filename):
-        w.prnt('', 'Error: target file already exists!')
-        return w.WEECHAT_RC_OK
-
     try:
-        fp = open(filename, 'w')
+        fp = open(FILE_PATH, 'w')
     except Exception:
         w.prnt('', 'Error writing to target file!')
         return w.WEECHAT_RC_OK
@@ -110,10 +101,7 @@ def bufsave_cmd(data, buffer, args):
                     if not isinstance(date, str):
                         date = time.strftime('%F %T',
                                              time.localtime(int(date)))
-                    fp.write('%s %s %s\n' % (
-                        date,
-                        cstrip(w.hdata_string(hdata_line_data,
-                                              data, 'prefix')),
+                    fp.write('%s\n' % (
                         cstrip(w.hdata_string(hdata_line_data,
                                               data, 'message')),
                     ))
@@ -123,13 +111,16 @@ def bufsave_cmd(data, buffer, args):
         # slow and uses memory)
         infolist = w.infolist_get('buffer_lines', buffer, '')
         while w.infolist_next(infolist):
-            fp.write('%s %s %s\n' % (
-                w.infolist_time(infolist, 'date'),
-                cstrip(w.infolist_string(infolist, 'prefix')),
+            fp.write('%s\n' % (
                 cstrip(w.infolist_string(infolist, 'message')),
             ))
         w.infolist_free(infolist)
 
     fp.close()
+
+    # open file in editor
+    cmd = shlex.split(EDITOR) + [FILE_PATH]
+    subprocess.Popen(cmd, env=dict(os.environ, TERM=TERM)).wait()
+    w.command(buffer, "/window refresh")
 
     return w.WEECHAT_RC_OK
