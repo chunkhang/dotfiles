@@ -67,7 +67,7 @@ bookmark-autopilot yes
 
 text-width 80
 
-browser open
+browser "open --background %u"
 
 save-path ~/Downloads
 
