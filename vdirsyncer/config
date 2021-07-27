@@ -36,7 +36,7 @@ client_secret.fetch = ["command", "security", "find-internet-password", "-a", "c
 [pair omnilytics]
 a = "omnilytics_local"
 b = "omnilytics_remote"
-collections = [["work", "work", "marcus.mu@omnilytics.co"], ["company", "company", "omnilytics.co_epdghl1q4q3jeruaqeetifgbj0@group.calendar.google.com"]]
+collections = [["work", "work", "marcus.mu@omnilytics.co"]]
 
 [storage omnilytics_local]
 type = "filesystem"

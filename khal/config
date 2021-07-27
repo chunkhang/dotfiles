@@ -26,12 +26,6 @@ path = ~/Calendars/omnilytics/work
 type = calendar
 color = light blue
 
-[[omnilytics/company]]
-path = ~/Calendars/omnilytics/company
-type = calendar
-color = light magenta
-readonly = true
-
 [sqlite]
 path = ~/.config/khal/khal.db
 
