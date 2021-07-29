@@ -3,12 +3,12 @@
 [[icloud/hobby]]
 path = ~/Calendars/icloud/hobby
 type = calendar
-color = dark green
+color = light green
 
 [[icloud/misc]]
 path = ~/Calendars/icloud/misc
 type = calendar
-color = light cyan
+color = light blue
 
 [[gmail/personal]]
 path = ~/Calendars/gmail/personal
@@ -24,7 +24,7 @@ readonly = true
 [[omnilytics/work]]
 path = ~/Calendars/omnilytics/work
 type = calendar
-color = light blue
+color = light magenta
 
 [sqlite]
 path = ~/.config/khal/khal.db
