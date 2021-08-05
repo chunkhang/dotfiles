@@ -102,6 +102,7 @@ Plug 'cespare/vim-toml'
 Plug 'vito-c/jq.vim'
 Plug 'Joorem/vim-haproxy'
 Plug 'vim-scripts/icalendar.vim'
+Plug 'uarun/vim-protobuf'
 
 " -----------------------------------------------------------------------------
 " Linting
