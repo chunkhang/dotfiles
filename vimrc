@@ -517,9 +517,6 @@ vnoremap <leader>p "*p
 " Append comma
 nnoremap <leader>, A,<esc>
 vnoremap <silent> <leader>, :normal A,<cr>
-" Append dot
-nnoremap <leader>. A.<esc>
-vnoremap <silent> <leader>. :normal A.<cr>
 " Append semicolon
 nnoremap <leader>; A;<esc>
 vnoremap <silent> <leader>; :normal A;<cr>
@@ -613,6 +610,10 @@ augroup END
 " -----------------------------------------------------------------------------
 " Miscellaneous
 " -----------------------------------------------------------------------------
+" Lint
+nnoremap <silent> <leader>l :ALELint<cr>
+" Fix
+nnoremap <silent> <leader>f :ALEFix<cr>
 " Make
 nnoremap <silent> <leader><leader> :make<cr>
 " Manage vimrc
@@ -625,7 +626,7 @@ nnoremap <silent> <leader>/ :nohlsearch<cr>
 " Clear all marks
 nnoremap <silent> <leader>m :call <sid>clear_marks()<cr>
 " Print file path
-nnoremap <silent> <leader>f :echo expand('%p')<cr>
+nnoremap <silent> <leader>. :echo expand('%p')<cr>
 " Open file paths / urls
 augroup vimrc
   autocmd FileType vim nnoremap <buffer> <silent> gx :call <sid>gx_vim()<cr>
