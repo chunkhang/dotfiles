@@ -1026,7 +1026,7 @@ let g:ale_linters = {
       \ 'python': ['flake8', 'pyright'],
       \ 'css': ['stylelint'],
       \ 'scss': ['stylelint'],
-      \ 'proto': ['protoc-gen-lint'],
+      \ 'proto': ['protolint'],
       \ }
 let g:ale_fixers = {
       \ 'yaml': ['prettier'],
