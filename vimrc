@@ -178,6 +178,7 @@ set maxmempattern=5000
 set complete-=t
 set formatprg=par
 set grepprg=rg\ --vimgrep
+set foldopen-=search
 
 " Fallback to bash syntax
 " https://redd.it/4xb0fg
