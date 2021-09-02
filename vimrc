@@ -1037,6 +1037,7 @@ let g:ale_fixers = {
       \ 'javascript': ['prettier'],
       \ 'css': ['prettier'],
       \ 'scss': ['prettier'],
+      \ 'json': ['prettier'],
       \ 'python': ['black'],
       \ }
 let g:ale_fix_on_save = 1
