@@ -1030,6 +1030,7 @@ let g:ale_linters = {
       \ 'css': ['stylelint'],
       \ 'scss': ['stylelint'],
       \ 'proto': ['protolint'],
+      \ 'php': ['php'],
       \ }
 let g:ale_fixers = {
       \ 'yaml': ['prettier'],
