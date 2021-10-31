@@ -1038,6 +1038,7 @@ let g:ale_fixers = {
       \ 'css': ['prettier'],
       \ 'scss': ['prettier'],
       \ 'json': ['prettier'],
+      \ 'markdown': ['prettier'],
       \ 'python': ['black'],
       \ }
 let g:ale_fix_on_save = 1
@@ -1047,6 +1048,9 @@ let g:ale_python_pyright_config = {
       \ },
       \}
 let g:ale_python_black_change_directory = 0
+let g:ale_pattern_options = {
+      \ '\.todo$': {'ale_fix_on_save': 0},
+      \ }
 call <sid>highlight_onedark('ALEWarningSign', 'dark_yellow')
 
 " -----------------------------------------------------------------------------
