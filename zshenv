@@ -34,6 +34,9 @@ export PIPENV_VENV_IN_PROJECT=1
 
 export NEXT_TELEMETRY_DISABLED=1
 
+# https://stackoverflow.com/a/52230415/13193129
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 # Path
 
 path+=(
