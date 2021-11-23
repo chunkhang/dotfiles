@@ -1,6 +1,6 @@
 #!/bin/sh
 
-airpods_mac="4c-6b-e8-7d-ee-04"
+airpods_mac="60-93-16-2a-3d-d5"
 
 # Toggle connection to airpods
 # Bluetooth will be switched on if needed

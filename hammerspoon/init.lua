@@ -10,7 +10,7 @@ hs.ipc.cliInstall()
 hs.ipc.cliColors({initial = "", input = ""})
 
 -- Display AirPods battery information if connected
-local airpodsAddress = "4c-6b-e8-7d-ee-04"
+local airpodsAddress = "60-93-16-2a-3d-d5"
 local function airpodsBattery()
   -- Check if any Bluetooth devices are connected
   local devices = hs.battery.privateBluetoothBatteryInfo()
