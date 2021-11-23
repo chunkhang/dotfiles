@@ -85,7 +85,7 @@ alias mutt='neomutt'
 alias tweet='t update'
 abbr k='kubectl'
 abbr j='just'
-abbr f='fluxctl'
+abbr f='flux'
 abbr d='docker'
 abbr g='git'
 
