@@ -18,7 +18,7 @@ const classes = makeClasses({
 })
 
 const Space = ({ space }) => {
-  const { id, index, label, focused, windows } = space
+  const { id, index, label, 'has-focus': focused, windows } = space
 
   const hasWindows = windows.length > 0
 
