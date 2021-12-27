@@ -759,6 +759,10 @@ let g:lightline.enable = { 'tabline': 0 }
 let g:lightline#ale#indicator_checking = "\uf110 "
 let g:lightline#ale#indicator_warnings = "\uf071 "
 let g:lightline#ale#indicator_errors = "\uf05e "
+call <sid>highlight_onedark('LightlineLeft_active_2', 'white')
+call <sid>highlight_onedark('LightlineMiddle_active', 'white')
+call <sid>highlight_onedark('LightlineRight_active_2', 'white')
+
 
 " -----------------------------------------------------------------------------
 " vim-signature
@@ -777,7 +781,7 @@ let g:buffet_right_trunc_icon = "\uf0da "
 function! g:BuffetSetCustomColors()
   highlight! link BuffetCurrentBuffer LightlineLeft_normal_1
   highlight! link BuffetActiveBuffer LightlineRight_normal_2
-  highlight! link BuffetBuffer LightlineRight_normal_2
+  highlight! link BuffetBuffer LightlineRight_active_2
   highlight! link BuffetTrunc LightlineRight_normal_2
   highlight! link BuffetTab LightlineLeft_normal_0
 endfunction
