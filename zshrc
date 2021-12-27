@@ -32,6 +32,7 @@ typeset -U path
 path=(
   $HOMEBREW_HOME/bin
   $HOMEBREW_HOME/sbin
+  $HOME/.local/bin
   $path
 )
 
