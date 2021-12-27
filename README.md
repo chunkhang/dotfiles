@@ -6,7 +6,7 @@
 Install `.dotfiles` folder:
 
 ```bash
-git clone --recursive https://github.com/chunkhang/dotfiles ~/.dotfiles
+git clone --recursive git@github.com:chunkhang/dotfiles.git ~/.dotfiles
 ```
 
 Setup symlinks for all dotfiles:
