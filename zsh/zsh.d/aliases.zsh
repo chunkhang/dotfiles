@@ -81,6 +81,7 @@ alias cls='clear'
 
 alias v='nvim'
 alias mutt='neomutt'
+abbr t='touch'
 abbr k='kubectl'
 abbr j='just'
 abbr f='flux'
