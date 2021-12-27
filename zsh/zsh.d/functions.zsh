@@ -83,18 +83,6 @@ function dns() {
   fi
 }
 
-# Turn off display
-function douse() {
-  echo "Turning off display..."
-  b=$(brightness -l 2>/dev/null | grep "brightness" | sed 's/display 0: brightness //')
-  printf "Hit enter to revert brightness."
-  sleep 1
-  brightness -d 0 0
-  read "x?"
-  brightness -d 0 "$b"
-  echo "Display turned on."
-}
-
 # Show git log with fzf
 function fzf-git-log() {
   git log --color --decorate --oneline "$@" | \
@@ -186,27 +174,5 @@ function version() {
     jq --raw-output '.version' package.json
   else
     return 1
-  fi
-}
-
-# Connect to Wi-Fi network with fzf
-function wifi() {
-  ssid=$( \
-    airport --scan | \
-    tail -n +2 | cut -c 1-32 | sed 's/^ *//' | sort --ignore-case | \
-    fzf --reverse --tiebreak=index --no-sort \
-  )
-  if [[ "$?" = 0 ]]; then
-    echo "Connecting to \"${ssid}\"..."
-    password=$( \
-      security find-generic-password \
-        -D 'AirPort network password' -a "$ssid" -w \
-        2>/dev/null \
-    )
-    if [[ "$?" != 0 ]]; then
-      password="-"
-    fi
-    networksetup -setairportnetwork en0 "$ssid" "$password"
-    echo
   fi
 }
