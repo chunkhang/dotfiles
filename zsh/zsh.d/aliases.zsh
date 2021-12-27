@@ -57,9 +57,8 @@ bindkey -M isearch ' ' magic-space
 # Overrides
 # -----------------------------------------------------------------------------
 
-alias ls='ls -G'
 alias fd='fd --hidden'
-alias tree='tree -C -a'
+alias tree='tree -a'
 alias ncdu='ncdu --color=dark --confirm-quit'
 alias newsboat='newsboat --quiet'
 
@@ -82,7 +81,6 @@ alias cls='clear'
 
 alias v='nvim'
 alias mutt='neomutt'
-alias tweet='t update'
 abbr k='kubectl'
 abbr j='just'
 abbr f='flux'

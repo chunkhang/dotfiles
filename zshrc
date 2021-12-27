@@ -1,3 +1,46 @@
+# Variables
+
+export EDITOR=nvim
+export MANPAGER='nvim +Man!'
+
+# https://superuser.com/questions/700406/zsh-not-recognizing-ls-colors
+export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+export CLICOLOR=1
+
+export LESS=-x4icWRM
+export YDIFF_OPTIONS='--width=0 '
+export RANGER_LOAD_DEFAULT_RC=FALSE
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+export PIPENV_VENV_IN_PROJECT=1
+export FASTLANE_SKIP_UPDATE_CHECK=1
+export NEXT_TELEMETRY_DISABLED=1
+
+# https://stackoverflow.com/a/52230415/13193129
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+export HOMEBREW_HOME=/opt/homebrew
+export HOMEBREW_PREFIX=$HOMEBREW_HOME
+export HOMEBREW_CELLAR=$HOMEBREW_HOME/Cellar
+export HOMEBREW_REPOSITORY=$HOMEBREW_HOME
+export HOMEBREW_CLEANUP_MAX_AGE_DAYS=0
+export HOMEBREW_NO_ENV_HINTS=1
+export HOMEBREW_NO_ANALYTICS=1
+
+export RUBYOPT='-W0'
+
+typeset -U path
+path=(
+  $HOMEBREW_HOME/bin
+  $HOMEBREW_HOME/sbin
+  $path
+)
+
+typeset -U manpath
+manpath=(
+  $HOMEBREW_HOME/share/man
+  $manpath
+)
+
 # Force emacs mode (do not assume vi mode)
 bindkey -e
 
@@ -19,7 +62,7 @@ export FZF_DEFAULT_OPTS='
   --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#282c34,hl+:#d858fe
   --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
 '
-source /usr/local/opt/fzf/shell/key-bindings.zsh
+source "${HOMEBREW_HOME}/opt/fzf/shell/key-bindings.zsh"
 bindkey -r '\ec'
 
 # Load plugins
@@ -56,3 +99,9 @@ function _nvm_hook() {
 
 _nvm_use
 add-zsh-hook chpwd _nvm_hook
+
+# Local configuration
+
+if [[ -f "${HOME}/.zlocal" ]]; then
+  source "${HOME}/.zlocal"
+fi

@@ -31,7 +31,10 @@ zstyle ':completion:*' special-dirs true
 bindkey "${terminfo[kcbt]}" reverse-menu-complete
 
 # Load completions
-fpath+=($HOME/.zsh/completions)
+fpath+=(
+  $HOME/.zsh/completions
+  $HOMEBREW_HOME/share/zsh/site-functions
+)
 autoload -Uz compinit
 compinit
 
