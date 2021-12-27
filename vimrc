@@ -114,8 +114,6 @@ Plug 'w0rp/ale'
 " -----------------------------------------------------------------------------
 Plug 'junegunn/goyo.vim'
 Plug 'junegunn/limelight.vim'
-Plug 'Konfekt/vim-mailquery'
-Plug 'lyokha/vim-xkbswitch'
 
 call plug#end()
 
