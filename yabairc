@@ -4,15 +4,18 @@ sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # Layout
+
 yabai -m config layout                       bsp
 yabai -m config window_placement             second_child
 yabai -m config auto_balance                 off
 yabai -m config split_ratio                  0.5
 
 # Padding and gap
+
 yabai -m config window_gap                   2
 
 # Mouse support
+
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          autofocus
 yabai -m config mouse_modifier               fn
@@ -20,11 +23,13 @@ yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 
 # Window
+
 yabai -m config window_topmost               on
 yabai -m config window_shadow                float
 yabai -m config window_opacity               off
 
 # Rules
+
 yabai -m rule --add app="^Accessibility Inspector$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
@@ -35,8 +40,8 @@ yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
 yabai -m rule --add app="^Keychain Access$" manage=off
-yabai -m rule --add app="^Mail$" manage=off
 yabai -m rule --add app="^MAMP$" manage=off
+yabai -m rule --add app="^Mail$" manage=off
 yabai -m rule --add app="^Photos$" manage=off
 yabai -m rule --add app="^Postgres$" manage=off
 yabai -m rule --add app="^Slack$" manage=off
@@ -47,7 +52,6 @@ yabai -m rule --add app="^Transmission$" manage=off
 yabai -m rule --add app="^Unclutter$" manage=off
 
 # Signals
-yabai -m signal --add event=space_changed \
-  action="~/.scripts/ubersicht/refresh-bar"
-yabai -m signal --add event=display_changed \
-  action="~/.scripts/ubersicht/refresh-bar"
+
+yabai -m signal --add event=space_changed action="~/.scripts/ubersicht/refresh-bar"
+yabai -m signal --add event=display_changed action="~/.scripts/ubersicht/refresh-bar"
