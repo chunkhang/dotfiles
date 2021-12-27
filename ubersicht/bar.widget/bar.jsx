@@ -1,5 +1,4 @@
 import { makeClasses } from '../lib/utils'
-import theme from '../lib/theme'
 
 const refreshFrequency = false
 
@@ -15,7 +14,6 @@ const classes = makeClasses({
     position: 'fixed',
     width: '100%',
     zIndex: -1,
-    // backgroundColor: theme.colors.black,
   },
 })
 

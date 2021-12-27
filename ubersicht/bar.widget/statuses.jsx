@@ -1,12 +1,11 @@
-import { duration } from '../lib/utils'
+import { duration, makeClasses, updateState } from '../lib/utils'
+import theme from '../lib/theme'
 
 import Error from './src/Error.jsx'
 import Bluetooth from './src/Bluetooth.jsx'
 import Wifi from './src/Wifi.jsx'
 import Battery from './src/Battery.jsx'
 import DateTime from './src/DateTime.jsx'
-import { makeClasses, updateState } from '../lib/utils'
-import theme from '../lib/theme'
 
 const command = 'lib/scripts/get-statuses'
 
