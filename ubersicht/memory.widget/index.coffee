@@ -7,10 +7,10 @@ style: """
   red = #e06c75
   blue = #61afef
   yellow = #e4bf7f
-  gray = #3e4452
+  gray = #5c6370
 
   // Change bar height
-  bar-height = 2px
+  bar-height = 1px
 
   // Position this where you want
   top: 190px

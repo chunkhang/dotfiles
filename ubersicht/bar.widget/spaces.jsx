@@ -1,4 +1,3 @@
-import Icon from './src/Icon.jsx'
 import Spaces from './src/Spaces.jsx'
 import Error from './src/Error.jsx'
 import { makeClasses, updateState } from '../lib/utils'
@@ -9,7 +8,7 @@ const command = 'lib/scripts/get-spaces'
 const refreshFrequency = false
 
 const className = {
-  top: 4,
+  top: 8,
   left: 15,
   userSelect: 'none',
   cursor: 'default',
@@ -30,7 +29,6 @@ const classes = makeClasses({
 const render = ({ data }) => {
   return (
     <div className={classes.mainContainer}>
-      <Icon data={data} />
       <Spaces data={data} />
       <Error data={data} />
     </div>
@@ -39,7 +37,6 @@ const render = ({ data }) => {
 
 const initialState = {
   data: {
-    icon: 'icon-apple',
     spaces: [],
     error: null,
   },

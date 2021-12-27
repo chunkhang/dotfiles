@@ -13,7 +13,7 @@ const command = 'lib/scripts/get-statuses'
 const refreshFrequency = duration('5s')
 
 const className = {
-  top: 4,
+  top: 8,
   right: 15,
   userSelect: 'none',
   cursor: 'default',

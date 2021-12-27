@@ -1,6 +1,6 @@
 # You may exclude certain drives (separate with a pipe)
 # Example: exclude = 'MyBook' or exclude = 'MyBook|WD Passport'
-exclude = 'VM|Recovery|Macintosh HD$|Preboot|Update'
+exclude = 'VM|Macintosh HD|Preboot|Update|XART|Hardware|xART'
 
 # Use base 10 numbers, i.e. 1GB = 1000MB. Leave this true to show disk sizes as
 # OS X would (since Snow Leopard)
@@ -16,10 +16,10 @@ refreshFrequency: "30s"
 style: """
   white = #abb2bf
   red = #e06c75
-  gray = #3e4452
+  gray = #5c6370
 
   // Change bar height
-  bar-height = 2px
+  bar-height = 1px
 
   // Position this where you want
   top: 260px

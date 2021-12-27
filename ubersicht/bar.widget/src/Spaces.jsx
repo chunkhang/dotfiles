@@ -1,3 +1,5 @@
+import { React } from 'uebersicht'
+
 import { makeClasses } from '../../lib/utils'
 import theme from '../../lib/theme'
 
@@ -9,13 +11,19 @@ const classes = makeClasses({
   },
 
   space: {
-    padding: '0 1ch',
+    color: theme.colors.grey,
   },
 
   label: {
     marginLeft: '1ch',
   },
 })
+
+const Divider = () => {
+  return (
+    <div>|</div>
+  )
+}
 
 const Space = ({ space }) => {
   const { id, index, label, 'has-focus': focused, windows } = space
@@ -24,7 +32,7 @@ const Space = ({ space }) => {
 
   const style = {}
   if (focused) {
-    style.backgroundColor = theme.colors.grey
+    style.color = theme.colors.white
   }
 
   return (
@@ -34,12 +42,12 @@ const Space = ({ space }) => {
       style={style}
     >
       <span>{index}</span>
+      <span>{hasWindows ? '+' : null}</span>
       {label ? (
         <span className={classes.label}>
           {label}
         </span>
       ) : null}
-      <span>{hasWindows ? '+' : null}</span>
     </div>
   )
 }
@@ -54,7 +62,12 @@ const Spaces = ({ data }) => {
   return (
     <div className={classes.mainContainer}>
       {spaces.map((space, i) => (
-        <Space key={i} space={space} />
+        <>
+          {i > 0 ? (
+            <Divider />
+          ) : null}
+          <Space key={i} space={space} />
+        </>
       ))}
     </div>
   )

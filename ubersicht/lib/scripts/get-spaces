@@ -1,6 +1,8 @@
 #!/bin/sh
 
-spaces=$(/usr/local/bin/yabai -m query --spaces 2>/dev/null)
+export PATH=/opt/homebrew/bin:$PATH
+
+spaces=$(yabai -m query --spaces 2>/dev/null)
 
 if [ "$?" != 0 ]; then
   spaces=[]

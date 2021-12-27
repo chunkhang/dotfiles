@@ -11,11 +11,11 @@ const className = {
 
 const classes = makeClasses({
   mainContainer: {
-    height: 23,
+    height: 32,
     position: 'fixed',
     width: '100%',
     zIndex: -1,
-    backgroundColor: theme.colors.black,
+    // backgroundColor: theme.colors.black,
   },
 })
 

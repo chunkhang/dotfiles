@@ -1,5 +1,7 @@
 #!/bin/bash
 
+export PATH=/opt/homebrew/bin:$PATH
+
 datetime=$(date -R)
 
 battery_percent=$(
@@ -28,12 +30,13 @@ cut -c 2- | \
 grep --count 'On'
 )
 
-bluetooth_active=$(/usr/local/bin/blueutil power)
+bluetooth_active=$(blueutil --power)
 
 bluetooth_device=$(
 system_profiler -detailLevel basic -json SPBluetoothDataType 2>/dev/null | \
-/usr/local/bin/jq --raw-output --from-file <(cat <<EOF
-.SPBluetoothDataType[0].devices_list
+jq --raw-output --from-file <(cat <<EOF
+select(.SPBluetoothDataType[0].devices_list != null)
+| .SPBluetoothDataType[0].devices_list
 | reduce .[] as \$item ({}; . + \$item)
 | to_entries[]
 | select(.value.device_connected == "Yes")
