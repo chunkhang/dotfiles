@@ -53,7 +53,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'justinmk/vim-dirvish'
 Plug 'embear/vim-localvimrc'
 Plug 'qpkorr/vim-bufkill'
-Plug 'SirVer/ultisnips', Cond(has('python') \|\| has('python3'))
+Plug 'SirVer/ultisnips', Cond(has('python3'))
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-endwise'
@@ -906,7 +906,9 @@ let g:UltiSnipsEditSplit = 'context'
 " Fix ultisnips lag issue
 " https://github.com/SirVer/ultisnips/issues/593#issuecomment-361338769
 augroup vimrc
-  autocmd VimEnter * autocmd! UltiSnips_AutoTrigger
+  if has('python3')
+    autocmd VimEnter * autocmd! UltiSnips_AutoTrigger
+  endif
 augroup END
 call <sid>highlight_onedark('snipLeadingSpaces', 'black')
 
