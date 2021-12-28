@@ -56,3 +56,5 @@ yabai -m rule --add app="^Unclutter$" manage=off
 
 yabai -m signal --add event=space_changed action="~/.scripts/ubersicht/refresh-bar"
 yabai -m signal --add event=display_changed action="~/.scripts/ubersicht/refresh-bar"
+
+~/.scripts/ubersicht/refresh-bar
