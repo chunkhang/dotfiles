@@ -1,2 +1,10 @@
 --exclude=.tags
+
+--exclude=.git
+--exclude=build
+--exclude=node_modules
+--exclude=.venv
+
+--exclude=*.html
+--exclude=*.svg
 --exclude=*.json
