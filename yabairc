@@ -40,6 +40,7 @@ yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off
 yabai -m rule --add app="^Installer$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
+yabai -m rule --add app="^KeyboardCleanTool$" manage=off
 yabai -m rule --add app="^Keychain Access$" manage=off
 yabai -m rule --add app="^MAMP$" manage=off
 yabai -m rule --add app="^Mail$" manage=off
