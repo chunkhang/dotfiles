@@ -26,7 +26,7 @@ const Divider = () => {
 }
 
 const Space = ({ space }) => {
-  const { id, index, label, 'has-focus': focused, windows } = space
+  const { index, label, 'has-focus': focused, windows } = space
 
   const hasWindows = windows.length > 0
 
@@ -37,7 +37,6 @@ const Space = ({ space }) => {
 
   return (
     <div
-      key={id}
       className={classes.space}
       style={style}
     >
@@ -62,12 +61,12 @@ const Spaces = ({ data }) => {
   return (
     <div className={classes.mainContainer}>
       {spaces.map((space, i) => (
-        <>
+        <React.Fragment key={i}>
           {i > 0 ? (
             <Divider />
           ) : null}
-          <Space key={i} space={space} />
-        </>
+          <Space space={space} />
+        </React.Fragment>
       ))}
     </div>
   )
