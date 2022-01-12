@@ -10,10 +10,18 @@ grep --extended-regexp --only-matching "\d+%" | \
 cut -d % -f 1
 )
 
+# 0: Drawing power from AC
+# 1: Drawing power from battery
+battery_using=$(
+pmset -g batt | \
+grep --count 'Battery Power'
+)
+
+# 0: Battery is not being charged by AC
+# 1: Battery is being charged by AC
 battery_charging=$(
 pmset -g batt | \
-grep --only-matching "'.*'" | \
-grep --count 'AC'
+grep --count '; charging'
 )
 
 wifi_ssid=$(
@@ -50,6 +58,7 @@ cat <<EOF
   "datetime": "${datetime}",
   "battery": {
     "percent": ${battery_percent},
+    "using": ${battery_using},
     "charging": ${battery_charging}
   },
   "wifi": {

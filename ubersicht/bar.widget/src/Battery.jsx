@@ -12,14 +12,6 @@ const classes = makeClasses({
   },
 })
 
-const levels = {
-  0: theme.colors.red,
-  1: theme.colors.yellow,
-  2: theme.colors.white,
-  3: theme.colors.white,
-  4: theme.colors.white,
-}
-
 const Battery = ({ data }) => {
   const { battery } = data
 
@@ -29,22 +21,14 @@ const Battery = ({ data }) => {
     )
   }
 
-  const { percent, charging } = battery
+  const { percent, using, charging } = battery
 
-  const level = Math.floor(percent / 25)
-  const iconName = charging ? 'icon-flash' : `icon-battery-${level}`
-
-  const iconStyle = {
-    color: levels[level],
-  }
+  const iconName = using ? 'icon-battery-4' : 'icon-flash'
 
   return (
     <div className={classes.mainContainer}>
-      <i
-        className={iconName}
-        style={iconStyle}
-      />
-      {percent}%
+      <i className={iconName} />
+      {percent}%{charging ? '+' : ''}
     </div>
   )
 }
