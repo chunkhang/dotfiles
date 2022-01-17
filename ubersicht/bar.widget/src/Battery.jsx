@@ -23,7 +23,8 @@ const Battery = ({ data }) => {
 
   const { percent, using, charging } = battery
 
-  const iconName = using ? 'icon-battery-4' : 'icon-flash'
+  const level = Math.ceil(percent / 25)
+  const iconName = using ? `icon-battery-${level}` : 'icon-flash'
 
   return (
     <div className={classes.mainContainer}>
