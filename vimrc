@@ -177,6 +177,7 @@ set complete-=t
 set formatprg=par
 set grepprg=rg\ --vimgrep
 set foldopen-=search
+set noautoread
 
 " Fallback to bash syntax
 " https://redd.it/4xb0fg
