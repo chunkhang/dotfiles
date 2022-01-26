@@ -2,7 +2,7 @@
 # Shortcuts
 ###############################################################################
 
-fn - space : open /Applications/iTerm.app
+fn - space : open /Applications/Alacritty.app
 
 fn - a : ~/.scripts/bluetooth/airpods
 fn - s : ~/.scripts/hammerspoon/restart
