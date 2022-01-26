@@ -8,7 +8,7 @@ const theme = {
     yellow: '#e4bf7f',
   },
   font: {
-    family: 'Meslo LG S for Powerline',
+    family: 'Iosevka Extended',
     size: 12,
   },
 }
