@@ -26,7 +26,6 @@ Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'kshenoy/vim-signature'
 Plug 'bagrat/vim-buffet'
-Plug 'ryanoasis/vim-devicons'
 Plug 'sjl/vitality.vim', Cond(has('mac') && !has('nvim'))
 Plug 'markonm/traces.vim', Cond(has('nvim-0.2.3') \|\| v:version >= 801)
 Plug 'camspiers/lens.vim'
@@ -706,29 +705,19 @@ colorscheme onedark
 
 " -----------------------------------------------------------------------------
 " lightline.vim
-" https://github.com/ryanoasis/vim-devicons/wiki/usage#lightline-setup
-" https://nerdfonts.com/
-" https://github.com/bagrat/vim-buffet/issues/20
 " -----------------------------------------------------------------------------
 function! MyLightlineDirectory()
-  return "\ufc6e " . fnamemodify(getcwd(), ':t')
+  return fnamemodify(getcwd(), ':t')
 endfunction
 function! MyLightlineGitBranch()
   let l:branch = fugitive#head()
-  if empty(branch)
-    return ''
-  endif
-  return "\uf418 " . l:branch
+  return strlen(branch) ? l:branch : ''
 endfunction
 function! MyLightlineFileType()
-  return winwidth(0) > 70 ? (strlen(&filetype) ?
-        \ &filetype . ' ' . WebDevIconsGetFileTypeSymbol() . ' ' : 'no ft') : ''
+  return strlen(&filetype) ? &filetype : 'no ft'
 endfunction
 function! MyLightlineSpell()
-  if empty(&spell)
-    return ''
-  endif
-  return 'spell ' . "\uf9c5"
+  return &spell ? 'spell': ''
 endfunction
 let g:lightline = {}
 let g:lightline.colorscheme = 'onedark'
@@ -744,7 +733,7 @@ let g:lightline.component_expand = {
       \ 'linter_errors': 'lightline#ale#errors'
       \ }
 let g:lightline.component_type = {
-      \ 'linter_checking': 'left',
+      \ 'linter_checking': 'tabsel',
       \ 'linter_warnings': 'warning',
       \ 'linter_errors': 'error'
       \ }
@@ -752,14 +741,14 @@ let g:lightline.active = {
       \ 'left' : [ [ 'mode', 'paste' ],
       \            [ 'relativepath', 'readonly', 'modified' ],
       \            [ 'cwd', 'gitbranch' ] ],
-      \ 'right': [ [ 'linter_checking', 'lineinfo' ],
-      \            [ 'linter_warnings', 'linter_errors', 'percent' ],
+      \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'lineinfo' ],
+      \            [ 'percent' ],
       \            [ 'spell', 'filetype' ] ]
       \ }
 let g:lightline.enable = { 'tabline': 0 }
-let g:lightline#ale#indicator_checking = "\uf110 "
-let g:lightline#ale#indicator_warnings = "\uf071 "
-let g:lightline#ale#indicator_errors = "\uf05e "
+let g:lightline#ale#indicator_checking = 'L'
+let g:lightline#ale#indicator_warnings = 'W'
+let g:lightline#ale#indicator_errors = 'E'
 call <sid>highlight_onedark('LightlineLeft_active_2', 'white')
 call <sid>highlight_onedark('LightlineMiddle_active', 'white')
 call <sid>highlight_onedark('LightlineRight_active_2', 'white')
@@ -775,10 +764,11 @@ call <sid>highlight_onedark('SignatureMarkText', 'purple')
 " -----------------------------------------------------------------------------
 let g:buffet_always_show_tabline = 0
 let g:buffet_separator = ''
-let g:buffet_tab_icon = "\uf0ca "
+let g:buffet_tab_icon = "+"
 let g:buffet_show_index = 1
-let g:buffet_left_trunc_icon = "\uf0d9"
-let g:buffet_right_trunc_icon = "\uf0da "
+let g:buffet_left_trunc_icon = '<'
+let g:buffet_right_trunc_icon = '>'
+" TODO: Set trunc icon background to black
 function! g:BuffetSetCustomColors()
   highlight! link BuffetCurrentBuffer LightlineLeft_normal_1
   highlight! link BuffetActiveBuffer LightlineRight_normal_2
