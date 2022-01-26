@@ -130,7 +130,7 @@ abbr gw='git show'
 
 abbr gl='git log'
 alias gll='fzf-git-log'
-alias gla='git log --oneline --decorate --color --graph --all --first-parent'
+alias gla='git log --oneline --decorate --color --graph --all'
 
 abbr gm='git merge'
 abbr gmc='git merge --continue'
