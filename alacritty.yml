@@ -17,9 +17,9 @@ font:
   bold:
     style: Light Extended
   italic:
-    style: Light Extended Italic
+    style: Light Extended
   bold_italic:
-    style: Light Extended Italic
+    style: Light Extended
   size: 12.0
 
 colors:
