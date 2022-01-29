@@ -764,7 +764,7 @@ call <sid>highlight_onedark('SignatureMarkText', 'purple')
 " -----------------------------------------------------------------------------
 let g:buffet_always_show_tabline = 0
 let g:buffet_separator = ''
-let g:buffet_tab_icon = "+"
+let g:buffet_tab_icon = '•'
 let g:buffet_show_index = 1
 let g:buffet_left_trunc_icon = '<'
 let g:buffet_right_trunc_icon = '>'
