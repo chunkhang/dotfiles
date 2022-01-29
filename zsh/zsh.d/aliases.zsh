@@ -120,6 +120,8 @@ abbr grc='git rebase --continue'
 abbr gra='git rebase --abort'
 
 abbr gcp='git cherry-pick'
+abbr gcpc='git cherry-pick --continue'
+abbr gcpa='git cherry-pick --abort'
 
 abbr gt='git stash'
 abbr gtl='git stash list'
