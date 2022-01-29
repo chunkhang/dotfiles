@@ -91,6 +91,7 @@ cursor:
 alt_send_esc: false
 
 key_bindings:
+
   # Window
   - { key: C, mods: Command, action: Copy }
   - { key: V, mods: Command, action: Paste }
@@ -101,11 +102,13 @@ key_bindings:
   - { key: Q, mods: Command, action: Quit }
   - { key: Q, mods: Command, action: None }
   - { key: W, mods: Command, action: None }
+
   # Display
   - { key: Key0, mods: Command, action: ResetFontSize }
   - { key: Equals, mods: Command, action: IncreaseFontSize }
   - { key: Minus, mods: Command, action: DecreaseFontSize }
   - { key: K, mods: Command, mode: ~Vi|~Search, action: None }
+
   # Searching
   - { key: F, mods: Command, mode: ~Search, action: SearchBackward }
   - { key: B, mods: Command, mode: ~Search, action: None }
@@ -113,10 +116,12 @@ key_bindings:
   - { key: Return, mods: Shift, mode: Search|~Vi, action: SearchFocusPrevious }
   - { key: Up, mode: Search, action: SearchFocusNext }
   - { key: Down, mode: Search, action: SearchFocusPrevious }
+
   # Editing
-  - { key: Left, mods: Command, chars: "\ea" }
-  - { key: Right, mods: Command, chars: "\ee" }
+  - { key: Left, mods: Command, chars: "\x01" }
+  - { key: Right, mods: Command, chars: "\x05" }
   - { key: Back, mods: Command, chars: "\x15" }
+
   # Use alt key as meta
   # https://github.com/alacritty/alacritty/issues/2017#issuecomment-581707489
   - { key: Left, mods: Alt, chars: "\eb" }
