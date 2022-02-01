@@ -39,7 +39,7 @@ const updateState = (event) => {
   );
   const maybeUptime = Object.entries(durations).reduce((acc, [key, value]) => {
     if (value) {
-      return `${acc} ${pluralize(parseInt(value, 10), key)}`;
+      return `${acc} ${pluralize(key, parseInt(value, 10))}`;
     }
     return acc;
   }, '');
