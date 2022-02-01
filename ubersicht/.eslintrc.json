@@ -7,6 +7,9 @@
     "import/core-modules": ["uebersicht"]
   },
   "rules": {
+    "import/extensions": ["error", { "jsx": "always" }],
+    "react/no-array-index-key": "warn",
+    "react/prop-types": "off",
     "react/react-in-jsx-scope": "off"
   }
 }
