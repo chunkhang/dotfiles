@@ -1,6 +1,6 @@
 set shell := ["zsh", "-l", "-c"]
 
-fontello_directory := "lib/fontello"
+fontello_directory := "fontello"
 
 # show help
 @help:
