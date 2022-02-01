@@ -6,7 +6,7 @@ fn - space : open /Applications/Alacritty.app
 
 fn - a : ~/.scripts/bluetooth/airpods
 fn - s : ~/.scripts/hammerspoon/restart
-fn - u : ~/.scripts/ubersicht/restart
+fn - u : ~/.scripts/uebersicht/restart
 fn - y : ~/.scripts/yabai/restart
 
 ###############################################################################
@@ -52,7 +52,7 @@ shift + alt - b : yabai -m space --layout bsp
 shift + alt - s : yabai -m space --layout stack
 
 # Label desktop (,)
-ctrl - 0x2B : ~/.scripts/yabai/desktop/label; ~/.scripts/ubersicht/refresh-bar
+ctrl - 0x2B : ~/.scripts/yabai/desktop/label; ~/.scripts/uebersicht/refresh-bar
 
 # Focus desktop (/)
 ctrl - 0x2C : yabai -m space --focus recent
@@ -70,8 +70,8 @@ ctrl - 9 : yabai -m space --focus 9
 ctrl - 0 : yabai -m space --focus 10
 
 # Move desktop (<) (>)
-shift + ctrl - 0x2B : yabai -m space --move prev; ~/.scripts/ubersicht/refresh-bar
-shift + ctrl - 0x2F : yabai -m space --move next; ~/.scripts/ubersicht/refresh-bar
+shift + ctrl - 0x2B : yabai -m space --move prev; ~/.scripts/uebersicht/refresh-bar
+shift + ctrl - 0x2F : yabai -m space --move next; ~/.scripts/uebersicht/refresh-bar
 
 # Create desktop (+)
 shift + ctrl - 0x18 : ~/.scripts/yabai/desktop/create
