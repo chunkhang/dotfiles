@@ -1,0 +1,26 @@
+set shell := ["zsh", "-l", "-c"]
+
+# show help
+@help:
+	just --list --unsorted
+
+# run prettier
+_prettier *args:
+	npx prettier {{args}}
+
+# run eslint
+_eslint *args:
+	npx eslint --ext .js,.jsx {{args}}
+
+# lint code
+lint:
+	just _prettier --check .
+	just _eslint .
+
+# format code
+format:
+	just _prettier --write .
+
+# fix code
+fix:
+	just _eslint --fix .
