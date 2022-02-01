@@ -4,11 +4,13 @@
 
 ## Installation
 
-To setup the code:
+Setup the code:
 
 ```
 just setup
 ```
+
+Then, set the [Uebersicht][uebersicht] widgets folder to this one.
 
 ## Development
 
