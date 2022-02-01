@@ -10,8 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "classnames": "^2.2.6",
-    "dayjs": "^1.10.7",
-    "duration-js": "^4.0.0"
+    "duration-js": "^4.0.0",
+    "moment": "^2.29.1"
   },
   "devDependencies": {
     "eslint": "^8.8.0",
