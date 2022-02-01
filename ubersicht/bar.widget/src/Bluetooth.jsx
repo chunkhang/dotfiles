@@ -1,5 +1,5 @@
-import { makeClasses } from '../../lib/utils'
-import theme from '../../lib/theme'
+import { makeClasses } from '../../lib/utils';
+import theme from '../../lib/theme';
 
 const classes = makeClasses({
   mainContainer: {
@@ -10,29 +10,26 @@ const classes = makeClasses({
     gridAutoFlow: 'column',
     gridGap: '1ch',
   },
-})
+});
 
-const Bluetooth = ({ data }) => {
-  const { bluetooth } = data
+function Bluetooth({ data }) {
+  const { bluetooth } = data;
 
-  if (!bluetooth) return null
+  if (!bluetooth) return null;
 
-  const { active, device } = bluetooth
+  const { active, device } = bluetooth;
 
-  const iconStyle = {}
+  const iconStyle = {};
   if (!active) {
-    iconStyle.color = theme.colors.grey
+    iconStyle.color = theme.colors.grey;
   }
 
   return (
     <div className={classes.mainContainer}>
-      <i
-        className="icon-bluetooth-b"
-        style={iconStyle}
-      />
+      <i className="icon-bluetooth-b" style={iconStyle} />
       {device}
     </div>
-  )
+  );
 }
 
-export default Bluetooth
+export default Bluetooth;

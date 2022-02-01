@@ -1,15 +1,15 @@
-import { duration, makeClasses, updateState } from '../lib/utils'
-import Calendar from './src/Calendar.jsx'
-import Error from './src/Error.jsx'
+import { duration, makeClasses, updateState } from '../lib/utils';
+import Calendar from './src/Calendar.jsx';
+import Error from './src/Error.jsx';
 
-const command = 'lib/scripts/get-calendar'
+const command = 'lib/scripts/get-calendar';
 
-const refreshFrequency = duration('1h')
+const refreshFrequency = duration('1h');
 
 const className = {
   top: 35,
   right: 15,
-}
+};
 
 const classes = makeClasses({
   mainContainer: {
@@ -17,24 +17,22 @@ const classes = makeClasses({
     cursor: 'default',
     textAlign: 'right',
   },
-})
+});
 
-const render = ({ data }) => {
-  return (
-    <div className={classes.mainContainer}>
-      <div className="widget-name">Calendar</div>
-      <Calendar data={data} />
-      <Error data={data} />
-    </div>
-  )
-}
+const render = ({ data }) => (
+  <div className={classes.mainContainer}>
+    <div className="widget-name">Calendar</div>
+    <Calendar data={data} />
+    <Error data={data} />
+  </div>
+);
 
 const initialState = {
   data: {
     calendar: '',
     error: null,
   },
-}
+};
 
 export {
   command,
@@ -43,4 +41,4 @@ export {
   render,
   initialState,
   updateState,
-}
+};

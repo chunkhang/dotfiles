@@ -11,6 +11,6 @@ const theme = {
     family: 'Iosevka Extended',
     size: 12,
   },
-}
+};
 
-export default theme
+export default theme;

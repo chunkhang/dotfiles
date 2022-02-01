@@ -5,6 +5,6 @@ const styles = {
     userSelect: 'none',
     cursor: 'default',
   },
-}
+};
 
-export default styles
+export default styles;

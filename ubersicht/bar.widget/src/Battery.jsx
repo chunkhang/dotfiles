@@ -1,5 +1,5 @@
-import { makeClasses } from '../../lib/utils'
-import theme from '../../lib/theme'
+import { makeClasses } from '../../lib/utils';
+import theme from '../../lib/theme';
 
 const classes = makeClasses({
   mainContainer: {
@@ -10,28 +10,26 @@ const classes = makeClasses({
     gridAutoFlow: 'column',
     gridGap: '1ch',
   },
-})
+});
 
-const Battery = ({ data }) => {
-  const { battery } = data
+function Battery({ data }) {
+  const { battery } = data;
 
   if (!battery) {
-    return (
-      <div>No battery</div>
-    )
+    return <div>No battery</div>;
   }
 
-  const { percent, using, charging } = battery
+  const { percent, using, charging } = battery;
 
-  const level = Math.ceil(percent / 25)
-  const iconName = using ? `icon-battery-${level}` : 'icon-flash'
+  const level = Math.ceil(percent / 25);
+  const iconName = using ? `icon-battery-${level}` : 'icon-flash';
 
   return (
     <div className={classes.mainContainer}>
       <i className={iconName} />
       {percent}%{charging ? '+' : ''}
     </div>
-  )
+  );
 }
 
-export default Battery
+export default Battery;

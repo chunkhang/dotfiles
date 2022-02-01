@@ -1,20 +1,12 @@
-import cx from 'classnames'
-import moment from 'moment'
+import cx from 'classnames';
+import moment from 'moment';
 
-import { makeClasses } from '../../lib/utils'
-import theme from '../../lib/theme'
+import { makeClasses } from '../../lib/utils';
+import theme from '../../lib/theme';
 
-const WEEKDAYS = [
-  'Su',
-  'Mo',
-  'Tu',
-  'We',
-  'Th',
-  'Fr',
-  'Sa',
-]
+const WEEKDAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
-const CELL_SPACING = 6
+const CELL_SPACING = 6;
 
 const classes = makeClasses({
   mainContainer: {
@@ -45,10 +37,10 @@ const classes = makeClasses({
   today: {
     color: theme.colors.blue,
   },
-})
+});
 
-const Month = ({ date, data }) => {
-  const title = date.format('MMMM YYYY')
+function Month({ date, data }) {
+  const title = date.format('MMMM YYYY');
 
   // Parse month data into array of weeks
   // [
@@ -57,31 +49,23 @@ const Month = ({ date, data }) => {
   //   ...
   //   ['25', '26', '27', '28', '29', '30']
   // ]
-  const rows = data.trim().split('\n')
-  const weeks = rows.map((row) => {
-    return row.split(/\s+/).filter(day => !!day)
-  })
+  const rows = data.trim().split('\n');
+  const weeks = rows.map((row) => row.split(/\s+/).filter((day) => !!day));
 
   // Pad first and last week arrays
-  const firstWeek = weeks[0]
+  const firstWeek = weeks[0];
   if (firstWeek.length < 7) {
-    weeks[0] = [
-      ...Array.from(Array(7 - firstWeek.length)),
-      ...firstWeek,
-    ]
+    weeks[0] = [...Array.from(Array(7 - firstWeek.length)), ...firstWeek];
   }
-  const lastIndex = weeks.length - 1
-  const lastWeek = weeks[lastIndex]
+  const lastIndex = weeks.length - 1;
+  const lastWeek = weeks[lastIndex];
   if (lastWeek.length < 7) {
-    weeks[lastIndex] = [
-      ...lastWeek,
-      ...Array.from(Array(7 - lastWeek.length)),
-    ]
+    weeks[lastIndex] = [...lastWeek, ...Array.from(Array(7 - lastWeek.length))];
   }
 
   // Highlight today in calendar
-  const hasToday = moment().isSame(date, 'month')
-  const today = date.format('DD')
+  const hasToday = moment().isSame(date, 'month');
+  const today = date.format('DD');
 
   return (
     <div className={classes.monthContainer}>
@@ -89,59 +73,56 @@ const Month = ({ date, data }) => {
       <table className={classes.table}>
         <thead>
           <tr>
-            {WEEKDAYS.map((weekday, i) => {
-              return (
-                <td
-                  key={i}
-                  className={cx({
-                    [classes.sunday]: i === 0,
-                  })}
-                >
-                  {weekday}
-                </td>
-              )
-            })}
+            {WEEKDAYS.map((weekday, i) => (
+              <td
+                key={i}
+                className={cx({
+                  [classes.sunday]: i === 0,
+                })}
+              >
+                {weekday}
+              </td>
+            ))}
           </tr>
         </thead>
         <tbody>
-          {weeks.map((week, i) => {
-            return (
-              <tr key={i}>
-                {week.map((day, j) => {
-                  const isToday = hasToday && day && day.padStart(2, '0') === today
-                  return (
-                    <td
-                      key={j}
-                      className={cx({
-                        [classes.today]: isToday,
-                      })}
-                    >
-                      {day}
-                    </td>
-                  )
-                })}
-              </tr>
-            )
-          })}
+          {weeks.map((week, i) => (
+            <tr key={i}>
+              {week.map((day, j) => {
+                const isToday =
+                  hasToday && day && day.padStart(2, '0') === today;
+                return (
+                  <td
+                    key={j}
+                    className={cx({
+                      [classes.today]: isToday,
+                    })}
+                  >
+                    {day}
+                  </td>
+                );
+              })}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
-const Calendar = ({ data }) => {
-  const { calendar, error } = data
+function Calendar({ data }) {
+  const { calendar, error } = data;
 
-  if (error) return null
+  if (error) return null;
 
-  if (!calendar.current || !calendar.next) return null
+  if (!calendar.current || !calendar.next) return null;
 
   return (
     <div className={classes.mainContainer}>
       <Month date={moment()} data={calendar.current} />
       <Month date={moment().add(1, 'month')} data={calendar.next} />
     </div>
-  )
+  );
 }
 
-export default Calendar
+export default Calendar;

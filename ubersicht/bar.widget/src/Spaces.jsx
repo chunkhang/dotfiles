@@ -1,7 +1,7 @@
-import { React } from 'uebersicht'
+import { React } from 'uebersicht';
 
-import { makeClasses } from '../../lib/utils'
-import theme from '../../lib/theme'
+import { makeClasses } from '../../lib/utils';
+import theme from '../../lib/theme';
 
 const classes = makeClasses({
   mainContainer: {
@@ -17,59 +17,48 @@ const classes = makeClasses({
   label: {
     marginLeft: '1ch',
   },
-})
+});
 
-const Divider = () => {
-  return (
-    <div>|</div>
-  )
+function Divider() {
+  return <div>|</div>;
 }
 
-const Space = ({ space }) => {
-  const { index, label, 'has-focus': focused, windows } = space
+function Space({ space }) {
+  const { index, label, 'has-focus': focused, windows } = space;
 
-  const hasWindows = windows.length > 0
+  const hasWindows = windows.length > 0;
 
-  const style = {}
+  const style = {};
   if (focused) {
-    style.color = theme.colors.white
+    style.color = theme.colors.white;
   }
 
   return (
-    <div
-      className={classes.space}
-      style={style}
-    >
+    <div className={classes.space} style={style}>
       <span>{index}</span>
       <span>{hasWindows ? '+' : null}</span>
-      {label ? (
-        <span className={classes.label}>
-          {label}
-        </span>
-      ) : null}
+      {label ? <span className={classes.label}>{label}</span> : null}
     </div>
-  )
+  );
 }
 
-const Spaces = ({ data }) => {
-  const { spaces } = data
+function Spaces({ data }) {
+  const { spaces } = data;
 
   if (!spaces || spaces.length === 0) {
-    return null
+    return null;
   }
 
   return (
     <div className={classes.mainContainer}>
       {spaces.map((space, i) => (
         <React.Fragment key={i}>
-          {i > 0 ? (
-            <Divider />
-          ) : null}
+          {i > 0 ? <Divider /> : null}
           <Space space={space} />
         </React.Fragment>
       ))}
     </div>
-  )
+  );
 }
 
-export default Spaces
+export default Spaces;

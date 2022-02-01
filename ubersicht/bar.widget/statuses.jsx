@@ -1,22 +1,22 @@
-import { duration, makeClasses, updateState } from '../lib/utils'
-import theme from '../lib/theme'
+import { duration, makeClasses, updateState } from '../lib/utils';
+import theme from '../lib/theme';
 
-import Error from './src/Error.jsx'
-import Bluetooth from './src/Bluetooth.jsx'
-import Wifi from './src/Wifi.jsx'
-import Battery from './src/Battery.jsx'
-import DateTime from './src/DateTime.jsx'
+import Error from './src/Error.jsx';
+import Bluetooth from './src/Bluetooth.jsx';
+import Wifi from './src/Wifi.jsx';
+import Battery from './src/Battery.jsx';
+import DateTime from './src/DateTime.jsx';
 
-const command = 'lib/scripts/get-statuses'
+const command = 'lib/scripts/get-statuses';
 
-const refreshFrequency = duration('5s')
+const refreshFrequency = duration('5s');
 
 const className = {
   top: 8,
   right: 15,
   userSelect: 'none',
   cursor: 'default',
-}
+};
 
 const classes = makeClasses({
   mainContainer: {
@@ -28,28 +28,24 @@ const classes = makeClasses({
     fontSize: theme.font.size,
     color: theme.colors.white,
   },
-})
+});
 
-const Divider = () => {
-  return (
-    <div>|</div>
-  )
+function Divider() {
+  return <div>|</div>;
 }
 
-const render = ({ data }) => {
-  return (
-    <div className={classes.mainContainer}>
-      <Error data={data} />
-      <Bluetooth data={data} />
-      <Divider />
-      <Wifi data={data} />
-      <Divider />
-      <Battery data={data} />
-      <Divider />
-      <DateTime data={data} />
-    </div>
-  )
-}
+const render = ({ data }) => (
+  <div className={classes.mainContainer}>
+    <Error data={data} />
+    <Bluetooth data={data} />
+    <Divider />
+    <Wifi data={data} />
+    <Divider />
+    <Battery data={data} />
+    <Divider />
+    <DateTime data={data} />
+  </div>
+);
 
 const initialState = {
   data: {
@@ -68,7 +64,7 @@ const initialState = {
     },
     error: null,
   },
-}
+};
 
 export {
   command,
@@ -77,4 +73,4 @@ export {
   render,
   initialState,
   updateState,
-}
+};

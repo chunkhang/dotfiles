@@ -1,7 +1,7 @@
-import moment from 'moment'
+import moment from 'moment';
 
-import { makeClasses } from '../../lib/utils'
-import theme from '../../lib/theme'
+import { makeClasses } from '../../lib/utils';
+import theme from '../../lib/theme';
 
 const classes = makeClasses({
   mainContainer: {
@@ -9,18 +9,18 @@ const classes = makeClasses({
     fontSize: theme.font.size,
     color: theme.colors.white,
   },
-})
+});
 
-const DateTime = ({ data }) => {
-  const { datetime } = data
+function DateTime({ data }) {
+  const { datetime } = data;
 
-  if (!datetime) return null
+  if (!datetime) return null;
 
   return (
     <div className={classes.mainContainer}>
       {moment(datetime).format('ddd DD/MM HH:mm')}
     </div>
-  )
+  );
 }
 
-export default DateTime
+export default DateTime;

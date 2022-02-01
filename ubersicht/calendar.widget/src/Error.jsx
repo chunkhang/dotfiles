@@ -1,13 +1,9 @@
-const Error = ({ data }) => {
-  const { error } = data
+function Error({ data }) {
+  const { error } = data;
 
-  if (!error) return null
+  if (!error) return null;
 
-  return (
-    <div>
-      {error}
-    </div>
-  )
+  return <div>{error}</div>;
 }
 
-export default Error
+export default Error;

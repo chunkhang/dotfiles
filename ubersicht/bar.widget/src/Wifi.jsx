@@ -1,5 +1,5 @@
-import { makeClasses } from '../../lib/utils'
-import theme from '../../lib/theme'
+import { makeClasses } from '../../lib/utils';
+import theme from '../../lib/theme';
 
 const classes = makeClasses({
   mainContainer: {
@@ -10,29 +10,26 @@ const classes = makeClasses({
     gridAutoFlow: 'column',
     gridGap: '1ch',
   },
-})
+});
 
-const Wifi = ({ data }) => {
-  const { wifi } = data
+function Wifi({ data }) {
+  const { wifi } = data;
 
-  if (!wifi) return null
+  if (!wifi) return null;
 
-  const { ssid, active } = wifi
+  const { ssid, active } = wifi;
 
-  const iconStyle = {}
+  const iconStyle = {};
   if (!active) {
-    iconStyle.color = theme.colors.grey
+    iconStyle.color = theme.colors.grey;
   }
 
   return (
     <div className={classes.mainContainer}>
-      <i
-        className="icon-wifi"
-        style={iconStyle}
-      />
+      <i className="icon-wifi" style={iconStyle} />
       {ssid}
     </div>
-  )
+  );
 }
 
-export default Wifi
+export default Wifi;
