@@ -1,4 +1,4 @@
-import { duration, makeClasses, updateState } from '../lib/utils';
+import { duration, makeClasses, updateState } from '../../lib/utils';
 import Calendar from './src/Calendar.jsx';
 import Error from './src/Error.jsx';
 

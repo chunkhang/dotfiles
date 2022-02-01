@@ -1,5 +1,5 @@
-import { makeClasses } from '../../lib/utils';
-import theme from '../../lib/theme';
+import { makeClasses } from '../../../lib/utils';
+import theme from '../../../lib/theme';
 
 const classes = makeClasses({
   mainContainer: {
@@ -12,12 +12,12 @@ const classes = makeClasses({
   },
 });
 
-function Bluetooth({ data }) {
-  const { bluetooth } = data;
+function Wifi({ data }) {
+  const { wifi } = data;
 
-  if (!bluetooth) return null;
+  if (!wifi) return null;
 
-  const { active, device } = bluetooth;
+  const { ssid, active } = wifi;
 
   const iconStyle = {};
   if (!active) {
@@ -26,10 +26,10 @@ function Bluetooth({ data }) {
 
   return (
     <div className={classes.mainContainer}>
-      <i className="icon-bluetooth-b" style={iconStyle} />
-      {device}
+      <i className="icon-wifi" style={iconStyle} />
+      {ssid}
     </div>
   );
 }
 
-export default Bluetooth;
+export default Wifi;

@@ -1,4 +1,4 @@
-import { duration, pluralize } from '../lib/utils';
+import { duration, pluralize } from '../../lib/utils';
 import styles from './src/styles';
 
 const command = 'uptime';

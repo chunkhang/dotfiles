@@ -1,5 +1,5 @@
-import { makeClasses, updateState } from '../lib/utils';
-import theme from '../lib/theme';
+import { makeClasses, updateState } from '../../lib/utils';
+import theme from '../../lib/theme';
 
 import Spaces from './src/Spaces.jsx';
 import Error from './src/Error.jsx';

@@ -1,4 +1,4 @@
-import { duration } from '../lib/utils';
+import { duration } from '../../lib/utils';
 import styles from './src/styles';
 
 const command = 'lib/scripts/get-ip';

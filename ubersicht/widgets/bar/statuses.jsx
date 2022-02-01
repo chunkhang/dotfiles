@@ -1,5 +1,5 @@
-import { duration, makeClasses, updateState } from '../lib/utils';
-import theme from '../lib/theme';
+import { duration, makeClasses, updateState } from '../../lib/utils';
+import theme from '../../lib/theme';
 
 import Error from './src/Error.jsx';
 import Bluetooth from './src/Bluetooth.jsx';
