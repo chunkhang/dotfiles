@@ -6,14 +6,6 @@ fontello_directory := "lib/fontello"
 @help:
 	just --list --unsorted
 
-# run fontello
-_fontello *args:
-	npx fontello-cli \
-		--config {{fontello_directory}}/config.json \
-		--css {{fontello_directory}}/css \
-		--font {{fontello_directory}}/font \
-		{{args}}
-
 # run prettier
 _prettier *args:
 	npx prettier {{args}}
@@ -25,11 +17,15 @@ _eslint *args:
 # setup code
 setup:
 	npm install
-	just icons
+	just fontello install
 
-# install icons
-icons:
-	just _fontello install
+# run fontello
+fontello *args:
+	npx fontello-cli \
+		--config {{fontello_directory}}/config.json \
+		--css {{fontello_directory}}/css \
+		--font {{fontello_directory}}/font \
+		{{args}}
 
 # lint code
 lint:
