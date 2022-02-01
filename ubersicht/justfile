@@ -1,8 +1,18 @@
 set shell := ["zsh", "-l", "-c"]
 
+fontello_directory := "lib/fontello"
+
 # show help
 @help:
 	just --list --unsorted
+
+# run fontello
+_fontello *args:
+	npx fontello-cli \
+		--config {{fontello_directory}}/config.json \
+		--css {{fontello_directory}}/css \
+		--font {{fontello_directory}}/font \
+		{{args}}
 
 # run prettier
 _prettier *args:
@@ -11,6 +21,15 @@ _prettier *args:
 # run eslint
 _eslint *args:
 	npx eslint --ext .js,.jsx {{args}}
+
+# setup code
+setup:
+	npm install
+	just icons
+
+# install icons
+icons:
+	just _fontello install
 
 # lint code
 lint:

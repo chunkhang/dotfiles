@@ -26,7 +26,7 @@ function Bluetooth({ data }) {
 
   return (
     <div className={classes.mainContainer}>
-      <i className="icon-bluetooth-b" style={iconStyle} />
+      <i className="icon-bluetooth" style={iconStyle} />
       {device}
     </div>
   );

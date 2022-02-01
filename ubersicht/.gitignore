@@ -1,1 +1,4 @@
 node_modules/
+lib/fontello/css
+lib/fontello/font
+.fontello-session
