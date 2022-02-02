@@ -51,9 +51,6 @@ shift + alt - b : yabai -m space --layout bsp
 # Set desktop to stack layout
 shift + alt - s : yabai -m space --layout stack
 
-# Label desktop (,)
-ctrl - 0x2B : ~/.scripts/yabai/desktop/label; ~/.scripts/uebersicht/refresh-bar
-
 # Focus desktop (/)
 ctrl - 0x2C : yabai -m space --focus recent
 ctrl - left : yabai -m space --focus prev
@@ -70,8 +67,8 @@ ctrl - 9 : yabai -m space --focus 9
 ctrl - 0 : yabai -m space --focus 10
 
 # Move desktop (<) (>)
-shift + ctrl - 0x2B : yabai -m space --move prev; ~/.scripts/uebersicht/refresh-bar
-shift + ctrl - 0x2F : yabai -m space --move next; ~/.scripts/uebersicht/refresh-bar
+shift + ctrl - 0x2B : yabai -m space --move prev; ~/.scripts/uebersicht/refresh-space
+shift + ctrl - 0x2F : yabai -m space --move next; ~/.scripts/uebersicht/refresh-space
 
 # Create desktop (+)
 shift + ctrl - 0x18 : ~/.scripts/yabai/desktop/create

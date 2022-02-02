@@ -58,11 +58,9 @@ yabai -m rule --add app="^Unclutter$" manage=off
 
 # Signals
 
-refresh_uebersicht_space="~/.scripts/uebersicht/refresh-widget widgets-space-index-jsx"
+yabai -m signal --add event=space_changed action="~/.scripts/uebersicht/refresh-space"
+yabai -m signal --add event=display_changed action="~/.scripts/uebersicht/refresh-space"
+yabai -m signal --add event=window_created action="~/.scripts/uebersicht/refresh-space" app!="^ueli$"
+yabai -m signal --add event=window_destroyed action="~/.scripts/uebersicht/refresh-space" app!="^ueli$"
 
-yabai -m signal --add event=space_changed action="$refresh_uebersicht_space"
-yabai -m signal --add event=display_changed action="$refresh_uebersicht_space"
-yabai -m signal --add event=window_created action="$refresh_uebersicht_space" app!="^ueli$"
-yabai -m signal --add event=window_destroyed action="$refresh_uebersicht_space" app!="^ueli$"
-
-eval "$refresh_uebersicht_space"
+~/.scripts/uebersicht/refresh-space
