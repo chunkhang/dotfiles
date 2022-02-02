@@ -9,9 +9,10 @@
   },
   "license": "ISC",
   "dependencies": {
+    "calendar": "^0.1.1",
     "classnames": "^2.2.6",
-    "duration-js": "^4.0.0",
-    "moment": "^2.29.1"
+    "dayjs": "^1.10.7",
+    "duration-js": "^4.0.0"
   },
   "devDependencies": {
     "eslint": "^8.8.0",

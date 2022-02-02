@@ -1,76 +1,118 @@
-import { duration, makeClasses, updateState } from '../../lib/utils';
-import theme from '../../lib/theme';
+import dayjs from 'dayjs';
 
-import Error from './src/Error.jsx';
-import Bluetooth from './src/Bluetooth.jsx';
-import Wifi from './src/Wifi.jsx';
-import Battery from './src/Battery.jsx';
-import DateTime from './src/DateTime.jsx';
+import { duration, theme, makeClasses, updateState } from '../../lib';
 
-const command = 'lib/scripts/get-statuses';
+const command = 'widgets/status/command';
 
 const refreshFrequency = duration('5s');
 
 const className = {
+  ...theme.base,
   top: 8,
   right: 15,
-  userSelect: 'none',
-  cursor: 'default',
 };
 
 const classes = makeClasses({
-  mainContainer: {
-    height: 15,
+  container: {
     display: 'grid',
     gridAutoFlow: 'column',
     gridGap: '1ch',
-    fontFamily: theme.font.family,
-    fontSize: theme.font.size,
-    color: theme.colors.white,
   },
 });
 
-function Divider() {
-  return <div>|</div>;
+function Bluetooth({ device, active }) {
+  const style = {};
+  if (!active) {
+    style.color = theme.colors.grey;
+  }
+
+  return (
+    <div className={classes.container}>
+      <i className="icon-bluetooth" style={style} />
+      {device ? <div>{device}</div> : null}
+    </div>
+  );
 }
 
-const render = ({ data }) => (
-  <div className={classes.mainContainer}>
-    <Error data={data} />
-    <Bluetooth data={data} />
-    <Divider />
-    <Wifi data={data} />
-    <Divider />
-    <Battery data={data} />
-    <Divider />
-    <DateTime data={data} />
-  </div>
-);
+function Wifi({ ssid, active }) {
+  const style = {};
+  if (!active) {
+    style.color = theme.colors.grey;
+  }
+
+  return (
+    <div className={classes.container}>
+      <i className="icon-wifi" style={style} />
+      {ssid ? <div>{ssid}</div> : null}
+    </div>
+  );
+}
+
+function Battery({ percent, using, charging }) {
+  const level = Math.ceil(percent / 25);
+  const iconName = using ? `icon-battery-${level}` : 'icon-plug';
+
+  return (
+    <div className={classes.container}>
+      <i className={iconName} />
+      <div>
+        <span>{percent}%</span>
+        {charging ? <span>+</span> : null}
+      </div>
+    </div>
+  );
+}
+
+function DateTime() {
+  const now = dayjs();
+
+  return (
+    <div className={classes.container}>{now.format('ddd DD/MM HH:mm')}</div>
+  );
+}
 
 const initialState = {
-  data: {
-    datetime: '',
-    battery: {
-      percent: 100,
-      charging: 0,
-    },
-    wifi: {
-      ssid: '',
-      active: 0,
-    },
-    bluetooth: {
-      device: '',
-      active: 0,
-    },
-    error: null,
+  battery: {
+    percent: 100,
+    using: 0,
+    charging: 0,
   },
+  wifi: {
+    ssid: '',
+    active: 0,
+  },
+  bluetooth: {
+    device: '',
+    active: 0,
+  },
+  error: null,
+};
+
+const render = ({ battery, wifi, bluetooth, error }) => {
+  if (error) return null;
+
+  return (
+    <div className={classes.container}>
+      <Bluetooth device={bluetooth.device} active={bluetooth.active} />
+      <div>{theme.elements.divider}</div>
+      <Wifi ssid={wifi.ssid} active={wifi.active} />
+      <div>{theme.elements.divider}</div>
+      <Battery
+        percent={battery.percent}
+        using={battery.using}
+        charging={battery.charging}
+      />
+      <div>{theme.elements.divider}</div>
+      <DateTime />
+    </div>
+  );
 };
 
 export {
   command,
   refreshFrequency,
   className,
-  render,
   initialState,
   updateState,
+  render,
 };

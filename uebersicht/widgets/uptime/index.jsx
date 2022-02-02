@@ -1,60 +1,60 @@
-import { duration, pluralize } from '../../lib/utils';
-import styles from './src/styles';
+import { duration, theme, updateState, pluralize } from '../../lib';
 
-const command = 'uptime';
+const command = 'widgets/uptime/command';
 
 const refreshFrequency = duration('1m');
 
+const className = {
+  ...theme.base,
+  top: 40,
+  left: 15,
+};
+
 const initialState = {
   uptime: '',
+  error: null,
 };
 
-const getMatch = (string, patterns) => {
-  let matched = null;
-  patterns.find((pattern) => {
-    const match = string.match(pattern);
-    if (match) {
-      [, matched] = match;
+const formatUptime = (uptime) => {
+  const mainMatch = uptime.match(/up (.+), \d+ user/);
+  if (!mainMatch) return null;
+
+  const main = mainMatch[1];
+
+  const durationRegex = [
+    { unit: 'day', patterns: [/(\d+) days?/] },
+    { unit: 'hour', patterns: [/(\d+):/, /(\d+) hrs?/] },
+    { unit: 'minute', patterns: [/:(\d+)/, /(\d+) mins?/] },
+  ];
+
+  const durations = [];
+
+  durationRegex.forEach(({ unit, patterns }) => {
+    let value;
+
+    patterns.find((pattern) => {
+      const valueMatch = main.match(pattern);
+      if (!valueMatch) return false;
+
+      value = parseInt(valueMatch[1], 10);
       return true;
-    }
-    return false;
+    });
+
+    if (!value) return;
+
+    durations.push(pluralize(unit, value));
   });
-  return matched;
+
+  return durations.join(' ');
 };
 
-const updateState = (event) => {
-  const { output } = event;
-  const uptimeString = output.match(/up (.+), \d+ users?/)[1];
-  const regex = {
-    day: [/(\d+) days?/],
-    hour: [/(\d+):/, /(\d+) hrs?/],
-    minute: [/:(\d+)/, /(\d+) mins?/],
-  };
-  const durations = Object.entries(regex).reduce(
-    (acc, [key, patterns]) => ({
-      ...acc,
-      [key]: getMatch(uptimeString, patterns),
-    }),
-    {},
-  );
-  const maybeUptime = Object.entries(durations).reduce((acc, [key, value]) => {
-    if (value) {
-      return `${acc} ${pluralize(key, parseInt(value, 10))}`;
-    }
-    return acc;
-  }, '');
-  const uptime = maybeUptime || 'Not available';
-  return { uptime };
-};
+const render = ({ uptime, error }) => {
+  if (error) return null;
 
-const { className } = styles;
-
-const render = (state) => {
-  const { uptime } = state;
   return (
     <div>
-      <div className="widget-name">Uptime</div>
-      <div>{uptime}</div>
+      <div style={{ marginBottom: '1ch' }}>UPTIME</div>
+      <div style={{ marginBottom: '2ch' }}>{formatUptime(uptime)}</div>
     </div>
   );
 };
@@ -62,8 +62,8 @@ const render = (state) => {
 export {
   command,
   refreshFrequency,
+  className,
   initialState,
   updateState,
-  className,
   render,
 };

@@ -2,8 +2,6 @@
 
 export PATH=/opt/homebrew/bin:$PATH
 
-datetime=$(date -R)
-
 battery_percent=$(
 pmset -g batt | \
 grep --extended-regexp --only-matching "\d+%" | \
@@ -55,7 +53,6 @@ EOF
 
 cat <<EOF
 {
-  "datetime": "${datetime}",
   "battery": {
     "percent": ${battery_percent},
     "using": ${battery_using},

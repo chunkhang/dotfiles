@@ -1,0 +1,9 @@
+#!/bin/sh
+
+uptime=$(uptime)
+
+cat <<EOF
+{
+  "uptime": "${uptime}"
+}
+EOF

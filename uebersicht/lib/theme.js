@@ -1,16 +1,22 @@
+const colors = {
+  white: '#abb2bf',
+  grey: '#5c6370',
+};
+
+const elements = {
+  divider: '|',
+};
+
+const base = {
+  fontFamily: 'Iosevka Extended',
+  fontSize: 12,
+  color: colors.white,
+};
+
 const theme = {
-  colors: {
-    black: '#282c34',
-    white: '#abb2bf',
-    grey: '#5c6370',
-    blue: '#61afef',
-    red: '#e06c75',
-    yellow: '#e4bf7f',
-  },
-  font: {
-    family: 'Iosevka Extended',
-    size: 12,
-  },
+  base,
+  colors,
+  elements,
 };
 
 export default theme;

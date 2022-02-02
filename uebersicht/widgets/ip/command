@@ -1,0 +1,9 @@
+#!/bin/sh
+
+ip=$(ifconfig | grep 'broadcast' | cut -d ' ' -f 2)
+
+cat <<EOF
+{
+  "ip": "${ip}"
+}
+EOF

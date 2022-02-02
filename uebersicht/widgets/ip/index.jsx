@@ -1,37 +1,36 @@
-import { duration } from '../../lib/utils';
-import styles from './src/styles';
+import { duration, theme, updateState } from '../../lib';
 
-const command = 'lib/scripts/get-ip';
+const command = 'widgets/ip/command';
 
 const refreshFrequency = duration('5s');
 
-const initialState = {
-  ip: '',
+const className = {
+  ...theme.base,
+  top: 96,
+  left: 15,
 };
 
-const { className } = styles;
+const initialState = {
+  ip: '',
+  error: null,
+};
 
-const render = (state) => {
-  const { ip } = state;
+const render = ({ ip, error }) => {
+  if (error) return null;
+
   return (
     <div>
-      <div className="widget-name">Local IP</div>
+      <div style={{ marginBottom: '1ch' }}>LOCAL IP</div>
       <div>{ip}</div>
     </div>
   );
 };
 
-const updateState = (event) => {
-  const { output } = event;
-  const ip = output || 'Not available';
-  return { ip };
-};
-
 export {
   command,
   refreshFrequency,
+  className,
   initialState,
   updateState,
-  className,
   render,
 };
