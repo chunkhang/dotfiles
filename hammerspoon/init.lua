@@ -1,13 +1,8 @@
-require("hs.ipc")
-
 -- Hammmerspoon configuration
-hs.allowAppleScript(true)
 hs.console.darkMode(true)
 hs.console.outputBackgroundColor({white = 0})
 hs.console.consoleCommandColor({white = 1})
 hs.console.consolePrintColor({white = 1})
-hs.ipc.cliInstall()
-hs.ipc.cliColors({initial = "", input = ""})
 
 -- Display AirPods battery information if connected
 local airpodsAddress = "60-93-16-2a-3d-d5"
