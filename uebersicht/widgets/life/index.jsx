@@ -1,10 +1,14 @@
 import { React } from 'uebersicht';
 import dayjs from 'dayjs';
+import cx from 'classnames';
 
 import { duration, theme, makeClasses, updateState } from '../../lib';
 
 const BIRTHDAY = '1996-02-14';
-const DOT = '•';
+const WEEKS_IN_YEAR = 52;
+const TOTAL_YEARS = 80;
+const DOT_SYMBOL = '·';
+const DOT_SIZE = 1.25;
 
 const command = null;
 
@@ -20,53 +24,79 @@ const classes = makeClasses({
   title: {
     marginBottom: '1ch',
   },
-  blocksContainer: {
-    display: 'grid',
-    gridTemplateColumns: 'repeat(2, 1fr)',
-    gridGap: '0.5ch 1ch',
-  },
   dotsContainer: {
     display: 'grid',
-    gridTemplateColumns: 'repeat(26, 1fr)',
-    gridGap: '0 0.25ch',
-    lineHeight: 0.75,
+    // Leave 2 extra items for vertical spacing and year count
+    gridTemplateColumns: `repeat(${WEEKS_IN_YEAR + 2}, 1fr)`,
   },
   dot: {
-    width: '1ch',
+    width: `${DOT_SIZE}ch`,
+    height: `${DOT_SIZE}ch`,
+    display: 'flex',
+    justifyContent: 'left',
+    alignItems: 'flex-start',
+  },
+  marginBottom: {
+    marginBottom: '1ch',
+  },
+  fade: {
     color: theme.colors.grey,
   },
 });
 
 const initialState = {};
 
-function Block({ datetime }) {
-  const dots = Array.from(Array(260).keys()).map((i) =>
-    datetime.add(i, 'week'),
-  );
-
-  return (
-    <div className={classes.dotsContainer}>
-      {dots.map(() => (
-        <div className={classes.dot}>{DOT}</div>
-      ))}
-    </div>
-  );
-}
-
 const render = () => {
   const birthday = dayjs(BIRTHDAY, 'YYYY-MM-DD');
+  const now = dayjs();
 
-  const blocks = Array.from(Array(16).keys()).map((i) =>
-    birthday.add(i, 'year'),
-  );
+  // Calculate based on assumption that each year has a constant number of weeks
+  // If we get difference for week directly, the count will be off
+  const yearsElapsed = now.diff(birthday, 'year', true);
+  const weeksElapsed = Math.floor(yearsElapsed * WEEKS_IN_YEAR);
+
+  const allWeeks = Array.from(Array(WEEKS_IN_YEAR * TOTAL_YEARS).keys());
 
   return (
     <div>
       <div className={classes.title}>LIFE</div>
-      <div className={classes.blocksContainer}>
-        {blocks.map((block) => (
-          <Block datetime={block} />
-        ))}
+      <div className={classes.dotsContainer}>
+        {allWeeks.map((i) => {
+          const count = i + 1;
+
+          let extraElement = null;
+
+          // Every 1/2 year, add vertical spacing
+          if (count % (WEEKS_IN_YEAR / 2) === 0) {
+            extraElement = <div className={classes.dot} />;
+          }
+
+          // Every 5 years, add year count
+          if (count % (WEEKS_IN_YEAR * 5) === 0) {
+            extraElement = (
+              <div className={classes.dot}>
+                {String(count / WEEKS_IN_YEAR).padStart(2, '0')}
+              </div>
+            );
+          }
+
+          return (
+            <>
+              <div
+                className={cx({
+                  [classes.dot]: true,
+                  // Every 10 years, add horizontal spacing
+                  [classes.marginBottom]: count % (WEEKS_IN_YEAR * 10) === 0,
+                  // Fade out weeks that have not been lived yet
+                  [classes.fade]: i >= weeksElapsed,
+                })}
+              >
+                {DOT_SYMBOL}
+              </div>
+              {extraElement}
+            </>
+          );
+        })}
       </div>
     </div>
   );
