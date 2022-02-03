@@ -1,3 +1,7 @@
+exclude_files = {
+  ".luacheckrc",
+}
+
 read_globals = {
   "hs",
   "spoon",
