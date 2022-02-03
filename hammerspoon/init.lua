@@ -5,8 +5,16 @@ hs.console.consoleCommandColor({white = 1})
 hs.console.consolePrintColor({white = 1})
 
 -- Display AirPods battery information if connected
-local airpodsAddress = "60-93-16-2a-3d-d5"
-local function airpodsBattery()
+hs.urlevent.bind("display-airpods-battery", function(_, params)
+  --- Check parameters
+  if params["mac"] == nil then
+    hs.notify.new({
+      title = "Hammerspoon",
+      informativeText = "Expected \"mac\" parameter"
+    }):send()
+    return
+  end
+
   -- Check if any Bluetooth devices are connected
   local devices = hs.battery.privateBluetoothBatteryInfo()
   if #devices == 0 then
@@ -16,10 +24,11 @@ local function airpodsBattery()
     }):send()
     return
   end
+
   -- Find AirPods
   local airpods = nil
   for _,device in ipairs(devices) do
-    if device.address == airpodsAddress then
+    if device.address == params["mac"] then
       airpods = device
       break
     end
@@ -31,6 +40,7 @@ local function airpodsBattery()
     }):send()
     return
   end
+
   -- Display AirPods battery information
   local left = "Left: " .. airpods.batteryPercentLeft .. "%"
   local right = "Right: " .. airpods.batteryPercentRight .. "%"
@@ -43,17 +53,4 @@ local function airpodsBattery()
     title = airpods.name,
     informativeText = info
   }):send()
-end
-
--- Bind keys
-local function catchEvent(event)
-  if event:getFlags()['fn'] then
-    local char = event:getCharacters()
-    if char == "q" then
-      airpodsBattery()
-      return true, {}
-    end
-  end
-end
-tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, catchEvent)
-tap:start()
+end)

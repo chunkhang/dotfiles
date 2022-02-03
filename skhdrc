@@ -4,7 +4,8 @@
 
 fn - space : open /Applications/Alacritty.app
 
-fn - a : ~/.scripts/bluetooth/airpods
+fn - a : ~/.scripts/bluetooth/airpods/toggle
+fn - q : ~/.scripts/bluetooth/airpods/battery
 fn - s : ~/.scripts/hammerspoon/restart
 fn - u : ~/.scripts/uebersicht/restart
 fn - y : ~/.scripts/yabai/restart
