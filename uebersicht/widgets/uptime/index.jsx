@@ -6,8 +6,8 @@ const refreshFrequency = duration('1m');
 
 const className = {
   ...theme.base,
-  top: 40,
-  left: 15,
+  left: theme.paddings.x,
+  top: theme.paddings.y + 32,
 };
 
 const initialState = {

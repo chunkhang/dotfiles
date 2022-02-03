@@ -1,7 +1,7 @@
 const styles = {
   className: {
     top: 35,
-    left: 15,
+    left: theme.paddings.x,
     userSelect: 'none',
     cursor: 'default',
   },

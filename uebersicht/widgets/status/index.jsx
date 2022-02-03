@@ -8,8 +8,8 @@ const refreshFrequency = duration('5s');
 
 const className = {
   ...theme.base,
-  top: 8,
-  right: 15,
+  right: theme.paddings.x,
+  top: theme.paddings.y,
 };
 
 const classes = makeClasses({

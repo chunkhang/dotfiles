@@ -8,8 +8,8 @@ const refreshFrequency = false;
 
 const className = {
   ...theme.base,
-  top: 8,
-  left: 15,
+  left: theme.paddings.x,
+  top: theme.paddings.y,
 };
 
 const classes = makeClasses({

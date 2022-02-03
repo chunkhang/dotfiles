@@ -4,6 +4,11 @@ const colors = {
   red: '#e06c75',
 };
 
+const paddings = {
+  x: 15,
+  y: 8,
+};
+
 const elements = {
   divider: '|',
 };
@@ -17,6 +22,7 @@ const base = {
 const theme = {
   base,
   colors,
+  paddings,
   elements,
 };
 
