@@ -75,7 +75,10 @@ const render = () => {
           if (count % (WEEKS_IN_YEAR * 5) === 0) {
             extraElement = (
               <div className={classes.dot}>
-                {String(count / WEEKS_IN_YEAR).padStart(2, '0')}
+                {String(count / WEEKS_IN_YEAR).padStart(
+                  String(WEEKS_IN_YEAR).length,
+                  '0',
+                )}
               </div>
             );
           }
