@@ -13,9 +13,8 @@ const refreshFrequency = duration('1h');
 
 const className = {
   ...theme.base,
-  right: theme.paddings.x,
+  left: theme.paddings.x,
   top: theme.paddings.y + 32,
-  textAlign: 'right',
 };
 
 const classes = makeClasses({

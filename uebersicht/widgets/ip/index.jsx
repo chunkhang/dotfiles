@@ -6,8 +6,9 @@ const refreshFrequency = duration('5s');
 
 const className = {
   ...theme.base,
-  left: theme.paddings.x,
+  right: theme.paddings.x,
   top: theme.paddings.y + 88,
+  textAlign: 'right',
 };
 
 const initialState = {
