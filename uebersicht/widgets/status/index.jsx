@@ -66,9 +66,7 @@ function Battery({ percent, using, charging }) {
 function DateTime() {
   const now = dayjs();
 
-  return (
-    <div className={classes.container}>{now.format('ddd DD/MM HH:mm')}</div>
-  );
+  return <div>{now.format('ddd DD/MM HH:mm')}</div>;
 }
 
 const initialState = {
