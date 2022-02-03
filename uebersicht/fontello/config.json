@@ -53,6 +53,12 @@
       "css": "battery-4",
       "code": 62016,
       "src": "fontawesome"
+    },
+    {
+      "uid": "b99d736cef489a3150ba8aac7c4e8403",
+      "css": "clock",
+      "code": 59392,
+      "src": "iconic"
     }
   ]
 }
