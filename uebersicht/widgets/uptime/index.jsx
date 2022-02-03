@@ -54,7 +54,7 @@ const render = ({ uptime, error }) => {
   return (
     <div>
       <div style={{ marginBottom: '1ch' }}>UPTIME</div>
-      <div style={{ marginBottom: '2ch' }}>{formatUptime(uptime)}</div>
+      <div>{formatUptime(uptime) || 'Not available'}</div>
     </div>
   );
 };

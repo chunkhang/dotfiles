@@ -21,7 +21,7 @@ const render = ({ ip, error }) => {
   return (
     <div>
       <div style={{ marginBottom: '1ch' }}>LOCAL IP</div>
-      <div>{ip}</div>
+      <div>{ip || 'Not available'}</div>
     </div>
   );
 };
