@@ -50,20 +50,11 @@ local function airpodsBattery()
   }):send()
 end
 
---- Use fn for scrolling
-local pixels = 50
+-- Bind keys
 local function catchEvent(event)
   if event:getFlags()['fn'] then
     local char = event:getCharacters()
-    if char == "j" then
-      return true, {hs.eventtap.event.newScrollEvent({0, -pixels}, {}, "pixel")}
-    elseif char == "k" then
-      return true, {hs.eventtap.event.newScrollEvent({0, pixels}, {}, "pixel")}
-    elseif char == "h" then
-      return true, {hs.eventtap.event.newScrollEvent({pixels, 0}, {}, "pixel")}
-    elseif char == "l" then
-      return true, {hs.eventtap.event.newScrollEvent({-pixels, 0}, {}, "pixel")}
-    elseif char == "q" then
+    if char == "q" then
       airpodsBattery()
       return true, {}
     end
@@ -71,9 +62,3 @@ local function catchEvent(event)
 end
 tap = hs.eventtap.new({hs.eventtap.event.types.keyDown}, catchEvent)
 tap:start()
-
--- Notify that hammerspoon has done loading
-hs.notify.new({
-  title = "Hammerspoon",
-  informativeText = "Hammerspoon loaded",
-}):send()
