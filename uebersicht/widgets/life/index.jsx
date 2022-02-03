@@ -59,7 +59,7 @@ const render = () => {
 
   return (
     <div>
-      <div className={classes.title}>LIFE</div>
+      <div className={classes.title}>MEMENTO MORI</div>
       <div className={classes.dotsContainer}>
         {allWeeks.map((i) => {
           const count = i + 1;
