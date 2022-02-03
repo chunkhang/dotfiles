@@ -81,7 +81,7 @@ const render = () => {
           }
 
           return (
-            <>
+            <React.Fragment key={i}>
               <div
                 className={cx({
                   [classes.dot]: true,
@@ -94,7 +94,7 @@ const render = () => {
                 {DOT_SYMBOL}
               </div>
               {extraElement}
-            </>
+            </React.Fragment>
           );
         })}
       </div>

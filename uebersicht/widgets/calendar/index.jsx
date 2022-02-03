@@ -111,8 +111,8 @@ const render = () => {
     <div>
       <div className={classes.title}>CALENDAR</div>
       <div className={classes.monthsContainer}>
-        {months.map((month) => (
-          <div className={classes.month}>
+        {months.map((month, i) => (
+          <div key={i} className={classes.month}>
             <Month datetime={month} />
           </div>
         ))}
