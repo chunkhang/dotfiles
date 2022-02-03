@@ -14,6 +14,26 @@ Then, set the [Uebersicht][uebersicht] widgets folder to this one.
 
 ## Development
 
+### Linting
+
+To lint the code with [Prettier][prettier] and [ESLint][eslint]:
+
+```
+just lint
+```
+
+To format the code with [Prettier][prettier]:
+
+```
+just format
+```
+
+To fix the code with [ESLint][eslint]:
+
+```
+just fix
+```
+
 ### Icons
 
 The list of icons installed can be found in `fontello/config.json`. To use them,
@@ -27,39 +47,17 @@ To update the available icons, open the config in [Fontello][fontello] for
 editing:
 
 ```
-just fontello open
+just open-fontello
 ```
 
-Download the new config file to replace the existing `fontello/config.json`, and
-install the new icons:
+Do the necessary updates, before clicking "Save session" in the browser. Now,
+install the updated icons:
 
 ```
-just fontello install
+just install-fontello
 ```
 
-### Linting
-
-To lint the code with [Prettier][prettier] and [ESLint][eslint]:
-
-```
-just lint
-```
-
-### Formatting
-
-To format the code with [Prettier][prettier]:
-
-```
-just format
-```
-
-### Fixing
-
-To fix the code with [ESLint][eslint]:
-
-```
-just fix
-```
+The config file `fontello/config.json` should be updated accordingly.
 
 [uebersicht]: https://github.com/felixhageloh/uebersicht
 [fontello]: https://fontello.com/

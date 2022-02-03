@@ -1,10 +1,23 @@
 set shell := ["zsh", "-l", "-c"]
 
-fontello_directory := "fontello"
+fontello_host := "https://fontello.com"
+fontello_session := ".fontello.session"
+fontello_zip := ".fontello.zip"
+fontello_src := ".fontello.src"
+fontello_dir := "fontello"
 
 # show help
 @help:
 	just --list --unsorted
+
+# --- SETUP ---
+
+# setup project
+setup:
+	npm install
+	just install-fontello
+
+# --- LINTING ----
 
 # run prettier
 _prettier *args:
@@ -14,28 +27,41 @@ _prettier *args:
 _eslint *args:
 	npx eslint --ext .js,.jsx {{args}}
 
-# setup code
-setup:
-	npm install
-	just fontello install
-
-# run fontello
-fontello *args:
-	npx fontello-cli \
-		--config {{fontello_directory}}/config.json \
-		--css {{fontello_directory}}/css \
-		--font {{fontello_directory}}/font \
-		{{args}}
-
-# lint code
+# lint project
 lint:
 	just _prettier --check .
 	just _eslint .
 
-# format code
+# format project
 format:
 	just _prettier --write .
 
-# fix code
+# fix project
 fix:
 	just _eslint --fix .
+
+# --- ICONS ----
+
+# load fontello
+@_load-fontello:
+	curl --silent --show-error --fail \
+		--output {{fontello_session}} \
+		--form "config=@{{fontello_dir}}/config.json" \
+		{{fontello_host}}
+
+# open fontello
+@open-fontello:
+	just _load-fontello
+	open "{{fontello_host}}/$(cat {{fontello_session}})"
+
+# install fontello
+@install-fontello:
+	if ! [[ -f {{fontello_session}} ]]; then just _load-fontello; fi
+	rm -rf {{fontello_zip}} {{fontello_src}}
+	curl --silent --show-error --fail \
+		--output {{fontello_zip}} \
+		"{{fontello_host}}/$(cat {{fontello_session}})/get"
+	unzip {{fontello_zip}} -d {{fontello_src}} >/dev/null
+	cp "$(find {{fontello_src}} -name config.json)" {{fontello_dir}}
+	cp -R "$(find {{fontello_src}} -name css)" {{fontello_dir}}
+	cp -R "$(find {{fontello_src}} -name font)" {{fontello_dir}}
