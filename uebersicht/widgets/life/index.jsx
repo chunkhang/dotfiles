@@ -12,7 +12,7 @@ const DOT_SIZE = 1.25;
 
 const command = null;
 
-const refreshFrequency = duration('1h');
+const refreshFrequency = duration('1d');
 
 const className = {
   ...theme.base,
