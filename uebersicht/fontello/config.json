@@ -19,10 +19,10 @@
       "src": "typicons"
     },
     {
-      "uid": "pgdm1vsngqxmheo5xkjpbm5o8k81pawd",
-      "css": "flash",
-      "code": 59394,
-      "src": "typicons"
+      "uid": "a14be0c7e0689076e2bdde97f8e309f9",
+      "css": "plug",
+      "code": 61926,
+      "src": "fontawesome"
     },
     {
       "uid": "9983d2489e028d659d196915a25ef3ca",
@@ -53,12 +53,6 @@
       "css": "battery-4",
       "code": 62016,
       "src": "fontawesome"
-    },
-    {
-      "uid": "b99d736cef489a3150ba8aac7c4e8403",
-      "css": "clock",
-      "code": 59392,
-      "src": "iconic"
     }
   ]
 }
