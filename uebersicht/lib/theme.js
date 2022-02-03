@@ -1,6 +1,7 @@
 const colors = {
   white: '#abb2bf',
   grey: '#5c6370',
+  red: '#e06c75',
 };
 
 const elements = {

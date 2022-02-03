@@ -32,6 +32,9 @@ const classes = makeClasses({
     textAlign: 'right',
   },
   highlight: {
+    color: theme.colors.red,
+  },
+  fade: {
     color: theme.colors.grey,
   },
 });
@@ -58,17 +61,22 @@ function Month({ datetime }) {
       </div>
       {weeks.map((week, i) => (
         <div key={i} className={cx([classes.container, classes.marginBottom])}>
-          {week.map((day, j) => (
-            <div
-              key={j}
-              className={cx({
-                [classes.day]: true,
-                [classes.highlight]: isCurrentMonth && day === today,
-              })}
-            >
-              {day || ''}
-            </div>
-          ))}
+          {week.map((day, j) => {
+            const shouldHighlight = isCurrentMonth && day === today;
+            const shouldFade = (j === 0 || j === 6) && !shouldHighlight;
+            return (
+              <div
+                key={j}
+                className={cx({
+                  [classes.day]: true,
+                  [classes.highlight]: shouldHighlight,
+                  [classes.fade]: shouldFade,
+                })}
+              >
+                {day || ''}
+              </div>
+            );
+          })}
         </div>
       ))}
     </div>
