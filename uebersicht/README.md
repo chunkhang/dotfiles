@@ -16,8 +16,8 @@ Then, set the [Uebersicht][uebersicht] widgets folder to this one.
 
 ### Icons
 
-The list of icons installed can be found in `lib/fontello/config.json`. To use
-them, provide the correct CSS class name:
+The list of icons installed can be found in `fontello/config.json`. To use them,
+provide the correct CSS class name:
 
 ```
 <i className="icon-bluetooth" />
@@ -30,8 +30,8 @@ editing:
 just fontello open
 ```
 
-Download the new config file to replace the existing `lib/fontello/config.json`,
-and install the new icons:
+Download the new config file to replace the existing `fontello/config.json`, and
+install the new icons:
 
 ```
 just fontello install
