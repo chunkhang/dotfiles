@@ -16,7 +16,7 @@ const refreshFrequency = duration('1h');
 const className = {
   ...theme.base,
   left: theme.paddings.x + 560,
-  top: theme.paddings.y + 48,
+  top: theme.paddings.y + 40,
 };
 
 const classes = makeClasses({
