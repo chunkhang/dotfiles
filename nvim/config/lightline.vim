@@ -24,7 +24,7 @@ let g:lightline.component_type = {
       \ 'linter_errors': 'error'
       \ }
 let g:lightline.active = {
-      \ 'left' : [ [ 'mode', 'paste' ],
+      \ 'left' : [ [ 'mode' ],
       \            [ 'relativepath', 'readonly', 'modified' ],
       \            [ 'cwd', 'git_branch' ] ],
       \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'lineinfo' ],

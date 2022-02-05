@@ -206,7 +206,7 @@ function g:BuffetSetCustomColors() abort
   call onedark#set_highlight('BuffetBuffer', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
   call onedark#set_highlight('BuffetCurrentBuffer', {'bg': s:colors.black })
   call onedark#set_highlight('BuffetActiveBuffer', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BuffetTab', {'bg': s:colors.black, 'fg': s:colors.blue })
+  call onedark#set_highlight('BuffetTab', {'bg': s:colors.black, 'fg': s:colors.white })
   call onedark#set_highlight('BuffetTrunc', {'bg': s:colors.black })
 endfunction
 
