@@ -43,14 +43,14 @@ let $PATH =
       \ '/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin:' .
       \ $PATH
 let g:node_host_prog = '/opt/homebrew/bin/neovim-node-host'
-let g:loaded_python_provider = 0
 let g:python3_host_prog = '/opt/homebrew/opt/python@3.10/bin/python3'
+let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0
 let g:loaded_perl_provider = 0
 
-" Enable highlight on yank
-augroup init_higlight_on_yank
+augroup init_settings
   autocmd!
+  " Enable highlight on yank
   autocmd TextYankPost * silent! lua vim.highlight.on_yank {timeout=500}
 augroup END
 
