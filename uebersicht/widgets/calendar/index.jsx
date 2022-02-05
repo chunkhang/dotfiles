@@ -9,7 +9,7 @@ const WEEK_DAYS = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
 
 const calendar = new Calendar();
 
-const command = null;
+const command = 'echo';
 
 const refreshFrequency = duration('1h');
 

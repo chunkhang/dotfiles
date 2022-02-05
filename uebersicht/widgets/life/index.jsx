@@ -10,7 +10,7 @@ const TOTAL_YEARS = 80;
 const DOT_SYMBOL = '·';
 const DOT_SIZE = 1.25;
 
-const command = null;
+const command = 'echo';
 
 const refreshFrequency = duration('1d');
 
