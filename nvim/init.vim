@@ -340,5 +340,6 @@ nnoremap <C-l> <C-W>l
 " Print file path
 nnoremap <silent> <Leader>. :echo expand('%p')<CR>
 
-" Reload configuration
-nnoremap <Leader>v :source $MYVIMRC<CR>
+" Update and reload configuration
+nnoremap <Leader>v :edit $MYVIMRC<CR>
+nnoremap <Leader>V :source $MYVIMRC<CR>
