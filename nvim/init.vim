@@ -73,7 +73,6 @@ Plug 'chemzqm/vim-jsx-improve' | runtime config/javascript.vim
 Plug 'chrisbra/Colorizer' | runtime config/colorizer.vim
 Plug 'chunkhang/msmtp.vim'
 Plug 'chunkhang/vim-mbsync'
-Plug 'ctrlpvim/ctrlp.vim' | runtime config/ctrlp.vim
 Plug 'dyng/ctrlsf.vim' | runtime config/ctrlsf.vim
 Plug 'embear/vim-localvimrc' | runtime config/localvimrc.vim
 Plug 'ervandew/supertab'
@@ -90,6 +89,7 @@ Plug 'justinmk/vim-dirvish' | runtime config/dirvish.vim
 Plug 'kshenoy/vim-signature'
 Plug 'leafgarland/typescript-vim'
 Plug 'lepture/vim-jinja'
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' } | runtime config/clap.vim
 Plug 'ludovicchabant/vim-gutentags' | runtime config/gutentags.vim
 Plug 'machakann/vim-swap'
 Plug 'maximbaz/lightline-ale'
@@ -168,6 +168,24 @@ function! s:SetColors() abort
   " kshenoy/vim-signature
   call onedark#set_highlight('SignatureMarkText', {'fg': s:colors.red })
 
+  " liuchengxu/vim-clap
+  call onedark#set_highlight('ClapSpinner', {'bg': s:colors.cursor_grey, 'fg': s:colors.blue })
+  call onedark#set_highlight('ClapSearchText', {'bg': s:colors.cursor_grey })
+  call onedark#set_highlight('ClapInput', {'bg': s:colors.cursor_grey })
+  call onedark#set_highlight('ClapDisplay', {'bg': s:colors.cursor_grey })
+  call onedark#set_highlight('ClapCurrentSelectionSign', {'bg': s:colors.menu_grey, 'fg': s:colors.white })
+  call onedark#set_highlight('ClapCurrentSelection', {'bg': s:colors.menu_grey })
+  call onedark#set_highlight('ClapSelectedSign', {'fg': s:colors.yellow })
+  call onedark#set_highlight('ClapSelected', {'fg': s:colors.yellow })
+  call onedark#set_highlight('ClapProviderAbout', {'fg': s:colors.white })
+  call onedark#set_highlight('ClapProviderId', {'fg': s:colors.purple })
+  call onedark#set_highlight('ClapProviderColon', {'fg': s:colors.purple })
+  call onedark#set_highlight('ClapFile', {'fg': s:colors.white })
+  call onedark#set_highlight('ClapBuffersNumberBracket', {'fg': s:colors.white })
+  call onedark#set_highlight('ClapBuffersNumber', {'fg': s:colors.white })
+  call onedark#set_highlight('ClapBuffersFsize', {'fg': s:colors.white })
+  call onedark#set_highlight('ClapBuffersFname', {'fg': s:colors.white })
+
   " peitalin/vim-jsx-typescript
   call onedark#set_highlight('typescriptParens', { 'fg': s:colors.white })
   call onedark#set_highlight('typescriptStorageClass', { 'fg': s:colors.purple })
@@ -191,7 +209,7 @@ function! s:SetColors() abort
   call onedark#set_highlight('htmlH6', { 'fg': s:colors.purple })
 
   " rhysd/git-messenger.vim
-  call onedark#set_highlight('gitmessengerPopupNormal', { 'bg': s:colors.menu_grey })
+  call onedark#set_highlight('gitmessengerPopupNormal', { 'bg': s:colors.cursor_grey })
   call onedark#set_highlight('gitmessengerHeader', { 'fg': s:colors.purple })
   call onedark#set_highlight('gitmessengerHash', { 'fg': s:colors.blue })
   call onedark#set_highlight('gitmessengerHistory', { 'fg': s:colors.green })
@@ -209,6 +227,9 @@ function g:BuffetSetCustomColors() abort
   call onedark#set_highlight('BuffetTab', {'bg': s:colors.black, 'fg': s:colors.white })
   call onedark#set_highlight('BuffetTrunc', {'bg': s:colors.black })
 endfunction
+
+" liuchengxu/vim-clap
+let g:clap_fuzzy_match_hl_groups = [[s:colors.red.cterm, s:colors.red.gui]]
 
 augroup init_colors
   autocmd!
