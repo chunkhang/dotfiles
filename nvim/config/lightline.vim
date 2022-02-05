@@ -1,27 +1,17 @@
-function! MyLightlineDirectory() abort
+function! g:LightlineDirectory() abort
   return fnamemodify(getcwd(), ':t')
 endfunction
 
-function! MyLightlineGitBranch() abort
+function! g:LightlineGitBranch() abort
   let l:branch = fugitive#head()
   return strlen(l:branch) ? l:branch : ''
-endfunction
-
-function! MyLightlineFileType() abort
-  return strlen(&filetype) ? &filetype : 'no ft'
-endfunction
-
-function! MyLightlineSpell() abort
-  return &spell ? 'spell': ''
 endfunction
 
 let g:lightline = {}
 let g:lightline.colorscheme = 'onedark'
 let g:lightline.component_function = {
-      \ 'cwd': 'MyLightlineDirectory',
-      \ 'gitbranch': 'MyLightlineGitBranch',
-      \ 'filetype': 'MyLightlineFileType',
-      \ 'spell': 'MyLightlineSpell',
+      \ 'cwd': 'LightlineDirectory',
+      \ 'git_branch': 'LightlineGitBranch',
       \ }
 let g:lightline.component_expand = {
       \ 'linter_checking': 'lightline#ale#checking',
@@ -36,13 +26,12 @@ let g:lightline.component_type = {
 let g:lightline.active = {
       \ 'left' : [ [ 'mode', 'paste' ],
       \            [ 'relativepath', 'readonly', 'modified' ],
-      \            [ 'cwd', 'gitbranch' ] ],
+      \            [ 'cwd', 'git_branch' ] ],
       \ 'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'lineinfo' ],
       \            [ 'percent' ],
       \            [ 'spell', 'filetype' ] ]
       \ }
 let g:lightline.enable = { 'tabline': 0 }
-
-let g:lightline#ale#indicator_checking = 'L'
-let g:lightline#ale#indicator_warnings = 'W'
-let g:lightline#ale#indicator_errors = 'E'
+let g:lightline#ale#indicator_checking = '!'
+let g:lightline#ale#indicator_warnings = ''
+let g:lightline#ale#indicator_errors = ''
