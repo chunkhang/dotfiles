@@ -1,0 +1,22 @@
+set shell := ["zsh", "-l", "-c"]
+
+# show help
+@help:
+	just --list --unsorted
+
+# setup oroject
+setup:
+	poetry install
+
+# lint project
+lint:
+	setopt extendedglob && \
+		poetry run vint \
+			init.vim \
+			after \
+			autoload/^plug.vim* \
+			config \
+			ftdetect \
+			ftplugin \
+			indent \
+			plugin

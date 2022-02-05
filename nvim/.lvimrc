@@ -1,0 +1,1 @@
+let g:ale_vim_vint_executable = g:localvimrc_script_dir . '/.venv/bin/vint'

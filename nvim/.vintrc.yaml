@@ -1,0 +1,8 @@
+cmdargs:
+  severity: style_problem
+  env:
+    neovim: true
+
+policies:
+  ProhibitMissingScriptEncoding: {enabled: false}
+  ProhibitImplicitScopeVariable: {enabled: true}
