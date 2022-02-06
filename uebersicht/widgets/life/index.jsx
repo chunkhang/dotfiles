@@ -47,12 +47,12 @@ const classes = makeClasses({
 const initialState = {};
 
 const render = () => {
-  const birthday = dayjs(BIRTHDAY, 'YYYY-MM-DD');
-  const now = dayjs();
+  const birthday = dayjs(BIRTHDAY, 'YYYY-MM-DD').startOf('day');
+  const today = dayjs().startOf('day');
 
   // Calculate based on assumption that each year has a constant number of weeks
   // If we get difference for week directly, the count will be off
-  const yearsElapsed = now.diff(birthday, 'year', true);
+  const yearsElapsed = today.diff(birthday, 'year', true);
   const weeksElapsed = Math.floor(yearsElapsed * WEEKS_IN_YEAR);
 
   const allWeeks = Array.from(Array(WEEKS_IN_YEAR * TOTAL_YEARS).keys());
