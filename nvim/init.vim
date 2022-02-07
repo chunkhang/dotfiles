@@ -16,7 +16,6 @@ set lazyredraw
 set list
 set listchars=tab:\|\ ,trail:.,nbsp:.
 set mouse=a
-set noautoread
 set noshowmode
 set noswapfile
 set number
