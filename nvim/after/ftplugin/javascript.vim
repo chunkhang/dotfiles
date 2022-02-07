@@ -1,4 +1,4 @@
-set keywordprg=~/.scripts/docs/duckduckgo
+setlocal keywordprg=~/.scripts/docs/duckduckgo
 
 nnoremap <buffer> <silent> gf :call javascript#gf()<CR>
 
@@ -9,4 +9,4 @@ else
 endif
 let b:undo_ftplugin .=
       \ 'setlocal keywordprg<' .
-      \ ' | unmap <buffer> gf'
+      \ ' | silent! nunmap <buffer> gf'

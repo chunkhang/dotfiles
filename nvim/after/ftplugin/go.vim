@@ -7,5 +7,5 @@ else
   let b:undo_ftplugin = ''
 endif
 let b:undo_ftplugin .=
-      \ 'unmap <buffer> gx ' .
-      \ ' | unmap <buffer> gf '
+      \ 'silent! nunmap <buffer> gx' .
+      \ ' | silent! nunmap <buffer> gf'

@@ -9,4 +9,4 @@ else
 endif
 let b:undo_ftplugin .=
       \ 'setlocal formatoptions<' .
-      \ ' | unmap <buffer> gx'
+      \ ' | silent! nunmap <buffer> gx'

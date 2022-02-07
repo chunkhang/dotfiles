@@ -9,4 +9,4 @@ else
 endif
 let b:undo_ftplugin .=
       \ 'setlocal iskeyword<' .
-      \ ' | unmap <buffer> gf'
+      \ ' | silent! nunmap <buffer> gf'
