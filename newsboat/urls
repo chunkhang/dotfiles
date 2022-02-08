@@ -1,0 +1,16 @@
+https://feeds.bbci.co.uk/news/world/rss.xml "~BBC News" news world
+https://www.theguardian.com/world/rss "~The Guardian" news world
+filter:~/.scripts/newsboat/decode:https://www.thestar.com.my/rss/news/nation "~The Star" news malaysia
+filter:~/.scripts/newsboat/decode:https://www.malaymail.com/feed/rss/malaysia "~Malay Mail" news malaysia
+https://techcrunch.com/feed/ "~TechCrunch" news tech
+http://feeds.macrumors.com/MacRumors-All "~MacRumors" news tech apple
+
+https://www.wired.com/feed/rss "~Wired" magazine
+
+https://hnrss.org/frontpage "~Hacker News" forum tech
+https://www.reddit.com/r/programming/top.rss?sort=tophot.rss&t=day "~/r/programming" forum reddit tech
+https://www.reddit.com/r/vim/top.rss?sort=tophot.rss&t=day?t=day "~/r/vim" forum reddit tech vim
+https://www.reddit.com/r/neovim/top.rss?sort=tophot.rss&t=day?t=day "~/r/neovim" forum reddit tech vim
+
+https://kaiwern.com/index.xml "~Kai Wern" blog
+https://japorized.ink/feed.xml "~Johnson Ng" blog
