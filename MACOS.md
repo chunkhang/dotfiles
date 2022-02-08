@@ -14,6 +14,12 @@ sudo pmset -a tcpkeepalive 0
 sudo pmset -a ttyskeepawake 0
 ```
 
+Disable iCloud syncing for Contacts, then:
+
+```
+launchctl unload -w /System/Library/LaunchAgents/com.apple.AddressBook.SourceSync.plist
+```
+
 ## Disable accent keys
 
 ```
