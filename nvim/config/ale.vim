@@ -7,28 +7,28 @@ let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 
 let g:ale_linters = {
-      \ 'sh': ['shell'],
-      \ 'zsh': ['shell'],
-      \ 'vim': ['vint'],
-      \ 'lua': ['luacheck'],
-      \ 'javascript': ['eslint'],
-      \ 'typescript': ['eslint'],
-      \ 'go': ['gofmt', 'golint', 'go vet'],
-      \ 'python': ['flake8', 'pyright'],
       \ 'css': ['stylelint'],
-      \ 'scss': ['stylelint'],
-      \ 'proto': ['protolint'],
+      \ 'go': ['gofmt', 'golint', 'go vet'],
+      \ 'javascript': ['eslint'],
+      \ 'lua': ['luacheck'],
       \ 'php': ['php'],
+      \ 'proto': ['protolint'],
+      \ 'python': ['flake8', 'pyright'],
+      \ 'scss': ['stylelint'],
+      \ 'sh': ['shell'],
+      \ 'typescript': ['eslint'],
+      \ 'vim': ['vint'],
+      \ 'zsh': ['shell'],
       \ }
 
 let g:ale_fixers = {
-      \ 'yaml': ['prettier'],
-      \ 'javascript': ['prettier'],
       \ 'css': ['prettier'],
-      \ 'scss': ['prettier'],
+      \ 'javascript': ['prettier'],
       \ 'json': ['prettier'],
       \ 'markdown': ['prettier'],
       \ 'python': ['black'],
+      \ 'scss': ['prettier'],
+      \ 'yaml': ['prettier'],
       \ }
 
 let g:ale_python_pyright_config = {
