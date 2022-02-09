@@ -218,6 +218,15 @@ function! s:SetColors() abort
 
 endfunction
 
+augroup init_colors
+  autocmd!
+
+  autocmd ColorScheme * call <SID>SetColors()
+
+  " plasticboy/vim-markdown
+  autocmd Syntax markdown syntax clear mkdLineBreak
+augroup END
+
 " bagrat/vim-buffet
 function g:BuffetSetCustomColors() abort
   call onedark#set_highlight('BuffetBuffer', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
@@ -229,11 +238,6 @@ endfunction
 
 " liuchengxu/vim-clap
 let g:clap_fuzzy_match_hl_groups = [[s:colors.red.cterm, s:colors.red.gui]]
-
-augroup init_colors
-  autocmd!
-  autocmd ColorScheme * call <SID>SetColors()
-augroup END
 
 colorscheme onedark
 
