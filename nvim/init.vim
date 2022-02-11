@@ -113,6 +113,7 @@ Plug 'vim-python/python-syntax' | runtime config/python.vim
 Plug 'vim-scripts/icalendar.vim'
 Plug 'vito-c/jq.vim'
 Plug 'w0rp/ale' | runtime config/ale.vim
+Plug 'wellle/targets.vim'
 
 call plug#end()
 
