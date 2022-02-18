@@ -5,7 +5,7 @@ let g:clap_open_preview = 'never'
 let g:clap_prompt_format = '%provider_id%: '
 let g:clap_enable_background_shadow = v:false
 
-nnoremap <silent> <C-P> :Clap files<CR>
+nnoremap <silent> <C-P> :Clap files ++finder=rg --files<CR>
 nnoremap <silent> <C-B> :Clap buffers<CR>
 
 let s:mouse = ''
