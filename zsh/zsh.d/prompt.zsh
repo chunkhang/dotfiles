@@ -13,7 +13,7 @@ function _prompt() {
 
   # Show git info if this is a git repository
   local git_dir=$(_git rev-parse --git-dir 2>/dev/null | xargs realpath)
-  if [[ -n "$git_dir" && ! "$PWD" =~ "^${git_dir}$" ]]; then
+  if [[ -n "$git_dir" && ! "$PWD" =~ "^${git_dir}.*" ]]; then
     # Git branch / commit
     local info=$(_git symbolic-ref --short HEAD 2>/dev/null || _git rev-parse --short HEAD)
     echo -n "%F{cyan}${info} "
