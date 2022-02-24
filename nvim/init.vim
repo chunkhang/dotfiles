@@ -166,7 +166,7 @@ function! s:SetColors() abort
   call onedark#set_highlight('LightlineRight_active_2', {'fg': s:colors.white })
 
   " kshenoy/vim-signature
-  call onedark#set_highlight('SignatureMarkText', {'fg': s:colors.red })
+  call onedark#set_highlight('SignatureMarkText', {'fg': s:colors.blue })
 
   " liuchengxu/vim-clap
   call onedark#set_highlight('ClapSpinner', {'bg': s:colors.cursor_grey, 'fg': s:colors.blue })
