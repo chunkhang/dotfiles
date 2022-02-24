@@ -64,7 +64,6 @@ Plug 'AndrewRadev/switch.vim' | runtime config/switch.vim
 Plug 'Joorem/vim-haproxy'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'SirVer/ultisnips' | runtime config/ultisnips.vim
-Plug 'bagrat/vim-buffet' | runtime config/buffet.vim
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'camspiers/lens.vim'
 Plug 'cespare/vim-toml'
@@ -96,9 +95,9 @@ Plug 'mhinz/vim-signify' | runtime config/signify.vim
 Plug 'neomutt/neomutt.vim'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'plasticboy/vim-markdown' | runtime config/markdown.vim
-Plug 'qpkorr/vim-bufkill' | runtime config/bufkill.vim
 Plug 'rhysd/conflict-marker.vim'
 Plug 'rhysd/git-messenger.vim' | runtime config/git_messenger.vim
+Plug 'romgrk/barbar.nvim' | runtime config/barbar.vim
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary' | runtime config/commentary.vim
@@ -214,6 +213,21 @@ function! s:SetColors() abort
   call onedark#set_highlight('gitmessengerHash', { 'fg': s:colors.blue })
   call onedark#set_highlight('gitmessengerHistory', { 'fg': s:colors.green })
 
+  " romgrk/barbar.nvim
+  call onedark#set_highlight('BufferCurrent', {'bg': s:colors.black, 'fg': s:colors.white })
+  call onedark#set_highlight('BufferCurrentIndex', {'bg': s:colors.black, 'fg': s:colors.white })
+  call onedark#set_highlight('BufferCurrentMod', {'bg': s:colors.black, 'fg': s:colors.white })
+  call onedark#set_highlight('BufferVisible', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
+  call onedark#set_highlight('BufferVisibleIndex', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
+  call onedark#set_highlight('BufferVisibleMod', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
+  call onedark#set_highlight('BufferVisibleSign', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
+  call onedark#set_highlight('BufferInactive', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
+  call onedark#set_highlight('BufferInactiveIndex', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
+  call onedark#set_highlight('BufferInactiveMod', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
+  call onedark#set_highlight('BufferInactiveSign', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
+  call onedark#set_highlight('BufferTabpages', {'bg': s:colors.black, 'fg': s:colors.white })
+  call onedark#set_highlight('BufferTabpageFill', {'bg': s:colors.black })
+
   " w0rp/ale
   call onedark#set_highlight('ALEWarningSign', { 'fg': s:colors.yellow })
 
@@ -227,15 +241,6 @@ augroup init_colors
   " plasticboy/vim-markdown
   autocmd Syntax markdown syntax clear mkdLineBreak
 augroup END
-
-" bagrat/vim-buffet
-function g:BuffetSetCustomColors() abort
-  call onedark#set_highlight('BuffetBuffer', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BuffetCurrentBuffer', {'bg': s:colors.black })
-  call onedark#set_highlight('BuffetActiveBuffer', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BuffetTab', {'bg': s:colors.black, 'fg': s:colors.white })
-  call onedark#set_highlight('BuffetTrunc', {'bg': s:colors.black })
-endfunction
 
 " liuchengxu/vim-clap
 let g:clap_fuzzy_match_hl_groups = [[s:colors.red.cterm, s:colors.red.gui]]
