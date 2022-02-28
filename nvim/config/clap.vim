@@ -23,4 +23,6 @@ augroup config_clap
   autocmd!
   autocmd User ClapOnEnter call <SID>DisableMouse()
   autocmd User ClapOnExit  call <SID>ResetMouse()
+  autocmd FileType clap_input inoremap <buffer> <C-P> <NOP>
+  autocmd FileType clap_input inoremap <buffer> <C-N> <NOP>
 augroup END
