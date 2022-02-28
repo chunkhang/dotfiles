@@ -11,6 +11,7 @@ let g:bufferline.icon_close_tab = ''
 let g:bufferline.icon_close_tab_modified = '+'
 let g:bufferline.insert_at_end = v:true
 let g:bufferline.maximum_padding = 0
+let g:bufferline.maximum_length = 100
 let g:bufferline.no_name_title = '[No Name]'
 
 nnoremap <silent> <Leader>[ :BufferPrevious<CR>
