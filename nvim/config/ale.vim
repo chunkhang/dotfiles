@@ -16,7 +16,8 @@ let g:ale_linters = {
       \ 'python': ['flake8', 'pyright'],
       \ 'scss': ['stylelint'],
       \ 'sh': ['shell'],
-      \ 'typescript': ['eslint'],
+      \ 'typescript': ['eslint', 'tsserver'],
+      \ 'typescriptreact': ['eslint', 'tsserver'],
       \ 'vim': ['vint'],
       \ 'zsh': ['shell'],
       \ }
@@ -29,6 +30,8 @@ let g:ale_fixers = {
       \ 'markdown': ['prettier'],
       \ 'python': ['black'],
       \ 'scss': ['prettier'],
+      \ 'typescript': ['prettier'],
+      \ 'typescriptreact': ['prettier'],
       \ 'yaml': ['prettier'],
       \ }
 
