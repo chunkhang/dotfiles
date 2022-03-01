@@ -12,3 +12,8 @@ augroup config_ultisnips
 augroup END
 
 nnoremap <silent> <Leader>u :UltiSnipsEdit<CR>
+
+function! s:HighlightCallback(set, colors) abort
+  call a:set('snipLeadingSpaces', {'fg': a:colors.black })
+endfunction
+call g:AddHighlightCallback(function('<SID>HighlightCallback'))

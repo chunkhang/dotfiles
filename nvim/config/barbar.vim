@@ -32,3 +32,20 @@ nnoremap <silent> <Leader>9 :BufferLast<CR>
 
 nnoremap <silent> <Leader>q :BufferClose<CR>
 nnoremap <silent> <Leader>Q :BufferCloseAllButCurrent<CR>
+
+function! s:HighlightCallback(set, colors) abort
+  call a:set('BufferCurrent', {'bg': a:colors.black, 'fg': a:colors.white })
+  call a:set('BufferCurrentIndex', {'bg': a:colors.black, 'fg': a:colors.white })
+  call a:set('BufferCurrentMod', {'bg': a:colors.black, 'fg': a:colors.white })
+  call a:set('BufferVisible', {'bg': a:colors.black, 'fg': a:colors.comment_grey })
+  call a:set('BufferVisibleIndex', {'bg': a:colors.black, 'fg': a:colors.comment_grey })
+  call a:set('BufferVisibleMod', {'bg': a:colors.black, 'fg': a:colors.comment_grey })
+  call a:set('BufferVisibleSign', {'bg': a:colors.black, 'fg': a:colors.comment_grey })
+  call a:set('BufferInactive', {'bg': a:colors.black, 'fg': a:colors.comment_grey })
+  call a:set('BufferInactiveIndex', {'bg': a:colors.black, 'fg': a:colors.comment_grey })
+  call a:set('BufferInactiveMod', {'bg': a:colors.black, 'fg': a:colors.comment_grey })
+  call a:set('BufferInactiveSign', {'bg': a:colors.black, 'fg': a:colors.comment_grey })
+  call a:set('BufferTabpages', {'bg': a:colors.black, 'fg': a:colors.white })
+  call a:set('BufferTabpageFill', {'bg': a:colors.black })
+endfunction
+call g:AddHighlightCallback(function('<SID>HighlightCallback'))

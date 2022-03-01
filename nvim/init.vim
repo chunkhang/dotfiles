@@ -57,6 +57,12 @@ augroup END
 " PLUGINS
 " =============================================================================
 
+" Setup helper for plugin configs to set respective highlights
+let s:plugin_higlight_callbacks = []
+function! g:AddHighlightCallback(callback) abort
+  call add(s:plugin_higlight_callbacks, a:callback) 
+endfunction
+
 call plug#begin(stdpath('config') . '/plugged')
 
 Plug 'AndrewRadev/splitjoin.vim' | runtime config/splitjoin.vim
@@ -66,8 +72,8 @@ Plug 'PProvost/vim-markdown-jekyll'
 Plug 'SirVer/ultisnips' | runtime config/ultisnips.vim
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'camspiers/lens.vim'
-Plug 'cespare/vim-toml'
-Plug 'chemzqm/vim-jsx-improve' | runtime config/javascript.vim
+Plug 'cespare/vim-toml' | runtime config/toml.vim
+Plug 'chemzqm/vim-jsx-improve' | runtime config/jsx_improve.vim
 Plug 'chrisbra/Colorizer' | runtime config/colorizer.vim
 Plug 'chunkhang/msmtp.vim'
 Plug 'chunkhang/vim-mbsync'
@@ -84,7 +90,7 @@ Plug 'joshdick/onedark.vim' | runtime config/onedark.vim
 Plug 'jparise/vim-graphql'
 Plug 'junegunn/vim-plug' | runtime config/plug.vim
 Plug 'justinmk/vim-dirvish' | runtime config/dirvish.vim
-Plug 'kshenoy/vim-signature'
+Plug 'kshenoy/vim-signature' | runtime config/signature.vim
 Plug 'leafgarland/typescript-vim'
 Plug 'lepture/vim-jinja'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' } | runtime config/clap.vim
@@ -93,7 +99,7 @@ Plug 'machakann/vim-swap'
 Plug 'maximbaz/lightline-ale'
 Plug 'mhinz/vim-signify' | runtime config/signify.vim
 Plug 'neomutt/neomutt.vim'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'peitalin/vim-jsx-typescript' | runtime config/jsx_typescript.vim
 Plug 'plasticboy/vim-markdown' | runtime config/markdown.vim
 Plug 'rhysd/conflict-marker.vim'
 Plug 'rhysd/git-messenger.vim' | runtime config/git_messenger.vim
@@ -120,130 +126,36 @@ call plug#end()
 " COLORS
 " =============================================================================
 
-let s:colors = onedark#GetColors()
 " Available colors:
-" - background
-" - black
-" - blue
-" - comment_grey
-" - cursor_grey
-" - cyan
-" - dark_red
-" - dark_yellow
-" - foreground
-" - green
-" - gutter_fg_grey
-" - menu_grey
-" - purple
-" - red
-" - special_grey
-" - vertsplit
-" - visual_grey
-" - white
-" - yellow
+" black | white
+" red | dark_red
+" yellow | dark_yellow
+" cyan | blue
+" green
+" purple
+" comment_grey | cursor_grey | gutter_fg_grey | menu_grey | special_grey | visual_grey
+" background | foreground
+" vertsplit
+let s:colors = onedark#GetColors()
 
-function! s:SetColors() abort
+function! s:SetHighlight(group, highlight) abort
+  call onedark#set_highlight(a:group, a:highlight)
+endfunction
 
-  " matchit.vim
-  call onedark#set_highlight('MatchParen', {'bg': s:colors.visual_grey })
+function! s:SetAllHighlights() abort
+  " Set system highlights
+  call <SID>SetHighlight('MatchParen', {'bg': s:colors.visual_grey })
 
-  " SirVer/ultisnips
-  call onedark#set_highlight('snipLeadingSpaces', {'fg': s:colors.black })
-
-  " cespare/vim-toml
-  call onedark#set_highlight('tomlTable', { 'fg': s:colors.blue })
-
-  " chemzqm/vim-jsx-improve
-  call onedark#set_highlight('jsDocTags', { 'fg': s:colors.cyan })
-  call onedark#set_highlight('jsDocType', { 'fg': s:colors.yellow })
-  call onedark#set_highlight('jsDocTypeNoParam', { 'fg': s:colors.yellow })
-  call onedark#set_highlight('jsDocParam', { 'fg': s:colors.white })
-
-  " itchyny/lightline
-  call onedark#set_highlight('LightlineLeft_active_2', {'fg': s:colors.white })
-  call onedark#set_highlight('LightlineMiddle_active', {'fg': s:colors.white })
-  call onedark#set_highlight('LightlineRight_active_2', {'fg': s:colors.white })
-
-  " kshenoy/vim-signature
-  call onedark#set_highlight('SignatureMarkText', {'fg': s:colors.blue })
-
-  " liuchengxu/vim-clap
-  call onedark#set_highlight('ClapSpinner', {'bg': s:colors.cursor_grey, 'fg': s:colors.blue })
-  call onedark#set_highlight('ClapSearchText', {'bg': s:colors.cursor_grey })
-  call onedark#set_highlight('ClapInput', {'bg': s:colors.cursor_grey })
-  call onedark#set_highlight('ClapDisplay', {'bg': s:colors.cursor_grey })
-  call onedark#set_highlight('ClapCurrentSelectionSign', {'bg': s:colors.menu_grey, 'fg': s:colors.white })
-  call onedark#set_highlight('ClapCurrentSelection', {'bg': s:colors.menu_grey })
-  call onedark#set_highlight('ClapSelectedSign', {'fg': s:colors.yellow })
-  call onedark#set_highlight('ClapSelected', {'fg': s:colors.yellow })
-  call onedark#set_highlight('ClapProviderAbout', {'fg': s:colors.white })
-  call onedark#set_highlight('ClapProviderId', {'fg': s:colors.purple })
-  call onedark#set_highlight('ClapProviderColon', {'fg': s:colors.purple })
-  call onedark#set_highlight('ClapFile', {'fg': s:colors.white })
-  call onedark#set_highlight('ClapBuffersNumberBracket', {'fg': s:colors.white })
-  call onedark#set_highlight('ClapBuffersNumber', {'fg': s:colors.white })
-  call onedark#set_highlight('ClapBuffersFsize', {'fg': s:colors.white })
-  call onedark#set_highlight('ClapBuffersFname', {'fg': s:colors.white })
-
-  " peitalin/vim-jsx-typescript
-  call onedark#set_highlight('typescriptParens', { 'fg': s:colors.white })
-  call onedark#set_highlight('typescriptStorageClass', { 'fg': s:colors.purple })
-  call onedark#set_highlight('typescriptInterpolationDelimiter', { 'fg': s:colors.red })
-  call onedark#set_highlight('typescriptNull', { 'fg': s:colors.dark_yellow })
-  call onedark#set_highlight('typescriptType', { 'fg': s:colors.dark_yellow })
-  call onedark#set_highlight('typescriptGlobalObjects', { 'fg': s:colors.yellow })
-  call onedark#set_highlight('typescriptDeprecated', { 'fg': s:colors.blue })
-  call onedark#set_highlight('typescriptBranch', { 'fg': s:colors.red })
-  call onedark#set_highlight('typescriptLogicSymbols', { 'fg': s:colors.purple })
-  call onedark#set_highlight('ReactLifeCycleMethods', { 'fg': s:colors.blue })
-  call onedark#set_highlight('ReduxKeywords', { 'fg': s:colors.white })
-  call onedark#set_highlight('tsxCloseTag', { 'fg': s:colors.white })
-
-  " plasticboy/vim-markdown
-  call onedark#set_highlight('htmlH1', { 'fg': s:colors.red })
-  call onedark#set_highlight('htmlH2', { 'fg': s:colors.green })
-  call onedark#set_highlight('htmlH3', { 'fg': s:colors.blue })
-  call onedark#set_highlight('htmlH4', { 'fg': s:colors.purple })
-  call onedark#set_highlight('htmlH5', { 'fg': s:colors.purple })
-  call onedark#set_highlight('htmlH6', { 'fg': s:colors.purple })
-
-  " rhysd/git-messenger.vim
-  call onedark#set_highlight('gitmessengerPopupNormal', { 'bg': s:colors.cursor_grey })
-  call onedark#set_highlight('gitmessengerHeader', { 'fg': s:colors.purple })
-  call onedark#set_highlight('gitmessengerHash', { 'fg': s:colors.blue })
-  call onedark#set_highlight('gitmessengerHistory', { 'fg': s:colors.green })
-
-  " romgrk/barbar.nvim
-  call onedark#set_highlight('BufferCurrent', {'bg': s:colors.black, 'fg': s:colors.white })
-  call onedark#set_highlight('BufferCurrentIndex', {'bg': s:colors.black, 'fg': s:colors.white })
-  call onedark#set_highlight('BufferCurrentMod', {'bg': s:colors.black, 'fg': s:colors.white })
-  call onedark#set_highlight('BufferVisible', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BufferVisibleIndex', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BufferVisibleMod', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BufferVisibleSign', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BufferInactive', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BufferInactiveIndex', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BufferInactiveMod', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BufferInactiveSign', {'bg': s:colors.black, 'fg': s:colors.comment_grey })
-  call onedark#set_highlight('BufferTabpages', {'bg': s:colors.black, 'fg': s:colors.white })
-  call onedark#set_highlight('BufferTabpageFill', {'bg': s:colors.black })
-
-  " w0rp/ale
-  call onedark#set_highlight('ALEWarningSign', { 'fg': s:colors.yellow })
-
+  " Set plugin highlights
+  for l:Callback in s:plugin_higlight_callbacks
+    call l:Callback(function('<SID>SetHighlight'), s:colors)
+  endfor
 endfunction
 
 augroup init_colors
   autocmd!
-
-  autocmd ColorScheme * call <SID>SetColors()
-
-  " plasticboy/vim-markdown
-  autocmd Syntax markdown syntax clear mkdLineBreak
+  autocmd ColorScheme * call <SID>SetAllHighlights()
 augroup END
-
-" liuchengxu/vim-clap
-let g:clap_fuzzy_match_hl_groups = [[s:colors.red.cterm, s:colors.red.gui]]
 
 colorscheme onedark
 

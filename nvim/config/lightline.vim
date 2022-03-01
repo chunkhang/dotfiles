@@ -35,3 +35,10 @@ let g:lightline.enable = { 'tabline': 0 }
 let g:lightline#ale#indicator_checking = '!'
 let g:lightline#ale#indicator_warnings = ''
 let g:lightline#ale#indicator_errors = ''
+
+function! s:HighlightCallback(set, colors) abort
+  call a:set('LightlineLeft_active_2', {'fg': a:colors.white })
+  call a:set('LightlineMiddle_active', {'fg': a:colors.white })
+  call a:set('LightlineRight_active_2', {'fg': a:colors.white })
+endfunction
+call g:AddHighlightCallback(function('<SID>HighlightCallback'))

@@ -1,0 +1,15 @@
+function! s:HighlightCallback(set, colors) abort
+  call a:set('typescriptParens', { 'fg': a:colors.white })
+  call a:set('typescriptStorageClass', { 'fg': a:colors.purple })
+  call a:set('typescriptInterpolationDelimiter', { 'fg': a:colors.red })
+  call a:set('typescriptNull', { 'fg': a:colors.dark_yellow })
+  call a:set('typescriptType', { 'fg': a:colors.dark_yellow })
+  call a:set('typescriptGlobalObjects', { 'fg': a:colors.yellow })
+  call a:set('typescriptDeprecated', { 'fg': a:colors.blue })
+  call a:set('typescriptBranch', { 'fg': a:colors.red })
+  call a:set('typescriptLogicSymbols', { 'fg': a:colors.purple })
+  call a:set('ReactLifeCycleMethods', { 'fg': a:colors.blue })
+  call a:set('ReduxKeywords', { 'fg': a:colors.white })
+  call a:set('tsxCloseTag', { 'fg': a:colors.white })
+endfunction
+call g:AddHighlightCallback(function('<SID>HighlightCallback'))
