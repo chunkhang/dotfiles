@@ -1,4 +1,4 @@
-function! s:HighlightCallback(set_highlight, colors) abort
+function! g:plugin_highlights.jsx_typescript(set_highlight, colors) dict abort
   call a:set_highlight('typescriptParens', { 'fg': a:colors.white })
   call a:set_highlight('typescriptStorageClass', { 'fg': a:colors.purple })
   call a:set_highlight('typescriptInterpolationDelimiter', { 'fg': a:colors.red })
@@ -12,4 +12,3 @@ function! s:HighlightCallback(set_highlight, colors) abort
   call a:set_highlight('ReduxKeywords', { 'fg': a:colors.white })
   call a:set_highlight('tsxCloseTag', { 'fg': a:colors.white })
 endfunction
-call g:AddHighlightCallback(function('<SID>HighlightCallback'))

@@ -27,7 +27,7 @@ augroup config_clap
   autocmd FileType clap_input inoremap <buffer> <C-N> <NOP>
 augroup END
 
-function! s:HighlightCallback(set_highlight, colors) abort
+function! g:plugin_highlights.clap(set_highlight, colors) dict abort
   call a:set_highlight('ClapSpinner', {'bg': a:colors.cursor_grey, 'fg': a:colors.blue })
   call a:set_highlight('ClapSearchText', {'bg': a:colors.cursor_grey })
   call a:set_highlight('ClapInput', {'bg': a:colors.cursor_grey })
@@ -46,4 +46,3 @@ function! s:HighlightCallback(set_highlight, colors) abort
   call a:set_highlight('ClapBuffersFname', {'fg': a:colors.white })
   let g:clap_fuzzy_match_hl_groups = [[a:colors.red.cterm, a:colors.red.gui]]
 endfunction
-call g:AddHighlightCallback(function('<SID>HighlightCallback'))

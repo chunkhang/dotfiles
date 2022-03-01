@@ -33,7 +33,7 @@ nnoremap <silent> <Leader>9 :BufferLast<CR>
 nnoremap <silent> <Leader>q :BufferClose<CR>
 nnoremap <silent> <Leader>Q :BufferCloseAllButCurrent<CR>
 
-function! s:HighlightCallback(set_highlight, colors) abort
+function! g:plugin_highlights.barbar(set_highlight, colors) dict abort
   call a:set_highlight('BufferCurrent', {'bg': a:colors.black, 'fg': a:colors.white })
   call a:set_highlight('BufferCurrentIndex', {'bg': a:colors.black, 'fg': a:colors.white })
   call a:set_highlight('BufferCurrentMod', {'bg': a:colors.black, 'fg': a:colors.white })
@@ -48,4 +48,3 @@ function! s:HighlightCallback(set_highlight, colors) abort
   call a:set_highlight('BufferTabpages', {'bg': a:colors.black, 'fg': a:colors.white })
   call a:set_highlight('BufferTabpageFill', {'bg': a:colors.black })
 endfunction
-call g:AddHighlightCallback(function('<SID>HighlightCallback'))

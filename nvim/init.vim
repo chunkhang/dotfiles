@@ -57,11 +57,8 @@ augroup END
 " PLUGINS
 " =============================================================================
 
-" Setup helper for plugin configs to set respective highlights
-let s:plugin_higlight_callbacks = []
-function! g:AddHighlightCallback(callback) abort
-  call add(s:plugin_higlight_callbacks, a:callback) 
-endfunction
+" Helper to set respective highlights in plugin configs
+let g:plugin_highlights = {}
 
 call plug#begin(stdpath('config') . '/plugged')
 
@@ -138,17 +135,13 @@ call plug#end()
 " vertsplit
 let s:colors = onedark#GetColors()
 
-function! s:SetHighlight(group, highlight) abort
-  call onedark#set_highlight(a:group, a:highlight)
-endfunction
-
 function! s:SetAllHighlights() abort
   " Set system highlights
-  call <SID>SetHighlight('MatchParen', {'bg': s:colors.visual_grey })
-
+  call onedark#set_highlight('MatchParen', {'bg': s:colors.visual_grey })
   " Set plugin highlights
-  for l:Callback in s:plugin_higlight_callbacks
-    call l:Callback(function('<SID>SetHighlight'), s:colors)
+  let l:callback_args = [function('onedark#set_highlight'), s:colors]
+  for [l:key, l:Callback] in items(g:plugin_highlights)
+    call call(l:Callback, l:callback_args, {})
   endfor
 endfunction
 

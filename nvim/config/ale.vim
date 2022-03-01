@@ -51,7 +51,6 @@ nmap ]w <Plug>(ale_next_wrap_warning)
 nnoremap <silent> <Leader>l :ALELint<CR>
 nnoremap <silent> <Leader>f :ALEFix<CR>
 
-function! s:HighlightCallback(set_highlight, colors) abort
+function! g:plugin_highlights.ale(set_highlight, colors) dict abort
   call a:set_highlight('ALEWarningSign', { 'fg': a:colors.yellow })
 endfunction
-call g:AddHighlightCallback(function('<SID>HighlightCallback'))

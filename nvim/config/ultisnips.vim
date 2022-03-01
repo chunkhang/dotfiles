@@ -13,7 +13,6 @@ augroup END
 
 nnoremap <silent> <Leader>u :UltiSnipsEdit<CR>
 
-function! s:HighlightCallback(set_highlight, colors) abort
+function! g:plugin_highlights.ultisnips(set_highlight, colors) dict abort
   call a:set_highlight('snipLeadingSpaces', {'fg': a:colors.black })
 endfunction
-call g:AddHighlightCallback(function('<SID>HighlightCallback'))
