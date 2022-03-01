@@ -14,5 +14,5 @@ augroup END
 nnoremap <silent> <Leader>u :UltiSnipsEdit<CR>
 
 function! g:plugin_highlights.ultisnips(set_highlight, colors) dict abort
-  call a:set_highlight('snipLeadingSpaces', {'fg': a:colors.black })
+  call a:set_highlight('snipLeadingSpaces', { 'fg': a:colors.black })
 endfunction

@@ -37,7 +37,7 @@ let g:lightline#ale#indicator_warnings = ''
 let g:lightline#ale#indicator_errors = ''
 
 function! g:plugin_highlights.lightline(set_highlight, colors) dict abort
-  call a:set_highlight('LightlineLeft_active_2', {'fg': a:colors.white })
-  call a:set_highlight('LightlineMiddle_active', {'fg': a:colors.white })
-  call a:set_highlight('LightlineRight_active_2', {'fg': a:colors.white })
+  call a:set_highlight('LightlineLeft_active_2', { 'fg': a:colors.white })
+  call a:set_highlight('LightlineMiddle_active', { 'fg': a:colors.white })
+  call a:set_highlight('LightlineRight_active_2', { 'fg': a:colors.white })
 endfunction
