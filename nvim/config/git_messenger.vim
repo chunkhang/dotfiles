@@ -12,10 +12,10 @@ augroup END
 
 nmap <Leader>b <Plug>(git-messenger)
 
-function! s:HighlightCallback(set, colors) abort
-  call a:set('gitmessengerPopupNormal', { 'bg': a:colors.cursor_grey })
-  call a:set('gitmessengerHeader', { 'fg': a:colors.purple })
-  call a:set('gitmessengerHash', { 'fg': a:colors.blue })
-  call a:set('gitmessengerHistory', { 'fg': a:colors.green })
+function! s:HighlightCallback(set_highlight, colors) abort
+  call a:set_highlight('gitmessengerPopupNormal', { 'bg': a:colors.cursor_grey })
+  call a:set_highlight('gitmessengerHeader', { 'fg': a:colors.purple })
+  call a:set_highlight('gitmessengerHash', { 'fg': a:colors.blue })
+  call a:set_highlight('gitmessengerHistory', { 'fg': a:colors.green })
 endfunction
 call g:AddHighlightCallback(function('<SID>HighlightCallback'))

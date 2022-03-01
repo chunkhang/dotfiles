@@ -51,7 +51,7 @@ nmap ]w <Plug>(ale_next_wrap_warning)
 nnoremap <silent> <Leader>l :ALELint<CR>
 nnoremap <silent> <Leader>f :ALEFix<CR>
 
-function! s:HighlightCallback(set, colors) abort
-  call a:set('ALEWarningSign', { 'fg': a:colors.yellow })
+function! s:HighlightCallback(set_highlight, colors) abort
+  call a:set_highlight('ALEWarningSign', { 'fg': a:colors.yellow })
 endfunction
 call g:AddHighlightCallback(function('<SID>HighlightCallback'))

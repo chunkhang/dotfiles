@@ -1,4 +1,4 @@
-function! s:HighlightCallback(set, colors) abort
-  call a:set('tomlTable', { 'fg': a:colors.blue })
+function! s:HighlightCallback(set_highlight, colors) abort
+  call a:set_highlight('tomlTable', { 'fg': a:colors.blue })
 endfunction
 call g:AddHighlightCallback(function('<SID>HighlightCallback'))
