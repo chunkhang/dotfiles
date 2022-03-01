@@ -138,6 +138,7 @@ let s:colors = onedark#GetColors()
 function! s:SetAllHighlights() abort
   " Set system highlights
   call onedark#set_highlight('MatchParen', { 'bg': s:colors.visual_grey })
+  call onedark#set_highlight('NonText', { 'fg': s:colors.comment_grey })
   " Set plugin highlights
   let l:callback_args = [function('onedark#set_highlight'), s:colors]
   for [l:key, l:Callback] in items(g:plugin_highlights)
