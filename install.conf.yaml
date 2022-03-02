@@ -29,6 +29,7 @@
     ~/.ripgreprc:
     ~/.scripts:
     ~/.skhdrc:
+    ~/.tmux:
     ~/.tmux.conf:
     ~/.uebersicht:
     ~/.vdirsyncer:
