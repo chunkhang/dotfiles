@@ -192,7 +192,7 @@ abbr dkk='docker-compose kill'
 
 abbr tm='tmux'
 
-abbr tma='tmux attach -t'
+abbr tma='tmux attach'
 
 abbr tmd='tmux detach'
 
