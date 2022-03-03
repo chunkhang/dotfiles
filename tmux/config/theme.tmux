@@ -45,7 +45,6 @@ tmux set -g "window-status-current-format" "#[fg=${white},bg=${black}]${window_s
 tmux set -g "pane-base-index" "$base_index"
 tmux set -g "pane-border-style" "fg=${grey},bg=${black}"
 tmux set -g "pane-active-border-style" "fg=${white},bg=${black}"
-tmux set -g "display-panes-time" "0"
 tmux set -g "display-panes-colour" "$grey"
 tmux set -g "display-panes-active-colour" "$white"
 
