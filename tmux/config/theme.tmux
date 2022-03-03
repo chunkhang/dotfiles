@@ -22,7 +22,7 @@ tmux set -g "status-interval" "0"
 tmux set -g "status-justify" "left"
 tmux set -g "status-left" ""
 tmux set -g "status-left-length" "$status_length"
-tmux set -g "status-right" "#{?client_prefix,!,} [#{session_name}]"
+tmux set -g "status-right" "#{?client_prefix,#{prefix},} [#{session_name}]"
 tmux set -g "status-right-length" "$status_length"
 tmux set -g "status-style" "fg=${white},bg=${black}"
 
