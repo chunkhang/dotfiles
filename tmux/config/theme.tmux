@@ -37,7 +37,7 @@ tmux set -g "allow-rename" "off"
 tmux set -g "automatic-rename" "off"
 tmux set -g "window-style" "fg=${white},bg=${black}"
 tmux set -g "window-active-style" "fg=${white},bg=${black}"
-tmux set -g "window-status-separator" " | "
+tmux set -g "window-status-separator" "   "
 tmux set -g "window-status-format" "#[fg=${grey},bg=${black}]${window_status}"
 tmux set -g "window-status-current-format" "#[fg=${white},bg=${black}]${window_status}"
 
