@@ -48,7 +48,7 @@ const render = ({ spaces, error }) => {
     <div className={classes.container}>
       {spaces.map((space, i) => (
         <React.Fragment key={i}>
-          {i > 0 ? <div>{theme.elements.divider}</div> : null}
+          {i > 0 ? <div> </div> : null}
           <Space
             index={space.index}
             focused={space['has-focus']}

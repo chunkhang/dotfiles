@@ -92,15 +92,15 @@ const render = ({ battery, wifi, bluetooth, error }) => {
   return (
     <div className={classes.container}>
       <Bluetooth device={bluetooth.device} active={bluetooth.active} />
-      <div>{theme.elements.divider}</div>
+      <div> </div>
       <Wifi ssid={wifi.ssid} active={wifi.active} />
-      <div>{theme.elements.divider}</div>
+      <div> </div>
       <Battery
         percent={battery.percent}
         using={battery.using}
         charging={battery.charging}
       />
-      <div>{theme.elements.divider}</div>
+      <div> </div>
       <DateTime />
     </div>
   );

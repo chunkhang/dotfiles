@@ -9,10 +9,6 @@ const paddings = {
   y: 8,
 };
 
-const elements = {
-  divider: '|',
-};
-
 const base = {
   fontFamily: 'Iosevka Extended',
   fontSize: 12,
@@ -23,7 +19,6 @@ const theme = {
   base,
   colors,
   paddings,
-  elements,
 };
 
 export default theme;
