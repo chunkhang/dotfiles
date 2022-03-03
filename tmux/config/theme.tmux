@@ -7,14 +7,11 @@ grey="#5c6370"
 
 status_length="100"
 base_index="1"
-window_status="#{window_index} #{window_name}#{?pane_synchronized,+,}"
+window_status_format="#{window_index} #{window_name}#{?pane_synchronized,+,}"
 
 # Options
 tmux set -g "default-terminal" "tmux-256color"
 tmux set -g "terminal-overrides" "*-256color:Tc"
-tmux set -g "display-time" "1000"
-tmux set -g "monitor-activity" "off"
-tmux set -g "monitor-bell" "off"
 
 # Status
 tmux set -g "status" "on"
@@ -38,8 +35,12 @@ tmux set -g "automatic-rename" "off"
 tmux set -g "window-style" "fg=${white},bg=${black}"
 tmux set -g "window-active-style" "fg=${white},bg=${black}"
 tmux set -g "window-status-separator" "   "
-tmux set -g "window-status-format" "#[fg=${grey},bg=${black}]${window_status}"
-tmux set -g "window-status-current-format" "#[fg=${white},bg=${black}]${window_status}"
+tmux set -g "window-status-format" "$window_status_format"
+tmux set -g "window-status-current-format" "$window_status_format"
+tmux set -g "window-status-style" "fg=${grey},bg=${black}"
+tmux set -g "window-status-current-style" "fg=${white},bg=${black}"
+tmux set -g "monitor-bell" "on"
+tmux set -g "window-status-bell-style" "fg=${black},bg=${white}"
 
 # Panes
 tmux set -g "pane-base-index" "$base_index"
