@@ -28,12 +28,9 @@ augroup config_clap
 augroup END
 
 function! g:plugin_highlights.clap(set_highlight, colors) dict abort
-  call a:set_highlight('ClapSpinner', { 'bg': a:colors.cursor_grey, 'fg': a:colors.blue })
-  call a:set_highlight('ClapSearchText', { 'bg': a:colors.cursor_grey })
-  call a:set_highlight('ClapInput', { 'bg': a:colors.cursor_grey })
-  call a:set_highlight('ClapDisplay', { 'bg': a:colors.cursor_grey })
-  call a:set_highlight('ClapCurrentSelectionSign', { 'bg': a:colors.menu_grey, 'fg': a:colors.white })
-  call a:set_highlight('ClapCurrentSelection', { 'bg': a:colors.menu_grey })
+  call a:set_highlight('ClapSpinner', { 'bg': a:colors.menu_grey, 'fg': a:colors.blue })
+  call a:set_highlight('ClapCurrentSelectionSign', { 'bg': a:colors.gutter_fg_grey, 'fg': a:colors.white })
+  call a:set_highlight('ClapCurrentSelection', { 'bg': a:colors.gutter_fg_grey })
   call a:set_highlight('ClapSelectedSign', { 'fg': a:colors.yellow })
   call a:set_highlight('ClapSelected', { 'fg': a:colors.yellow })
   call a:set_highlight('ClapProviderAbout', { 'fg': a:colors.white })
