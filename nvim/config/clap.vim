@@ -29,17 +29,17 @@ augroup END
 
 function! g:plugin_highlights.clap(set_highlight, colors) dict abort
   call a:set_highlight('ClapSpinner', { 'bg': a:colors.menu_grey, 'fg': a:colors.blue })
-  call a:set_highlight('ClapCurrentSelectionSign', { 'bg': a:colors.gutter_fg_grey, 'fg': a:colors.white })
+  call a:set_highlight('ClapCurrentSelectionSign', { 'bg': a:colors.gutter_fg_grey, 'fg': a:colors.blue })
   call a:set_highlight('ClapCurrentSelection', { 'bg': a:colors.gutter_fg_grey })
-  call a:set_highlight('ClapSelectedSign', { 'fg': a:colors.yellow })
+  call a:set_highlight('ClapSelectedSign', { 'fg': a:colors.blue })
   call a:set_highlight('ClapSelected', { 'fg': a:colors.yellow })
   call a:set_highlight('ClapProviderAbout', { 'fg': a:colors.white })
-  call a:set_highlight('ClapProviderId', { 'fg': a:colors.purple })
-  call a:set_highlight('ClapProviderColon', { 'fg': a:colors.purple })
+  call a:set_highlight('ClapProviderId', { 'fg': a:colors.red })
+  call a:set_highlight('ClapProviderColon', { 'fg': a:colors.red })
   call a:set_highlight('ClapFile', { 'fg': a:colors.white })
   call a:set_highlight('ClapBuffersNumberBracket', { 'fg': a:colors.white })
   call a:set_highlight('ClapBuffersNumber', { 'fg': a:colors.white })
   call a:set_highlight('ClapBuffersFsize', { 'fg': a:colors.white })
   call a:set_highlight('ClapBuffersFname', { 'fg': a:colors.white })
-  let g:clap_fuzzy_match_hl_groups = [[a:colors.red.cterm, a:colors.red.gui]]
+  let g:clap_fuzzy_match_hl_groups = [[a:colors.purple.cterm, a:colors.purple.gui]]
 endfunction
