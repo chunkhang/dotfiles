@@ -1,0 +1,4 @@
+#!/bin/bash
+# Execute shell in Kubernetes pod
+
+kubectl exec --stdin --tty "$@" -- bash
