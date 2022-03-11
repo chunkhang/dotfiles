@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -f 'package.json' ]]; then
+  jq --raw-output '.version' package.json
+  exit 0
+fi
+
+exit 1

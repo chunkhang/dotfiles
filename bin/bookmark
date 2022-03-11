@@ -1,0 +1,40 @@
+#!/bin/bash
+# Bookmark CLI
+
+bookmark_path=~/.bookmark
+
+function show-help() {
+  echo "usage: bookmark [<url> [label]]"
+  echo
+  echo "flags:"
+  echo "  -h, --help  show help"
+  echo
+  echo "description:"
+  echo "  Pass in a url to add it to the bookmark file."
+  echo "  Additionally, pass in a label to annotate the url."
+  echo "  If nothing is passed, the bookmark file is opened."
+  echo "  The bookmark file is stored at: ${bookmark_path}"
+}
+
+if [[ "$#" > 0 && "$1" =~ "^(-h|--help)$" ]]; then
+  show-help
+  exit 0
+fi
+
+if [[ ! -f "$bookmark_path" ]]; then
+  echo "Create a ${bookmark_path} file first."
+  exit 1
+fi
+
+if [[ "$#" = 0 ]]; then
+  "$EDITOR" "$bookmark_path"
+  exit 0
+fi
+
+if [[ "$#" = 1 ]]; then
+  echo "$1" >> "$bookmark_path"
+else
+  echo "${1} | ${2}" >> "$bookmark_path"
+fi
+
+echo "Bookmark added."

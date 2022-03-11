@@ -1,0 +1,16 @@
+#!/bin/bash
+# Show git log with fzf
+
+git log --color --decorate --oneline "$@" | \
+  fzf --ansi --reverse --tiebreak=index --no-sort --exact \
+    --preview " \
+      echo {} | \
+      cut -d ' ' -f 1 | \
+      xargs git show --color --first-parent \
+    " \
+    --bind "enter:execute-silent( \
+      echo {} | \
+      cut -d ' ' -f 1 | \
+      tr -d '\n' | \
+      pbcopy \
+    )+accept"

@@ -1,0 +1,52 @@
+#!/bin/bash
+# Perform operations on DNS
+
+function show-help() {
+  echo "usage: dns <command>"
+  echo
+  echo "commands:"
+  echo "  status      show current DNS"
+  echo "  google      use Google DNS"
+  echo "  cloudflare  use Cloudflare DNS"
+  echo "  reset       reset DNS"
+  echo "  flush       flush DNS cache"
+}
+
+function show-status() {
+  echo "Current DNS:"
+  echo "$(networksetup -getdnsservers Wi-Fi | sed 's/^/  /')"
+}
+
+if [[ "$#" = 0 ]]; then
+  show-help
+  exit 0
+fi
+
+case "$1" in
+  "status")
+    show-status
+    ;;
+  "google")
+    echo "Using Google DNS..."
+    sudo networksetup -setdnsservers Wi-Fi 8.8.8.8 8.8.4.4
+    show-status
+    ;;
+  "cloudflare")
+    echo "Using Cloudflare DNS..."
+    sudo networksetup -setdnsservers Wi-Fi 1.1.1.1
+    show-status
+    ;;
+  "reset")
+    echo "Resetting DNS..."
+    sudo networksetup -setdnsservers Wi-Fi empty
+    show-status
+    ;;
+  "flush")
+    echo "Flushing DNS cache..."
+    sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder
+    echo "Done flushing."
+    ;;
+  *)
+    show-help
+    ;;
+esac

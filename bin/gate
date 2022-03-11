@@ -1,0 +1,39 @@
+#!/bin/bash
+# Perform operations on Gatekeeper
+
+function show-help() {
+  echo "usage: gate <command>"
+  echo
+  echo "commands:"
+  echo "  status     show Gatekeeper status"
+  echo "  enable     turn on Gatekeeper"
+  echo "  disable    turn off Gatekeeper"
+}
+
+function show-status() {
+  echo "Gatekeeper is: $(spctl --status | cut -c 13-)"
+}
+
+if [[ "$#" = 0 ]]; then
+  show-help
+  exit 0
+fi
+
+case "$1" in
+  "status")
+    show-status
+    ;;
+  "enable")
+    echo "Enabling Gatekeeper..."
+    sudo spctl --master-enable
+    show-status
+    ;;
+  "disable")
+    echo "Disabling Gatekeeper..."
+    sudo spctl --master-disable
+    show-status
+    ;;
+  *)
+    show-help
+    ;;
+esac
