@@ -57,8 +57,4 @@
 [alias]
   discard = checkout -- *
   drop = reset --hard @{u}
-  pr = ! ~/.scripts/git/pr
-  purge = ! ~/.scripts/git/purge
-  spring = ! ~/.scripts/git/spring
-  tidy = ! ~/.scripts/git/tidy
   unstage = reset HEAD *
