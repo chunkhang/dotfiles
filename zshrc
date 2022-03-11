@@ -45,6 +45,13 @@ manpath=(
   $manpath
 )
 
+# Functions
+
+function refresh() {
+  echo "Refreshing shell..."
+  exec "$SHELL" --login
+}
+
 # Force emacs mode (do not assume vi mode)
 bindkey -e
 
