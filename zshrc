@@ -35,6 +35,7 @@ path=(
   $HOMEBREW_HOME/sbin
   $HOME/.cargo/bin
   $HOME/.local/bin
+  $HOME/.bin
   $path
 )
 
