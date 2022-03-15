@@ -2,11 +2,24 @@
 # Shortcuts
 ###############################################################################
 
+# Open terminal
 fn - space : open /Applications/Alacritty.app
 
+# Open finder
+fn - h     : open ~
+fn - d     : open ~/Downloads
+
+# Open settings (,)
+fn - 0x2B  : open /System/Applications/System\ Preferences.app
+
+# Manage airpods
 fn - a : ~/.scripts/bluetooth/airpods/toggle
 fn - q : ~/.scripts/bluetooth/airpods/battery
+
+# Manage uebersicht
 fn - u : ~/.scripts/uebersicht/restart
+
+# Manager yabai
 fn - y : ~/.scripts/yabai/restart
 
 ###############################################################################
