@@ -76,7 +76,7 @@ Plug 'chunkhang/msmtp.vim'
 Plug 'chunkhang/vim-mbsync'
 Plug 'dyng/ctrlsf.vim' | runtime config/ctrlsf.vim
 Plug 'embear/vim-localvimrc' | runtime config/localvimrc.vim
-Plug 'ervandew/supertab' | runtime config/supertab.vim
+Plug 'chunkhang/supertab' | runtime config/supertab.vim
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } | runtime config/go.vim
 Plug 'godlygeek/tabular'
 Plug 'hail2u/vim-css3-syntax'
