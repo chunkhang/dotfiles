@@ -156,27 +156,5 @@ macro index pa \
 "<change-folder>=personal/archive<enter>" \
 "switch to personal archive"
 
-# -----------------------------------------------------------------------------
-# Work
-# -----------------------------------------------------------------------------
-macro index ww \
-"<change-folder>=work/inbox<enter>" \
-"switch to work inbox"
-macro index wi \
-"<change-folder>=work/inbox<enter>" \
-"switch to work inbox"
-macro index wd \
-"<change-folder>=work/drafts<enter>" \
-"switch to work drafts"
-macro index ws \
-"<change-folder>=work/sent<enter>" \
-"switch to work sent"
-macro index wt \
-"<change-folder>=work/trash<enter>" \
-"switch to work trash"
-macro index wa \
-"<change-folder>=work/archive<enter>" \
-"switch to work archive"
-
 # }}}
 # =============================================================================

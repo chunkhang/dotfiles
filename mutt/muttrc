@@ -212,14 +212,6 @@ mailboxes =personal/drafts
 mailboxes =personal/trash
 mailboxes =personal/archive
 
-# Work
-named-mailboxes "Work [w]"  =placeholder_2
-mailboxes =work/inbox
-mailboxes =work/sent
-mailboxes =work/drafts
-mailboxes =work/trash
-mailboxes =work/archive
-
 # }}}
 # =============================================================================
 # SOURCES {{{
@@ -242,7 +234,6 @@ source accounts/personal
 
 # Accounts
 folder-hook personal "source $HOME/.mutt/accounts/personal"
-folder-hook work "source $HOME/.mutt/accounts/work"
 
 # }}}
 # =============================================================================

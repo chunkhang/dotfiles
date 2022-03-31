@@ -21,20 +21,6 @@ MaildirStore personal-local
 Path ~/Mail/personal/
 Inbox ~/Mail/personal/inbox
 
-IMAPAccount work
-Host imap.gmail.com
-User marcus.mu@omnilytics.co
-SSLType IMAPS
-AuthMechs LOGIN
-PassCmd "security find-internet-password -s imap.gmail.com -a marcus.mu@omnilytics.co -w"
-
-IMAPStore work-remote
-Account work
-
-MaildirStore work-local
-Path ~/Mail/work/
-Inbox ~/Mail/work/inbox
-
 # =============================================================================
 # PERSONAL
 # =============================================================================
@@ -65,34 +51,3 @@ Channel personal-drafts
 Channel personal-sent
 Channel personal-trash
 Channel personal-archive
-
-# =============================================================================
-# WORK ACCOUNT
-# =============================================================================
-
-Channel work-inbox
-Far :work-remote:
-Near :work-local:
-
-Channel work-drafts
-Far :work-remote:"[Gmail]/Drafts"
-Near :work-local:drafts
-
-Channel work-sent
-Far :work-remote:"[Gmail]/Sent Mail"
-Near :work-local:sent
-
-Channel work-trash
-Far :work-remote:"[Gmail]/Trash"
-Near :work-local:trash
-
-Channel work-archive
-Far :work-remote:"[Gmail]/All Mail"
-Near :work-local:archive
-
-Group work
-Channel work-inbox
-Channel work-drafts
-Channel work-sent
-Channel work-trash
-Channel work-archive
