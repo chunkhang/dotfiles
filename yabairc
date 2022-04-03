@@ -38,6 +38,8 @@ yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^Digital Colour Meter$" manage=off
 yabai -m rule --add app="^FaceTime$" manage=off
 yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Firefox$" title="^Opening " manage=off
+yabai -m rule --add app="^Firefox$" title="^Picture-in-Picture$" manage=off
 yabai -m rule --add app="^Font Book$" manage=off
 yabai -m rule --add app="^Installer$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
