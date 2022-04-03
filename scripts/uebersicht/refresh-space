@@ -2,6 +2,10 @@
 
 widget_id="widgets-space-index-jsx"
 
+if ! pgrep Übersicht >/dev/null; then
+  exit 0
+fi
+
 osascript <<EOF
 tell application id "tracesOf.Uebersicht" to refresh widget \
   id "${widget_id}"
