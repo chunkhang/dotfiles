@@ -33,6 +33,7 @@ yabai -m config window_opacity               off
 yabai -m rule --add app="^Accessibility Inspector$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^AlDente$" manage=off
+yabai -m rule --add app="^Calendar$" manage=off
 yabai -m rule --add app="^coconutBattery$" manage=off
 yabai -m rule --add app="^Disk Utility$" manage=off
 yabai -m rule --add app="^Digital Colour Meter$" manage=off
