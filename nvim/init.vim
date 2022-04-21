@@ -73,10 +73,10 @@ Plug 'cespare/vim-toml' | runtime config/toml.vim
 Plug 'chemzqm/vim-jsx-improve' | runtime config/jsx_improve.vim
 Plug 'chrisbra/Colorizer' | runtime config/colorizer.vim
 Plug 'chunkhang/msmtp.vim'
+Plug 'chunkhang/supertab' | runtime config/supertab.vim
 Plug 'chunkhang/vim-mbsync'
 Plug 'dyng/ctrlsf.vim' | runtime config/ctrlsf.vim
 Plug 'embear/vim-localvimrc' | runtime config/localvimrc.vim
-Plug 'chunkhang/supertab' | runtime config/supertab.vim
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } | runtime config/go.vim
 Plug 'godlygeek/tabular'
 Plug 'hail2u/vim-css3-syntax'
@@ -101,6 +101,7 @@ Plug 'plasticboy/vim-markdown' | runtime config/markdown.vim
 Plug 'rhysd/conflict-marker.vim'
 Plug 'rhysd/git-messenger.vim' | runtime config/git_messenger.vim
 Plug 'romgrk/barbar.nvim' | runtime config/barbar.vim
+Plug 'tomlion/vim-solidity'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary' | runtime config/commentary.vim
