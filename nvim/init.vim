@@ -38,8 +38,8 @@ let g:mapleader = ' '
 
 " Providers
 let $PATH = 
-      \ $HOME . '/.nvm/versions/node/v16.8.0/bin' .
-      \ $HOME . '/.pyenv/versions/3.10.0/bin' .
+      \ $HOME . '/.nvm/versions/node/v16.8.0/bin:' .
+      \ $HOME . '/.pyenv/versions/3.10.0/bin:' .
       \ $PATH
 let g:node_host_prog = $HOME . '/.nvm/versions/node/v16.8.0/bin/neovim-node-host'
 let g:python3_host_prog = $HOME . '/.pyenv/versions/3.10.0/bin/python3'
