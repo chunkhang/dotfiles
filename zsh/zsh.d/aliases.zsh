@@ -62,6 +62,7 @@ alias fd='fd --hidden'
 alias tree='tree -a'
 alias ncdu='ncdu --color=dark --confirm-quit'
 alias newsboat='newsboat --quiet'
+alias xclip='xclip -selection clipboard'
 
 # ------------------------------------------------------------------------------
 # Utilities

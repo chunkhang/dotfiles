@@ -47,6 +47,20 @@ let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0
 let g:loaded_perl_provider = 0
 
+" Clipboard
+let g:clipboard = {
+      \ 'name': 'xclip',
+      \ 'copy': {
+      \    '+': 'xclip -selection clipboard',
+      \    '*': 'xclip -selection clipboard',
+      \  },
+      \ 'paste': {
+      \    '+': 'xclip -selection clipboard -out',
+      \    '*': 'xclip -selection clipboard -out',
+      \ },
+      \ 'cache_enabled': 1,
+      \ }
+
 augroup init_settings
   autocmd!
   " Enable highlight on yank
