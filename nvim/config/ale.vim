@@ -32,8 +32,6 @@ let g:ale_fixers = {
       \ 'markdown': ['prettier'],
       \ 'python': ['black'],
       \ 'scss': ['prettier'],
-      \ 'typescript': ['prettier'],
-      \ 'typescriptreact': ['prettier'],
       \ 'yaml': ['prettier'],
       \ }
 
