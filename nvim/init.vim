@@ -89,6 +89,7 @@ Plug 'chrisbra/Colorizer' | runtime config/colorizer.vim
 Plug 'chunkhang/msmtp.vim'
 Plug 'chunkhang/supertab' | runtime config/supertab.vim
 Plug 'chunkhang/vim-mbsync'
+Plug 'digitaltoad/vim-pug'
 Plug 'dyng/ctrlsf.vim' | runtime config/ctrlsf.vim
 Plug 'embear/vim-localvimrc' | runtime config/localvimrc.vim
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } | runtime config/go.vim
