@@ -6,7 +6,7 @@
 
 - link:
     ~/.alacritty.yml:
-    ~/.bash_profile:
+    # ~/.bash_profile:
     ~/.bin:
     ~/.config/khal:
     ~/.config/nvim:
