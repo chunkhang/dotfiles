@@ -61,6 +61,8 @@ let g:clipboard = {
       \ 'cache_enabled': 1,
       \ }
 
+let g:netrw_browsex_viewer = 'gio open'
+
 augroup init_settings
   autocmd!
   " Enable highlight on yank
