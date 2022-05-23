@@ -26,7 +26,7 @@ function! typescript#gf() abort
   " Resolve import aliases
   let l:imports = [l:match]
   let l:aliases = {
-        \ '\~': ['.'],
+        \ '\~': ['.', './src'],
         \ }
   for l:alias in items(l:aliases)
     let l:alias_from = l:alias[0]
