@@ -51,6 +51,7 @@ reload-time 60
 reload-threads 4
 
 confirm-mark-all-feeds-read no
+confirm-mark-feed-read no
 
 # Feed
 
