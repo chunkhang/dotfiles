@@ -1,5 +1,13 @@
+# Load gvm
+
+if [[ -f "${HOME}/.gvm/scripts/gvm" ]]; then
+  source "${HOME}/.gvm/scripts/gvm"
+fi
+
+# Load plugins
+
 if ! command -v plug &>/dev/null; then
-  source "$HOME/.zsh/plug.zsh"
+  source "${HOME}/.zsh/plug.zsh"
 fi
 
 plug use "davidparsson/zsh-pyenv-lazy" "pyenv-lazy.plugin.zsh"
