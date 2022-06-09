@@ -22,9 +22,20 @@ elif [[ "$host" =~ "bitbucket" ]]; then
   else
     url="https://${host}/${repo}/pull-requests/new?source=${source_branch}&destination=${dest_branch}"
   fi
+elif [[ "$host" =~ "gitlab" ]]; then
+  if [[ -z "$dest_branch" ]]; then
+    url="https://${host}/${repo}/-/merge_requests/new?merge_request[source_branch]=${source_branch}"
+  else
+    url="https://${host}/${repo}/-/merge_requests/new?merge_request[source_branch]=${source_branch}&merge_request[target_branch]=${dest_branch}"
+  fi
 else
   exit 1
 fi
 
 echo "$url"
-open "$url"
+
+if [[ "$(uname -s)" = "Darwin" ]]; then
+  open "$url"
+else
+  echo "$url" | xclip
+fi

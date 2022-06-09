@@ -12,15 +12,6 @@ show-keymap-hint no
 
 datetime-format "%a %d/%m %R"
 
-color background          default  black
-color listnormal          default  black
-color listfocus           default  color8
-color listnormal_unread   yellow   black
-color listfocus_unread    yellow   color8
-color info                blue     black
-color article             default  black
-color end-of-text-marker  black    black
-
 feedlist-title-format      "[Feeds]%?T? <%T>? %>- (%u/%t)"
 articlelist-title-format   "[Feed] %T %>- (%u/%t)"
 itemview-title-format      "[Article] %T %>- (%F)"
@@ -51,6 +42,7 @@ reload-time 60
 reload-threads 4
 
 confirm-mark-all-feeds-read no
+confirm-mark-feed-read no
 
 # Feed
 
@@ -66,8 +58,6 @@ bookmark-autopilot yes
 # Article
 
 text-width 80
-
-browser "open --background %u"
 
 save-path ~/Downloads
 
@@ -106,3 +96,8 @@ bind-key K prev article
 bind-key b bookmark
 
 bind-key o open-in-browser-and-mark-read
+
+# System specific config
+
+`if [[ "$(uname -s)" = "Darwin" ]]; then echo "include config.darwin"; fi`
+`if [[ "$(uname -s)" = "Linux" ]]; then echo "include config.linux"; fi`
