@@ -15,6 +15,7 @@
     ~/.digrc:
     ~/.fdignore:
     ~/.gitconfig:
+    ~/.gitconfig.work:
     ~/.gitignore_global:
     ~/.hammerspoon:
     ~/.hushlogin:

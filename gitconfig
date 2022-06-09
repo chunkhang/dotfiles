@@ -1,6 +1,9 @@
 [user]
   name = Marcus Mu
   email = chunkhang@gmail.com
+# marcusMBP
+[includeIf "gitdir:~/Workspace/work/sygnum/"]
+  path = .gitconfig.work
 
 [core]
   editor = nvim
