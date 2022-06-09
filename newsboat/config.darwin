@@ -1,0 +1,10 @@
+color background          default  black
+color listnormal          default  black
+color listfocus           default  color8
+color listnormal_unread   yellow   black
+color listfocus_unread    yellow   color8
+color info                blue     black
+color article             default  black
+color end-of-text-marker  black    black
+
+browser "open --background %u"

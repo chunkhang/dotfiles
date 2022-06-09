@@ -33,4 +33,9 @@ else
 fi
 
 echo "$url"
-open "$url" 2>/dev/null
+
+if [[ "$(uname -s)" = "Darwin" ]]; then
+  open "$url"
+else
+  echo "$url" | xclip
+fi

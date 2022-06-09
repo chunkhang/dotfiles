@@ -73,7 +73,11 @@ export FZF_DEFAULT_OPTS='
   --color=fg:-1,bg:-1,hl:#c678dd,fg+:#ffffff,bg+:#282c34,hl+:#d858fe
   --color=info:#98c379,prompt:#61afef,pointer:#be5046,marker:#e5c07b,spinner:#61afef,header:#61afef
 '
-source "$HOME/.fzf.zsh"
+if [[ "$(uname -s)" = "Darwin" ]]; then
+  source "${HOMEBREW_HOME}/opt/fzf/shell/key-bindings.zsh"
+else
+  source "${HOME}/.fzf.zsh"
+fi
 bindkey -r '\ec'
 
 # Load plugins

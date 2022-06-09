@@ -37,31 +37,40 @@ set updatetime=500
 let g:mapleader = ' '
 
 " Providers
-let $PATH = 
-      \ $HOME . '/.nvm/versions/node/v16.8.0/bin:' .
-      \ $HOME . '/.pyenv/versions/3.10.0/bin:' .
-      \ $PATH
-let g:node_host_prog = $HOME . '/.nvm/versions/node/v16.8.0/bin/neovim-node-host'
-let g:python3_host_prog = $HOME . '/.pyenv/versions/3.10.0/bin/python3'
+if has('mac')
+  let $PATH = 
+        \ '/opt/homebrew/opt/node@16/bin:' .
+        \ '/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin:' .
+        \ $PATH
+  let g:node_host_prog = '/opt/homebrew/bin/neovim-node-host'
+  let g:python3_host_prog = '/opt/homebrew/opt/python@3.10/bin/python3'
+else
+  let $PATH = 
+        \ $HOME . '/.nvm/versions/node/v16.8.0/bin:' .
+        \ $HOME . '/.pyenv/versions/3.10.0/bin:' .
+        \ $PATH
+  let g:node_host_prog = $HOME . '/.nvm/versions/node/v16.8.0/bin/neovim-node-host'
+  let g:python3_host_prog = $HOME . '/.pyenv/versions/3.10.0/bin/python3'
+endif
 let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0
 let g:loaded_perl_provider = 0
 
-" Clipboard
-let g:clipboard = {
-      \ 'name': 'xclip',
-      \ 'copy': {
-      \    '+': 'xclip -selection clipboard',
-      \    '*': 'xclip -selection clipboard',
-      \  },
-      \ 'paste': {
-      \    '+': 'xclip -selection clipboard -out',
-      \    '*': 'xclip -selection clipboard -out',
-      \ },
-      \ 'cache_enabled': 1,
-      \ }
-
-let g:netrw_browsex_viewer = 'gio open'
+if has('linux')
+  let g:clipboard = {
+        \ 'name': 'xclip',
+        \ 'copy': {
+        \    '+': 'xclip -selection clipboard',
+        \    '*': 'xclip -selection clipboard',
+        \  },
+        \ 'paste': {
+        \    '+': 'xclip -selection clipboard -out',
+        \    '*': 'xclip -selection clipboard -out',
+        \ },
+        \ 'cache_enabled': 1,
+        \ }
+  let g:netrw_browsex_viewer = 'gio open'
+endif
 
 augroup init_settings
   autocmd!

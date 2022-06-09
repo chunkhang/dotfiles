@@ -12,15 +12,6 @@ show-keymap-hint no
 
 datetime-format "%a %d/%m %R"
 
-color background          default  default
-color listnormal          default  default
-color listfocus           default  black
-color listnormal_unread   yellow   default
-color listfocus_unread    yellow   black
-color info                blue     default
-color article             default  default
-color end-of-text-marker  default  default
-
 feedlist-title-format      "[Feeds]%?T? <%T>? %>- (%u/%t)"
 articlelist-title-format   "[Feed] %T %>- (%u/%t)"
 itemview-title-format      "[Article] %T %>- (%F)"
@@ -68,8 +59,6 @@ bookmark-autopilot yes
 
 text-width 80
 
-browser "gio open %u 2>/dev/null"
-
 save-path ~/Downloads
 
 # Bindings
@@ -107,3 +96,8 @@ bind-key K prev article
 bind-key b bookmark
 
 bind-key o open-in-browser-and-mark-read
+
+# System specific config
+
+`if [[ "$(uname -s)" = "Darwin" ]]; then echo "include config.darwin"; fi`
+`if [[ "$(uname -s)" = "Linux" ]]; then echo "include config.linux"; fi`
