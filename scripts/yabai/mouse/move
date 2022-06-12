@@ -1,0 +1,5 @@
+#!/bin/sh
+
+display="$1"
+
+open --background "hammerspoon://move-mouse-to-display?display=${display}"

@@ -108,9 +108,9 @@ shift + ctrl - 0 : yabai -m window --space 10; yabai -m space --focus 10
 ###############################################################################
 
 # Focus monitor
-cmd + ctrl - down -> : yabai -m display --focus 1
-cmd + ctrl - up -> : yabai -m display --focus 2
+cmd + ctrl - down : yabai -m display --focus 1; ~/.scripts/yabai/mouse/move 1
+cmd + ctrl - up : yabai -m display --focus 2; ~/.scripts/yabai/mouse/move 2
 
 # Send window to monitor
-cmd + shift - down : yabai -m window --display 1; yabai -m display --focus 1
-cmd + shift - up : yabai -m window --display 2; yabai -m display --focus 2
+cmd + shift - down : yabai -m window --display 1; yabai -m display --focus 1; ~/.scripts/yabai/mouse/move 1
+cmd + shift - up : yabai -m window --display 2; yabai -m display --focus 2; ~/.scripts/yabai/mouse/move 2
