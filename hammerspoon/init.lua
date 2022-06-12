@@ -10,7 +10,7 @@ hs.urlevent.bind("display-airpods-battery", function(_, params)
   if params["mac"] == nil then
     hs.notify.new({
       title = "Hammerspoon",
-      informativeText = "Expected \"mac\" parameter"
+      informativeText = "Expected \"mac\" parameter",
     }):send()
     return
   end
@@ -20,7 +20,7 @@ hs.urlevent.bind("display-airpods-battery", function(_, params)
   if #devices == 0 then
     hs.notify.new({
       title = "Hammerspoon",
-      informativeText = "No Bluetooth devices connected"
+      informativeText = "No Bluetooth devices connected",
     }):send()
     return
   end
@@ -36,7 +36,7 @@ hs.urlevent.bind("display-airpods-battery", function(_, params)
   if not airpods then
     hs.notify.new({
       title = "Hammerspoon",
-      informativeText = "AirPods not connected"
+      informativeText = "AirPods not connected",
     }):send()
     return
   end
@@ -51,6 +51,47 @@ hs.urlevent.bind("display-airpods-battery", function(_, params)
   end
   hs.notify.new({
     title = airpods.name,
-    informativeText = info
+    informativeText = info,
   }):send()
+end)
+
+-- Move mouse to specified display
+hs.urlevent.bind("move-mouse-to-display", function(_, params)
+  -- Check parameters
+  if params["display"] == nil then
+    hs.notify.new({
+      title = "Hammerspoon",
+      informativeText = "Expected \"display\" parameter",
+    }):send()
+    return
+  end
+
+  -- Parse param to number
+  local display = tonumber(params["display"])
+  if display == nil then
+    hs.notify.new({
+      title = "Hammerspoon",
+      informativeText = "Expected \"display\" parameter to be a number",
+    }):send()
+    return
+  end
+
+  -- Get intended screen
+  local screens = hs.screen.allScreens()
+  local screen = screens[display]
+  if screen == nil then
+    hs.notify.new({
+      title = "Hammerspoon",
+      informativeText = string.format("Display %s was not found", display),
+    }):send()
+    return
+  end
+
+  -- Move mouse to center point relative to screen
+  local mode = screen:currentMode()
+  local point = {
+    x = mode.w // 2,
+    y = mode.h // 2,
+  }
+  hs.mouse.setRelativePosition(point, screen)
 end)
