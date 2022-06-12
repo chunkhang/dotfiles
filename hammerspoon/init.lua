@@ -56,6 +56,7 @@ hs.urlevent.bind("display-airpods-battery", function(_, params)
 end)
 
 -- Move mouse to specified display
+local screenPoints = {}
 hs.urlevent.bind("move-mouse-to-display", function(_, params)
   -- Check parameters
   if params["display"] == nil then
@@ -87,11 +88,19 @@ hs.urlevent.bind("move-mouse-to-display", function(_, params)
     return
   end
 
-  -- Move mouse to center point relative to screen
-  local mode = screen:currentMode()
-  local point = {
-    x = mode.w // 2,
-    y = mode.h // 2,
-  }
+  -- Get the center point of screen
+  -- Also cache the point to avoid calculating it again
+  local uuid = screen:getUUID()
+  local point = screenPoints[screen:getUUID()]
+  if point == nil then
+    local mode = screen:currentMode()
+    point = {
+      x = mode.w // 2,
+      y = mode.h // 2,
+    }
+    screenPoints[uuid] = point
+  end
+
+  -- Move the mouse
   hs.mouse.setRelativePosition(point, screen)
 end)
