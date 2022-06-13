@@ -4,6 +4,9 @@
 # marcusMBP
 [includeIf "gitdir:~/Workspace/work/sygnum/"]
   path = .gitconfig.work
+# marcusTP
+[includeIf "gitdir:~/Workspace/sygnum/"]
+  path = .gitconfig.work
 
 [core]
   editor = nvim
