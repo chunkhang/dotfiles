@@ -6,6 +6,6 @@ output=$( \
 )
 
 if [[ "$?" == 0 ]]; then
-  target_session=$(echo "$output" | cut -d ' ' -f 1)
+  target_session=$(echo "$output" | cut -d ' ' -f 2-)
   tmux switch-client -t "$target_session"
 fi
