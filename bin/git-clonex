@@ -1,0 +1,13 @@
+#!/bin/sh
+# Create folder structure before cloning repository
+
+url="$1"
+if [[ -z "$url" ]]; then
+  echo "usage: git clonex <repository url>"
+  exit 1
+fi
+
+path="$(echo "$url" | cut -d ':' -f 2- | sed 's/\.git$//')"
+mkdir -p "$path"
+
+git clone "$url" "$path"

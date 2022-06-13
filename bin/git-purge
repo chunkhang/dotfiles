@@ -3,7 +3,7 @@
 
 branch="$1"
 if [[ -z "$branch" ]]; then
-  echo "usage: purge <branch>"
+  echo "usage: git purge <branch>"
   exit 1
 fi
 
