@@ -1,16 +1,21 @@
-https://feeds.bbci.co.uk/news/world/rss.xml "~BBC News" news world
-https://www.theguardian.com/world/rss "~The Guardian" news world
-filter:~/.scripts/newsboat/decode:https://www.thestar.com.my/rss/news/nation "~The Star" news malaysia
-filter:~/.scripts/newsboat/decode:https://www.malaymail.com/feed/rss/malaysia "~Malay Mail" news malaysia
-https://techcrunch.com/feed/ "~TechCrunch" news tech
-http://feeds.macrumors.com/MacRumors-All "~MacRumors" news tech apple
+https://feeds.bbci.co.uk/news/world/rss.xml "~BBC News"
+https://www.theguardian.com/world/rss "~The Guardian"
 
-https://www.wired.com/feed/rss "~Wired" magazine
+https://www.straitstimes.com/news/singapore/rss.xml "~The Straits Times"
+https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=10416 "~CNA"
 
-https://hnrss.org/frontpage "~Hacker News" forum tech
-https://www.reddit.com/r/programming/top.rss?sort=tophot.rss&t=day "~/r/programming" forum reddit tech
-https://www.reddit.com/r/vim/top.rss?sort=tophot.rss&t=day?t=day "~/r/vim" forum reddit tech vim
-https://www.reddit.com/r/neovim/top.rss?sort=tophot.rss&t=day?t=day "~/r/neovim" forum reddit tech vim
+filter:~/.scripts/newsboat/decode:https://www.thestar.com.my/rss/news/nation "~The Star"
+filter:~/.scripts/newsboat/decode:https://www.malaymail.com/feed/rss/malaysia "~Malay Mail"
 
-https://kaiwern.com/index.xml "~Kai Wern" blog
-https://japorized.ink/feed.xml "~Johnson Ng" blog
+https://techcrunch.com/feed/ "~TechCrunch"
+http://feeds.macrumors.com/MacRumors-All "~MacRumors"
+
+https://www.wired.com/feed/rss "~Wired"
+
+https://hnrss.org/frontpage "~Hacker News"
+https://www.reddit.com/r/programming/top.rss?sort=tophot.rss&t=day "~/r/programming"
+https://www.reddit.com/r/vim/top.rss?sort=tophot.rss&t=day?t=day "~/r/vim"
+https://www.reddit.com/r/neovim/top.rss?sort=tophot.rss&t=day?t=day "~/r/neovim"
+
+https://kaiwern.com/index.xml "~Kai Wern"
+https://japorized.ink/feed.xml "~Johnson Ng"
