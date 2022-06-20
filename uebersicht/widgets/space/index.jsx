@@ -20,7 +20,7 @@ const classes = makeClasses({
   },
 });
 
-function Space({ index, focused, windows }) {
+function Space({ index, focused, windows, display }) {
   const style = {};
   if (!focused) {
     style.color = theme.colors.grey;
@@ -29,6 +29,7 @@ function Space({ index, focused, windows }) {
   return (
     <div style={style}>
       <span>{index}</span>
+      <span>{display > 1 ? '^' : null}</span>
       {windows.length > 0 ? <span>+</span> : null}
     </div>
   );
@@ -53,6 +54,7 @@ const render = ({ spaces, error }) => {
             index={space.index}
             focused={space['has-focus']}
             windows={space.windows}
+            display={space.display}
           />
         </React.Fragment>
       ))}
