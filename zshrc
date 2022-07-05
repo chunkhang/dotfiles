@@ -8,7 +8,7 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=46;34:cd=43;34:su=41;30:sg=46
 export CLICOLOR=1
 
 export LESS=-x4icWRM
-export YDIFF_OPTIONS='--width=0 '
+export YDIFF_OPTIONS='--width=0'
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 export PIPENV_VENV_IN_PROJECT=1
@@ -85,6 +85,9 @@ bindkey -r '\ec'
 if ! command -v plug &>/dev/null; then
   source "${HOME}/.zsh/plug.zsh"
 fi
+
+plug use "ohmyzsh/ohmyzsh" "plugins/aws/aws.plugin.zsh"
+export SHOW_AWS_PROMPT=false
 
 plug use "rupa/z" "z.sh"
 
