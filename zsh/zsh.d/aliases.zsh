@@ -89,6 +89,7 @@ abbr j='just'
 abbr f='flux'
 abbr d='docker'
 abbr g='git'
+abbr h='helm'
 
 # ------------------------------------------------------------------------------
 # Git
