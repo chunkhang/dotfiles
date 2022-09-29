@@ -1,7 +1,8 @@
 setlocal omnifunc=ale#completion#OmniFunc
 
 nnoremap <buffer> <silent> K :ALEHover<CR>
-nnoremap <buffer> <silent> gr :ALEFindReferences<CR>
+nnoremap <buffer> <silent> gr :ALEFindReferences -relative<CR>
+nnoremap <buffer> <silent> gR :ALEFindReferences -relative -quickfix<CR>
 nnoremap <buffer> <silent> <C-]> :ALEGoToDefinition<CR>
 nnoremap <buffer> <silent> <Leader><Space> :ALECodeAction<CR>
 nnoremap <buffer> <silent> gf :call typescript#gf()<CR>
