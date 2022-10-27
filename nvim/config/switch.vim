@@ -10,4 +10,5 @@ let g:switch_custom_definitions = [
       \ [ '0', '1' ],
       \ [ 'off', 'on' ],
       \ [ 'and', 'or' ],
+      \ [ 'public', 'protected', 'private' ],
       \ ]
