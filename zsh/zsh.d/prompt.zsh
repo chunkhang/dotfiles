@@ -84,7 +84,7 @@ function _rprompt() {
     local kube_context=$(kubectl config current-context 2>/dev/null)
     local kube_namespace=$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
     if [[ -n "$kube_context" && -n "$kube_namespace" ]]; then
-      echo -n "kube[${kube_context}:${kube_namespace}]"
+      echo -n "kube:${kube_context}/${kube_namespace}"
     fi
   fi
 }
