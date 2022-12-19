@@ -134,10 +134,9 @@ function context() {
 function _rprompt() {
   # Show current Kubernetes context and namespace
   if [[ "$_rprompt_config[kube]" = 1 ]]; then
-    local kube_context=$(kubectl config current-context 2>/dev/null)
-    local kube_namespace=$(kubectl config view --minify --output 'jsonpath={..namespace}' 2>/dev/null)
-    if [[ -n "$kube_context" && -n "$kube_namespace" ]]; then
-      echo -n "kube:${kube_context}/${kube_namespace}"
+    local kube_state=$(kubectl config get-contexts --no-headers 2>/dev/null | grep '*' | awk '{ printf "%s/%s", $2, $5 }')
+    if [[ -n "$kube_state" ]]; then
+      echo -n "kube:${kube_state}"
     fi
   fi
 }
