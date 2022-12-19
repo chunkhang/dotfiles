@@ -121,11 +121,11 @@ function context() {
   # Toggle rprompt config value
   # We update the config map, but also persist it to file
   if [[ "$_rprompt_config[$key]" = 0 ]]; then
-    echo "Showing ${key} in rprompt..."
+    echo "Showing \"${key}\" in rprompt..."
     _rprompt_config[$key]=1
     _rprompt::set_config "$key" 1
   else
-    echo "Hiding ${key} in rprompt..."
+    echo "Hiding \"${key}\" in rprompt..."
     _rprompt_config[$key]=0
     _rprompt::set_config "$key" 0
   fi
