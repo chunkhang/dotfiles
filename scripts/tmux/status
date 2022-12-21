@@ -29,5 +29,3 @@ kube_status=$(
 if [[ -n "$kube_status" ]]; then
   echo -n "kube:${kube_status}"
 fi
-
-echo
