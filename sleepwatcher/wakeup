@@ -1,3 +1,5 @@
 #!/bin/sh
+# Run by sleepwatcher during wakeup
+# https://formulae.brew.sh/formula/sleepwatcher
 
-echo wakeup
+~/.scripts/sleepwatcher/log wakeup

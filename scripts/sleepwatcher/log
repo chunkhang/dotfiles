@@ -1,0 +1,15 @@
+#!/bin/sh
+
+log_file=~/.sleepwatcher.log
+
+event=$1
+
+timestamp=$(date)
+battery=$(
+  pmset -g batt | \
+  grep --extended-regexp --only-matching "\d+%" | \
+  cut -d % -f 1
+)
+
+printf "${timestamp} | Battery: %3s | Event: ${event}\n" "$battery" \
+  >> "$log_file"
