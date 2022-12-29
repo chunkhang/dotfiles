@@ -12,7 +12,7 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka
+    family: Iosevka Fixed
     style: Light Extended
   bold:
     style: Light Extended
