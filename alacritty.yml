@@ -39,7 +39,7 @@ colors:
     focused_match:
       foreground: "#282c34"
       background: "#e5c07b"
-    bar:
+    footer_bar:
       foreground: "#282c34"
       background: "#abb2bf"
   hints:
