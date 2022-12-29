@@ -54,7 +54,7 @@ yabai -m rule --add app="^Postgres$" manage=off
 yabai -m rule --add app="^Slack$" manage=off
 yabai -m rule --add app="^Stickies$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
-yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^Transmission$" manage=off
 yabai -m rule --add app="^Unclutter$" manage=off
 
