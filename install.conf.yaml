@@ -14,8 +14,8 @@
     ~/.ctags.d:
     ~/.digrc:
     ~/.fdignore:
-    ~/.gitconfig:
     ~/.gitconfig.work:
+    ~/.gitconfig:
     ~/.gitignore_global:
     ~/.hammerspoon:
     ~/.hushlogin:
@@ -32,10 +32,12 @@
     ~/.ripgreprc:
     ~/.scripts:
     ~/.skhdrc:
-    ~/.tmux:
+    ~/.sleep: sleepwatcher/sleep
     ~/.tmux.conf:
+    ~/.tmux:
     ~/.uebersicht:
     ~/.vdirsyncer:
+    ~/.wakeup: sleepwatcher/wakeup
     ~/.weechat:
     ~/.yabairc:
     ~/.zprofile:
