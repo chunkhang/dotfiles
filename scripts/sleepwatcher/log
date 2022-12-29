@@ -1,8 +1,22 @@
 #!/bin/sh
 
 log_file=~/.sleepwatcher.log
+log_days=30
 
 event=$1
+
+# Check if log file was created more than X days ago
+# If so, delete the log file
+
+current_time=$(date +%s)
+file_time=$(stat -f '%SB' -t '%s' "$log_file")
+file_days=$(( ($current_time - $file_time) / (60 * 60 * 24) ))
+
+if [[ "$file_days" -ge "$log_days" ]]; then
+  rm "$log_file"
+fi
+
+# Add entry to log file
 
 timestamp=$(date)
 battery=$(
