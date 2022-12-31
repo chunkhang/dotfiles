@@ -8,12 +8,14 @@ event=$1
 # Check if log file was created more than X days ago
 # If so, delete the log file
 
-current_time=$(date +%s)
-file_time=$(stat -f '%SB' -t '%s' "$log_file")
-file_days=$(( ($current_time - $file_time) / (60 * 60 * 24) ))
+if [[ -f "$log_file" ]]; then
+  current_time=$(date +%s)
+  file_time=$(stat -f '%SB' -t '%s' "$log_file")
+  file_days=$(( ($current_time - $file_time) / (60 * 60 * 24) ))
 
-if [[ "$file_days" -ge "$log_days" ]]; then
-  rm "$log_file"
+  if [[ "$file_days" -ge "$log_days" ]]; then
+    rm "$log_file"
+  fi
 fi
 
 # Add entry to log file
