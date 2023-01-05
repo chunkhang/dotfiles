@@ -6,3 +6,7 @@ if [[ "$(uname -s)" = "Darwin" ]]; then
     source /etc/profile
   fi
 fi
+
+if [[ -f "${HOME}/.bash_profile.local" ]]; then
+  source "${HOME}/.bash_profile.local"
+fi
