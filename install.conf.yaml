@@ -1,8 +1,13 @@
+- clean: ['~']
+
+################################################################################
+
+# Config files
+
 - defaults:
     link:
+      create: true
       relink: true
-
-- clean: ['~']
 
 - link:
     ~/.alacritty.yml:
@@ -44,6 +49,20 @@
     ~/.zsh:
     ~/.zshenv:
     ~/.zshrc:
+
+################################################################################
+
+# Config files override for Linux
+
+- defaults:
+    link:
+      if: '[ "$(uname -s)" = "Linux" ]'
+      force: true
+
+- link:
+    ~/.alacritty.yml: alacritty.linux.yml
+
+################################################################################
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

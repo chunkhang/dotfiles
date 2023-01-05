@@ -1,0 +1,216 @@
+# https://github.com/alacritty/alacritty/blob/master/alacritty.yml
+
+window:
+  padding:
+    x: 15
+    y: 15
+  decorations: full
+
+scrolling:
+  history: 10000
+  multiplier: 2
+
+font:
+  normal:
+    family: Iosevka Fixed
+    style: Extended
+  bold:
+    style: Extended
+  italic:
+    style: Extended
+  bold_italic:
+    style: Extended
+  size: 10.0
+
+colors:
+  primary:
+    background: "#282c34"
+    foreground: "#abb2bf"
+  cursor:
+    text: "#282c34"
+    cursor: "#abb2bf"
+  vi_mode_cursor:
+    text: "#282c34"
+    cursor: "#abb2bf"
+  search:
+    matches:
+      foreground: "#282c34"
+      background: "#abb2bf"
+    focused_match:
+      foreground: "#282c34"
+      background: "#e5c07b"
+    footer_bar:
+      foreground: "#282c34"
+      background: "#abb2bf"
+  hints:
+    start:
+      foreground: "#282c34"
+      background: "#e5c07b"
+    end:
+      foreground: "#e5c07b"
+      background: "#282c34"
+  line_indicator:
+    text: "#282c34"
+    cursor: "#abb2bf"
+  selection:
+    text: "#282c34"
+    background: "#abb2bf"
+  normal:
+    black: "#282c34"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#e5c07b"
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#5c6370"
+  bright:
+    black: "#3e4452"
+    red: "#e06c75"
+    green: "#98c379"
+    yellow: "#e5c07b"
+    blue: "#61afef"
+    magenta: "#c678dd"
+    cyan: "#56b6c2"
+    white: "#abb2bf"
+
+selection:
+  save_to_clipboard: true
+
+cursor:
+  style:
+    blinking: On
+  blink_interval: 500
+
+alt_send_esc: false
+
+key_bindings:
+
+  # Window
+  - { key: C, mods: Command, action: Copy }
+  - { key: V, mods: Command, action: Paste }
+  - { key: N, mods: Command, action: CreateNewWindow }
+  - { key: H, mods: Command, action: None }
+  - { key: M, mods: Command, action: None }
+  - { key: W, mods: Command, action: Quit }
+  - { key: Q, mods: Command, action: Quit }
+  - { key: Q, mods: Command, action: None }
+  - { key: W, mods: Command, action: None }
+
+  # Display
+  - { key: Key0, mods: Command, action: ResetFontSize }
+  - { key: Equals, mods: Command, action: IncreaseFontSize }
+  - { key: Minus, mods: Command, action: DecreaseFontSize }
+  - { key: K, mods: Command, mode: ~Vi|~Search, action: None }
+
+  # Searching
+  - { key: F, mods: Command, mode: ~Search, action: SearchBackward }
+  - { key: B, mods: Command, mode: ~Search, action: None }
+  - { key: Return, mode: Search|~Vi, action: SearchFocusNext }
+  - { key: Return, mods: Shift, mode: Search|~Vi, action: SearchFocusPrevious }
+  - { key: Up, mode: Search, action: SearchFocusNext }
+  - { key: Down, mode: Search, action: SearchFocusPrevious }
+
+  # Editing
+  - { key: Left, mods: Command, chars: "\x01" }
+  - { key: Right, mods: Command, chars: "\x05" }
+  - { key: Back, mods: Command, chars: "\x15" }
+
+  # Use alt key as meta
+  # https://github.com/alacritty/alacritty/issues/2017#issuecomment-581707489
+  - { key: Left, mods: Alt, chars: "\eb" }
+  - { key: Right, mods: Alt, chars: "\ef" }
+  - { key: A, mods: Alt, chars: "\ea" }
+  - { key: A, mods: Alt|Shift, chars: "\eA" }
+  - { key: B, mods: Alt, chars: "\eb" }
+  - { key: B, mods: Alt|Shift, chars: "\eB" }
+  - { key: C, mods: Alt, chars: "\ec" }
+  - { key: C, mods: Alt|Shift, chars: "\eC" }
+  - { key: D, mods: Alt, chars: "\ed" }
+  - { key: D, mods: Alt|Shift, chars: "\eD" }
+  - { key: E, mods: Alt, chars: "\ee" }
+  - { key: E, mods: Alt|Shift, chars: "\eE" }
+  - { key: F, mods: Alt, chars: "\ef" }
+  - { key: F, mods: Alt|Shift, chars: "\eF" }
+  - { key: G, mods: Alt, chars: "\eg" }
+  - { key: G, mods: Alt|Shift, chars: "\eG" }
+  - { key: H, mods: Alt, chars: "\eh" }
+  - { key: H, mods: Alt|Shift, chars: "\eH" }
+  - { key: I, mods: Alt, chars: "\ei" }
+  - { key: I, mods: Alt|Shift, chars: "\eI" }
+  - { key: J, mods: Alt, chars: "\ej" }
+  - { key: J, mods: Alt|Shift, chars: "\eJ" }
+  - { key: K, mods: Alt, chars: "\ek" }
+  - { key: K, mods: Alt|Shift, chars: "\eK" }
+  - { key: L, mods: Alt, chars: "\el" }
+  - { key: L, mods: Alt|Shift, chars: "\eL" }
+  - { key: M, mods: Alt, chars: "\em" }
+  - { key: M, mods: Alt|Shift, chars: "\eM" }
+  - { key: N, mods: Alt, chars: "\en" }
+  - { key: N, mods: Alt|Shift, chars: "\eN" }
+  - { key: O, mods: Alt, chars: "\eo" }
+  - { key: O, mods: Alt|Shift, chars: "\eO" }
+  - { key: P, mods: Alt, chars: "\ep" }
+  - { key: P, mods: Alt|Shift, chars: "\eP" }
+  - { key: Q, mods: Alt, chars: "\eq" }
+  - { key: Q, mods: Alt|Shift, chars: "\eQ" }
+  - { key: R, mods: Alt, chars: "\er" }
+  - { key: R, mods: Alt|Shift, chars: "\eR" }
+  - { key: S, mods: Alt, chars: "\es" }
+  - { key: S, mods: Alt|Shift, chars: "\eS" }
+  - { key: T, mods: Alt, chars: "\et" }
+  - { key: T, mods: Alt|Shift, chars: "\eT" }
+  - { key: U, mods: Alt, chars: "\eu" }
+  - { key: U, mods: Alt|Shift, chars: "\eU" }
+  - { key: V, mods: Alt, chars: "\ev" }
+  - { key: V, mods: Alt|Shift, chars: "\eV" }
+  - { key: W, mods: Alt, chars: "\ew" }
+  - { key: W, mods: Alt|Shift, chars: "\eW" }
+  - { key: X, mods: Alt, chars: "\ex" }
+  - { key: X, mods: Alt|Shift, chars: "\eX" }
+  - { key: Y, mods: Alt, chars: "\ey" }
+  - { key: Y, mods: Alt|Shift, chars: "\eY" }
+  - { key: Z, mods: Alt, chars: "\ez" }
+  - { key: Z, mods: Alt|Shift, chars: "\eZ" }
+  - { key: Key1, mods: Alt, chars: "\e1" }
+  - { key: Key1, mods: Alt|Shift, chars: "\e!" }
+  - { key: Key2, mods: Alt, chars: "\e2" }
+  - { key: Key2, mods: Alt|Shift, chars: "\e#" }
+  - { key: Key3, mods: Alt, chars: "\e3" }
+  - { key: Key3, mods: Alt|Shift, chars: "\e#" }
+  - { key: Key4, mods: Alt, chars: "\e4" }
+  - { key: Key4, mods: Alt|Shift, chars: "\e$" }
+  - { key: Key5, mods: Alt, chars: "\e5" }
+  - { key: Key5, mods: Alt|Shift, chars: "\e%" }
+  - { key: Key6, mods: Alt, chars: "\e6" }
+  - { key: Key6, mods: Alt|Shift, chars: "\e^" }
+  - { key: Key7, mods: Alt, chars: "\e7" }
+  - { key: Key7, mods: Alt|Shift, chars: "\e&" }
+  - { key: Key8, mods: Alt, chars: "\e8" }
+  - { key: Key8, mods: Alt|Shift, chars: "\e*" }
+  - { key: Key9, mods: Alt, chars: "\e9" }
+  - { key: Key9, mods: Alt|Shift, chars: "\e(" }
+  - { key: Key0, mods: Alt, chars: "\e0" }
+  - { key: Key0, mods: Alt|Shift, chars: "\e)" }
+  - { key: Minus, mods: Alt, chars: "\e-" }
+  - { key: Minus, mods: Alt|Shift, chars: "\e_" }
+  - { key: Equals, mods: Alt, chars: "\e=" }
+  - { key: Equals, mods: Alt|Shift, chars: "\e+" }
+  - { key: LBracket, mods: Alt, chars: "\e[" }
+  - { key: LBracket, mods: Alt|Shift, chars: "\e{" }
+  - { key: RBracket, mods: Alt, chars: "\e]" }
+  - { key: RBracket, mods: Alt|Shift, chars: "\e}" }
+  - { key: Backslash, mods: Alt, chars: "\e\\" }
+  - { key: Backslash, mods: Alt|Shift, chars: "\e|" }
+  - { key: Semicolon, mods: Alt, chars: "\e;" }
+  - { key: Semicolon, mods: Alt|Shift, chars: "\e:" }
+  - { key: Apostrophe, mods: Alt, chars: "\e'" }
+  - { key: Apostrophe, mods: Alt|Shift, chars: "\e\"" }
+  - { key: Comma, mods: Alt, chars: "\e," }
+  - { key: Comma, mods: Alt|Shift, chars: "\e<" }
+  - { key: Period, mods: Alt, chars: "\e." }
+  - { key: Period, mods: Alt|Shift, chars: "\e>" }
+  - { key: Slash, mods: Alt, chars: "\e/" }
+  - { key: Slash, mods: Alt|Shift, chars: "\e?" }
+  - { key: Grave, mods: Alt, chars: "\e`" }
+  - { key: Grave, mods: Alt|Shift, chars: "\e~" }
