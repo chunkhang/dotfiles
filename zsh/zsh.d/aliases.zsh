@@ -69,7 +69,7 @@ alias xclip='xclip -selection clipboard'
 # ------------------------------------------------------------------------------
 
 alias l='ls -lah'
-alias lgrep='() { l | grep "$@" }'
+alias lgrep='() { l | grep --color "$@" }'
 alias -- -='cd -'
 alias ...='../..'
 alias ....='../../..'
