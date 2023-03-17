@@ -129,6 +129,7 @@ abbr gcpa='git cherry-pick --abort'
 abbr gt='git stash'
 abbr gtl='git stash list'
 abbr gtp='git stash pop'
+abbr gtd='git stash drop'
 abbr gtc='git stash clear'
 
 abbr gw='git show'
