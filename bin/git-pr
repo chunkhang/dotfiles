@@ -6,7 +6,7 @@ remote_uri=$(echo "$remote_url" | cut -d @ -f 2)
 
 host=$(echo "$remote_uri" | cut -d : -f 1)
 repo=$(echo "$remote_uri" | cut -d : -f 2 | cut -d . -f 1)
-source_branch=$(git symbolic-ref --short HEAD)
+source_branch=${2:-$(git symbolic-ref --short HEAD)}
 
 dest_branch="$1"
 
