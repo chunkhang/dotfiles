@@ -63,6 +63,7 @@ alias tree='tree -a'
 alias ncdu='ncdu --color=dark --confirm-quit'
 alias newsboat='newsboat --quiet'
 alias xclip='xclip -selection clipboard'
+alias watch='watch --errexit --color'
 
 # ------------------------------------------------------------------------------
 # Utilities
