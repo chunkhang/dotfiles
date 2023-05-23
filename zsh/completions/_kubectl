@@ -173,3 +173,7 @@ _kubectl()
 if [ "$funcstack[1]" = "_kubectl" ]; then
 	_kubectl
 fi
+
+# Reuse autocompletion for kubecolor
+# https://github.com/hidetatz/kubecolor
+compdef kubecolor=kubectl
