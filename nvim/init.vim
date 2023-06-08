@@ -19,7 +19,6 @@ set mouse=a
 set noshowmode
 set noswapfile
 set number
-set relativenumber
 set scrolloff=10
 set shiftround
 set shiftwidth=2
