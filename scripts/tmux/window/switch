@@ -1,0 +1,11 @@
+#!/bin/sh
+
+output=$( \
+  tmux list-windows -F '(#{window_id}) #{window_name}' | sort | \
+  fzf --tiebreak=index --no-sort
+)
+
+if [[ "$?" == 0 ]]; then
+  target_window=$(echo "$output" | cut -d ' ' -f 2-)
+  tmux select-window -t "$target_window"
+fi
