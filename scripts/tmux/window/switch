@@ -1,7 +1,7 @@
 #!/bin/sh
 
 output=$( \
-  tmux list-windows -F '(#{window_id}) #{window_name}' | sort --version-sort | \
+  tmux list-windows -F '(#{window_index}) #{window_name}' | sort --version-sort | \
   fzf --tiebreak=index --no-sort
 )
 
