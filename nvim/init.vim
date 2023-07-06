@@ -115,7 +115,7 @@ Plug 'justinmk/vim-dirvish' | runtime config/dirvish.vim
 Plug 'kshenoy/vim-signature' | runtime config/signature.vim
 Plug 'leafgarland/typescript-vim'
 Plug 'lepture/vim-jinja'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' } | runtime config/clap.vim
+Plug 'liuchengxu/vim-clap', { 'tag': 'v0.37' } | runtime config/clap.vim
 Plug 'ludovicchabant/vim-gutentags' | runtime config/gutentags.vim
 Plug 'machakann/vim-swap'
 Plug 'maximbaz/lightline-ale'
