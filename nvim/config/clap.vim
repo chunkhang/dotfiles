@@ -4,8 +4,9 @@ let g:clap_insert_mode_only = v:true
 let g:clap_open_preview = 'never'
 let g:clap_prompt_format = '%provider_id%: '
 let g:clap_enable_background_shadow = v:false
+let g:clap_provider_files_finder = 'rgs'
 
-nnoremap <silent> <C-P> :Clap files ++finder=rg --files<CR>
+nnoremap <silent> <C-P> :Clap files<CR>
 nnoremap <silent> <C-B> :Clap buffers<CR>
 
 let s:mouse = ''
@@ -36,7 +37,8 @@ function! g:plugin_highlights.clap(set_highlight, colors) dict abort
   call a:set_highlight('ClapProviderAbout', { 'fg': a:colors.white })
   call a:set_highlight('ClapProviderId', { 'fg': a:colors.red })
   call a:set_highlight('ClapProviderColon', { 'fg': a:colors.red })
-  call a:set_highlight('ClapFile', { 'fg': a:colors.white })
+  call a:set_highlight('ClapFileName', { 'fg': a:colors.white })
+  call a:set_highlight('ClapFilePath', { 'fg': a:colors.white })
   call a:set_highlight('ClapBuffersNumberBracket', { 'fg': a:colors.white })
   call a:set_highlight('ClapBuffersNumber', { 'fg': a:colors.white })
   call a:set_highlight('ClapBuffersFsize', { 'fg': a:colors.white })

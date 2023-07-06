@@ -3,7 +3,7 @@ function! g:LightlineDirectory() abort
 endfunction
 
 function! g:LightlineGitBranch() abort
-  let l:branch = fugitive#head()
+  let l:branch = FugitiveHead()
   return strlen(l:branch) ? l:branch : ''
 endfunction
 
