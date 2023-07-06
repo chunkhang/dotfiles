@@ -125,7 +125,7 @@ Plug 'peitalin/vim-jsx-typescript' | runtime config/jsx_typescript.vim
 Plug 'plasticboy/vim-markdown' | runtime config/markdown.vim
 Plug 'rhysd/conflict-marker.vim'
 Plug 'rhysd/git-messenger.vim' | runtime config/git_messenger.vim
-Plug 'romgrk/barbar.nvim', { 'frozen': v:true, 'commit': '31ec83c' } | runtime config/barbar.vim
+Plug 'romgrk/barbar.nvim', { 'commit': '31ec83c' } | runtime config/barbar.vim
 Plug 'tomlion/vim-solidity'
 Plug 'tommcdo/vim-lion'
 Plug 'tpope/vim-abolish'
