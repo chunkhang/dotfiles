@@ -28,13 +28,13 @@ let g:ale_linters = {
 let g:ale_fixers = {
       \ 'css': ['prettier'],
       \ 'html': ['prettier'],
-      \ 'javascript': ['prettier', 'eslint'],
+      \ 'javascript': ['prettier'],
       \ 'json': ['prettier'],
       \ 'markdown': ['prettier'],
       \ 'python': ['black'],
       \ 'scss': ['prettier'],
-      \ 'typescript': ['prettier', 'eslint'],
-      \ 'typescriptreact': ['prettier', 'eslint'],
+      \ 'typescript': ['prettier'],
+      \ 'typescriptreact': ['prettier'],
       \ 'yaml': ['prettier'],
       \ }
 
