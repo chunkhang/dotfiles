@@ -102,22 +102,6 @@ zle_highlight+=(paste:none)
 
 plug load
 
-# Load hooks
-
-function _nvm_use() {
-  if [[ -f .nvmrc ]]; then
-    nvm use
-  fi
-}
-
-function _nvm_hook() {
-  emulate -L zsh
-  _nvm_use
-}
-
-_nvm_use
-add-zsh-hook chpwd _nvm_hook
-
 # Local configuration
 
 if [[ -f "${HOME}/.zlocal" ]]; then
