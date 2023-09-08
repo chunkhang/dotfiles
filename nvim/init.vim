@@ -42,7 +42,7 @@ if has('mac')
         \ '/opt/homebrew/opt/python@3.10/Frameworks/Python.framework/Versions/3.10/bin:' .
         \ $PATH
   let g:node_host_prog = '/opt/homebrew/bin/neovim-node-host'
-  let g:python3_host_prog = '/opt/homebrew/opt/python@3.10/bin/python3'
+  let g:python3_host_prog = '/opt/homebrew/opt/python@3.10/bin/python3.10'
 else
   let $PATH = 
         \ $HOME . '/.nvm/versions/node/v16.8.0/bin:' .
