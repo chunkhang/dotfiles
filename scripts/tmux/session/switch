@@ -1,0 +1,11 @@
+#!/bin/sh
+
+output=$( \
+  tmux list-sessions -F '(#{session_id}) #{session_name}' | \
+  fzf --tiebreak=index --no-sort
+)
+
+if [[ "$?" == 0 ]]; then
+  target_session=$(echo "$output" | cut -d ' ' -f 2-)
+  tmux switch-client -t "$target_session"
+fi
