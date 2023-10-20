@@ -30,6 +30,7 @@
 
 [diff]
   tool = nvim
+  colorMoved = zebra
 
 [difftool]
   prompt = true
