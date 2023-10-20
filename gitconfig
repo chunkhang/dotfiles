@@ -26,6 +26,7 @@
 
 [rebase]
   instructionFormat = "(%an <%ae>) %s"
+  autostash = true
 
 [diff]
   tool = nvim
