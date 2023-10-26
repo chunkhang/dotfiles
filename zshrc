@@ -61,7 +61,7 @@ for zsh_file in "$HOME"/.zsh/zsh.d/*.zsh(N); do
   source "$zsh_file"
 done
 
-# Load fzf
+# Load fzf (0.30.0)
 
 FZF_TMUX_OPTS='-p'
 FZF_DEFAULT_COMMAND='rg --files --color=never'
