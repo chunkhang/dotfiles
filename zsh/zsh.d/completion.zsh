@@ -36,7 +36,13 @@ fpath+=(
   $HOMEBREW_HOME/share/zsh/site-functions
 )
 autoload -Uz compinit
-compinit
+# Restrict to checking completion cache once a day, to speed up startup
+# https://gist.github.com/ctechols/ca1035271ad134841284
+if [[ "$(find $HOME/.zcompdump -mmin +1)" ]]; then
+  compinit
+  touch -m $HOME/.zcompdump
+fi
+compinit -C
 
 # Load bash-style completions
 autoload bashcompinit
