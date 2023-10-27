@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # AWS CLI token expiry
 aws_expiry=$(

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 output=$( \
   tmux list-sessions -F '(#{session_id}) #{session_name}' | \

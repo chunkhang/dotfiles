@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 output=$( \
   tmux list-windows -F '(#{window_index}) #{window_name}' | sort --version-sort | \

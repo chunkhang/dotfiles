@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 log_file=~/.sleepwatcher.log
 log_days=30
