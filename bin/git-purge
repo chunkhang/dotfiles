@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # Remove specified branch from local and remote
 
 branch="$1"
