@@ -26,11 +26,15 @@ function Space({ index, focused, windows, display }) {
     style.color = theme.colors.grey;
   }
 
+  // For some reason, phantom window id 2340 exist for all spaces
+  // Filter it out to decide whether a space has window or not
+  const hasWindow = windows.some(w => w !== 2340)
+
   return (
     <div style={style}>
       <span>{index}</span>
       <span>{display > 1 ? '^' : null}</span>
-      {windows.length > 0 ? <span>+</span> : null}
+      {hasWindow ? <span>+</span> : null}
     </div>
   );
 }
