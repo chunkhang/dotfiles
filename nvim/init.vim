@@ -128,6 +128,7 @@ Plug 'rhysd/git-messenger.vim' | runtime config/git_messenger.vim
 Plug 'romgrk/barbar.nvim', { 'commit': '31ec83c' } | runtime config/barbar.vim
 Plug 'tomlion/vim-solidity'
 Plug 'tommcdo/vim-lion'
+Plug 'towolf/vim-helm'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary' | runtime config/commentary.vim
 Plug 'tpope/vim-endwise'
