@@ -1,6 +1,6 @@
 [user]
-  name = Marcus Mu
-  email = chunkhang@gmail.com
+  name = mamu
+  email = mamu@c2r6s9.42singapore.sg
 # marcusMBP
 [includeIf "gitdir:~/Workspace/work/sygnum/"]
   path = .gitconfig.work
