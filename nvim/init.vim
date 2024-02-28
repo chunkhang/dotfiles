@@ -71,6 +71,7 @@ let g:plugin_highlights = {}
 
 call plug#begin(stdpath('config') . '/plugged')
 
+Plug '42Paris/42header'
 Plug 'AndrewRadev/splitjoin.vim' | runtime config/splitjoin.vim
 Plug 'AndrewRadev/switch.vim' | runtime config/switch.vim
 Plug 'Joorem/vim-haproxy'
