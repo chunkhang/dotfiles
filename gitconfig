@@ -13,7 +13,7 @@
   excludesfile = ~/.gitignore_global
 
 [init]
-  defaultBranch = main
+  defaultBranch = master
 
 [commit]
   verbose = true
