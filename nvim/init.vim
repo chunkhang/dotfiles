@@ -56,6 +56,8 @@ if !has('mac')
   let g:netrw_browsex_viewer = 'gio open'
 endif
 
+let g:c_syntax_for_h = 1
+
 augroup init_settings
   autocmd!
   " Enable highlight on yank
