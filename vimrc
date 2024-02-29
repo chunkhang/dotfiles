@@ -35,11 +35,13 @@ let g:c_syntax_for_h = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
 " $ mkdir -p ~/.vim/pack/vendor/start
-" $ git clone <url> ~/.vim/pack/vendor/start
+" $ cd ~/.vim/pack/vendor/start
+" $ git clone <url>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " https://github.com/chunkhang/norminette-ale
 " https://github.com/dense-analysis/ale
+" https://github.com/jiangmiao/auto-pairs
 " https://github.com/tpope/vim-surround
 
 let g:ale_linters_explicit = 1
