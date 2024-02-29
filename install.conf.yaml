@@ -42,6 +42,7 @@
     ~/.tmux:
     ~/.uebersicht:
     ~/.vdirsyncer:
+    ~/.vimrc:
     ~/.wakeup: sleepwatcher/wakeup
     ~/.weechat:
     ~/.yabairc:
