@@ -1,6 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" BASICS
-" Options that must be set, and memorized
+" BASIC OPTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set number
@@ -11,11 +10,12 @@ set tabstop=4
 set autoindent
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" EXTRAS
-" Options that are good to have
+" EXTRA OPTIONS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nobackup
+
+set mouse=a
 
 set cursorline
 
@@ -28,9 +28,12 @@ set smartcase
 
 set wildmenu
 
+set keywordprg=man\ 3
+
+let g:c_syntax_for_h = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " PLUGINS
-" To install a plugin:
 " $ mkdir -p ~/.vim/pack/vendor/start
 " $ git clone <url> ~/.vim/pack/vendor/start
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -44,6 +47,10 @@ let g:ale_linters = {
       \ 'c': ['cc', 'norminette']
   \ }
 let g:ale_c_cc_options = '-Wall -Wextra -Werror'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MAPPINGS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 nmap [e <Plug>(ale_previous_wrap_error)
 nmap ]e <Plug>(ale_next_wrap_error)
