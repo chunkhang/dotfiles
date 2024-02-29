@@ -93,6 +93,7 @@ Plug 'cespare/vim-toml' | runtime config/toml.vim
 Plug 'chemzqm/vim-jsx-improve' | runtime config/jsx_improve.vim
 Plug 'chrisbra/Colorizer' | runtime config/colorizer.vim
 Plug 'chunkhang/msmtp.vim'
+Plug 'chunkhang/norminette-ale'
 Plug 'chunkhang/supertab' | runtime config/supertab.vim
 Plug 'chunkhang/vim-mbsync'
 Plug 'digitaltoad/vim-pug'
