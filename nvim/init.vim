@@ -257,6 +257,10 @@ nnoremap <Leader>O O<Esc>
 " Trigger line completion
 inoremap <C-Space> <C-X><C-L>
 
+" Append semicolon to end of line
+nnoremap <Leader>; A;<Esc>
+vnoremap <silent> <Leader>; :normal A;<CR>
+
 " Append comma to end of line
 nnoremap <Leader>, A,<Esc>
 vnoremap <silent> <Leader>, :normal A,<CR>
