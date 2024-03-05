@@ -4,6 +4,10 @@
 
 set number
 
+set cindent
+set tabstop=4
+set shiftwidth=4
+
 set nobackup
 
 set mouse=a
