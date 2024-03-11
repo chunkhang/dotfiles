@@ -1,7 +1,7 @@
 # Variables
 
 export EDITOR=nvim
-if [ -n "$TERMINATOR_UUID" ]; then
+if [ -z "$TERMINATOR_UUID" ]; then
   export MANPAGER='nvim +Man!'
 fi
 
