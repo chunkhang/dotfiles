@@ -12,7 +12,6 @@ let g:ale_fix_on_save = 1
 
 let g:ale_linters = {
       \ 'c': ['cc', 'norminette'],
-      \ 'cpp': ['norminette'],
       \ 'css': ['stylelint'],
       \ 'go': ['gofmt', 'golint', 'go vet'],
       \ 'javascript': ['eslint'],
@@ -42,6 +41,7 @@ let g:ale_fixers = {
       \ }
 
 let g:ale_c_cc_options = '-Wall -Wextra -Werror'
+let g:ale_c_norminette_options = ' -R CheckForbiddenSourceHeader -R CheckDefine'
 
 let g:ale_python_pyright_config = {
       \ 'pyright': {
