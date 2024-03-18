@@ -18,6 +18,7 @@ set list
 set listchars=tab:\|\ ,trail:.
 
 set hlsearch
+set incsearch
 set showmatch
 set smartcase
 
