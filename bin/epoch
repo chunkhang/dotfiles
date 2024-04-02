@@ -1,0 +1,34 @@
+#!/bin/bash
+# Epoch timestamp converter
+
+MIN_LEN=10
+
+function show-help() {
+  echo "usage: epoch <timestamp>"
+  echo
+  echo "description:"
+  echo "  Converts epoch timestamp to human-readable timestamp."
+  echo "  Epoch timestamp can be in seconds, milliseconds and beyond."
+  echo "  e.g. 1712063884, 1712063884449, ..."
+}
+
+if [[ "$#" = 0 ]]; then
+  show-help
+  exit 0
+fi
+
+ts=$1
+
+len=$(echo -n "$ts" | wc --chars)
+if [[ "$len" -eq "$MIN_LEN" ]]; then
+  s=$ts
+  fmt="+%c (${s})"
+elif [[ "$len" -gt "$MIN_LEN"  ]]; then
+  s=${ts:0:10}
+  fmt="+%c (${s}.${ts:10})"
+else
+  echo "error: Epoch timestamp must be ${MIN_LEN} characters or longer"
+  exit 1
+fi
+
+date --date="@${s}" "$fmt"
