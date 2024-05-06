@@ -219,4 +219,12 @@ alias fdv='() { fd "$@" | xargs nvim }'
 # -----------------------------------------------------------------------------
 # assume
 # -----------------------------------------------------------------------------
-alias assume='source assume'
+
+alias assume='source assume --export'
+
+# -----------------------------------------------------------------------------
+# Kubernetes
+# -----------------------------------------------------------------------------
+
+abbr kc='kubectl config use-context'
+abbr kn='kubectl config set-context --current --namespace'
