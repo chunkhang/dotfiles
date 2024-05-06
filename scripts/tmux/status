@@ -1,31 +1,10 @@
 #!/bin/bash
 
-# AWS CLI token expiry
-aws_expiry=$(
-  cat ~/.aws/credentials 2>/dev/null |\
-  grep '^aws_expiration' |\
-    cut -d '=' -f 2
-)
-if [[ -n "$aws_expiry" ]]; then
-  echo -n "aws:~"
-
-  epoch_expiry=$(date +%s --date "$aws_expiry")
-  epoch_now=$(date +%s)
-  seconds_left=$(expr "$epoch_expiry" - "$epoch_now")
-
-  if [[ "$seconds_left" -ge 0 ]]; then
-    minutes_left=$(expr "$seconds_left" / 60 + 1)
-    echo -n "${minutes_left}m"
-  fi
-
-  echo -n " "
-fi
-
 # Kubernetes context and namespace
 kube_status=$(
   kubectl config get-contexts --no-headers 2>/dev/null |\
     grep '*' | awk '{ printf "%s/%s", $2, $5 }'
 )
 if [[ -n "$kube_status" ]]; then
-  echo -n "kube:${kube_status}"
+  echo -n "${kube_status}"
 fi
