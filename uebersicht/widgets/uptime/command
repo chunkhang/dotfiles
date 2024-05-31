@@ -1,6 +1,11 @@
 #!/bin/sh
 
-uptime=$(uptime)
+uptime=$(
+  system_profiler SPSoftwareDataType -detailLevel mini |\
+    grep "Time since boot" |\
+    cut -d : -f 2 |\
+    xargs
+)
 
 cat <<EOF
 {
