@@ -14,8 +14,8 @@ snippet def
 endsnippet
 
 snippet ifn
-#ifndef $1
-# define $1
+#ifndef `!p snip.rv = snip.fn.replace('.', '_').upper()`
+# define `!p snip.rv = snip.fn.replace('.', '_').upper()`
 
 $2
 
