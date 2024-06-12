@@ -1,12 +1,14 @@
 [user]
-  name = mamu
-  email = mamu@c2r6s9.42singapore.sg
+  name = Marcus Mu
+  email = chunkhang@gmail.com
 # marcusMBP
 [includeIf "gitdir:~/Workspace/work/sygnum/"]
   path = .gitconfig.work
 # marcusTP
 [includeIf "gitdir:~/Workspace/sygnum/"]
   path = .gitconfig.work
+[includeIf "gitdir:~/Workspace/42/"]
+  path = .gitconfig.ft
 
 [core]
   editor = nvim
