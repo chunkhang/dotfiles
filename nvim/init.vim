@@ -43,8 +43,7 @@ if has('mac')
         \ $PATH
   let g:node_host_prog = '/opt/homebrew/bin/neovim-node-host'
   let g:python3_host_prog = '/opt/homebrew/opt/python@3.10/bin/python3.10'
-else
-  " TODO: Do not load this block in 42 computer
+elseif system('hostname') !~ '42singapore.sg'
   let $PATH =
         \ $HOME . '/.nvm/versions/node/v16.20.2/bin:' .
         \ $HOME . '/.pyenv/versions/3.10.0/bin:' .
