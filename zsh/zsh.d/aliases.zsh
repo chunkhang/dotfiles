@@ -228,3 +228,9 @@ alias assume='source assume --export'
 
 abbr kc='kubectl config use-context'
 abbr kn='kubectl config set-context --current --namespace'
+
+# -----------------------------------------------------------------------------
+# Francinette
+# -----------------------------------------------------------------------------
+alias francinette="${HOME}/francinette/tester.sh"
+alias paco='francinette'
