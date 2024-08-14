@@ -2,4 +2,7 @@
 # Run by sleepwatcher during sleep
 # https://formulae.brew.sh/formula/sleepwatcher
 
-~/.scripts/sleepwatcher/log sleep
+PATH=/opt/homebrew/bin:$PATH
+
+blueutil --power 0
+networksetup -setairportpower en0 off

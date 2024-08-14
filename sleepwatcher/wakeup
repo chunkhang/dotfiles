@@ -1,5 +1,8 @@
 #!/bin/sh
-# Run by sleepwatcher during wakeup
+# Run by sleepwatcher during sleep
 # https://formulae.brew.sh/formula/sleepwatcher
 
-~/.scripts/sleepwatcher/log wakeup
+PATH=/opt/homebrew/bin:$PATH
+
+blueutil --power 1
+networksetup -setairportpower en0 on
