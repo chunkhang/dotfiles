@@ -331,3 +331,14 @@ function g:LocalvimrcNvmNode(node_version) abort
   let $PATH = l:nvm_bin_dir . ':' . $PATH
   let g:node_host_prog = l:nvm_bin_dir . '/neovim-node-host'
 endfunction
+
+" Helper to set cc include flags, to be called in .lvimrc file
+" Include directories are converted to absolute paths
+" Example: call g:LocalvimrcCcIncludes(['include', 'lib/libft/include'])
+function g:LocalvimrcCcIncludes(include_dirs) abort
+  let l:root_dir = getcwd()
+  for l:include_dir in a:include_dirs
+    let l:include_path = l:root_dir . '/' . l:include_dir
+    let g:ale_c_cc_options .= ' -I ' . l:include_path
+  endfor
+endfunction
