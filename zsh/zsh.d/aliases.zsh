@@ -230,6 +230,11 @@ abbr kc='kubectl config use-context'
 abbr kn='kubectl config set-context --current --namespace'
 
 # -----------------------------------------------------------------------------
+# Norminette
+# -----------------------------------------------------------------------------
+alias norm='norminette -R CheckForbiddenSourceHeader -R CheckDefine'
+
+# -----------------------------------------------------------------------------
 # Francinette
 # -----------------------------------------------------------------------------
 alias francinette="${HOME}/francinette/tester.sh"
