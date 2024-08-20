@@ -327,6 +327,10 @@ nnoremap <Leader>V :source $MYVIMRC<CR>
 " Node should have neovim package installed: npm install -g neovim
 " Example: call g:LocalvimrcNvmNode('20.16.0')
 function g:LocalvimrcNvmNode(node_version) abort
+  if g:localvimrc_sourced_once
+    return
+  endif
+
   let l:nvm_bin_dir = $HOME . '/.nvm/versions/node/' . a:node_version . '/bin'
   let $PATH = l:nvm_bin_dir . ':' . $PATH
   let g:node_host_prog = l:nvm_bin_dir . '/neovim-node-host'
@@ -336,6 +340,10 @@ endfunction
 " Include directories are converted to absolute paths
 " Example: call g:LocalvimrcCcIncludes(['include', 'lib/libft/include'])
 function g:LocalvimrcCcIncludes(include_dirs) abort
+  if g:localvimrc_sourced_once
+    return
+  endif
+
   let l:root_dir = getcwd()
   for l:include_dir in a:include_dirs
     let l:include_path = l:root_dir . '/' . l:include_dir
