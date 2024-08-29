@@ -19,9 +19,14 @@ is_locked = False
 exit = threading.Event()
 
 def lock():
+    global is_locked
+    if is_locked:
+        return
+    is_locked = True
     # Press lock button to lock the computer
     x, y = LOCK_POS
     pyautogui.click(x, y)
+    # Stop the program
     exit.set()
 
 def on_mouse_move(x, y):
