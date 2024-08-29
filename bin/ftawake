@@ -1,0 +1,5 @@
+#!/bin/bash
+# Stay awake in 42 Singapore
+
+python3 ~/.scripts/ft/awake.py &
+cmatrix
