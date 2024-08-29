@@ -7,7 +7,7 @@ from pynput import keyboard, mouse
 
 SAFE_KEY = keyboard.Key.shift # key pressed to avoid computer from sleeping
 LOCK_POS = (1810, 15) # position of lock button: (x, y)
-TICK_DELAY = 5 # seconds between each tick
+TICK_DELAY = 2 # seconds between each tick
 
 screen_size = pyautogui.size() # (w, h)
 mouse_pos = (0, 0) # (x, y)
