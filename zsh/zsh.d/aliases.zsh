@@ -232,7 +232,7 @@ abbr kn='kubectl config set-context --current --namespace'
 # -----------------------------------------------------------------------------
 # Norminette
 # -----------------------------------------------------------------------------
-alias norm='norminette -R CheckForbiddenSourceHeader -R CheckDefine'
+alias norm="norminette ${NORMINETTE_FLAGS}"
 
 # -----------------------------------------------------------------------------
 # Francinette
