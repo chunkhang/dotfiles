@@ -19,6 +19,7 @@ export AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE=1
 export BUILDKIT_PROGRESS=plain
 export GRANTED_DISABLE_UPDATE_CHECK=true
 export MAKEFLAGS='--no-print-directory'
+export NORMINETTE_FLAGS='-R CheckForbiddenSourceHeader -R CheckDefine'
 
 # https://stackoverflow.com/a/52230415/13193129
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
