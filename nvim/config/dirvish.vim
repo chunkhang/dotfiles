@@ -1,3 +1,5 @@
+set suffixes+=.spec.js,.spec.ts
+
 let g:dirvish_mode = ':sort | sort ,^.*[^/]$, r'
 let g:dirvish_relative_paths = 1
 
