@@ -11,22 +11,30 @@ let g:loaded_python_provider = 0
 let g:loaded_ruby_provider = 0
 let g:loaded_perl_provider = 0
 
+function s:ConfigureProvider(var, bin, dir) abort
+  if !isdirectory(a:dir)
+    echoerr 'provider.vim: Expected directory, but got: ' . a:dir
+    return
+  endif
+
+  " Add path for bin directory
+  let $PATH = a:bin . ':' . $PATH
+
+  " Set host program binary from bin directory
+  let l:val = a:dir . '/' . a:bin
+  execute 'let' a:var '=' string(l:val)
+endfunction
+
 " Node provider
 " Note: npm install -g neovim
-function g:ConfigureNodeProvider(bin_dir) abort
-  if a:bin_dir != v:null
-    let $PATH = a:bin_dir . ':' . $PATH
-    let g:node_host_prog = a:bin_dir . '/neovim-node-host'
-  endif
+function g:ConfigureNodeProvider(dir) abort
+  call s:ConfigureProvider('g:node_host_prog', 'neovim-node-host', a:dir)
 endfunction
 
 " Python provider
 " Note: pip install pynvim
-function g:ConfigurePythonProvider(bin_dir) abort
-  if a:bin_dir != v:null
-    let $PATH = a:bin_dir . ':' . $PATH
-    let g:python3_host_prog = a:bin_dir . '/python3'
-  endif
+function g:ConfigurePythonProvider(dir) abort
+  call s:ConfigureProvider('g:python3_host_prog', 'python3', a:dir)
 endfunction
 
 " Configure functions are called automatically when plugin is loaded
