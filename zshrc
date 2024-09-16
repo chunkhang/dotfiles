@@ -34,6 +34,14 @@ export HOMEBREW_NO_ANALYTICS=1
 
 export RUBYOPT='-W0'
 
+if [[ "$(hostname)" =~ "marcusMBP" ]]; then
+  export NVIM_NODE_BIN_DIR="${HOME}/.nvm/versions/node/v22.8.0/bin"
+  export NVIM_PYTHON_BIN_DIR="${HOME}/.pyenv/versions/3.11.0/bin"
+elif [[ "$(hostname)" =~ "42singapore" ]]; then
+  export NVIM_NODE_BIN_DIR="${HOME}/.nvm/versions/node/v16.20.2/bin"
+  export NVIM_PYTHON_BIN_DIR="${HOME}/.pyenv/versions/3.10.0/bin"
+fi
+
 typeset -U path
 path=(
   $HOMEBREW_HOME/bin
