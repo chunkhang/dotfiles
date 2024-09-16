@@ -35,12 +35,6 @@ let g:mapleader = ' '
 let g:c_syntax_for_h = 1
 let g:c_no_curly_error = 1
 
-augroup init_settings
-  autocmd!
-  " Enable highlight on yank
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank {timeout=500}
-augroup END
-
 " =============================================================================
 " PLUGINS
 " =============================================================================
