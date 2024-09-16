@@ -15,7 +15,7 @@ function! s:SplitWindow(direction) abort
       set nosplitright
       let l:toggled = v:true
     endif
-    
+
     vsplit
 
     if l:toggled
