@@ -303,19 +303,6 @@ nnoremap <Leader>V :source $MYVIMRC<CR>
 " FUNCTIONS
 " =============================================================================
 
-" Helper to use nvm node for version given, to be called in .lvimrc file
-" Node should have neovim package installed: npm install -g neovim
-" Example: call g:LocalvimrcNvmNode('20.16.0')
-function g:LocalvimrcNvmNode(node_version) abort
-  if g:localvimrc_sourced_once
-    return
-  endif
-
-  let l:nvm_bin_dir = $HOME . '/.nvm/versions/node/' . a:node_version . '/bin'
-  let $PATH = l:nvm_bin_dir . ':' . $PATH
-  let g:node_host_prog = l:nvm_bin_dir . '/neovim-node-host'
-endfunction
-
 " Helper to set cc include flags, to be called in .lvimrc file
 " Include directories are converted to absolute paths
 " Example: call g:LocalvimrcCcIncludes(['include', 'lib/libft/include'])
