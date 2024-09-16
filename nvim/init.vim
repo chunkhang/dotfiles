@@ -2,7 +2,6 @@
 " SETTINGS
 " =============================================================================
 
-" Options
 set breakindent
 set complete-=t
 set cursorline
@@ -32,25 +31,7 @@ set tabstop=2
 set termguicolors
 set updatetime=500
 
-" Leader
 let g:mapleader = ' '
-
-if !has('mac')
-  let g:clipboard = {
-        \ 'name': 'xclip',
-        \ 'copy': {
-        \    '+': 'xclip -selection clipboard',
-        \    '*': 'xclip -selection clipboard',
-        \  },
-        \ 'paste': {
-        \    '+': 'xclip -selection clipboard -out',
-        \    '*': 'xclip -selection clipboard -out',
-        \ },
-        \ 'cache_enabled': 1,
-        \ }
-  let g:netrw_browsex_viewer = 'gio open'
-endif
-
 let g:c_syntax_for_h = 1
 let g:c_no_curly_error = 1
 
