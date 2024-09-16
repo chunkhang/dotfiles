@@ -303,6 +303,7 @@ nnoremap <Leader>V :source $MYVIMRC<CR>
 " FUNCTIONS
 " =============================================================================
 
+" TODO: Use environment variable
 " Helper to set cc include flags, to be called in .lvimrc file
 " Include directories are converted to absolute paths
 " Example: call g:LocalvimrcCcIncludes(['include', 'lib/libft/include'])
