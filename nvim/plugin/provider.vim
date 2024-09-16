@@ -18,7 +18,7 @@ function s:ConfigureProvider(var, bin, dir) abort
   endif
 
   " Add path for bin directory
-  let $PATH = a:bin . ':' . $PATH
+  let $PATH = a:dir . ':' . $PATH
 
   " Set host program binary from bin directory
   let l:val = a:dir . '/' . a:bin
