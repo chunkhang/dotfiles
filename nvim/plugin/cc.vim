@@ -15,5 +15,11 @@ let g:loaded_cc = 1
 "   endif
 function g:AddCcIncludeDirectory(dir) abort
   let l:inc_path = getcwd() . '/' . a:dir
+
+  if !isdirectory(l:inc_path)
+    echoerr 'cc.vim: Expected directory, but got: ' . l:inc_path
+    return
+  endif
+
   let g:ale_c_cc_options .= ' -I ' . l:inc_path
 endfunction
