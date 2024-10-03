@@ -273,23 +273,3 @@ nnoremap <silent> <Leader>. :echo expand('%:p')<CR>
 " Update and reload configuration
 nnoremap <Leader>v :edit $MYVIMRC<CR>
 nnoremap <Leader>V :source $MYVIMRC<CR>
-
-" =============================================================================
-" FUNCTIONS
-" =============================================================================
-
-" TODO: Use environment variable
-" Helper to set cc include flags, to be called in .lvimrc file
-" Include directories are converted to absolute paths
-" Example: call g:LocalvimrcCcIncludes(['include', 'lib/libft/include'])
-function g:LocalvimrcCcIncludes(include_dirs) abort
-  if g:localvimrc_sourced_once
-    return
-  endif
-
-  let l:root_dir = getcwd()
-  for l:include_dir in a:include_dirs
-    let l:include_path = l:root_dir . '/' . l:include_dir
-    let g:ale_c_cc_options .= ' -I ' . l:include_path
-  endfor
-endfunction
