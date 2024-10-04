@@ -12,6 +12,10 @@ let g:loaded_ruby_provider = 0
 let g:loaded_perl_provider = 0
 
 function s:ConfigureProvider(var, bin, dir) abort
+  if a:dir is v:null
+    return
+  endif
+
   if !isdirectory(a:dir)
     echoerr 'provider.vim: Expected directory, but got: ' . a:dir
     return
