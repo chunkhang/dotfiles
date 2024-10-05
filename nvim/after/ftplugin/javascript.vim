@@ -1,5 +1,4 @@
 setlocal formatoptions-=o
-setlocal keywordprg=~/.scripts/docs/duckduckgo
 
 nnoremap <buffer> <silent> gf :call javascript#gf()<CR>
 
@@ -9,5 +8,5 @@ else
   let b:undo_ftplugin = ''
 endif
 let b:undo_ftplugin .=
-      \ 'setlocal formatoptions< keywordprg<' .
+      \ 'setlocal formatoptions< ' .
       \ ' | silent! nunmap <buffer> gf'
