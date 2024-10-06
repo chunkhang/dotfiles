@@ -2,7 +2,7 @@ setlocal noexpandtab
 setlocal cindent
 setlocal tabstop=4
 setlocal shiftwidth=4
-setlocal keywordprg=man\ 3
+setlocal keywordprg=man\ -S\ 2:3
 
 let b:SuperTabDisabled = 1
 
