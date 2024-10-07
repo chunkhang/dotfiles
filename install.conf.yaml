@@ -13,6 +13,7 @@
     ~/.alacritty.yml:
     ~/.bash_profile:
     ~/.bin:
+    ~/.config/husky:
     ~/.config/khal:
     ~/.config/nvim:
     ~/.config/ranger:
@@ -25,7 +26,6 @@
     ~/.gitignore_global:
     ~/.hammerspoon:
     ~/.hushlogin:
-    ~/.huskyrc:
     ~/.mbsyncrc:
     ~/.mime.types:
     ~/.mongorc.js:
