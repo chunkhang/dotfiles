@@ -48,6 +48,7 @@ Plug '42Paris/42header', { 'for': 'c' } | runtime config/42header.vim
 Plug 'AndrewRadev/splitjoin.vim' | runtime config/splitjoin.vim
 Plug 'AndrewRadev/switch.vim' | runtime config/switch.vim
 Plug 'Joorem/vim-haproxy'
+Plug 'aklt/plantuml-syntax'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'SirVer/ultisnips' | runtime config/ultisnips.vim
 Plug 'cakebaker/scss-syntax.vim'
