@@ -53,6 +53,12 @@
       "css": "battery-4",
       "code": 62016,
       "src": "fontawesome"
+    },
+    {
+      "uid": "n1ld0w7zazkxq7bsqtksyez86sdufqgd",
+      "css": "globe-alt",
+      "code": 59392,
+      "src": "typicons"
     }
   ]
 }
