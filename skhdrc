@@ -9,9 +9,6 @@ fn - space : open /Applications/Alacritty.app
 fn - h     : open ~
 fn - d     : open ~/Downloads
 
-# Open settings (,)
-fn - 0x2B  : open /System/Applications/System\ Preferences.app
-
 # Manage bluetooth
 fn - a : ~/.scripts/bluetooth/audio/toggle
 
