@@ -48,9 +48,9 @@ Plug '42Paris/42header', { 'for': 'c' } | runtime config/42header.vim
 Plug 'AndrewRadev/splitjoin.vim' | runtime config/splitjoin.vim
 Plug 'AndrewRadev/switch.vim' | runtime config/switch.vim
 Plug 'Joorem/vim-haproxy'
-Plug 'aklt/plantuml-syntax'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'SirVer/ultisnips' | runtime config/ultisnips.vim
+Plug 'aklt/plantuml-syntax'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'camspiers/lens.vim'
 Plug 'cespare/vim-toml' | runtime config/toml.vim
@@ -64,6 +64,7 @@ Plug 'digitaltoad/vim-pug'
 Plug 'dyng/ctrlsf.vim' | runtime config/ctrlsf.vim
 Plug 'embear/vim-localvimrc' | runtime config/localvimrc.vim
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } | runtime config/go.vim
+Plug 'gisphm/vim-gitignore'
 Plug 'godlygeek/tabular'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'hashivim/vim-terraform' | runtime config/terraform.vim
