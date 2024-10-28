@@ -49,12 +49,12 @@ EOF
 )
 
 lang_input=$(defaults read "${HOME}/Library/Preferences/com.apple.HIToolbox.plist" AppleSelectedInputSources)
-lang="EN"
+lang="en"
 case "$lang_input" in
   *SCIM.ITABC*)
-    lang="ZH" ;;
+    lang="zh" ;;
   *TransliterationIM.hi*)
-    lang="HI" ;;
+    lang="hi" ;;
 esac
 
 cat <<EOF

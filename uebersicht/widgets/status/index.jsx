@@ -52,7 +52,7 @@ function Language({ lang }) {
   return (
     <div className={classes.container}>
       <i className="icon-globe-alt" />
-      <div>{lang}</div>
+      <div>{lang.toUpperCase()}</div>
     </div>
   );
 }
@@ -92,7 +92,7 @@ const initialState = {
     device: '',
     active: 0,
   },
-  lang: 'EN',
+  lang: 'en',
   error: null,
 };
 
