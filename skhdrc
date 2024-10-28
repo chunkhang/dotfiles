@@ -110,3 +110,10 @@ cmd + ctrl - up : yabai -m display --focus 2; ~/.scripts/yabai/mouse/move 2
 # Send window to monitor
 cmd + shift - down : yabai -m window --display 1; yabai -m display --focus 1; ~/.scripts/yabai/mouse/move 1
 cmd + shift - up : yabai -m window --display 2; yabai -m display --focus 2; ~/.scripts/yabai/mouse/move 2
+
+###############################################################################
+# Hooks
+###############################################################################
+
+# Change keyboard language
+cmd + shift - space -> : sleep 0.1 && ~/.scripts/uebersicht/refresh-status
