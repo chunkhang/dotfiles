@@ -20,21 +20,16 @@ const classes = makeClasses({
   },
 });
 
-function Space({ index, focused, windows, display }) {
+function Space({ index, focused, display }) {
   const style = {};
   if (!focused) {
     style.color = theme.colors.grey;
   }
 
-  // For some reason, phantom window id 2340 exist for all spaces
-  // Filter it out to decide whether a space has window or not
-  const hasWindow = windows.some(w => w !== 2340)
-
   return (
     <div style={style}>
       <span>{index}</span>
       <span>{display > 1 ? '^' : null}</span>
-      {hasWindow ? <span>+</span> : null}
     </div>
   );
 }
@@ -57,7 +52,6 @@ const render = ({ spaces, error }) => {
           <Space
             index={space.index}
             focused={space['has-focus']}
-            windows={space.windows}
             display={space.display}
           />
         </React.Fragment>
