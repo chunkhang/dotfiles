@@ -1,0 +1,7 @@
+#!/bin/sh
+
+buds_mac="28-3d-c2-6b-19-48"
+
+# Toggle connection to Galaxy Buds2 Pro
+# Bluetooth will be switched on if needed
+bluetoothconnector "$buds_mac" --notify

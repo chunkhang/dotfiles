@@ -1,8 +1,0 @@
-#!/bin/sh
-
-script_dir="$(realpath "$0" | xargs dirname)"
-airpods_mac="$(cat "$script_dir/.airpods.mac")"
-
-# Toggle connection to Airpods
-# Bluetooth will be switched on if needed
-bluetoothconnector "$airpods_mac" --notify

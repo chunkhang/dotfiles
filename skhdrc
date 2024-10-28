@@ -12,9 +12,8 @@ fn - d     : open ~/Downloads
 # Open settings (,)
 fn - 0x2B  : open /System/Applications/System\ Preferences.app
 
-# Manage airpods
-fn - a : ~/.scripts/bluetooth/airpods/toggle
-fn - q : ~/.scripts/bluetooth/airpods/battery
+# Manage bluetooth
+fn - a : ~/.scripts/bluetooth/audio/toggle
 
 # Manage uebersicht
 fn - u : ~/.scripts/uebersicht/restart
