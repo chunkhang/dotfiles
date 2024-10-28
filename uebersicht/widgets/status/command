@@ -48,6 +48,15 @@ EOF
 )
 )
 
+lang_input=$(defaults read "${HOME}/Library/Preferences/com.apple.HIToolbox.plist" AppleSelectedInputSources)
+lang="EN"
+case "$lang_input" in
+  *SCIM.ITABC*)
+    lang="ZH" ;;
+  *TransliterationIM.hi*)
+    lang="HI" ;;
+esac
+
 cat <<EOF
 {
   "battery": {
@@ -62,6 +71,7 @@ cat <<EOF
   "bluetooth": {
     "device": "${bluetooth_device}",
     "active": ${bluetooth_active}
-  }
+  },
+  "lang": "${lang}"
 }
 EOF

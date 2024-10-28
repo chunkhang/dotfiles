@@ -48,6 +48,15 @@ function Wifi({ ssid, active }) {
   );
 }
 
+function Language({ lang }) {
+  return (
+    <div className={classes.container}>
+      <i className="icon-globe-alt" />
+      <div>{lang}</div>
+    </div>
+  );
+}
+
 function Battery({ percent, using, charging }) {
   const level = Math.ceil(percent / 25);
   const iconName = using ? `icon-battery-${level}` : 'icon-plug';
@@ -83,10 +92,11 @@ const initialState = {
     device: '',
     active: 0,
   },
+  lang: 'EN',
   error: null,
 };
 
-const render = ({ battery, wifi, bluetooth, error }) => {
+const render = ({ battery, wifi, bluetooth, lang, error }) => {
   if (error) return null;
 
   return (
@@ -94,6 +104,8 @@ const render = ({ battery, wifi, bluetooth, error }) => {
       <Bluetooth device={bluetooth.device} active={bluetooth.active} />
       <div> </div>
       <Wifi ssid={wifi.ssid} active={wifi.active} />
+      <div> </div>
+      <Language lang={lang} />
       <div> </div>
       <Battery
         percent={battery.percent}
