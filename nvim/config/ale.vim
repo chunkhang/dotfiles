@@ -41,7 +41,6 @@ let g:ale_fixers = {
       \ }
 
 let g:ale_c_cc_options = '-Wall -Wextra -Werror'
-let g:ale_c_norminette_options = ' ' . getenv('NORMINETTE_FLAGS')
 
 let g:ale_python_pyright_config = {
       \ 'pyright': {

@@ -47,7 +47,6 @@ let g:ale_linters = {
       \ 'c': ['cc', 'norminette']
   \ }
 let g:ale_c_cc_options = '-Wall -Wextra -Werror'
-let g:ale_c_norminette_options = ' ' . getenv('NORMINETTE_FLAGS')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MAPPINGS

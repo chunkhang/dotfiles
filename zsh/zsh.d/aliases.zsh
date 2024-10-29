@@ -230,11 +230,6 @@ abbr kc='kubectl config use-context'
 abbr kn='kubectl config set-context --current --namespace'
 
 # -----------------------------------------------------------------------------
-# Norminette
-# -----------------------------------------------------------------------------
-alias norm="norminette ${NORMINETTE_FLAGS}"
-
-# -----------------------------------------------------------------------------
 # Francinette
 # -----------------------------------------------------------------------------
 alias francinette="${HOME}/francinette/tester.sh"
