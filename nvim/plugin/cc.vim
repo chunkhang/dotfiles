@@ -18,5 +18,5 @@ function g:AddCcIncludeDirectory(dir) abort
     return
   endif
 
-  let g:ale_c_cc_options .= ' -I ' . a:dir
+  let g:ale_c_cc_options .= ' -I' . a:dir
 endfunction
