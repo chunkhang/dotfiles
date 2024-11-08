@@ -52,7 +52,9 @@ lang_input=$(defaults read "${HOME}/Library/Preferences/com.apple.HIToolbox.plis
 lang="en"
 case "$lang_input" in
   *SCIM.ITABC*)
-    lang="zh" ;;
+    lang="zh-s" ;;
+  *TCIM.Pinyin*)
+    lang="zh-t" ;;
   *TransliterationIM.hi*)
     lang="hi" ;;
 esac
