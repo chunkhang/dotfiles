@@ -11,7 +11,7 @@ let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
 
 let g:ale_linters = {
-      \ 'c': ['cc', 'norminette'],
+      \ 'c': ['clang', 'clangd', 'norminette'],
       \ 'css': ['stylelint'],
       \ 'go': ['gofmt', 'golint', 'go vet'],
       \ 'javascript': ['eslint'],
@@ -40,7 +40,7 @@ let g:ale_fixers = {
       \ 'yaml': ['prettier'],
       \ }
 
-let g:ale_c_cc_options = '-Wall -Wextra -Werror'
+let g:ale_c_parse_compile_commands = 1
 
 let g:ale_python_pyright_config = {
       \ 'pyright': {

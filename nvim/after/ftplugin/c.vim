@@ -2,9 +2,9 @@ setlocal noexpandtab
 setlocal cindent
 setlocal tabstop=4
 setlocal shiftwidth=4
-setlocal keywordprg=man\ -S\ 2:3
+setlocal omnifunc=ale#completion#OmniFunc
 
-let b:SuperTabDisabled = 1
+let b:SuperTabContextTextMemberPatterns = g:SuperTabContextTextMemberPatterns + ['_']
 
 " Vim has no strcmp(), so we implement our own
 " https://vi.stackexchange.com/questions/11236/how-do-i-alphabetically-compare-two-strings
@@ -47,12 +47,21 @@ endfunction
 " void  *ft_calloc(size_t count, size_t size);
 command -range SortPrototypes call s:SortPrototypes(<line1>, <line2>)
 
+nnoremap <buffer> <silent> K :ALEHover<CR>
+nnoremap <buffer> <silent> gr :ALEFindReferences -relative<CR>
+nnoremap <buffer> <silent> gR :ALEFindReferences -relative -quickfix<CR>
+nnoremap <buffer> <silent> <C-]> :ALEGoToDefinition<CR>
+
 if exists('b:undo_ftplugin')
   let b:undo_ftplugin .= ' | '
 else
   let b:undo_ftplugin = ''
 endif
 let b:undo_ftplugin .=
-      \ 'setlocal expandtab< cindent< tabstop< shiftwidth< keywordprg<' .
-      \ ' | unlet! b:SuperTabDisabled' .
-      \ ' | delcommand SortPrototypes'
+      \ 'setlocal expandtab< cindent< tabstop< shiftwidth< omnifunc<' .
+      \ ' | unlet b:SuperTabContextTextMemberPatterns' .
+      \ ' | delcommand SortPrototypes' .
+      \ ' | silent! nunmap <buffer> K' .
+      \ ' | silent! nunmap <buffer> gr' .
+      \ ' | silent! nunmap <buffer> gR' .
+      \ ' | silent! nunmap <buffer> <C-]>'

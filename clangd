@@ -1,0 +1,8 @@
+CompileFlags:
+  Remove: [-W*]
+
+Diagnostics:
+  Suppress: '*'
+
+Hover:
+  ShowAKA: No
