@@ -16,5 +16,7 @@ let b:undo_ftplugin .=
       \ 'setlocal omnifunc<' .
       \ ' | silent! nunmap <buffer> K' .
       \ ' | silent! nunmap <buffer> gr' .
+      \ ' | silent! nunmap <buffer> gR' .
       \ ' | silent! nunmap <buffer> <C-]>' .
-      \ ' | silent! nunmap <buffer> <Leader><Space>'
+      \ ' | silent! nunmap <buffer> <Leader><Space>' .
+      \ ' | silent! nunmap <buffer> gf'
