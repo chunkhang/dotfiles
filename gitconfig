@@ -61,11 +61,5 @@
   drop = reset --hard @{u}
   unstage = reset HEAD *
 
-# marcusMBP
-[includeIf "gitdir:~/Workspace/work/sygnum/"]
-  path = .gitconfig.work
-# marcusTP
-[includeIf "gitdir:~/Workspace/sygnum/"]
-  path = .gitconfig.work
 [includeIf "gitdir:~/Workspace/42/"]
   path = .gitconfig.ft
