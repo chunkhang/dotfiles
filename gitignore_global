@@ -1,13 +1,31 @@
+# macOS
 .DS_Store
+
+# pyenv
+.python-version
+
+# nvm
+.nvmrc
+
+# clangd
+.cache/
+compile_commands.json
+
+# todo
+.todo
+
+# vim-projectionist
+.projections.json
+
+# ctrlsf.vim
 .root
+
+# gutentags.vim
 .tags
 .tags.lock
 .tags.temp
 .tags.files
 .notags
-.ignore
+
+# vim-localvimrc
 .lvimrc
-.todo
-.python-version
-.projections.json
-.nvmrc
