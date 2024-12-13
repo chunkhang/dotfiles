@@ -5,7 +5,7 @@ const colors = {
 };
 
 const paddings = {
-  x: 15,
+  x: 8,
   y: 8,
 };
 
