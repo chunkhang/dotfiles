@@ -46,6 +46,7 @@ const render = ({ spaces, error }) => {
 
   return (
     <div className={classes.container}>
+      <i className="icon-database" />
       {spaces.map((space, i) => (
         <React.Fragment key={i}>
           {i > 0 ? <div> </div> : null}
