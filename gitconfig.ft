@@ -1,6 +1,3 @@
 [user]
   name = mamu
   email = mamu@student.42singapore.sg
-
-[init]
-  defaultBranch = master
