@@ -29,3 +29,6 @@ compile_commands.json
 
 # vim-localvimrc
 .lvimrc
+
+# ripgrep
+.rgignore
