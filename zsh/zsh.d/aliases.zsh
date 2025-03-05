@@ -232,5 +232,16 @@ abbr kn='kubectl config set-context --current --namespace'
 # -----------------------------------------------------------------------------
 # Francinette
 # -----------------------------------------------------------------------------
+
 alias francinette="${HOME}/francinette/tester.sh"
 alias paco='francinette'
+
+# -----------------------------------------------------------------------------
+# proxmark3
+# -----------------------------------------------------------------------------
+
+alias pm3="${HOME}/proxmark3/pm3"
+alias pm3-flash="${HOME}/proxmark3/pm3-flash"
+alias pm3-flash-all="${HOME}/proxmark3/pm3-flash-all"
+alias pm3-flash-bootrom="${HOME}/proxmark3/pm3-flash-bootrom"
+alias pm3-flash-fullimage="${HOME}/proxmark3/pm3-flash-fullimage"
