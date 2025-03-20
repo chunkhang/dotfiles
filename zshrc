@@ -41,6 +41,9 @@ elif [[ "$(hostname)" =~ "42singapore" ]]; then
   export NVIM_PYTHON_BIN_DIR="${HOME}/.pyenv/versions/3.10.0/bin"
 fi
 
+# https://stackoverflow.com/a/70209891/13193129
+export MallocNanoZone=0
+
 typeset -U path
 path=(
   $HOMEBREW_HOME/bin
