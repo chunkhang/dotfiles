@@ -1,4 +1,6 @@
-- clean: ['~']
+- clean:
+  - "~"
+  - "~/.config"
 
 ################################################################################
 
@@ -10,7 +12,6 @@
       relink: true
 
 - link:
-    ~/.alacritty.yml:
     ~/.bash_profile:
     ~/.bin:
     ~/.clangd:
@@ -53,15 +54,15 @@
 
 ################################################################################
 
-# Config files override for Linux
-
-- defaults:
-    link:
-      if: '[ "$(uname -s)" = "Linux" ]'
-      force: true
+# Platform-specific config
 
 - link:
-    ~/.alacritty.yml: alacritty.linux.yml
+    ~/.alacritty.yml:
+      path: alacritty.yml
+    # Linux
+    ~/.alacritty.yml:
+      if: '[ "$(uname -s)" = "Linux" ]'
+      path: alacritty.linux.yml
 
 ################################################################################
 
