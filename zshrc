@@ -77,6 +77,7 @@ for zsh_file in "$HOME"/.zsh/zsh.d/*.zsh(N); do
   source "$zsh_file"
 done
 
+# TODO: Update to 0.60.0
 # Load fzf (0.30.0)
 
 FZF_TMUX_OPTS='-p'
