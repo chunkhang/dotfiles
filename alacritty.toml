@@ -1,0 +1,85 @@
+# Alacritty: 0.51.1
+# Platform: Windows
+# Path: %APPDATA%\alacritty\alacritty.toml
+
+[window]
+decorations = "Full"
+padding = { x = 15, y = 15 }
+dynamic_title = false
+
+[scrolling]
+history = 10000
+multiplier = 2
+
+[font]
+size = 10.0
+normal = { family = "Iosevka Fixed", style = "Extended" }
+bold = { style = "Extended" }
+bold_italic = { style = "Extended" }
+italic = { style = "Extended" }
+
+[colors]
+primary = { background = "#282c34", foreground = "#abb2bf" }
+cursor = { cursor = "#abb2bf", text = "#282c34" }
+vi_mode_cursor = { cursor = "#abb2bf", text = "#282c34" }
+line_indicator = { background = "#282c34", foreground = "#abb2bf" }
+selection = { background = "#abb2bf", text = "#282c34" }
+footer_bar = { background = "#abb2bf", foreground = "#282c34" }
+
+[colors.hints]
+start = { background = "#e5c07b", foreground = "#282c34" }
+end = { background = "#282c34", foreground = "#e5c07b" }
+
+[colors.search]
+focused_match = { background = "#e5c07b", foreground = "#282c34" }
+matches = { background = "#abb2bf", foreground = "#282c34" }
+
+[colors.normal]
+black = "#282c34"
+blue = "#61afef"
+cyan = "#56b6c2"
+green = "#98c379"
+magenta = "#c678dd"
+red = "#e06c75"
+white = "#5c6370"
+yellow = "#e5c07b"
+
+[colors.bright]
+black = "#3e4452"
+blue = "#61afef"
+cyan = "#56b6c2"
+green = "#98c379"
+magenta = "#c678dd"
+red = "#e06c75"
+white = "#abb2bf"
+yellow = "#e5c07b"
+
+[selection]
+save_to_clipboard = true
+
+[cursor]
+style = { blinking = "on" }
+blink_interval = 500
+
+[terminal]
+shell = { program = "wsl", args = ["--cd", "~"] }
+
+[[keyboard.bindings]]
+mods = "Control | Shift"
+key = "N"
+action = "CreateNewWindow"
+
+[[keyboard.bindings]]
+mods = "Control"
+key = "Left"
+chars = "\u001Bb"
+
+[[keyboard.bindings]]
+mods = "Control"
+key = "Right"
+chars = "\u001Bf"
+
+[[keyboard.bindings]]
+mods = "Control"
+key = "Back"
+chars = "\u0017"
