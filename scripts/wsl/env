@@ -1,0 +1,8 @@
+#!/bin/sh
+# Print out Windows environment variable
+# e.g. ./env APPDATA
+
+env=$1
+
+# https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/cmd
+cmd.exe /c "echo %$env%" 2>/dev/null
