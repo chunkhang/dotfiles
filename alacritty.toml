@@ -6,6 +6,7 @@
 decorations = "Full"
 padding = { x = 15, y = 15 }
 dynamic_title = false
+startup_mode = "Maximized"
 
 [scrolling]
 history = 10000
