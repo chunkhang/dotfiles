@@ -33,6 +33,7 @@ export HOMEBREW_NO_ANALYTICS=1
 
 export RUBYOPT='-W0'
 
+# TODO: Move to ~/.zlocal
 if [[ "$(hostname)" =~ "marcusMBP" ]]; then
   export NVIM_NODE_BIN_DIR="${HOME}/.nvm/versions/node/v22.8.0/bin"
   export NVIM_PYTHON_BIN_DIR="${HOME}/.pyenv/versions/3.11.0/bin"
